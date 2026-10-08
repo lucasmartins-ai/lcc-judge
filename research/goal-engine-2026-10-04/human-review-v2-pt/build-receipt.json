@@ -1,0 +1,100 @@
+{
+ "API_calls": 0,
+ "families": 60,
+ "items": 60,
+ "key_sha256": "daa9b19135913bed9f0281fe1b83fcfe253bc1d2806714e883719de58df0f27d",
+ "languages": [
+  "pt"
+ ],
+ "missing_groups": [
+  "contrast",
+  "ambiguity"
+ ],
+ "missing_provenances": [
+  "genuine_lcc"
+ ],
+ "model_forwards": 0,
+ "model_outputs_in_packet": false,
+ "packet_sha256": "7ac873c9a87797652727dfde5438a2b4e407b4e72f213ff5f520e092715ee29d",
+ "plan": "research/goal-engine-2026-10-04/goal-family-corpus-v1/PLAN.md#4",
+ "quota_per_stratum": 30,
+ "reviewer": "project owner (Lucas); not the corpus author (agents authored it)",
+ "schema": "human-review-packet/0.1",
+ "seed": 20261008,
+ "shortfall": 180,
+ "sibling_frame_text": "not present in current data",
+ "sources": {
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/registry.json": "cc5cfcdc14c2acaac64b6a19e021bbe9a40cfc6359f57e0e1e07c05ec14c8cd4",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-annotations.json": "fbdf45116287b3996443b2f227e27ce4909fed32515074846923179be24c54c5",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-inputs.json": "048003abe7b692b3d1485e17d9f9778e8f1aac0b2f0b358ee38f59fb108d3739",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-annotations.json": "a682322bcb4aad01e4e2482903a12abfe026ca966000b1e79e62331077d34c3f",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-inputs.json": "0cc78417ab49e376f40f799dac35fd7003ae3130f478a791b2f29fc38d12f182",
+  "research/review_packet.py": "abeccc5f1d93ead29e58ac5a3115c76c9ca65aefc8a904410255a1cce4e36be9"
+ },
+ "split_in_packet": false,
+ "strata": {
+  "pt|ambiguity|authored": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 30
+  },
+  "pt|ambiguity|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 30
+  },
+  "pt|contrast|authored": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 30
+  },
+  "pt|contrast|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 30
+  },
+  "pt|supported|authored": {
+   "available": 248,
+   "by_label": {
+    "git_index_edits": 4,
+    "git_worktree_edits": 4,
+    "retry_actual_sleep_ns": 4,
+    "retry_attempts": 4,
+    "retry_failures": 4,
+    "retry_scheduled_sleep_ns": 4,
+    "udp_sent_datagrams": 3,
+    "udp_sent_payload_bytes": 3
+   },
+   "sampled": 30,
+   "shortfall": 0
+  },
+  "pt|supported|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 30
+  },
+  "pt|unknown|authored": {
+   "available": 906,
+   "by_label": {
+    "UNKNOWN:broader": 8,
+    "UNKNOWN:derived": 8,
+    "UNKNOWN:diagnosis": 7,
+    "UNKNOWN:other": 7
+   },
+   "sampled": 30,
+   "shortfall": 0
+  },
+  "pt|unknown|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 30
+  }
+ },
+ "target_items": 240
+}

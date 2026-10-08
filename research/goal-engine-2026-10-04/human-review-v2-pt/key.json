@@ -1,0 +1,1332 @@
+{
+ "items": {
+  "HR-001": {
+   "label": "retry_scheduled_sleep_ns",
+   "proposed_label": "retry_scheduled_sleep_ns (nanoseconds)",
+   "query_id": "d03ccac3c13946de71b4e14699458a84409dcf0ad0c67d93d698f18ab5dd6fe1",
+   "question_sha256": "1f80f355c41ec89a7bc9bbf3d031169a1b490566757aafc42a6cf8b3c3b05efc",
+   "source_ids": [
+    "03b9d47c19f34f02e5eae6552029870d2e7a317b99449d1036a36619d9f56119",
+    "1bc1a626d4d1b058a8faf7247e80f8f517604bb401ee3c338d0f6144f4860a36",
+    "3a3a2aac07f4e6b4750fc19025db1b0156e93c9feef1c069a46d70af7807cf47",
+    "57d843d417dc18dfbfffcb2741a60b9a3acb8e758d2adea36a7388959cfdd72f",
+    "62e44e477b7d47fb4f2c676b9638ecedfbb235807d495c9d9ecad753d1cfc260",
+    "90f3ad1af22002bbe1d472605fa2a46fa09ce3ae7061726686ed8c6d3806ff4b",
+    "925bb7b257aa5515f22b9d70148f7ef1805cc00cbb0761684dc1cb6e3dc98f0a",
+    "dbb4e040e3c8924f40c54e857c87df3a875eb84605820e02616e95bb66b1cb09",
+    "e873505b75cc1d678f211c63af028255479b5071d697708d7d9641c89cdfa18f",
+    "eba779e5dea3c388c56f19c6a71766fcca899a07024bda94b2a4df279f9d5a02",
+    "ee73eb9dc82d0b0e142a094323664d0082a465cb81abda014a9754eda5cb073c",
+    "fb60ee8f0897a938e7738cd61cc887ef5c43e27c77983b1f7143d0c11d90f935"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_scheduled_sleep_ns:None:0"
+   ]
+  },
+  "HR-002": {
+   "label": "retry_scheduled_sleep_ns",
+   "proposed_label": "retry_scheduled_sleep_ns (nanoseconds)",
+   "query_id": "c3f34e98d762d2310212840dac43dce8d5b7b4a609dc7ee35a3b56f3515113c0",
+   "question_sha256": "fb9bf69476a803384b60b27c77ed131529b04a1fca5fa224061764b84078cc2a",
+   "source_ids": [
+    "0d404c2d7f1a7ad1f38357c08f72395274d798fab11a55b766fb4171f29d1ac7",
+    "0d8803cd8aca3f9226dc616496d74969333c44a32e147f9f4d8902168bceb863",
+    "0f656206eba79767e990b7ab76d7e22394d9b23df733db25adb8ec2a6771bc49",
+    "1220304f730cd84b5cb3cca584995019d7768df2058f85ff80d90b340d28f5e9",
+    "1f87a09e6a0c6433caa957123ca7dfb0e6cc3e33ba0242dffccc9ec07a326e6e",
+    "261e1fac762c14bdc802c98a794713c8a5f8760ba78a8b16d01c5d0085544ec3",
+    "2806aa8dab32deab9145c4a907a50aa302e42bded9b0d083878adf70ebca65b3",
+    "2c6dbdc3993461e67f868ba8c56eaeaae934deee6d9badded0c52aa5142f3d75",
+    "306416882b70aead1b1566a62926161c8488f4e0a429627c7f079726b97c20c7",
+    "4ed4462d36c9547ca863c0fc9168306c104a2ae2e0705f9221c1446a857eb8e7",
+    "4f04ae8a50ac623e17fd8d4a57ba99601860b22f306c40141e06764549a45978",
+    "5aeb5aac3a21ed1aadd634a73e530e586aaaf7ea6fd43cdb3ca8b31c47b374f5",
+    "641844807ac6f5ba45dbdd3eaf7d5b8c0dc72dc50a43171f2677a2c726aa90e9",
+    "72398cd2f404ac82497993a0fe046e15db22c1b6a333f333dc5aec6f7d8894d0",
+    "8a80ba3c40d2898616431e560c13b61541ab3f43c1d57edc10addf17f0284b17",
+    "9be56db4c30c1543e5cf12613f6775505ef509041d316fc65619604905377874",
+    "9c1ae1ff1634d48dc391f6aaaf9c891665166494c57e61058716d1c4e978e5f7",
+    "9d6c55124e2db77d98f0201cae34742a35aad6c63d853c82aff9a07cf9004c5a",
+    "9ecbaade27e49b98048ee7d038c8ceb85a8696625727f242b5604a97ab485cc0",
+    "abb105825f4e08f40d5c16709f1b4b75e01dcb752aaafd5312d4249d1e648c21",
+    "ae0de81cd64c34ceccf2c916d16ace2a73f593f654bc8b9e388de1c8cebdc47c",
+    "ca58b59a13182b0ebd37aa49c01a4452614f2f1cf7aa602bc099dd011c7f7fbd",
+    "cd7d883e2d07d47480ca06e49d82b479a0352efcc1c53ee78affbcd47b367da1",
+    "e0f13eb2545047ca524607644db21c5fbf8822527e1a9a576d81a8daafb3a4f3",
+    "fdf9b0c24cc693bb76669d3fdc07ba6f601175f5dd31f310e5f5a78ff06569d9",
+    "ffd058708771bbc749a60dc70b2337e02c31995d13db0f37555e813831afdbfa"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_scheduled_sleep_ns:None:1",
+    "retry_scheduled_sleep_ns:unbound_record:1"
+   ]
+  },
+  "HR-003": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "2400c60aa6dee01267d71585acb79672feb06d5c1d066dcaa98b90cc44e0d3b7",
+   "question_sha256": "302df849204b0170acbde4afcc34eb3a864b3a13c1f0ab95319c78f92e1712d1",
+   "source_ids": [
+    "f3a0fc3b6b56905540f12c63128efaeb0d3c319e7ddba941cfe22272005cb718"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_sleep_calls:unbound_record:0"
+   ]
+  },
+  "HR-004": {
+   "label": "udp_sent_datagrams",
+   "proposed_label": "udp_sent_datagrams (datagrams)",
+   "query_id": "5c6e717e2403c32bfdec8a475ede4857d4bb68ccd289dec4c1abc45ac66ea817",
+   "question_sha256": "942d0370c5999a77773b64e9c54e93bf5cb5cc4ba50e5671e78049f2629964a9",
+   "source_ids": [
+    "086883df48fe994c7ec281743b7fcd615cf80ec1c616b6f2bcc1f94656f8df87",
+    "17fbdd11c6ec11ad624ccb313492c2be0f036e07b72778ca26a9419301e38cb9",
+    "42f4d20154a5e0858c3425067827405b172f08c070854dbd366b35b44f1bf78c",
+    "50755ab633d8e2e525052fcad83ed1b4aaac2ed832f04805da09245666ba5a23",
+    "5173271a468b9fa28e6fcb4def6cf180767cc916b00736e175f0ea6b55bb399a",
+    "5786e485319a367157396f36548a19cb79ad0657f02a8eb55534cbcdf05317d5",
+    "600bc9058901831f6d5d9546bb8097e4845911d348297174221e1282cdfbd576",
+    "6563e26bb00afe89f8588d89f01e9799d6026fb4a75d7f67f1333ce4ef9adb2b",
+    "73f7aabb24a580404421e46ac567e569508efa550eb38e75ae3e274d0dc53500",
+    "a7424fbd31a6f72915a34ba23f8e655d9867256d1883beb5aedfd1b73dfb2883",
+    "c806f328a4b49d5a487a0352b98fca8e3e94ebb650744867d4f02f70f93ade56",
+    "d106ecbd6595f5c1959302465fe4e9f270b4898ee0e7ff3fd038e02a1befde9c"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "udp_sent_datagrams:None:0"
+   ]
+  },
+  "HR-005": {
+   "label": "git_index_edits",
+   "proposed_label": "git_index_edits (paths)",
+   "query_id": "8cf7df25efe9d89fa8fb0b99814cc9519a1986f86527f7601b10b69c9356cfe0",
+   "question_sha256": "7d6b2dfeda4129245820b7c867eb91527ddb2214b1bd997dbbe0265d59d0bb8f",
+   "source_ids": [
+    "06c0d636eff6052d01c0d45e1ba99c56d27b7a9706576b363571f3728f5065ad",
+    "08b52c09d533084e3abae3ce0a40b07a9a5f2180a13bba94c1ad1f9ba09ea1ec",
+    "0e15b1244ba9da73c28f015018167e49186fc6561cbe50c4e228e3b9d4ab149b",
+    "13e5569b7e0b27077ab1cb8539c211ce11b0c44e298a34144b9e42fae988b4e4",
+    "141dd422107c4f060165a2ef789aa56ffde1998117b55c76ee1061d90707608b",
+    "24d905515c07b7031ce7f413d63e8123484e736baab0f8057fd036b8c5f545fa",
+    "412f756cbb6ae0b2a8222b2dac910de89816f0257e29994d1cf8b419b2c5ac06",
+    "4277c5672800754873ecd412cf37a715a7125010a10169d88304d6a6a6336172",
+    "484d5689f8dbdfaea0bc68b778cc365bc4381686de931df74dbdf3306197425a",
+    "53ea2cb2b9607621395e128d41429af8238daaebcc2c6f036647d4f5b25075b2",
+    "6981477704e0e1bb0c937f9efa9bcb19bc1ae75395b013d1de607605bc9b197f",
+    "74df73aa883bc6dce285141c3b292ed18afcc0cd4bed993cbde04483204af11c",
+    "790a9dd8635ca19ee355799d26a75747a60deb71b5c0fb9df5c0075322e3cb2d",
+    "7f2328b576cd004d9b16f1191ff5c2145ead5b9cd61598ec2545ac17639d14fe",
+    "8cd2f301bc463fc1f75cc0932eab33a98d378c076eef7343d2ec10d2772117eb",
+    "91e7ec985fe5ea5743ad63bb97f512645c6d36cea5754b406a59c132da8cb0eb",
+    "950aa3065df88c4c8a07307dd7c7c1908d685df18d0fe032b13d2e7a7ee5e86b",
+    "c2a7a77b44c4cf13be5aec8caa963ae103e75be048161b5bb9fff50317fc1e48",
+    "cf98fbc07ce944cd297187d51ff10e6299f65c58bcfb9e1cf660d643c7f4f6b0",
+    "da04f1abe9e5b87ab55868c967fb39b933203c146503665ee2d8795de9cf92d2",
+    "da9add63b60f4e51e24c85f1e9f1ba8f51621c37e36deaed49747ec349cbeecd",
+    "de9a3460e31da390894065655fa6fa06379d28f9cb07370fe2c959f5e66cb1d6",
+    "f5d4599a129bbc84d4d90762a42b5e1527038a413cc6ced3924362062d29b420",
+    "f94f0a6c84af879d909e865d94dbba9868f32f4ecbfe5738176d05fae9b4484f"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_index_edits:None:1"
+   ]
+  },
+  "HR-006": {
+   "label": "retry_failures",
+   "proposed_label": "retry_failures (calls)",
+   "query_id": "0ee36d01d855c19c145661e7824531b7a3b1820188fb0c0bb98a37cba5d1b6d1",
+   "question_sha256": "26b68907aa9a4043953a5f90a0ab8ad47f30e4d86ab8d21aee7a0aca1097bda2",
+   "source_ids": [
+    "00f1c092aaecb859debc0aa6fb295cf4e1d402db52f9f4cc14eaf918fff3de10",
+    "0aac7ed722944979c1fbc7315df6dc9dfb440c895489aa3e0f0e5a56d6b0810b",
+    "31c352e4d2eb0cc26c43442f5e32f5c5fcec20d4fcb9ed306c86e72f405bb95b",
+    "33b44768d03a1ebf192cbcb88facd8167b9ba851de0789d1fca0843919551571",
+    "4fb33b8abba627aa83139af7674ae3453fb6e71f4b4bee23b2c1cd414601a937",
+    "5437afe7555d5d09d44cb723828e3f402ad8524af2305c434995d50dbeb441bb",
+    "621531f74c9f49bb2e4d0bd02196761ca254ef42ec9de3dbb932d2d106a8f7e3",
+    "7fd56f83c8dc7a46b1d7f79d94406fce906d8056132192f6eb1ff06965f4bb02",
+    "81b4550a6d7106f2c15976bb0f7f0cf2fb17b57fa2966c1a802ea9bf7c4901fc",
+    "8693c21efa6b1784040ad3b1ba57f65892f94e5754b1a4b6a303e021cb239b01",
+    "96ac58b2eba1525c8958860f2fa9796e4959366f30a9a662f50cf43b76df36e0",
+    "a06b3dcbaa71437726db45b0f3ddeccafa944ba2b95fc9a08009975aa29383b7",
+    "a0af961b5d78720579863bee3a13c263951aaa58bdc61edcc0663d6d48536b5f",
+    "a1661999a1ce3ed910720be801ed724c1b248970578deae42963788b4460bd38",
+    "bb161b475d28873f1993b57b7d7469cce5b5779d2d0b9cf6c9f8e5fc26bf413e",
+    "e7cf3072dad981cd993a9d659c16e74c7c03c00339ae9105d7bfbaef0212230c",
+    "e88ebeab61eef57bf72550cc79ec61f96a07160b5f0b7ec3be1f7805d0655821"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_failures:None:1",
+    "retry_failures:unbound_record:1"
+   ]
+  },
+  "HR-007": {
+   "label": "retry_attempts",
+   "proposed_label": "retry_attempts (calls)",
+   "query_id": "b58c53b2cdde0ff96cc40ce2f1236f26320699ef491374cda53fbfe94e473edb",
+   "question_sha256": "6d35ddb71036d7e0f47ee975016aade460c2430505f5820a4d98c10c903aa132",
+   "source_ids": [
+    "4b7b525a32a658d99c8123ba9c48013e7bd2d3dcd4c05592c8872184fd9ca837",
+    "4dc299b5581ad618002e4b90d89c9fd8aa4aa835499b690ac92438f20fc9562d",
+    "9871d8faef1d0ca083f2f03dad03c38d82078cdcb9873b32c7a95d09790d6cdc",
+    "ab2dc2e51da8adf1986680792f32e3033f420c5b1f6a745d1bb0f57734fb82de"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_attempts:None:3"
+   ]
+  },
+  "HR-008": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "56e2bcbd3254698c334150f733687c71af882f8cdf6ba44800160d7ecfae1373",
+   "question_sha256": "c87e5f40f05a046523a2cb851d3608ff0f1163be71b306229438819a46f6b068",
+   "source_ids": [
+    "4be427226e0f98844517074ea4e08d5c41a91a1a887de163b500e80b98381110",
+    "6a06ee797eaa675685d9fdc53891ddd36fb9a7cb5872c1e18f198b39dcd88cf7",
+    "9549ce77c48257a63ba5223fa783c5d7151a131be5ab4616809d1c720b8ba94f",
+    "fba6fba901d7faebbfbc5ebdc864ba64f8dd2f0aed2fb6c5fedefcf0f287aaae"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_index_files:derived_or_multifield_goal:1"
+   ]
+  },
+  "HR-009": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "12969e37cd0e8d923d9c79a6fba418eeaf813374f979f4861097b2f350d06027",
+   "question_sha256": "633270efa2b31abdce812982bc0b6d3bdcc298f13a65edffbb187549af65b045",
+   "source_ids": [
+    "4e12efc2c36417705d3d516b9578f9d2cefdf702b361fde846a25e748081ad9d",
+    "6b5a8199e2face6eeff9267b82aeefa1c0b607589a7fa31ffd3f251a5d664f3f",
+    "9f621957a811d0b9c91c58a8839d9dde4c44340352ef36ad8affde5995066ae3",
+    "aec81c90da61c5d053d4265180fcf3abf79085eafb6fa2f04699c9b6847343c1",
+    "dedb4b3e4deb539638e0209e806dcdfade6cadaf02ae4957bcbbb0d69219989a",
+    "e70e776c25394c4ef25e9a0d11ebdd2e7985facaf45c66e650e4696475238a1f",
+    "eaf87f5d34d7dabe189f03492c805786936421691c6a599511c15b1915eff182",
+    "efca16d6373d987a631ed9933b0f78e1a4fd9a5cfbf812efdd1d0fd5be08f2ca",
+    "f60b7532449529c1822eb26ee604c082e92c90dac250aac5a7d11cdf95721970"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_fs_bytes:broader_usefulness_goal:0"
+   ]
+  },
+  "HR-010": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "74f8d0bc1fb2dae4d99f5c5a3b096698aaac55f3960394733c0616557025df31",
+   "question_sha256": "196f5a91767047d48973f3ead1b9231d0e11bf1a4ed18e3c0699bbdaa939d2ad",
+   "source_ids": [
+    "02267d9932e209a627eada9bc9bb9887f6463c5a3e531a277d944636f822e3fc",
+    "0ab69dbcd84f9bc75a4f1556e145c81ef4fa94134c103c727e306f9cd662e70a",
+    "10863f65edef87f3a79056fd5a6dc1ba0f594eba247beef3d918fc2f19cd1964",
+    "245abe926e58b45d084abad8de59de8373708decc0b0cd8dbb5ac2a9463ffb32",
+    "3a7c44f44c134ee511bc65e46b6f81ee1c4442632a07bdcaed10828ecb108956",
+    "91b364f60a7dad7902da7feab268d392b9f3fcfe45aa803235d4d018d2378e03",
+    "950892b24e8110c21b04035adbef965c43a46b8f0ac51478128fc506f4238fe2",
+    "affee5bda05f83e2fb09b08b4b00fe35042d94a8e4ff5ca679192e4bea0c73d0",
+    "bdd78559537b0fc6a1a91ca11df756a00691097efba4409ac0fd5a2bbf0108be",
+    "cef4c1ea688f178a8e3ff674a9d247e7a80339356784045c69d2563e3ab0455a",
+    "ffb1d2a20cc4afcdce5779711e92c96b002d3b72fcbccc39c364e92bfe050b7a"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_files:derived_or_multifield_goal:1"
+   ]
+  },
+  "HR-011": {
+   "label": "retry_actual_sleep_ns",
+   "proposed_label": "retry_actual_sleep_ns (nanoseconds)",
+   "query_id": "dc51761e5977ae76e41dc6490a84eec2648500dac11fd9442a32cb0432fa7f9c",
+   "question_sha256": "d7ebc4fdf223d171fa0302c9e367052de25b470ac987dd81349bc5f0f387c9ba",
+   "source_ids": [
+    "03eb320b18e89480d0dc7484af6eda9c53b03ef86f8b189df39a39212b867959",
+    "4c2c2b5e7b55b9dab6128365987092e69c8b61d302f53568ae5e691f2489a1a0",
+    "4c63bb4f0a263865886b4c762173d38d0dadf555bac908261d8f3fafacd03e1a",
+    "8d2a1b774b617e4ddf943b980000cd6bfa337fab5400114fda91249ff6842b51",
+    "b1fbaf4a6727be5eec8b0f71ae71c767c966d66122fc92cdcf7f7072462993f4",
+    "da70fda9f0960c9e7db19d55531f5233674f0b0f0cf8b06f89d585bb02e5e47e",
+    "edc808177da1645f69801b07a9e273252be3fa2dd90b1d7faa328d449f06d6eb",
+    "fa307202d7a36182285bc3d3d831b44b2e67253bb6da9e4cee09f715d45996d8"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_actual_sleep_ns:None:3"
+   ]
+  },
+  "HR-012": {
+   "label": "retry_actual_sleep_ns",
+   "proposed_label": "retry_actual_sleep_ns (nanoseconds)",
+   "query_id": "9f1cd8e6c87358c77966ad4c07d305c06f15bf6e3c0e8db7b388a5bc09688b80",
+   "question_sha256": "31db4cb65c8778c9db614403bc024faa48130ac9ca2e5afb8a8f9230fc4f1bb1",
+   "source_ids": [
+    "03261bcf70aacbac9b2f1e9ed48c1406d8adff45d8e4819287ff10f7845ac245",
+    "1ac513cf9b075200e5eb6349af4d2d675655096f6a48f227d259d3c293103b0f",
+    "44a604d12bb38b731173344d9b46a8950bf5a42349bc150ec465467dc42eb53b",
+    "613fb05e4e8664957cdb8f1ea32edf1dc615f987eb1de003aaf685a368cf7fc9",
+    "69e0428724f160bcb29ca38c8fb9bd376ba1fc9a9a5687b69cc7a5eb0993586b",
+    "7cbc1ff56eca12a5aaba32a75d516efea7edb944e8d730fc4fad8f3aaacc2fdf",
+    "94a28c999cd998156af3fa9f1a2f2917bab6c6b1bc027febfc212f7ef5bf666f",
+    "b9f47a4e6a5c183d0a10dcdc6c00a6cb6c90512f80228ffe53daf609513e1d58",
+    "efb7023ce52258c306c87e68e4059abdb9b5fddb1e161733c6ee03ac0f5758ed",
+    "f8d96f0baa338b0e35fb76e00ad77e1c1e74b617814b59bcd89495ab06329aaf"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_actual_sleep_ns:None:1",
+    "retry_actual_sleep_ns:unbound_record:1"
+   ]
+  },
+  "HR-013": {
+   "label": "retry_failures",
+   "proposed_label": "retry_failures (calls)",
+   "query_id": "e854d501e28fff08d93715fd68773a04c3c109639462e502e1a830ef76b650e6",
+   "question_sha256": "cf16d5138a572d6a3e8f57b7a1262bb1cd4e6bec090af773ebe6eb3a23d54293",
+   "source_ids": [
+    "1e857a13e526ebaa851081dc699fbd33d53f05fb44474aa7349864c7ca01f523",
+    "1fd61ff0bd26ccece3c1af83e848dacc30eb869e38de02567f1ed1f9764df3e4",
+    "3826d3ac76d14af648b29d7e9f2c8c7b550347f4ba0de384da16002768dc5379",
+    "3921907a85bcbef6a51ff0f262e83e8f20cdb98db73f8384ac9987da59f0e629",
+    "483676da5cd48cc55cf821d74cd42700f902c130d865154177a832474c8a64a2",
+    "809ddacf059710607ba806b87e307a52928985270c7a5a5c78703791e86a90ef",
+    "8974339b04d128d78948aab7f942452528aada21761dfc0e5778285f6e353e83",
+    "89e4673a1944997d2689776208915b76e4f3e2fb6dd5f5bc6b7ce55a37fc5153",
+    "9f0febd0d9ff9a87b8574a4ec34f978d788b4835c850c429b4bdddbab3f711ad",
+    "9f5823f3ebb45970e3029ac8704d08844a4acc67fae8da4ca023af87c6dcd73b",
+    "a0233e4d96c795b7a5c7eb854175375e7afb9f5c287b786c6e80d3127d27f11d",
+    "a458165ed2d4186d4a85d746edc10e1b6c5c98349f0aae1a25b150cec2a0a710",
+    "cf394cea8de4d7e13362fb817fcfb68edc4710e6190145aaab17d15a45961101",
+    "d9179b02a57022c1b173eb81192ef0a6f136f92b65ae93962a98f2dcf26bbf5f",
+    "dc790445564890d2b58d540ddd2f7025c401b2b37bee2df51e385ac290755c22",
+    "e00893eb807b854407f92023db14935512ef8a59f0f8526937bbed5f68adfc5c"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_failures:None:0"
+   ]
+  },
+  "HR-014": {
+   "label": "retry_scheduled_sleep_ns",
+   "proposed_label": "retry_scheduled_sleep_ns (nanoseconds)",
+   "query_id": "48f97e7c6f889d1f05a5705ed85063b555e32f1145c1d200866d5e26a98b01e8",
+   "question_sha256": "bc1ee435398e61fd63807cff0cc304a74bd4be32d48c8e394a580686bb44ec8f",
+   "source_ids": [
+    "13c933dcdf9f44b15032982b9eeecae6fb549119436564762a97529aa25e1e1a",
+    "258298492243128c634d0da0c0b3c52f36e3e3c30850ea6c6f8ad2b54c2e931f",
+    "636233da676cea490235cff719d4149129bc29f8838dd42e98d343164a2eb4ef",
+    "69f71a6c77d0195e60840af69b93421cca6247c5a30c7e8624508e1027c0feea"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_scheduled_sleep_ns:None:2"
+   ]
+  },
+  "HR-015": {
+   "label": "retry_failures",
+   "proposed_label": "retry_failures (calls)",
+   "query_id": "7d4ae4c5ee00a5f5ed82b6ae4453406ad8e9a04ba0127af640d04b0994772253",
+   "question_sha256": "b24e3fca96dc04bc888f0fb17e7c95ffaab3021b4afeda1b98112525dec27ac3",
+   "source_ids": [
+    "014132267e86552e6ae604201dd1cd23867d4794b0f5d4f6b059a6ee4521ed31",
+    "18f811ec12f2ab473daf27c07c4883a2a74432a0484a8ca8657da86434611a69",
+    "1b72242c05f21fc109983b963281336f0486a8d337ade4ecdbe22e8bedaa6d92",
+    "2569f8e40635993f25cc9221a8decf56d8d4c70249f6d8a790b8e3e2cd631521",
+    "28af38ddbd7c4c4a41c1ab3e8925f0a9102a464630db395b56f775b342cd6b30",
+    "32e8c3febb9053e7f6bf8a3dce11c8a9e43e50ac531ddd2cb6d12e323b5fe000",
+    "37f9cce0e2d29c144f50917ae9bc99a53608155888567a5bb3a3d1a7032464ea",
+    "402ee7974f2ac9d17b528fc47caf27bb6b15e4a45e259a264e8e448e9c89fd4b",
+    "664e5b9bf5597d1511822e6d0bb47de9eded6674fb6371efd14a886b350d6906",
+    "6d1e4b272b79bc291c0c77607a6509979f56f9f661848f9224c78c195b177d47",
+    "7e20922b5c58cec7bcf61cfc30fc2fd1fd4113bb371a5fc1376295cb49c38513",
+    "8581c6a998b59d7831afa7942ff221e8774efd5328ced3bd416358f6e6e247f9",
+    "9546844e4015bb25b6e2169b7267fc05c9d81405cea0e3f54d398406809bf918",
+    "9a8a5df245677c730b1159db90322d7607b3683eeeb2f4eaece1892e26e18da5",
+    "a2199d188920d2b7f619f8d894732f66a876d20ead9848dde01d8e5b305433cb",
+    "a30f110b81bb91ebe99b6c2f346897713c294901dd46d1e3509dc53ca63e60db",
+    "a49a6a665b3b2c1fe8169af24b49a63d2570392d3ef226ed63dd43e4a2f39eeb",
+    "b2c15b60316ea178b74333e33f29eda3e4097af8a83323b22d28b1ff787ab78b",
+    "b5746b18de20ea9a5de03d5d6643f9339770f1f77a14419cdbf8a2ba427dd229",
+    "c7283d9eab4e3e43d779eb13e37fec3889b58c6f58e459b51b39bc24bd961f1e",
+    "dc34b3eb659df67edd4eb88844005f0ecf363ce5c47e65ddd57415414521e114",
+    "e0ab8a3ecfe3d49fc1fd1a49065a98a01a195afa80e543c5e2703d952e81d3aa",
+    "f14bf370a0b82a041f5e1f1a5eaaac64c07e938ab19c63e2ba6cae32dd3e1e72",
+    "f9e6b6ec6534041df34358066ea7fefefddb928b3fae036bd5e0561a1b0fcf2e"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_failures:None:1"
+   ]
+  },
+  "HR-016": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "0d017f11c4331381f62d516899e8d6a323042a9769ccb9b8d590b030fa4e202b",
+   "question_sha256": "72c137b24515d9e1d7a81567a661db15620b451b7db1c27113e189ca1556dc4f",
+   "source_ids": [
+    "3ff22e8eb8139c9c6079f790b493075a8e84d06b5b2af770822965ba893efd59",
+    "74b547927e6bb561ddccc44dd7ddbafbe3de30af8e4fdccebc4ce92c82e8d38b",
+    "aeed2af74f019ae10582db07e8a6a57b521dd746a6736b2b37b743db336877fd",
+    "d5bba8506bdeb3f0b695b73f644ef276ebaea3f48caa533c7d6d420b910a9435"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_attempts:diagnosis_goal:1"
+   ]
+  },
+  "HR-017": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "5cb75f4b99ad2de45d84e7258fd23d20cc40031e8739c620a4c1144137af3d68",
+   "question_sha256": "0793db38b0cb3e6a2c48f7a0bbfdd83d2517d1d240cd55aef8ee843670a37b17",
+   "source_ids": [
+    "05bca4d7d686cc45eec9b938c3a869ab2a11bc6cd0655c6d41c93728df808e78",
+    "1376afd4bee32ad7dec7ee3b3c63339782b821e94ec715ba781144bd11510f0f",
+    "21a797d2b49ef990cb6ba7ad88e1c75c41c4086889f6e6f5f61f30ad406f5fa9",
+    "21dd7ef09054d9d7e3df9b030bd555ff2e230754530acfc86848f3abdf3e0561",
+    "49764b3d52a0eb05f02e69964032cf02502fc43aceae3880da51061e3af095f7"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_sent_datagrams:diagnosis_goal:1"
+   ]
+  },
+  "HR-018": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "fc823712ec7bdeaf68599f844c0e4053d31ed33b4dfdb0cf7753213eec799728",
+   "question_sha256": "93df44664e7bc39dd4b3560d07a969fdef7fd8393b067459d9f2be70e86e377e",
+   "source_ids": [
+    "2623120214404477e2f7552dea42f376b20a91143ba65a4f7ccd557a601e7edf",
+    "3551b7e1e9fee8e55ec43584fce139b082f9da4b3afa286b8b930e74c66bf746",
+    "4bf53f9942c88b8a6a1bc387adb6a692bdb0151792b374ee2d59f25d2bb6f9a7",
+    "9107b88befe3b54d59ce2a2d027cab61e34ac9d830d54aa847d8a6463b9c941b",
+    "b27f7270b5ed82896827dde5b8d8096e63722439d7a8ae8877a1a84fee0961aa",
+    "e77d401416ab752ac681f8fe2f910d98852a0f2093522aab6c40595f2f75a1bd"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_received_payload_bytes:derived_or_multifield_goal:2"
+   ]
+  },
+  "HR-019": {
+   "label": "retry_attempts",
+   "proposed_label": "retry_attempts (calls)",
+   "query_id": "0f04972aa36c1319f20697631a490f5b6482340683a839ca525e2fb6c1ca040e",
+   "question_sha256": "1c0497b6fc69e9fa4b9a52277f4e16cece8d274f36eab9a85d0b6530a19ea7a8",
+   "source_ids": [
+    "024da79a2800c7c9b983bc072d27d1c054b269edad5ff2fbcba09b3407d24419",
+    "5440d635a2ba82c88375709190458e0b9a5b57466afe3c3ab97e4d1ddbb072a3",
+    "71d659e9c42299a13e7647e8bdd2d82ccfb0e696bb8497e87413514444271075",
+    "9843c0d3b8c0769ee6e6a419cc4efc0f4ef378eceaebef3522378150112c600d",
+    "9cd8dd85c2a27648eefad52063fbfeab0ac57bd87ee1de3eb2b79b164137a656",
+    "9f16939f737226a98d870960cca8816d842f66a222895b291853b8d9b8597ca7",
+    "a9b1e74b24960325accf232dd2c586f0948114956d98711ce5f1e9355ece9527",
+    "c92a5060e4895e4580d50a0cf3702fa657de0c1bf75db88af2463f5cd33a2ed6",
+    "d0dfde4d1d058f5fb1901b998432e3a014d5e60893638f9773aa1a978b7c71c4",
+    "d1695a247f4baf32c98addc81540acef8859b257e4eee31042f220d285ebfcc1",
+    "f6fc0094daa7db4158f9475312e47ed492821ac9fc4b817d29d8c3c83e8e441d",
+    "f98e0852df8d00e8dd5ecc3f054ee7fb7ed59d3098dc7e5f175debad17c1d895",
+    "fde400d2eb3d4d8e8b7bacfe9c7620f9312569e7330292dbb4f20b5c377dce6b"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_attempts:None:3",
+    "retry_attempts:unbound_record:3"
+   ]
+  },
+  "HR-020": {
+   "label": "git_worktree_edits",
+   "proposed_label": "git_worktree_edits (paths)",
+   "query_id": "59ebe54390617dd8758c1393922dc3ea9ea6dc9994f4c193468490c2b7018fbf",
+   "question_sha256": "3ae7d9b87b89893daa57ddedc4f1331fee2ae95b95124fe13b6d0601da942579",
+   "source_ids": [
+    "002c916f889dc0e5407afd33efe68ce6358c7fe1460ff71983aaa5802ded74da",
+    "051816ffd6c74c678066f6a4b803997f0ff8c077a46ea5075d234ec75f52a4d2",
+    "089307d61d8a469c08be7e56dcd25eea6b0bbcb57d8528a31361d3da5dc252b6",
+    "094780cb5d7e1f33e9fefffbcca22155c3ddd45c9b2a2f4f09b08bc244c2c364",
+    "126225eef30c6160495ba65b15f2d396804fdfc402cc6ea42a30bc613b1df4b7",
+    "1687927dc27bb6d6b1e02d61c3d53fce9cd390d3c9a19d2d14cfadd538f5e42c",
+    "1c5114225a28605f6031799b8b14f4cd6d33ab16abd3fb0a15088c26f009f9d4",
+    "220b6527692e2579daa3c53e261085549b11d51ddeca96d1fab021e828c67a12",
+    "31ed986dc7498afb873480f742d8d739ef125a9adab6880c09b2a91ee23b390a",
+    "351edb165faed4ee183755f52897ffde778f6079fc60ebcb6aa76a12564f186a",
+    "4f0cc6eb08d812aa2e11291d528540bd5184e518bf06957f83eca3c1169ef605",
+    "5995d3b42939b5c34d84423aad225f4ea359f1fb7da269a45fc9e41a5e47b460",
+    "7b42882914700c046a1917f87410e3d256e3df50b5e185bb03a9f241bdb8461d",
+    "842b73c485817f874b170335677a6d20e3faa3b5bb8fa5c784a590aa4eac7f1c",
+    "89306dba29fc2fb5461c810c08d99c0378449236345ab4b962ec79c3f8519ba2",
+    "af4629172f8684ae94df430da7d458d219e60c2d6024d33f733d392646094b0c",
+    "cf67aa7227c3039d71670032637247ab24c6f8aa007a11066be005b69d1e12a1",
+    "ed71abf418a2dfafb830861cd2d67439dc2a24131ef7c9d63edf65b415e7300d",
+    "f01c55a87aaa75ce3eb5ca5495e20693c0d3dafaf3e6ca05b97f847e10a3cedc",
+    "f34f44571b1c02a4e3109a4a6b700513f0db1d2af5283c9b31a4479a306c6390"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_worktree_edits:None:2"
+   ]
+  },
+  "HR-021": {
+   "label": "udp_sent_payload_bytes",
+   "proposed_label": "udp_sent_payload_bytes (bytes)",
+   "query_id": "83a8677b70c803b9312f62f3f06dbb23e3307bbc6f0482115153dec521af0dc8",
+   "question_sha256": "60466a95e0b7e9b091a43a3b563a2c3cd5878f93a27f68aaff57c4d84cd6b731",
+   "source_ids": [
+    "00b5eb13a1761b6fb3ac95ed52292b244a622da737a04aaf70ce9437d286dd87",
+    "05160eb3993b768a8e6b3ea2e77e9d9f8d6c89073a76dcc793dfd1a78637aa06",
+    "17517690bac54d93de2389affbbdcc9c9df5298604712355f548f1db312cfcdf",
+    "23114d051e33fa2263fadbcc67bbeba8413e301ff6b8e936a8176e3f10def29e",
+    "28bb39ca0d6c230fcd6f663c0214b8d34f2c72d2fd7b4ed4430a4fd6a00099d2",
+    "31bbdf42e184aa9cc8d38fdc82738e2b37db48b738b3ed84457e0a59496c095f",
+    "474b599c3cb57685eb35335779ab6031022beb0752c2af58145a2af273cb788f",
+    "4bf3eaa1653f47680a59a18ccc0aee860dbc5804a526afeed7e3dd560a35b773",
+    "4cee25aa5c93c622732a2cc941e7c6ba57640eea1386a75fa7e97ae07a7bff41",
+    "5d20eed04a6bb253cc3b26317b480bced484b5d32c2922b4e57fd5cf111bc899",
+    "5f65fe2c2f95be150a2561b44a233413006a3610b27b24219e9c735db7a8d21f",
+    "6dd0adc0ede15c696a93e5daa0cffbb69f2d1be28db091dd0055c55894de5ddd",
+    "8575e91ea99f0cb7ebcef86a152ae9f567fffc1e50055fca35ec11d847324ae8",
+    "962a57714c86868160a7328195ced0915ae0432eb6bffd902e0711d8ac0baad2",
+    "9d7b3348bc1bb8d0aab9a7f3fa704646cfb76b811627628576dcbecbfa98f888",
+    "a5476200e36624062377ebdf329f549e83a90aeca1886604e20b9da67d3a090f",
+    "a90528b92e36868715b16b8bdccbd392e0aa04f5a9f8423793df8e34a7d47642",
+    "b0197e8dd6f202ee9fc7135474b1a62a9908226a05967c3471dbb03eead15756",
+    "bbbb3f1d9337b14aea8f9d0924d6fd2c1ffeff24648e217eac772c262c5d324d",
+    "c58fb5cc16dafa281c04a5733a23831b9fb6833097f902ed3abfaf635a2e726e",
+    "cd309e5e07039d2c57dae5387f9ae7755c0f6935d13754c4e2a4453c96954ea4",
+    "db1e08a928826ffda6c0887bf690c1165e389b25ec93bf4728fa081adf995bc1",
+    "e03d42cd8a5cb6d04e1f1e4e692ef2b26fd70de0a895e21b1a70a93913d93216",
+    "e0b7dfbe71c749bb47f7dc05f5ab85b8082ba240b5b121e94cbb60b87dc163ac",
+    "e61e780c9c1cb793a6b8f82ead836dcf282be9afc41efc80f940dc30bba63388",
+    "ea7aa8fcfc8317239755b816422639340a9158cb906c1a57369fd044747b4677",
+    "f4b6019eeb62d147244280e4dbad35fa63e07316356f64997cee1f9ff2c15387",
+    "f9066c8d2cf4d68d460741ab4af7d192e422cf327b55496b18412a91cade34a8"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "udp_sent_payload_bytes:None:3"
+   ]
+  },
+  "HR-022": {
+   "label": "git_worktree_edits",
+   "proposed_label": "git_worktree_edits (paths)",
+   "query_id": "922762bbfaba78c5bd491ae035a81dd97eb0d6f59b582a1c32fdc48a245da387",
+   "question_sha256": "de702082a7a6ad0dd98ba69bb169e030d838cfc52fd9e8fd5f0f8eca49405db0",
+   "source_ids": [
+    "24c795c49fdae7a52a6495dcec67e7980aace244cae1a5ae3f22200582fdec06",
+    "378a7deaa1ee7d1f311d385136bc5a1998d8b4d5d06c18467a81b7e21890de28",
+    "424bf58ba2dc6ed6f80b447458417eb58fbeb8077e8adfecbed3a1cddf42b6aa",
+    "5b665abc582bf5cd0fdc7bce34cef0a317957576aff30a0de4a145a4bd39ad48",
+    "5be7d4658693789ab628d3a80d95708636f83c7fb39e22276f360dd1f138e1ed",
+    "6bb0f8e552b05384ddf01e93fa1571f80b3e5e84c543f08df23db812439da8bc",
+    "75822757f60f6cf5741ae01caf252f6b9e722baa42a3f5c15a72fc2782496080",
+    "7fababbfeb4d6d687fdf6b16c81b1829baabb0cae89115c1f7091fef6909f4e9",
+    "b3b7a00c5f00ec33eaa30b27b70b83e22a9a60a884bb410fb7bb6af28cff2a16",
+    "bdcec48640cac2b4bebeddecfb411a374e93575144b65ca2e1b6ed4f144a86f5",
+    "d2af43623999d56db3de2509a1e091b882dc0dbfddbd889781f0565cd7a744aa",
+    "d2c55ade31b3af3b3c7c13ade5a5f537d95acd0ae5a8616ef16bb1de95d09a6e",
+    "d574be318c90a9af9d4574489ee1a3084f599a26a70e5d98944f7047c0acf2bc",
+    "e0816b29435f61887757a205dc77a78d72e112b794fa551cabb430c5537dcf41",
+    "e3a9e3a653ac71439812aa7c51ef4dc1d9b75eba0822c8e8d31affef12b1f8bb",
+    "ef789367e432d5fbef1d479a89f62292091c24f215a028f79105e6473c4892cf"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_worktree_edits:None:3"
+   ]
+  },
+  "HR-023": {
+   "label": "git_index_edits",
+   "proposed_label": "git_index_edits (paths)",
+   "query_id": "274f053bbf0689dd316f472be77c71cd076338c5bf641a6274c13c2f69c624ad",
+   "question_sha256": "a7377c1aee582007ad9de2f08c2f0517dff62df9b82cf67cff67e12c17ac016f",
+   "source_ids": [
+    "15b1f1e477048de511180b56cae230cde72bbd521c9a4bec407ea3bfa5fe08d0",
+    "541ace5d1cf45940b738ebbf40d653bf62a9b81b03bb75a7e092fc414975511e",
+    "86344ba026d84f25055fc8479453221569f84d26688d8d0a07cda9b16cd07aeb",
+    "b069ec12d3df1576487e68fd2dfc0d576264e3fa8757001fcd1ecff40eff98e4"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_index_edits:None:3"
+   ]
+  },
+  "HR-024": {
+   "label": "retry_attempts",
+   "proposed_label": "retry_attempts (calls)",
+   "query_id": "89364e243db51033df9cee5a94cd0b0146fdc4ee180df5852d9c95f943dfebbe",
+   "question_sha256": "f4c94b2a9e216a8ad6d0adc8f4e3fef2e771d8ea5c8b750a1c29aea3e11238aa",
+   "source_ids": [
+    "236ec08d1ae4fd5629aa0d8571835114c47144b49f0f410c0ed8db2964b5497e",
+    "2a03d21dcfac873170c42cdfbfd8d8360fdabe2efd3df1ba8f2a49ded44f81c7",
+    "2d13e9f97585e126f634b8bf309c25fc18bd4ffebbb83db005b7e04a3f407197",
+    "5ab8916c657366919433a75669ced6d5c27c4a27c5b7b6f1c1203c9d6f35789e",
+    "693ac0416adbeaff25c4610b96489834518cd946c2ab4d77a018278ed618c1fd",
+    "a25d17cca2a7a5c3824887b1bddf29be5246c46944504ea5592dedc82664c5ce",
+    "c2a23de8bd882c3268119f5164f80b996061439a310917e116151f4bc0338845",
+    "caa0098030e2c96a93efd7fb5a61aad3fca0dab175c1faf30bbb58249f8ad2b0"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_attempts:None:1"
+   ]
+  },
+  "HR-025": {
+   "label": "git_index_edits",
+   "proposed_label": "git_index_edits (paths)",
+   "query_id": "c17789068ef513fb1065023f0fe3b4f56ff906fb14d84309e416025d4818e8be",
+   "question_sha256": "bd56f792dc2f2265f17d9ab3545626aac4f9d4431a08382a37707413370ce802",
+   "source_ids": [
+    "3351929b2ab8c1c49c23d7e97399884f2075e0de3b42943437ca366af166b7d2",
+    "38b5b9e621c78bf7b9d7a6291bf5d133042aecefad77511129c528c83bae78f3",
+    "431fcfbe507b594950d10d684f992aca8650fc3daf14143712654313eec2d4bc",
+    "55f35e36d43722d03f65d4809a4c39e40790162a0ef0c22b8336332f153f7ef1",
+    "5ec22248f68bba916f40f1b533a515466e9b2251de6c4331942c7f2c7129b743",
+    "6edb6169b850868b86221530e9bcafeb21412ee562a5c2a4d4e6aef7b1f22924",
+    "6f447a21eb52555ed22fe1d958331cd61480763f7bcfa7d8793d96ae80cffa19",
+    "70c10c610ac614dfc23017d9d6fbed4dbc4f0dfc8eeaccf6674fb58afb7dd0d2",
+    "7cfca7e8d479ff7e958f13bfa262f7772742ca3af4e9e047acee734b288bdd8b",
+    "88b53775222e4a970e5646e682d0b9348c85416298e6dd6b9f8ffbb631e2d1b1",
+    "9ff0b3971c17e7c611d23f4af105ec7fc267257ffba90ea532fb32ae5154a1ad",
+    "a95ffc784a0a3c752866d4e87ac81dad0ad6bd5f6c0cb2421dcc9fa2e974e775",
+    "be966c179a9db7f04ecb5009a581becca995c9fa998f9e9c4ab39e3b81a86551",
+    "e09a91897ca0b3d199af8444c8d7cf930d37c8c6b0ac3147f0b1c063dbe60982",
+    "e765f1e8282dd73650524d337a0653fd9a92bd7ba9344605bd3499fbc717a98e",
+    "ef12a97374eed6b370f12c9ec1fe0c729132f32a3577d36583a6fd49f4087bcf"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_index_edits:None:0"
+   ]
+  },
+  "HR-026": {
+   "label": "udp_sent_datagrams",
+   "proposed_label": "udp_sent_datagrams (datagrams)",
+   "query_id": "7324242199d1cd87832b94706273fc6a04ce9def86b18e7f0425068ee5aa3ddd",
+   "question_sha256": "a73b7a19632e51c862afbfc3eaa3957b94fc73c3664dbe0fdce6e6f5951ae962",
+   "source_ids": [
+    "123a58896b8c42800ca227133bf91c96f4bc297dc443aabf13d83a0afd109fc4",
+    "28a324db7fcd65d7970ad4680a10d4a5518a7bd8c0402525f4ee2699c1aac065",
+    "398195e70e65b4cad582b7d9aa09bccdf246898dd2f99fb8510f1c4d0bdc0992",
+    "3c33d5d05da64b84118084360fae2cd3bf275b654ae9358233dc9be752f9631d",
+    "62ca85a72cac427f4421ef9fa21bc5d1cd79768673d9e27232fcbbf3d01a23e1",
+    "64f69b5ddc3753f0829789f944a23292ce7adc7cfadf529187587e4017b5bd98",
+    "9d94564224c809864b7405584db1a7d1bf0d46c64bc312c296f2e66f3efe05e0",
+    "b4ecb26bfd66bd8b5f6297faedc831641b98b8d84ec6df5b4f669f46074665a4",
+    "dee06d5514daf55ead916afb29467a71c4a4935bd227548c6b1ec0be565a1374",
+    "ed4d83a787905e705f01f7819a17511d4726afe7e0d1f1dc517eb750224f6d94",
+    "faea56a1218249da7582438737a69ee1563b064dc42fe70dc5d5e40ef0f341ea",
+    "fbf28cdad114ac017ec87a31c87772304c4fe467fd54e7e44a10f0f821b499be"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "udp_sent_datagrams:None:3"
+   ]
+  },
+  "HR-027": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "8fb404e6027c3f09af3ee5b9c0409b93f800b6a82c7443062fe32df4bebbde44",
+   "question_sha256": "8aa5bb4b9c9fea8c5f18396c64cb860be7005569072f109260d4205772b20164",
+   "source_ids": [
+    "31ab3ab02d044fbffdbcac67dfd2e76f413986bab0d73e289600e707d0ef0c59",
+    "742a7e66f33ab16e6fe3d111581a1ed6187f4e9cf5c7fb6d0c04645c2f54d1fb",
+    "8ec9f40676fd1c26afdcaad905e32245d88d7a2465a7c054cdf4cfb34a47141d",
+    "946f6b4d9c534ca5f75f4afaa9ecf647e405796cad56dbe3a03a5e16b2a1ce27",
+    "b4f88a2afa23e58260bd8464adceaba3976dc796140f62d592b9e7199b9a2748"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_failures:broader_usefulness_goal:3"
+   ]
+  },
+  "HR-028": {
+   "label": "udp_sent_datagrams",
+   "proposed_label": "udp_sent_datagrams (datagrams)",
+   "query_id": "c8de1f60ff2061429a9e5cebe0cd544032b61d69282725403a6469fc6ea58c1c",
+   "question_sha256": "578f7778528e95367f1ca0c125c3433eacbaf55755ab26a75288ad5e504dd598",
+   "source_ids": [
+    "3c97df290aad98054d73e565b87d558ec137b4c0d7d102efcd926d9f2a13a496",
+    "46993b3fe42a0e11ea7de27e93b344143e286a6b8a4d5f6274b80656ef8e6a55",
+    "688c40e3d7bdf3044e200f94b1e155c7822d7881a2d256b8df39b40296516b34",
+    "6e15a1248d6d9d368871ae5148c98cd925c126d23637706d4f598f9b6dcad29f",
+    "7aff2ce8a85fd49a12417a52dbf1fc54f5b0d85a0cf85644ef3c74b8038a51b8",
+    "c43a25e5e25e5bc5db1a690880fc869144d236e499fae057a944d78f439d385e",
+    "d784a00b3d51c6d280992d19c2216b5fb8575dfb71b9f031a3ddc30c329a183f",
+    "eea0df9e5b92462ba8fcfb35df19253469b5e8bb870491c54beab3eaaff2551e",
+    "f350c2ee136e6e85360c360e34c2fd8f3ab3bba4691f1bac46a474672021ee1d"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "udp_sent_datagrams:None:1",
+    "udp_sent_datagrams:unbound_record:1"
+   ]
+  },
+  "HR-029": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "8f6b4371c76837ca4767aa640ef146f197adc863abb21aebf2c0fc3ee044c5f3",
+   "question_sha256": "5d55d7662dda27e0750d8ac0b8349c2e025dd987e3c3fb4c9b3c1438c8513253",
+   "source_ids": [
+    "1de315baceb28f4047719bf7d6183ca56654debdd5eca2c1815b209c5ec0686f",
+    "3a5b94c35b0fa909f56cf533b08803b802316e94ca02224e81092d1415371d37",
+    "5cac60619d5939e35e7d635e09ec9d967a2a946426fda7ea65f54e85f6150b60",
+    "5da2c933d0020e2c104ccd5d32beba0eec1cfc76853aa3ff61a5d4b5eb341506",
+    "a130fd1eccf5a1df082c47af09dc8859b888ba61ea912f71fde8a5cfa6f79175",
+    "ad55b52d251c82a3e4df5832fd477bc6b157b436b9aae37d6d6729f61198c028",
+    "ef3a910bf20ccd935c8d7a952f8502f2ce8bf79ad4095df09fb8524a65ab6bb0"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_attempts:broader_usefulness_goal:2"
+   ]
+  },
+  "HR-030": {
+   "label": "udp_sent_payload_bytes",
+   "proposed_label": "udp_sent_payload_bytes (bytes)",
+   "query_id": "8436be506c00be7e5cbe79651c7b9a90cbb6611caafdb8a597595cdedce02157",
+   "question_sha256": "e40cefbaf5afdc033e83c9ffd96c09c3e43143312011d2299f786b7e87ff2566",
+   "source_ids": [
+    "25b1e8c6ba8facb13af4412161171605369992a581aeb5a3454b24f5ab9a3405",
+    "3a4ab3ca130cd3acf263e9e809b5c0e0f88ffd3baca9fa47cdc1b608f8e9b75f",
+    "435494d8d764865d7d9f88675ea557d99d3bb99f0f62b24b4b6f8545ffb54490",
+    "897fb814706c90d3b5f0d6472aff88cf4889169d3b53c5db13009fd68991c398",
+    "9253807699b78240014c1f5f395512b5008ecd20779793b54d137c7ff466d6f4",
+    "93a9928e7a4d4a641527d7bbb21ededa12fe78089fc28ccdef28b72894b598ed",
+    "cbc3d256e7fb50b141d056102c70031364608dee934d0269f404d3ed895b62ed",
+    "dcaec561ad804afb16e2bdeadec18b2c28fec062603adf41db00c12e2c18299f"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "udp_sent_payload_bytes:None:1"
+   ]
+  },
+  "HR-031": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "86852745cdd34dd68e3860f41d7d5fe9c1edadc93bafbcde0784c31ed2b66a9b",
+   "question_sha256": "da52c4ac861bf1a9b2403da1c82f7488f41a9344a0e63e47918ac528310de9e2",
+   "source_ids": [
+    "13ff2d1f844aadc638edac1c53e3f21e9f84169920fade6987171b9040aeca06",
+    "4078adee7df579fa77f64c24d42c8a6a6f2e3153ee3f0c7c0af93086db5d052e",
+    "74dc24f5cfd1117a431b557b1332c20da7b632971b522cc30ab86309f62dfb82",
+    "7f391bba5b707c6ed36b982f6e0fcc135502ca6d4dd6872ab76a53035dfe20b7",
+    "833f0b7514b91ff833f52d5eb258bba71782ce4d9afa1f9ebf9fc4072bead1e5",
+    "b940fb3fbcd7f7d3c03e0e4c285d60ec7176c16ba46ea9acf9e7c2b975b70668",
+    "c7e2ce065641600694190392c1fed800b9066c78a219ec40c8f218d595734767",
+    "d89dc308714fbaf4f7bc4a5b63259986c1b544a6dc0bb3f04b89e8ae892c6dad",
+    "fc6edc69bf9ad6b37b1b9a2e151b9f0c123b6bccb6d61bbf87584788fa6beab5"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_tracked_fs_bytes:diagnosis_goal:2"
+   ]
+  },
+  "HR-032": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "8ce319a0b9110e0a66d7543e955b2b950f76a79cac1b29d476060260f7aba2f4",
+   "question_sha256": "a51c4b1a6ebcafdf2fb58950437d66b050f8602d5e4286c7327d9835396d19eb",
+   "source_ids": [
+    "0c456e056d0c2ddff4ffd673e64feebb3aed4d677d4c7dbb060f52611efaa534",
+    "91fce6a632776fa504fd9e044e4010f3475b4b3fb819040ea3b89217056cf8a7",
+    "f4c5e19c8f12895a4e389131cf94ea38d6794c3d7bf27dc7a164b25a40b89811"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_received_payload_bytes:derived_or_multifield_goal:3"
+   ]
+  },
+  "HR-033": {
+   "label": "retry_actual_sleep_ns",
+   "proposed_label": "retry_actual_sleep_ns (nanoseconds)",
+   "query_id": "8e6f08781eb629c80fbd2853971d74da01a05d3bc5bc171a307f0aaeae3ff72e",
+   "question_sha256": "dc534e5e32d72fa9246ca58d6214184bb93b1534b23a473e59ed40056cbfc1d4",
+   "source_ids": [
+    "3e82f28b1ff5db46d4192238c8ea3e1772a22fbd08ff9c1bcc0e308ec04dfd9b",
+    "7b29bf5d9d28a3faff3066eddedb473d6ca7d8202037e7de7ecf40d98895bd18",
+    "be11228a23172b0242e09ab4110cb8bb84e58b17be2c7aa60641752b9533ee3f",
+    "d7743e7764a8cd67c0b16abd11d56efd71e6d692400b7e001241c695cff20617"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_actual_sleep_ns:None:2"
+   ]
+  },
+  "HR-034": {
+   "label": "retry_actual_sleep_ns",
+   "proposed_label": "retry_actual_sleep_ns (nanoseconds)",
+   "query_id": "ad63a525d5f69bdde06f89470479cb3dae9bc942fae89ccdd182879956037e49",
+   "question_sha256": "9f7993938722b0efe04b20197e6efee8ad7e4cfe3a57c7843c823c9e1b183df2",
+   "source_ids": [
+    "3860b9cbb17e87524f447d67b321196b70c2b92348b255a1fe4be4a807e51d5d",
+    "68270974b3f47a1c6f2bf704d35c6401ba66256487953707a6c0733354d0cc4a",
+    "68e5ff5de36265a603796199d99119134b6d54d171a7e0f85397b6dc2da53d5b",
+    "79176bf65ea29f3f00f798f0e598e086f3688edec9df2a7927975eca0f2fa5c1",
+    "a6d90dd0fdea690d567cd02848fcd3b067c072adff7ccc1bbc361b943cd7c82b",
+    "bd004e39f35ca62cb89291f60bd03afe18f19d85906c8b49d62b7d272018a58c",
+    "c23ae389fa19d5088ed9c1333083fb0bab456722e6af4b24cd6a18ccd8f70ad8",
+    "c80efaa63f2edb04809ed9d07bb862680fbd70993e20ae9e118b626ad353350b"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_actual_sleep_ns:None:1"
+   ]
+  },
+  "HR-035": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "27718cbc1c27f67982667718cd49679e1658f8199edadc7a6147871054ab722e",
+   "question_sha256": "eb5bac381789be7aa84d15190ec6e9f97f4c596f4dd6b5e95401fcea5e8b2fb9",
+   "source_ids": [
+    "131e63110753a22b0d662104d4b2305b608d060b7b585f8165c313765e19eea0",
+    "18584a9093cc63b0a9f1deaeec7c5b7b37b12819084fe00e41de5a260a0fdb56",
+    "3ed90e49bea05df0ee1a1dcbdeb69d2772a3fb551c2d47d0f2563597a7eeff8a",
+    "55c74a08ec19fd1bb3b701f474264b9cd251531686118497be4adb71a3911f58",
+    "abdefca2662afb335b65707105f2a8ffe49105f132aa7e2b0ed994ebec5066f0",
+    "e2cbde20bd2f3d726f5abe3b2d19b610ed6accc8d9af934c5d6cbd3b4093ae32",
+    "f3736572e9877af4ddd03f306ca8da76e36f5f9249fde1683a6bb14b5cfd37c5"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_fs_bytes:broader_usefulness_goal:2"
+   ]
+  },
+  "HR-036": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "6f75fe1586be38f1f7b29722e16e76534682d9a5db82d91f5d9ea3c9f424cb07",
+   "question_sha256": "475e568370e01d8e182bafcc6839b5ccbbe8e6d5cc301dd7610bbab2940108f5",
+   "source_ids": [
+    "ac16baa1c2fd5aa973a83635fcddc0c83bdf98847f9bbb50a6ffe17018f8636e"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_sleep_calls:unbound_record:3"
+   ]
+  },
+  "HR-037": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "652d4896692050784c8057d963a106a102751434573656ea22b063a6cf2009aa",
+   "question_sha256": "2c2d033573f9a4ad49feafb46c8589e6ae93959b3c1808ee7cf0b1ac66410b28",
+   "source_ids": [
+    "083cd60fb1ebb92e809f4ede04658627ba92ae8c7a7bd99dba1b6610f6bf0790",
+    "599c534509b70cbc76eb22feab5fb4d28810579df1a63b93b1ffc7d9f881a1b3",
+    "5cb08c4dc49cfb96c24ac30f80e468f15b505c655731effd06678e18c1c206e2",
+    "8ca64b129245df8aa05bf9404be142427da1f8d0389443d027fd5294c43a3241",
+    "9eedb460fb933986e965a910ef1e4e1706bbe2c312c47ffa3cf945a75316a086",
+    "b96d1a8a14ab3585db70ad3a44da0bd7a8e62856f6be97788fad8f2d37ce862e",
+    "ba4dbb8a158d452852286129b0f08b3479714ff4bf831ce1685f7514aefb88dd",
+    "bec10464b43767b0d1836abee9a7a330778736ccc2faf200d8dcffeb56826668",
+    "e45127c5c4f37bfc39d35dbcc5ce1d252f70aac32a71c22981cccec095c81263",
+    "f2c5c9ad265453d42192a47e8581fb62b2f54d92a7ece476c7acd4a7e8247e11",
+    "f366968d72873676e13818d8175ae740846738c1f1d10c3c53953375c2d2a4bb"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_sent_datagrams:broader_usefulness_goal:3"
+   ]
+  },
+  "HR-038": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "044f124d9d130648ffc4874d1c52c6c06968e9ea8f13b2cecfcf2cea788f65ea",
+   "question_sha256": "282786d8219eeb910c1e242e52b03505c9a74aaf7aac2ee836949d4757e897f1",
+   "source_ids": [
+    "064b0c2371c993e28eadbadf1a073abc854fd70ed0b781592de90c58f25cf7c0",
+    "eff8f596f02f536c2cfa3136d47aa7a93524bd05ba9246dd2f0d7072b27d6d38"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_index_edits:diagnosis_goal:2"
+   ]
+  },
+  "HR-039": {
+   "label": "retry_attempts",
+   "proposed_label": "retry_attempts (calls)",
+   "query_id": "96813ce6a7b34ff4c3c17232d7cc56dfa6431648b3c09767de05dcdd747b3d62",
+   "question_sha256": "647306411a334a77773fb18bad43eb9b6779144d17aa8e2fbc75efee5274aae7",
+   "source_ids": [
+    "10cfd95284aa4b31eaf13dfb3cc5e5418b84501e5f894d02b714f594bde0d426",
+    "33fde4831ffe033d238cea3ec69df38490b5793ca143aba1a16d99c6491d8c5d",
+    "35eea60c279b1db61c552b9f3e03d2a482286092231803010783c524d456b46f",
+    "427296ea6483a26983e173ca9d3fbc7bf405578557ce2a8c072051b1233489d5",
+    "588044ae95c2ca06d4a40bea93986a90bb01461103c3249969d9575bdea7814c",
+    "5d3a17746eda3f54296a4be9395f01a3f7cb6dc355944d23ae41ad0d20172de6",
+    "8dfe7e6094a15d06dc2956f579c9bfbfccbdbb8330877e9a1a5f3f5dca73e913",
+    "9bb7b826c0778ba7b5205340606bf6ab96694ec091d8c6bc6ffa342a11849446",
+    "a7b169fbbc00de659a8adfafac36777165a1ca980c2a25db8a64c1ee942ec249",
+    "aa8ae9e75a3995b4241b55a1c347c4e5dcf08ed7e35b18ff67974f656e250d56",
+    "c7a5c0c063430df80ac968bde7e15850cbcb31d86e238cf1f668eb134e01956f",
+    "e28b4ca0bbb03eb42f9178d800b5a4e4eba69f971a09b7d31fe4df7ee90dfd2c",
+    "ea8362716452377c40df23e87df8b87d4b0419b82658333b87630e59000ffe0e",
+    "ebd945428ae5353da253b4453e4eb1d8c7a18de1ed2685f791e3be2be278025c",
+    "ee65df504528cfeaad0cef8ae4ff08a52a1c3ed57a44e19bc09d27cc0cdddb6d",
+    "feca979b8ee3d942687e83bb552085ad7c3020abc1458dac82f659e717eaa684"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_attempts:None:2"
+   ]
+  },
+  "HR-040": {
+   "label": "retry_scheduled_sleep_ns",
+   "proposed_label": "retry_scheduled_sleep_ns (nanoseconds)",
+   "query_id": "1685614253997fea3a95396f474e398f49ad9d66f76de4221e0ea50d7d91d25a",
+   "question_sha256": "3d4a3f9b3679f778b8b85ceb675e619d458400c512e56a3a95a11002d35d5581",
+   "source_ids": [
+    "20125ee83f83ec305a555e9d763c3f74b214bdb87ee557a8c57d89a578c2a800",
+    "3c596c3f8544d6d2e4a4b6d91a24373b3b50db4ee87d4fab67c8a5ec1c4f2cad",
+    "62d7058ff010ca418ce70cb17568287436d3d94f2d0d3a4203565f8824c375a6",
+    "a9ce820d304cefe16c14e0435eced573b23131368f74f6aff698b7fdef42e000"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_scheduled_sleep_ns:None:1"
+   ]
+  },
+  "HR-041": {
+   "label": "git_worktree_edits",
+   "proposed_label": "git_worktree_edits (paths)",
+   "query_id": "7c16800447eabe5e12c8c45991d9600581fecd303504c34a380a387e0f1d188f",
+   "question_sha256": "16d96beb81702a836a7c3b741fc4b5ab328d6ee2113a1395b3c174f6bb9141af",
+   "source_ids": [
+    "070d3e6386d572bfe7d929ec20d0a2b01f8f6e6f7b5160405814bb6099e8ea8e",
+    "6933aac0e4b90de6f15a722b84eb031faf0ea1877bae494b3f2409936be43734",
+    "7d9fd9f610fce5a2182d2675d60f8021bf68be3066cbc75e11d384d355b8878c",
+    "9c2161a7aa9f00ce88d516406c453996dc66d062e37a78eadc997447d8e89bc6",
+    "a5728f3b135b07b3e4ff1f74a7d49d4ad37cb36ef90810f4330287e5c3b17443"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_worktree_edits:None:0",
+    "git_worktree_edits:unbound_record:0"
+   ]
+  },
+  "HR-042": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "edb425399af212d737d4900843e6cdae3902626fa3447362f569670cf2f74d04",
+   "question_sha256": "7b1883fad7d0d17bf9724c31df2a3b1dbb094c8ac6a5d1d50572e2bd13c2a982",
+   "source_ids": [
+    "81511bd180591ec7a7b3c4432cc646533050673c200733c810f101f51cfa520b"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_fs_bytes:unbound_record:0"
+   ]
+  },
+  "HR-043": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "a63f6fed9b20f944ffa166e75fb2af50c6f6b64836fc351d3b87bcb88003c659",
+   "question_sha256": "c0861fbda500dec733b24b2bd15c09e03f25b01698528640377a4baca1249112",
+   "source_ids": [
+    "075f8e02dd882325729069406dac05798012da28888347228ca0d88e410ab24e",
+    "22873a1a3bb38bb970557e813e07d8373a233ec11acf024242f53e048d970f46",
+    "a7273ac06b072e3f93b39ae2e0d6cb72c62ba25fb5a2345c439058a9a454a8e0",
+    "d205225444f236bec5bdbbf4c096ddee0c5e341b6300380e98a4518930edf14f"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_worktree_edits:derived_or_multifield_goal:1"
+   ]
+  },
+  "HR-044": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "a8415788be13c261a8d066b77550bee965ab3549fd96ceb1df319047f5403aaf",
+   "question_sha256": "55930dcea284fe16ed5ef6b542da4542e7a5d56ff9a964cfb69d4dda5225192e",
+   "source_ids": [
+    "2e0ba67fcbaed2f12b2d1a2a76bc4f8312355467d85656baef4ff6b1eae03fd1",
+    "4a551f18e1d8deefafdf7c50927ad24c4984cc8b1b69ccdd33f5f86cd0c71587",
+    "50e11257bd1eedc0d20cd32fd07723dc2283116959a2b07d4f32722cd78d97b4",
+    "53b6acbf26bf101dc8d685b6a8389b16483f2b74de567e8746129ea8d8a4d63c",
+    "68072952f129d608fb9db36c1e0116a10f114e1e88ca0d7e54247d4fdd572e8c",
+    "946ed372dfe94f14a860def1356b4eee8931696c8c66bb9dcb2962d985bf7ebf",
+    "9c1e033a0314e9fa647cbac3247a4f527f988152aa41da360708ad542ba3bf65",
+    "b47e928250854631f71b2e188ec30cb72e7e8e7ad749186d40c00b9c3557cd15",
+    "c048c88d62371b4a5a2c285a29de033d339ec308565855d99fbf05786d78f17c",
+    "dfb9237bf8e3b41dac035d2ec514ee4c8579da915f3bd57cc8e75e8d7ad1562c",
+    "e8c1e5170a186f9fec2b02cbb98586a3c2a68b01f69d9ecb47fa406669d1f7fc"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_received_datagrams:broader_usefulness_goal:1"
+   ]
+  },
+  "HR-045": {
+   "label": "git_index_edits",
+   "proposed_label": "git_index_edits (paths)",
+   "query_id": "6b278df6a81195a269e41788e333d8c369272222eae8b66f7a648b04d4095e7d",
+   "question_sha256": "3e114d8effed9e0bd5ac014d38edf00a7476cd6a3ef6b80d89160181bfff5ab6",
+   "source_ids": [
+    "1511c5188667bc464178906842de8ef2c88a9fd7a4cfb81b8af0cf1d83d09fe0",
+    "1b8404e0979a2c78f84d8b6a71258710c1161db57a2a925d414d7d5235e7548e",
+    "1c7f18c822ae4a50c7ae2ec01046649e3b09747a82e73e111ed9f767f1f53e7f",
+    "1f617f4913c66085fb15268d8ebe286c1b13aeafd4136e3770c3b295707f98cb",
+    "2207dac012a9c3209a0e86ca38d82dd96623187077dd7ac0eed98de494faeccf",
+    "2690615585bdea7af5fa28a573ad7d5f7cce2926a5ba0859bba208c3da21d52f",
+    "2c33f600246a7b7973ad18ee5d5180839055b03e48ed0f1f28ddf155386a19f0",
+    "31780f051b72c277e93587ad9afaffcde78d30756c2276b5fac7d23ab6ebc673",
+    "342b321e4d25b506ad3ed7612a38cabc15e8fdf810e3ea85753f88f89bd0e59b",
+    "38de3016a05916d496e6c34a5ac1221de68f7d8adec5ef1d1cd4ba22c77fc8ea",
+    "5028ac451b45b872ea27a019831b3bbfd88d2480dcb6ad224f39892920ee403c",
+    "5fd33cb2bc361543732d87f9bc9308f7c6fce82e1011c82b5805f432bcc92d16",
+    "725830d5cc5b05199e62fb5450a50ccc8ebdfd9fb741cf33dde792f5fc4da219",
+    "81f8a861474545c49f1c654b75c9a1e97d242a1cf2643cdd93b83d2c562e6e8a",
+    "8699a0db8ab5ebf879ef69b6d51e9b0ff33df03ec60620ce590bd51f8bccedb4",
+    "8b1e290bcbfc7b535cdc8a9c5877d52a8c8f56694679eb56eb2033e6df980b1e",
+    "9fe1f71989b408811912d618f8460466a002d162ad033674e3ff79e67bc4fd12",
+    "a8f1f3e37155facf57fc792b3ae378d45ebc04c65fd5fa0c8dc942c16dbcb7eb",
+    "ad8522b526e885e2fe71a187f2ffbb9f19b20680863f6e99b95ce7c6d9d15459",
+    "af712e533008361c12f59e4f6dff734d28bd2fdeffe25981903d15669e63cdd5",
+    "afe69d2b92a81dadc6f416f81e073fb98f69282267adf92385eaae11ee2429e4",
+    "bff2bc1469ddd07b2e9456f0f6d3bd2884dbfb8203759eda9640348ad5f303aa",
+    "c59afa4e8589c4fe61032b79b35b2ada77ba27637d712681bec67fe7e31d3ef7",
+    "cb0ae3d27c916ca57b10c0a5596d5d64b366a924acdfdd4aecb61b836eeb9b1f",
+    "cc08fa8fa24086c1d88202841e9370e5eaacc46ca62290ea8b9315278a8f5fef",
+    "d296136690c3e41db0bba4a901076127c37da7775dad087e30f6f84c84f5c9ba",
+    "d7c2040f08c6229c6eaf06120f0a14100a2e6fa881dfddc9dd3fe4bc1c8e6f44",
+    "d80aa76118a4c62dcb44da50056ac3d0fccc4a9b7fa04c7327e72dff79277fc7",
+    "ed64eb69320c9b4ff922b1a4e243beb31d9cdcb3b29cb61261364495701cc7cb",
+    "f4eb7bc449d926d1a2fa84b3bb2efca457b9ba12ea4b8127fe10eb0c435c40a7"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_index_edits:None:3",
+    "git_index_edits:unbound_record:3"
+   ]
+  },
+  "HR-046": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "59e0a6ad3133955d8bf2fd7dacb916e139a52f38f9670e22572edaf94c1296f0",
+   "question_sha256": "ebd66e6e4dd52aec42f760bef036796bdee0c3982593be9917e9024392833155",
+   "source_ids": [
+    "09494ac8f3cd67cde2adf524f0d8cbac0b436e48d023acf455b4cf49ff241402",
+    "0b42013f03ce73e53fb92d36b0959247de2901d543c7ffa6722c5466ec1b7f3e",
+    "1d75eeec451d66bd9e4b9d6a7ebedb7af0255c756b59a41a14bd5e905e37cd5c",
+    "7b19ea5ec066fe5ba6399635380a6b09b81ccb70fb54c5b45655a42b820419e0",
+    "8efc6d1c4404fb0c05c6c1befebd37403b675963acec10c6ee463701c3bb9a12",
+    "9498901f5b8560db8a2c42a451e974294eaa22efacb10a8622c826f7971d2602",
+    "aa72d12db99e20b45b8d8229554abfaf6c7a10748cfdb40e06bb57c9c50d3257",
+    "ad93a18ffbe1ee0d1c8393246e60c72cbbeff55ed86dc0d820ed6aeb9ceb3d12",
+    "c076d4177750bdf102708fe3305b40b6c2969572aa3576fa287999c82606c2ce"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_files:diagnosis_goal:0"
+   ]
+  },
+  "HR-047": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "11fe6b581a5c168007773a06781d4d0f65b81ae078f76ff11da34781b4720ed4",
+   "question_sha256": "4c610eaa1990ac69be2f4994ff7955ffd6b24750fc95fbcddff40a4e5e50246f",
+   "source_ids": [
+    "207a383f5eed3a94088ac44d9be5460494db8c0975bbee8e5ab7d6541d55329e"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_index_files:unbound_record:2"
+   ]
+  },
+  "HR-048": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "75e17a4af6514fc4edabe865637d2e1ea9d1e801bbc9a3c5030f0c60bc35675a",
+   "question_sha256": "e1494a2c6dcdfe9e09b3eef002d6308e9be93c1615f5131860a4712acbbc0ad7",
+   "source_ids": [
+    "22abde76eb5aabc888f65f6c93fe156a531c99a2ba5e6fa0dd655b110f2ba4d8",
+    "3eb588c01e8d76d211dd6dde5ec9f8078931060dc68552a883b7b7117e48a954",
+    "a176586ca565de1eef11579b496e35a4982d541c60f2286e7c9f0fbb4a3efceb",
+    "c45288a111ed5941d4fa9baba4b4bdf2387040d5835a3d08daf70290e6cf5ceb",
+    "e52f0e935c5d90cb6fa229e167e48bd13db72bf1e42785bc5a211ad1eb02d2c7"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_sent_payload_bytes:derived_or_multifield_goal:1"
+   ]
+  },
+  "HR-049": {
+   "label": "git_worktree_edits",
+   "proposed_label": "git_worktree_edits (paths)",
+   "query_id": "2afe9aa07debe090b603ad15a28cf14b8c468341fd9033cf30a953b389ffd9a0",
+   "question_sha256": "727ad195755d0ba7b65bdc85a0b2f6f6dce6e7af7a1e6d4a91b6cfa604a9e10c",
+   "source_ids": [
+    "1b2506a5c9326b7ea52750c2944712449738b34648a12fd941b722f0ae28fbdd",
+    "1d597f60287f8ceaa8128e8e1ab7778b4a73697b418c973232363fb68f90d5d8",
+    "1f4eb98433d5295609c2da211fb7eede2aa2e892b861373dc8bcf153c30521be",
+    "2b78809cbc2b4751772d63e67fdf84dfebf978763d7e761e2478cfb204864c8b",
+    "34464e3b81f44af53b6cca09d15134eac33974b6397ba74e76bf2ddb4f68ab1e",
+    "55f07073cf1c8fb357defa2158d4f12ae8343cfc373eaa53a4ae039d04d545be",
+    "577ca7347f463e9936c35f8a364cf3b9cd05dac486e8d5ba4cf08cd65ba29942",
+    "8f48c5564296177676e16b0df68129580d427249d5272b8957f621a203939f1e",
+    "a04b3c284fccfaf7fd77f0ec6cb87ab5b76c97b8dcbd0ccbfced975a0046567e",
+    "a09ac87b8ad4c8954a47ef1b49ec66f48b279e1f6ad0b6b0972d01e082a22741",
+    "a96129a85eb9cfb21bcf7c0f193adda1676d77bb7e933e0ffae991d9e4004f89",
+    "b3a1de3936c6c33746d52d6469871e01267898493a76ba59e28924a683b1cc50",
+    "c8fb80f17a8afde408a7ff8c56b90f2a745e13d09266dee284add97622f8ab74",
+    "cddc57092b8c17e2d1273fcb28b0dd846970a1937c1e4f87a6eb803b77d4dbe8",
+    "d05910203dfcb5bfd4a0542d34e51ee49b35e3b21a71045be83cac8efa7bb1dc",
+    "f45e26f84c9bc7703cafe2e6fc3f9c84dd8be81073154ca417baaaf360363237"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "git_worktree_edits:None:0"
+   ]
+  },
+  "HR-050": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "cf04ec7d894087a41bd46aa82b8c10b03429d040678ded2fe3240ca6bc6d627a",
+   "question_sha256": "72dc3e406be82423ac8349ff7c51c623474fb4173f274ac153c3fdd0ac4b8388",
+   "source_ids": [
+    "81117868bcd4d2a2726c1b18ab2170338fb4b901a681ad4876ccad6a7f374b99"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_sleep_calls:unbound_record:1"
+   ]
+  },
+  "HR-051": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "3e032e6bed0bacf3e69535309e436931ee491eafd16f72d8cdc8ed6ece087d6f",
+   "question_sha256": "c2abd0fd2fdc1fdff282febc68973e0823d92aa92962eecac4f8c2d5e36dee4d",
+   "source_ids": [
+    "12a53035b8f0ab2ac3cb028d6ccd7e8f6a4b70d91a5686ebbd62911dbf422ffc",
+    "9146dad3aff5286f6f7c25e50557db89f4cf934f68f38d3b33d714ab4c760b40",
+    "c53c63639d5879f82b4683e0b2c24876947fad72a81aafdb59ee063eba0c076f",
+    "d432ba7a6d9638099c2566632c3d96ecb0ae9bfaad6c18ec5729ab45d1faeb2c",
+    "e2985eb6fec3d24a7ca61c61c1d798429f46a09398f37f02bdc5658ccec4d0ef",
+    "ea39f4e8cf3476c0fd74c94039efd2f65b95716d3984c74b11c8dc5842fc649a",
+    "fecde8eebf452369d469680da1788b2a419f27c970872409cfec2bd9a6b05d7e"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "retry_scheduled_sleep_ns:broader_usefulness_goal:2"
+   ]
+  },
+  "HR-052": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "ed05b954ff2cdacabc4ec79b80beb91ad241b0fce78b49d4e796120ed9e40244",
+   "question_sha256": "3a3366797057eb7ba8678a12f10829dd8c3d85a050a9747802aed329182fa0eb",
+   "source_ids": [
+    "e2e42ca0d72f37af727eac12be287b68445a233d39ae31904a11ed49e618b2d3"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "udp_received_payload_bytes:unbound_record:1"
+   ]
+  },
+  "HR-053": {
+   "label": "UNKNOWN:broader",
+   "proposed_label": "UNKNOWN:broader",
+   "query_id": "2d37f457480ffea248f0d457d95fc7b69a9129018850f1d7987eb64eb7dfe771",
+   "question_sha256": "371fee0f36a64935670bcbe36e470732721d871e8b9b7dfad52138bd50e2c22c",
+   "source_ids": [
+    "6f2ab89c1be4cb6458f452fae67f5f52076e25d9008bc118d9d24a9c595d4b66"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_index_files:broader_usefulness_goal:0"
+   ]
+  },
+  "HR-054": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "9d7f7bd072887d0e391bfdd8fd1b753cec5f4e73862c94c2d162b552d11eaa78",
+   "question_sha256": "6d1e8325ee84ecf5bd007e36424c78120daac53fd7dd58ad9a2aa5b4184ab6c5",
+   "source_ids": [
+    "2266c3e791cdb70db68fde3c1ac3c5ae16703e863b2221e29a4dd9a27d75bb47",
+    "71a3c05047631cc862e64e270ac7bbbbd56755952bf4e3d39022dee6ea7c155c",
+    "79901f926477713dee223166140adbfee9e9d2d20c49b73dcbbc64da479f583f",
+    "c8554e9792f78c33b03fa7360f5abac7f9ca375a1f6238d0b156cf7b38bbca1f",
+    "e4601e493fa0a4e147052f1662d849df4de098e196ca85345d54b49791c4ab6e"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_worktree_edits:diagnosis_goal:3"
+   ]
+  },
+  "HR-055": {
+   "label": "UNKNOWN:other",
+   "proposed_label": "UNKNOWN:other",
+   "query_id": "4a08d52ed7a2cbc7450060c8fcc7258e8f4139d26f37de90e4e80f5f1a8e7318",
+   "question_sha256": "dfa16d2163581da6c23ed141959973e2180a9ea5bd8399f7efbab7ef4187bd02",
+   "source_ids": [
+    "1e8003d09aec86bc0803b22d7f1f1a20e7c92e3b348cb4360f09856c52d81740"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_clean_tracked_files:unbound_record:3"
+   ]
+  },
+  "HR-056": {
+   "label": "UNKNOWN:diagnosis",
+   "proposed_label": "UNKNOWN:diagnosis",
+   "query_id": "7caf7a56e0d2ace32b78beb80083813c0846b1c0583ea179379413ab34e904f5",
+   "question_sha256": "b573f56455c009623ccc2392c6b349518819caa0caeb9768a679216b827d64d8",
+   "source_ids": [
+    "3732f4b3f460552a9821187dcade40a6432729590d87d8382db48d94f35eeed6",
+    "5ccb9980a6077aa483fc514616d1a499d5ba589072d369cd63b2e707b52412d6",
+    "79ca5e2f3828a6c41d572e23512c768ae92eaafece3133fdd8264de56dc98803",
+    "9aa277df702408772e1429c73f04310d70abfc8e2a8fd2c2e37dd3e37e71052a",
+    "9bab1cec69db2d9b6cbf76d78e2380d7276510ca3f3298e8a7209a20ecf53561",
+    "9cec2256cdacf2713de37ea74253cdc75545b4b2f84cf23c4055b53965f5aec3",
+    "aa301d392e21d919a4ae6c36fd79b4c9e7d1ea27cd0b0eb489e0d77e139f1741",
+    "b8b6ed67916b88fbb1a745e6a3b2af77823838755044fe4446d9e414bec05211",
+    "c6f0b8b77c2974022617f8eeaa337dcb90a00d060f5fc3e3679b5750f11384a3",
+    "d2a2d8e97e6bcbb3ece08657b21d662d1e847f69670a07a61adfd69987496f9a",
+    "e9d3e016596b6f0d97b12387a1caa712d6327d8ae2b8ea5388e71b0d9f71d35c"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_index_files:diagnosis_goal:1"
+   ]
+  },
+  "HR-057": {
+   "label": "retry_failures",
+   "proposed_label": "retry_failures (calls)",
+   "query_id": "a9c9e2930df0b4e0f395919a102ca99a5342304a41cde2fc53558e31812e36e5",
+   "question_sha256": "f77a9786f75a492ccfdca85ba11d2dea5d4ad68d243c435f49936a261d9c235b",
+   "source_ids": [
+    "30ebe42ee02943d1e36dbe5edb6e121d7cdc99f69cb255be35d72b8e424afda7",
+    "314217d527c425e3105ec68aed7d386e9fe7910241a5027e43c684b299e12556",
+    "5de8f4914f4f880bf5eca8852eaa419b0690d5c7887d4f42174a52022d61c152",
+    "79b25d5fb66bfcd45f82721be1222aa7184317a2d64af70eaac927301c3d39d9"
+   ],
+   "split": "train",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "retry_failures:None:3"
+   ]
+  },
+  "HR-058": {
+   "label": "udp_sent_payload_bytes",
+   "proposed_label": "udp_sent_payload_bytes (bytes)",
+   "query_id": "69f28b1d720f56d235414f44515cd180ef9577e8fa1f6ba5818d26f6b43f0ac7",
+   "question_sha256": "80740376942b248444c9026768f722d6435889e383d01e795322c13933a176bb",
+   "source_ids": [
+    "24497c34c641052bbf248302a525d33ace3377eccfff763afb8edbb8d93a79c6",
+    "4a63f39ee13c4944a1e51caca48e917cf9a48ab9b7053a71c565c1cc4f1292ff",
+    "aecb62cf0dc04a9f5b04eeeb648f711fae2fe4c087026eef2e874c9a383ae85d",
+    "bbabdd4dcf31af37539bcbc8764b998187f5f80e45d4ed22f89c1b9dcd0d79e5",
+    "feb2ed79fd80eb64582e396c6fc11630e1da0af0b77390457be4c7805844aee6"
+   ],
+   "split": "validation",
+   "stratum": "pt|supported|authored",
+   "wording_families": [
+    "udp_sent_payload_bytes:None:2",
+    "udp_sent_payload_bytes:unbound_record:2"
+   ]
+  },
+  "HR-059": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "19deac85c1b7866478c835b0873f4acda55573bb588929e06318e035c839b650",
+   "question_sha256": "60249550aa9b1312bad51d8b4a7806f39dc7f0f1ee1df54ad56683d2bc131311",
+   "source_ids": [
+    "2d269eb393e9469071cea282b3eb3bb1a1151350ae70374a085dfb37b0a38492",
+    "463ad758b43a6ee5b508ee5b23d2ce03dd98dd828eecfbbcccc345a5f084426b",
+    "4673871fc68304fa4a0751a5334bd2276f890710849f300ec5d963fe128efa2b",
+    "46a0068a99a713d4debc4eb90260415687d5fb8af4459bd000ddeea906fe3466",
+    "5157e6841b414f591ffdf438d87e8f4b1785296931d2c602c5c43ac6f424fc26",
+    "68dfc1359d8b7a866a67daa132a24e3ac244445924bf8e0c127181391e3cdf3b",
+    "7338f55b0f8a41fd258e9d43dae1678a62bf686e27ad8511afce3c704a954c0e",
+    "8ab809054e7de621e7a2253684a5b662a87d4973f86bcda36a5f803964c47d2b",
+    "927c132a799f97f350184e7cc0f25324e07fcfce02e3d0eeb630e2b9dab38950",
+    "ba45af523bcb0723188dd201060bfe76301d11f470763eb726b5762e593167e8",
+    "e5057f6c070ee8b3317b34d47ea19ccd0def6ac92a1b7ff5c9c0c0e0a05c8784"
+   ],
+   "split": "train",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_files:derived_or_multifield_goal:3"
+   ]
+  },
+  "HR-060": {
+   "label": "UNKNOWN:derived",
+   "proposed_label": "UNKNOWN:derived",
+   "query_id": "156741d56db77ea7f013dd1b3c3576b73866bd0651a3519dba05cd896302f55e",
+   "question_sha256": "6c19fe64a76051b80d89d3dfae40a26acfb1ef6f0d5daf7a7489307ae97a2f12",
+   "source_ids": [
+    "8ff8371bc708e36d0fba57706ad04e02ab44b024ea9cb496c7295446a1e66495",
+    "b597a9e7ef17ba7ccef1d45e42f41c4f0b2543fe7c0f8fa89a9570ada1587c9f"
+   ],
+   "split": "validation",
+   "stratum": "pt|unknown|authored",
+   "wording_families": [
+    "git_untracked_files:derived_or_multifield_goal:2"
+   ]
+  }
+ },
+ "seed": 20261008
+}

@@ -5,9 +5,9 @@ import tempfile
 import unittest
 
 try:
-    from research.review_packet import COLUMNS, build, review, score
+    from research.review_packet import COLUMNS, build, import_result, review, score
 except ModuleNotFoundError:
-    COLUMNS = build = review = score = None
+    COLUMNS = build = import_result = review = score = None
 
 SPLITS = ('train', 'validation', 'calibration', 'confirmation')
 
@@ -154,3 +154,24 @@ class InteractiveReviewTests(unittest.TestCase):
             review(out / 'packet.csv', ask=lambda _: next(answers), say=lambda _: None)
             result = score(out / 'packet.csv', out / 'key.json')
             self.assertEqual((result['n'], result['agree']), (n, n - 1))
+
+
+class PageResultImportTests(unittest.TestCase):
+    def test_downloaded_result_imports_and_scores(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            build(out, languages=('pt',), quota=30)
+            rows = read(out / 'packet.csv')
+            self.assertTrue(rows and all(r['language'] == 'pt' for r in rows))
+            self.assertFalse(any('Read ' in r['registry_definition'] for r in rows))
+            # same CSV shape the page downloads: quoted fields, one disagree, one unclear with a quote in the note
+            lines = ['item_id,verdict,corrected_label,note']
+            for n, r in enumerate(rows):
+                verdict, corrected, note = ('disagree', 'UNKNOWN:other', '') if n == 0 else (
+                    ('unclear', '', 'texto "estranho"') if n == 1 else ('agree', '', ''))
+                lines.append(','.join('"%s"' % v.replace('"', '""') for v in (r['item_id'], verdict, corrected, note)))
+            (out / 'review-result.csv').write_text('\n'.join(lines))
+            import_result(out / 'review-result.csv', out / 'packet.csv')
+            self.assertEqual(read(out / 'packet.csv')[1]['note'], 'texto "estranho"')
+            result = score(out / 'packet.csv', out / 'key.json')
+            self.assertEqual((result['n'], result['agree'], result['unclear']), (len(rows), len(rows) - 2, 1))
