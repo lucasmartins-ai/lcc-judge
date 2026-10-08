@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "cbc41131673d23a9e8163fc6d878708a9707f0b8e11b7e8e1784210d94d83444",
+  "scope": "Supplement to the frozen audit: started protocol binding, load metadata (embedding only) and receipt hashes",
+  "frozen_audit_sha256": "1f705b40a2b396099b00341f61ad93143877e15809cbee9c0618e4b83cf29335",
+  "receipts": {
+    "protocol.json": "77330ccfd51cf70d0404e2242d06e203c49018e926609b4a1a0ef691f2e89136",
+    "started.json": "3b6741fb7b18e4060f1f9bf818d911ff7d6d80825dfd5fc9f0024e4af5e7eff9",
+    "load.json": "f0342d70f0dc1418304b1f21ff1f98bae6d2f17c055d309d00e9a5444b44047d"
+  },
+  "sources": {
+    "research/audit_goal_pilot_metadata.py": "0661e17afa0573e75206646142b5791b43098244d8bceeb7940c4f332a3c3cda",
+    "tests/test_goal_pilot_metadata_audit.py": "1c1685d23b7a6474add56bf402ff29a0cf20d0b029cb5d78c6cf98b5970edd44"
+  },
+  "additional_encoder_forwards": 0,
+  "additional_training_updates": 0
+}

@@ -84,6 +84,10 @@ controle197/240. Não ajustar validação ou investir mais epochs nestes candida
    arquitetura. Otimizar/destilar/quantizar candidato útil e medir regressão.
 8. [ ] Relatório final, preparação de release e decisão de adoção fundamentada.
    Critério: nada anunciado como capacidade sem evidência; tarefas e limites públicos.
+   Sub-status 2026-10-08 (ainda aberto): Lacuna de metadados start/load
+   fechada por auditor suplementar (`audit-metadata-v2.json` nos dois pilotos, PASS).
+   Lacuna da API tipada documentada em [TYPED_API_METADATA_GAP.md](TYPED_API_METADATA_GAP.md).
+   Próximo ciclo: [goal-family-corpus-v1/PLAN.md](goal-family-corpus-v1/PLAN.md).
 
 ## Fechamento das medições e próximo ciclo
 

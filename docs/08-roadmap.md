@@ -64,6 +64,29 @@ shared archetype and single-author text labels. No independent task-reference
 validation or repeated R19 certification yet; P2 admission remains0. See
 `research/pdb-routing-2026-10-04/REPORT.md`.
 
+Status 2026-10-08 (goal-engine track, `research/goal-engine-2026-10-04/`).
+All figures below are exploratory point observations on exposed or single-author
+populations (INFERIDO, not MEASURED; gateClaim DOWNGRADE where the receipts say so).
+Every learned candidate is rejected: P1 (`REPORT.md`), semantic CPU-v2
+(`semantic-tool-cpu-v2/`), compact relation (`compact-relation-v1/`), tool-role
+support (`tool-role-support-v1/`), relation support (`tool-relation-support-v1/`),
+factorized relation (`factorized-relation-dev-v1/`), varied-relation fresh
+confirmation (`varied-relation-confirm-v1/RESULTS.md`: all three seeds below the
+immutable scalar shadow, .874211 pooled / .899835 within-goal AUC), the
+goal-interpreter probe (`goal-interpreter-probe-v1/RESULTS.md`: correct binding
+197/240) and the two support/field pilots (`goal-support-pilot-v1/`,
+`goal-embedding-pilot-v1/`; supplementary metadata audits in each
+`audit-metadata-v2.json`). The only useful observed path is the deterministic
+`rank_observations` route (`observation-lcc-pilot/RESULTS.md`: 36/36 on six
+exposed authored tasks, 92.50%/98.10% mean byte removal at 8K/32K); it does not
+interpret free text, and the typed API still lacks per-observation UTC time,
+field and unit in current records (`TYPED_API_METADATA_GAP.md`). P2 admission
+remains 0. Next cycle: `goal-family-corpus-v1/PLAN.md`; its section 5 stop
+criterion closes the learned route to shadow-only (with `rank_observations` as
+the product path) on any fresh-confirmation gate failure, two consecutive
+validation failures, two failed human reviews, or too few genuine requests by
+2026-12-31.
+
 ## Sprint 3 — First specialist (necessity/criticality/redundancy)
 
 - Train heads B2/B3/B4 on outcome-backed D6 + curated D2 (Stage 3 curriculum).
