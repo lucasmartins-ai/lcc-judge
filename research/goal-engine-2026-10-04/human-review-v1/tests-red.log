@@ -1,0 +1,50 @@
+FFFFF
+======================================================================
+FAIL: test_build_is_deterministic_and_seed_sensitive (tests.test_review_packet.ReviewPacketTests.test_build_is_deterministic_and_seed_sensitive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_review_packet.py", line 44, in setUp
+    self.assertIsNotNone(build, 'research/review_packet.py is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : research/review_packet.py is absent
+
+======================================================================
+FAIL: test_packet_is_blind_to_split_sources_and_models (tests.test_review_packet.ReviewPacketTests.test_packet_is_blind_to_split_sources_and_models)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_review_packet.py", line 44, in setUp
+    self.assertIsNotNone(build, 'research/review_packet.py is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : research/review_packet.py is absent
+
+======================================================================
+FAIL: test_score_math_and_pass_rule (tests.test_review_packet.ReviewPacketTests.test_score_math_and_pass_rule)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_review_packet.py", line 44, in setUp
+    self.assertIsNotNone(build, 'research/review_packet.py is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : research/review_packet.py is absent
+
+======================================================================
+FAIL: test_score_rejects_invalid_packets (tests.test_review_packet.ReviewPacketTests.test_score_rejects_invalid_packets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_review_packet.py", line 44, in setUp
+    self.assertIsNotNone(build, 'research/review_packet.py is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : research/review_packet.py is absent
+
+======================================================================
+FAIL: test_stratification_counts_and_shortfall (tests.test_review_packet.ReviewPacketTests.test_stratification_counts_and_shortfall)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_review_packet.py", line 44, in setUp
+    self.assertIsNotNone(build, 'research/review_packet.py is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : research/review_packet.py is absent
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=5)

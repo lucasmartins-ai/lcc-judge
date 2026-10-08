@@ -1,0 +1,159 @@
+{
+ "API_calls": 0,
+ "families": 53,
+ "items": 60,
+ "key_sha256": "0200369d88489991eb1599c668fc1f57098c3aae5f8a34ed55d3e9824228f1a6",
+ "missing_groups": [
+  "contrast",
+  "ambiguity"
+ ],
+ "missing_provenances": [
+  "genuine_lcc"
+ ],
+ "model_forwards": 0,
+ "model_outputs_in_packet": false,
+ "packet_sha256": "4bf7544338fe2cf37d648857fc852ecf872fc85ea6f4e494c44267f5c7d25e4d",
+ "plan": "research/goal-engine-2026-10-04/goal-family-corpus-v1/PLAN.md#4",
+ "quota_per_stratum": 15,
+ "reviewer": "project owner (Lucas); not the corpus author (agents authored it)",
+ "schema": "human-review-packet/0.1",
+ "seed": 20261008,
+ "shortfall": 180,
+ "sibling_frame_text": "not present in current data",
+ "sources": {
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/registry.json": "cc5cfcdc14c2acaac64b6a19e021bbe9a40cfc6359f57e0e1e07c05ec14c8cd4",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-annotations.json": "fbdf45116287b3996443b2f227e27ce4909fed32515074846923179be24c54c5",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-inputs.json": "048003abe7b692b3d1485e17d9f9778e8f1aac0b2f0b358ee38f59fb108d3739",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-annotations.json": "a682322bcb4aad01e4e2482903a12abfe026ca966000b1e79e62331077d34c3f",
+  "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-inputs.json": "0cc78417ab49e376f40f799dac35fd7003ae3130f478a791b2f29fc38d12f182",
+  "research/review_packet.py": "cb728eb51c0adaf797348f80e6b0771bee169c230bbe7b8ed66cc461356da935"
+ },
+ "split_in_packet": false,
+ "strata": {
+  "en|ambiguity|authored": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "en|ambiguity|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "en|contrast|authored": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "en|contrast|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "en|supported|authored": {
+   "available": 248,
+   "by_label": {
+    "git_index_edits": 2,
+    "git_worktree_edits": 2,
+    "retry_actual_sleep_ns": 2,
+    "retry_attempts": 2,
+    "retry_failures": 2,
+    "retry_scheduled_sleep_ns": 2,
+    "udp_sent_datagrams": 2,
+    "udp_sent_payload_bytes": 1
+   },
+   "sampled": 15,
+   "shortfall": 0
+  },
+  "en|supported|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "en|unknown|authored": {
+   "available": 906,
+   "by_label": {
+    "UNKNOWN:broader": 4,
+    "UNKNOWN:derived": 4,
+    "UNKNOWN:diagnosis": 4,
+    "UNKNOWN:other": 3
+   },
+   "sampled": 15,
+   "shortfall": 0
+  },
+  "en|unknown|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "pt|ambiguity|authored": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "pt|ambiguity|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "pt|contrast|authored": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "pt|contrast|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "pt|supported|authored": {
+   "available": 248,
+   "by_label": {
+    "git_index_edits": 2,
+    "git_worktree_edits": 2,
+    "retry_actual_sleep_ns": 2,
+    "retry_attempts": 2,
+    "retry_failures": 2,
+    "retry_scheduled_sleep_ns": 2,
+    "udp_sent_datagrams": 2,
+    "udp_sent_payload_bytes": 1
+   },
+   "sampled": 15,
+   "shortfall": 0
+  },
+  "pt|supported|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  },
+  "pt|unknown|authored": {
+   "available": 906,
+   "by_label": {
+    "UNKNOWN:broader": 4,
+    "UNKNOWN:derived": 4,
+    "UNKNOWN:diagnosis": 4,
+    "UNKNOWN:other": 3
+   },
+   "sampled": 15,
+   "shortfall": 0
+  },
+  "pt|unknown|genuine_lcc": {
+   "available": 0,
+   "by_label": {},
+   "sampled": 0,
+   "shortfall": 15
+  }
+ },
+ "target_items": 240
+}

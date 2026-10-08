@@ -1,0 +1,13 @@
+test_capture_emits_one_record_per_collector_field_with_schema_unit_and_capture_time (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_capture_emits_one_record_per_collector_field_with_schema_unit_and_capture_time) ... ok
+test_collector_schema_drift_fails_capture (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_collector_schema_drift_fails_capture) ... ok
+test_conversion_is_deterministic (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_conversion_is_deterministic) ... ok
+test_missing_or_non_wall_clock_metadata_stays_unknown_never_drop (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_missing_or_non_wall_clock_metadata_stays_unknown_never_drop) ... ok
+test_no_monotonic_counter_reaches_the_timestamp (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_no_monotonic_counter_reaches_the_timestamp) ... ok
+test_round_trip_into_rank_observations (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_round_trip_into_rank_observations) ... ok
+test_schema_does_not_come_from_caption_registry (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_schema_does_not_come_from_caption_registry) ... ok
+test_wall_clock_is_utc_second_format_from_system_clock (tests.test_tool_relation_state_capture_v3.CaptureMetadataV3Tests.test_wall_clock_is_utc_second_format_from_system_clock) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.030s
+
+OK

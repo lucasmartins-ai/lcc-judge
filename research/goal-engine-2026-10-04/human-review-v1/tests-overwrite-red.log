@@ -1,0 +1,14 @@
+.F....
+======================================================================
+FAIL: test_build_refuses_to_overwrite_filled_packet (tests.test_review_packet.ReviewPacketTests.test_build_refuses_to_overwrite_filled_packet)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_review_packet.py", line 111, in test_build_refuses_to_overwrite_filled_packet
+    with self.assertRaises(FileExistsError):
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: FileExistsError not raised
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.246s
+
+FAILED (failures=1)
