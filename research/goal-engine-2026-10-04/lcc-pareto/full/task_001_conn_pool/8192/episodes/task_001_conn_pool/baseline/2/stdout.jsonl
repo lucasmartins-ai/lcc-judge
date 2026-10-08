@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141631_6c00ca", "timestamp": 1791119791237}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The payment", "timestamp": 1791119797600}
+{"type": "text", "text": "-gateway connection pool is exhausted because stripe_webhook_handler acquires connections in billing.py:144 without releasing them.\",\"mechanism\":\"pool_connection_leak\",\"parameters\":{\"pool_size\":20,\"active\":", "timestamp": 1791119797610}
+{"type": "text", "text": "20,\"idle\":0,\"waiting\":42,\"leak_location\":\"billing.py:144\"},\"python\":\"\"}", "timestamp": 1791119797620}
+{"type": "result", "session_id": "20261004_141631_6c00ca", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The payment-gateway connection pool is exhausted because stripe_webhook_handler acquires connections in billing.py:144 without releasing them.\",\"mechanism\":\"pool_connection_leak\",\"parameters\":{\"pool_size\":20,\"active\":20,\"idle\":0,\"waiting\":42,\"leak_location\":\"billing.py:144\"},\"python\":\"\"}", "tokens": {"input": 8415, "output": 190, "total": 8745, "cache_read": 140, "cache_write": 0}, "duration_ms": 6474, "timestamp": 1791119797711}

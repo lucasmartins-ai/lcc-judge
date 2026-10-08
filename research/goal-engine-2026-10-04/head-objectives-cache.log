@@ -1,0 +1,24 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4747.89it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+train features 0/2340
+train features 400/2340
+train features 800/2340
+train features 1200/2340
+train features 1600/2340
+train features 2000/2340
+validation features 0/2160
+validation features 400/2160
+validation features 800/2160
+validation features 1200/2160
+validation features 1600/2160
+validation features 2000/2160
+final features 0/480
+final features 400/480

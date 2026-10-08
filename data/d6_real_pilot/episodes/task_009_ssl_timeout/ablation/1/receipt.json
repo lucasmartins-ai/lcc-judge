@@ -1,0 +1,102 @@
+{
+  "task_id": "task_009_ssl_timeout",
+  "condition": "ablation",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "4c85a5f5cfb7e4d4a9e359e8881ba03911abae6a9ec231a8662bed26b5a866fd",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_009_ssl_timeout/ablation/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_009_ssl_timeout/ablation/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Likely a path MTU discovery black hole: with tcp_mtu_probing disabled, oversized TLS handshake packets can be dropped and stall the handshake.",
+    "mechanism": "pmtud_blackhole",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211126_7f90c7",
+      "timestamp": 1791058286461
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211126_7f90c7",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Likely a path MTU discovery black hole: with tcp_mtu_probing disabled, oversized TLS handshake packets can be dropped and stall the handshake.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 400,
+      "output": 408,
+      "total": 1848,
+      "cache_read": 1040,
+      "cache_write": 0
+    },
+    "duration_ms": 5965,
+    "timestamp": 1791058292426
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.71
+        }
+      },
+      "usage": {
+        "input_tokens": 519,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 285.683167,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.1798e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 8.321861208998598
+}

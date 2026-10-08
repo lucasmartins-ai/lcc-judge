@@ -1,0 +1,58 @@
+{
+  "protocol_sha256": "53f9a7b42cb6d2dbf3e003031872d43c53f272a379d833904ab22a28ed10be4b",
+  "seed_passes": [
+    false,
+    false,
+    false
+  ],
+  "all_seeds_pass": false,
+  "mean": {
+    "pooled_auc": 0.7332494916248714,
+    "within_goal_auc": 0.7337962962962963,
+    "positive_keep_recall": 0.9953703703703703,
+    "contradiction_keep_recall": 0.9953703703703703,
+    "negative_drop_rejection": 0.10243055555555555,
+    "semantic_unknown_recognition": 0.849537037037037
+  },
+  "unknown_drops": [
+    7,
+    16,
+    8
+  ],
+  "frozen_final": {
+    "n": 2496,
+    "binary": 2304,
+    "positive": 1152,
+    "negative": 1152,
+    "pooled_wins": 864178,
+    "pooled_comparisons": 1327104,
+    "pooled_auc": 0.6511757933063271,
+    "within_goal": {
+      "wins": 1723,
+      "comparisons": 2304,
+      "auc": 0.7478298611111112
+    },
+    "within_goal_auc": 0.7478298611111112,
+    "same_report_goal": {
+      "wins": 840,
+      "comparisons": 1152,
+      "auc": 0.7291666666666666
+    },
+    "positive_keep_recall": 1.0,
+    "contradiction_keep_recall": 1.0,
+    "negative_drop_rejection": 0.0,
+    "binary_unknown_rate": 1.0,
+    "semantic_unknown": 144,
+    "structural_unknown": 48,
+    "semantic_unknown_recognition": 1.0,
+    "structural_unknown_recognition": 1.0,
+    "unknown_drops": 0,
+    "control_shadow": true
+  },
+  "peak_study_process_rss_bytes": 1503281152,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "adoption": false,
+  "finished_at_utc": "2026-10-04T20:43:21.515889+00:00"
+}

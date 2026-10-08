@@ -1,0 +1,82 @@
+{
+  "task_id": "task_003_inv_deadlock",
+  "condition": "ablation",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "802e210e2a5de364a3fe0a19ec783146256fca14b8a0a5bbe1eb6a24dee1da33",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_003_inv_deadlock/ablation/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_003_inv_deadlock/ablation/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Acquire all item locks in ascending item-ID order, then decrement stock while holding the locks. Deduplicate IDs to avoid re-entering a lock.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "from contextlib import ExitStack\n\ndef reserve_items(items):\n    ordered_items = sorted(items, key=lambda item: item.id)\n    with ExitStack() as locks:\n        locked_ids = set()\n        for item in ordered_items:\n            if item.id not in locked_ids:\n                locks.enter_context(lock_item(item.id))\n                locked_ids.add(item.id)\n        for item in ordered_items:\n            decrement_stock(item)\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113432_681f63",
+      "timestamp": 1791110073169
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113432_681f63",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Acquire all item locks in ascending item-ID order, then decrement stock while holding the locks. Deduplicate IDs to avoid re-entering a lock.\",\"mechanism\":null,\"parameters\":{},\"python\":\"from contextlib import ExitStack\\n\\ndef reserve_items(items):\\n    ordered_items = sorted(items, key=lambda item: item.id)\\n    with ExitStack() as locks:\\n        locked_ids = set()\\n        for item in ordered_items:\\n            if item.id not in locked_ids:\\n                locks.enter_context(lock_item(item.id))\\n                locked_ids.add(item.id)\\n        for item in ordered_items:\\n            decrement_stock(item)\\n\"}",
+    "tokens": {
+      "input": 991,
+      "output": 1197,
+      "total": 2328,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 19441,
+    "timestamp": 1791110092611
+  },
+  "verification": {
+    "passed": null,
+    "reason": "reference_contract_quarantined"
+  },
+  "wall_time_s": 21.35999800002901,
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Add transaction isolation to prevent double spending during balance transfer.",
+    "context": [
+      {
+        "block_id": "b_7e2f44bd",
+        "content": "User was able to trigger 3 simultaneous transfers of $100 with only $100 balance.",
+        "source": "issues/892.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_dbef588d",
+        "content": "Transfer fee is 0% for domestic bank wires.",
+        "source": "fees.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Serialize each transfer inside a transaction and lock all involved account rows before checking or changing balances.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def transfer(from_acc, to_acc, amount):\n    if amount < 0:\n        raise ValueError(\"amount must be non-negative\")\n\n    with db.transaction():\n        balances = {}\n        for account_id in sorted({from_acc, to_acc}):\n            balances[account_id] = db.query(\n                \"SELECT balance FROM accounts WHERE id = ? FOR UPDATE\",\n                account_id,\n            )\n\n        if balances[from_acc] is None or balances[to_acc] is None:\n            raise ValueError(\"account not found\")\n        if balances[from_acc] < amount:\n            return False\n        if from_acc == to_acc or amount == 0:\n            return True\n\n        db.execute(\n            \"UPDATE accounts SET balance = balance - ? WHERE id = ?\",\n            amount,\n            from_acc,\n        )\n        db.execute(\n            \"UPDATE accounts SET balance = balance + ? WHERE id = ?\",\n            amount,\n            to_acc,\n        )\n        return True"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

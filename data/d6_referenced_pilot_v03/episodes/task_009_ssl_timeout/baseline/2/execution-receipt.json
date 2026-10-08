@@ -1,0 +1,81 @@
+{
+  "task_id": "task_009_ssl_timeout",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "62b211e59c89d136bd3bfd502f6f708b0d5c2ea90f18cb5fc285e893423978dc",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_009_ssl_timeout/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_009_ssl_timeout/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "TLS handshakes fail because PMTUD blackholes drop fragmented certificate messages when ICMP Fragmentation Needed is blocked.",
+    "mechanism": "pmtud_blackhole",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113614_c1c946",
+      "timestamp": 1791110174579
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113614_c1c946",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because PMTUD blackholes drop fragmented certificate messages when ICMP Fragmentation Needed is blocked.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 2,
+      "output": 178,
+      "total": 1700,
+      "cache_read": 1520,
+      "cache_write": 0
+    },
+    "duration_ms": 4088,
+    "timestamp": 1791110178667
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 6.147226957953535
+}

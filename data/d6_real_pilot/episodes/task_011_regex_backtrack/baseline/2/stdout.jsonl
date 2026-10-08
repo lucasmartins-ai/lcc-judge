@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211329_edf241", "timestamp": 1791058409347}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The lockup is catastrophic regex backtracking: `^([a-zA-Z0-9]+)*$", "timestamp": 1791058414538}
+{"type": "text", "text": "` has nested repetition, and the final `!` makes the match fail after exponential combinations of partitions, pinning the worker at", "timestamp": 1791058414539}
+{"type": "text", "text": " nearly 100% CPU.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791058414539}
+{"type": "result", "session_id": "20261003_211329_edf241", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The lockup is catastrophic regex backtracking: `^([a-zA-Z0-9]+)*$` has nested repetition, and the final `!` makes the match fail after exponential combinations of partitions, pinning the worker at nearly 100% CPU.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 400, "output": 268, "total": 1784, "cache_read": 1116, "cache_write": 0}, "duration_ms": 5212, "timestamp": 1791058414560}

@@ -1,0 +1,45 @@
+test_duplicate_question_with_conflicting_target_is_rejected (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_duplicate_question_with_conflicting_target_is_rejected) ... FAIL
+test_malformed_record_does_not_make_a_supported_query_unknown (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_malformed_record_does_not_make_a_supported_query_unknown) ... FAIL
+test_ties_abstain_and_invalid_scores_cannot_form_a_partial_pass (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_ties_abstain_and_invalid_scores_cannot_form_a_partial_pass) ... FAIL
+test_wrong_supported_field_counts_against_binding_precision (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_wrong_supported_field_counts_against_binding_precision) ... FAIL
+
+======================================================================
+FAIL: test_duplicate_question_with_conflicting_target_is_rejected (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_duplicate_question_with_conflicting_target_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_interpreter_probe.py", line 12, in setUp
+    self.assertIsNotNone(probe, 'The bounded goal-only probe is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : The bounded goal-only probe is not implemented
+
+======================================================================
+FAIL: test_malformed_record_does_not_make_a_supported_query_unknown (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_malformed_record_does_not_make_a_supported_query_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_interpreter_probe.py", line 12, in setUp
+    self.assertIsNotNone(probe, 'The bounded goal-only probe is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : The bounded goal-only probe is not implemented
+
+======================================================================
+FAIL: test_ties_abstain_and_invalid_scores_cannot_form_a_partial_pass (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_ties_abstain_and_invalid_scores_cannot_form_a_partial_pass)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_interpreter_probe.py", line 12, in setUp
+    self.assertIsNotNone(probe, 'The bounded goal-only probe is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : The bounded goal-only probe is not implemented
+
+======================================================================
+FAIL: test_wrong_supported_field_counts_against_binding_precision (tests.test_goal_interpreter_probe.GoalInterpreterProbeTests.test_wrong_supported_field_counts_against_binding_precision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_interpreter_probe.py", line 12, in setUp
+    self.assertIsNotNone(probe, 'The bounded goal-only probe is not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : The bounded goal-only probe is not implemented
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=4)

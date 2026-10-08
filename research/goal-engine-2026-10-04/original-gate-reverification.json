@@ -1,0 +1,71 @@
+{
+  "model": "specialist-exp04-unfreeze2-dyn-49k",
+  "measured_depths": [
+    0,
+    512,
+    4096,
+    16384
+  ],
+  "cells": {
+    "0": {
+      "n_cases": 62,
+      "complete_v12_population": true,
+      "J": {
+        "wins": 2658,
+        "pairs": 3844,
+        "AUC": 0.6914672216441207
+      },
+      "D": {
+        "wins": 2252,
+        "pairs": 3844,
+        "AUC": 0.5858480749219563
+      }
+    },
+    "512": {
+      "n_cases": 62,
+      "complete_v12_population": true,
+      "J": {
+        "wins": 2996,
+        "pairs": 3844,
+        "AUC": 0.7793964620187305
+      },
+      "D": {
+        "wins": 2042,
+        "pairs": 3844,
+        "AUC": 0.5312174817898023
+      }
+    },
+    "4096": {
+      "n_cases": 4,
+      "complete_v12_population": false,
+      "J": {
+        "wins": 12,
+        "pairs": 16,
+        "AUC": 0.75
+      },
+      "D": {
+        "wins": 10,
+        "pairs": 16,
+        "AUC": 0.625
+      }
+    },
+    "16384": {
+      "n_cases": 62,
+      "complete_v12_population": true,
+      "J": {
+        "wins": 2907,
+        "pairs": 3844,
+        "AUC": 0.7562434963579605
+      },
+      "D": {
+        "wins": 1965,
+        "pairs": 3844,
+        "AUC": 0.5111862643080125
+      }
+    }
+  },
+  "passing_depths_J": [],
+  "effective_context_J": 0,
+  "passing_depths_D": [],
+  "effective_context_D": 0
+}

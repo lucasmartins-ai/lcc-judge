@@ -1,0 +1,14 @@
+test_corrupt_checkpoint_rejected_before_any_parameter_changes (tests.test_numerical_safety.NumericalSafetyTests.test_corrupt_checkpoint_rejected_before_any_parameter_changes) ... ok
+test_nonfinite_backward_is_detected_before_optimizer_step (tests.test_numerical_safety.NumericalSafetyTests.test_nonfinite_backward_is_detected_before_optimizer_step) ... ok
+test_nonfinite_loss_never_updates_model_or_optimizer (tests.test_numerical_safety.NumericalSafetyTests.test_nonfinite_loss_never_updates_model_or_optimizer) ... ok
+test_valid_update_matches_same_unclipped_optimizer (tests.test_numerical_safety.NumericalSafetyTests.test_valid_update_matches_same_unclipped_optimizer) ... ok
+test_missing_head_tensor_is_rejected (tests.test_specialist_invariants.CheckpointLoaderTests.test_missing_head_tensor_is_rejected) ... ok
+test_partial_frozen_checkpoint_is_accepted (tests.test_specialist_invariants.CheckpointLoaderTests.test_partial_frozen_checkpoint_is_accepted) ... ok
+test_empty_example_has_the_same_score_alone_and_in_batch (tests.test_specialist_invariants.PoolingInvariantTests.test_empty_example_has_the_same_score_alone_and_in_batch) ... ok
+test_empty_lines_cannot_change_the_score (tests.test_specialist_invariants.PoolingInvariantTests.test_empty_lines_cannot_change_the_score) ... ok
+test_line_max_has_no_artificial_logit_floor (tests.test_specialist_invariants.PoolingInvariantTests.test_line_max_has_no_artificial_logit_floor) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.061s
+
+OK

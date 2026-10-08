@@ -1,0 +1,35 @@
+{
+  "case_id": "c_29fd2101f53d8c85",
+  "split": "eval",
+  "task_number": 6,
+  "kind": "code",
+  "family": "double_escape",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "f7bc67df6a5a508294ba740fde3f55e9dacdd24be2ee17141b0be927eda600c5",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "normal_query",
+      "tenant_isolation",
+      "tenant_injection",
+      "query_injection",
+      "table_preserved"
+    ],
+    "program_stdout": "",
+    "source_sha256": "4ce445861e7b7546d39e00794b3b209d8f09fe3f2f931bd2bc42000101a08ec3"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: query, tenant or injection failure",
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.11698054103180766
+}

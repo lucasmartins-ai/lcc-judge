@@ -1,0 +1,17 @@
+{
+  "base": "python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f",
+  "source_sha256": "6ed98b5b21c961a692578517e34755be64a2f1808f66f8fb7079e8a923a837c2",
+  "sources": {
+    "research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "research/tool_measurement_runtime.py": "96732d738b4921d5b18435e8da9e6420be653de6717a1ada4308de688c73b996",
+    "replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f"
+  },
+  "runtime": {
+    "docker": "/usr/local/bin/docker",
+    "image_id": "sha256:e4f3e87adc6591755bc0a5646e6555fd43e299923cc80c033c3392bf84b21878",
+    "source_sha256": "6ed98b5b21c961a692578517e34755be64a2f1808f66f8fb7079e8a923a837c2",
+    "profile": "trusted-tool-observations/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  }
+}

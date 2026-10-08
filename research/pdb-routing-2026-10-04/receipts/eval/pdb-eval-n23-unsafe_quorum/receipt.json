@@ -1,0 +1,39 @@
+{
+  "case_id": "pdb-eval-n23-unsafe_quorum",
+  "split": "eval",
+  "family": "unsafe_quorum",
+  "expected": false,
+  "case_sha256": "3bce5ba467919a874f5d0163f344231f6899740b9603007d89a512ea1282dbd5",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "quorum_or_maintenance_violation",
+    "min_remaining": 11,
+    "max_disruptions": 12
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 11,
+        "max_disruptions": 12
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 11,
+        "max_disruptions": 12
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

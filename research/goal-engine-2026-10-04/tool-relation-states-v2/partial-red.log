@@ -1,0 +1,15 @@
+test_udp_timeout_retains_completed_sends_inside_failed_source (tests.test_tool_relation_state_worker.ToolRelationStateWorkerTests.test_udp_timeout_retains_completed_sends_inside_failed_source) ... ERROR
+
+======================================================================
+ERROR: test_udp_timeout_retains_completed_sends_inside_failed_source (tests.test_tool_relation_state_worker.ToolRelationStateWorkerTests.test_udp_timeout_retains_completed_sends_inside_failed_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_relation_state_worker.py", line 77, in test_udp_timeout_retains_completed_sends_inside_failed_source
+    self.assertGreater(len(caught.exception.partial['send_events']),0)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'TimeoutError' object has no attribute 'partial'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.003s
+
+FAILED (errors=1)

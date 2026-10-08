@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+  "finite_epoch_receipts": 9,
+  "accepted_update_steps": 2025,
+  "training_pair_presentations": 32328,
+  "training_nonpadding_tokens": 1111464,
+  "scored_pairs": 16992,
+  "scored_nonpadding_tokens": 658792,
+  "total_parameters": 117641859,
+  "trainable_parameters": 3697923,
+  "seed_passes": [
+    false,
+    false,
+    false
+  ],
+  "all_seeds_pass": false,
+  "mean_final": {
+    "pooled_auc": 0.643958825633359,
+    "within_goal_auc": 0.6662326388888888,
+    "positive_keep_recall": 0.9571759259259259,
+    "contradiction_keep_recall": 1.0,
+    "negative_drop_rejection": 0.08825231481481481,
+    "semantic_unknown_recognition": 0.9444444444444444
+  },
+  "unknown_drops": [
+    0,
+    0,
+    0
+  ],
+  "model_forwards_during_audit": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "training_reexecuted": false,
+  "scope": "Recorded direct-record data/source/epoch/selection/raw/math audit; known primitive fields/tools, authored fixture/wording transfer, not human-reviewed production/P2 or LCC replacement proof",
+  "private_weight_hashes_verified": true,
+  "frozen_parameters_independently_verified": true,
+  "known_upstream_integer_position_buffer_verified": true,
+  "additive_audit_sources": {
+    "research/audit_tool_relation_weights.py": "4f6167883c4abca1fb51c17f9ebfabb97bcb7cf723c3735b3d80a39ed318a090",
+    "research/audit_tool_relation_support.py": "36a849a1a99ce6e5a4e06d7a8f358bde1c8b0c2f46cafa5f29e2048d6e364682",
+    "research/audit_tool_role_support.py": "4418885862bfa2292dc4302b9931ddcb7d308dc2eeac557257e9bf59196eb54d",
+    "research/audit_tool_relation_supervision.py": "6ffb3d2d6e36b8f37616ae6c52a6fd81e62d2ea05b3c8a0d1e5393a658e4bc41",
+    "research/audit_tool_relations.py": "85ded27ebe64a85b2f041ef5443340844faf97f716842217d533e35c6af0f3b1"
+  },
+  "training_protocol_or_sources_changed": false,
+  "quality_criteria_changed": false
+}

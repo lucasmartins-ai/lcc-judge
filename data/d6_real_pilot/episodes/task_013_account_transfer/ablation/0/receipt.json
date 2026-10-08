@@ -1,0 +1,108 @@
+{
+  "task_id": "task_013_account_transfer",
+  "condition": "ablation",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "cebf25f8a9453344683cdda25fa2e6e3c80d25e6e446577ae143cf2d81a5e986",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_013_account_transfer/ablation/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_013_account_transfer/ablation/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Serialize each transfer inside a transaction and lock all involved account rows before checking or changing balances.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def transfer(from_acc, to_acc, amount):\n    if amount < 0:\n        raise ValueError(\"amount must be non-negative\")\n\n    with db.transaction():\n        balances = {}\n        for account_id in sorted({from_acc, to_acc}):\n            balances[account_id] = db.query(\n                \"SELECT balance FROM accounts WHERE id = ? FOR UPDATE\",\n                account_id,\n            )\n\n        if balances[from_acc] is None or balances[to_acc] is None:\n            raise ValueError(\"account not found\")\n        if balances[from_acc] < amount:\n            return False\n        if from_acc == to_acc or amount == 0:\n            return True\n\n        db.execute(\n            \"UPDATE accounts SET balance = balance - ? WHERE id = ?\",\n            amount,\n            from_acc,\n        )\n        db.execute(\n            \"UPDATE accounts SET balance = balance + ? WHERE id = ?\",\n            amount,\n            to_acc,\n        )\n        return True"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211417_d0ab92",
+      "timestamp": 1791058457801
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211417_d0ab92",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Serialize each transfer inside a transaction and lock all involved account rows before checking or changing balances.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def transfer(from_acc, to_acc, amount):\\n    if amount < 0:\\n        raise ValueError(\\\"amount must be non-negative\\\")\\n\\n    with db.transaction():\\n        balances = {}\\n        for account_id in sorted({from_acc, to_acc}):\\n            balances[account_id] = db.query(\\n                \\\"SELECT balance FROM accounts WHERE id = ? FOR UPDATE\\\",\\n                account_id,\\n            )\\n\\n        if balances[from_acc] is None or balances[to_acc] is None:\\n            raise ValueError(\\\"account not found\\\")\\n        if balances[from_acc] < amount:\\n            return False\\n        if from_acc == to_acc or amount == 0:\\n            return True\\n\\n        db.execute(\\n            \\\"UPDATE accounts SET balance = balance - ? WHERE id = ?\\\",\\n            amount,\\n            from_acc,\\n        )\\n        db.execute(\\n            \\\"UPDATE accounts SET balance = balance + ? WHERE id = ?\\\",\\n            amount,\\n            to_acc,\\n        )\\n        return True\"}",
+    "tokens": {
+      "input": 982,
+      "output": 3932,
+      "total": 5054,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 48149,
+    "timestamp": 1791058505950
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "three_concurrent_transfers",
+      "no_overdraft",
+      "no_money_creation",
+      "one_transfer_completes"
+    ],
+    "program_stdout": "",
+    "source_sha256": "be545c28ad490fb0fd675896aec369533ec67169b53961a4df5537c85d95a01a"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.88
+        }
+      },
+      "usage": {
+        "input_tokens": 706,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 299.214541,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.9652e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 50.70550141698914
+}

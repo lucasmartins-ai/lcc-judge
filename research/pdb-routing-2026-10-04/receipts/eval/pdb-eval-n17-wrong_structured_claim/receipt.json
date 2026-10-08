@@ -1,0 +1,33 @@
+{
+  "case_id": "pdb-eval-n17-wrong_structured_claim",
+  "split": "eval",
+  "family": "wrong_structured_claim",
+  "expected": false,
+  "case_sha256": "751b9195db6ac19abb06e4cf9d610130d224afcb4778ca64f84d25a8dc69138a",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "contradictory_numeric_claim"
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "contradictory_numeric_claim"
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "contradictory_numeric_claim"
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

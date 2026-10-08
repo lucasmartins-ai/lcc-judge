@@ -1,0 +1,29 @@
+{
+  "case_id": "c_b053aa1613b1364c",
+  "split": "eval",
+  "task_number": 3,
+  "kind": "code",
+  "family": "unprotected_decrement",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "2f9f6cebcd603e3c0403c45d97b6d9c32529533c257be097db5e6d6c51fa82de",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Reservation outside its lock",
+    "program_stdout": "",
+    "source_sha256": "53c2c6a512f23918685eac6dee9f2762aa83bb8f6a959ead9199f0768b53ae68"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: reservation outside lock",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12119837501086295
+}

@@ -1,0 +1,80 @@
+{
+  "task_id": "task_019_alpine_dns",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "3d8feb6e040b7e0d550dc46afc057af871d028075f9b7e6252d9bd69da6f7871",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_019_alpine_dns/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_019_alpine_dns/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Alpine musl's parallel A/AAAA DNS queries reuse a source port, causing Linux conntrack NAT drops and 5-second resolver retries.",
+    "mechanism": "musl_conntrack_dns",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_114316_17f412",
+      "timestamp": 1791110597219
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_114316_17f412",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Alpine musl's parallel A/AAAA DNS queries reuse a source port, causing Linux conntrack NAT drops and 5-second resolver retries.\",\"mechanism\":\"musl_conntrack_dns\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1383,
+      "output": 194,
+      "total": 1717,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 4172,
+    "timestamp": 1791110601391
+  },
+  "verification": {
+    "passed": null,
+    "reason": "reference_contract_quarantined"
+  },
+  "wall_time_s": 6.567580832983367
+}

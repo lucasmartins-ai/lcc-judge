@@ -1,0 +1,81 @@
+{
+  "task_id": "task_005_ws_leak",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "f1f61889523a44f3d3597be62ea0eb2737e350622a2e80dd4f9eab1beea62fe1",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_005_ws_leak/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_005_ws_leak/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "OOM is caused by 450,000 retained UnclosedClientSession objects because the client_cleanup event listener at websocket/session_manager.py:88 is never removed.",
+    "mechanism": "unclosed_client_session",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113508_ee3771",
+      "timestamp": 1791110108810
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113508_ee3771",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"OOM is caused by 450,000 retained UnclosedClientSession objects because the client_cleanup event listener at websocket/session_manager.py:88 is never removed.\",\"mechanism\":\"unclosed_client_session\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 2,
+      "output": 133,
+      "total": 1640,
+      "cache_read": 1505,
+      "cache_write": 0
+    },
+    "duration_ms": 3881,
+    "timestamp": 1791110112691
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 6.210199624998495
+}

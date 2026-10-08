@@ -1,0 +1,14 @@
+F
+======================================================================
+FAIL: test_mixed_question_export_reconciles_without_request_or_key (test_ledger_export.LedgerExportTests.test_mixed_question_export_reconciles_without_request_or_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_ledger_export.py", line 19, in test_mixed_question_export_reconciles_without_request_or_key
+    self.assertEqual(len(rows),1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.006s
+
+FAILED (failures=1)

@@ -1,0 +1,81 @@
+{
+  "task_id": "task_014_shard_rebalance",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "bdfb5bc71ea9a19484979b1b7f90ebdeedc2e2cec7000f7170b763e04e8d36eb",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_014_shard_rebalance/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_014_shard_rebalance/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Use online logical replication/CDC; its cutover is under 15 seconds once caught up, unlike the 6-hour pg_dump/restore, which exceeds the 30-minute maintenance limit.",
+    "mechanism": "online_logical_replication",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_114040_cc431f",
+      "timestamp": 1791110441134
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_114040_cc431f",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Use online logical replication/CDC; its cutover is under 15 seconds once caught up, unlike the 6-hour pg_dump/restore, which exceeds the 30-minute maintenance limit.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 2,
+      "output": 267,
+      "total": 1777,
+      "cache_read": 1508,
+      "cache_write": 0
+    },
+    "duration_ms": 5365,
+    "timestamp": 1791110446499
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 7.1681262500351295
+}

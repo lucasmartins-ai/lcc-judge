@@ -1,0 +1,105 @@
+{
+  "task_id": "task_007_kafka_lag",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "aaf341cbde62671427d28d0440347d541b65920a7aca378f064d87e0f199cddf",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_007_kafka_lag/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_007_kafka_lag/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Partition 4 lag grew to 500,000 messages because its consumer thread was indefinitely blocked on a vendor fraud API HTTP call configured without a timeout.",
+    "mechanism": "blocked_external_http_no_timeout",
+    "parameters": {
+      "partition": 4,
+      "http_timeout": null
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211051_0cd508",
+      "timestamp": 1791058252094
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211051_0cd508",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Partition 4 lag grew to 500,000 messages because its consumer thread was indefinitely blocked on a vendor fraud API HTTP call configured without a timeout.\",\"mechanism\":\"blocked_external_http_no_timeout\",\"parameters\":{\"partition\":4,\"http_timeout\":null},\"python\":\"\"}",
+    "tokens": {
+      "input": 400,
+      "output": 126,
+      "total": 1652,
+      "cache_read": 1126,
+      "cache_write": 0
+    },
+    "duration_ms": 3903,
+    "timestamp": 1791058255998
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "usage": {
+        "input_tokens": 659,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 289.604625,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.7678e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 6.211376040999312
+}

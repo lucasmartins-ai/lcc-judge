@@ -1,0 +1,104 @@
+{
+  "task_id": "task_018_k8s_pdb",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "d0936ef9e3fed28fc56e95d49afd67572fd71e188962a6371b4415a508d2cd96",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_018_k8s_pdb/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_018_k8s_pdb/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Configure a PodDisruptionBudget requiring at least 3 replicas to remain available.",
+    "mechanism": "configure_pdb",
+    "parameters": {
+      "min_available": 3
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211647_e6190c",
+      "timestamp": 1791058608384
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211647_e6190c",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget requiring at least 3 replicas to remain available.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}",
+    "tokens": {
+      "input": 426,
+      "output": 200,
+      "total": 1727,
+      "cache_read": 1101,
+      "cache_write": 0
+    },
+    "duration_ms": 4194,
+    "timestamp": 1791058612579
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.93
+        }
+      },
+      "usage": {
+        "input_tokens": 590,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 269.61537500000003,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.478e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 6.600876832992071
+}

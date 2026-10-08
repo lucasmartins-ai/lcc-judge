@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "1fca8ea4cd2fbbde0d4f06abc0ef0c52eb905a92c1010448dfff5ea0dcae8681",
+  "splits": {
+    "train": {
+      "rows": 4864,
+      "labels": {
+        "0": 2304,
+        "1": 2304,
+        "None": 256
+      },
+      "semantic_unknown": 192,
+      "structural_unknown": 64,
+      "unique_projected_inputs": 3592,
+      "projected_rows": 4800,
+      "raw_max_tokens": 113,
+      "projected_max_tokens": 50,
+      "relevant_contradictions": 1132,
+      "wording_counts": {
+        "0:0": 1152,
+        "0:1": 1152,
+        "1:0": 1152,
+        "1:1": 1152
+      },
+      "numeric_multisets_balanced": true
+    },
+    "validation": {
+      "rows": 1824,
+      "labels": {
+        "1": 864,
+        "0": 864,
+        "None": 96
+      },
+      "semantic_unknown": 72,
+      "structural_unknown": 24,
+      "unique_projected_inputs": 996,
+      "projected_rows": 1800,
+      "raw_max_tokens": 109,
+      "projected_max_tokens": 46,
+      "relevant_contradictions": 424,
+      "wording_counts": {
+        "2:2": 1728
+      },
+      "numeric_multisets_balanced": true
+    },
+    "final": {
+      "rows": 2496,
+      "labels": {
+        "None": 192,
+        "1": 1152,
+        "0": 1152
+      },
+      "semantic_unknown": 144,
+      "structural_unknown": 48,
+      "unique_projected_inputs": 864,
+      "projected_rows": 2448,
+      "raw_max_tokens": 114,
+      "projected_max_tokens": 51,
+      "relevant_contradictions": 372,
+      "wording_counts": {
+        "3:3": 2304
+      },
+      "numeric_multisets_balanced": true
+    }
+  },
+  "cross_split_overlaps": {
+    "train:validation": {
+      "content": 0,
+      "effective": 0,
+      "entities": 0,
+      "fixtures": 0
+    },
+    "train:final": {
+      "content": 0,
+      "effective": 0,
+      "entities": 0,
+      "fixtures": 0
+    },
+    "validation:final": {
+      "content": 0,
+      "effective": 0,
+      "entities": 0,
+      "fixtures": 0
+    }
+  },
+  "raw_fields_independently_recounted": 1224,
+  "tokenizer_recounted": true,
+  "declared_token_counts_bounded": true,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "source_holdout": false,
+  "primitive_holdout": false,
+  "novel_final_pair_combinations": 6,
+  "scope": "Saved actual-tool receipt/declarative label/input audit on authored direct-record tasks; not human-reviewed semantic ground truth, P2, production or LCC replacement quality"
+}

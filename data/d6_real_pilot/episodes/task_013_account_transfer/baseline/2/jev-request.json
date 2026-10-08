@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Add transaction isolation to prevent double spending during balance transfer.",
+    "context": [
+      {
+        "block_id": "b_018f0b2f",
+        "content": "def transfer(from_acc, to_acc, amount):\n    b = db.query('SELECT balance FROM accounts WHERE id = ?', from_acc)\n    if b >= amount:\n        db.execute('UPDATE accounts SET balance = balance - ? WHERE id = ?', amount, from_acc)\n        db.execute('UPDATE accounts SET balance = balance + ? WHERE id = ?', amount, to_acc)",
+        "source": "ledger.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_7e2f44bd",
+        "content": "User was able to trigger 3 simultaneous transfers of $100 with only $100 balance.",
+        "source": "issues/892.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_dbef588d",
+        "content": "Transfer fee is 0% for domestic bank wires.",
+        "source": "fees.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Use a database transaction and lock the sender account row with SELECT ... FOR UPDATE before checking its balance.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def transfer(from_acc, to_acc, amount):\n    with db.transaction():\n        balance = db.query(\n            'SELECT balance FROM accounts WHERE id = ? FOR UPDATE',\n            from_acc,\n        )\n        if balance < amount:\n            return False\n        db.execute(\n            'UPDATE accounts SET balance = balance - ? WHERE id = ?',\n            amount,\n            from_acc,\n        )\n        db.execute(\n            'UPDATE accounts SET balance = balance + ? WHERE id = ?',\n            amount,\n            to_acc,\n        )\n    return True"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

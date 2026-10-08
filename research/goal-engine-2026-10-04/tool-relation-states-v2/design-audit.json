@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "design_sha256": "0c0d269123ee2abedb78cfd60d3bce97573f4b836cfcbfaccc4f83987b212ebb",
+  "cohort_sha256": "82eb8ca05308cb985a22908eddf695253be5318ea4dd2bc3d636686b3d4cd30a",
+  "graph": {
+    "roles": 18,
+    "unordered_pairs": 52,
+    "connected_components": 1,
+    "components": [
+      [
+        "git_clean_tracked_files",
+        "git_ignored_files",
+        "git_index_edits",
+        "git_index_files",
+        "git_tracked_fs_bytes",
+        "git_untracked_files",
+        "git_untracked_fs_bytes",
+        "git_worktree_edits",
+        "retry_actual_sleep_ns",
+        "retry_attempts",
+        "retry_elapsed_ns",
+        "retry_failures",
+        "retry_scheduled_sleep_ns",
+        "retry_sleep_calls",
+        "udp_received_datagrams",
+        "udp_received_payload_bytes",
+        "udp_sent_datagrams",
+        "udp_sent_payload_bytes"
+      ]
+    ],
+    "min_degree": 3,
+    "max_degree": 8
+  },
+  "fixtures": 96,
+  "fields": 1728,
+  "wording_combinations": 32,
+  "expected_rows": {
+    "train": 60288,
+    "validation": 30144
+  },
+  "model_forwards": 0,
+  "P2_admission": false,
+  "quality_approved": false
+}

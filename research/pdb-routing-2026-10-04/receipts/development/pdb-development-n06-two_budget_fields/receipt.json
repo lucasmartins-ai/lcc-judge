@@ -1,0 +1,33 @@
+{
+  "case_id": "pdb-development-n06-two_budget_fields",
+  "split": "development",
+  "family": "two_budget_fields",
+  "expected": false,
+  "case_sha256": "70a63803de6edcbe5beaf8b2feba01e80bd1f2dc25fe451396ce97c955e07f67",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "one_budget_field_required"
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "one_budget_field_required"
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "one_budget_field_required"
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

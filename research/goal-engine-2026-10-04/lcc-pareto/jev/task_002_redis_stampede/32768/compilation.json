@@ -1,0 +1,3499 @@
+{
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "profile": "jev",
+  "task_id": "task_002_redis_stampede",
+  "budget_hf": 32768,
+  "input_sha256": "b7517eb6640949bdf9b63d53958afd7ca21aea26ab61e133698fc188932d67e1",
+  "output_sha256": "0530d7fcdd39e902f22872df44c8e01bd926f774f4075c1afef4e2741b08c4dc",
+  "compilation_wall_s": 41.012338000000454,
+  "additional_load_s": 0,
+  "report": {
+    "schema_version": "relevance-compaction-1.2",
+    "provider_requested": "jev",
+    "provider_used": "jev",
+    "degraded": false,
+    "objective": "Determine why redis cache hit ratio dropped to 12% at 09:30 UTC.",
+    "threshold": 0.4,
+    "trim_threshold": null,
+    "trim_head_chars": 0,
+    "blocks_total": 92,
+    "blocks_scored": 92,
+    "blocks_protected": 0,
+    "blocks_dropped": 88,
+    "blocks_trimmed": 0,
+    "blocks_restored": 0,
+    "chars_before": 115421,
+    "chars_after": 404,
+    "chars_removed": 115017,
+    "tokens_before": 29505,
+    "tokens_after": 118,
+    "token_count_method": "exact",
+    "tokenizer": "tiktoken",
+    "tokenizer_id": "o200k_base",
+    "tokenizer_version": "0.13.0",
+    "is_estimate": false,
+    "jev_model_requested": "jev-latest",
+    "jev_model_resolved": "jev-1.13.0",
+    "laya_model_requested": null,
+    "laya_model_resolved": null,
+    "laya_context_limit": null,
+    "context_budget_used": null,
+    "laya_temperature": null,
+    "reduction_ratio": 0.996499770405732,
+    "worth_it": true,
+    "min_reduction": 0.25,
+    "calls": 92,
+    "latency_ms": 40883,
+    "compilation_ms": 41009,
+    "reused_decisions": 0,
+    "semantic_decisions": 92,
+    "semantic_cache_hits": 0,
+    "semantic_cache_misses": 92,
+    "sufficiency_checks": 0,
+    "sufficiency_failures": 0,
+    "sufficiency_confidence": null,
+    "relationship_edges": 1,
+    "marker_tokens": 14,
+    "policy_version": "relevance-compaction-1.2",
+    "trim_policy_version": "trim-1.2",
+    "parser_version": "blocks-1.0",
+    "protection_version": "protection-1.1",
+    "relationship_version": "relationships-1.0",
+    "prefix_protected": false,
+    "prefix_untouched": false,
+    "first_mutation_offset": 0,
+    "prefix_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output_sha256": "0530d7fcdd39e902f22872df44c8e01bd926f774f4075c1afef4e2741b08c4dc",
+    "degradation_reason": null,
+    "semantic_guarantee": "judged",
+    "invalidated_tokens": 29505,
+    "break_even_reuses": 11.5,
+    "needs_review": false,
+    "review_reason": null,
+    "semantic_verifier_sufficient": null,
+    "semantic_verifier_decision": null,
+    "semantic_verifier_confidence": null,
+    "semantic_verifier_model": null,
+    "semantic_verifier_missing": [],
+    "semantic_verifier_risks": [],
+    "warnings": [
+      "jev_confidence_missing:blk_0001_507bf049fbd3",
+      "jev_confidence_missing:blk_0002_9f26caa32ad2",
+      "jev_confidence_missing:blk_0003_bfac90677083",
+      "jev_confidence_missing:blk_0004_f0cbaa8c0e0c",
+      "jev_confidence_missing:blk_0005_e3a9b69cb49b",
+      "jev_confidence_missing:blk_0006_3e706aabbd59",
+      "jev_confidence_missing:blk_0007_b9380a3f2f91",
+      "jev_confidence_missing:blk_0008_1f01b1eeefe5",
+      "jev_confidence_missing:blk_0009_c58ce8b1573d",
+      "jev_confidence_missing:blk_0010_ca9f0661c964",
+      "jev_confidence_missing:blk_0011_10aa7c2598ad",
+      "jev_confidence_missing:blk_0012_731fe5817f56",
+      "jev_confidence_missing:blk_0013_beba6c0c02ad",
+      "jev_confidence_missing:blk_0014_228d6c5a7da4",
+      "jev_confidence_missing:blk_0015_6bf9daffc492",
+      "jev_confidence_missing:blk_0016_f032f4180101",
+      "jev_confidence_missing:blk_0017_88db6330bb72",
+      "jev_confidence_missing:blk_0018_2c2a0e5f68ea",
+      "jev_confidence_missing:blk_0019_a5764c9ff2b9",
+      "jev_confidence_missing:blk_0020_c28f75a83aa8",
+      "jev_confidence_missing:blk_0021_2c0dff1836dd",
+      "jev_confidence_missing:blk_0022_24f856579b60",
+      "jev_confidence_missing:blk_0023_846ad53205a5",
+      "jev_confidence_missing:blk_0024_1f4ab86a70bf",
+      "jev_confidence_missing:blk_0025_14bcb2420064",
+      "jev_confidence_missing:blk_0026_a77a91ecd07a",
+      "jev_confidence_missing:blk_0027_462776721276",
+      "jev_confidence_missing:blk_0028_4eaa8b5f18a1",
+      "jev_confidence_missing:blk_0029_e693a970cdac",
+      "jev_confidence_missing:blk_0030_cbff650ce897",
+      "jev_confidence_missing:blk_0031_ccb1134b716c",
+      "jev_confidence_missing:blk_0032_5ca7efe0ad8d",
+      "jev_confidence_missing:blk_0033_72ecdd07787f",
+      "jev_confidence_missing:blk_0034_9b7eef826376",
+      "jev_confidence_missing:blk_0035_32ae157ac079",
+      "jev_confidence_missing:blk_0036_d743b5da29df",
+      "jev_confidence_missing:blk_0037_5e387d614a74",
+      "jev_confidence_missing:blk_0038_7543333a415d",
+      "jev_confidence_missing:blk_0039_f2f76a9d39a6",
+      "jev_confidence_missing:blk_0040_b36aa2a8921c",
+      "jev_confidence_missing:blk_0041_435d1549beaf",
+      "jev_confidence_missing:blk_0042_9710b4a6bcfa",
+      "jev_confidence_missing:blk_0043_6f759eceb308",
+      "jev_confidence_missing:blk_0044_9bbaacc1168f",
+      "jev_confidence_missing:blk_0045_65d2f1a053bf",
+      "jev_confidence_missing:blk_0046_e7127f212c15",
+      "jev_confidence_missing:blk_0047_fa9144ad6435",
+      "jev_confidence_missing:blk_0048_e19eb89a896e",
+      "jev_confidence_missing:blk_0049_c9d643a03db7",
+      "jev_confidence_missing:blk_0050_2fbfd0cde9ec",
+      "jev_confidence_missing:blk_0051_ea8384c47602",
+      "jev_confidence_missing:blk_0052_3fc96009841a",
+      "jev_confidence_missing:blk_0053_149ea868890e",
+      "jev_confidence_missing:blk_0054_72091a6ec767",
+      "jev_confidence_missing:blk_0055_2883d2c7b062",
+      "jev_confidence_missing:blk_0056_a86f776a893e",
+      "jev_confidence_missing:blk_0057_15985b861c89",
+      "jev_confidence_missing:blk_0058_5e24f5a9fd9b",
+      "jev_confidence_missing:blk_0059_b7d01067d4df",
+      "jev_confidence_missing:blk_0060_6bd291f11d3d",
+      "jev_confidence_missing:blk_0061_4b957f9a17c2",
+      "jev_confidence_missing:blk_0062_761e5ef7819b",
+      "jev_confidence_missing:blk_0063_a8d992e96b45",
+      "jev_confidence_missing:blk_0064_a8c1ba857b91",
+      "jev_confidence_missing:blk_0065_7c0fbc57931e",
+      "jev_confidence_missing:blk_0066_673ba586d59b",
+      "jev_confidence_missing:blk_0067_233750108db7",
+      "jev_confidence_missing:blk_0068_b1e25cbd5a95",
+      "jev_confidence_missing:blk_0069_0cf00cb10d66",
+      "jev_confidence_missing:blk_0070_d165869c9024",
+      "jev_confidence_missing:blk_0071_649c480a8029",
+      "jev_confidence_missing:blk_0072_7a7bf6f0a2ba",
+      "jev_confidence_missing:blk_0073_667afdb6f1fa",
+      "jev_confidence_missing:blk_0074_1610d32f80c1",
+      "jev_confidence_missing:blk_0075_972d161ba442",
+      "jev_confidence_missing:blk_0076_5c7fe54eea5d",
+      "jev_confidence_missing:blk_0077_95281015bca1",
+      "jev_confidence_missing:blk_0078_1fb717587796",
+      "jev_confidence_missing:blk_0079_a8566bfbdd70",
+      "jev_confidence_missing:blk_0080_08b4be430ad3",
+      "jev_confidence_missing:blk_0081_74c195e50422",
+      "jev_confidence_missing:blk_0082_7ae6d0d8e241",
+      "jev_confidence_missing:blk_0083_5f6181b3675e",
+      "jev_confidence_missing:blk_0084_b7a2235eb318",
+      "jev_confidence_missing:blk_0085_4bad22e54248",
+      "jev_confidence_missing:blk_0086_e2fb44c88b8b",
+      "jev_confidence_missing:blk_0087_713c546975d8",
+      "jev_confidence_missing:blk_0088_f1141b083b13",
+      "jev_confidence_missing:blk_0089_f8878f868792",
+      "jev_confidence_missing:blk_0090_c7166920333a",
+      "jev_confidence_missing:blk_0091_a378638c2604",
+      "jev_confidence_missing:blk_0092_36a4d142c41f",
+      "strict_keep_drop: --trim-head-chars 0 disabled the trim middle gear, so borderline-scored blocks are dropped outright instead of keeping a bounded head. Trimming is the safety net for near-miss evidence; leaving it on is the safer default.",
+      "cache_epoch_risk: this pass invalidates 29505 tokens at offset 0 to drop 29387; it only pays off after ~11.5 reuses of the pruned context. Protect the prefix (--prefix-marker/--protect-prefix) or wait for a cache epoch."
+    ],
+    "decisions": [
+      {
+        "id": "blk_0001_507bf049fbd3",
+        "index": 1,
+        "line_start": 1,
+        "line_end": 16,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [
+          "SUPPORTS:blk_0006_3e706aabbd59"
+        ],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0002_9f26caa32ad2",
+        "index": 2,
+        "line_start": 18,
+        "line_end": 33,
+        "chars": 1311,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0003_bfac90677083",
+        "index": 3,
+        "line_start": 35,
+        "line_end": 50,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0004_f0cbaa8c0e0c",
+        "index": 4,
+        "line_start": 52,
+        "line_end": 67,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0005_e3a9b69cb49b",
+        "index": 5,
+        "line_start": 69,
+        "line_end": 84,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0006_3e706aabbd59",
+        "index": 6,
+        "line_start": 86,
+        "line_end": 101,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [
+          "SUPPORTS:blk_0001_507bf049fbd3"
+        ],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0007_b9380a3f2f91",
+        "index": 7,
+        "line_start": 103,
+        "line_end": 118,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.15,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0008_1f01b1eeefe5",
+        "index": 8,
+        "line_start": 120,
+        "line_end": 135,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0009_c58ce8b1573d",
+        "index": 9,
+        "line_start": 137,
+        "line_end": 152,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0010_ca9f0661c964",
+        "index": 10,
+        "line_start": 154,
+        "line_end": 169,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0011_10aa7c2598ad",
+        "index": 11,
+        "line_start": 171,
+        "line_end": 186,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0012_731fe5817f56",
+        "index": 12,
+        "line_start": 188,
+        "line_end": 203,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.16,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0013_beba6c0c02ad",
+        "index": 13,
+        "line_start": 205,
+        "line_end": 220,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0014_228d6c5a7da4",
+        "index": 14,
+        "line_start": 222,
+        "line_end": 237,
+        "chars": 1309,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0015_6bf9daffc492",
+        "index": 15,
+        "line_start": 239,
+        "line_end": 254,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0016_f032f4180101",
+        "index": 16,
+        "line_start": 256,
+        "line_end": 271,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0017_88db6330bb72",
+        "index": 17,
+        "line_start": 273,
+        "line_end": 288,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0018_2c2a0e5f68ea",
+        "index": 18,
+        "line_start": 290,
+        "line_end": 305,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0019_a5764c9ff2b9",
+        "index": 19,
+        "line_start": 307,
+        "line_end": 322,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0020_c28f75a83aa8",
+        "index": 20,
+        "line_start": 324,
+        "line_end": 339,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0021_2c0dff1836dd",
+        "index": 21,
+        "line_start": 341,
+        "line_end": 356,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.17,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0022_24f856579b60",
+        "index": 22,
+        "line_start": 358,
+        "line_end": 373,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0023_846ad53205a5",
+        "index": 23,
+        "line_start": 375,
+        "line_end": 390,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0024_1f4ab86a70bf",
+        "index": 24,
+        "line_start": 392,
+        "line_end": 407,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0025_14bcb2420064",
+        "index": 25,
+        "line_start": 409,
+        "line_end": 424,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0026_a77a91ecd07a",
+        "index": 26,
+        "line_start": 426,
+        "line_end": 441,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0027_462776721276",
+        "index": 27,
+        "line_start": 443,
+        "line_end": 458,
+        "chars": 1301,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0028_4eaa8b5f18a1",
+        "index": 28,
+        "line_start": 460,
+        "line_end": 475,
+        "chars": 1311,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0029_e693a970cdac",
+        "index": 29,
+        "line_start": 477,
+        "line_end": 492,
+        "chars": 1302,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0030_cbff650ce897",
+        "index": 30,
+        "line_start": 494,
+        "line_end": 509,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0031_ccb1134b716c",
+        "index": 31,
+        "line_start": 511,
+        "line_end": 526,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0032_5ca7efe0ad8d",
+        "index": 32,
+        "line_start": 528,
+        "line_end": 543,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0033_72ecdd07787f",
+        "index": 33,
+        "line_start": 545,
+        "line_end": 560,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0034_9b7eef826376",
+        "index": 34,
+        "line_start": 562,
+        "line_end": 577,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.16,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0035_32ae157ac079",
+        "index": 35,
+        "line_start": 579,
+        "line_end": 594,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.15,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0036_d743b5da29df",
+        "index": 36,
+        "line_start": 596,
+        "line_end": 611,
+        "chars": 1309,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0037_5e387d614a74",
+        "index": 37,
+        "line_start": 613,
+        "line_end": 628,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.15,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0038_7543333a415d",
+        "index": 38,
+        "line_start": 630,
+        "line_end": 645,
+        "chars": 1309,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.15,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0039_f2f76a9d39a6",
+        "index": 39,
+        "line_start": 647,
+        "line_end": 662,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0040_b36aa2a8921c",
+        "index": 40,
+        "line_start": 664,
+        "line_end": 679,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0041_435d1549beaf",
+        "index": 41,
+        "line_start": 681,
+        "line_end": 696,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.15,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0042_9710b4a6bcfa",
+        "index": 42,
+        "line_start": 698,
+        "line_end": 713,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0043_6f759eceb308",
+        "index": 43,
+        "line_start": 715,
+        "line_end": 730,
+        "chars": 1311,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0044_9bbaacc1168f",
+        "index": 44,
+        "line_start": 732,
+        "line_end": 747,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0045_65d2f1a053bf",
+        "index": 45,
+        "line_start": 749,
+        "line_end": 764,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0046_e7127f212c15",
+        "index": 46,
+        "line_start": 766,
+        "line_end": 781,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0047_fa9144ad6435",
+        "index": 47,
+        "line_start": 783,
+        "line_end": 798,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.11,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0048_e19eb89a896e",
+        "index": 48,
+        "line_start": 800,
+        "line_end": 815,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0049_c9d643a03db7",
+        "index": 49,
+        "line_start": 817,
+        "line_end": 832,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0050_2fbfd0cde9ec",
+        "index": 50,
+        "line_start": 834,
+        "line_end": 849,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.16,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0051_ea8384c47602",
+        "index": 51,
+        "line_start": 851,
+        "line_end": 866,
+        "chars": 1301,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0052_3fc96009841a",
+        "index": 52,
+        "line_start": 868,
+        "line_end": 883,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0053_149ea868890e",
+        "index": 53,
+        "line_start": 885,
+        "line_end": 900,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0054_72091a6ec767",
+        "index": 54,
+        "line_start": 902,
+        "line_end": 917,
+        "chars": 1309,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.11,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0055_2883d2c7b062",
+        "index": 55,
+        "line_start": 919,
+        "line_end": 934,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0056_a86f776a893e",
+        "index": 56,
+        "line_start": 936,
+        "line_end": 951,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0057_15985b861c89",
+        "index": 57,
+        "line_start": 953,
+        "line_end": 968,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0058_5e24f5a9fd9b",
+        "index": 58,
+        "line_start": 970,
+        "line_end": 985,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0059_b7d01067d4df",
+        "index": 59,
+        "line_start": 987,
+        "line_end": 1002,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0060_6bd291f11d3d",
+        "index": 60,
+        "line_start": 1004,
+        "line_end": 1019,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0061_4b957f9a17c2",
+        "index": 61,
+        "line_start": 1021,
+        "line_end": 1036,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0062_761e5ef7819b",
+        "index": 62,
+        "line_start": 1038,
+        "line_end": 1053,
+        "chars": 1310,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.15,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0063_a8d992e96b45",
+        "index": 63,
+        "line_start": 1055,
+        "line_end": 1070,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0064_a8c1ba857b91",
+        "index": 64,
+        "line_start": 1072,
+        "line_end": 1087,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.11,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0065_7c0fbc57931e",
+        "index": 65,
+        "line_start": 1089,
+        "line_end": 1104,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0066_673ba586d59b",
+        "index": 66,
+        "line_start": 1106,
+        "line_end": 1121,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0067_233750108db7",
+        "index": 67,
+        "line_start": 1123,
+        "line_end": 1138,
+        "chars": 1304,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.16,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0068_b1e25cbd5a95",
+        "index": 68,
+        "line_start": 1140,
+        "line_end": 1155,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0069_0cf00cb10d66",
+        "index": 69,
+        "line_start": 1157,
+        "line_end": 1172,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.11,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0070_d165869c9024",
+        "index": 70,
+        "line_start": 1174,
+        "line_end": 1189,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0071_649c480a8029",
+        "index": 71,
+        "line_start": 1191,
+        "line_end": 1206,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0072_7a7bf6f0a2ba",
+        "index": 72,
+        "line_start": 1208,
+        "line_end": 1223,
+        "chars": 1311,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0073_667afdb6f1fa",
+        "index": 73,
+        "line_start": 1225,
+        "line_end": 1240,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0074_1610d32f80c1",
+        "index": 74,
+        "line_start": 1242,
+        "line_end": 1257,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0075_972d161ba442",
+        "index": 75,
+        "line_start": 1259,
+        "line_end": 1274,
+        "chars": 1303,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.11,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0076_5c7fe54eea5d",
+        "index": 76,
+        "line_start": 1276,
+        "line_end": 1291,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0077_95281015bca1",
+        "index": 77,
+        "line_start": 1293,
+        "line_end": 1308,
+        "chars": 1309,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0078_1fb717587796",
+        "index": 78,
+        "line_start": 1310,
+        "line_end": 1325,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.2,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0079_a8566bfbdd70",
+        "index": 79,
+        "line_start": 1327,
+        "line_end": 1342,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0080_08b4be430ad3",
+        "index": 80,
+        "line_start": 1344,
+        "line_end": 1359,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0081_74c195e50422",
+        "index": 81,
+        "line_start": 1361,
+        "line_end": 1376,
+        "chars": 1301,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0082_7ae6d0d8e241",
+        "index": 82,
+        "line_start": 1378,
+        "line_end": 1393,
+        "chars": 1309,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0083_5f6181b3675e",
+        "index": 83,
+        "line_start": 1395,
+        "line_end": 1410,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0084_b7a2235eb318",
+        "index": 84,
+        "line_start": 1412,
+        "line_end": 1427,
+        "chars": 1306,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.14,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0085_4bad22e54248",
+        "index": 85,
+        "line_start": 1429,
+        "line_end": 1444,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0086_e2fb44c88b8b",
+        "index": 86,
+        "line_start": 1446,
+        "line_end": 1461,
+        "chars": 1307,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0087_713c546975d8",
+        "index": 87,
+        "line_start": 1463,
+        "line_end": 1478,
+        "chars": 1305,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.12,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0088_f1141b083b13",
+        "index": 88,
+        "line_start": 1480,
+        "line_end": 1495,
+        "chars": 1308,
+        "decision": "drop",
+        "source": "jev",
+        "score": 0.13,
+        "reason": "score_below_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0089_f8878f868792",
+        "index": 89,
+        "line_start": 1497,
+        "line_end": 1497,
+        "chars": 58,
+        "decision": "keep",
+        "source": "jev",
+        "score": 0.75,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0090_c7166920333a",
+        "index": 90,
+        "line_start": 1499,
+        "line_end": 1499,
+        "chars": 154,
+        "decision": "keep",
+        "source": "jev",
+        "score": 0.96,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0091_a378638c2604",
+        "index": 91,
+        "line_start": 1501,
+        "line_end": 1501,
+        "chars": 62,
+        "decision": "keep",
+        "source": "jev",
+        "score": 0.81,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0092_36a4d142c41f",
+        "index": 92,
+        "line_start": 1503,
+        "line_end": 1503,
+        "chars": 79,
+        "decision": "keep",
+        "source": "jev",
+        "score": 0.69,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": null,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      }
+    ]
+  },
+  "input_dossier_hf": 32547,
+  "same_bytes": false,
+  "laya_calls": [],
+  "jev_receipts": [
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0001_507bf049fbd3": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 921,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 255.48925000000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8682e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0002_9f26caa32ad2": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 372.448083,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0003_bfac90677083": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 281.528708,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0004_f0cbaa8c0e0c": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 257.04125,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0005_e3a9b69cb49b": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 267.37804200000005,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0006_3e706aabbd59": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 349.539375,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0007_b9380a3f2f91": {
+            "type": "noul",
+            "noul": 0.15
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 366.228959,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0008_1f01b1eeefe5": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 261.017625,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0009_c58ce8b1573d": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 266.66979100000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0010_ca9f0661c964": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 921,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 324.506625,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8682e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0011_10aa7c2598ad": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 333.235292,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0012_731fe5817f56": {
+            "type": "noul",
+            "noul": 0.16
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 261.525792,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0013_beba6c0c02ad": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 918,
+          "output_tokens": 35
+        }
+      },
+      "latency_ms": 276.61775,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8556e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0014_228d6c5a7da4": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 272.55370800000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0015_6bf9daffc492": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 915,
+          "output_tokens": 35
+        }
+      },
+      "latency_ms": 269.50374999999997,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.843e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0016_f032f4180101": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 248.576167,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8892e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0017_88db6330bb72": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 918,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 267.093334,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8556e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0018_2c2a0e5f68ea": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 355.163292,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0019_a5764c9ff2b9": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 255.11870800000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0020_c28f75a83aa8": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 260.837916,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0021_2c0dff1836dd": {
+            "type": "noul",
+            "noul": 0.17
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 270.599834,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0022_24f856579b60": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 255.905167,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0023_846ad53205a5": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 355.393959,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0024_1f4ab86a70bf": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 253.95020899999997,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0025_14bcb2420064": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 386.026292,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0026_a77a91ecd07a": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 258.562166,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0027_462776721276": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 260.865917,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0028_4eaa8b5f18a1": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 927,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 259.220709,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8934000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0029_e693a970cdac": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 914,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 384.709042,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8388000000000006e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0030_cbff650ce897": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 916,
+          "output_tokens": 35
+        }
+      },
+      "latency_ms": 472.659958,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8472e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0031_ccb1134b716c": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 262.892083,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0032_5ca7efe0ad8d": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 918,
+          "output_tokens": 35
+        }
+      },
+      "latency_ms": 317.70437499999997,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8556e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0033_72ecdd07787f": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 921,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 253.9435,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8682e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0034_9b7eef826376": {
+            "type": "noul",
+            "noul": 0.16
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 302.535042,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0035_32ae157ac079": {
+            "type": "noul",
+            "noul": 0.15
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 260.540916,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0036_d743b5da29df": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 921,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 267.901833,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8682e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0037_5e387d614a74": {
+            "type": "noul",
+            "noul": 0.15
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 306.267292,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0038_7543333a415d": {
+            "type": "noul",
+            "noul": 0.15
+          }
+        },
+        "usage": {
+          "input_tokens": 927,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 381.564167,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8934000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0039_f2f76a9d39a6": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 262.60112499999997,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0040_b36aa2a8921c": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 249.925167,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0041_435d1549beaf": {
+            "type": "noul",
+            "noul": 0.15
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 323.713083,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0042_9710b4a6bcfa": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 338.713083,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0043_6f759eceb308": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 263.586166,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0044_9bbaacc1168f": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 357.530125,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0045_65d2f1a053bf": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 351.640375,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0046_e7127f212c15": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 274.83841600000005,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0047_fa9144ad6435": {
+            "type": "noul",
+            "noul": 0.11
+          }
+        },
+        "usage": {
+          "input_tokens": 918,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 271.507583,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8556e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0048_e19eb89a896e": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 265.292,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0049_c9d643a03db7": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 321.27475,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0050_2fbfd0cde9ec": {
+            "type": "noul",
+            "noul": 0.16
+          }
+        },
+        "usage": {
+          "input_tokens": 914,
+          "output_tokens": 35
+        }
+      },
+      "latency_ms": 371.484125,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8388000000000006e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0051_ea8384c47602": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 364.822375,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0052_3fc96009841a": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 277.235958,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0053_149ea868890e": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 266.00404100000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0054_72091a6ec767": {
+            "type": "noul",
+            "noul": 0.11
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 265.580083,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0055_2883d2c7b062": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 295.7885,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8892e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0056_a86f776a893e": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 261.435209,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0057_15985b861c89": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 248.776291,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0058_5e24f5a9fd9b": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 271.485834,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0059_b7d01067d4df": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 287.360959,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0060_6bd291f11d3d": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 253.03020800000002,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8892e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0061_4b957f9a17c2": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 271.41375000000005,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0062_761e5ef7819b": {
+            "type": "noul",
+            "noul": 0.15
+          }
+        },
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 252.91508399999998,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8892e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0063_a8d992e96b45": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 367.459,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0064_a8c1ba857b91": {
+            "type": "noul",
+            "noul": 0.11
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 314.202792,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0065_7c0fbc57931e": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 266.52774999999997,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0066_673ba586d59b": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 259.754167,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0067_233750108db7": {
+            "type": "noul",
+            "noul": 0.16
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 295.13929199999995,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0068_b1e25cbd5a95": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 255.62883300000001,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0069_0cf00cb10d66": {
+            "type": "noul",
+            "noul": 0.11
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 303.996959,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0070_d165869c9024": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 315.799791,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0071_649c480a8029": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 297.5695,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0072_7a7bf6f0a2ba": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 277.943583,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0073_667afdb6f1fa": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 248.33716600000002,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0074_1610d32f80c1": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 283.02441699999997,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0075_972d161ba442": {
+            "type": "noul",
+            "noul": 0.11
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 345.84779100000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0076_5c7fe54eea5d": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 267.44212500000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0077_95281015bca1": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 291.647833,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0078_1fb717587796": {
+            "type": "noul",
+            "noul": 0.2
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 274.071583,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0079_a8566bfbdd70": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 917,
+          "output_tokens": 36
+        }
+      },
+      "latency_ms": 271.478708,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8514000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0080_08b4be430ad3": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 325.104708,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0081_74c195e50422": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 919,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 370.79704200000003,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8598e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0082_7ae6d0d8e241": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 925,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 370.068958,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.885e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0083_5f6181b3675e": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 926,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 260.969,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8892e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0084_b7a2235eb318": {
+            "type": "noul",
+            "noul": 0.14
+          }
+        },
+        "usage": {
+          "input_tokens": 920,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 317.892291,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.864e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0085_4bad22e54248": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 922,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 263.195958,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8724000000000004e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0086_e2fb44c88b8b": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 921,
+          "output_tokens": 37
+        }
+      },
+      "latency_ms": 391.03099999999995,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8682e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0087_713c546975d8": {
+            "type": "noul",
+            "noul": 0.12
+          }
+        },
+        "usage": {
+          "input_tokens": 923,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 260.452458,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.876600000000001e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0088_f1141b083b13": {
+            "type": "noul",
+            "noul": 0.13
+          }
+        },
+        "usage": {
+          "input_tokens": 924,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 396.904584,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 3.8808e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0089_f8878f868792": {
+            "type": "noul",
+            "noul": 0.75
+          }
+        },
+        "usage": {
+          "input_tokens": 471,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 283.399125,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 1.9782e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0090_c7166920333a": {
+            "type": "noul",
+            "noul": 0.96
+          }
+        },
+        "usage": {
+          "input_tokens": 510,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 288.834583,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 2.142e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0091_a378638c2604": {
+            "type": "noul",
+            "noul": 0.81
+          }
+        },
+        "usage": {
+          "input_tokens": 471,
+          "output_tokens": 38
+        }
+      },
+      "latency_ms": 301.193917,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 1.9782e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    },
+    {
+      "status": "SUCCESS",
+      "response": {
+        "model": "jev-1.13.0",
+        "answers": {
+          "keep_blk_0092_36a4d142c41f": {
+            "type": "noul",
+            "noul": 0.69
+          }
+        },
+        "usage": {
+          "input_tokens": 468,
+          "output_tokens": 39
+        }
+      },
+      "latency_ms": 268.9765,
+      "cost_usd": null,
+      "tariff_estimated_cost_usd": 1.9656000000000003e-05,
+      "tariff_source": "https://docs.typesafe.ai/models"
+    }
+  ]
+}

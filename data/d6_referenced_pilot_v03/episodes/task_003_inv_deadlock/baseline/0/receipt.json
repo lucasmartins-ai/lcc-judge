@@ -1,0 +1,82 @@
+{
+  "task_id": "task_003_inv_deadlock",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "24bd1ef85b8dda4008eb02444eeca8ec93285800de49606410397ddd02dc8977",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_003_inv_deadlock/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_003_inv_deadlock/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Acquire item locks in ascending item-ID order to impose a consistent global lock order and eliminate circular waits.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def reserve_items(items):\n    for item in sorted(items, key=lambda item: item.id):\n        with lock_item(item.id):\n            decrement_stock(item)\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113419_2bbd10",
+      "timestamp": 1791110060300
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113419_2bbd10",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Acquire item locks in ascending item-ID order to impose a consistent global lock order and eliminate circular waits.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def reserve_items(items):\\n    for item in sorted(items, key=lambda item: item.id):\\n        with lock_item(item.id):\\n            decrement_stock(item)\\n\"}",
+    "tokens": {
+      "input": 1063,
+      "output": 400,
+      "total": 1603,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 8183,
+    "timestamp": 1791110068484
+  },
+  "verification": {
+    "passed": null,
+    "reason": "reference_contract_quarantined"
+  },
+  "wall_time_s": 10.082256958063226,
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

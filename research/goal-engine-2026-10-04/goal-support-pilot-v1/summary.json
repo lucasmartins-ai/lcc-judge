@@ -1,0 +1,80 @@
+{
+  "protocol_sha256": "a1aae8e09162455ec94e162bf36c09daf3cad0cd7e734eef062af38e6227bb91",
+  "finished_at_utc": "2026-10-08T11:11:22.812835+00:00",
+  "validation": {
+    "n": 1136,
+    "supported": 240,
+    "accepted": 0,
+    "correct_bindings": 0,
+    "supported_accepted": 0,
+    "unknown": 896,
+    "unknown_abstained": 896,
+    "accepted_binding_precision": null,
+    "supported_coverage": 0.0,
+    "correct_supported_coverage": 0.0,
+    "unknown_recognition": 1.0,
+    "confusion": [
+      {
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "n": 896
+      },
+      {
+        "expected": "git_index_edits",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "git_worktree_edits",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "retry_actual_sleep_ns",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "retry_attempts",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "retry_failures",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "retry_scheduled_sleep_ns",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "udp_sent_payload_bytes",
+        "predicted": "UNKNOWN",
+        "n": 30
+      }
+    ],
+    "gate_pass": false
+  },
+  "router_gate_pass": false,
+  "next_action": "STOP_before_fresh_confirmation_and_LCC",
+  "train_policy_available": false,
+  "trained_parameters": 117,
+  "completed_updates": 200,
+  "head_fit_s": 1.7945497080218047,
+  "elapsed_after_train_inputs_s": 2.8678375830641016,
+  "peak_head_process_rss_bytes": 382173184,
+  "performance_scope": "Cached-head fit/evaluation; excludes predecessor encoder scoring/setup and LCC serving",
+  "additional_encoder_forwards": 0,
+  "newly_scored_model_tokens": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "independent_human_review": false
+}

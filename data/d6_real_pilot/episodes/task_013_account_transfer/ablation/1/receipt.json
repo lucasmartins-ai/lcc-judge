@@ -1,0 +1,108 @@
+{
+  "task_id": "task_013_account_transfer",
+  "condition": "ablation",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "e25a236f5186bd6bc0aa07c521684e35dc4d9afcf6d7fabb5fba52d8722d5493",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_013_account_transfer/ablation/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_013_account_transfer/ablation/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Use a database transaction and lock the source account with SELECT ... FOR UPDATE before checking its balance.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def transfer(from_acc, to_acc, amount):\n    if amount <= 0:\n        raise ValueError(\"amount must be positive\")\n\n    with db.transaction():\n        balance = db.query(\n            \"SELECT balance FROM accounts WHERE account_id = %s FOR UPDATE\",\n            from_acc,\n        )\n        if balance < amount:\n            raise ValueError(\"insufficient funds\")\n\n        db.execute(\n            \"UPDATE accounts SET balance = balance - %s WHERE account_id = %s\",\n            amount,\n            from_acc,\n        )\n        db.execute(\n            \"UPDATE accounts SET balance = balance + %s WHERE account_id = %s\",\n            amount,\n            to_acc,\n        )\n\n    return True"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211418_ed3a77",
+      "timestamp": 1791058458616
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211418_ed3a77",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Use a database transaction and lock the source account with SELECT ... FOR UPDATE before checking its balance.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def transfer(from_acc, to_acc, amount):\\n    if amount <= 0:\\n        raise ValueError(\\\"amount must be positive\\\")\\n\\n    with db.transaction():\\n        balance = db.query(\\n            \\\"SELECT balance FROM accounts WHERE account_id = %s FOR UPDATE\\\",\\n            from_acc,\\n        )\\n        if balance < amount:\\n            raise ValueError(\\\"insufficient funds\\\")\\n\\n        db.execute(\\n            \\\"UPDATE accounts SET balance = balance - %s WHERE account_id = %s\\\",\\n            amount,\\n            from_acc,\\n        )\\n        db.execute(\\n            \\\"UPDATE accounts SET balance = balance + %s WHERE account_id = %s\\\",\\n            amount,\\n            to_acc,\\n        )\\n\\n    return True\"}",
+    "tokens": {
+      "input": 982,
+      "output": 730,
+      "total": 1852,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 8998,
+    "timestamp": 1791058467615
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "three_concurrent_transfers",
+      "no_overdraft",
+      "no_money_creation",
+      "one_transfer_completes"
+    ],
+    "program_stdout": "",
+    "source_sha256": "32336db9b3044e6b01d19f52a86c468467d999e91678aa852a76bbf06ddd91a6"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.91
+        }
+      },
+      "usage": {
+        "input_tokens": 654,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 290.343834,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.7468e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 11.972537084016949
+}

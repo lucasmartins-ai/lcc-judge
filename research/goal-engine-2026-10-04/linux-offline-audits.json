@@ -1,0 +1,218 @@
+{
+  "base_digest": "python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f",
+  "platform": "Linux arm64 container",
+  "network": "none",
+  "read_only": true,
+  "host_mounts": [],
+  "reports": {
+    "replay-real-2026-10-03": {
+      "verified_episode_count": 120,
+      "unique_sessions": 120,
+      "label_counts": {
+        "NECESSARY": 5,
+        "UNNECESSARY": 11,
+        "UNKNOWN": 4
+      },
+      "concordance_rate": 0.8,
+      "concordance_wilson_95ci": [
+        0.5839782779742401,
+        0.9193436467288
+      ],
+      "unknown_rate": 0.2,
+      "pilot_targets_pass": false,
+      "source_versions_verified": true,
+      "archived_executed_sources": [
+        "executed-source/replay/real_pilot.py",
+        "executed-source/replay/real_fixtures.py",
+        "executed-source/replay/jev_bridge.ts"
+      ],
+      "source_verification_mode": "archived",
+      "canonical_ledger_scope": "run-local-export",
+      "canonical_ledger_entries": 119,
+      "temporal_preregistration_certified": false,
+      "episode_receipts_unchanged": true,
+      "post_execution_changed_verdicts": 3,
+      "requested_seed_is_metadata_not_sampling_seed": true,
+      "input_seed_field_changes_between_repetitions": true,
+      "production_sessions_replayed": false,
+      "training_eligible_records": 0
+    },
+    "verifier-calibration-2026-10-03": {
+      "calibration_cases": 80,
+      "eval_cases": 108,
+      "calibration_eval_ast_intersections": 0,
+      "prior_pilot_program_ast_intersections": {
+        "calibration": 0,
+        "eval": 0
+      },
+      "frozen_threshold": 0.5,
+      "threshold_unchanged_before_eval": true,
+      "eval_candidate": {
+        "code": {
+          "n": 24,
+          "positives": 12,
+          "negatives": 12,
+          "tp": 12,
+          "fp": 0,
+          "fn": 0,
+          "unknown": 0,
+          "fpr": 0.0,
+          "fnr": 0.0,
+          "recall": 1.0,
+          "unknown_rate": 0.0
+        },
+        "typed": {
+          "n": 84,
+          "positives": 42,
+          "negatives": 42,
+          "tp": 40,
+          "fp": 0,
+          "fn": 2,
+          "unknown": 0,
+          "fpr": 0.0,
+          "fnr": 0.047619047619047616,
+          "recall": 0.9523809523809523,
+          "unknown_rate": 0.0
+        }
+      },
+      "eval_legacy": {
+        "code": {
+          "n": 24,
+          "positives": 12,
+          "negatives": 12,
+          "tp": 11,
+          "fp": 2,
+          "fn": 1,
+          "unknown": 0,
+          "fpr": 0.16666666666666666,
+          "fnr": 0.08333333333333333,
+          "recall": 0.9166666666666666,
+          "unknown_rate": 0.0
+        },
+        "typed": {
+          "n": 84,
+          "positives": 42,
+          "negatives": 42,
+          "tp": 41,
+          "fp": 37,
+          "fn": 1,
+          "unknown": 0,
+          "fpr": 0.8809523809523809,
+          "fnr": 0.023809523809523808,
+          "recall": 0.9761904761904762,
+          "unknown_rate": 0.0
+        }
+      },
+      "jev_calls": 140,
+      "jev_input_tokens": 140995,
+      "canonical_ledger_entries": 140,
+      "tariff_estimate_usd": 0.00592179,
+      "sources_hash_verified": true,
+      "all_training_ineligible": true,
+      "source_verification_mode": "archived",
+      "canonical_ledger_scope": "run-local-export",
+      "temporal_preregistration_certified": false,
+      "population_error_certified": false,
+      "production_ground_truth": false
+    },
+    "pdb-routing-2026-10-04": {
+      "sources_hash_verified": true,
+      "pre_dispatch_freeze_verified": true,
+      "threshold": 0.5,
+      "development_scales": [
+        4,
+        6,
+        8,
+        10
+      ],
+      "eval_scales": [
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        23,
+        29
+      ],
+      "prior_pdb_scales": [
+        5,
+        7
+      ],
+      "shared_archetype_and_wording": true,
+      "receipts": 168,
+      "development": {
+        "routed": {
+          "n": 56,
+          "positives": 24,
+          "negatives": 32,
+          "tp": 24,
+          "tn": 32,
+          "fp": 0,
+          "fn": 0,
+          "unknown": 0
+        },
+        "coupled": {
+          "n": 56,
+          "positives": 24,
+          "negatives": 32,
+          "tp": 19,
+          "tn": 32,
+          "fp": 0,
+          "fn": 5,
+          "unknown": 0
+        }
+      },
+      "eval": {
+        "routed": {
+          "n": 112,
+          "positives": 48,
+          "negatives": 64,
+          "tp": 48,
+          "tn": 64,
+          "fp": 0,
+          "fn": 0,
+          "unknown": 0
+        },
+        "coupled": {
+          "n": 112,
+          "positives": 48,
+          "negatives": 64,
+          "tp": 21,
+          "tn": 64,
+          "fp": 0,
+          "fn": 27,
+          "unknown": 0
+        }
+      },
+      "target_pass": true,
+      "upstream_reference_reexecuted": false,
+      "numeric_conversion_checks": 4240,
+      "numeric_policy_checks": 290752,
+      "numeric_mismatches": 0,
+      "jev_calls": 240,
+      "canonical_ledger_entries": 240,
+      "input_tokens": 133932,
+      "duplicate_scoring_payloads": 0,
+      "training_eligible_records": 0,
+      "tariff_estimate_usd": 0.005625144,
+      "actual_billed_cost_usd": null,
+      "descriptive_wilson95": {
+        "routed_fpr": [
+          0,
+          0.056626022971156334
+        ],
+        "routed_fnr": [
+          0,
+          0.0741026511527422
+        ]
+      },
+      "population_error_certified": false,
+      "production_ground_truth": false,
+      "comparison_causal_certification": false,
+      "source_verification_mode": "archived",
+      "canonical_ledger_scope": "run-local-export",
+      "temporal_preregistration_certified": false
+    }
+  }
+}

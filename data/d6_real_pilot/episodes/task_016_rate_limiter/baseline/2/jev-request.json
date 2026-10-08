@@ -1,0 +1,42 @@
+{
+  "state": {
+    "objective": "Implement rate limiting decorator with leak rate and capacity.",
+    "context": [
+      {
+        "block_id": "b_737cae4f",
+        "content": "Leaky bucket formula: water = max(0, water - (now - last_leak) * leak_rate); if water + 1 <= capacity: allow; water += 1",
+        "source": "algorithms/bucket.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_f39ee3ac",
+        "content": "Target rate: 100 requests per minute with burst capacity 150.",
+        "source": "api_limits.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_e24f4b9f",
+        "content": "HTTP 429 Too Many Requests response payload schema.",
+        "source": "responses.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Use a shared closure to track water level and last leak time; the first request sees a full bucket. For the stated target, pass leak_rate=100/60 and capacity=150.",
+      "mechanism": null,
+      "parameters": {
+        "leak_rate": "requests per second (100/60 for the stated limit)",
+        "capacity": 150,
+        "clock": "callable returning seconds"
+      },
+      "python": "def rate_limit(leak_rate, capacity, clock):\n    if leak_rate < 0:\n        raise ValueError(\"leak_rate must be non-negative\")\n    if capacity < 0:\n        raise ValueError(\"capacity must be non-negative\")\n\n    def decorator(func):\n        water = 0.0\n        last_leak = None\n\n        def wrapped(*args, **kwargs):\n            nonlocal water, last_leak\n            now = clock()\n            if last_leak is not None:\n                water = max(0.0, water - (now - last_leak) * leak_rate)\n            last_leak = now\n\n            if water + 1 <= capacity:\n                water += 1.0\n                return func(*args, **kwargs)\n            return False\n\n        return wrapped\n\n    return decorator\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

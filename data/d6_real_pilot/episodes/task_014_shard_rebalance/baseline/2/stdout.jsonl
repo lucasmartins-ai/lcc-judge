@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211443_3dddba", "timestamp": 1791058483946}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Use online logical replication/CDC for shard 7.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"cutover_down", "timestamp": 1791058489013}
+{"type": "text", "text": "time_seconds\":\"<15\",\"maintenance_window_limit_minutes\":30,\"full_dump_restore_hours\":6},\"python\":\"\"}", "timestamp": 1791058489014}
+{"type": "result", "session_id": "20261003_211443_3dddba", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Use online logical replication/CDC for shard 7.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"cutover_downtime_seconds\":\"<15\",\"maintenance_window_limit_minutes\":30,\"full_dump_restore_hours\":6},\"python\":\"\"}", "tokens": {"input": 1377, "output": 169, "total": 1686, "cache_read": 140, "cache_write": 0}, "duration_ms": 5089, "timestamp": 1791058489035}

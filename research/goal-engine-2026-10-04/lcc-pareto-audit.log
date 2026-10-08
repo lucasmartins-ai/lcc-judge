@@ -1,0 +1,179 @@
+{
+  "episodes": 96,
+  "unique_successful_sessions": 96,
+  "rows": [
+    {
+      "profile": "full",
+      "budget_hf": 8192,
+      "episodes": 12,
+      "success_rate": 1.0,
+      "errors": 0,
+      "unknown": 0,
+      "delta_success_vs_full": 0.0,
+      "mean_char_reduction": 0.0,
+      "median_compilation_s": 1.6729492926970124e-05,
+      "median_executor_s": 7.4434258959954605,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        2.824998227879405e-05,
+        1.575000351294875e-05,
+        1.6250007320195436e-05,
+        1.7208978533744812e-05
+      ],
+      "adoption_criteria_pass": false
+    },
+    {
+      "profile": "specialist",
+      "budget_hf": 8192,
+      "episodes": 12,
+      "success_rate": 1.0,
+      "errors": 0,
+      "unknown": 0,
+      "delta_success_vs_full": 0.0,
+      "mean_char_reduction": 0.0,
+      "median_compilation_s": 3.328646124980878,
+      "median_executor_s": 7.043205354508245,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        5.541408457967918,
+        3.2627684169565327,
+        3.233315415971447,
+        3.3945238330052234
+      ],
+      "adoption_criteria_pass": false
+    },
+    {
+      "profile": "laya",
+      "budget_hf": 8192,
+      "episodes": 12,
+      "success_rate": 1.0,
+      "errors": 0,
+      "unknown": 0,
+      "delta_success_vs_full": 0.0,
+      "mean_char_reduction": 0.0,
+      "median_compilation_s": 10.225997228990309,
+      "median_executor_s": 7.410743062006077,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        33.98681241704617,
+        15.094721041969024,
+        5.291869415959809,
+        5.357273416011594
+      ],
+      "adoption_criteria_pass": false
+    },
+    {
+      "profile": "jev",
+      "budget_hf": 8192,
+      "episodes": 12,
+      "success_rate": 1.0,
+      "errors": 0,
+      "unknown": 0,
+      "delta_success_vs_full": 0.0,
+      "mean_char_reduction": 0.7966084370442235,
+      "median_compilation_s": 11.339086124993628,
+      "median_executor_s": 7.341455791494809,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        11.768127916031517,
+        11.407157291949261,
+        10.311924499983434,
+        11.271014958037995
+      ],
+      "adoption_criteria_pass": true
+    },
+    {
+      "profile": "full",
+      "budget_hf": 32768,
+      "episodes": 12,
+      "success_rate": 0.25,
+      "errors": 0,
+      "unknown": 9,
+      "delta_success_vs_full": 0.0,
+      "mean_char_reduction": 0.0,
+      "median_compilation_s": 5.7062512496486306e-05,
+      "median_executor_s": 9.077903625002364,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        5.716702435165644e-05,
+        5.829095607623458e-05,
+        5.6958000641316175e-05,
+        5.687499651685357e-05
+      ],
+      "adoption_criteria_pass": false
+    },
+    {
+      "profile": "specialist",
+      "budget_hf": 32768,
+      "episodes": 12,
+      "success_rate": 0.16666666666666666,
+      "errors": 0,
+      "unknown": 9,
+      "delta_success_vs_full": -0.08333333333333334,
+      "mean_char_reduction": 0.0,
+      "median_compilation_s": 12.999243270984152,
+      "median_executor_s": 6.789881770964712,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        13.252630708971992,
+        12.658398625033442,
+        13.184474500012584,
+        12.81401204195572
+      ],
+      "adoption_criteria_pass": false
+    },
+    {
+      "profile": "laya",
+      "budget_hf": 32768,
+      "episodes": 12,
+      "success_rate": 0.16666666666666666,
+      "errors": 0,
+      "unknown": 9,
+      "delta_success_vs_full": -0.08333333333333334,
+      "mean_char_reduction": 0.0,
+      "median_compilation_s": 25.072097625001334,
+      "median_executor_s": 6.8300158955098595,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        27.80806345801102,
+        29.27315154095413,
+        20.908378625055775,
+        22.336131791991647
+      ],
+      "adoption_criteria_pass": false
+    },
+    {
+      "profile": "jev",
+      "budget_hf": 32768,
+      "episodes": 12,
+      "success_rate": 0.75,
+      "errors": 0,
+      "unknown": 3,
+      "delta_success_vs_full": 0.5,
+      "mean_char_reduction": 0.7940195311885919,
+      "median_compilation_s": 40.838948124990566,
+      "median_executor_s": 7.3264591044862755,
+      "cold_load_included_in_first_cell": true,
+      "cell_compilation_seconds": [
+        41.396716415998526,
+        41.012338000000454,
+        40.184028875024524,
+        40.66555824998068
+      ],
+      "adoption_criteria_pass": false
+    }
+  ],
+  "canonical_ledger_entries": 531,
+  "jev_input_tokens": 767942,
+  "hermes_observed_input_tokens": 500030,
+  "hermes_observed_output_tokens": 24732,
+  "invoice_cost_known": false,
+  "training_eligible_records": 0,
+  "outcome_scope": "Four known curated contracts, synthetic late-evidence fillers, three unseeded repeats per cell",
+  "current_model_identity_mutable": true,
+  "compilation_cost_scope": "One observed pass per cell; includes TSX process startup per Jev call; shared-host concurrent MPS diagnostic",
+  "review_cost_scope": "Semantic oracle is evaluation overhead; executor wall excludes semantic-review latency",
+  "no_isolated_latency_superiority_claim": true,
+  "production_replacement_validated": false,
+  "temporal_preregistration_certified": false
+}

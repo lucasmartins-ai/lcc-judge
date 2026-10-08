@@ -1,0 +1,18 @@
+test_tool_relation_state_supervision (unittest.loader._FailedTest.test_tool_relation_state_supervision) ... ERROR
+
+======================================================================
+ERROR: test_tool_relation_state_supervision (unittest.loader._FailedTest.test_tool_relation_state_supervision)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tool_relation_state_supervision
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_relation_state_supervision.py", line 6, in <module>
+    from research.audit_tool_relation_state_supervision import audit_design, inspect_row
+ModuleNotFoundError: No module named 'research.audit_tool_relation_state_supervision'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

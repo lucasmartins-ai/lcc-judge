@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141807_2c7b9a", "timestamp": 1791119887915}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Flip FAST_CHECKOUT off via the dynamic killswitch; do not roll", "timestamp": 1791119891799}
+{"type": "text", "text": " back the container.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"fast_checkout\",\"value\":false,\"endpoint\":\"/api/flags/fast_checkout=false\",\"effective_ms\":500},\"python\":\"\"}", "timestamp": 1791119891800}
+{"type": "result", "session_id": "20261004_141807_2c7b9a", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Flip FAST_CHECKOUT off via the dynamic killswitch; do not roll back the container.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"fast_checkout\",\"value\":false,\"endpoint\":\"/api/flags/fast_checkout=false\",\"effective_ms\":500},\"python\":\"\"}", "tokens": {"input": 2, "output": 185, "total": 8690, "cache_read": 8503, "cache_write": 0}, "duration_ms": 4463, "timestamp": 1791119892378}

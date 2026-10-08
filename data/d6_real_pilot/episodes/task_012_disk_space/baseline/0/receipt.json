@@ -1,0 +1,106 @@
+{
+  "task_id": "task_012_disk_space",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "a26dc363943d9bcc48845bd50303150defa38175cd3b28cb7fb0c0fd6bfa37c2",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_012_disk_space/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_012_disk_space/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "/var/log/app.log.1 is consuming 84GB despite being deleted because python3 PID 8810 still holds it open.",
+    "mechanism": "open_deleted_file",
+    "parameters": {
+      "pid": 8810,
+      "size_gb": 84,
+      "path": "/var/log/app.log.1"
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211343_3b7893",
+      "timestamp": 1791058423411
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211343_3b7893",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"/var/log/app.log.1 is consuming 84GB despite being deleted because python3 PID 8810 still holds it open.\",\"mechanism\":\"open_deleted_file\",\"parameters\":{\"pid\":8810,\"size_gb\":84,\"path\":\"/var/log/app.log.1\"},\"python\":\"\"}",
+    "tokens": {
+      "input": 600,
+      "output": 203,
+      "total": 1723,
+      "cache_read": 920,
+      "cache_write": 0
+    },
+    "duration_ms": 5673,
+    "timestamp": 1791058429084
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "usage": {
+        "input_tokens": 653,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 259.441375,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.7426e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 8.196097334002843
+}

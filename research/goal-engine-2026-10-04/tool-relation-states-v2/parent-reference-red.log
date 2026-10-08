@@ -1,0 +1,18 @@
+test_tool_relation_state_runtime (unittest.loader._FailedTest.test_tool_relation_state_runtime) ... ERROR
+
+======================================================================
+ERROR: test_tool_relation_state_runtime (unittest.loader._FailedTest.test_tool_relation_state_runtime)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tool_relation_state_runtime
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_relation_state_runtime.py", line 6, in <module>
+    from research.tool_relation_state_runtime import measurement_argv,measure_batch,parent_build_reference
+ImportError: cannot import name 'parent_build_reference' from 'research.tool_relation_state_runtime' (/Users/Master/Downloads/LCC-judge/research/tool_relation_state_runtime.py)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

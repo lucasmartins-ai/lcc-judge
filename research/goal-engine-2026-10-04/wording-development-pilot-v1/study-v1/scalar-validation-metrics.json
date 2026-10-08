@@ -1,0 +1,46 @@
+{
+  "protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+  "metrics": {
+    "n": 5568,
+    "binary": 2048,
+    "positive": 1024,
+    "negative": 1024,
+    "pooled_wins": 615494,
+    "pooled_comparisons": 1048576,
+    "pooled_auc": 0.5869808197021484,
+    "within_goal": {
+      "wins": 1319,
+      "comparisons": 2048,
+      "auc": 0.64404296875
+    },
+    "within_goal_auc": 0.64404296875,
+    "same_report_goal": {
+      "wins": 634,
+      "comparisons": 1024,
+      "auc": 0.619140625
+    },
+    "positive_keep_recall": 1.0,
+    "contradiction_keep_recall": 1.0,
+    "negative_drop_rejection": 0.0,
+    "binary_unknown_rate": 1.0,
+    "semantic_unknown": 3456,
+    "structural_unknown": 64,
+    "semantic_unknown_recognition": 1.0,
+    "structural_unknown_recognition": 1.0,
+    "unknown_drops": 0,
+    "control_shadow": true
+  },
+  "accounting": {
+    "counted_pairs": 5504,
+    "counted_tokens": 236044,
+    "submitted_pairs": 5504,
+    "submitted_tokens": 236044,
+    "forward_completed_pairs": 5504,
+    "forward_completed_tokens": 236044,
+    "valid_score_pairs": 5504,
+    "valid_score_tokens": 236044
+  },
+  "elapsed_s": 18.475429916987196,
+  "finished_at_utc": "2026-10-07T23:10:02.664003+00:00",
+  "quality_approved": false
+}

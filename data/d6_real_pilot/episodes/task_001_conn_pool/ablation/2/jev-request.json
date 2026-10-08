@@ -1,0 +1,44 @@
+{
+  "state": {
+    "objective": "Identify the root cause of connection pool timeout errors in payment-gateway.",
+    "context": [
+      {
+        "block_id": "b_b9648598",
+        "content": "Architecture: payment-gateway connects to Postgres via PgBouncer with pool_size=20.",
+        "source": "docs/arch.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_533458ae",
+        "content": "pg_pool: max_connections=20 timeout_ms=5000 leak_detection_threshold_ms=10000",
+        "source": "config/database.yml",
+        "block_type": "config"
+      },
+      {
+        "block_id": "b_f37220f7",
+        "content": "2026-10-03T10:00:01Z [INFO] payment-gateway healthcheck ok 200",
+        "source": "var/log/syslog",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_76806f5b",
+        "content": "metric: pg_pool_wait_duration_p99 value=5012ms threshold=2000ms",
+        "source": "metrics/pg.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ABSTAIN",
+      "answer": "Pool wait time reaches the 5000 ms timeout, but the context does not establish whether this is ordinary demand exceeding capacity or a connection leak.",
+      "mechanism": "INSUFFICIENT_EVIDENCE",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

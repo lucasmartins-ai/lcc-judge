@@ -1,0 +1,44 @@
+{
+  "state": {
+    "objective": "Determine why redis cache hit ratio dropped to 12% at 09:30 UTC.",
+    "context": [
+      {
+        "block_id": "b_ea9c496d",
+        "content": "redis-cluster node 1: 1420 keys loaded, memory_used=4.2gb",
+        "source": "redis/node1.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_b6f2aa13",
+        "content": "2026-10-03T09:30:00Z [WARN] cache ttl expired synchronously for top_products_cache: key_expiry_time=3600s with jitter=0s; 1200 workers stampeded database",
+        "source": "var/log/cache.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_fc69d0b9",
+        "content": "db query latency p50=12ms p99=450ms during read traffic burst",
+        "source": "postgres/queries.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_e4dfa969",
+        "content": "Cache guidelines: always set jitter on keys with high QPS to prevent stampedes.",
+        "source": "wiki/cache.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "At 09:30 UTC, top_products_cache keys expired simultaneously because the 3600s TTL had zero jitter, triggering a 1,200-worker database stampede during a read burst and reducing the cache hit ratio to 12%.",
+      "mechanism": "cache_expiry_stampede",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

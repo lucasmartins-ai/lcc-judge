@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Fix SQL injection vulnerability in user search filter.",
+    "context": [
+      {
+        "block_id": "b_4ac7d49c",
+        "content": "Security audit finding SEC-402: parameter query in /api/v1/users/search vulnerable to SQLi",
+        "source": "audit/sec.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_cabac8fe",
+        "content": "tenant_id header parsed from JWT bearer token",
+        "source": "auth.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Use bound parameters and treat the search text literally to prevent SQL injection and unintended wildcard expansion.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def search_users(tenant_id, query):\n    escaped_query = query.replace(\"\\\\\", \"\\\\\\\\\").replace(\"%\", \"\\\\%\").replace(\"_\", \"\\\\_\")\n    return db.execute(\n        \"SELECT id, tenant_id, name FROM users \"\n        \"WHERE tenant_id = ? AND name LIKE ? ESCAPE '\\\\'\",\n        (tenant_id, \"%\" + escaped_query + \"%\"),\n    ).fetchall()\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

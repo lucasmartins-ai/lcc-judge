@@ -1,0 +1,33 @@
+{
+  "case_id": "c_fb01273922b7fbb6",
+  "split": "calibration",
+  "task_number": 3,
+  "kind": "code",
+  "family": "hardcoded_ids",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "790c63c2712351702d452026281e52583e2afadb50696b53a65a8fe648c959e6",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "global_lock_order",
+      "all_items_reserved_once",
+      "locks_released"
+    ],
+    "program_stdout": "",
+    "source_sha256": "3fa693d3d6ac6ae6a48ef3389e30c195f241432a1fe298c616b0f673b8f4e9cc"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "KeyError: 2",
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12025629097479396
+}

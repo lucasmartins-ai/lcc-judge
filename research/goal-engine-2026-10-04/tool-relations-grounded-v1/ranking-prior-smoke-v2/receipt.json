@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "error": null,
+  "original_scores": [
+    {
+      "input_sha256": "83ee58c46dd82f1f49a1a5bcbf5c9d3de7d4d92501f926be9bdcea6cc79074b3",
+      "score": -2.3286292552948,
+      "actual_tokens": 25,
+      "truncated": false,
+      "window_exceeded": false,
+      "submitted": true,
+      "forward_completed": true,
+      "status": "SCORED",
+      "error": null,
+      "batch_wall_s": 0.028452250000555068
+    },
+    {
+      "input_sha256": "00bb2d62cfd7f3fda1e5df8d67f031327c9166b3da841d01b8799271d10d45bd",
+      "score": -5.011086940765381,
+      "actual_tokens": 28,
+      "truncated": false,
+      "window_exceeded": false,
+      "submitted": true,
+      "forward_completed": true,
+      "status": "SCORED",
+      "error": null,
+      "batch_wall_s": 0.028452250000555068
+    },
+    {
+      "input_sha256": "cf150ea689f231e3fba9d1aa9097975d9a684d7492b381c4f7c0a0595d5f6c4b",
+      "score": -7.142194747924805,
+      "actual_tokens": 19,
+      "truncated": false,
+      "window_exceeded": false,
+      "submitted": true,
+      "forward_completed": true,
+      "status": "SCORED",
+      "error": null,
+      "batch_wall_s": 0.028452250000555068
+    }
+  ],
+  "expanded_logits": [
+    [
+      1.1643145084381104,
+      -1.1643145084381104,
+      0.0717611163854599
+    ],
+    [
+      2.5055432319641113,
+      -2.5055432319641113,
+      0.14684687554836273
+    ],
+    [
+      3.5710973739624023,
+      -3.5710973739624023,
+      0.20651578903198242
+    ]
+  ],
+  "original_forwards": 3,
+  "expanded_forwards": 3,
+  "truncated": false,
+  "model_identity": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "model_sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+    "parameters": 117641089,
+    "dtype": "float32",
+    "device": "cpu",
+    "load_s": 1.2819527499959804,
+    "loading_info": {
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "mismatched_keys": [],
+      "error_msgs": []
+    }
+  },
+  "setup_s": 3.0831748329801485,
+  "initialization": {
+    "model_type": "xlm-roberta",
+    "classes": [
+      "IRRELEVANT",
+      "RELEVANT",
+      "UNKNOWN"
+    ],
+    "seed": 101,
+    "original_output_head_sha256": "d6ae559bb24309e84405064b7ae0d2750ed211689ee65ff3bc4fb6db09f45f03",
+    "initial_output_head_sha256": "917d6f578949ab2ea710ac62ce12e7e3f0c1756a5cede4f3f6aebd06e403c280",
+    "initial_relevance_margin": "original scalar ranking logit",
+    "unknown_initialization": "normal(0, 0.02) weight, zero bias; uncalibrated",
+    "encoder_and_intermediate_dense_preserved": true,
+    "parameter_count": 117641859,
+    "quality_or_safety_verified": false
+  },
+  "preserved_parameters_before_sha256": "811a9a0a732460f6f222f0eb327c019b00898cb73cc723c68dcce5c59cc85f84",
+  "preserved_parameters_after_sha256": "811a9a0a732460f6f222f0eb327c019b00898cb73cc723c68dcce5c59cc85f84",
+  "maximum_absolute_margin_error": 4.76837158203125e-07,
+  "tolerance": 1e-06,
+  "counted_pair_tokens_per_pass": 72,
+  "whole_check_wall_s": 3.635532082989812,
+  "scope": "Exposed unlabeled implementation examples only; not a quality or outcome test",
+  "quality_verified": false,
+  "saved_candidate_weights": false
+}

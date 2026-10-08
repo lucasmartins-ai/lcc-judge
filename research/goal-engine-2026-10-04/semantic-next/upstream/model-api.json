@@ -1,0 +1,304 @@
+{
+  "_id": "629722f365c0fc78a71df16b",
+  "id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "private": false,
+  "pipeline_tag": "text-ranking",
+  "library_name": "sentence-transformers",
+  "tags": [
+    "sentence-transformers",
+    "pytorch",
+    "onnx",
+    "safetensors",
+    "xlm-roberta",
+    "text-classification",
+    "transformers",
+    "text-ranking",
+    "en",
+    "ar",
+    "zh",
+    "nl",
+    "fr",
+    "de",
+    "hi",
+    "in",
+    "it",
+    "ja",
+    "pt",
+    "ru",
+    "es",
+    "vi",
+    "multilingual",
+    "dataset:unicamp-dl/mmarco",
+    "base_model:nreimers/mMiniLMv2-L12-H384-distilled-from-XLMR-Large",
+    "base_model:quantized:nreimers/mMiniLMv2-L12-H384-distilled-from-XLMR-Large",
+    "license:apache-2.0",
+    "text-embeddings-inference",
+    "endpoints_compatible",
+    "deploy:azure",
+    "region:us"
+  ],
+  "downloads": 2483973,
+  "likes": 83,
+  "modelId": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "author": "cross-encoder",
+  "sha": "8008f0154ca2387468013ed439df09d70c122412",
+  "lastModified": "2025-04-11T11:55:52.000Z",
+  "gated": false,
+  "disabled": false,
+  "mask_token": "<mask>",
+  "model-index": null,
+  "config": {
+    "architectures": [
+      "XLMRobertaForSequenceClassification"
+    ],
+    "model_type": "xlm-roberta",
+    "tokenizer_config": {
+      "bos_token": "<s>",
+      "cls_token": "<s>",
+      "eos_token": "</s>",
+      "mask_token": "<mask>",
+      "pad_token": "<pad>",
+      "sep_token": "</s>",
+      "unk_token": "<unk>"
+    }
+  },
+  "cardData": {
+    "license": "apache-2.0",
+    "language": [
+      "en",
+      "ar",
+      "zh",
+      "nl",
+      "fr",
+      "de",
+      "hi",
+      "in",
+      "it",
+      "ja",
+      "pt",
+      "ru",
+      "es",
+      "vi",
+      "multilingual"
+    ],
+    "datasets": [
+      "unicamp-dl/mmarco"
+    ],
+    "base_model": [
+      "nreimers/mMiniLMv2-L12-H384-distilled-from-XLMR-Large"
+    ],
+    "pipeline_tag": "text-ranking",
+    "library_name": "sentence-transformers",
+    "tags": [
+      "transformers"
+    ]
+  },
+  "transformersInfo": {
+    "auto_model": "AutoModelForSequenceClassification",
+    "pipeline_tag": "text-classification",
+    "processor": "AutoTokenizer"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "20711c918e1250d2928bdccfed2791bf8c722da3",
+      "size": 1278
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "64eedc9d83f1a8854b2cad6dd544fc95809faa72",
+      "size": 2340
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "7d864cfb081a0ab5e93ce8a848026623c457a524",
+      "size": 897
+    },
+    {
+      "rfilename": "model.safetensors",
+      "blobId": "28b465f76ad713413a03db9d865baa6c70449ca4",
+      "size": 470592698,
+      "lfs": {
+        "sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+        "size": 470592698,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model.onnx",
+      "blobId": "7ace74781e26e81f8389d8538bdd575aaaf8cab0",
+      "size": 470883696,
+      "lfs": {
+        "sha256": "3e9a03ed1e966f7c5288dd4230e3d6a9bf5e3a170a06f1f4241c5bca12c6487c",
+        "size": 470883696,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "onnx/model_O1.onnx",
+      "blobId": "a4e1b01a5400b390fb345e7edeca5a011bef07af",
+      "size": 470782077,
+      "lfs": {
+        "sha256": "6230c9f55c7126a852c27655bdaf63df6f039fdb4e070ad3a73bab924dfc61ef",
+        "size": 470782077,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "pytorch_model.bin",
+      "blobId": "1f280f1c8c107cb83292bf0e0f80089de7d64887",
+      "size": 470633197,
+      "lfs": {
+        "sha256": "1abc209e54d70bbcb08c1b5111a924fb99c0428f51cab1659310ccdcab69dc03",
+        "size": 470633197,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "sentencepiece.bpe.model",
+      "blobId": "7a3f40a75f870bc1f21700cd414dc2acc431583c",
+      "size": 5069051,
+      "lfs": {
+        "sha256": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865",
+        "size": 5069051,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "1f88d5e966af22e2b0f52c2dcc1f152e1ed648fd",
+      "size": 1015
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "7126b1d228f6e5f725b6ee02a88b1118c725aeed",
+      "size": 17082734,
+      "lfs": {
+        "sha256": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+        "size": 17082734,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "d297107d53da62483767139822cf5ed3a6975e24",
+      "size": 1233
+    },
+    {
+      "rfilename": "train_script.py",
+      "blobId": "541d6303b1f60df3e81df5bd714d7cb25787009d",
+      "size": 12245
+    }
+  ],
+  "spaces": [
+    "embedl/hfviewer",
+    "tardellirs/model-pulse",
+    "hakari-bench/leaderboard",
+    "sfha/teacher-reviews-rag-advisor",
+    "AbdullahKhanSherwani/BlackBox",
+    "trong333tn/chatbotai_rag",
+    "MaksPun/rag-ukraine-history",
+    "tutsai/tuts-rag-service",
+    "douaaelagrari/hr-chatbot-api",
+    "mami-ytu1/ytu-mevzuat-asistani",
+    "hritikm15/kcc-agri",
+    "Vanelleayonta/svia-diif-beac",
+    "kgueye001/african-health-qa",
+    "NeoMatrixCoder/hindifinragdemo",
+    "kgueye001/service-public-resolver",
+    "Muhalmutaz/tafsir_alsidi",
+    "Muhalmutaz/tafsir",
+    "Muhalmutaz/mokhtasar",
+    "gercovv/cross-encoder-mmarco-mMiniLMv2-L12-H384-v1",
+    "clarin-knext/IR-Demo",
+    "retailcrmservices/omnidesk-ai-test",
+    "Prabu17/askmydocs",
+    "JirasakJo/Questions_Graduate_Studies_Calendar_2024",
+    "Rom89823974978/MDA",
+    "AlekseyV/reranker",
+    "sundaram22times/recommendation",
+    "NikhilPatil/first_app",
+    "amirulhazym/multilingual-auracart-ai-assistant",
+    "Nikhil0702/Banana_Disease_Diagnosis_and_Recommendation",
+    "NikhilPatil/Banana_disease_prediction",
+    "minh9972t12/chatbot_test",
+    "darkisz/duna-chatbot-backend",
+    "minhvtt/ChatbotRAG",
+    "Esracevik01/jira-duplicate-detection",
+    "MathieuGAL/NOVA_API",
+    "towardsinnovationlab/Advanced_RAG",
+    "Abdelrahman-a99/nu-policy-rag",
+    "Madras1/AetherMap",
+    "liliana07/rag-lab-demo",
+    "musk12/Hindi-GPT-model-built-from-scratch",
+    "tylv/legal_ai_ND13",
+    "haneefAstrumai/funtionmed_clinic",
+    "iliesaya/cest-pas-sorcier-search",
+    "adedaran/rag-bible",
+    "matin44/elprokan_rag",
+    "bharathi212/tamil-rag-system",
+    "TomacGonz/fintech-coop-api",
+    "Abdelrahman-a99/Bayyinah-RAG",
+    "ilsaf4ik/matching_project",
+    "omarashraf13456/URDU_MEDICAL_RAG",
+    "passagernoir/recofilms",
+    "paulopestana/admitad-docs-assistant",
+    "danielvia11/aerosearch-backend",
+    "ShuaGC/api-rag",
+    "Anishss333/hindi_chatbot",
+    "ZhangNguyen/Legislation_GraphRag",
+    "amjad0099/basira-backend",
+    "tadashiroo/rag-pt-backend",
+    "antonio2402/LEILA_semsearch_demo",
+    "raniabls/vpos",
+    "itsmar1/Moroccan-Legal-Assistant-RAG",
+    "ikram786786/quran-rag-mobile-2026",
+    "kamado01tanjiro/Docu_Verse",
+    "catalinbutacu/med-assist",
+    "kone0122/assistant-blue-gen",
+    "ntthanh0307/vimedaqa-chatbot-final",
+    "dimashisenov/vest_rag",
+    "Omar10lfc/smart-lecture-assistant-arabic",
+    "tokakhaled24/LexAI",
+    "Datack/My_App_Datack",
+    "christbcd/hackathon-m2",
+    "Pavlishenku/st1-assistant",
+    "Pavlishenku/gmsh-assistant",
+    "Pavlishenku/assistant-pcp",
+    "Pavlishenku/assistant-eurocodes",
+    "lorelarocca2001/guida-castello-aci",
+    "Pavlishenku/PCP-Assistant-v2",
+    "Pavlishenku/PCP-Assistant-v3",
+    "Pavlishenku/PCP-Assistant-v4",
+    "ervua/nlp-project",
+    "NextNeural/NINA",
+    "sewar23/HR-AI-Assistant-API",
+    "Sulamith/kmu-chatbot-demo",
+    "suleyman42/mahiks-tr",
+    "ntthanh0307/vimedaqa-medical-chatbot",
+    "gonzalonao/boe-rag-assistant",
+    "NextNeural/IRIS",
+    "AlixJabda/BAV_KI",
+    "hunglecr111/documind-ai",
+    "Ryqn/amf-rag-agent",
+    "riezqidr/ResearchRAG",
+    "VL-in/Assistente-de-Laboratorio",
+    "Mostafatta/MedbridgeAI",
+    "appollon13/aerofix-ai",
+    "cksleigen/sangsangfinder",
+    "Suyixx/hikam-chatbot-backend",
+    "isaacola10/berean",
+    "pamalick00/senegalgpt",
+    "sarah-dogbo/chatbot-otr",
+    "HaseCorp/Islamic_Rag_Agent"
+  ],
+  "createdAt": "2022-06-01T08:27:31.000Z",
+  "safetensors": {
+    "parameters": {
+      "I64": 514,
+      "F32": 117641089
+    },
+    "total": 117641603
+  },
+  "usedStorage": 4396370528
+}

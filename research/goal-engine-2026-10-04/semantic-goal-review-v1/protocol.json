@@ -1,0 +1,37 @@
+{
+  "schema": "saved-semantic-goal-review/0.1",
+  "created_at_utc": "2026-10-08T00:02:44.379601+00:00",
+  "data_protocol_sha256": "94a3b391162767f1f3df9bc422c4200a758a627b76f4f9098821305237151d80",
+  "study_protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+  "files": {
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/protocol.json": "bd714af03ba1fc07e75e8ddf6af4e016b33c279ff5b9c1d4935d4cf61a7855d9",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/audit.json": "bc80026cb14e05472899f74fd8bee808e324e9e275ad7bda57d587eb448eb9c1",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/study-v1/protocol.json": "5984823d1c2b2b259924f4fc8f7e792d1fc8324df1ad4a9bbc7d97338576558d",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/study-v1/audit.json": "75138853c372197144b1407fe735b2e0dc4413e125859b0b5c5d876d740e83ee",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/study-v1/thresholds.json": "ff042ab933258b9fa78d8c8e23e7e9dc5b89f810105136965b798bf596661d68",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/study-v1/validation-scores.json": "9c4948eba5872cd03de31034c3d6d6503afbdae7b763514ac04efffe07a99bea",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/study-v1/validation-metrics.json": "ae8ebcc9b3a189dae80617f26b799852b762a0a65c6d9c9ed6bf883d686b722f",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/train.jsonl.gz": "521e965ae33655da888b331c2d0439c9d0440c35b803f538a2d657d556bf94ef",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/train-views.jsonl.gz": "0e0b47d91beab6b8564319d9f307e03d60e34967db684d3db6071c7bdea81f1d",
+    "research/goal-engine-2026-10-04/tool-relation-states-v2/train/raw.json": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/validation.jsonl.gz": "8bb2a6bedf728a71e885018a2cc2aa7bbba06a638292b0e1e7036cbe62576a2b",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/validation-views.jsonl.gz": "1672f8bb84294fdb6f55ad8bef45050ce1ff0d7b9722846e4b69e571c89a7769",
+    "research/goal-engine-2026-10-04/tool-relation-states-v2/validation/raw.json": "e606a1cf3c8cbb70c8e33737f80e92cb2f51ae3e2e8e73c319ce34abed178a5d"
+  },
+  "sources": {
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/tool_relation_state_supervision.py": "d5d595197fc8ef644e951dcc3da02d04c3b9cac2ed69c3d48746a8826bac6d46",
+    "research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "research/tool_role_policy.py": "b5bd0caf92c5c8e261dde218394d6e899f5e56b3ff10cd4115007932031556c0",
+    "lcc_engine/observations.py": "9b24d19ef78c550f27b7821843405f8d77b8e1f3707c3d3f5449ceaf025e9b44",
+    "docs/10_OBSERVATION_OPERATION.md": "a3b0621bf35ff9635d4e2591f700b0815e37fb3db2e39e6f23058bb113d1a6d5"
+  },
+  "review_source_sha256": "8b01cd70a387cd2aeb9063de0717fa50b926625af74ede8f0fd7e1526db6e54d",
+  "selection": "96 field/language/class/kind strata by ID; positives prefer contradictions, negatives prefer measured values; scores not used. Additional actual DROPs are explicitly supplemental.",
+  "model_forwards": 0,
+  "API_calls": 0,
+  "training_executed": false,
+  "independent_human_review": false,
+  "gate_or_defaults_changed": false,
+  "scope": "Exposed author-created development inputs; annotation/code review, not new labels or model certification"
+}

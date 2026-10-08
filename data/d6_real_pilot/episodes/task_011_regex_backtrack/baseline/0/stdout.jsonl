@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211315_91236f", "timestamp": 1791058395529}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The gateway lockup is", "timestamp": 1791058400037}
+{"type": "text", "text": " caused by catastrophic regex backtracking in `^([a-zA-Z0-9]+)*$` when validating a long string ending in `!`. The nested repetition causes exponential CPU", "timestamp": 1791058400037}
+{"type": "text", "text": " work, pinning an ingress worker until the watchdog kills it.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791058400039}
+{"type": "result", "session_id": "20261003_211315_91236f", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The gateway lockup is caused by catastrophic regex backtracking in `^([a-zA-Z0-9]+)*$` when validating a long string ending in `!`. The nested repetition causes exponential CPU work, pinning an ingress worker until the watchdog kills it.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 1376, "output": 218, "total": 1734, "cache_read": 140, "cache_write": 0}, "duration_ms": 4529, "timestamp": 1791058400059}

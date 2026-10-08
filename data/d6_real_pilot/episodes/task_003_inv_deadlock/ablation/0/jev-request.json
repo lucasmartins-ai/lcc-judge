@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Propose a fix for concurrent deadlock in inventory reservation.",
+    "context": [
+      {
+        "block_id": "b_a8f40c80",
+        "content": "2026-10-03T11:15:00Z [ERROR] Deadlock detected: transaction 44 waiting for lock on item 89 held by tx 45; tx 45 waiting for lock on item 12 held by tx 44",
+        "source": "var/log/inventory.log",
+        "block_type": "trace"
+      },
+      {
+        "block_id": "b_dd4113a1",
+        "content": "order-service checkout started for user_id=99281",
+        "source": "var/log/orders.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Acquire every item lock once in ascending item.id order, then decrement stock while all locks are held.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "from contextlib import ExitStack\n\ndef reserve_items(items):\n    ordered_items = sorted(items, key=lambda item: item.id)\n    locked_ids = set()\n\n    with ExitStack() as locks:\n        for item in ordered_items:\n            if item.id not in locked_ids:\n                locks.enter_context(lock_item(item.id))\n                locked_ids.add(item.id)\n\n        for item in ordered_items:\n            decrement_stock(item)"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

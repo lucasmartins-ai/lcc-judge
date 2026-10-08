@@ -1,0 +1,3 @@
+{"status": "PASS", "scope": "Offline receipt/input/math integrity using pinned implementation; not independent semantic certification", "protocol_sha256": "20ebddaaba6dadecee2a8d05600a72408058f3e127f4dbccb12085f8c57fd7d0", "checked_pairs": 27696, "checked_tokens": 2949948, "router_gate_pass": false, "additional_model_forwards": 0, "independent_human_review": false}
+Frozen historical auditor accepts the poisoned in-memory summary; no receipt was changed.
+Supplementary auditor rejects the same poisoned summary before PASS.

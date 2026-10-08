@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113620_571b31", "timestamp": 1791110180975}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshake fragments are likely", "timestamp": 1791110185072}
+{"type": "text", "text": " being dropped because Path MTU discovery is disabled (`net.ipv4.tcp_mtu_probing=0`), causing a PMTU blackhole.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110185081}
+{"type": "result", "session_id": "20261004_113620_571b31", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshake fragments are likely being dropped because Path MTU discovery is disabled (`net.ipv4.tcp_mtu_probing=0`), causing a PMTU blackhole.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 2, "output": 139, "total": 1572, "cache_read": 1431, "cache_write": 0}, "duration_ms": 4128, "timestamp": 1791110185103}

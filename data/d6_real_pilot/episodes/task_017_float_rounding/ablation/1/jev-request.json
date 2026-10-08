@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Find why billing reconciliation showed 1-cent discrepancy on monthly invoices.",
+    "context": [
+      {
+        "block_id": "b_4efacbd7",
+        "content": "Monthly audit report: 1,420 invoices had mismatch of -$0.01 between line items sum and invoice total.",
+        "source": "audit/sep2026.csv",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_f3e879e3",
+        "content": "Invoices generated on the 1st of every month via Celery cron.",
+        "source": "celery.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "The 1-cent discrepancy is consistent with binary floating-point rounding in currency arithmetic.",
+      "mechanism": "binary_float_rounding",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

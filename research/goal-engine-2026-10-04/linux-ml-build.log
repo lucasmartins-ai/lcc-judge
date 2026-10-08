@@ -1,0 +1,210 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 767B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/10] FROM docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#4 resolve docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.25kB done
+#5 DONE 0.0s
+
+#6 [ 2/10] COPY requirements.txt /opt/requirements.txt
+#6 CACHED
+
+#7 [ 3/10] RUN python -m pip install --no-cache-dir "https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3"
+#7 1.041 Collecting torch==2.12.0+cpu
+#7 1.217   Downloading torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl (150.0 MB)
+#7 4.123      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.0/150.0 MB 52.0 MB/s  0:00:02
+#7 4.315 Collecting filelock (from torch==2.12.0+cpu)
+#7 4.369   Downloading filelock-4.0.10-py3-none-any.whl.metadata (2.0 kB)
+#7 4.385 Collecting typing-extensions>=4.10.0 (from torch==2.12.0+cpu)
+#7 4.397   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#7 4.574 Collecting setuptools<82 (from torch==2.12.0+cpu)
+#7 4.584   Downloading setuptools-81.0.0-py3-none-any.whl.metadata (6.6 kB)
+#7 4.604 Collecting sympy>=1.13.3 (from torch==2.12.0+cpu)
+#7 4.617   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+#7 4.637 Collecting networkx>=2.5.1 (from torch==2.12.0+cpu)
+#7 4.649   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+#7 4.667 Collecting jinja2 (from torch==2.12.0+cpu)
+#7 4.677   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#7 4.694 Collecting fsspec>=0.8.5 (from torch==2.12.0+cpu)
+#7 4.707   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+#7 4.731 Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.12.0+cpu)
+#7 4.740   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+#7 4.781 Collecting MarkupSafe>=2.0 (from jinja2->torch==2.12.0+cpu)
+#7 4.791   Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.7 kB)
+#7 4.806 Downloading setuptools-81.0.0-py3-none-any.whl (1.1 MB)
+#7 4.861    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 34.2 MB/s  0:00:00
+#7 4.870 Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+#7 4.886 Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+#7 4.924    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 65.7 MB/s  0:00:00
+#7 5.025 Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+#7 5.191    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 42.1 MB/s  0:00:00
+#7 5.209 Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+#7 5.215    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 89.2 MB/s  0:00:00
+#7 5.229 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#7 5.241 Downloading filelock-4.0.10-py3-none-any.whl (111 kB)
+#7 5.256 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#7 5.270 Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (24 kB)
+#7 5.428 Installing collected packages: mpmath, typing-extensions, sympy, setuptools, networkx, MarkupSafe, fsspec, filelock, jinja2, torch
+#7 18.49 
+#7 18.49 Successfully installed MarkupSafe-3.0.4 filelock-4.0.10 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 setuptools-81.0.0 sympy-1.14.0 torch-2.12.0+cpu typing-extensions-4.16.0
+#7 18.49 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#7 DONE 18.9s
+
+#8 [ 4/10] RUN python -m pip install --no-cache-dir -r /opt/requirements.txt
+#8 0.363 Requirement already satisfied: Jinja2==3.1.6 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 2)) (3.1.6)
+#8 0.363 Requirement already satisfied: MarkupSafe==3.0.4 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 3)) (3.0.4)
+#8 0.432 Collecting PyYAML==6.0.3 (from -r /opt/requirements.txt (line 4))
+#8 0.478   Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.4 kB)
+#8 0.493 Collecting Pygments==2.21.0 (from -r /opt/requirements.txt (line 5))
+#8 0.503   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+#8 0.514 Collecting annotated-doc==0.0.5 (from -r /opt/requirements.txt (line 6))
+#8 0.525   Downloading annotated_doc-0.0.5-py3-none-any.whl.metadata (6.5 kB)
+#8 0.540 Collecting anyio==4.15.1 (from -r /opt/requirements.txt (line 7))
+#8 0.554   Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+#8 0.569 Collecting certifi==2026.7.22 (from -r /opt/requirements.txt (line 8))
+#8 0.580   Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+#8 0.661 Collecting charset-normalizer==3.5.2 (from -r /opt/requirements.txt (line 9))
+#8 0.675   Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (46 kB)
+#8 0.701 Collecting click==8.5.0 (from -r /opt/requirements.txt (line 10))
+#8 0.710   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#8 0.712 Requirement already satisfied: filelock==4.0.10 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 11)) (4.0.10)
+#8 0.712 Requirement already satisfied: fsspec==2026.9.0 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 12)) (2026.9.0)
+#8 0.724 Collecting h11==0.16.0 (from -r /opt/requirements.txt (line 13))
+#8 0.739   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+#8 0.853 Collecting hf-xet==1.6.0 (from -r /opt/requirements.txt (line 14))
+#8 0.862   Downloading hf_xet-1.6.0-cp38-abi3-manylinux_2_28_aarch64.whl.metadata (4.9 kB)
+#8 0.876 Collecting httpcore==1.0.9 (from -r /opt/requirements.txt (line 15))
+#8 0.888   Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+#8 0.906 Collecting httpx==0.28.1 (from -r /opt/requirements.txt (line 16))
+#8 0.918   Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+#8 0.949 Collecting huggingface_hub==1.18.0 (from -r /opt/requirements.txt (line 17))
+#8 0.961   Downloading huggingface_hub-1.18.0-py3-none-any.whl.metadata (14 kB)
+#8 0.982 Collecting idna==3.20 (from -r /opt/requirements.txt (line 18))
+#8 0.994   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+#8 1.008 Collecting markdown-it-py==4.2.0 (from -r /opt/requirements.txt (line 19))
+#8 1.020   Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+#8 1.032 Collecting mdurl==0.1.2 (from -r /opt/requirements.txt (line 20))
+#8 1.042   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+#8 1.044 Requirement already satisfied: mpmath==1.3.0 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 21)) (1.3.0)
+#8 1.044 Requirement already satisfied: networkx==3.7 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 22)) (3.7)
+#8 1.152 Collecting numpy==2.4.6 (from -r /opt/requirements.txt (line 23))
+#8 1.162   Downloading numpy-2.4.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl.metadata (6.6 kB)
+#8 1.175 Collecting packaging==26.3 (from -r /opt/requirements.txt (line 24))
+#8 1.184   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+#8 1.385 Collecting regex==2026.9.29 (from -r /opt/requirements.txt (line 25))
+#8 1.397   Downloading regex-2026.9.29-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (40 kB)
+#8 1.414 Collecting requests==2.34.2 (from -r /opt/requirements.txt (line 26))
+#8 1.425   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+#8 1.446 Collecting rich==15.0.0 (from -r /opt/requirements.txt (line 27))
+#8 1.457   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+#8 1.527 Collecting safetensors==0.7.0 (from -r /opt/requirements.txt (line 28))
+#8 1.615   Downloading safetensors-0.7.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.1 kB)
+#8 1.619 Requirement already satisfied: setuptools==81.0.0 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 29)) (81.0.0)
+#8 1.631 Collecting shellingham==1.5.4 (from -r /opt/requirements.txt (line 30))
+#8 1.642   Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+#8 1.643 Requirement already satisfied: sympy==1.14.0 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 31)) (1.14.0)
+#8 1.675 Collecting tiktoken==0.13.0 (from -r /opt/requirements.txt (line 32))
+#8 1.688   Downloading tiktoken-0.13.0-cp313-cp313-manylinux_2_28_aarch64.whl.metadata (6.7 kB)
+#8 1.772 Collecting tokenizers==0.22.2 (from -r /opt/requirements.txt (line 33))
+#8 1.874   Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.3 kB)
+#8 1.876 Requirement already satisfied: torch==2.12.0 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 34)) (2.12.0+cpu)
+#8 1.898 Collecting tqdm==4.70.1 (from -r /opt/requirements.txt (line 35))
+#8 1.908   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+#8 1.941 Collecting transformers==5.10.2 (from -r /opt/requirements.txt (line 36))
+#8 1.953   Downloading transformers-5.10.2-py3-none-any.whl.metadata (33 kB)
+#8 1.993 Collecting typer==0.25.1 (from -r /opt/requirements.txt (line 37))
+#8 2.008   Downloading typer-0.25.1-py3-none-any.whl.metadata (15 kB)
+#8 2.010 Requirement already satisfied: typing_extensions==4.16.0 in ./usr/local/lib/python3.13/site-packages (from -r /opt/requirements.txt (line 38)) (4.16.0)
+#8 2.025 Collecting urllib3==2.8.0 (from -r /opt/requirements.txt (line 39))
+#8 2.037   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+#8 2.080 Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (767 kB)
+#8 2.107    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.1/767.1 kB 38.8 MB/s  0:00:00
+#8 2.116 Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#8 2.140    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 67.9 MB/s  0:00:00
+#8 2.149 Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#8 2.159 Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#8 2.172 Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#8 2.185 Downloading charset_normalizer-3.5.2-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (244 kB)
+#8 2.198 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#8 2.211 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#8 2.228 Downloading hf_xet-1.6.0-cp38-abi3-manylinux_2_28_aarch64.whl (4.3 MB)
+#8 2.278    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 84.0 MB/s  0:00:00
+#8 2.290 Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+#8 2.302 Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+#8 2.400 Downloading huggingface_hub-1.18.0-py3-none-any.whl (684 kB)
+#8 2.751    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 684.4/684.4 kB 1.2 MB/s  0:00:00
+#8 2.761 Downloading typer-0.25.1-py3-none-any.whl (58 kB)
+#8 2.777 Downloading idna-3.20-py3-none-any.whl (69 kB)
+#8 2.792 Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+#8 2.816 Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+#8 2.830 Downloading numpy-2.4.6-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (15.7 MB)
+#8 3.238    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 51.8 MB/s  0:00:00
+#8 3.249 Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#8 3.260 Downloading regex-2026.9.29-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (805 kB)
+#8 3.289    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.0/806.0 kB 57.1 MB/s  0:00:00
+#8 3.301 Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#8 3.312 Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+#8 3.332 Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+#8 3.344 Downloading safetensors-0.7.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (491 kB)
+#8 3.459 Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+#8 3.472 Downloading tiktoken-0.13.0-cp313-cp313-manylinux_2_28_aarch64.whl (1.1 MB)
+#8 3.498    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 53.8 MB/s  0:00:00
+#8 3.510 Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (3.3 MB)
+#8 3.589    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 47.4 MB/s  0:00:00
+#8 3.606 Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+#8 3.617 Downloading transformers-5.10.2-py3-none-any.whl (11.0 MB)
+#8 3.834    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 50.8 MB/s  0:00:00
+#8 3.997 Installing collected packages: urllib3, tqdm, shellingham, safetensors, regex, PyYAML, Pygments, packaging, numpy, mdurl, idna, hf-xet, h11, click, charset-normalizer, certifi, annotated-doc, requests, markdown-it-py, httpcore, anyio, tiktoken, rich, httpx, typer, huggingface_hub, tokenizers, transformers
+#8 11.64 
+#8 11.65 Successfully installed PyYAML-6.0.3 Pygments-2.21.0 annotated-doc-0.0.5 anyio-4.15.1 certifi-2026.7.22 charset-normalizer-3.5.2 click-8.5.0 h11-0.16.0 hf-xet-1.6.0 httpcore-1.0.9 httpx-0.28.1 huggingface_hub-1.18.0 idna-3.20 markdown-it-py-4.2.0 mdurl-0.1.2 numpy-2.4.6 packaging-26.3 regex-2026.9.29 requests-2.34.2 rich-15.0.0 safetensors-0.7.0 shellingham-1.5.4 tiktoken-0.13.0 tokenizers-0.22.2 tqdm-4.70.1 transformers-5.10.2 typer-0.25.1 urllib3-2.8.0
+#8 11.65 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 DONE 12.1s
+
+#9 [ 5/10] COPY *.whl /opt/wheels/
+#9 DONE 0.0s
+
+#10 [ 6/10] RUN python -m pip install --no-deps /opt/wheels/*.whl
+#10 0.327 Processing ./opt/wheels/lcc_context_engine-0.1.0-py3-none-any.whl
+#10 0.336 Installing collected packages: lcc-context-engine
+#10 0.389 Successfully installed lcc-context-engine-0.1.0
+#10 0.390 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#10 DONE 0.4s
+
+#11 [ 7/10] COPY hf /opt/hf
+#11 DONE 0.3s
+
+#12 [ 8/10] COPY checkpoint /opt/checkpoint
+#12 DONE 0.1s
+
+#13 [ 9/10] COPY model-manifest.json smoke.py /opt/
+#13 DONE 0.0s
+
+#14 [10/10] WORKDIR /tmp
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 15.3s done
+#15 exporting manifest sha256:094cf61770995ff3a8a00ef9974cc3ae1723ad5e6241229d34376400940d7fcc done
+#15 exporting config sha256:3aa7ce322f939adb6ca0f042c7b049ecfcb7d6fd444fe24513b87835d98f865e done
+#15 exporting attestation manifest sha256:0ea9805e799817f5c3d8b099a6d63b471c906486451204d76c18e8cc8a583efe done
+#15 exporting manifest list sha256:1a85a9115234db03ad8994560c82dc44ff2ab148e5aefef6a41a3146d00ed8e4 done
+#15 naming to docker.io/library/lcc-judge-linux-ml:20261004 done
+#15 unpacking to docker.io/library/lcc-judge-linux-ml:20261004
+#15 unpacking to docker.io/library/lcc-judge-linux-ml:20261004 8.9s done
+#15 DONE 24.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/rc5mvqka7o0kvd8tnuzgcv0j4

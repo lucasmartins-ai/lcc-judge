@@ -1,0 +1,54 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 324B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#4 resolve docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f 0.0s done
+#4 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 58.71kB done
+#5 DONE 0.0s
+
+#6 [2/2] COPY replay /opt/lcc-fixture/replay
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers 0.0s done
+#7 exporting manifest sha256:1134171adf45457852ebce87263a080e511101b3f905875110c234aed615c5b8 done
+#7 exporting config sha256:db1e31f96980e9ddc773b19e5b39ae132df6ef009d6013ee7c47fec1288dbd29 done
+#7 exporting attestation manifest sha256:700088921c3a8d45233ccd797c47f6dfab3b6c20cea733b501639168f98e2b85 done
+#7 exporting manifest list sha256:23a09f57c1b8714b208befe2a204ca2d704be7ff570410a7667320469b96b72f done
+#7 naming to docker.io/library/lcc-judge-fixtures:local
+#7 naming to docker.io/library/lcc-judge-fixtures:local done
+#7 unpacking to docker.io/library/lcc-judge-fixtures:local 0.0s done
+#7 DONE 0.1s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/coomwnkhmpisx7oitpmjtn53m
+{
+  "base_digest": "python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f",
+  "sources": {
+    "tasks.py": "09386c46f6d36f24e562987a0b793bb6083afe380a746db74b1b25286fd74aac",
+    "real_fixtures.py": "c2ccfd515b0b6fa0c024c9143b59e05b08710ea6bf14a3423f7acc1f14af6671",
+    "outcome_verifier.py": "f982c00de221226c73fe62822911a0d189524855f51cd77a0db5e03032ac479b",
+    "sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "sandbox_worker.py": "7c70b513a7da90a757ae01f7a0dd0a5b004628fb00d843ee0684af355801a0b6"
+  },
+  "runtime": {
+    "docker": "/usr/local/bin/docker",
+    "image_id": "sha256:23a09f57c1b8714b208befe2a204ca2d704be7ff570410a7667320469b96b72f",
+    "source_sha256": "c5b0f89c4f566ff2d9c50b32c1d4352f967db7eb7f483373edffd9da32e5da08",
+    "profile": "lcc-fixture-container/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  }
+}

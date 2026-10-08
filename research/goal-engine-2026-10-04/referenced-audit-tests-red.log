@@ -1,0 +1,21 @@
+EE
+======================================================================
+ERROR: test_changed_verdict_is_rejected_before_reduction (test_referenced_replay_audit.ReferencedReplayAuditTests.test_changed_verdict_is_rejected_before_reduction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_referenced_replay_audit.py", line 23, in test_changed_verdict_is_rejected_before_reduction
+    from research.referenced_replay_audit import audit
+ModuleNotFoundError: No module named 'research.referenced_replay_audit'
+
+======================================================================
+ERROR: test_receipts_reproduce_labels_and_distinguish_quarantine (test_referenced_replay_audit.ReferencedReplayAuditTests.test_receipts_reproduce_labels_and_distinguish_quarantine)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_referenced_replay_audit.py", line 13, in test_receipts_reproduce_labels_and_distinguish_quarantine
+    from research.referenced_replay_audit import audit
+ModuleNotFoundError: No module named 'research.referenced_replay_audit'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (errors=2)

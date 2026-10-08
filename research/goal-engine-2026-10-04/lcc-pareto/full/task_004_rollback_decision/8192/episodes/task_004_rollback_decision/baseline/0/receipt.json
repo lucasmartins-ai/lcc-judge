@@ -1,0 +1,109 @@
+{
+  "task_id": "task_004_rollback_decision",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "input_sha256": "6622b1e0c106cf60539539ee9767c4f8b5bfeca0985b70d3146bec6275918d67",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_004_rollback_decision/8192/episodes/task_004_rollback_decision/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_004_rollback_decision/8192/episodes/task_004_rollback_decision/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Disable FAST_CHECKOUT via the dynamic flag; do not roll back the unchanged container binary.",
+    "mechanism": "disable_feature_flag",
+    "parameters": {
+      "flag": "fast_checkout",
+      "enabled": false,
+      "endpoint": "/api/flags/fast_checkout=false",
+      "effective_within_ms": 500
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_141803_928a9b",
+      "timestamp": 1791119883943
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_141803_928a9b",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Disable FAST_CHECKOUT via the dynamic flag; do not roll back the unchanged container binary.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"fast_checkout\",\"enabled\":false,\"endpoint\":\"/api/flags/fast_checkout=false\",\"effective_within_ms\":500},\"python\":\"\"}",
+    "tokens": {
+      "input": 8365,
+      "output": 230,
+      "total": 8735,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 5160,
+    "timestamp": 1791119889104
+  },
+  "verification": {
+    "passed": true,
+    "reason": "math_then_text_review",
+    "text_probability": 0.95,
+    "threshold": 0.5
+  },
+  "wall_time_s": 7.021562458015978,
+  "outcome_jev": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "usage": {
+        "input_tokens": 11115,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 338.47779199999997,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 0.00046683000000000006,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

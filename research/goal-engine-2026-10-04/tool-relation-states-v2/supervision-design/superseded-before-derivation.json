@@ -1,0 +1,8 @@
+{
+  "superseded_by": "../supervision-design-v2/protocol.json",
+  "old_sha256": "2e3e1604c86f22b6e4b3a7e8d89de975594515d8f711bf916b13f799966749eb",
+  "new_sha256": "2682887b046357f03efce7cfe2c605d1b58468a56d179535f321807d05daf61e",
+  "labels_emitted": false,
+  "model_forwards": 0,
+  "reason": "Explicit public re-export of REFERENCES to fix F401, before any labels/forwards; all vocabulary, graph, assignment, framing and planned counts unchanged"
+}

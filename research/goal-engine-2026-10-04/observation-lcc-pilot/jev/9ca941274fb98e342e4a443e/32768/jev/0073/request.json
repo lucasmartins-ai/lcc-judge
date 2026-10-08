@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0073_0d268090c748": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0073_0d268090c748 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0073_0d268090c748",
+        "text": "# Requested observation: entity node-bb9b8f71; field schema_rejection_count; window 2027-03-17T02:00:00Z to 2027-03-17T02:05:00Z\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported parse_error_count = 60 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 87 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 73 count (ERROR).\nAt 2027-03-17T01:58:00Z, node-bb9b8f71 reported schema_rejection_count = 32 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 96 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported parse_error_count = 51 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 31 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported parse_error_count = 98 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 65 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported parse_error_count = 92 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 12 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported parse_error_count = 51 count (ERROR).\nAt 2027-03-17T02:02:00Z, node-bb9b8f70 reported schema_rejection_count = 93 count (ERROR)."
+      }
+    ],
+    "objective": "Report all observations for entity node-bb9b8f71, field schema_rejection_count, between 2027-03-17T02:00:00Z and 2027-03-17T02:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

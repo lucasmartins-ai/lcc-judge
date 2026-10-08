@@ -1,0 +1,48 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 4885.49it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+cache final: 0/384
+cache final: 200/384
+final frozen 101 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.565185546875, 'paired_auc': 0.6875, 'paired_reports': 192, 'positive_recall': 0.96875, 'negative_rejection': 0.041666666666666664}
+final frozen 202 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.5620388454861112, 'paired_auc': 0.671875, 'paired_reports': 192, 'positive_recall': 0.9739583333333334, 'negative_rejection': 0.036458333333333336}
+final frozen 303 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.5501302083333334, 'paired_auc': 0.7083333333333334, 'paired_reports': 192, 'positive_recall': 0.9583333333333334, 'negative_rejection': 0.041666666666666664}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 15641.68it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+final last-two 101 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.57373046875, 'paired_auc': 0.6927083333333334, 'paired_reports': 192, 'positive_recall': 0.96875, 'negative_rejection': 0.036458333333333336}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 12675.04it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+final last-two 202 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.5660807291666666, 'paired_auc': 0.6666666666666666, 'paired_reports': 192, 'positive_recall': 0.9583333333333334, 'negative_rejection': 0.052083333333333336}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 10891.97it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+final last-two 303 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.5583767361111112, 'paired_auc': 0.7135416666666666, 'paired_reports': 192, 'positive_recall': 0.9583333333333334, 'negative_rejection': 0.036458333333333336}

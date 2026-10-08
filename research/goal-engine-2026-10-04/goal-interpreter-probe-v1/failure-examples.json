@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "0004d2fb0cb87e2bb1476605590356dac9dd047d411bfe8eb61a85629b760101",
+    "language": "en",
+    "question": "What underlying process accounts for one counted message per completed UDP sendto?",
+    "expected_target": null,
+    "kind": "diagnosis_goal",
+    "predicted": "udp_sent_datagrams",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": 4.396285533905029
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -2.0373053550720215
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -2.3961760997772217
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -2.7453372478485107
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -3.4951274394989014
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -6.595278263092041
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -6.6035990715026855
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.607043266296387
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -8.666248321533203
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -8.852910041809082
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.633918762207031
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.7960844039917
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "00b2f9dbcd91e39631f3a38ffab349a2a023ffbcf5980bab97966b974d171030",
+    "language": "en",
+    "question": "Infer a second measurement that is not supplied from distinct paths altered in the staging area relative to HEAD.",
+    "expected_target": null,
+    "kind": "derived_or_multifield_goal",
+    "predicted": "git_index_edits",
+    "ranked_candidates": [
+      {
+        "candidate": "git_index_edits",
+        "score": 3.085038423538208
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": 0.5367670655250549
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -6.860077381134033
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -7.258992671966553
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -7.977191925048828
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -8.01269245147705
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -8.086560249328613
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -8.232134819030762
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -8.397992134094238
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -8.59896469116211
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -8.836966514587402
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.093716621398926
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "00cc91172fe3e451909015f7f3ffd9aeec69be1aeca3e89b2bf45ec73d9362b3",
+    "language": "pt",
+    "question": "Determine todas as evidências necessárias para concluir a tarefa ampla a partir de número de caminhos não rastreados excluídos pelas regras de ignore.",
+    "expected_target": null,
+    "kind": "broader_usefulness_goal",
+    "predicted": "git_worktree_edits",
+    "ranked_candidates": [
+      {
+        "candidate": "git_worktree_edits",
+        "score": -1.2190053462982178
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -1.5963134765625
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -5.397529602050781
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -7.216933250427246
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.443737983703613
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -8.673113822937012
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -8.758631706237793
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -8.824030876159668
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -9.400032997131348
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -9.447919845581055
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.572336196899414
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.630756378173828
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "01a366965ae48cea04f02dc6f90b59a301b566dafca5175613bca0f4aad711a6",
+    "language": "pt",
+    "question": "Infira outra medição não fornecida a partir de caminhos distintos alterados na área de preparação em relação ao HEAD.",
+    "expected_target": null,
+    "kind": "derived_or_multifield_goal",
+    "predicted": "git_index_edits",
+    "ranked_candidates": [
+      {
+        "candidate": "git_index_edits",
+        "score": 3.739680767059326
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": 2.180156946182251
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -7.272096633911133
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -7.786733627319336
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.800937175750732
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -7.817580699920654
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.06588077545166
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -8.327927589416504
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -8.768548011779785
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.435057640075684
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.676748275756836
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -10.032576560974121
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "039518c30f0fd0b5a55a5a374946035c13d81caa1b368cc693e811298b55b1fa",
+    "language": "en",
+    "question": "Where can I read scheduled nanosecond total independently of callback runtime directly?",
+    "expected_target": "retry_scheduled_sleep_ns",
+    "kind": "direct",
+    "predicted": "retry_actual_sleep_ns",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": 0.5176970362663269
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": 0.47653913497924805
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -7.442060947418213
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -7.621127605438232
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -8.40346622467041
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -8.468308448791504
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.09079647064209
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -9.362069129943848
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -9.504254341125488
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -10.153584480285645
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -10.330487251281738
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -10.33851146697998
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "03b48057269529bceb267e3591a430a7c369021379afc6cdd36e7915939407c3",
+    "language": "pt",
+    "question": "Determine por que ocorreu total programado de nanossegundos independentemente da duração dos callbacks.",
+    "expected_target": null,
+    "kind": "diagnosis_goal",
+    "predicted": "retry_scheduled_sleep_ns",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -1.7429345846176147
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -3.016239643096924
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -7.763826847076416
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -8.16628360748291
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -8.642058372497559
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -8.724343299865723
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -9.282803535461426
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.431374549865723
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -9.544869422912598
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -10.083380699157715
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -10.272965431213379
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -10.32255744934082
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "05ce9cbe9f9a08f92507bc3e2832074312b2fc541d6440463b38d4aa8b697f70",
+    "language": "en",
+    "question": "Find the observation that states accepted datagram sends with no dependence on payload length.",
+    "expected_target": "udp_sent_datagrams",
+    "kind": "direct",
+    "predicted": "udp_sent_payload_bytes",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -3.6306893825531006
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -4.10400915145874
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -7.899139881134033
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -8.130366325378418
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -8.402897834777832
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -8.58393383026123
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -8.73726749420166
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.85305404663086
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.311673164367676
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -9.56632137298584
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.609963417053223
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -9.771259307861328
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "06d3e8e63673d110525ba8bce2d3e02b02507dcb6777d9b36bd848cff3bc236b",
+    "language": "pt",
+    "question": "Onde posso ler diretamente número de arquivos fora do índice e das regras de ignore?",
+    "expected_target": null,
+    "kind": "out_of_registry",
+    "predicted": "git_index_edits",
+    "ranked_candidates": [
+      {
+        "candidate": "git_index_edits",
+        "score": -3.5336081981658936
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -4.381765842437744
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -5.28391695022583
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.665212631225586
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -7.7663254737854
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -7.981816291809082
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -8.063753128051758
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -8.332199096679688
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.353133201599121
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -9.451355934143066
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.602018356323242
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.810909271240234
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "06fd0e5f3d1e752ea4ceb5dddcb79b1bee511faa8dca4c86061a41dd9951fb86",
+    "language": "en",
+    "question": "Determine all evidence needed to finish the wider task from total length in bytes of content submitted by the sender.",
+    "expected_target": null,
+    "kind": "broader_usefulness_goal",
+    "predicted": "udp_sent_payload_bytes",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -2.545459508895874
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -3.180163621902466
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -3.30208683013916
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -6.683755874633789
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -7.251295566558838
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -7.47832727432251
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -7.641723155975342
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.019775390625
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -8.067377090454102
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -8.683236122131348
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -8.764081001281738
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.079853057861328
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "09794aa99e13473f19ce502c88a5b548444dadeb6b769c19802d0b3b4e34afb7",
+    "language": "pt",
+    "question": "Mostre o registro escrito de envios de datagramas aceitos sem depender do comprimento do conteúdo.",
+    "expected_target": "udp_sent_datagrams",
+    "kind": "direct",
+    "predicted": "udp_sent_payload_bytes",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -2.893634557723999
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -3.381324052810669
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -5.290605068206787
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -5.9702324867248535
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -6.096235275268555
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -6.170199871063232
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -6.734814643859863
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -6.783900737762451
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -7.5148396492004395
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.71505880355835
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -7.735598087310791
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -8.461431503295898
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "0ce5bf2ac7c92700ab4b0d4d76dec6b4fce2c97c3d4eb2178f4af88f7d9daf7e",
+    "language": "en",
+    "question": "Show me the written count of worktree-side edits including local removals.",
+    "expected_target": "git_worktree_edits",
+    "kind": "direct",
+    "predicted": "udp_sent_datagrams",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -3.9452764987945557
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -4.521580219268799
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -5.301857948303223
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -5.423501491546631
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -5.700382709503174
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -6.073303699493408
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.139375686645508
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -7.520960330963135
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -7.786867618560791
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.173542976379395
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.290802955627441
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.579055786132812
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "123873b667f28250c98ac121f09103987ae9101a5c4ad71155b20fa6b2ce481a",
+    "language": "en",
+    "question": "Where can I read sum of file lengths for tracked paths still present directly?",
+    "expected_target": null,
+    "kind": "out_of_registry",
+    "predicted": "git_worktree_edits",
+    "ranked_candidates": [
+      {
+        "candidate": "git_worktree_edits",
+        "score": -3.155207872390747
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -4.226006507873535
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -4.5127105712890625
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -6.8168487548828125
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -6.90749979019165
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -6.965991973876953
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.220687389373779
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -8.596848487854004
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -8.672247886657715
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -9.201512336730957
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.2852201461792
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.419466972351074
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "146ff7ed71878495e8f43ede461130ce69f349820ae7c4319a654c628a4afbdb",
+    "language": "pt",
+    "question": "Mostre o registro escrito de quantos bytes de dados do usuário os envios UDP concluídos continham.",
+    "expected_target": "udp_sent_payload_bytes",
+    "kind": "direct",
+    "predicted": "udp_sent_datagrams",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": 1.541825532913208
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": 0.22362199425697327
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -4.762239456176758
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -5.914289951324463
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -7.4757981300354
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -8.03589916229248
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -8.421603202819824
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -9.21259880065918
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.4657621383667
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.503958702087402
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -9.608577728271484
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.875301361083984
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "19074b4bbfc8cd17d1d624f77aeaedc911d8443e2f5d3c2190a8030ad0306466",
+    "language": "pt",
+    "question": "Ache a observação que informa contagem de alterações do diretório de trabalho incluindo exclusões locais.",
+    "expected_target": "git_worktree_edits",
+    "kind": "direct",
+    "predicted": "git_index_edits",
+    "ranked_candidates": [
+      {
+        "candidate": "git_index_edits",
+        "score": -2.934880495071411
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -2.974388599395752
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -3.252398729324341
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -4.969850063323975
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -5.572391986846924
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -5.7357401847839355
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -6.69441032409668
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -7.6322150230407715
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -7.731055736541748
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.742618083953857
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -7.9294819831848145
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -8.914031028747559
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "20f14a8194c3601e1f0cea08b782c7e1d3d452c470389831bf92d4c5a2ae1948",
+    "language": "en",
+    "question": "Where can I read how often the retried function ran before termination directly?",
+    "expected_target": "retry_attempts",
+    "kind": "direct",
+    "predicted": "retry_actual_sleep_ns",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -3.597304582595825
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -3.8722822666168213
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -5.737025737762451
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -6.828338146209717
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -7.349546432495117
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -7.368607044219971
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -8.396117210388184
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -8.430569648742676
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -8.82359790802002
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.574986457824707
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.59115219116211
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -9.614655494689941
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "2f8a5d8d3814adb4e9f65d7989b7d8b2935d8c838f780ff398e17a9b476dfea4",
+    "language": "pt",
+    "question": "Onde posso ler diretamente tentativas sem resultado bem-sucedido da operação?",
+    "expected_target": "retry_failures",
+    "kind": "direct",
+    "predicted": "retry_attempts",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_attempts",
+        "score": -3.5055623054504395
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -4.454410076141357
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -5.280981540679932
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -5.646185874938965
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -6.236674785614014
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -6.35374641418457
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.218016624450684
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -7.250372409820557
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -8.114439964294434
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -8.281993865966797
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.409918785095215
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -8.654589653015137
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "463d6a37b10372906a2e04158ff70beb4c2c31c1feca70638d1511e2a0162a44",
+    "language": "pt",
+    "question": "Onde posso ler diretamente duração planejada das pausas do retry expressa em nanossegundos?",
+    "expected_target": "retry_scheduled_sleep_ns",
+    "kind": "direct",
+    "predicted": "retry_actual_sleep_ns",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": 1.41367506980896
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": 1.141730546951294
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -5.918086528778076
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -6.145285129547119
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -6.399644374847412
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -7.804237365722656
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -7.882985591888428
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -8.206013679504395
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -9.07005500793457
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.143482208251953
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.513999938964844
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.93506145477295
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "7066f041f4837ff2b4cd00b570a1d24dcb6e4ebf5fcd7563e7f240d96458ed33",
+    "language": "en",
+    "question": "Where can I read attempts without a successful operation result directly?",
+    "expected_target": "retry_failures",
+    "kind": "direct",
+    "predicted": "retry_attempts",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_attempts",
+        "score": -5.496023654937744
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -5.8228840827941895
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -6.583878993988037
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -6.680406093597412
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -6.820356845855713
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -7.251979351043701
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -7.454147815704346
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -7.591170787811279
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -8.21044635772705
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -8.573203086853027
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -8.614211082458496
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -8.73629093170166
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "b8bb82ad6f7684d81c595c55ae68582dfd877e1b0eef95ac9acc67211a46c8b5",
+    "language": "en",
+    "question": "Return the report containing how much user data the completed UDP sends carried in bytes.",
+    "expected_target": "udp_sent_payload_bytes",
+    "kind": "direct",
+    "predicted": "udp_sent_datagrams",
+    "ranked_candidates": [
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -0.14899428188800812
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -0.5059105157852173
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -4.502175807952881
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -7.7562174797058105
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -9.137863159179688
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -9.149086952209473
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.39857292175293
+      },
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -9.419175148010254
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -9.52173900604248
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.60995101928711
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -9.864718437194824
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.946246147155762
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  },
+  {
+    "id": "d9524300a620ff755cfcb525838fec6d428b002ed148472b0013a7868dab71f7",
+    "language": "pt",
+    "question": "Onde posso ler diretamente quantas vezes a função repetida rodou antes do término?",
+    "expected_target": "retry_attempts",
+    "kind": "direct",
+    "predicted": "retry_scheduled_sleep_ns",
+    "ranked_candidates": [
+      {
+        "candidate": "retry_scheduled_sleep_ns",
+        "score": -6.780216693878174
+      },
+      {
+        "candidate": "retry_attempts",
+        "score": -7.4914069175720215
+      },
+      {
+        "candidate": "git_index_edits",
+        "score": -7.668075084686279
+      },
+      {
+        "candidate": "retry_actual_sleep_ns",
+        "score": -7.703132629394531
+      },
+      {
+        "candidate": "git_worktree_edits",
+        "score": -8.544283866882324
+      },
+      {
+        "candidate": "UNKNOWN:other",
+        "score": -8.993620872497559
+      },
+      {
+        "candidate": "UNKNOWN:diagnosis",
+        "score": -9.046676635742188
+      },
+      {
+        "candidate": "retry_failures",
+        "score": -9.116805076599121
+      },
+      {
+        "candidate": "udp_sent_datagrams",
+        "score": -9.462321281433105
+      },
+      {
+        "candidate": "udp_sent_payload_bytes",
+        "score": -9.51102066040039
+      },
+      {
+        "candidate": "UNKNOWN:broader",
+        "score": -9.828370094299316
+      },
+      {
+        "candidate": "UNKNOWN:derived",
+        "score": -9.875812530517578
+      }
+    ],
+    "selection": "First saved ID per language/unsupported-kind or misclassified supported-field after results; illustrative, not random prevalence"
+  }
+]

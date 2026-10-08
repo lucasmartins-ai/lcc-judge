@@ -1,0 +1,11 @@
+test_configuration_limits_are_not_silently_capped (tests.test_reranker_control.RerankerControlTests.test_configuration_limits_are_not_silently_capped) ... ok
+test_loader_metadata_is_strict_json_without_losing_key_names (tests.test_reranker_control.RerankerControlTests.test_loader_metadata_is_strict_json_without_losing_key_names) ... ok
+test_nonfinite_score_retains_submitted_accounting (tests.test_reranker_control.RerankerControlTests.test_nonfinite_score_retains_submitted_accounting) ... ok
+test_oversized_input_never_reaches_model (tests.test_reranker_control.RerankerControlTests.test_oversized_input_never_reaches_model) ... ok
+test_raw_logit_and_order_preserved_without_clipping (tests.test_reranker_control.RerankerControlTests.test_raw_logit_and_order_preserved_without_clipping) ... ok
+test_roberta_padding_positions_do_not_inflate_pair_window (tests.test_reranker_control.RerankerControlTests.test_roberta_padding_positions_do_not_inflate_pair_window) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.181s
+
+OK

@@ -1,0 +1,36 @@
+{
+  "schema": "varied-tool-development-cohort/0.1",
+  "frozen_at_utc": "2026-10-05T00:33:11.183251+00:00",
+  "requests": {
+    "train": {
+      "seed": 442601,
+      "fixtures": 64
+    },
+    "validation": {
+      "seed": 442602,
+      "fixtures": 32
+    }
+  },
+  "calibration_excluded": {
+    "seed": 442600,
+    "fixtures": 16,
+    "protocol_sha256": "76c39327ee120d49e02f8e9e8253933525d78520503da8128ef90fcd767f87f7"
+  },
+  "runtime": {
+    "image_id": "sha256:4c21136ee6a6af5e49e2ee3d46317eeff1927bdde4163ca65f990495a4837985",
+    "source_sha256": "5ded8f3bdf45d3e420c889d15e8dd38b2e95a631b2209eab0ab931f6638717a3",
+    "dependency_sha256": "255600482631fdd1a04f299af2f0f1e748d783caafa896bdee322fce18f099bf",
+    "profile": "trusted-tool-relation-states/0.2",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "source_sha256": "5ded8f3bdf45d3e420c889d15e8dd38b2e95a631b2209eab0ab931f6638717a3",
+  "dependency_sha256": "255600482631fdd1a04f299af2f0f1e748d783caafa896bdee322fce18f099bf",
+  "scope": "Fresh actual authored development fixtures, not a model final, production sample or P2. Varied states and grounded direct-record semantics; future candidate needs separately reserved fresh confirmation.",
+  "capture_retry": false,
+  "model_forwards": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "publishing": false,
+  "sha256": "82eb8ca05308cb985a22908eddf695253be5318ea4dd2bc3d636686b3d4cd30a"
+}

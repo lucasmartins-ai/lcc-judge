@@ -1,0 +1,116 @@
+FFFFFFFFFFF                                                              [100%]
+=================================== FAILURES ===================================
+_______________ test_exact_gaps_and_kept_bytes_survive_selection _______________
+
+    def test_exact_gaps_and_kept_bytes_survive_selection():
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:29: ModuleNotFoundError
+_____________________ test_missing_runtime_keeps_all[None] _____________________
+
+engine = None
+
+    @pytest.mark.parametrize('engine', [None, object()])
+    def test_missing_runtime_keeps_all(engine):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:42: ModuleNotFoundError
+___________________ test_missing_runtime_keeps_all[engine1] ____________________
+
+engine = <object object at 0x101001920>
+
+    @pytest.mark.parametrize('engine', [None, object()])
+    def test_missing_runtime_keeps_all(engine):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:42: ModuleNotFoundError
+______________________ test_nonlocal_client_is_not_called ______________________
+
+    def test_nonlocal_client_is_not_called():
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:50: ModuleNotFoundError
+______________ test_invalid_response_preserves_every_block[hash] _______________
+
+change = 'hash'
+
+    @pytest.mark.parametrize('change', ['hash', 'id', 'unknown_drop', 'duplicates'])
+    def test_invalid_response_preserves_every_block(change):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:61: ModuleNotFoundError
+_______________ test_invalid_response_preserves_every_block[id] ________________
+
+change = 'id'
+
+    @pytest.mark.parametrize('change', ['hash', 'id', 'unknown_drop', 'duplicates'])
+    def test_invalid_response_preserves_every_block(change):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:61: ModuleNotFoundError
+__________ test_invalid_response_preserves_every_block[unknown_drop] ___________
+
+change = 'unknown_drop'
+
+    @pytest.mark.parametrize('change', ['hash', 'id', 'unknown_drop', 'duplicates'])
+    def test_invalid_response_preserves_every_block(change):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:61: ModuleNotFoundError
+___________ test_invalid_response_preserves_every_block[duplicates] ____________
+
+change = 'duplicates'
+
+    @pytest.mark.parametrize('change', ['hash', 'id', 'unknown_drop', 'duplicates'])
+    def test_invalid_response_preserves_every_block(change):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:61: ModuleNotFoundError
+__________________ test_short_and_prefix_blocks_are_protected __________________
+
+    def test_short_and_prefix_blocks_are_protected():
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:78: ModuleNotFoundError
+__ test_invalid_scope_or_limits_reject_before_parsing[general diagnosis-6000] __
+
+scope = 'general diagnosis', max_chars = 6000
+
+    @pytest.mark.parametrize('scope,max_chars', [('general diagnosis',6000), (Scope(),0)])
+    def test_invalid_scope_or_limits_reject_before_parsing(scope,max_chars):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:88: ModuleNotFoundError
+_________ test_invalid_scope_or_limits_reject_before_parsing[scope1-0] _________
+
+scope = Scope(entity='service-a', field='errors', start='2027-01-01T12:00:00Z', end='2027-01-01T12:05:00Z')
+max_chars = 0
+
+    @pytest.mark.parametrize('scope,max_chars', [('general diagnosis',6000), (Scope(),0)])
+    def test_invalid_scope_or_limits_reject_before_parsing(scope,max_chars):
+>       from lcc.relevance.observations import compact_observations
+E       ModuleNotFoundError: No module named 'lcc.relevance.observations'
+
+tests/test_observation_compiler.py:88: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_observation_compiler.py::test_exact_gaps_and_kept_bytes_survive_selection
+FAILED tests/test_observation_compiler.py::test_missing_runtime_keeps_all[None]
+FAILED tests/test_observation_compiler.py::test_missing_runtime_keeps_all[engine1]
+FAILED tests/test_observation_compiler.py::test_nonlocal_client_is_not_called
+FAILED tests/test_observation_compiler.py::test_invalid_response_preserves_every_block[hash]
+FAILED tests/test_observation_compiler.py::test_invalid_response_preserves_every_block[id]
+FAILED tests/test_observation_compiler.py::test_invalid_response_preserves_every_block[unknown_drop]
+FAILED tests/test_observation_compiler.py::test_invalid_response_preserves_every_block[duplicates]
+FAILED tests/test_observation_compiler.py::test_short_and_prefix_blocks_are_protected
+FAILED tests/test_observation_compiler.py::test_invalid_scope_or_limits_reject_before_parsing[general diagnosis-6000]
+FAILED tests/test_observation_compiler.py::test_invalid_scope_or_limits_reject_before_parsing[scope1-0]

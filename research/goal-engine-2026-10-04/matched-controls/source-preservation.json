@@ -1,0 +1,32 @@
+{
+  "exported_after_execution": true,
+  "temporal_attestation": false,
+  "files": {
+    "research/matched_controls.py": {
+      "sha256": "b95517ee7a8715b04c2b7e072755eb9bbf84c5a7d7f4eaae702450123d6b22b8",
+      "captured_in_original_protocol": true
+    },
+    "bakeoff/adapters.py": {
+      "sha256": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+      "captured_in_original_protocol": true
+    },
+    "bakeoff/probes.py": {
+      "sha256": "65e33dedbfa5797bdcf2bc3137f1b9ccbafefa886d8b669a14426da63bdcf43e",
+      "captured_in_original_protocol": true
+    },
+    "specialist/model.py": {
+      "sha256": "7acd4fc759c4ea3ec9bd24290b0bb2d8427ff19807c801d9262a7d868ed34b62",
+      "captured_in_original_protocol": true
+    },
+    "specialist/checkpoint.py": {
+      "sha256": "fb85b55bf8dd340b8fd94d4e6d2f03f25380009f6167ee8d1521e39a1ac33f87",
+      "captured_in_original_protocol": true
+    },
+    "bakeoff/runner.py": {
+      "sha256": "0622dcb440cb9956806e28d94d643ff2447407f70cfe67ae7c3cfa5f0105415f",
+      "captured_in_original_protocol": false,
+      "supplemental_current_file_snapshot_after_execution": true
+    }
+  },
+  "limitation": "Original protocol omitted the summarizer source; independent audits recompute all AUC/cell populations from raw rows"
+}

@@ -1,0 +1,4 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114251_46b27e", "timestamp": 1791110572311}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget with minAvailable set to 3.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "timestamp": 1791110578372}
+{"type": "result", "session_id": "20261004_114251_46b27e", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget with minAvailable set to 3.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 1380, "output": 242, "total": 1762, "cache_read": 140, "cache_write": 0}, "duration_ms": 6082, "timestamp": 1791110578394}

@@ -1,0 +1,41 @@
+{
+  "state": {
+    "objective": "Determine why browser blocks POST requests from app.domain.com to api.domain.com.",
+    "context": [
+      {
+        "block_id": "b_6937e6de",
+        "content": "2026-10-03T12:00:00Z OPTIONS /v1/checkout HTTP/1.1 response: Access-Control-Allow-Origin: * but Access-Control-Allow-Credentials: true; browser rejects credentials with wildcard origin",
+        "source": "net/browser_console.log",
+        "block_type": "trace"
+      },
+      {
+        "block_id": "b_7de963c9",
+        "content": "Cookie session: domain=.domain.com, SameSite=Lax, Secure=true",
+        "source": "session.json",
+        "block_type": "config"
+      },
+      {
+        "block_id": "b_ec4cedce",
+        "content": "CORS middleware config: origins=['*'], allow_credentials=True",
+        "source": "server/cors.py",
+        "block_type": "code"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "The credentialed cross-origin POST is blocked because the server combines Access-Control-Allow-Origin: * with Access-Control-Allow-Credentials: true. Configure CORS to allow the exact app origin, including its scheme, instead of a wildcard.",
+      "mechanism": "cors_wildcard_credentials",
+      "parameters": {
+        "allow_origin": "https://app.domain.com",
+        "allow_credentials": true
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

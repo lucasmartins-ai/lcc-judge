@@ -1,0 +1,59 @@
+{
+  "schema": "exposed-train-fit/0.1",
+  "frozen_at_utc": "2026-10-04T23:26:55.840746+00:00",
+  "seed": 101,
+  "study_protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+  "weights_sha256": "7883adbfcaaba282b2d294e0599da257c639acba3671517ad789f900215a568d",
+  "model": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "license": "apache-2.0",
+    "files": {
+      "README.md": "c86bce75ae78f36287331388604a090cdba0ea394a9f2c1d4da364a4ca65c623",
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "model.safetensors": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "primary_source": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1/blob/8008f0154ca2387468013ed439df09d70c122412/README.md",
+    "upstream_blob_or_lfs_identity_verified": true,
+    "TLS_verified": true,
+    "inference_executed": false,
+    "training_executed": false,
+    "adoption": false
+  },
+  "data_files": {
+    "train.jsonl": "339357fac4e5dccb170238b6b6ccfc87b2081252ea20f3e8a3357db8d82f6077",
+    "train-views.jsonl": "bebb607d63b1555963e4118008f76879c169b01fe0e028881b839def59317d79"
+  },
+  "sources": {
+    "research/diagnose_tool_relation_fit.py": "86f96a6fc89269dbb7185236a98f1ce4cf14421ed690b89c2f20307fa26478a9",
+    "research/tool_relation_support_study.py": "37b3c5b26bf08e6b2ccff82726dec1b01302d5e8a036ebc1e5ce1381f934f31e",
+    "research/tool_relation_adaptation.py": "cce935b22ed4a903225aec6d7d540538dae6883cdb27b7213fbd8c90ddb6b04e",
+    "research/ranking_support_initialization.py": "ffeb3c8bc54dcc23de5cf9f0a180d77929f139f286e36d3394939fd77213d47e",
+    "research/tool_role_policy.py": "b5bd0caf92c5c8e261dde218394d6e899f5e56b3ff10cd4115007932031556c0",
+    "research/reranker_control.py": "5c10f04474659e114156cd11e3794eb61b1da11a8ffc7d661ac1ebf50848af5d",
+    "specialist/checkpoint.py": "ce9d6b97294ba784b377865bb9f6319b639f5439d878be421ad692686f616d20"
+  },
+  "batch_size": 16,
+  "threads": 8,
+  "device": "cpu",
+  "dtype": "float32",
+  "window": 512,
+  "thresholds": {
+    "support": -0.8072910278450626,
+    "relevance": -2.9832178354263306,
+    "validation_semantic_unknown_recall": 1.0,
+    "recipe": "minimum semantic-UNKNOWN support margin; greatest global relevance cutoff meeting .95 positive/contradiction keep recall in each language"
+  },
+  "seed_selection": "Fixed first protocol seed, not best final seed",
+  "scope": "Original exposed train population, same private weights and validation-only cutoffs; no tuning/training or generalization claim",
+  "training": false,
+  "API_calls": 0,
+  "P2_admission": false,
+  "adoption": false,
+  "default_changed": false,
+  "sha256": "b6c0a75fca27f2712d3acd5a4433c3638c6ac1ed5a48abdefb8f9604f95abcb1"
+}

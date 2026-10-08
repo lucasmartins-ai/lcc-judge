@@ -1,0 +1,29 @@
+{
+  "case_id": "c_7c55c4b0d64868af",
+  "split": "eval",
+  "task_number": 10,
+  "kind": "code",
+  "family": "cached_raw_string",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "a8b9ed37d0000fad281a43b10c2e9ce1fad5db95d612f2255ff1fc935ae90dd2",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Duplicate did not return the cached receipt",
+    "program_stdout": "",
+    "source_sha256": "6754d7c689e4eeb7a4165bed9999b655cec9ec209026de7374a9e89bd7558eba"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.14973183296388015
+}

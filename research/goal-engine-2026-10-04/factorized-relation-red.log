@@ -1,0 +1,18 @@
+test_factorized_relation_training (unittest.loader._FailedTest.test_factorized_relation_training) ... ERROR
+
+======================================================================
+ERROR: test_factorized_relation_training (unittest.loader._FailedTest.test_factorized_relation_training)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_factorized_relation_training
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_factorized_relation_training.py", line 5, in <module>
+    from research.factorized_relation_training import factorized_loss, conditional_loss, training_quartets
+ModuleNotFoundError: No module named 'research.factorized_relation_training'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

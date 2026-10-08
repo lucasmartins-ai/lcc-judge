@@ -1,0 +1,14 @@
+E
+======================================================================
+ERROR: test_data_path_override_still_requires_frozen_bytes (tests.test_wording_pilot_study.WordingPilotStudyTests.test_data_path_override_still_requires_frozen_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_wording_pilot_study.py", line 17, in test_data_path_override_still_requires_frozen_bytes
+    self.assertEqual(auditor.pinned_data_path(out,p),data)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'research.audit_varied_relation_dev' has no attribute 'pinned_data_path'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (errors=1)

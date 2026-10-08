@@ -1,0 +1,39 @@
+{
+  "case_id": "pdb-development-n06-unsafe_quorum",
+  "split": "development",
+  "family": "unsafe_quorum",
+  "expected": false,
+  "case_sha256": "07627e9835f33cb910eac76dbed7b0cdeb4bcb7e15cdbc57f42c7255afa8db07",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "quorum_or_maintenance_violation",
+    "min_remaining": 3,
+    "max_disruptions": 3
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 3,
+        "max_disruptions": 3
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 3,
+        "max_disruptions": 3
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

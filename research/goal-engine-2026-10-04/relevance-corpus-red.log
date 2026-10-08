@@ -1,0 +1,59 @@
+test_all_generated_labels_and_balanced_formats_are_verified (test_relevance_corpus.RelevanceCorpusTests.test_all_generated_labels_and_balanced_formats_are_verified) ... ERROR
+test_health_is_independent_of_relevance (test_relevance_corpus.RelevanceCorpusTests.test_health_is_independent_of_relevance) ... ERROR
+test_metadata_and_labels_are_not_model_inputs (test_relevance_corpus.RelevanceCorpusTests.test_metadata_and_labels_are_not_model_inputs) ... ERROR
+test_oracle_checks_observations_not_generator_kind (test_relevance_corpus.RelevanceCorpusTests.test_oracle_checks_observations_not_generator_kind) ... ERROR
+test_oracle_rejects_unsupported_and_duplicate_identity (test_relevance_corpus.RelevanceCorpusTests.test_oracle_rejects_unsupported_and_duplicate_identity) ... ERROR
+test_splits_and_entities_are_disjoint_and_reproducible (test_relevance_corpus.RelevanceCorpusTests.test_splits_and_entities_are_disjoint_and_reproducible) ... ERROR
+
+======================================================================
+ERROR: test_all_generated_labels_and_balanced_formats_are_verified (test_relevance_corpus.RelevanceCorpusTests.test_all_generated_labels_and_balanced_formats_are_verified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_relevance_corpus.py", line 47, in test_all_generated_labels_and_balanced_formats_are_verified
+    from research.relevance_corpus import build_split, verify_label
+ModuleNotFoundError: No module named 'research.relevance_corpus'
+
+======================================================================
+ERROR: test_health_is_independent_of_relevance (test_relevance_corpus.RelevanceCorpusTests.test_health_is_independent_of_relevance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_relevance_corpus.py", line 6, in test_health_is_independent_of_relevance
+    from research.relevance_corpus import make_group, verify_label
+ModuleNotFoundError: No module named 'research.relevance_corpus'
+
+======================================================================
+ERROR: test_metadata_and_labels_are_not_model_inputs (test_relevance_corpus.RelevanceCorpusTests.test_metadata_and_labels_are_not_model_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_relevance_corpus.py", line 26, in test_metadata_and_labels_are_not_model_inputs
+    from research.relevance_corpus import make_group, model_input
+ModuleNotFoundError: No module named 'research.relevance_corpus'
+
+======================================================================
+ERROR: test_oracle_checks_observations_not_generator_kind (test_relevance_corpus.RelevanceCorpusTests.test_oracle_checks_observations_not_generator_kind)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_relevance_corpus.py", line 18, in test_oracle_checks_observations_not_generator_kind
+    from research.relevance_corpus import make_group, verify_label
+ModuleNotFoundError: No module named 'research.relevance_corpus'
+
+======================================================================
+ERROR: test_oracle_rejects_unsupported_and_duplicate_identity (test_relevance_corpus.RelevanceCorpusTests.test_oracle_rejects_unsupported_and_duplicate_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_relevance_corpus.py", line 56, in test_oracle_rejects_unsupported_and_duplicate_identity
+    from research.relevance_corpus import make_group, verify_label
+ModuleNotFoundError: No module named 'research.relevance_corpus'
+
+======================================================================
+ERROR: test_splits_and_entities_are_disjoint_and_reproducible (test_relevance_corpus.RelevanceCorpusTests.test_splits_and_entities_are_disjoint_and_reproducible)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_relevance_corpus.py", line 35, in test_splits_and_entities_are_disjoint_and_reproducible
+    from research.relevance_corpus import build_split
+ModuleNotFoundError: No module named 'research.relevance_corpus'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (errors=6)

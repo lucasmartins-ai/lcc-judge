@@ -1,0 +1,25 @@
+{
+  "schema": "local-research-derivatives/0.1",
+  "study_protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+  "base_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "revision": "8008f0154ca2387468013ed439df09d70c122412",
+  "operation": "Exposed held-goal-wording development only; eight relevance fields",
+  "seed": 101,
+  "epochs_completed": 3,
+  "weights_path": "models/wording-development-pilot-v1/model.safetensors",
+  "weights_sha256": "48ef51fc1028d194bd69b089fa654a2b211a5549eb39bc7b97a5bf60b474409a",
+  "total_parameters": 117641859,
+  "trainable_parameters": 3697923,
+  "metadata_origin": "Direct accepted-update and completed finite epoch receipts; no terminal reconstruction",
+  "metadata_erratum": {
+    "original_data_directory": "..",
+    "correct_data_directory": ".",
+    "frozen_protocol_preserved": true,
+    "all_data_file_hashes_verified": true
+  },
+  "development_promising": false,
+  "fresh_final_evaluated": false,
+  "adopted": false,
+  "loaded_by_native_ModernBERT_provider": false,
+  "public_weight_URL": null
+}

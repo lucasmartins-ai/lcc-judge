@@ -1,0 +1,127 @@
+{
+  "schema": "frozen-goal-interpreter-probe/0.1",
+  "frozen_at_utc": "2026-10-08T10:11:00.523143+00:00",
+  "model": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "license": "apache-2.0",
+    "files": {
+      "README.md": "c86bce75ae78f36287331388604a090cdba0ea394a9f2c1d4da364a4ca65c623",
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "model.safetensors": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "primary_source": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1/blob/8008f0154ca2387468013ed439df09d70c122412/README.md",
+    "upstream_blob_or_lfs_identity_verified": true,
+    "TLS_verified": true,
+    "inference_executed": false,
+    "training_executed": false,
+    "adoption": false
+  },
+  "sources": {
+    "research/goal_interpreter_probe.py": "ee8b2b171c3201f28e92d498c47451131bef75946f57d3efc813d7482e3d5c82",
+    "tests/test_goal_interpreter_probe.py": "86c209c553e72629f3bacb3bf9d2b873db5cb9106542579dda37d0c9207eff95",
+    "research/reranker_control.py": "5c10f04474659e114156cd11e3794eb61b1da11a8ffc7d661ac1ebf50848af5d",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/audit_varied_relation_dev.py": "50ca1a413cb1007aac5e3585c4d2733cd79052e110f8870110d03d6f0a59180c",
+    "research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "research/audit_tool_relation_confirmation.py": "4c56e480ab7b4a0a1faf79e0e3230af2906db3d51b2fa9ef04ed3926c0140997",
+    "research/detached_varied_study.py": "7df7b560a6e3fdd6090948df809c0d7c8cea80229008b42151a131b0c29442ba",
+    "bakeoff/adapters.py": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+    "bakeoff/probes.py": "65e33dedbfa5797bdcf2bc3137f1b9ccbafefa886d8b669a14426da63bdcf43e",
+    "research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4"
+  },
+  "files": {
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/registry.json": "cc5cfcdc14c2acaac64b6a19e021bbe9a40cfc6359f57e0e1e07c05ec14c8cd4",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/CONTRACT.md": "1afb2d4d20dca04db0b0d9e72f0a10ef72c9a03e6bab9ab4fef95673aa3a444f",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/token-lengths.json": "6027504dedba0c0b274073ac37f562d41bef1977d05070437f704e707a388c3a",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-inputs.json": "048003abe7b692b3d1485e17d9f9778e8f1aac0b2f0b358ee38f59fb108d3739",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-annotations.json": "fbdf45116287b3996443b2f227e27ce4909fed32515074846923179be24c54c5",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-inputs.json": "0cc78417ab49e376f40f799dac35fd7003ae3130f478a791b2f29fc38d12f182",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-annotations.json": "a682322bcb4aad01e4e2482903a12abfe026ca966000b1e79e62331077d34c3f",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/train.jsonl.gz": "521e965ae33655da888b331c2d0439c9d0440c35b803f538a2d657d556bf94ef",
+    "research/goal-engine-2026-10-04/wording-development-pilot-v1/validation.jsonl.gz": "8bb2a6bedf728a71e885018a2cc2aa7bbba06a638292b0e1e7036cbe62576a2b",
+    "research/goal-engine-2026-10-04/tool-relation-states-v2/train/raw.json": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+    "research/goal-engine-2026-10-04/tool-relation-states-v2/validation/raw.json": "e606a1cf3c8cbb70c8e33737f80e92cb2f51ae3e2e8e73c319ce34abed178a5d"
+  },
+  "populations": {
+    "train": {
+      "queries": 1172,
+      "rows": 11136,
+      "supported": 256,
+      "by_kind": {
+        "direct": 256,
+        "derived_or_multifield_goal": 288,
+        "diagnosis_goal": 288,
+        "broader_usefulness_goal": 288,
+        "out_of_registry": 52
+      }
+    },
+    "validation": {
+      "queries": 1136,
+      "rows": 5568,
+      "supported": 240,
+      "by_kind": {
+        "direct": 240,
+        "derived_or_multifield_goal": 288,
+        "diagnosis_goal": 288,
+        "broader_usefulness_goal": 288,
+        "out_of_registry": 32
+      }
+    }
+  },
+  "raw_fixtures_recounted": {
+    "train": 64,
+    "validation": 32
+  },
+  "candidates": [
+    "retry_attempts",
+    "retry_failures",
+    "retry_scheduled_sleep_ns",
+    "retry_actual_sleep_ns",
+    "udp_sent_datagrams",
+    "udp_sent_payload_bytes",
+    "git_index_edits",
+    "git_worktree_edits",
+    "UNKNOWN:derived",
+    "UNKNOWN:diagnosis",
+    "UNKNOWN:broader",
+    "UNKNOWN:other"
+  ],
+  "declared_pair_forwards": 27696,
+  "maximum_pair_forwards": 30000,
+  "declared_nonpadding_tokens": 2949948,
+  "maximum_pair_tokens": 152,
+  "recipe": "Unique argmax of the same 12 fixed bilingual definitions; unsupported winners/ties UNKNOWN. No cutoff fit or logit probability claim.",
+  "input": "Only natural question and public candidate definition; no entity suffix, record, target role or annotation in neural inputs",
+  "gate": {
+    "precision_min": 0.99,
+    "supported_coverage_min": 0.8,
+    "unknown_recognition_min": 0.95,
+    "applies_to": "Aggregate and EN/PT separately; unique questions, not repeated records"
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 8,
+  "batch_size": 16,
+  "pair_window": 512,
+  "versions": {
+    "torch": "2.12.0",
+    "transformers": "5.10.2",
+    "tokenizers": "0.22.2",
+    "numpy": "2.4.6"
+  },
+  "scope": "Exposed author-created development queries. Not fresh confirmation, full 18-field quality, human ground truth or LCC utility.",
+  "training": false,
+  "threshold_fit": false,
+  "fresh_confirmation": false,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "independent_human_review": false,
+  "sha256": "20ebddaaba6dadecee2a8d05600a72408058f3e127f4dbccb12085f8c57fd7d0"
+}

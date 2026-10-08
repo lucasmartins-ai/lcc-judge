@@ -1,0 +1,296 @@
+{
+  "schema": "lcc-local-artifact-inventory/0.1",
+  "observed_on": "2026-10-04",
+  "current_load_backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "historical_revision_certified": false,
+  "checkpoints": [
+    {
+      "local_directory": "models/exp02-specialist-head",
+      "files": {
+        "config.json": {
+          "sha256": "518b32426bce69a75cbeec685ddc984fb0745113e81c4e3d0da55f1615139adf",
+          "bytes": 473
+        },
+        "training_meta.json": {
+          "sha256": "14b8480653bbe28e6fb4377ed3455719533f9470e10a3cbd38032fc6e7a25d2f",
+          "bytes": 781
+        },
+        "weights.pt": {
+          "sha256": "81b9d9e709cf93b6eae15f71b6813e4319e0914421b01d050897aeb5bbd8200e",
+          "bytes": 790685
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.1",
+      "historical_architecture": null,
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02b-attn",
+      "files": {
+        "config.json": {
+          "sha256": "145fcb341aa5efe5aac0751cab613984373978ce035038c5ccc5f74af7c8c12d",
+          "bytes": 493
+        },
+        "training_meta.json": {
+          "sha256": "9f21d3d6f647d65541686fe7bfdc21b71779c16a973909ab20948a348cf129cc",
+          "bytes": 658
+        },
+        "weights.pt": {
+          "sha256": "df51c901d98c4d7574b0b75f2d4514615a11cd8a31304d38a3080859ffc84778",
+          "bytes": 794197
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.2",
+      "historical_architecture": "attn",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02b-short-probe",
+      "files": {
+        "config.json": {
+          "sha256": "bb7d6728a385032ecd4ec7877055ca3d6776260621c6913661278ecca1cf7e8e",
+          "bytes": 472
+        },
+        "training_meta.json": {
+          "sha256": "7aaf09c61d1cfcf4f44a502f0cd6380b8736d69273d04685812527f74a4d7dd8",
+          "bytes": 649
+        },
+        "weights.pt": {
+          "sha256": "cf32b0e69b6e8cf27c9b67d3bea2de1086b9730058e38545b94ba079022dda9a",
+          "bytes": 790685
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.2",
+      "historical_architecture": null,
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02b-specialist-head",
+      "files": {
+        "config.json": {
+          "sha256": "bb7d6728a385032ecd4ec7877055ca3d6776260621c6913661278ecca1cf7e8e",
+          "bytes": 472
+        },
+        "training_meta.json": {
+          "sha256": "deb449acefd301837f6e563089b7c6fa460ccbfc25a2a0c735d7f0c8015a0cfb",
+          "bytes": 485
+        },
+        "weights.pt": {
+          "sha256": "5a1ca17ed8d168c7e76063912e9ed1603ad2a3001142311c0ad62a159ef13ec4",
+          "bytes": 790685
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.2",
+      "historical_architecture": null,
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02b-unfreeze",
+      "files": {
+        "config.json": {
+          "sha256": "323648b780bb5276336bc7e15d5842fbe068d4981553783cedf24b18a2c1e1e9",
+          "bytes": 493
+        },
+        "training_meta.json": {
+          "sha256": "cfe2aeb8d8a9c3f164486fc39c087c9ac5a2773a0014f713ff55890c5ca34e91",
+          "bytes": 504
+        },
+        "weights.pt": {
+          "sha256": "8591aa340f0b3156d169806d690748ec4e112677635384206d1cad5c0eceab3d",
+          "bytes": 40914035
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.2",
+      "historical_architecture": "mean",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02c-line-attn",
+      "files": {
+        "config.json": {
+          "sha256": "d57db3a82613d5a718c48e0c7ad7712595796082ea9c9591b01ee1fb2f62e9e3",
+          "bytes": 499
+        },
+        "training_meta.json": {
+          "sha256": "00cb17e363286229fed067d961b9b3d943c0a74a55cb639c5d22d1de74faacb8",
+          "bytes": 508
+        },
+        "weights.pt": {
+          "sha256": "0719d10332fd3d3683609675b2acbf83a8d4b9819e3438bc72ee8288c269efa5",
+          "bytes": 1580045
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.2",
+      "historical_architecture": "line-attn",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02c-line-max",
+      "files": {
+        "config.json": {
+          "sha256": "a6359a345eef9c104b11bcb74b68fc7d1ccf93c6093883cff3df3173f31c78d4",
+          "bytes": 497
+        },
+        "training_meta.json": {
+          "sha256": "4a3f9199ca290e943e3983dcfd476d80970aa0371ab87a28e6f250bfa465ee62",
+          "bytes": 506
+        },
+        "weights.pt": {
+          "sha256": "d1be53c47ba7d1d46c826c03be9c7486c2b18ec91196634443f2800442f0a196",
+          "bytes": 1580045
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.2",
+      "historical_architecture": "line-max",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02d-line-attn",
+      "files": {
+        "config.json": {
+          "sha256": "68dee52d8705aa94ea8c6ed191881f1ad2e46a1d6a3ab0b4b9fccbcdef61f3d9",
+          "bytes": 498
+        },
+        "training_meta.json": {
+          "sha256": "34513ae37dba977098f2442103f8f821c7215f89fb70d58f71b7e9c7f7c4573a",
+          "bytes": 857
+        },
+        "weights.pt": {
+          "sha256": "7e4a7b0ff950492dbf80c49ae3c0808022eb603a433c06d2c4ea1b62a3a110d3",
+          "bytes": 1580045
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.3",
+      "historical_architecture": "line-attn",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02d-unfreeze2",
+      "files": {
+        "config.json": {
+          "sha256": "b512fa9349485a2854dd770d4f21daeb2225042187f628e9d9b1f679261fa344",
+          "bytes": 498
+        },
+        "training_meta.json": {
+          "sha256": "440fa7827f11937b598ad3ff2044b0a49692a1c6bdf6e837d270cb08e5f06a17",
+          "bytes": 859
+        },
+        "weights.pt": {
+          "sha256": "369a23dc169e65690c644215498538ca574891e040e2695df4743ee8b828b6c9",
+          "bytes": 41703591
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.3",
+      "historical_architecture": "line-attn",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02e-line-attn",
+      "files": {
+        "config.json": {
+          "sha256": "92ddc20e35ceaf5a8c5f2b283b7abbfbd50875fb7069db3c3a0243b860dc006e",
+          "bytes": 498
+        },
+        "training_meta.json": {
+          "sha256": "db405198a60796ddb1e8e2459601858414e9f5e2504d97fc14c31dd535fd3ecb",
+          "bytes": 958
+        },
+        "weights.pt": {
+          "sha256": "03dad5f0558f3f8621780056d51c062ee7d6b907d3617e5afa8a178a90fca768",
+          "bytes": 1580045
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.4",
+      "historical_architecture": "line-attn",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/exp02e-unfreeze2",
+      "files": {
+        "config.json": {
+          "sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+          "bytes": 498
+        },
+        "training_meta.json": {
+          "sha256": "29705145fb02402eee86b5a663e89a5e8a9c2797fcd480b7df5979cd3b785318",
+          "bytes": 963
+        },
+        "weights.pt": {
+          "sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+          "bytes": 41703591
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.4",
+      "historical_architecture": "line-attn",
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    },
+    {
+      "local_directory": "models/repro-v01-check",
+      "files": {
+        "config.json": {
+          "sha256": "534003ffd5c9715a820efebfa4431f8e2e8137ee016d0fe9579df5e751976749",
+          "bytes": 472
+        },
+        "training_meta.json": {
+          "sha256": "ae300cde8f0f00598ffb9749a53e91702bba8a955514cbb0ddcace7312a51426",
+          "bytes": 638
+        },
+        "weights.pt": {
+          "sha256": "1d2d43ed0fd52e469781bdc146d1c71f0f3a088c257f0ae037fe3e5d1bc68b35",
+          "bytes": 790685
+        }
+      },
+      "model_id": "answerdotai/ModernBERT-base",
+      "recorded_backbone_revision": null,
+      "corpus_version": "corpus-exp02/0.1",
+      "historical_architecture": null,
+      "download_url": null,
+      "public_release": false,
+      "qualified_for_current_release": false
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "episodes": 120,
+  "unique_executor_sessions": 117,
+  "label_counts": {
+    "NECESSARY": 5,
+    "UNNECESSARY": 7,
+    "UNKNOWN": 8
+  },
+  "concordance_rate": 0.6,
+  "unknown_rate": 0.4,
+  "pilot_targets_pass": false,
+  "executor_successes": 117,
+  "executor_errors": 3,
+  "attempted_executor_calls": 120,
+  "executor_calls_with_final_receipt": 117,
+  "tokens_exclude_unobserved_timeout_usage": true,
+  "quarantined_verdicts": 12,
+  "unknown_verdicts": 15,
+  "misleading_summary_field": "execution_errors counts all None verdicts, including quarantine",
+  "canonical_ledger_entries": 62,
+  "ledger_questions": {
+    "consistent": 56,
+    "text_consistent": 6
+  },
+  "requested_feature": "lcc_judge_referenced_replay",
+  "actual_ledger_feature": "lcc_judge_replay_real",
+  "ledger_feature_misrouted": true,
+  "hermes_input_tokens": 85951,
+  "hermes_output_tokens": 76925,
+  "jev_input_tokens": 69949,
+  "median_episode_wall_s": 8.57730931250262,
+  "archived_sources_verified": [
+    "executed-source/replay/referenced_pilot.py",
+    "executed-source/replay/real_pilot.py",
+    "executed-source/replay/real_fixtures.py",
+    "executed-source/replay/tasks.py",
+    "executed-source/replay/outcome_verifier.py",
+    "executed-source/replay/pdb_verifier.py",
+    "executed-source/replay/sandbox.py",
+    "executed-source/replay/sandbox_worker.py",
+    "executed-source/replay/jev_bridge.ts",
+    "executed-source/research/goal-engine-2026-10-04/outcome-references.json"
+  ],
+  "source_verification_mode": "archived",
+  "outcomes_reexecuted": false,
+  "independently_human_reviewed": false,
+  "temporal_preregistration_certified": false,
+  "training_eligible_records": 0
+}

@@ -1,0 +1,87 @@
+{
+  "task_id": "task_002_redis_stampede",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "input_sha256": "c0b1e7f4cc3178e72bb2033a993aae970a9428ea6438facc1a18d2c69fb9a8fd",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_002_redis_stampede/32768/episodes/task_002_redis_stampede/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_002_redis_stampede/32768/episodes/task_002_redis_stampede/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "top_products_cache keys expired synchronously at 09:30 UTC because TTL jitter was disabled, causing 1,200 workers to stampede the database; concurrent misses drove the hit ratio to 12%. Add TTL jitter to high-QPS keys.",
+    "mechanism": "cache_expiry_stampede",
+    "parameters": {
+      "key": "top_products_cache",
+      "ttl_seconds": 3600,
+      "jitter_seconds": 0,
+      "workers_stampeding": 1200,
+      "observed_hit_ratio_percent": 12
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_141736_1d0cb8",
+      "timestamp": 1791119857231
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_141736_1d0cb8",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"top_products_cache keys expired synchronously at 09:30 UTC because TTL jitter was disabled, causing 1,200 workers to stampede the database; concurrent misses drove the hit ratio to 12%. Add TTL jitter to high-QPS keys.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"key\":\"top_products_cache\",\"ttl_seconds\":3600,\"jitter_seconds\":0,\"workers_stampeding\":1200,\"observed_hit_ratio_percent\":12},\"python\":\"\"}",
+    "tokens": {
+      "input": 30835,
+      "output": 318,
+      "total": 31293,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 8410,
+    "timestamp": 1791119865642
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 10.16132266598288
+}

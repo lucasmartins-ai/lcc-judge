@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211647_e6190c", "timestamp": 1791058608384}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget requiring at least 3 replicas to remain available.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"", "timestamp": 1791058611640}
+{"type": "text", "text": "}", "timestamp": 1791058611642}
+{"type": "result", "session_id": "20261003_211647_e6190c", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget requiring at least 3 replicas to remain available.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 426, "output": 200, "total": 1727, "cache_read": 1101, "cache_write": 0}, "duration_ms": 4194, "timestamp": 1791058612579}

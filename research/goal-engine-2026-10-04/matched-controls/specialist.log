@@ -1,0 +1,104 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 5458.05it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.norm.weight  | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+{
+  "model": "specialist",
+  "n_rows": 372,
+  "summary": [
+    {
+      "model": "specialist",
+      "protocol_sha256": "31d754297f9d7d3d034229ce670a94dfad366c7ca13de8f772b72134e7558223",
+      "declared_window": 8192,
+      "load_s": 3.044394291995559,
+      "peak_rss_after_load_gb": 0.563740672,
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "python": "3.14.3",
+      "versions": {
+        "torch": "2.12.0",
+        "transformers": "5.10.2",
+        "laya": "0.3.4"
+      },
+      "revision": null,
+      "code_revision": null,
+      "dtype": "torch.float32",
+      "scope": "exploratory curated probes; no downstream outcome or useful-context claim",
+      "by_depth": {
+        "0": {
+          "auc_detect": 0.777,
+          "auc_judge": 0.791,
+          "mean_fact": 0.24,
+          "mean_unrelated": 0.069,
+          "mean_decoy": 0.067,
+          "p50_latency_ms": 58.1,
+          "errors": 0,
+          "n": 62,
+          "n_by_kind": {
+            "fact": 62,
+            "noise_unrelated": 62,
+            "noise_decoy": 62
+          },
+          "probe_versions": [
+            "1.2"
+          ],
+          "truncated": 0,
+          "auc_method": "strict pooled P(fact > noise); ties count zero",
+          "cell_integrity": {
+            "detect": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            },
+            "judge": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            }
+          }
+        },
+        "512": {
+          "auc_detect": 0.722,
+          "auc_judge": 0.829,
+          "mean_fact": 0.334,
+          "mean_unrelated": 0.126,
+          "mean_decoy": 0.078,
+          "p50_latency_ms": 279.1,
+          "errors": 0,
+          "n": 62,
+          "n_by_kind": {
+            "fact": 62,
+            "noise_unrelated": 62,
+            "noise_decoy": 62
+          },
+          "probe_versions": [
+            "1.2"
+          ],
+          "truncated": 0,
+          "auc_method": "strict pooled P(fact > noise); ties count zero",
+          "cell_integrity": {
+            "detect": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            },
+            "judge": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            }
+          }
+        }
+      },
+      "passing_depths_detect": [],
+      "effective_context_detect": 0,
+      "passing_depths_judge": [],
+      "effective_context_judge": 0
+    }
+  ]
+}

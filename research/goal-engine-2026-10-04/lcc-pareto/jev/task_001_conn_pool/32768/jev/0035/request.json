@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Identify the root cause of connection pool timeout errors in payment-gateway.",
+    "blocks": [
+      {
+        "id": "blk_0035_0017aab7b1a3",
+        "text": "archive-cleaner tick=32041 partition=80 records=4984 checksum=valid state=healthy\narchive-cleaner tick=51438 partition=4 records=2615 checksum=valid state=healthy\narchive-cleaner tick=4589 partition=94 records=230 checksum=valid state=healthy\narchive-cleaner tick=54329 partition=20 records=3628 checksum=valid state=healthy\narchive-cleaner tick=35036 partition=10 records=8166 checksum=valid state=healthy\narchive-cleaner tick=53195 partition=89 records=9848 checksum=valid state=healthy\narchive-cleaner tick=26648 partition=6 records=7567 checksum=valid state=healthy\narchive-cleaner tick=20165 partition=48 records=5202 checksum=valid state=healthy\narchive-cleaner tick=26090 partition=75 records=9930 checksum=valid state=healthy\narchive-cleaner tick=79597 partition=23 records=2111 checksum=valid state=healthy\narchive-cleaner tick=91038 partition=68 records=6591 checksum=valid state=healthy\narchive-cleaner tick=84054 partition=89 records=6940 checksum=valid state=healthy\narchive-cleaner tick=43217 partition=66 records=1941 checksum=valid state=healthy\narchive-cleaner tick=38780 partition=2 records=1639 checksum=valid state=healthy\narchive-cleaner tick=90916 partition=87 records=1388 checksum=valid state=healthy\narchive-cleaner tick=75198 partition=47 records=4127 checksum=valid state=healthy\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0035_0017aab7b1a3": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0035_0017aab7b1a3 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

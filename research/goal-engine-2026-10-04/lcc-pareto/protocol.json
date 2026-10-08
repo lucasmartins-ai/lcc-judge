@@ -1,0 +1,57 @@
+{
+  "schema": "lcc-pareto/0.1",
+  "task_numbers": [
+    1,
+    2,
+    4,
+    18
+  ],
+  "profiles": [
+    "full",
+    "specialist",
+    "laya",
+    "jev"
+  ],
+  "budgets_hf": [
+    8192,
+    32768
+  ],
+  "repeats": 3,
+  "seed": 442382,
+  "executor_seeds_applied": false,
+  "policy": "Current LCC threshold .40; trim disabled; one block per judge call; safety protections retained; specialist shadow KEEP only",
+  "provider_comparison": "Operational pipeline policies differ; not isolated model/dtype superiority",
+  "criteria": {
+    "outcome_success_min": 0.9,
+    "max_loss_vs_full": 0.02,
+    "min_input_reduction": 0.25
+  },
+  "dtype": "native CPU fp32; pinned Laya CPU runtime default; Jev remote",
+  "threads": 8,
+  "reference_scope": "Known curated contracts 1/2/4/18; synthetic unrelated fillers; diagnostic not production confirmation",
+  "training_admission": false,
+  "independent_human_review": false,
+  "sources": {
+    "research/lcc_pareto.py": "aa3cb21d6eb25916bfc0ee297af0e4d9c1b02fea689f9fa832b9f9d70db6be5b",
+    "lcc_engine/engine.py": "daf9c44a7465db7c5400fa7e0aed5f58601fd52245857a611c8db77c6813abb8",
+    "bakeoff/adapters.py": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+    "replay/real_pilot.py": "e1f1b1349022aeac6ca479999c7fc51a0e5784a0111a54d3f70d617d0f475c87",
+    "replay/real_fixtures.py": "c2ccfd515b0b6fa0c024c9143b59e05b08710ea6bf14a3423f7acc1f14af6671",
+    "replay/referenced_pilot.py": "4f31800629288e3e4f07bc5371bbd23af7f635747e47606cb06a79e23b8891d4",
+    "replay/pdb_verifier.py": "20057717934086a579b59101d6e48ac462cd21c794f71c1ab91be2d5078ad261",
+    "replay/jev_bridge.ts": "7fbdfefcea4a3922827a5cf7b65a2fee6eda32b8391b516057e708e93e8e4934",
+    "replay/tasks.py": "09386c46f6d36f24e562987a0b793bb6083afe380a746db74b1b25286fd74aac"
+  },
+  "lcc_sources": {
+    "src/lcc/relevance/compactor.py": "9970a6ecb34a62df01c3706be6c38b35cb30fb9c757b5f1079cae74c8a1dd6fa",
+    "src/lcc/relevance/blocks.py": "880dbc0b9d4dab1c83dd558c770fb73f05cec70f3b7aa4fdd9a5ad1858d2ef66",
+    "src/lcc/relevance/laya.py": "da0866255bf97eebf79b675e534d45e457cfeba76452a6401f6d34dbcaf50fd5",
+    "src/lcc/relevance/jev.py": "e5924e2c129b764f24e83567b8ae0ced5c82cab5956dc4a346b750c584a68726"
+  },
+  "backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "checkpoint_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+  "laya_revision": "052592a15d198d9ad47da779604259b10b47b7aa",
+  "jev_model": "jev-1.13.0",
+  "grid_sha256": "0ddc094354a19bd57f2ddad47cb78fba9837a0ad83c5f987461f55db79556c96",
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91"
+}

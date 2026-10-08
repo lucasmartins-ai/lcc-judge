@@ -1,0 +1,89 @@
+{
+  "schema": "goal-field-registry/0.1",
+  "scope": "One explicit capture/instance and caller identity, direct recorded-field retrieval only. No fabricated UTC, general utility, derived answers or planning. Relevant contradictory values must be retained.",
+  "source_binding": "Bind only from trusted collector/schema definitions checked against raw observations. Prose captions and benchmark labels are not trusted field metadata. Unknown record forms stay opaque/KEEP.",
+  "fields": [
+    {
+      "id": "retry_attempts",
+      "source": "retry",
+      "unit": "calls",
+      "definition": "Count all protected-operation calls in one completed retry invocation, including the initial call and the terminating success or exhausted failure. Conte todas as chamadas da operação numa invocação de retry encerrada, incluindo a chamada inicial e o sucesso final ou a falha por esgotamento.",
+      "raw_formula": "len(raw.retry.attempts)"
+    },
+    {
+      "id": "retry_failures",
+      "source": "retry",
+      "unit": "calls",
+      "definition": "Count only protected-operation calls that raised an exception in one completed retry invocation. A final successful call is not a failure. Conte somente as chamadas da operação que lançaram exceção numa invocação de retry encerrada. Uma chamada final bem-sucedida não é falha.",
+      "raw_formula": "sum(event.failed for event in raw.retry.attempts)"
+    },
+    {
+      "id": "retry_scheduled_sleep_ns",
+      "source": "retry",
+      "unit": "nanoseconds",
+      "definition": "Read the sum of requested retry pause intervals in nanoseconds, as scheduled by the waiting policy. This is the prescribed delay, not measured callback runtime. Leia a soma dos intervalos solicitados para as pausas do retry em nanossegundos, programados pela política de espera. É o atraso prescrito, não a duração medida dos callbacks.",
+      "raw_formula": "sum(round(event.seconds * 1e9) for event in raw.retry.sleeps)"
+    },
+    {
+      "id": "retry_actual_sleep_ns",
+      "source": "retry",
+      "unit": "nanoseconds",
+      "definition": "Read the sum of monotonic entry-to-exit durations measured inside retry sleeper callbacks in nanoseconds. Exclude operation calls; this is observed waiting time, not the requested delay. Leia a soma das durações monotônicas medidas entre entrada e saída dos callbacks de espera do retry em nanossegundos. Exclua chamadas da operação; é tempo observado de espera, não o atraso solicitado.",
+      "raw_formula": "sum(event.after_ns - event.before_ns for event in raw.retry.sleeps)"
+    },
+    {
+      "id": "udp_sent_datagrams",
+      "source": "udp",
+      "unit": "datagrams",
+      "definition": "Count successful local UDP sendto submissions, with one message per send event including an empty payload. This is neither payload byte volume nor a count of packets received. Conte submissões locais de sendto UDP bem-sucedidas, uma mensagem por evento de envio incluindo conteúdo vazio. Não é volume de bytes nem contagem de pacotes recebidos.",
+      "raw_formula": "len(raw.udp.send_events)"
+    },
+    {
+      "id": "udp_sent_payload_bytes",
+      "source": "udp",
+      "unit": "bytes",
+      "definition": "Read the sum of application payload lengths in bytes for successful local UDP sendto submissions. Empty payloads contribute zero bytes. Exclude IP and UDP headers; no delivery claim. Leia a soma dos comprimentos do conteúdo da aplicação em bytes nas submissões locais de sendto UDP bem-sucedidas. Conteúdo vazio contribui zero bytes. Exclua cabeçalhos IP e UDP; sem afirmar entrega.",
+      "raw_formula": "sum(event.bytes for event in raw.udp.send_events)"
+    },
+    {
+      "id": "git_index_edits",
+      "source": "git",
+      "unit": "paths",
+      "definition": "Count distinct paths changed between HEAD and the Git index: staged additions, modifications and deletions in the X status column. Exclude untracked and ignored entries; count each path once. Conte caminhos distintos alterados entre HEAD e o índice Git: adições, modificações e exclusões preparadas na coluna X do status. Exclua entradas não rastreadas e ignoradas; conte cada caminho uma vez.",
+      "raw_formula": "sum(status[0] != space for tracked status entries)"
+    },
+    {
+      "id": "git_worktree_edits",
+      "source": "git",
+      "unit": "paths",
+      "definition": "Count distinct tracked paths changed on disk relative to the Git index, including modifications and deletions in the Y status column. Exclude untracked and ignored entries and staged-only changes. Conte caminhos rastreados distintos alterados no disco em relação ao índice Git, incluindo modificações e exclusões na coluna Y do status. Exclua entradas não rastreadas, ignoradas e alterações somente preparadas.",
+      "raw_formula": "sum(status[1] != space for tracked status entries)"
+    }
+  ],
+  "unsupported": [
+    {
+      "id": "UNKNOWN:derived",
+      "definition": "This request asks to calculate an unrecorded result, ratio, estimate or combine several measurements rather than retrieve a single stored field. Esta pergunta pede cálculo, razão, estimativa ou combinação de medições em vez de um único campo armazenado."
+    },
+    {
+      "id": "UNKNOWN:diagnosis",
+      "definition": "This request asks why something occurred, its mechanism or root cause, rather than directly retrieve one recorded measurement. Esta pergunta pede o motivo, mecanismo ou causa raiz de um evento em vez de recuperar uma medição registrada."
+    },
+    {
+      "id": "UNKNOWN:broader",
+      "definition": "This request asks which context or evidence is useful for a wider investigation or complete task, rather than directly retrieve one recorded measurement. Esta pergunta pede contexto ou evidências úteis para uma investigação ou tarefa ampla em vez de recuperar uma medição registrada."
+    },
+    {
+      "id": "UNKNOWN:other",
+      "definition": "This request has no unique supported field, is ambiguous or asks for another field outside this catalog, such as received UDP messages, total retry runtime or total Git indexed files. Esta pergunta não identifica um único campo suportado, é ambígua ou pede outro campo fora do catálogo, como mensagens UDP recebidas, duração total do retry ou total de arquivos no índice Git."
+    }
+  ],
+  "references": {
+    "retry": "https://tenacity.readthedocs.io/en/stable/api.html",
+    "udp": "https://docs.python.org/3.13/library/socket.html#socket.socket.sendto",
+    "git": "https://git-scm.com/docs/git-status/2.45.0"
+  },
+  "unsupported_source_states": "The initial raw contract covers the recorded authored worker states. Renames, merge conflicts, alias entities and unrelated opaque logs are not certified by it.",
+  "independent_human_review": false,
+  "quality_approved": false
+}

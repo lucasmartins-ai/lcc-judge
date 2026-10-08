@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "53f9a7b42cb6d2dbf3e003031872d43c53f272a379d833904ab22a28ed10be4b",
+  "source_data_inputs_and_score_axes_verified": true,
+  "calibration_selection_epoch_and_metrics_verified": true,
+  "private_weight_hashes_verified": false,
+  "finite_epoch_receipts": 9,
+  "accepted_update_steps": 2070,
+  "training_unique_pair_presentations": 33084,
+  "training_nonpadding_tokens": 984042,
+  "scored_pairs": 16992,
+  "scored_nonpadding_tokens": 589712,
+  "seed_passes": [
+    false,
+    false,
+    false
+  ],
+  "all_seeds_pass": false,
+  "mean_final": {
+    "pooled_auc": 0.7332494916248714,
+    "within_goal_auc": 0.7337962962962963,
+    "positive_keep_recall": 0.9953703703703703,
+    "contradiction_keep_recall": 0.9953703703703703,
+    "negative_drop_rejection": 0.10243055555555555,
+    "semantic_unknown_recognition": 0.849537037037037
+  },
+  "unknown_drops": [
+    7,
+    16,
+    8
+  ],
+  "API_calls": 0,
+  "model_forwards_executed_by_audit": 0,
+  "training_reexecuted": false,
+  "scope": "Recorded source/data/score/epoch/policy reduction; authored fixtures/captions, three final source clusters, no production/P2/adoption claim"
+}

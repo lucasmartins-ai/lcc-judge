@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Fix SQL injection vulnerability in user search filter.",
+    "context": [
+      {
+        "block_id": "b_e54686ad",
+        "content": "def search_users(tenant_id, query):\n    # Raw string format injection\n    sql = f\"SELECT * FROM users WHERE tenant_id = '{tenant_id}' AND name LIKE '%{query}%'\"\n    return db.execute(sql)",
+        "source": "api/users.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_4ac7d49c",
+        "content": "Security audit finding SEC-402: parameter query in /api/v1/users/search vulnerable to SQLi",
+        "source": "audit/sec.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_cabac8fe",
+        "content": "tenant_id header parsed from JWT bearer token",
+        "source": "auth.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Use SQLite placeholders for both tenant_id and the LIKE pattern, and return fetched rows.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def search_users(tenant_id, query):\n    sql = \"SELECT id, tenant_id, name FROM users WHERE tenant_id = ? AND name LIKE ?\"\n    return db.execute(sql, (tenant_id, f\"%{query}%\")).fetchall()"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "version": "pdb-routing-controls/0.1",
+  "scales": {
+    "development": [
+      4,
+      6,
+      8,
+      10
+    ],
+    "eval": [
+      9,
+      11,
+      13,
+      15,
+      17,
+      19,
+      23,
+      29
+    ]
+  },
+  "counts": {
+    "development": 56,
+    "eval": 112
+  },
+  "positives": {
+    "development": 24,
+    "eval": 48
+  },
+  "files": {
+    "development.jsonl": "ea4aeae8533fa906d62d89258aa625aa5172242e453f78c59823ad9a2128246f",
+    "eval.jsonl": "38f7cac12f997abdaef78ecceb88604548b5570e97f873499fce1d85daaaa061"
+  },
+  "numeric_reference": "k8s.io/apimachinery@v0.36.0 conversion + enumeration of legal removals",
+  "case_oracle_files": {
+    "case-oracle-inputs.jsonl": "f8f1a6db5c8acb5af0c695717b399248f1a64452ac1683650054c1ef25be7ccf",
+    "case-oracle-outputs.jsonl": "59a5ca086a1c8f869d61bb1ad0a3e678cd960f17f2dbf71ef30eb1d669d04e4c"
+  },
+  "text_labels": "single-author curated; no external annotator or production ground truth",
+  "disclosure": "Shared PDB archetype and wording patterns across scales; eval scales are disjoint. Not IID or novel-archetype certification."
+}

@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0018_ac571633414c": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0018_ac571633414c (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0018_ac571633414c",
+        "text": "# Requested observation: entity node-2e69e1e3; field consumer_backlog_count; window 2027-07-13T07:00:00Z to 2027-07-13T07:05:00Z\ntime=2027-07-13T07:02:00Z level=ERROR entity=node-2e69e1e0 field=consumer_backlog_count value=28 unit=count\ntime=2027-07-13T07:02:00Z level=ERROR entity=node-2e69e1e3 field=consumer_backlog_count value=48 unit=count\ntime=2027-07-13T07:02:00Z level=ERROR entity=node-2e69e1e0 field=published_count value=85 unit=count\n"
+      }
+    ],
+    "objective": "Report all observations for entity node-2e69e1e3, field consumer_backlog_count, between 2027-07-13T07:00:00Z and 2027-07-13T07:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "protocol": {
+    "schema": "supplemental-local-path-cost/0.1",
+    "scope": "one exposed task per budget, each in a fresh process; sequential three passes; no API or population inference",
+    "grid_sha256": "b38c0d73fbd51d105d2072106fc63328575d98792eb7fffaec59c2f63fe07678",
+    "sources": {
+      "/Users/Master/Downloads/LCC-judge/research/measure_observation_paths.py": "7bac6f793205d319f7a23598c3f78304bf0517b226250d24fdc5db4d4db2c240",
+      "/Users/Master/Downloads/LCC-judge/research/lcc_pareto.py": "aa3cb21d6eb25916bfc0ee297af0e4d9c1b02fea689f9fa832b9f9d70db6be5b",
+      "/Users/Master/Downloads/LCC-judge/bakeoff/adapters.py": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+      "/Users/Master/Downloads/LCC-judge/lcc_engine/observations.py": "9b24d19ef78c550f27b7821843405f8d77b8e1f3707c3d3f5449ceaf025e9b44",
+      "/Users/Master/LCC/src/lcc/relevance/observations.py": "4ae28868b060eab7519bf9631aaa0efc01e7f32f7cfc47ae9d57f283a0149882",
+      "/Users/Master/LCC/src/lcc/relevance/compactor.py": "9970a6ecb34a62df01c3706be6c38b35cb30fb9c757b5f1079cae74c8a1dd6fa",
+      "/Users/Master/LCC/src/lcc/relevance/blocks.py": "880dbc0b9d4dab1c83dd558c770fb73f05cec70f3b7aa4fdd9a5ad1858d2ef66"
+    },
+    "historical_outcome_protocol_unchanged": true,
+    "externally_attested": false
+  },
+  "measurements": [
+    {
+      "profile": "full",
+      "budget_cl100k": 8192,
+      "task_id": "6f0c73ec58f7290924c797df",
+      "setup_s": 3.3300602808594704e-07,
+      "first_compile_s": 3.3300602808594704e-07,
+      "warm_compile_s": [
+        7.079797796905041e-07,
+        1.66997779160738e-07
+      ],
+      "warm_compile_s_median": 4.3748877942562103e-07,
+      "process_elapsed_s": 0.0023224999895319343,
+      "process_peak_rss_bytes": 29392896,
+      "output_sha256": "4ff94bd25724db0020a16eb20596d6f4bf7915d4232c8ae349c3ed05084785ef",
+      "API_calls": 0
+    },
+    {
+      "profile": "observations",
+      "budget_cl100k": 8192,
+      "task_id": "6f0c73ec58f7290924c797df",
+      "setup_s": 0.14268095802981406,
+      "first_compile_s": 0.0017331669805571437,
+      "warm_compile_s": [
+        0.0015065839979797602,
+        0.001430791977327317
+      ],
+      "warm_compile_s_median": 0.0014686879876535386,
+      "process_elapsed_s": 0.14976574998581782,
+      "process_peak_rss_bytes": 41992192,
+      "output_sha256": "38e31bcabdd6c263947df4c0b9dc291f0b9cdd0f74e6073696fd668b85e647f1",
+      "API_calls": 0
+    },
+    {
+      "profile": "laya",
+      "budget_cl100k": 8192,
+      "task_id": "6f0c73ec58f7290924c797df",
+      "setup_s": 28.836478790966794,
+      "first_compile_s": 6.411935208947398,
+      "warm_compile_s": [
+        6.00306245801039,
+        5.869168457982596
+      ],
+      "warm_compile_s_median": 5.936115457996493,
+      "process_elapsed_s": 47.1234192919801,
+      "process_peak_rss_bytes": 5971116032,
+      "output_sha256": "4ff94bd25724db0020a16eb20596d6f4bf7915d4232c8ae349c3ed05084785ef",
+      "API_calls": 0
+    },
+    {
+      "profile": "full",
+      "budget_cl100k": 32768,
+      "task_id": "6f0c73ec58f7290924c797df",
+      "setup_s": 5.409820005297661e-07,
+      "first_compile_s": 4.589674063026905e-07,
+      "warm_compile_s": [
+        6.249756552278996e-07,
+        2.0902371034026146e-07
+      ],
+      "warm_compile_s_median": 4.169996827840805e-07,
+      "process_elapsed_s": 0.0032165840384550393,
+      "process_peak_rss_bytes": 29491200,
+      "output_sha256": "9793de68efd86f1ad6b1fbb3521025e174c574e26d20b52d3d5162dfe1bed4a2",
+      "API_calls": 0
+    },
+    {
+      "profile": "observations",
+      "budget_cl100k": 32768,
+      "task_id": "6f0c73ec58f7290924c797df",
+      "setup_s": 0.2549410000210628,
+      "first_compile_s": 0.02383820799877867,
+      "warm_compile_s": [
+        0.010994458047207445,
+        0.0066256250138394535
+      ],
+      "warm_compile_s_median": 0.00881004153052345,
+      "process_elapsed_s": 0.2991878750035539,
+      "process_peak_rss_bytes": 42631168,
+      "output_sha256": "90a2964763b64cb20d1fdce54633554e46c1dce563f1d1be4faa55c59729d569",
+      "API_calls": 0
+    },
+    {
+      "profile": "laya",
+      "budget_cl100k": 32768,
+      "task_id": "6f0c73ec58f7290924c797df",
+      "setup_s": 29.308611167012714,
+      "first_compile_s": 23.843048833019566,
+      "warm_compile_s": [
+        22.957255250017624,
+        22.801252375007607
+      ],
+      "warm_compile_s_median": 22.879253812512616,
+      "process_elapsed_s": 98.91326179198222,
+      "process_peak_rss_bytes": 5968756736,
+      "output_sha256": "9793de68efd86f1ad6b1fbb3521025e174c574e26d20b52d3d5162dfe1bed4a2",
+      "API_calls": 0
+    }
+  ]
+}

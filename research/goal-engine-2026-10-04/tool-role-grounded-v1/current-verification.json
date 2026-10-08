@@ -1,0 +1,37 @@
+{
+  "current_full_suite": {
+    "tests": 154,
+    "skips": 0,
+    "passed": true,
+    "elapsed_s": 15.214,
+    "log": "../goal-full-tests-grounded-current.log"
+  },
+  "compileall_passed": true,
+  "lint": {
+    "tool": "ruff",
+    "version": "0.16.10",
+    "scope": "F,E9; seven modules/six tests",
+    "passed": true,
+    "log": "scoped-ruff-v1.log"
+  },
+  "archived_data_audit_still_passed": true,
+  "audit": "audit-after-runtime-lint.json",
+  "captured_runtime": {
+    "docker": "/usr/local/bin/docker",
+    "image_id": "sha256:86e9c5f09cf5c25f6cf891dda724c867d9cb05d4d6c955093fb625ba25fea1ef",
+    "source_sha256": "58c65fd6f4f38111ebb82c6fce6f55b4370090ca28ddc8bc9c3ed5a01a5cc338",
+    "profile": "trusted-tool-observations/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "current_runtime": {
+    "docker": "/usr/local/bin/docker",
+    "image_id": "sha256:e4f3e87adc6591755bc0a5646e6555fd43e299923cc80c033c3392bf84b21878",
+    "source_sha256": "6ed98b5b21c961a692578517e34755be64a2f1808f66f8fb7079e8a923a837c2",
+    "profile": "trusted-tool-observations/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "model_forwards": 0,
+  "training_updates": 0
+}

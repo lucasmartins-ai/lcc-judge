@@ -1,0 +1,81 @@
+{
+  "task_id": "task_001_conn_pool",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "input_sha256": "8853eacafa10ee528f9a9364308a1857946c70244113e9a5aab42bcd2528b1a8",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_001_conn_pool/32768/episodes/task_001_conn_pool/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_001_conn_pool/32768/episodes/task_001_conn_pool/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "billing.py:144 leaks database connections in stripe_webhook_handler by acquiring without releasing, exhausting the 20-connection pool and causing 5-second waits/timeouts.",
+    "mechanism": "pool_connection_leak",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_141655_11e2a4",
+      "timestamp": 1791119815541
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_141655_11e2a4",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"billing.py:144 leaks database connections in stripe_webhook_handler by acquiring without releasing, exhausting the 20-connection pool and causing 5-second waits/timeouts.\",\"mechanism\":\"pool_connection_leak\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 30878,
+      "output": 192,
+      "total": 31210,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 9171,
+    "timestamp": 1791119824713
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 11.207180416968185
+}

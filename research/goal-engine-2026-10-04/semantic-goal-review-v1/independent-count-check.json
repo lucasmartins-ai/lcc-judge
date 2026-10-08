@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "algorithm": "Separate gzip/JSON recount using suffix split, without the review extractor, projection reader or model imports",
+  "coverage": {
+    "train": {
+      "rows": 11136,
+      "direct_questions": 256,
+      "all_questions": 1172,
+      "rows_sha256": "521e965ae33655da888b331c2d0439c9d0440c35b803f538a2d657d556bf94ef"
+    },
+    "validation": {
+      "rows": 5568,
+      "direct_questions": 240,
+      "all_questions": 1136,
+      "rows_sha256": "8bb2a6bedf728a71e885018a2cc2aa7bbba06a638292b0e1e7036cbe62576a2b"
+    }
+  },
+  "model_forwards": 0,
+  "independent_human_review": false
+}

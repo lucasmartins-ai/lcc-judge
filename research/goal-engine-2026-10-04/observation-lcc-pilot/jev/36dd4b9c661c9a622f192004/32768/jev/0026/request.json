@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0026_ae81bec33d7a": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0026_ae81bec33d7a (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0026_ae81bec33d7a",
+        "text": "{\"entity\": \"archive-000000c8\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000c9\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000ca\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000cb\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000cc\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000cd\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000ce\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-000000cf\", \"field\": \"rtp_packet_loss_pct\", \"level\": \"ERROR\", \"time\": \"2027-02-13T08:00:00Z\", \"unit\": \"count\", \"value\": 99}\n"
+      }
+    ],
+    "objective": "Report all observations for entity node-0c5ad283, field rtp_packet_loss_pct, between 2027-02-13T08:00:00Z and 2027-02-13T08:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

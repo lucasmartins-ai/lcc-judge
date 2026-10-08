@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/semantic-goal-review-v1/review.py", line 138, in <module>
+    if __name__ == '__main__':review()
+                              ~~~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/semantic-goal-review-v1/review.py", line 80, in review
+    assert view['view'] == {k:projected[k] for k in ('status','objective','text')}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

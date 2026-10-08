@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141846_c88f80", "timestamp": 1791119926886}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Flip FAST_CHECKOUT off; do not execute full container rollback.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"endpoint\":\"/api/flags/fast_checkout\",\"value\":false},\"python\":", "timestamp": 1791119931297}
+{"type": "text", "text": "\"\"}", "timestamp": 1791119931298}
+{"type": "result", "session_id": "20261004_141846_c88f80", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Flip FAST_CHECKOUT off; do not execute full container rollback.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"endpoint\":\"/api/flags/fast_checkout\",\"value\":false},\"python\":\"\"}", "tokens": {"input": 24226, "output": 213, "total": 25733, "cache_read": 1294, "cache_write": 0}, "duration_ms": 4432, "timestamp": 1791119931319}

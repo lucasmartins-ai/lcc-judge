@@ -1,0 +1,45 @@
+{
+  "schema": "fresh-holdout-normalization/0.1",
+  "seed": 442383,
+  "selection": "first complete kind per exact objective, then 16 shuffled objective groups per holdout domain; fixed seed",
+  "n_objectives": 64,
+  "n_candidates": 192,
+  "models": [
+    "parent",
+    "bce-101",
+    "bce-202",
+    "bce-303"
+  ],
+  "transform": "z-score raw rank logits within all three same-objective candidates; no labels used by transform",
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 78105,
+    "unit": "whole domain; retain all objective triplets; four domains"
+  },
+  "criteria": {
+    "delta_J_min": 0.03,
+    "delta_J_ci_low_positive": true,
+    "max_D_loss": 0.01,
+    "quality_gate": 0.9
+  },
+  "max_pair_hf": 2048,
+  "device": "mps",
+  "encoder_batch": 8,
+  "scope": "Fresh synthetic matched candidates in known holdout generator families; not independently authored semantics",
+  "selection_sha256": "b8754fb40a1c3443bf53a2d098b649b29137e6cd1edd751914ed148de796e48d",
+  "parent_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+  "selected_head_sha256": {
+    "101": "941b69c59bae7da01aae4869a5be45ea8bc4fdfe46fbe592f183b2d87d687f84",
+    "202": "f21ff2229c72d2609832267c65c1b8bea4514dc7269f4ba6464253092b441818",
+    "303": "cab72a2d243c3611b9bbf835106aca59baf8f94096dab21368d5aea9be287711"
+  },
+  "sources": {
+    "research/holdout_normalization.py": "3219d9663958a686c5381030042d822d575b3db1c8956d847d36523de777d3be",
+    "research/head_objective_study.py": "56430b10de197c62977d2cfcf4779d5282f644f26af7593c9341e53dca3d22dc",
+    "specialist/corpus.py": "4ddb3dafe69ea884e715406bec7a871755d324eee788d63b467ad06d91d4d6d3",
+    "specialist/model.py": "7acd4fc759c4ea3ec9bd24290b0bb2d8427ff19807c801d9262a7d868ed34b62",
+    "specialist/checkpoint.py": "fb85b55bf8dd340b8fd94d4e6d2f03f25380009f6167ee8d1521e39a1ac33f87"
+  },
+  "grid_sha256": "3c1a1ca3b8dfbd6c2b92b37b081a0010fb35d106e49cd4c9687c0ac7fa489d71",
+  "sha256": "4b7ca05f5a28c75c1408afc69ea724068e6a9afc73954101335e2ee734f965e3"
+}

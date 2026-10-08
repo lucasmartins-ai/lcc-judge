@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Identify why payment-consumer lag grew to 500k messages on partition 4.",
+    "context": [
+      {
+        "block_id": "b_5231a830",
+        "content": "partition 4 consumer offset=12000 log_end_offset=512000 lag=500000",
+        "source": "kafka/metrics.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_39083721",
+        "content": "partitions 0, 1, 2, 3 processing rate: 2500 msg/sec",
+        "source": "kafka/consumer.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ABSTAIN",
+      "answer": "The logs confirm partition 4 has a 500,000-message lag but provide no evidence identifying its cause.",
+      "mechanism": "INSUFFICIENT_EVIDENCE",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

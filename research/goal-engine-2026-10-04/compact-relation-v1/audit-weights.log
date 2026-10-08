@@ -1,0 +1,70 @@
+{
+  "protocol_sha256": "f029d0b44e485a9428696f91f309cbcb6f44275e341655f12dc69de185ddfda2",
+  "archived_sources_annotations_views_verified": true,
+  "data_counts": {
+    "train": 2304,
+    "validation": 576,
+    "final": 512
+  },
+  "domains_reserved": true,
+  "entities_original_inputs_projected_inputs_disjoint": true,
+  "projected_unique_counts": {
+    "train": 2208,
+    "validation": 576,
+    "final": 496
+  },
+  "token_counts": "saved tokenizer counts; no tokenizer/model reexecution in stdlib audit",
+  "scope": "shared schema/author synthetic P1 contract; final pair families reserved before training, not external blind evidence",
+  "model_calls_during_audit": 0,
+  "API_calls_during_audit": 0,
+  "schema": "compact-measurement-adaptation-audit/0.1",
+  "raw_metrics_epochs_selection_threshold_gates_verified": true,
+  "training_seconds_from_epochs": 483.6424713341985,
+  "selected_arm": "bce",
+  "selected_pass": false,
+  "seeds_pass": {
+    "bce": [
+      false,
+      false,
+      false
+    ],
+    "joint": [
+      false,
+      false,
+      false
+    ]
+  },
+  "selected_final_mean": {
+    "auc": 0.8279469807942709,
+    "paired_auc": 0.91796875,
+    "positive_recall": 0.96875,
+    "negative_rejection": 0.3776041666666667
+  },
+  "frozen_final": {
+    "n": 512,
+    "eligible": 512,
+    "cuts": 0,
+    "errors": 0,
+    "auc": 0.733612060546875,
+    "paired_auc": 0.77734375,
+    "paired_reports": 256,
+    "positive_recall": 0.984375,
+    "negative_rejection": 0.08984375,
+    "within_objective": {
+      "wins": 405,
+      "comparisons": 512,
+      "auc": 0.791015625,
+      "objectives": 128
+    }
+  },
+  "selected_auc_family_bootstrap_95": [
+    0.7455460866292318,
+    0.9157087961832682
+  ],
+  "bootstrap_scope": "eight authored family clusters, descriptive; not independent population bounds",
+  "weights_sha256_verified": true,
+  "source_attribution": "archived fingerprints and direct receipts, not external temporal attestation or training reexecution",
+  "adoption": false,
+  "P2_admission": false,
+  "current_default_changed": false
+}

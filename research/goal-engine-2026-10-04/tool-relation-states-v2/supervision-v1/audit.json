@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "b921938d794b597e068a25aad7375d7968e49d18a8d463e12219163626371c05",
+  "splits": {
+    "train": {
+      "rows": 60288,
+      "binary": 53248,
+      "unknown": 7040,
+      "structural_unknown": 128,
+      "semantic_unknown": 6912,
+      "projected_rows": 60160,
+      "unique_projected_inputs": 50084,
+      "unique_projected_labels": {
+        "0": 25016,
+        "1": 18282,
+        "None": 6786
+      },
+      "raw_max_tokens": 138,
+      "projected_max_tokens": 76,
+      "relevant_contradictions": 11828,
+      "cuts": 0
+    },
+    "validation": {
+      "rows": 30144,
+      "binary": 26624,
+      "unknown": 3520,
+      "structural_unknown": 64,
+      "semantic_unknown": 3456,
+      "projected_rows": 30080,
+      "unique_projected_inputs": 23692,
+      "unique_projected_labels": {
+        "0": 12576,
+        "1": 7660,
+        "None": 3456
+      },
+      "raw_max_tokens": 137,
+      "projected_max_tokens": 76,
+      "relevant_contradictions": 5920,
+      "cuts": 0
+    }
+  },
+  "cross_split_overlaps": {
+    "content": 0,
+    "effective": 0,
+    "entities": 0
+  },
+  "tokenizer_recounted": true,
+  "raw_fields_independently_recounted": 1728,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "quality_approved": false,
+  "P2_admission": false,
+  "scope": "Actual authored development direct-record contracts; no unseen tools/primitives/pairs, human ground truth or LCC utility/outcome approval"
+}

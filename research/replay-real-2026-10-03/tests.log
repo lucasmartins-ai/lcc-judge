@@ -1,0 +1,25 @@
+test_cpu_short_block_pass_does_not_certify_reference_dossier (test_continuation.ContinuationRegressionTests.test_cpu_short_block_pass_does_not_certify_reference_dossier) ... ok
+test_cpu_truncated_or_short_dossier_cannot_pass (test_continuation.ContinuationRegressionTests.test_cpu_truncated_or_short_dossier_cannot_pass) ... ok
+test_detect_rejects_missing_independent_control (test_continuation.ContinuationRegressionTests.test_detect_rejects_missing_independent_control) ... ok
+test_detect_uses_independent_baseline (test_continuation.ContinuationRegressionTests.test_detect_uses_independent_baseline) ... ok
+test_executor_error_does_not_prove_necessity (test_continuation.ContinuationRegressionTests.test_executor_error_does_not_prove_necessity) ... ok
+test_executor_never_receives_answer_key (test_continuation.ContinuationRegressionTests.test_executor_never_receives_answer_key) ... ok
+test_gate_counts_only_strict_wins (test_continuation.ContinuationRegressionTests.test_gate_counts_only_strict_wins) ... ok
+test_invalid_executor_receipt_becomes_unknown (test_continuation.ContinuationRegressionTests.test_invalid_executor_receipt_becomes_unknown) ... ok
+test_replay_requires_explicit_execution_mode (test_continuation.ContinuationRegressionTests.test_replay_requires_explicit_execution_mode) ... ok
+test_rounded_auc_below_bar_does_not_pass_gate (test_continuation.ContinuationRegressionTests.test_rounded_auc_below_bar_does_not_pass_gate) ... ok
+test_subprocess_executor_contract_and_pinning (test_continuation.ContinuationRegressionTests.test_subprocess_executor_contract_and_pinning) ... ok
+test_synthetic_replay_cannot_enter_training (test_continuation.ContinuationRegressionTests.test_synthetic_replay_cannot_enter_training) ... ok
+test_execution_error_is_not_task_failure_evidence (test_real_replay.RealReplayTests.test_execution_error_is_not_task_failure_evidence) ... ok
+test_kubernetes_configuration_rejects_both_budget_fields (test_real_replay.RealReplayTests.test_kubernetes_configuration_rejects_both_budget_fields) ... ok
+test_kubernetes_either_valid_budget_form_is_accepted (test_real_replay.RealReplayTests.test_kubernetes_either_valid_budget_form_is_accepted) ... ok
+test_packet_hides_oracle_and_decisive_ids (test_real_replay.RealReplayTests.test_packet_hides_oracle_and_decisive_ids) ... ok
+test_repeats_do_not_put_unapplied_seed_into_model_state (test_real_replay.RealReplayTests.test_repeats_do_not_put_unapplied_seed_into_model_state) ... ok
+test_root_cause_is_checked_as_an_answer_not_keyword_coverage (test_real_replay.RealReplayTests.test_root_cause_is_checked_as_an_answer_not_keyword_coverage) ... ok
+test_sql_fix_is_executed_against_injection_and_normal_search (test_real_replay.RealReplayTests.test_sql_fix_is_executed_against_injection_and_normal_search) ... ok
+test_vacuous_generated_test_is_rejected_by_mutants (test_real_replay.RealReplayTests.test_vacuous_generated_test_is_rejected_by_mutants) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.474s
+
+OK

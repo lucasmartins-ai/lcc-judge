@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "c0a33bb29f8c1eaa95c68802ddfe2b7d654aac6e7f72fa22c9b69d9470d41640",
+  "design_sha256": "20c8789872f16ba54b4f3a5319f13bcc022188aaeec6f98c9a1ad84ddf1a2540",
+  "final": {
+    "rows": 163712,
+    "binary": 156672,
+    "unknown": 7040,
+    "structural_unknown": 128,
+    "semantic_unknown": 6912,
+    "projected_rows": 163584,
+    "unique_projected_inputs": 120220,
+    "unique_projected_labels": {
+      "0": 75420,
+      "1": 38050,
+      "None": 6750
+    },
+    "raw_max_tokens": 147,
+    "projected_max_tokens": 84,
+    "relevant_contradictions": 36500,
+    "cuts": 0
+  },
+  "auditor_source_sha256": "4c56e480ab7b4a0a1faf79e0e3230af2906db3d51b2fa9ef04ed3926c0140997",
+  "archived_auditor_source_sha256": "24e9cf0ad1d6c2ba1b97f9ea67225202b74c44b6acbbbdcaa63e293c9acf2769",
+  "cross_development_overlaps": {
+    "train": {
+      "content": 0,
+      "effective": 0,
+      "entities": 0
+    },
+    "validation": {
+      "content": 0,
+      "effective": 0,
+      "entities": 0
+    }
+  },
+  "raw_fields_independently_recounted": 1152,
+  "tokenizer_recounted": true,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "quality_approved": false,
+  "scope": "64 authored actual-tool fixtures;163712 correlated rows;known18primitives/3tools,101unseen cross-tool pair combinations,52seen-wording controls. No model/outcome approval."
+}

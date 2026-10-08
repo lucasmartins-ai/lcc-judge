@@ -1,0 +1,15 @@
+test_roberta_padding_positions_do_not_inflate_pair_window (tests.test_reranker_control.RerankerControlTests.test_roberta_padding_positions_do_not_inflate_pair_window) ... FAIL
+
+======================================================================
+FAIL: test_roberta_padding_positions_do_not_inflate_pair_window (tests.test_reranker_control.RerankerControlTests.test_roberta_padding_positions_do_not_inflate_pair_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_reranker_control.py", line 47, in test_roberta_padding_positions_do_not_inflate_pair_window
+    self.assertEqual(scorer.window, 6)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: 8 != 6
+
+----------------------------------------------------------------------
+Ran 1 test in 2.458s
+
+FAILED (failures=1)

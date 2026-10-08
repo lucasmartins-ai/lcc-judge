@@ -1,0 +1,21 @@
+test_tool_relation_support_audit (unittest.loader._FailedTest.test_tool_relation_support_audit) ... ERROR
+
+======================================================================
+ERROR: test_tool_relation_support_audit (unittest.loader._FailedTest.test_tool_relation_support_audit)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tool_relation_support_audit
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_relation_support_audit.py", line 7, in <module>
+    from research.audit_tool_relation_support import frozen_hash,normalized_semantic_rows
+ModuleNotFoundError: No module named 'research.audit_tool_relation_support'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

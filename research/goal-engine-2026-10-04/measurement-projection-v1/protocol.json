@@ -1,0 +1,75 @@
+{
+  "schema": "scope-checked-measurement-view/0.1",
+  "model": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "apache-2.0",
+    "architecture": [
+      "BertForSequenceClassification"
+    ],
+    "layers": 6,
+    "hidden_size": 384,
+    "max_position_embeddings": 512,
+    "model_inference_executed": false,
+    "scope": "artifact preparation only; no claim on exposed semantic cohorts or local performance",
+    "files": {
+      "model.safetensors": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+      "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "README.md": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "primary_sources": [
+      "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2",
+      "https://www.sbert.net/docs/cross_encoder/pretrained_models.html"
+    ]
+  },
+  "exposed_cohort_protocol_sha256": "6bd25d58ce1111ab726f289f79e5be4580e6ad31bf2b0b4cb8ae5189cb858d49",
+  "data": {
+    "validation": {
+      "sha256": "089e0d9350acffd866409fa1211f3b079ba0f4baccfbabedf8fb0ec0a09764b1",
+      "n": 384
+    },
+    "final": {
+      "sha256": "2e8cd5f383eac9a928b1523f0b726a4a66111f1b11b1a27ada6348de3c053ede",
+      "n": 384
+    }
+  },
+  "sources": {
+    "research/reranker_projection_study.py": "e9696f040c42644fcddd05a06d575a853efa03e1765f43ed48e01740bfe1b01f",
+    "research/reranker_control.py": "e6008735455efea368fa8f0f314d0b2feb6b9f630d32bc25c36265242ab61725",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/audit_reranker_diagnostic.py": "01ac1e270f9cb5651da8f6cc73f73aa055a2d7558f2fe97de092f09e2f39991b",
+    "research/reranker_diagnostic.py": "be9b0b796a433b55a9d8498894a9a67210e1004aadbf36e0693a153c1bf988f3"
+  },
+  "threads": 8,
+  "batch_size": 16,
+  "versions": {
+    "torch": "2.12.0",
+    "transformers": "5.10.2",
+    "tokenizers": "0.22.2",
+    "numpy": "2.4.6"
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "pair_window": 512,
+  "repeats": 3,
+  "recipe": "Only exact caller-scope syntax + two report grammars. Check entity, remove validated structure/level/entity suffix, preserve whole natural question and measurement prose/value. UNKNOWN retains original and is not scored.",
+  "input_basis": "different fixed model inputs from raw control; same original records/labels; not a pure same-input architecture comparison",
+  "threshold": "greatest validation-only raw-logit threshold with >=.95 positive recall; first repeat",
+  "criteria": {
+    "auc_min": 0.9,
+    "paired_auc_min": 0.9,
+    "positive_recall_min": 0.95,
+    "negative_rejection_min": 0.7,
+    "all_rows_complete": true
+  },
+  "training_executed": false,
+  "API_calls": 0,
+  "current_default_changed": false,
+  "scope": "exposed authored cohorts, one fixed representation diagnostic; no unseen semantic confirmation/production/P2",
+  "unknown_policy": "UNKNOWN/KEEP; no hidden fallback score or excluded-row PASS",
+  "sha256": "0ea543937cf8335b8c65ab67beada697a631e45cd6b67e3f353af1fd8a98bfe7"
+}

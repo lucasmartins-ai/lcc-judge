@@ -1,0 +1,34 @@
+{
+  "case_id": "c_0b783db0f7f005c3",
+  "split": "calibration",
+  "task_number": 10,
+  "kind": "code",
+  "family": "ignore_lost_nx",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "8109948372a88a2b0bdb563a6dbb9ebb66d79c54100630f18bd682ed2ed8bdd2",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "duplicate_not_charged",
+      "cached_receipt",
+      "atomic_key_and_ttl",
+      "distinct_key"
+    ],
+    "program_stdout": "",
+    "source_sha256": "ff0e6867efdc7beb5caffcf8977e76b19b487ac9bfe71b6f839c4ad8a5e8ce46"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: charged despite losing SET NX",
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.1205468749976717
+}

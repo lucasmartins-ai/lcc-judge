@@ -1,0 +1,42 @@
+{
+  "version": "verifier-calibration/0.1",
+  "manifest_sha256": "55aa37b550907271ba530b4135f208f7391cd4f6818a38cd1adcb2b1939e8566",
+  "case_files": {
+    "calibration.jsonl": "562a0b08bdadf17454c7425e93f81d30dc93ab48dd1e667524e4e7e9ef6dfe44",
+    "eval.jsonl": "73e4d10ec6d7fba5bba42172442318dc145ade942a9eb8c32f04a4b3910e0e50"
+  },
+  "sources": {
+    "replay/real_fixtures.py": "5a1c7641f5b1d239e0e18f6380432c1d7c19775d905c964faade24a3cbb3cc9c",
+    "replay/outcome_verifier.py": "9f1bf3e8c409ec209630ebe1999d5671cf9b915db42585d238ea0a0a9d29d0de",
+    "replay/jev_bridge.ts": "35ec637be499f6ad2e22dc860ac60778ad4b4bc6fb03bf4f8b4e1d02ccd4afde",
+    "research/verifier-calibration-2026-10-03/run.py": "e6567155b7f86f975737b9a4225c52987c0ece2e9085d212036dfcba84e74f82"
+  },
+  "jev_model": "jev-1.13.0",
+  "question": {
+    "consistent": {
+      "type": "noul",
+      "instructions": "Is the submitted answer materially consistent with the explicit controlled observations in context? Evaluate the whole submitted_answer, including explanation and claimed mechanism. A correct mechanism key does not excuse an explanation that denies the observed cause or asserts a competing cause explicitly ruled out. For quantitative decisions consider the stated budget. This asks consistency with this supplied fixture, not production health.",
+      "criteria": {
+        "true": "Answer agrees with the explicit observations and contains no materially contradictory claim.",
+        "false": "Answer denies an explicit observation, asserts a ruled-out cause, or contradicts the stated quantitative constraint."
+      }
+    }
+  },
+  "thresholds": [
+    0.5,
+    0.7,
+    0.8,
+    0.9,
+    0.95,
+    0.99
+  ],
+  "targets": {
+    "fpr_max": 0.05,
+    "fnr_max": 0.1,
+    "unknown_max": 0.05,
+    "code_fp_max": 0
+  },
+  "cutoff_selection": "max calibration typed recall among candidates meeting all typed targets; smallest threshold on ties. No eval tuning.",
+  "scope": "single-author curated challenges; no external label independence, no production replay, no P2 admission",
+  "sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1"
+}

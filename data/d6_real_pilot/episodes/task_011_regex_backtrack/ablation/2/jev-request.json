@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Explain 100% CPU lockup on ingress gateway.",
+    "context": [
+      {
+        "block_id": "b_4b011781",
+        "content": "Ingress worker count: 8 workers, Nginx frontend reverse proxy.",
+        "source": "nginx.conf",
+        "block_type": "config"
+      },
+      {
+        "block_id": "b_7be5de7c",
+        "content": "Worker PID 14002 unresponsiveness watchdog triggered kill -9.",
+        "source": "supervisor.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ABSTAIN",
+      "answer": "The context confirms an unresponsive ingress worker but does not identify the cause of the 100% CPU lockup.",
+      "mechanism": "INSUFFICIENT_EVIDENCE",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

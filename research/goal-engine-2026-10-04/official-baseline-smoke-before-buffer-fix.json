@@ -1,0 +1,26 @@
+{
+  "bge-small-en-v1.5-official": {
+    "load_s": 2.6877503329887986,
+    "score": {
+      "value": 0.8219967484474182,
+      "latency_ms": 126.54141703387722,
+      "error": null,
+      "truncated": false,
+      "actual_tokens": 29
+    },
+    "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "code_revision": null
+  },
+  "gte-multilingual-base-official": {
+    "load_s": 0.8636207910021767,
+    "score": {
+      "value": null,
+      "latency_ms": 4.706125007942319,
+      "error": "IndexError: index 4335287104 is out of bounds for dimension 0 with size 8",
+      "truncated": false,
+      "actual_tokens": null
+    },
+    "model_revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+    "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4"
+  }
+}

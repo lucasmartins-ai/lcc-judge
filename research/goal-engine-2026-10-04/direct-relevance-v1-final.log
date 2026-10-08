@@ -1,0 +1,49 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 24791.00it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+cache final: 0/504
+cache final: 200/504
+cache final: 400/504
+final frozen 101 {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.6627764917695473, 'healthy_auc': 0.6661522633744856, 'healthy_recall': 0.8888888888888888, 'anomalous_auc': 0.659400720164609, 'anomalous_recall': 0.8888888888888888, 'wrong_entity_anomaly_rejection': 0.19444444444444445}
+final frozen 202 {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.6706211419753086, 'healthy_auc': 0.6639660493827161, 'healthy_recall': 0.9722222222222222, 'anomalous_auc': 0.6772762345679012, 'anomalous_recall': 0.9861111111111112, 'wrong_entity_anomaly_rejection': 0.0}
+final frozen 303 {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.5805362654320988, 'healthy_auc': 0.5821116255144033, 'healthy_recall': 0.9722222222222222, 'anomalous_auc': 0.5789609053497943, 'anomalous_recall': 0.9583333333333334, 'wrong_entity_anomaly_rejection': 0.0}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 17195.03it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+final last-two 101 {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.7210969650205762, 'healthy_auc': 0.7294238683127572, 'healthy_recall': 1.0, 'anomalous_auc': 0.7127700617283951, 'anomalous_recall': 0.9861111111111112, 'wrong_entity_anomaly_rejection': 0.05555555555555555}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 15536.61it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+final last-two 202 {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.7243762860082305, 'healthy_auc': 0.7316100823045267, 'healthy_recall': 0.9861111111111112, 'anomalous_auc': 0.7171424897119342, 'anomalous_recall': 0.9861111111111112, 'wrong_entity_anomaly_rejection': 0.0}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 16973.30it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+final last-two 303 {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.6980774176954733, 'healthy_auc': 0.7033179012345679, 'healthy_recall': 0.9861111111111112, 'anomalous_auc': 0.6928369341563786, 'anomalous_recall': 0.9861111111111112, 'wrong_entity_anomaly_rejection': 0.0}

@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Propose a fix for concurrent deadlock in inventory reservation.",
+    "context": [
+      {
+        "block_id": "b_fd49440e",
+        "content": "def reserve_items(items):\n    # Bug: items acquired in arbitrary order causing circular wait\n    for item in items:\n        with lock_item(item.id):\n            decrement_stock(item)",
+        "source": "services/inventory.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_a8f40c80",
+        "content": "2026-10-03T11:15:00Z [ERROR] Deadlock detected: transaction 44 waiting for lock on item 89 held by tx 45; tx 45 waiting for lock on item 12 held by tx 44",
+        "source": "var/log/inventory.log",
+        "block_type": "trace"
+      },
+      {
+        "block_id": "b_dd4113a1",
+        "content": "order-service checkout started for user_id=99281",
+        "source": "var/log/orders.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Acquire item locks in globally ascending item ID order to prevent circular waits.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def reserve_items(items):\n    for item in sorted(items, key=lambda item: item.id):\n        with lock_item(item.id):\n            decrement_stock(item)\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

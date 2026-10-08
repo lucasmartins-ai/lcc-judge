@@ -1,0 +1,40 @@
+{
+  "case_id": "c_1016e588b341e68e",
+  "split": "calibration",
+  "task_number": 13,
+  "kind": "code",
+  "family": "calibration_valid_implementation_0",
+  "expected": true,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "f3c31397f1c91db9199ca0d4374b3b93f402e16c45f9568895f76efb2c75b2e4",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "three_concurrent_transfers",
+      "no_overdraft",
+      "no_money_creation",
+      "one_transfer_completes"
+    ],
+    "program_stdout": "",
+    "source_sha256": "2c0437328f7a9a671b84babc9e131fc487d3aa4e095e29dd55cff3a45045f6c9"
+  },
+  "candidate_verification": {
+    "passed": true,
+    "reason": "expanded_executable_contract",
+    "checks": [
+      "three_concurrent_transfers",
+      "two_amounts",
+      "insufficient_funds",
+      "actual_sql_semantics",
+      "failure_rollback"
+    ],
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": true,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.13452504100860097
+}

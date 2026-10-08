@@ -1,0 +1,39 @@
+{
+  "case_id": "pdb-eval-n23-blocks_maintenance",
+  "split": "eval",
+  "family": "blocks_maintenance",
+  "expected": false,
+  "case_sha256": "6f89d09de8744a9e7cce3b85ab5d296a91c4a32fab58cec4f9ef69b39005a1d0",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "quorum_or_maintenance_violation",
+    "min_remaining": 23,
+    "max_disruptions": 0
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 23,
+        "max_disruptions": 0
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 23,
+        "max_disruptions": 0
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

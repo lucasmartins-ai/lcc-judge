@@ -1,0 +1,88 @@
+{
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/observation-lcc-pilot/observations/36dd4b9c661c9a622f192004/32768/episodes/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/observation-lcc-pilot/observations/36dd4b9c661c9a622f192004/32768/episodes/1/query.txt"
+  ],
+  "artifact": {
+    "observations": [
+      {
+        "time": "2027-02-13T08:02:00Z",
+        "unit": "%",
+        "value": 2
+      },
+      {
+        "time": "2027-02-13T08:02:00Z",
+        "unit": "%",
+        "value": 89
+      }
+    ],
+    "status": "ANSWER",
+    "unresolved": [
+      "time"
+    ]
+  },
+  "budget_cl100k": 32768,
+  "generation_seed_applied": false,
+  "hermes_receipt": {
+    "duration_ms": 4666,
+    "exit_code": 0,
+    "session_id": "20261004_171115_fe0d21",
+    "text": "{\"status\":\"ANSWER\",\"observations\":[{\"time\":\"2027-02-13T08:02:00Z\",\"value\":2,\"unit\":\"%\"},{\"time\":\"2027-02-13T08:02:00Z\",\"value\":89,\"unit\":\"%\"}],\"unresolved\":[\"time\"]}",
+    "timestamp": 1791130280495,
+    "tokens": {
+      "cache_read": 1027,
+      "cache_write": 0,
+      "input": 953,
+      "output": 206,
+      "total": 2186
+    },
+    "type": "result"
+  },
+  "input_sha256": "6c58496e0d74ef5a9d7a4c8361199c5133e5835ad397fcad8e4819d5b73bdbff",
+  "model_init": [
+    {
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_171115_fe0d21",
+      "subtype": "init",
+      "timestamp": 1791130275829,
+      "type": "system"
+    }
+  ],
+  "profile": "observations",
+  "protocol_sha256": "e28c4f16209e629ece255cbf23359675aad8ec90d8be05b62476bde9a538334c",
+  "repeat": 1,
+  "resumed_session": false,
+  "returncode": 0,
+  "status": "SUCCESS",
+  "task_id": "36dd4b9c661c9a622f192004",
+  "tool_events": 0,
+  "tools": "none",
+  "training_admission": false,
+  "verification": {
+    "actual_observations": 2,
+    "expected_observations": 2,
+    "passed": true,
+    "reason": "exact_observations_and_unknowns"
+  },
+  "wall_s": 6.516038208967075
+}

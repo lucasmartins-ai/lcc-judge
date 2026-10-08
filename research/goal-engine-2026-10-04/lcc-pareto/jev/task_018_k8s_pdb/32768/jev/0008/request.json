@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Configure PodDisruptionBudget for critical search-indexing cluster.",
+    "blocks": [
+      {
+        "id": "blk_0008_6e1d73903c36",
+        "text": "archive-cleaner tick=28995 partition=93 records=3117 checksum=valid state=healthy\narchive-cleaner tick=58220 partition=96 records=1049 checksum=valid state=healthy\narchive-cleaner tick=77264 partition=57 records=2194 checksum=valid state=healthy\narchive-cleaner tick=80818 partition=33 records=6370 checksum=valid state=healthy\narchive-cleaner tick=58662 partition=41 records=4921 checksum=valid state=healthy\narchive-cleaner tick=41312 partition=83 records=7572 checksum=valid state=healthy\narchive-cleaner tick=26870 partition=85 records=4769 checksum=valid state=healthy\narchive-cleaner tick=50114 partition=6 records=6223 checksum=valid state=healthy\narchive-cleaner tick=2908 partition=73 records=3793 checksum=valid state=healthy\narchive-cleaner tick=78591 partition=21 records=2442 checksum=valid state=healthy\narchive-cleaner tick=79006 partition=75 records=9822 checksum=valid state=healthy\narchive-cleaner tick=57836 partition=27 records=535 checksum=valid state=healthy\narchive-cleaner tick=35314 partition=49 records=6300 checksum=valid state=healthy\narchive-cleaner tick=91117 partition=55 records=8178 checksum=valid state=healthy\narchive-cleaner tick=85130 partition=8 records=576 checksum=valid state=healthy\narchive-cleaner tick=89747 partition=40 records=6377 checksum=valid state=healthy\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0008_6e1d73903c36": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0008_6e1d73903c36 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "schema": "observation-lcc-outcome-audit/0.1",
+  "all_sources_and_raw_outcomes_verified": true,
+  "episodes": 144,
+  "successful_jev_calls": 591,
+  "jev_input_tokens": 602669,
+  "observed_executor_tokens": {
+    "input": 358753,
+    "output": 66840,
+    "total": 2245425,
+    "cache_read": 1819832,
+    "cache_write": 0
+  },
+  "executor_input_including_cache": 2178585,
+  "usage_by_budget_profile": {
+    "8192": {
+      "full": {
+        "input": 9242,
+        "output": 6710,
+        "total": 175373,
+        "cache_read": 159421,
+        "cache_write": 0
+      },
+      "observations": {
+        "input": 5793,
+        "output": 5270,
+        "total": 35873,
+        "cache_read": 24810,
+        "cache_write": 0
+      },
+      "laya": {
+        "input": 15213,
+        "output": 10925,
+        "total": 179588,
+        "cache_read": 153450,
+        "cache_write": 0
+      },
+      "jev": {
+        "input": 17190,
+        "output": 6857,
+        "total": 132158,
+        "cache_read": 108111,
+        "cache_write": 0
+      }
+    },
+    "32768": {
+      "full": {
+        "input": 94456,
+        "output": 8326,
+        "total": 633328,
+        "cache_read": 530546,
+        "cache_write": 0
+      },
+      "observations": {
+        "input": 8047,
+        "output": 5002,
+        "total": 36604,
+        "cache_read": 23555,
+        "cache_write": 0
+      },
+      "laya": {
+        "input": 95931,
+        "output": 15117,
+        "total": 640119,
+        "cache_read": 529071,
+        "cache_write": 0
+      },
+      "jev": {
+        "input": 112881,
+        "output": 8633,
+        "total": 412382,
+        "cache_read": 290868,
+        "cache_write": 0
+      }
+    }
+  },
+  "token_accounting": "Hermes input is uncached input; cache_read/cache_write are reported separately. No invoice or token-rate assumptions.",
+  "intervals": {
+    "8192": {
+      "full": {
+        "success_rate": 0.9444444444444444,
+        "loss_vs_full": 0.0,
+        "point_gate": false,
+        "success_95": [
+          0.8333333333333333,
+          1.0
+        ],
+        "paired_loss_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "observations": {
+        "success_rate": 1,
+        "loss_vs_full": -0.05555555555555558,
+        "point_gate": true,
+        "success_95": [
+          1.0,
+          1.0
+        ],
+        "paired_loss_95": [
+          -0.16666666666666666,
+          0.0
+        ]
+      },
+      "laya": {
+        "success_rate": 0.9444444444444444,
+        "loss_vs_full": 0.0,
+        "point_gate": false,
+        "success_95": [
+          0.8333333333333333,
+          1.0
+        ],
+        "paired_loss_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "jev": {
+        "success_rate": 1,
+        "loss_vs_full": -0.05555555555555558,
+        "point_gate": true,
+        "success_95": [
+          1.0,
+          1.0
+        ],
+        "paired_loss_95": [
+          -0.16666666666666666,
+          0.0
+        ]
+      }
+    },
+    "32768": {
+      "full": {
+        "success_rate": 0.9444444444444444,
+        "loss_vs_full": 0.0,
+        "point_gate": false,
+        "success_95": [
+          0.8333333333333333,
+          1.0
+        ],
+        "paired_loss_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "observations": {
+        "success_rate": 1,
+        "loss_vs_full": -0.05555555555555558,
+        "point_gate": true,
+        "success_95": [
+          1.0,
+          1.0
+        ],
+        "paired_loss_95": [
+          -0.16666666666666666,
+          0.0
+        ]
+      },
+      "laya": {
+        "success_rate": 0.8888888888888888,
+        "loss_vs_full": 0.05555555555555558,
+        "point_gate": false,
+        "success_95": [
+          0.7777777777777778,
+          1.0
+        ],
+        "paired_loss_95": [
+          0.0,
+          0.16666666666666666
+        ]
+      },
+      "jev": {
+        "success_rate": 1,
+        "loss_vs_full": -0.05555555555555558,
+        "point_gate": true,
+        "success_95": [
+          1.0,
+          1.0
+        ],
+        "paired_loss_95": [
+          -0.16666666666666666,
+          0.0
+        ]
+      }
+    }
+  },
+  "interval_scope": "2000 task-cluster percentile draws, seed442405; six exposed synthetic tasks and mutable executor; descriptive only",
+  "ground_truth": "exact declared P1 observations/unknown flags; no human/production/P2 labels",
+  "API_calls_during_audit": 0
+}

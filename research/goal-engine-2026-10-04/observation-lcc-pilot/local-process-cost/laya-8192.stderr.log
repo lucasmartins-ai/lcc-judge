@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/research/measure_observation_paths.py", line 112, in <module>
+    main()
+    ~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/research/measure_observation_paths.py", line 78, in main
+    print(json.dumps(measure(args.profile, args.budget)))
+                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/measure_observation_paths.py", line 42, in measure
+    request = RelevanceCompactionRequest(
+        text=cell['text'], objective=cell['objective'], provider='laya', client=client,
+    ...<2 lines>...
+        enable_trim=False, enable_sufficiency=False, enable_semantic_verify=False,
+        marker=False)
+TypeError: RelevanceCompactionRequest.__init__() got an unexpected keyword argument 'objective'

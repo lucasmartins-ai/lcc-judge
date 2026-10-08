@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "94a3b391162767f1f3df9bc422c4200a758a627b76f4f9098821305237151d80",
+  "coverage": {
+    "train": {
+      "rows": 11136,
+      "binary": 4096,
+      "projected_rows": 11008,
+      "unknown": 7040,
+      "structural_unknown": 128,
+      "semantic_unknown": 6912,
+      "unique_projected_inputs": 10434,
+      "unique_projected_labels": {
+        "0": 1824,
+        "1": 1824,
+        "None": 6786
+      },
+      "raw_max_tokens": 131,
+      "projected_max_tokens": 71,
+      "relevant_contradictions": 812,
+      "cuts": 0,
+      "rows_sha256": "521e965ae33655da888b331c2d0439c9d0440c35b803f538a2d657d556bf94ef",
+      "views_sha256": "0e0b47d91beab6b8564319d9f307e03d60e34967db684d3db6071c7bdea81f1d"
+    },
+    "validation": {
+      "rows": 5568,
+      "binary": 2048,
+      "projected_rows": 5504,
+      "unknown": 3520,
+      "structural_unknown": 64,
+      "semantic_unknown": 3456,
+      "unique_projected_inputs": 5304,
+      "unique_projected_labels": {
+        "0": 924,
+        "1": 924,
+        "None": 3456
+      },
+      "raw_max_tokens": 132,
+      "projected_max_tokens": 74,
+      "relevant_contradictions": 412,
+      "cuts": 0,
+      "rows_sha256": "8bb2a6bedf728a71e885018a2cc2aa7bbba06a638292b0e1e7036cbe62576a2b",
+      "views_sha256": "1672f8bb84294fdb6f55ad8bef45050ce1ff0d7b9722846e4b69e571c89a7769"
+    }
+  },
+  "split_projected_overlap": 0,
+  "independent_row_inspection": true,
+  "tokenizer_whole_pairs": true,
+  "cuts": 0,
+  "finished_at_utc": "2026-10-07T22:55:46.434511+00:00",
+  "model_forwards": 0,
+  "API_calls": 0,
+  "quality_approved": false,
+  "scope": "Eight known relevance fields/four hard within-tool pairs,18known fields in semantic UNKNOWN. Original64/32author fixtures and actual values reused; no final capture/rows or tools reexecuted. Exposed development pilot, not confirmation or full18field gate."
+}

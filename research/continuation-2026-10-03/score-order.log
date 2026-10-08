@@ -1,0 +1,11 @@
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.norm.weight  | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (9505 > 8192). Running this sequence through the model will result in indexing errors
+{"model": "specialist-exp04-unfreeze2-dyn-49k", "case_id": "booking_timeout", "depth": 8192, "kind": "fact", "actual_length": 9505, "cache_initialized_to": 20000, "first_score": 0.4863583123709064, "score_after_long_cache": 0.48635834545994866, "absolute_delta": 3.308904228394027e-08, "note": "Long cache initialized through rotary module only, without a long encoder forward."}

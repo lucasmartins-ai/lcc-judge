@@ -1,0 +1,65 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 767B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [ 1/10] FROM docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#4 resolve docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f 0.0s done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 1.25kB done
+#5 DONE 0.0s
+
+#6 [ 2/10] COPY requirements.txt /opt/requirements.txt
+#6 CACHED
+
+#7 [ 3/10] RUN python -m pip install --no-cache-dir "https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3"
+#7 CACHED
+
+#8 [ 4/10] RUN python -m pip install --no-cache-dir -r /opt/requirements.txt
+#8 CACHED
+
+#9 [ 5/10] COPY *.whl /opt/wheels/
+#9 DONE 0.0s
+
+#10 [ 6/10] RUN python -m pip install --no-deps /opt/wheels/*.whl
+#10 0.488 Processing ./opt/wheels/lcc_context_engine-0.1.0-py3-none-any.whl
+#10 0.502 Installing collected packages: lcc-context-engine
+#10 0.589 Successfully installed lcc-context-engine-0.1.0
+#10 0.589 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#10 DONE 0.7s
+
+#11 [ 7/10] COPY hf /opt/hf
+#11 DONE 0.6s
+
+#12 [ 8/10] COPY checkpoint /opt/checkpoint
+#12 DONE 0.1s
+
+#13 [ 9/10] COPY model-manifest.json smoke.py /opt/
+#13 DONE 0.0s
+
+#14 [10/10] WORKDIR /tmp
+#14 DONE 0.0s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 12.7s done
+#15 exporting manifest sha256:7747c432d18d985a935fcb37f1234134ff1a27afc08ca74b5ffebdad6d7baa77 0.0s done
+#15 exporting config sha256:7de75fb94f19d8fd110bd0fc7f7f57b02a601fca69663181a5c56796cf05849e 0.0s done
+#15 exporting attestation manifest sha256:ca035f1c7f49efb8c2b266bf900c1db2408a2d792d12d46b96dac95f493ffa0e 0.0s done
+#15 exporting manifest list sha256:c1554be11082d5cc8e945fe80504f8d2ff556f5677d24dda5bf8a7555a7fc140 0.0s done
+#15 naming to docker.io/library/lcc-judge-linux-ml:20261004-p1-typed done
+#15 unpacking to docker.io/library/lcc-judge-linux-ml:20261004-p1-typed
+#15 unpacking to docker.io/library/lcc-judge-linux-ml:20261004-p1-typed 3.4s done
+#15 DONE 16.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/7fix6j23i42emzj66plp92hq3

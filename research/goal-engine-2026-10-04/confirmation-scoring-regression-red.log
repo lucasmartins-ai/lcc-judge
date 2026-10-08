@@ -1,0 +1,23 @@
+FF
+======================================================================
+FAIL: test_duplicate_projection_reuses_one_logit_and_keeps_structural_unknown (tests.test_varied_relation_confirmation_scoring.ConfirmationScoringTests.test_duplicate_projection_reuses_one_logit_and_keeps_structural_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_varied_relation_confirmation_scoring.py", line 21, in test_duplicate_projection_reuses_one_logit_and_keeps_structural_unknown
+    self.assertEqual(scores[0]['support_score'], 0.0)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: -3.1269280910491943 != 0.0
+
+======================================================================
+FAIL: test_shared_unknowns_and_all_language_slices_are_required (tests.test_varied_relation_confirmation_scoring.ConfirmationScoringTests.test_shared_unknowns_and_all_language_slices_are_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_varied_relation_confirmation_scoring.py", line 43, in test_shared_unknowns_and_all_language_slices_are_required
+    self.assertEqual(len(result), 15)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 7 != 15
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.011s
+
+FAILED (failures=2)

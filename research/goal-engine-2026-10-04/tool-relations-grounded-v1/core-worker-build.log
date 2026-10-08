@@ -1,0 +1,54 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 339B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#2 DONE 1.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#4 resolve docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f 0.0s done
+#4 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 13.19kB done
+#5 DONE 0.1s
+
+#6 [2/2] COPY worker.py /opt/lcc-measure/worker.py
+#6 CACHED
+
+#7 exporting to image
+#7 exporting layers done
+#7 exporting manifest sha256:7ce38e672c0a20b82145afba2b794bd34e8a59dd24bd571d7e648e3b7778913e 0.0s done
+#7 exporting config sha256:e960e64f1c825d875c2ead92efc68ffbf49b28dec0a5832489149fc0edbe2c06 0.0s done
+#7 exporting attestation manifest sha256:0957d184354454205df18a89534ab4b0c82034a016a09cc7424d53bfa4762e4a
+#7 exporting attestation manifest sha256:0957d184354454205df18a89534ab4b0c82034a016a09cc7424d53bfa4762e4a 0.0s done
+#7 exporting manifest list sha256:7562a97a715a0724eca5b714caacd5dc69081883a4ef91ab44e3cd48bd53fe0f 0.1s done
+#7 naming to docker.io/library/lcc-tool-measurements:local
+#7 naming to docker.io/library/lcc-tool-measurements:local done
+#7 unpacking to docker.io/library/lcc-tool-measurements:local 0.0s done
+#7 DONE 0.3s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/auev4vxjbdfvr1vpicuk67963
+{
+  "base": "python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f",
+  "source_sha256": "f6ae4ab14f3a3af664b494ec78bbb120c7a4f90cd0905f74e51252f9640c3269",
+  "sources": {
+    "research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+    "replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f"
+  },
+  "runtime": {
+    "docker": "/usr/local/bin/docker",
+    "image_id": "sha256:7562a97a715a0724eca5b714caacd5dc69081883a4ef91ab44e3cd48bd53fe0f",
+    "source_sha256": "f6ae4ab14f3a3af664b494ec78bbb120c7a4f90cd0905f74e51252f9640c3269",
+    "profile": "trusted-tool-observations/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  }
+}

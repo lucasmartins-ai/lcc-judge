@@ -1,0 +1,22 @@
+{
+  "protocol_sha256": "25873a220dcb0f0205d700c517b51a1e631035ad0d1428cb856b4f3c8b8756c4",
+  "selected_arm": "bce",
+  "mean": {
+    "auc": 0.8226267496744791,
+    "paired_auc": 0.91796875,
+    "positive_recall": 0.96875,
+    "negative_rejection": 0.3190104166666667
+  },
+  "mean_within_objective_auc": 0.8450520833333334,
+  "seeds_pass": [
+    false,
+    false,
+    false
+  ],
+  "all_seeds_pass": false,
+  "training_executed": false,
+  "base_inference_reexecuted": false,
+  "API_calls": 0,
+  "adoption": false,
+  "scope": "now-exposed compact-study cohorts, diagnostic only; no new transfer confirmation or probability interpretation"
+}

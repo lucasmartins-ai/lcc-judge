@@ -1,0 +1,49 @@
+{
+  "task_id": "task_010_idempotency",
+  "condition": "ablation",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "6f76393fe492875360464d23780f51c799b4147a20f80dafc4947880e02bbb77",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_010_idempotency/ablation/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_010_idempotency/ablation/1/query.txt"
+  ],
+  "status": "ERROR",
+  "cost_usd": null,
+  "artifact": null,
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "error": "Command '['/Users/Master/.local/bin/hermes', 'chat', '--oneshot', '--safe-mode', '--provider', 'commandcode', '--model', 'stealth/space-bunny-alpha', '--toolsets', 'none', '--format', 'stream-json', '--max-turns', '1', '--run-budget', '90', '--source', 'tool', '--in', '/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_010_idempotency/ablation/1', '--query-file', '/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_010_idempotency/ablation/1/query.txt']' timed out after 105 seconds",
+  "verification": {
+    "passed": null,
+    "reason": "executor_error"
+  },
+  "wall_time_s": 105.010751875001
+}

@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Determine why redis cache hit ratio dropped to 12% at 09:30 UTC.",
+    "blocks": [
+      {
+        "id": "blk_0023_c7166920333a",
+        "text": "2026-10-03T09:30:00Z [WARN] cache ttl expired synchronously for top_products_cache: key_expiry_time=3600s with jitter=0s; 1200 workers stampeded database\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0023_c7166920333a": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0023_c7166920333a (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

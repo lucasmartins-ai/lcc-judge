@@ -1,0 +1,283 @@
+diff --git a/src/lcc/relevance/observations.py b/src/lcc/relevance/observations.py
+new file mode 100644
+--- /dev/null
++++ b/src/lcc/relevance/observations.py
+@@ -0,0 +1,160 @@
++"""Opt-in compilation for an explicit observation scope and a local engine.
++
++Separate from general KEEP relevance. The caller supplies entity/field/UTC slots;
++unknown grammar, missing runtime or invalid receipts keep the source whole. No
++provider default, CLI, cache or semantic verification setting is changed here.
++"""
++
++from __future__ import annotations
++
++import hashlib
++import re
++import time
++from dataclasses import dataclass
++from datetime import datetime
++from typing import Any
++
++from lcc.relevance.blocks import gaps_between, split_blocks
++
++
++@dataclass(frozen=True)
++class ObservationCompilationResult:
++    compacted_text: str
++    report: dict[str, Any]
++
++
++def _scope(scope: Any) -> dict[str, str]:
++    values: dict[str, str] = {}
++    for name in ("entity", "field", "start", "end"):
++        value = getattr(scope, name, None)
++        if not isinstance(value, str) or not value.strip():
++            raise ValueError("Explicit entity, field, start and end slots are required")
++        values[name] = value
++    for name in ("start", "end"):
++        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z", values[name]):
++            raise ValueError("UTC timestamp slots are required")
++        try:
++            datetime.strptime(values[name], "%Y-%m-%dT%H:%M:%SZ")
++        except ValueError as exc:
++            raise ValueError("Invalid UTC timestamp") from exc
++    if values["start"] > values["end"]:
++        raise ValueError("Window start must be at or before its end")
++    return values
++
++
++def compact_observations(
++    text: str,
++    scope: Any,
++    *,
++    engine: Any = None,
++    min_block_chars: int = 80,
++    max_block_chars: int = 6000,
++    protect_prefix_chars: int = 0,
++) -> ObservationCompilationResult:
++    """Remove only verified NO_MATCH slices; preserve all other bytes and gaps."""
++    slots = _scope(scope)
++    if (
++        not isinstance(text, str)
++        or type(min_block_chars) is not int
++        or min_block_chars < 0
++        or type(max_block_chars) is not int
++        or max_block_chars < 1
++        or type(protect_prefix_chars) is not int
++        or protect_prefix_chars < 0
++    ):
++        raise ValueError("Text and valid nonnegative/positive segmentation limits are required")
++    started = time.perf_counter()
++    blocks = split_blocks(text, min_block_chars=min_block_chars, max_block_chars=max_block_chars)
++    protected = {b.id for b in blocks if b.protected or b.character_start < protect_prefix_chars}
++    candidates = [{"id": b.id, "text": b.text} for b in blocks if b.id not in protected]
++    expected = {b["id"]: hashlib.sha256(b["text"].encode()).hexdigest() for b in candidates}
++    decisions: dict[str, str] = {}
++    raw = None
++    degraded = None
++    if candidates:
++        if (
++            getattr(engine, "is_local", False) is not True
++            or not callable(getattr(engine, "rank_observations", None))
++            or not callable(getattr(engine, "supports_operation", None))
++        ):
++            degraded = "observation_engine_unavailable"
++        else:
++            try:
++                if engine.supports_operation("rank_observations") is not True:
++                    raise ValueError("Unsupported operation")
++                raw = engine.rank_observations(scope, candidates)
++                if (
++                    not isinstance(raw, dict)
++                    or raw.get("schema") != "lcc-observation-ranking/0.1"
++                    or raw.get("operation") != "rank_observations"
++                    or raw.get("is_local") is not True
++                    or not isinstance(raw.get("items"), list)
++                    or len(raw["items"]) != len(candidates)
++                ):
++                    raise ValueError("Invalid response envelope")
++                for item in raw["items"]:
++                    if not isinstance(item, dict):
++                        raise ValueError("Invalid item")
++                    identity = item.get("id")
++                    if (
++                        not isinstance(identity, str)
++                        or identity not in expected
++                        or identity in decisions
++                        or item.get("text_sha256") != expected[identity]
++                        or item.get("status") not in ("MATCH", "NO_MATCH", "UNKNOWN")
++                        or item.get("decision")
++                        != ("DROP" if item.get("status") == "NO_MATCH" else "KEEP")
++                    ):
++                        raise ValueError("Invalid observation response")
++                    decisions[identity] = item["status"]
++                if set(decisions) != set(expected):
++                    raise ValueError("Missing block response")
++            except Exception:
++                decisions = {}
++                degraded = "invalid_observation_response"
++    gaps = gaps_between(text, blocks)
++    output = []
++    details = []
++    for index, block in enumerate(blocks):
++        status = "PROTECTED" if block.id in protected else decisions.get(block.id, "UNKNOWN")
++        drop = status == "NO_MATCH"
++        output.append(gaps[index])
++        if not drop:
++            output.append(block.text)
++        details.append(
++            {
++                "id": block.id,
++                "status": status,
++                "decision": "DROP" if drop else "KEEP",
++                "character_start": block.character_start,
++                "character_end": block.character_end,
++                "text_sha256": hashlib.sha256(block.text.encode()).hexdigest(),
++            }
++        )
++    output.append(gaps[-1])
++    compiled = "".join(output)
++    return ObservationCompilationResult(
++        compiled,
++        {
++            "schema": "lcc-observation-compilation/0.1",
++            "operation": "rank_observations",
++            "mode": "experimental_selection",
++            "scope": slots,
++            "is_local": True,
++            "blocks_total": len(blocks),
++            "blocks_dropped": sum(r["decision"] == "DROP" for r in details),
++            "blocks_unknown": sum(r["status"] == "UNKNOWN" for r in details),
++            "input_sha256": hashlib.sha256(text.encode()).hexdigest(),
++            "output_sha256": hashlib.sha256(compiled.encode()).hexdigest(),
++            "input_bytes": len(text.encode()),
++            "output_bytes": len(compiled.encode()),
++            "decisions": details,
++            "degraded": degraded is not None,
++            "degradation_reason": degraded,
++            "semantic_guarantee": "none",
++            "necessity_estimated": False,
++            "set_sufficiency_estimated": False,
++            "ranking_receipt": raw,
++            "compilation_ms": (time.perf_counter() - started) * 1000,
++        },
++    )
+diff --git a/tests/test_observation_compiler.py b/tests/test_observation_compiler.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_observation_compiler.py
+@@ -0,0 +1,113 @@
++import hashlib
++from dataclasses import dataclass
++
++import pytest
++
++
++@dataclass(frozen=True)
++class Scope:
++    entity: str = "service-a"
++    field: str = "errors"
++    start: str = "2027-01-01T12:00:00Z"
++    end: str = "2027-01-01T12:05:00Z"
++
++
++class Engine:
++    is_local = True
++
++    def supports_operation(self, operation):
++        return operation == "rank_observations"
++
++    def rank_observations(self, scope, blocks):
++        return {
++            "schema": "lcc-observation-ranking/0.1",
++            "operation": "rank_observations",
++            "is_local": True,
++            "items": [
++                {
++                    "id": b["id"],
++                    "text_sha256": hashlib.sha256(b["text"].encode()).hexdigest(),
++                    "status": "NO_MATCH" if "unrelated" in b["text"] else "UNKNOWN",
++                    "decision": "DROP" if "unrelated" in b["text"] else "KEEP",
++                }
++                for b in blocks
++            ],
++        }
++
++
++def test_exact_gaps_and_kept_bytes_survive_selection():
++    from lcc.relevance.observations import compact_observations
++
++    first = "opaque observation  " * 8 + "\r\n"
++    noise = "unrelated output  " * 8 + "\r\n"
++    last = "preserve Unicode ação  " * 8 + "\r\n"
++    text = "\r\n" + first + "\r\n\r\n" + noise + "\r\n\r\n" + last + "\r\n"
++    result = compact_observations(text, Scope(), engine=Engine())
++    assert result.compacted_text == text.replace(noise, "", 1)
++    assert result.report["blocks_dropped"] == 1
++    assert result.report["necessity_estimated"] is False
++
++
++@pytest.mark.parametrize("engine", [None, object()])
++def test_missing_runtime_keeps_all(engine):
++    from lcc.relevance.observations import compact_observations
++
++    text = "unrelated output " * 20
++    result = compact_observations(text, Scope(), engine=engine)
++    assert result.compacted_text == text
++    assert result.report["degraded"] is True
++
++
++def test_nonlocal_client_is_not_called():
++    from lcc.relevance.observations import compact_observations
++
++    class Remote(Engine):
++        is_local = False
++
++        def rank_observations(self, *args):
++            raise AssertionError("Must not send context to remote client")
++
++    text = "unrelated output " * 20
++    assert compact_observations(text, Scope(), engine=Remote()).compacted_text == text
++
++
++@pytest.mark.parametrize("change", ["hash", "id", "unknown_drop", "duplicates"])
++def test_invalid_response_preserves_every_block(change):
++    from lcc.relevance.observations import compact_observations
++
++    class Broken(Engine):
++        def rank_observations(self, scope, blocks):
++            result = super().rank_observations(scope, blocks)
++            item = result["items"][0]
++            if change == "hash":
++                item["text_sha256"] = "wrong"
++            if change == "id":
++                item["id"] = "wrong"
++            if change == "unknown_drop":
++                item["status"] = "UNKNOWN"
++            if change == "duplicates":
++                result["items"].append(item)
++            return result
++
++    text = "unrelated output " * 20
++    result = compact_observations(text, Scope(), engine=Broken())
++    assert result.compacted_text == text
++    assert result.report["degradation_reason"] == "invalid_observation_response"
++
++
++def test_short_and_prefix_blocks_are_protected():
++    from lcc.relevance.observations import compact_observations
++
++    prefix = "unrelated stable prefix " * 10
++    text = prefix + "\n\nshort unrelated\n\n" + "unrelated output " * 20
++    result = compact_observations(text, Scope(), engine=Engine(), protect_prefix_chars=len(prefix))
++    assert prefix in result.compacted_text and "short unrelated" in result.compacted_text
++    assert result.report["blocks_dropped"] == 1
++
++
++@pytest.mark.parametrize("scope,max_chars", [("general diagnosis", 6000), (Scope(), 0)])
++def test_invalid_scope_or_limits_reject_before_parsing(scope, max_chars):
++    from lcc.relevance.observations import compact_observations
++
++    with pytest.raises(ValueError):
++        compact_observations("x", scope, engine=Engine(), max_block_chars=max_chars)

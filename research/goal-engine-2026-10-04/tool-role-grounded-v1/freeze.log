@@ -1,0 +1,766 @@
+{
+  "schema": "tool-role-grounded/0.1",
+  "frozen_at_utc": "2026-10-04T19:49:06.230335+00:00",
+  "sources": {
+    "research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "research/tool_measurement_runtime.py": "fa9bbb19f28875011903b142ae9aa4fd7109d28a14d64b3a8ae5ffa8d48c1da0",
+    "replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "research/tool_role_contracts.py": "987112d8be0e12aec69500dc5d93122122c1c42877881458afed32785ef0fa5a",
+    "research/tool_role_corpus.py": "038a2596ed4bc5f0bfe06051d4841bcf09f7b739f08de76f06dc8d250ca8ec68",
+    "research/tool_role_data.py": "26475243d2ab51db01396519cdf4036e5ee8ee746a22b97f4290644fb47948d6",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/audit_tool_role_data.py": "5ffb9bc35b5e88b34d0ef353d3aaf4f6513009ad1765b7b8e470d1be5192d735"
+  },
+  "runtime": {
+    "docker": "/usr/local/bin/docker",
+    "image_id": "sha256:86e9c5f09cf5c25f6cf891dda724c867d9cb05d4d6c955093fb625ba25fea1ef",
+    "source_sha256": "58c65fd6f4f38111ebb82c6fce6f55b4370090ca28ddc8bc9c3ed5a01a5cc338",
+    "profile": "trusted-tool-observations/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "requests": {
+    "train": {
+      "seed": 442421,
+      "fixtures": 32
+    },
+    "validation": {
+      "seed": 442422,
+      "fixtures": 12
+    },
+    "final": {
+      "seed": 442423,
+      "fixtures": 24
+    }
+  },
+  "calibration_seed_excluded": 442420,
+  "roles": {
+    "newline": [
+      "wc_newlines",
+      "wc",
+      "newlines",
+      [
+        "newline character count",
+        "terminated line count from wc",
+        "number of line separators in the input"
+      ],
+      [
+        "quantidade de caracteres de nova linha",
+        "linhas terminadas contadas pelo wc",
+        "número de separadores de linha na entrada"
+      ],
+      [
+        "Newline characters counted by wc --lines",
+        "Terminated-line total from the newline counter",
+        "Input line-break count reported by wc"
+      ]
+    ],
+    "word": [
+      "wc_words",
+      "wc",
+      "words",
+      [
+        "word count",
+        "number of whitespace-separated words",
+        "total words in the input"
+      ],
+      [
+        "contagem de palavras",
+        "número de palavras separadas por espaços",
+        "total de palavras na entrada"
+      ],
+      [
+        "Words counted by wc --words",
+        "Whitespace-delimited word total",
+        "Input word count from wc"
+      ]
+    ],
+    "character": [
+      "wc_characters",
+      "wc",
+      "characters",
+      [
+        "decoded character count",
+        "number of characters under the UTF-8 locale",
+        "text character length"
+      ],
+      [
+        "contagem de caracteres decodificados",
+        "número de caracteres na localidade UTF-8",
+        "comprimento do texto em caracteres"
+      ],
+      [
+        "Characters counted by wc --chars in UTF-8",
+        "Decoded text character total",
+        "Locale-aware character count from wc"
+      ]
+    ],
+    "byte": [
+      "wc_bytes",
+      "wc",
+      "bytes",
+      [
+        "input byte count",
+        "binary content length",
+        "amount of file data measured in bytes"
+      ],
+      [
+        "contagem de bytes da entrada",
+        "comprimento binário do conteúdo",
+        "quantidade de dados do arquivo em bytes"
+      ],
+      [
+        "Bytes counted by wc --bytes",
+        "Binary input byte total",
+        "File content byte volume reported by wc"
+      ]
+    ],
+    "file_size": [
+      "stat_size_bytes",
+      "stat",
+      "bytes",
+      [
+        "logical file size in bytes",
+        "file length at the logical end position",
+        "total bytes of file contents"
+      ],
+      [
+        "tamanho lógico do arquivo em bytes",
+        "comprimento até o final lógico do arquivo",
+        "total de bytes do conteúdo do arquivo"
+      ],
+      [
+        "Logical file length from stat format %s",
+        "Total file size reported by stat in bytes",
+        "File content length including any sparse holes"
+      ]
+    ],
+    "allocated": [
+      "stat_allocated_blocks",
+      "stat",
+      "allocated_bytes",
+      [
+        "filesystem space allocated to the file",
+        "storage occupied by allocated blocks",
+        "allocated file space in bytes"
+      ],
+      [
+        "espaço do sistema de arquivos alocado ao arquivo",
+        "armazenamento ocupado pelos blocos alocados",
+        "espaço alocado ao arquivo em bytes"
+      ],
+      [
+        "Allocated file storage from stat blocks times block bytes",
+        "Space occupied by file allocation blocks",
+        "Filesystem allocation for the file measured in bytes"
+      ]
+    ],
+    "links": [
+      "stat_hard_links",
+      "stat",
+      "links",
+      [
+        "hard-link count",
+        "number of directory entries pointing to this inode",
+        "file hard-link total"
+      ],
+      [
+        "contagem de links físicos",
+        "número de entradas de diretório apontando para esse inode",
+        "total de links físicos do arquivo"
+      ],
+      [
+        "Hard links reported by stat format %h",
+        "Number of hard-link names for the file inode",
+        "File hard-link count from stat"
+      ]
+    ],
+    "inode": [
+      "stat_inode",
+      "stat",
+      "inode_id",
+      [
+        "file inode number",
+        "inode identifier of this file",
+        "numeric filesystem identifier for the file inode"
+      ],
+      [
+        "número do inode do arquivo",
+        "identificador do inode desse arquivo",
+        "identificador numérico do inode no sistema de arquivos"
+      ],
+      [
+        "Inode number reported by stat format %i",
+        "Numeric file inode identifier",
+        "File inode id from stat"
+      ]
+    ],
+    "permissions": [
+      "stat_octal_mode",
+      "stat",
+      "octal_digits",
+      [
+        "file permission mode in octal",
+        "octal permission digits",
+        "file access-mode display"
+      ],
+      [
+        "modo de permissões do arquivo em octal",
+        "dígitos octais das permissões",
+        "representação do modo de acesso do arquivo"
+      ],
+      [
+        "Octal permission digits from stat format %a",
+        "File permission mode displayed in octal",
+        "Numeric octal access bits reported by stat"
+      ]
+    ],
+    "io_hint": [
+      "stat_io_hint_bytes",
+      "stat",
+      "bytes",
+      [
+        "preferred I/O transfer-size hint",
+        "optimal transfer size suggested for file I/O",
+        "recommended byte size for an I/O transfer"
+      ],
+      [
+        "tamanho preferencial sugerido para transferências de entrada e saída",
+        "tamanho ótimo sugerido para operações de I/O do arquivo",
+        "quantidade de bytes recomendada para uma transferência de I/O"
+      ],
+      [
+        "Optimal I/O transfer-size hint from stat format %o",
+        "Recommended file I/O transfer size in bytes",
+        "Preferred transfer chunk hint reported by stat"
+      ]
+    ],
+    "link_entry": [
+      "link_entry_bytes",
+      "stat",
+      "bytes",
+      [
+        "stored symbolic-link pathname length",
+        "byte size of the symlink entry text",
+        "length of the path saved inside the symbolic link"
+      ],
+      [
+        "comprimento do caminho armazenado no link simbólico",
+        "tamanho em bytes do texto do link simbólico",
+        "comprimento do caminho salvo dentro do link simbólico"
+      ],
+      [
+        "Symlink entry pathname bytes from stat without dereference",
+        "Length of text stored in the symbolic link",
+        "Byte size of the symbolic-link path itself"
+      ]
+    ],
+    "link_target": [
+      "link_target_bytes",
+      "stat",
+      "bytes",
+      [
+        "resolved symbolic-link target size",
+        "content length of the file reached through the symlink",
+        "bytes in the symbolic-link destination file"
+      ],
+      [
+        "tamanho do destino resolvido do link simbólico",
+        "comprimento do arquivo alcançado pelo link simbólico",
+        "bytes do arquivo de destino do link simbólico"
+      ],
+      [
+        "Target file bytes from stat --dereference",
+        "File content size after resolving the symbolic link",
+        "Byte length of the resolved link destination"
+      ]
+    ],
+    "cpu": [
+      "profile_cpu_ns",
+      "clock",
+      "nanoseconds",
+      [
+        "process CPU time",
+        "processor time used by this process",
+        "combined user and system execution time"
+      ],
+      [
+        "tempo de CPU do processo",
+        "tempo de processador usado por esse processo",
+        "tempo combinado de execução em usuário e sistema"
+      ],
+      [
+        "Process CPU nanoseconds from process_time_ns",
+        "User plus system CPU duration excluding sleep",
+        "Processor execution duration consumed by the process"
+      ]
+    ],
+    "elapsed": [
+      "profile_elapsed_ns",
+      "clock",
+      "nanoseconds",
+      [
+        "elapsed wall-clock duration",
+        "total duration including sleep",
+        "real time from start until completion"
+      ],
+      [
+        "duração transcorrida no relógio",
+        "duração total incluindo espera",
+        "tempo real do início até a conclusão"
+      ],
+      [
+        "Elapsed nanoseconds from perf_counter_ns",
+        "Wall-clock run duration including sleep",
+        "Start-to-finish real duration of the measurement"
+      ]
+    ],
+    "exit": [
+      "command_exit_status",
+      "command",
+      "exit_status",
+      [
+        "command exit status",
+        "return code of the completed subprocess",
+        "termination status of the command"
+      ],
+      [
+        "status de saída do comando",
+        "código de retorno do subprocesso concluído",
+        "status de término do comando"
+      ],
+      [
+        "CompletedProcess returncode for the command",
+        "Exit status observed for the subprocess",
+        "Numeric termination result from the command"
+      ]
+    ],
+    "stdout": [
+      "command_stdout_newlines",
+      "command",
+      "newlines",
+      [
+        "newlines printed on standard output",
+        "number of stdout rows emitted by the command",
+        "line breaks in the captured subprocess output"
+      ],
+      [
+        "quebras de linha impressas na saída padrão",
+        "número de linhas emitidas pelo comando em stdout",
+        "separadores de linha na saída capturada do subprocesso"
+      ],
+      [
+        "Newline count in captured command stdout",
+        "Rows printed on standard output by the subprocess",
+        "Line separators emitted by the command"
+      ]
+    ],
+    "defined_env": [
+      "environment_defined",
+      "environment",
+      "names",
+      [
+        "number of defined environment names",
+        "total environment variable key count",
+        "size of the observed environment mapping"
+      ],
+      [
+        "número de nomes definidos no ambiente",
+        "total de chaves de variáveis de ambiente",
+        "tamanho do mapeamento de ambiente observado"
+      ],
+      [
+        "Variable names present in the isolated child environment",
+        "Total keys in the observed environment mapping",
+        "Defined environment entry count"
+      ]
+    ],
+    "empty_env": [
+      "environment_empty",
+      "environment",
+      "names",
+      [
+        "environment entries with empty values",
+        "count of blank variable assignments",
+        "number of environment keys assigned an empty string"
+      ],
+      [
+        "entradas de ambiente com valores vazios",
+        "contagem de atribuições vazias nas variáveis",
+        "número de chaves de ambiente com uma string vazia"
+      ],
+      [
+        "Observed environment values equal to the empty string",
+        "Blank assignments in the isolated child environment",
+        "Environment entries whose value has no characters"
+      ]
+    ],
+    "du_apparent": [
+      "du_apparent_bytes",
+      "du",
+      "bytes",
+      [
+        "apparent size of the sparse file",
+        "logical file length including holes",
+        "data length reported with apparent-size mode"
+      ],
+      [
+        "tamanho aparente do arquivo esparso",
+        "comprimento lógico do arquivo incluindo lacunas",
+        "comprimento informado no modo de tamanho aparente"
+      ],
+      [
+        "Apparent file bytes from du --apparent-size --block-size=1",
+        "Logical size including holes reported by du",
+        "Sparse file apparent data length"
+      ]
+    ],
+    "du_space": [
+      "du_allocated_bytes",
+      "du",
+      "bytes",
+      [
+        "filesystem space consumed by the sparse file",
+        "storage allocated to sparse-file blocks",
+        "disk usage excluding unallocated holes"
+      ],
+      [
+        "espaço ocupado pelo arquivo esparso no sistema de arquivos",
+        "armazenamento alocado aos blocos do arquivo esparso",
+        "uso de disco sem lacunas não alocadas"
+      ],
+      [
+        "Allocated storage from du --block-size=1 without apparent-size",
+        "Space actually assigned to sparse-file data blocks",
+        "Sparse file filesystem usage in bytes"
+      ]
+    ],
+    "df_total": [
+      "df_total_bytes",
+      "df",
+      "bytes",
+      [
+        "total filesystem capacity",
+        "full size of the mounted filesystem",
+        "combined used and free volume capacity"
+      ],
+      [
+        "capacidade total do sistema de arquivos",
+        "tamanho completo do sistema de arquivos montado",
+        "capacidade combinada usada e livre do volume"
+      ],
+      [
+        "Total filesystem byte capacity from df size column",
+        "Mounted volume full size in bytes",
+        "Total data-space capacity reported by df"
+      ]
+    ],
+    "df_available": [
+      "df_available_bytes",
+      "df",
+      "bytes",
+      [
+        "filesystem bytes available to a non-superuser",
+        "usable remaining storage for an ordinary user",
+        "available volume capacity after reservations"
+      ],
+      [
+        "bytes do sistema de arquivos disponíveis para um usuário comum",
+        "armazenamento restante utilizável por usuário sem privilégios",
+        "capacidade disponível no volume após reservas"
+      ],
+      [
+        "Available filesystem bytes from df avail column",
+        "Space usable by an ordinary user on the volume",
+        "Non-superuser available capacity reported by df"
+      ]
+    ],
+    "df_used": [
+      "df_used_bytes",
+      "df",
+      "bytes",
+      [
+        "filesystem bytes already used",
+        "occupied data space on the volume",
+        "used volume capacity"
+      ],
+      [
+        "bytes já usados no sistema de arquivos",
+        "espaço de dados ocupado no volume",
+        "capacidade usada do volume"
+      ],
+      [
+        "Occupied filesystem bytes from df used column",
+        "Storage already in use on the mounted volume",
+        "Used volume space reported by df"
+      ]
+    ],
+    "df_inode_total": [
+      "df_inode_total",
+      "df",
+      "inodes",
+      [
+        "total filesystem inode capacity",
+        "number of inode slots in the filesystem",
+        "complete capacity for file-node entries"
+      ],
+      [
+        "capacidade total de inodes do sistema de arquivos",
+        "número de posições de inode no sistema de arquivos",
+        "capacidade completa de entradas de nós de arquivo"
+      ],
+      [
+        "Total inode slots from df itotal column",
+        "Filesystem full inode capacity",
+        "Total file-node entry count reported by df"
+      ]
+    ],
+    "df_inode_available": [
+      "df_inode_available",
+      "df",
+      "inodes",
+      [
+        "available filesystem inode slots",
+        "remaining capacity for inode entries",
+        "number of unused file-node slots"
+      ],
+      [
+        "posições de inode disponíveis no sistema de arquivos",
+        "capacidade restante para entradas de inode",
+        "número de posições não usadas de nós de arquivo"
+      ],
+      [
+        "Available inode entries from df iavail column",
+        "Unused file-node capacity on the filesystem",
+        "Remaining inode slots reported by df"
+      ]
+    ],
+    "gzip_compressed": [
+      "gzip_compressed_bytes",
+      "gzip",
+      "bytes",
+      [
+        "compressed gzip file size",
+        "bytes of the encoded gzip archive",
+        "storage length after compression"
+      ],
+      [
+        "tamanho do arquivo gzip comprimido",
+        "bytes do arquivo codificado em gzip",
+        "comprimento armazenado após compressão"
+      ],
+      [
+        "Compressed file bytes from gzip --list",
+        "Byte length of the encoded gzip file",
+        "Stored archive size reported by gzip"
+      ]
+    ],
+    "gzip_uncompressed": [
+      "gzip_uncompressed_bytes",
+      "gzip",
+      "bytes",
+      [
+        "uncompressed gzip payload size",
+        "original data length before compression",
+        "bytes recovered when the gzip data is expanded"
+      ],
+      [
+        "tamanho do conteúdo gzip descomprimido",
+        "comprimento original dos dados antes da compressão",
+        "bytes recuperados ao expandir os dados gzip"
+      ],
+      [
+        "Uncompressed data bytes from gzip --list for one member",
+        "Original payload length before gzip compression",
+        "Expanded single-member content size reported by gzip"
+      ]
+    ]
+  },
+  "train_families": {
+    "text_structure": [
+      "newline",
+      "word"
+    ],
+    "text_encoding": [
+      "character",
+      "byte"
+    ],
+    "file_allocation": [
+      "file_size",
+      "allocated"
+    ],
+    "file_identity": [
+      "links",
+      "inode"
+    ],
+    "file_mode_io": [
+      "permissions",
+      "io_hint"
+    ],
+    "symbolic_link": [
+      "link_entry",
+      "link_target"
+    ],
+    "process_timing": [
+      "cpu",
+      "elapsed"
+    ],
+    "command_result": [
+      "exit",
+      "stdout"
+    ],
+    "environment_shape": [
+      "defined_env",
+      "empty_env"
+    ]
+  },
+  "final_families": {
+    "sparse_usage": [
+      "du_apparent",
+      "du_space"
+    ],
+    "volume_capacity": [
+      "df_total",
+      "df_available"
+    ],
+    "inode_capacity": [
+      "df_inode_total",
+      "df_inode_available"
+    ],
+    "bytes_vs_inodes": [
+      "df_available",
+      "df_inode_available"
+    ],
+    "used_vs_available": [
+      "df_used",
+      "df_available"
+    ],
+    "compression_sizes": [
+      "gzip_compressed",
+      "gzip_uncompressed"
+    ]
+  },
+  "templates": {
+    "train": {
+      "en": [
+        "Report the {}.",
+        "Which observation gives the {}?",
+        "Keep evidence for the {}.",
+        "Identify the {}."
+      ],
+      "pt": [
+        "Informe {}.",
+        "Qual observação mostra {}?",
+        "Mantenha evidências sobre {}.",
+        "Identifique {}."
+      ]
+    },
+    "validation": {
+      "en": [
+        "I need the measured {}.",
+        "Select the report that states the {}."
+      ],
+      "pt": [
+        "Preciso da medição de {}.",
+        "Selecione o relato que informa {}."
+      ]
+    },
+    "final": {
+      "en": [
+        "Find evidence of the {}.",
+        "Give me the recorded {}."
+      ],
+      "pt": [
+        "Encontre evidências sobre {}.",
+        "Mostre o valor registrado de {}."
+      ]
+    }
+  },
+  "unknown_queries": {
+    "train": {
+      "en": [
+        "How many visual lines are in this text, including a possible final partial line?",
+        "Explain the root cause of the operation failure.",
+        "Keep whichever measurements are necessary to fix the whole system."
+      ],
+      "pt": [
+        "Quantas linhas visuais há nesse texto, incluindo uma possível linha final incompleta?",
+        "Explique a causa principal da falha da operação.",
+        "Mantenha as medições necessárias para corrigir o sistema inteiro."
+      ]
+    },
+    "validation": {
+      "en": [
+        "Count the displayed text rows, even when the final row has no newline.",
+        "What caused the operation to fail?",
+        "Which observations are indispensable to repair the entire system?"
+      ],
+      "pt": [
+        "Conte as linhas exibidas do texto, mesmo se a última não terminar com nova linha.",
+        "O que causou a falha da operação?",
+        "Quais observações são indispensáveis para reparar o sistema inteiro?"
+      ]
+    },
+    "final": {
+      "en": [
+        "Determine the number of visible lines, including wrapping and an unterminated last line.",
+        "Diagnose why this operation failed.",
+        "Choose only the evidence required to resolve the overall system problem."
+      ],
+      "pt": [
+        "Determine o número de linhas visíveis, incluindo quebras de exibição e uma última linha incompleta.",
+        "Diagnostique por que essa operação falhou.",
+        "Escolha somente as evidências necessárias para resolver o problema geral do sistema."
+      ]
+    }
+  },
+  "primary_references": {
+    "wc": "https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html",
+    "stat": "https://www.gnu.org/software/coreutils/manual/html_node/stat-invocation.html",
+    "du": "https://www.gnu.org/s/coreutils/manual/html_node/du-invocation.html",
+    "df": "https://www.gnu.org/s/coreutils/manual/html_node/df-invocation.html",
+    "gzip": "https://www.gnu.org/s/gzip/manual/gzip.html",
+    "clock": "https://docs.python.org/3.13/library/time.html",
+    "command": "https://docs.python.org/3.13/library/subprocess.html",
+    "environment": "https://docs.python.org/3.13/library/os.html#os.environ"
+  },
+  "reference_version_scope": "GNU manuals 9.11/latest; actual pinned tools report 9.7/gzip 1.13, behavior checked on receipts",
+  "language_scope": "English and Portuguese goals; English authored report captions only",
+  "heldout_scope": "DU/DF/GZIP binary sources, concrete fixture inputs, aliases/report captions and question templates; shared author/schema and some underlying measurement concepts",
+  "source_clusters": {
+    "train": [
+      "wc",
+      "stat",
+      "clock",
+      "command",
+      "environment"
+    ],
+    "final": [
+      "du",
+      "df",
+      "gzip"
+    ]
+  },
+  "row_unit": "8 binary rows per family/fixture/language; 4 UNKNOWN rows per fixture/language; correlated/shared values, duplicate projected pairs disclosed",
+  "numeric_control": "Measured and value-swap claims give identical numeric multisets to both labels per goal; false requested claims remain relevant",
+  "p1_label": "1 requested role equals reported role; 0 other role; null unsupported goal or unbound record; not P2 necessity",
+  "unknown_policy": "Current projection detects unsupported syntax/scope only; semantic UNKNOWN needs a future support decision before DROP",
+  "tokenizer": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "window": 512,
+    "files": {
+      "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "use": "Coverage count only; zero model forwards"
+  },
+  "model_scoring_executed": false,
+  "training_executed": false,
+  "production_data": false,
+  "no_default_or_publication_change": true,
+  "sha256": "932c23cd40b323e88186a9755e887a44ede076d168d6f08264b0446a022ce96b"
+}

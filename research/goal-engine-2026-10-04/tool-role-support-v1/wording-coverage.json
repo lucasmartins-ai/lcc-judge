@@ -1,0 +1,205 @@
+{
+  "schema": "tool-role-wording-coverage/0.1",
+  "counts": {
+    "train": {
+      "command_result/en": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "text_structure/en": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "environment_shape/en": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "text_encoding/pt": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "file_mode_io/pt": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "file_identity/pt": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "file_allocation/pt": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "file_mode_io/en": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "text_encoding/en": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "file_allocation/en": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "text_structure/pt": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "symbolic_link/en": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "process_timing/pt": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "file_identity/en": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      },
+      "process_timing/en": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "command_result/pt": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "symbolic_link/pt": {
+        "alias1:caption1": 128,
+        "alias0:caption0": 128
+      },
+      "environment_shape/pt": {
+        "alias0:caption0": 128,
+        "alias1:caption1": 128
+      }
+    },
+    "validation": {
+      "file_identity/en": {
+        "alias2:caption2": 96
+      },
+      "file_mode_io/pt": {
+        "alias2:caption2": 96
+      },
+      "file_allocation/en": {
+        "alias2:caption2": 96
+      },
+      "file_allocation/pt": {
+        "alias2:caption2": 96
+      },
+      "symbolic_link/pt": {
+        "alias2:caption2": 96
+      },
+      "command_result/en": {
+        "alias2:caption2": 96
+      },
+      "process_timing/en": {
+        "alias2:caption2": 96
+      },
+      "file_mode_io/en": {
+        "alias2:caption2": 96
+      },
+      "text_structure/pt": {
+        "alias2:caption2": 96
+      },
+      "environment_shape/en": {
+        "alias2:caption2": 96
+      },
+      "environment_shape/pt": {
+        "alias2:caption2": 96
+      },
+      "text_encoding/en": {
+        "alias2:caption2": 96
+      },
+      "file_identity/pt": {
+        "alias2:caption2": 96
+      },
+      "symbolic_link/en": {
+        "alias2:caption2": 96
+      },
+      "text_structure/en": {
+        "alias2:caption2": 96
+      },
+      "process_timing/pt": {
+        "alias2:caption2": 96
+      },
+      "command_result/pt": {
+        "alias2:caption2": 96
+      },
+      "text_encoding/pt": {
+        "alias2:caption2": 96
+      }
+    },
+    "final": {
+      "bytes_vs_inodes/pt": {
+        "alias0:caption0": 64,
+        "alias2:caption2": 64,
+        "alias1:caption1": 64
+      },
+      "used_vs_available/en": {
+        "alias0:caption0": 64,
+        "alias1:caption1": 64,
+        "alias2:caption2": 64
+      },
+      "inode_capacity/pt": {
+        "alias2:caption2": 64,
+        "alias1:caption1": 64,
+        "alias0:caption0": 64
+      },
+      "bytes_vs_inodes/en": {
+        "alias1:caption1": 64,
+        "alias2:caption2": 64,
+        "alias0:caption0": 64
+      },
+      "sparse_usage/en": {
+        "alias0:caption0": 64,
+        "alias1:caption1": 64,
+        "alias2:caption2": 64
+      },
+      "volume_capacity/en": {
+        "alias1:caption1": 64,
+        "alias2:caption2": 64,
+        "alias0:caption0": 64
+      },
+      "volume_capacity/pt": {
+        "alias2:caption2": 64,
+        "alias0:caption0": 64,
+        "alias1:caption1": 64
+      },
+      "inode_capacity/en": {
+        "alias1:caption1": 64,
+        "alias2:caption2": 64,
+        "alias0:caption0": 64
+      },
+      "compression_sizes/en": {
+        "alias0:caption0": 64,
+        "alias1:caption1": 64,
+        "alias2:caption2": 64
+      },
+      "used_vs_available/pt": {
+        "alias0:caption0": 64,
+        "alias1:caption1": 64,
+        "alias2:caption2": 64
+      },
+      "compression_sizes/pt": {
+        "alias2:caption2": 64,
+        "alias0:caption0": 64,
+        "alias1:caption1": 64
+      },
+      "sparse_usage/pt": {
+        "alias1:caption1": 64,
+        "alias2:caption2": 64,
+        "alias0:caption0": 64
+      }
+    }
+  },
+  "train_alias_caption_pairs": [
+    "0:0",
+    "1:1"
+  ],
+  "validation_alias_caption_pairs": [
+    "2:2"
+  ],
+  "scope": "Observed authored linguistic coverage only; uncoupling absent train combinations is not proven to fix model transfer; no new inference or model tuning"
+}

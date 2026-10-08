@@ -1,0 +1,21 @@
+{
+  "objective": "Add transaction isolation to prevent double spending during balance transfer.",
+  "task_class": "coding",
+  "context": [
+    {
+      "block_id": "b_7e2f44bd",
+      "content": "User was able to trigger 3 simultaneous transfers of $100 with only $100 balance.",
+      "source": "issues/892.md",
+      "block_type": "doc"
+    },
+    {
+      "block_id": "b_dbef588d",
+      "content": "Transfer fee is 0% for domestic bank wires.",
+      "source": "fees.md",
+      "block_type": "doc"
+    }
+  ],
+  "requested_seed": 76,
+  "interface": "Define transfer(from_acc,to_acc,amount). Provided db has .transaction() context manager, .query(sql,account_id) returning numeric balance, .execute(sql, amount, account_id) for balance updates. Return False or raise ValueError on insufficient funds. SQL FOR UPDATE is supported by this fixture.",
+  "mechanism_options": null
+}

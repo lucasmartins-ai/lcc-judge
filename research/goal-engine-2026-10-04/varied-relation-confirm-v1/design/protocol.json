@@ -1,0 +1,1734 @@
+{
+  "schema": "varied-direct-record-fresh-confirmation-design/0.1",
+  "frozen_at_utc": "2026-10-05T10:42:15.778853+00:00",
+  "development_design_sha256": "0c0d269123ee2abedb78cfd60d3bce97573f4b836cfcbfaccc4f83987b212ebb",
+  "development_protocol_sha256": "b8240c1a93f70508e6f7a40d8590e4c408aa82b51e36a8b417b894d121713588",
+  "development_data_protocol_sha256": "b921938d794b597e068a25aad7375d7968e49d18a8d463e12219163626371c05",
+  "runtime": {
+    "image_id": "sha256:4c21136ee6a6af5e49e2ee3d46317eeff1927bdde4163ca65f990495a4837985",
+    "source_sha256": "5ded8f3bdf45d3e420c889d15e8dd38b2e95a631b2209eab0ab931f6638717a3",
+    "dependency_sha256": "255600482631fdd1a04f299af2f0f1e748d783caafa896bdee322fce18f099bf",
+    "profile": "trusted-tool-relation-states/0.2",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "requests": {
+    "final": {
+      "seed": 552601,
+      "fixtures": 64
+    }
+  },
+  "calibration_excluded": {
+    "seed": 552600,
+    "fixtures": 16
+  },
+  "sources": {
+    "research/tool_relation_confirmation_contracts.py": "61217c6e547e2c589b03bec0f8df8a852eace96c0e5e236988aa33b0487d41a3",
+    "research/tool_relation_state_contracts.py": "ff86c51c968f74094ad950c8c4321b31b6a858d5899dda124b98e256a545b2fe",
+    "research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1"
+  },
+  "roles": {
+    "retry_attempts": [
+      "retry",
+      "calls",
+      [
+        "count of operation invocations including the original try",
+        "number of executions made before the retrying call terminates",
+        "observed value for count of operation invocations including the original try",
+        "recorded value for number of executions made before the retrying call terminates"
+      ],
+      [
+        "contagem de invocações da operação incluindo a tentativa original",
+        "número de execuções feitas antes do término da chamada de retry",
+        "valor observado de contagem de invocações da operação incluindo a tentativa original",
+        "valor registrado de número de execuções feitas antes do término da chamada de retry"
+      ],
+      [
+        "Executed attempts tallied from the first invocation onward",
+        "Recorded Retrying executions until return or exhaustion",
+        "Observation: Executed attempts tallied from the first invocation onward",
+        "Measurement: Recorded Retrying executions until return or exhaustion"
+      ]
+    ],
+    "retry_failures": [
+      "retry",
+      "calls",
+      [
+        "number of unsuccessful operation calls, including terminal exhaustion failures",
+        "tally of exception outcomes recorded across the retry attempts",
+        "observed value for number of unsuccessful operation calls, including terminal exhaustion failures",
+        "recorded value for tally of exception outcomes recorded across the retry attempts"
+      ],
+      [
+        "número de chamadas sem sucesso incluindo falhas no esgotamento terminal",
+        "contagem de resultados com exceção nas tentativas de retry",
+        "valor observado de número de chamadas sem sucesso incluindo falhas no esgotamento terminal",
+        "valor registrado de contagem de resultados com exceção nas tentativas de retry"
+      ],
+      [
+        "Operation attempts whose recorded outcome was an exception",
+        "Failures counted before the Retrying invocation ended",
+        "Observation: Operation attempts whose recorded outcome was an exception",
+        "Measurement: Failures counted before the Retrying invocation ended"
+      ]
+    ],
+    "retry_sleep_calls": [
+      "retry",
+      "calls",
+      [
+        "count of sleeper function executions between retry calls",
+        "number of inter-attempt waiting callbacks actually invoked",
+        "observed value for count of sleeper function executions between retry calls",
+        "recorded value for number of inter-attempt waiting callbacks actually invoked"
+      ],
+      [
+        "contagem de execuções da função de espera entre chamadas de retry",
+        "número de callbacks de espera entre tentativas realmente invocados",
+        "valor observado de contagem de execuções da função de espera entre chamadas de retry",
+        "valor registrado de número de callbacks de espera entre tentativas realmente invocados"
+      ],
+      [
+        "Executed sleeper callbacks counted as events",
+        "Waiting-function invocations recorded between operation attempts",
+        "Observation: Executed sleeper callbacks counted as events",
+        "Measurement: Waiting-function invocations recorded between operation attempts"
+      ]
+    ],
+    "retry_scheduled_sleep_ns": [
+      "retry",
+      "nanoseconds",
+      [
+        "nominal delay requested for all retry waits in nanoseconds",
+        "nanosecond sum of policy-assigned waiting intervals",
+        "observed value for nominal delay requested for all retry waits in nanoseconds",
+        "recorded value for nanosecond sum of policy-assigned waiting intervals"
+      ],
+      [
+        "atraso nominal solicitado para todas as esperas de retry em nanossegundos",
+        "soma em nanossegundos dos intervalos de espera atribuídos pela política",
+        "valor observado de atraso nominal solicitado para todas as esperas de retry em nanossegundos",
+        "valor registrado de soma em nanossegundos dos intervalos de espera atribuídos pela política"
+      ],
+      [
+        "Requested wait_fixed delays added in nanoseconds",
+        "Scheduled retry waiting budget expressed as nanoseconds",
+        "Observation: Requested wait_fixed delays added in nanoseconds",
+        "Measurement: Scheduled retry waiting budget expressed as nanoseconds"
+      ]
+    ],
+    "retry_actual_sleep_ns": [
+      "retry",
+      "nanoseconds",
+      [
+        "nanoseconds measured around the executed sleeper callbacks",
+        "total observed waiting-function duration excluding operation execution",
+        "observed value for nanoseconds measured around the executed sleeper callbacks",
+        "recorded value for total observed waiting-function duration excluding operation execution"
+      ],
+      [
+        "nanossegundos medidos ao redor dos callbacks de espera executados",
+        "duração total observada da função de espera sem a execução da operação",
+        "valor observado de nanossegundos medidos ao redor dos callbacks de espera executados",
+        "valor registrado de duração total observada da função de espera sem a execução da operação"
+      ],
+      [
+        "Monotonic sleeper-entry to sleeper-exit intervals summed in nanoseconds",
+        "Elapsed nanoseconds inside callbacks responsible for waiting",
+        "Observation: Monotonic sleeper-entry to sleeper-exit intervals summed in nanoseconds",
+        "Measurement: Elapsed nanoseconds inside callbacks responsible for waiting"
+      ]
+    ],
+    "retry_elapsed_ns": [
+      "retry",
+      "nanoseconds",
+      [
+        "monotonic nanoseconds covering the entire retrying invocation",
+        "complete retry-call duration including failed calls and waiting",
+        "observed value for monotonic nanoseconds covering the entire retrying invocation",
+        "recorded value for complete retry-call duration including failed calls and waiting"
+      ],
+      [
+        "nanossegundos monotônicos que abrangem toda a invocação de retry",
+        "duração completa da chamada de retry incluindo falhas e esperas",
+        "valor observado de nanossegundos monotônicos que abrangem toda a invocação de retry",
+        "valor registrado de duração completa da chamada de retry incluindo falhas e esperas"
+      ],
+      [
+        "Nanoseconds from entering Retrying until return or exhaustion",
+        "Overall retry execution interval including operations and sleepers",
+        "Observation: Nanoseconds from entering Retrying until return or exhaustion",
+        "Measurement: Overall retry execution interval including operations and sleepers"
+      ]
+    ],
+    "udp_sent_datagrams": [
+      "udp",
+      "datagrams",
+      [
+        "number of successful datagram sendto submissions including zero-length ones",
+        "count of UDP messages passed to the sending socket",
+        "observed value for number of successful datagram sendto submissions including zero-length ones",
+        "recorded value for count of UDP messages passed to the sending socket"
+      ],
+      [
+        "número de submissões sendto bem-sucedidas incluindo datagramas vazios",
+        "contagem de mensagens UDP passadas ao socket emissor",
+        "valor observado de número de submissões sendto bem-sucedidas incluindo datagramas vazios",
+        "valor registrado de contagem de mensagens UDP passadas ao socket emissor"
+      ],
+      [
+        "Successful UDP sending calls tallied by message",
+        "Transmitted datagram events, counting empty content as one",
+        "Observation: Successful UDP sending calls tallied by message",
+        "Measurement: Transmitted datagram events, counting empty content as one"
+      ]
+    ],
+    "udp_received_datagrams": [
+      "udp",
+      "datagrams",
+      [
+        "count of datagram reads completed by recvfrom including empty messages within the recorded receiver read budget",
+        "number of UDP messages actually read by the bounded receiver within the recorded receiver read budget",
+        "observed value for count of datagram reads completed by recvfrom including empty messages within the recorded receiver read budget",
+        "recorded value for number of UDP messages actually read by the bounded receiver within the recorded receiver read budget"
+      ],
+      [
+        "contagem de leituras recvfrom concluídas incluindo mensagens vazias dentro do limite de leitura registrado do receptor",
+        "número de mensagens UDP realmente lidas pelo receptor limitado dentro do limite de leitura registrado do receptor",
+        "valor observado de contagem de leituras recvfrom concluídas incluindo mensagens vazias dentro do limite de leitura registrado do receptor",
+        "valor registrado de número de mensagens UDP realmente lidas pelo receptor limitado dentro do limite de leitura registrado do receptor"
+      ],
+      [
+        "Completed receiver calls tallied as datagram events within the recorded receiver read budget",
+        "Observed UDP message reads with zero-length reads counted within the recorded receiver read budget",
+        "Observation: Completed receiver calls tallied as datagram events within the recorded receiver read budget",
+        "Measurement: Observed UDP message reads with zero-length reads counted within the recorded receiver read budget"
+      ]
+    ],
+    "udp_sent_payload_bytes": [
+      "udp",
+      "bytes",
+      [
+        "byte total of user content submitted in outgoing datagrams",
+        "sum of successful sendto payload lengths without protocol headers",
+        "observed value for byte total of user content submitted in outgoing datagrams",
+        "recorded value for sum of successful sendto payload lengths without protocol headers"
+      ],
+      [
+        "total de bytes do conteúdo submetido nos datagramas de saída",
+        "soma dos comprimentos enviados por sendto sem cabeçalhos de protocolo",
+        "valor observado de total de bytes do conteúdo submetido nos datagramas de saída",
+        "valor registrado de soma dos comprimentos enviados por sendto sem cabeçalhos de protocolo"
+      ],
+      [
+        "UDP sending payload sizes accumulated in bytes",
+        "Outgoing content byte count excluding UDP and IP framing",
+        "Observation: UDP sending payload sizes accumulated in bytes",
+        "Measurement: Outgoing content byte count excluding UDP and IP framing"
+      ]
+    ],
+    "udp_received_payload_bytes": [
+      "udp",
+      "bytes",
+      [
+        "byte total of user content returned by datagram reads within the recorded receiver read budget",
+        "sum of recvfrom payload lengths without protocol headers within the recorded receiver read budget",
+        "observed value for byte total of user content returned by datagram reads within the recorded receiver read budget",
+        "recorded value for sum of recvfrom payload lengths without protocol headers within the recorded receiver read budget"
+      ],
+      [
+        "total de bytes do conteúdo retornado pelas leituras de datagramas dentro do limite de leitura registrado do receptor",
+        "soma dos comprimentos retornados por recvfrom sem cabeçalhos de protocolo dentro do limite de leitura registrado do receptor",
+        "valor observado de total de bytes do conteúdo retornado pelas leituras de datagramas dentro do limite de leitura registrado do receptor",
+        "valor registrado de soma dos comprimentos retornados por recvfrom sem cabeçalhos de protocolo dentro do limite de leitura registrado do receptor"
+      ],
+      [
+        "UDP read payload sizes accumulated in bytes within the recorded receiver read budget",
+        "Receiver content byte count excluding UDP and IP framing within the recorded receiver read budget",
+        "Observation: UDP read payload sizes accumulated in bytes within the recorded receiver read budget",
+        "Measurement: Receiver content byte count excluding UDP and IP framing within the recorded receiver read budget"
+      ]
+    ],
+    "git_index_files": [
+      "git",
+      "paths",
+      [
+        "number of paths currently stored in the Git index, including missing disk files",
+        "count of cached Git names rather than a filesystem listing",
+        "observed value for number of paths currently stored in the Git index, including missing disk files",
+        "recorded value for count of cached Git names rather than a filesystem listing"
+      ],
+      [
+        "número de caminhos atualmente no índice Git incluindo arquivos ausentes no disco",
+        "contagem de nomes no cache do Git em vez de uma listagem do disco",
+        "valor observado de número de caminhos atualmente no índice Git incluindo arquivos ausentes no disco",
+        "valor registrado de contagem de nomes no cache do Git em vez de uma listagem do disco"
+      ],
+      [
+        "Current index names counted from the cached-path listing",
+        "Git index membership total even when an indexed file is absent locally",
+        "Observation: Current index names counted from the cached-path listing",
+        "Measurement: Git index membership total even when an indexed file is absent locally"
+      ]
+    ],
+    "git_untracked_files": [
+      "git",
+      "paths",
+      [
+        "number of nonignored disk paths not entered in the Git index",
+        "count of unversioned files left after applying Git ignore rules",
+        "observed value for number of nonignored disk paths not entered in the Git index",
+        "recorded value for count of unversioned files left after applying Git ignore rules"
+      ],
+      [
+        "número de caminhos no disco não ignorados e ausentes do índice Git",
+        "contagem de arquivos não versionados após aplicar as regras de ignore do Git",
+        "valor observado de número de caminhos no disco não ignorados e ausentes do índice Git",
+        "valor registrado de contagem de arquivos não versionados após aplicar as regras de ignore do Git"
+      ],
+      [
+        "Paths outside index membership and outside ignore matches",
+        "Untracked file entries retained by the exclude-standard filter",
+        "Observation: Paths outside index membership and outside ignore matches",
+        "Measurement: Untracked file entries retained by the exclude-standard filter"
+      ]
+    ],
+    "git_ignored_files": [
+      "git",
+      "paths",
+      [
+        "number of unindexed files hidden by Git ignore matches",
+        "count of locally present untracked paths excluded by repository ignore rules",
+        "observed value for number of unindexed files hidden by Git ignore matches",
+        "recorded value for count of locally present untracked paths excluded by repository ignore rules"
+      ],
+      [
+        "número de arquivos fora do índice ocultados pelas regras de ignore do Git",
+        "contagem de caminhos locais não rastreados excluídos pelas regras do repositório",
+        "valor observado de número de arquivos fora do índice ocultados pelas regras de ignore do Git",
+        "valor registrado de contagem de caminhos locais não rastreados excluídos pelas regras do repositório"
+      ],
+      [
+        "Ignored untracked entries from the exclude-standard ignored listing",
+        "Local files outside the index selected by ignore patterns",
+        "Observation: Ignored untracked entries from the exclude-standard ignored listing",
+        "Measurement: Local files outside the index selected by ignore patterns"
+      ]
+    ],
+    "git_index_edits": [
+      "git",
+      "paths",
+      [
+        "number of paths changed in the index relative to HEAD, staged removals included",
+        "count of distinct paths with a non-space X flag in Git status",
+        "observed value for number of paths changed in the index relative to HEAD, staged removals included",
+        "recorded value for count of distinct paths with a non-space X flag in Git status"
+      ],
+      [
+        "número de caminhos alterados no índice em relação ao HEAD incluindo exclusões preparadas",
+        "contagem de caminhos distintos com marca X não vazia no status Git",
+        "valor observado de número de caminhos alterados no índice em relação ao HEAD incluindo exclusões preparadas",
+        "valor registrado de contagem de caminhos distintos com marca X não vazia no status Git"
+      ],
+      [
+        "HEAD-to-index path differences counted once including additions and deletions",
+        "Staged status-column entries tallied without requiring present index membership",
+        "Observation: HEAD-to-index path differences counted once including additions and deletions",
+        "Measurement: Staged status-column entries tallied without requiring present index membership"
+      ]
+    ],
+    "git_worktree_edits": [
+      "git",
+      "paths",
+      [
+        "number of tracked paths locally changed relative to the Git index",
+        "count of distinct paths with a non-space Y flag, local deletions included",
+        "observed value for number of tracked paths locally changed relative to the Git index",
+        "recorded value for count of distinct paths with a non-space Y flag, local deletions included"
+      ],
+      [
+        "número de caminhos rastreados alterados localmente em relação ao índice Git",
+        "contagem de caminhos distintos com marca Y não vazia incluindo exclusões locais",
+        "valor observado de número de caminhos rastreados alterados localmente em relação ao índice Git",
+        "valor registrado de contagem de caminhos distintos com marca Y não vazia incluindo exclusões locais"
+      ],
+      [
+        "Index-to-disk changes represented by worktree status flags",
+        "Unstaged modified or removed paths counted once per status entry",
+        "Observation: Index-to-disk changes represented by worktree status flags",
+        "Measurement: Unstaged modified or removed paths counted once per status entry"
+      ]
+    ],
+    "git_clean_tracked_files": [
+      "git",
+      "paths",
+      [
+        "number of index paths lacking both staged and local changes",
+        "count of tracked names omitted from the changed-status path set",
+        "observed value for number of index paths lacking both staged and local changes",
+        "recorded value for count of tracked names omitted from the changed-status path set"
+      ],
+      [
+        "número de caminhos no índice sem alterações preparadas nem locais",
+        "contagem de nomes rastreados ausentes do conjunto de caminhos alterados no status",
+        "valor observado de número de caminhos no índice sem alterações preparadas nem locais",
+        "valor registrado de contagem de nomes rastreados ausentes do conjunto de caminhos alterados no status"
+      ],
+      [
+        "Indexed names with no X or Y change recorded",
+        "Clean index members after subtracting changed tracked paths",
+        "Observation: Indexed names with no X or Y change recorded",
+        "Measurement: Clean index members after subtracting changed tracked paths"
+      ]
+    ],
+    "git_tracked_fs_bytes": [
+      "git",
+      "bytes",
+      [
+        "byte sum of existing on-disk files whose names are in the current Git index",
+        "current indexed file content volume with absent files excluded",
+        "observed value for byte sum of existing on-disk files whose names are in the current Git index",
+        "recorded value for current indexed file content volume with absent files excluded"
+      ],
+      [
+        "soma de bytes dos arquivos existentes no disco com nomes no índice Git atual",
+        "volume atual de conteúdo dos arquivos indexados excluindo os ausentes",
+        "valor observado de soma de bytes dos arquivos existentes no disco com nomes no índice Git atual",
+        "valor registrado de volume atual de conteúdo dos arquivos indexados excluindo os ausentes"
+      ],
+      [
+        "Filesystem lengths of present indexed files accumulated in bytes",
+        "Local byte total for tracked content that still exists",
+        "Observation: Filesystem lengths of present indexed files accumulated in bytes",
+        "Measurement: Local byte total for tracked content that still exists"
+      ]
+    ],
+    "git_untracked_fs_bytes": [
+      "git",
+      "bytes",
+      [
+        "byte sum of nonignored on-disk files absent from the Git index",
+        "local unversioned content volume after removing ignored paths",
+        "observed value for byte sum of nonignored on-disk files absent from the Git index",
+        "recorded value for local unversioned content volume after removing ignored paths"
+      ],
+      [
+        "soma de bytes dos arquivos não ignorados no disco e ausentes do índice Git",
+        "volume de conteúdo local não versionado após excluir caminhos ignorados",
+        "valor observado de soma de bytes dos arquivos não ignorados no disco e ausentes do índice Git",
+        "valor registrado de volume de conteúdo local não versionado após excluir caminhos ignorados"
+      ],
+      [
+        "Filesystem lengths of untracked nonignored files accumulated in bytes",
+        "Local byte total outside index membership and ignore matches",
+        "Observation: Filesystem lengths of untracked nonignored files accumulated in bytes",
+        "Measurement: Local byte total outside index membership and ignore matches"
+      ]
+    ]
+  },
+  "portuguese_report_captions": {
+    "retry_attempts": [
+      "Tentativas executadas contadas desde a invocação inicial",
+      "Execuções do Retrying registradas até retorno ou esgotamento",
+      "Observação: Tentativas executadas contadas desde a invocação inicial",
+      "Medição: Execuções do Retrying registradas até retorno ou esgotamento"
+    ],
+    "retry_failures": [
+      "Tentativas da operação cujo resultado registrado foi uma exceção",
+      "Falhas contadas antes do término da invocação do Retrying",
+      "Observação: Tentativas da operação cujo resultado registrado foi uma exceção",
+      "Medição: Falhas contadas antes do término da invocação do Retrying"
+    ],
+    "retry_sleep_calls": [
+      "Callbacks da função de espera executados e contados como eventos",
+      "Invocações de espera registradas entre tentativas da operação",
+      "Observação: Callbacks da função de espera executados e contados como eventos",
+      "Medição: Invocações de espera registradas entre tentativas da operação"
+    ],
+    "retry_scheduled_sleep_ns": [
+      "Atrasos solicitados por wait_fixed somados em nanossegundos",
+      "Tempo de espera programado do retry expresso em nanossegundos",
+      "Observação: Atrasos solicitados por wait_fixed somados em nanossegundos",
+      "Medição: Tempo de espera programado do retry expresso em nanossegundos"
+    ],
+    "retry_actual_sleep_ns": [
+      "Intervalos monotônicos entre entrada e saída da espera somados em nanossegundos",
+      "Nanossegundos transcorridos dentro dos callbacks responsáveis pela espera",
+      "Observação: Intervalos monotônicos entre entrada e saída da espera somados em nanossegundos",
+      "Medição: Nanossegundos transcorridos dentro dos callbacks responsáveis pela espera"
+    ],
+    "retry_elapsed_ns": [
+      "Nanossegundos da entrada no Retrying até retorno ou esgotamento",
+      "Intervalo de execução total do retry incluindo operações e esperas",
+      "Observação: Nanossegundos da entrada no Retrying até retorno ou esgotamento",
+      "Medição: Intervalo de execução total do retry incluindo operações e esperas"
+    ],
+    "udp_sent_datagrams": [
+      "Chamadas de envio UDP bem-sucedidas contadas por mensagem",
+      "Eventos de transmissão de datagramas contando conteúdo vazio como um",
+      "Observação: Chamadas de envio UDP bem-sucedidas contadas por mensagem",
+      "Medição: Eventos de transmissão de datagramas contando conteúdo vazio como um"
+    ],
+    "udp_received_datagrams": [
+      "Chamadas concluídas no receptor contadas como eventos de datagrama dentro do limite de leitura registrado do receptor",
+      "Leituras observadas de mensagens UDP incluindo conteúdos de tamanho zero dentro do limite de leitura registrado do receptor",
+      "Observação: Chamadas concluídas no receptor contadas como eventos de datagrama dentro do limite de leitura registrado do receptor",
+      "Medição: Leituras observadas de mensagens UDP incluindo conteúdos de tamanho zero dentro do limite de leitura registrado do receptor"
+    ],
+    "udp_sent_payload_bytes": [
+      "Tamanhos dos conteúdos enviados por UDP acumulados em bytes",
+      "Contagem de bytes do conteúdo de saída sem estruturas UDP e IP",
+      "Observação: Tamanhos dos conteúdos enviados por UDP acumulados em bytes",
+      "Medição: Contagem de bytes do conteúdo de saída sem estruturas UDP e IP"
+    ],
+    "udp_received_payload_bytes": [
+      "Tamanhos dos conteúdos lidos por UDP acumulados em bytes dentro do limite de leitura registrado do receptor",
+      "Contagem de bytes do conteúdo no receptor sem estruturas UDP e IP dentro do limite de leitura registrado do receptor",
+      "Observação: Tamanhos dos conteúdos lidos por UDP acumulados em bytes dentro do limite de leitura registrado do receptor",
+      "Medição: Contagem de bytes do conteúdo no receptor sem estruturas UDP e IP dentro do limite de leitura registrado do receptor"
+    ],
+    "git_index_files": [
+      "Nomes atuais no índice contados na listagem de caminhos em cache",
+      "Total de entradas do índice Git mesmo quando um arquivo indexado falta localmente",
+      "Observação: Nomes atuais no índice contados na listagem de caminhos em cache",
+      "Medição: Total de entradas do índice Git mesmo quando um arquivo indexado falta localmente"
+    ],
+    "git_untracked_files": [
+      "Caminhos fora do índice e fora das correspondências de ignore",
+      "Entradas não rastreadas mantidas pelo filtro exclude-standard",
+      "Observação: Caminhos fora do índice e fora das correspondências de ignore",
+      "Medição: Entradas não rastreadas mantidas pelo filtro exclude-standard"
+    ],
+    "git_ignored_files": [
+      "Entradas não rastreadas ignoradas na listagem exclude-standard ignored",
+      "Arquivos locais fora do índice selecionados pelos padrões de ignore",
+      "Observação: Entradas não rastreadas ignoradas na listagem exclude-standard ignored",
+      "Medição: Arquivos locais fora do índice selecionados pelos padrões de ignore"
+    ],
+    "git_index_edits": [
+      "Diferenças por caminho entre HEAD e índice contadas uma vez incluindo adições e exclusões",
+      "Entradas da coluna preparada contadas mesmo sem presença atual no índice",
+      "Observação: Diferenças por caminho entre HEAD e índice contadas uma vez incluindo adições e exclusões",
+      "Medição: Entradas da coluna preparada contadas mesmo sem presença atual no índice"
+    ],
+    "git_worktree_edits": [
+      "Alterações entre índice e disco representadas por marcas do diretório de trabalho",
+      "Caminhos modificados ou removidos sem preparação contados uma vez por entrada",
+      "Observação: Alterações entre índice e disco representadas por marcas do diretório de trabalho",
+      "Medição: Caminhos modificados ou removidos sem preparação contados uma vez por entrada"
+    ],
+    "git_clean_tracked_files": [
+      "Nomes indexados sem alteração X ou Y registrada",
+      "Entradas limpas do índice após excluir caminhos rastreados alterados",
+      "Observação: Nomes indexados sem alteração X ou Y registrada",
+      "Medição: Entradas limpas do índice após excluir caminhos rastreados alterados"
+    ],
+    "git_tracked_fs_bytes": [
+      "Comprimentos no disco dos arquivos indexados presentes acumulados em bytes",
+      "Total de bytes locais dos conteúdos rastreados ainda existentes",
+      "Observação: Comprimentos no disco dos arquivos indexados presentes acumulados em bytes",
+      "Medição: Total de bytes locais dos conteúdos rastreados ainda existentes"
+    ],
+    "git_untracked_fs_bytes": [
+      "Comprimentos no disco dos arquivos não rastreados e não ignorados acumulados em bytes",
+      "Total de bytes locais fora do índice e das correspondências de ignore",
+      "Observação: Comprimentos no disco dos arquivos não rastreados e não ignorados acumulados em bytes",
+      "Medição: Total de bytes locais fora do índice e das correspondências de ignore"
+    ]
+  },
+  "pairs": {
+    "seen_control:git_clean_tracked_files:git_ignored_files": [
+      "git_clean_tracked_files",
+      "git_ignored_files"
+    ],
+    "seen_control:git_clean_tracked_files:git_index_edits": [
+      "git_clean_tracked_files",
+      "git_index_edits"
+    ],
+    "seen_control:git_clean_tracked_files:git_index_files": [
+      "git_clean_tracked_files",
+      "git_index_files"
+    ],
+    "seen_control:git_clean_tracked_files:git_tracked_fs_bytes": [
+      "git_clean_tracked_files",
+      "git_tracked_fs_bytes"
+    ],
+    "seen_control:git_clean_tracked_files:git_untracked_files": [
+      "git_clean_tracked_files",
+      "git_untracked_files"
+    ],
+    "seen_control:git_clean_tracked_files:git_untracked_fs_bytes": [
+      "git_clean_tracked_files",
+      "git_untracked_fs_bytes"
+    ],
+    "seen_control:git_clean_tracked_files:git_worktree_edits": [
+      "git_clean_tracked_files",
+      "git_worktree_edits"
+    ],
+    "primary:git_clean_tracked_files:retry_actual_sleep_ns": [
+      "git_clean_tracked_files",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_clean_tracked_files:retry_attempts": [
+      "git_clean_tracked_files",
+      "retry_attempts"
+    ],
+    "primary:git_clean_tracked_files:retry_elapsed_ns": [
+      "git_clean_tracked_files",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_clean_tracked_files:retry_failures": [
+      "git_clean_tracked_files",
+      "retry_failures"
+    ],
+    "primary:git_clean_tracked_files:retry_scheduled_sleep_ns": [
+      "git_clean_tracked_files",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_clean_tracked_files:retry_sleep_calls": [
+      "git_clean_tracked_files",
+      "retry_sleep_calls"
+    ],
+    "primary:git_clean_tracked_files:udp_received_datagrams": [
+      "git_clean_tracked_files",
+      "udp_received_datagrams"
+    ],
+    "primary:git_clean_tracked_files:udp_received_payload_bytes": [
+      "git_clean_tracked_files",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_clean_tracked_files:udp_sent_datagrams": [
+      "git_clean_tracked_files",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_clean_tracked_files:udp_sent_payload_bytes": [
+      "git_clean_tracked_files",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:git_ignored_files:git_index_edits": [
+      "git_ignored_files",
+      "git_index_edits"
+    ],
+    "seen_control:git_ignored_files:git_index_files": [
+      "git_ignored_files",
+      "git_index_files"
+    ],
+    "seen_control:git_ignored_files:git_tracked_fs_bytes": [
+      "git_ignored_files",
+      "git_tracked_fs_bytes"
+    ],
+    "seen_control:git_ignored_files:git_untracked_files": [
+      "git_ignored_files",
+      "git_untracked_files"
+    ],
+    "seen_control:git_ignored_files:git_untracked_fs_bytes": [
+      "git_ignored_files",
+      "git_untracked_fs_bytes"
+    ],
+    "seen_control:git_ignored_files:git_worktree_edits": [
+      "git_ignored_files",
+      "git_worktree_edits"
+    ],
+    "primary:git_ignored_files:retry_actual_sleep_ns": [
+      "git_ignored_files",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_ignored_files:retry_attempts": [
+      "git_ignored_files",
+      "retry_attempts"
+    ],
+    "primary:git_ignored_files:retry_elapsed_ns": [
+      "git_ignored_files",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_ignored_files:retry_failures": [
+      "git_ignored_files",
+      "retry_failures"
+    ],
+    "primary:git_ignored_files:retry_scheduled_sleep_ns": [
+      "git_ignored_files",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_ignored_files:retry_sleep_calls": [
+      "git_ignored_files",
+      "retry_sleep_calls"
+    ],
+    "primary:git_ignored_files:udp_received_datagrams": [
+      "git_ignored_files",
+      "udp_received_datagrams"
+    ],
+    "primary:git_ignored_files:udp_received_payload_bytes": [
+      "git_ignored_files",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_ignored_files:udp_sent_datagrams": [
+      "git_ignored_files",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_ignored_files:udp_sent_payload_bytes": [
+      "git_ignored_files",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:git_index_edits:git_index_files": [
+      "git_index_edits",
+      "git_index_files"
+    ],
+    "seen_control:git_index_edits:git_tracked_fs_bytes": [
+      "git_index_edits",
+      "git_tracked_fs_bytes"
+    ],
+    "seen_control:git_index_edits:git_untracked_files": [
+      "git_index_edits",
+      "git_untracked_files"
+    ],
+    "seen_control:git_index_edits:git_untracked_fs_bytes": [
+      "git_index_edits",
+      "git_untracked_fs_bytes"
+    ],
+    "seen_control:git_index_edits:git_worktree_edits": [
+      "git_index_edits",
+      "git_worktree_edits"
+    ],
+    "primary:git_index_edits:retry_actual_sleep_ns": [
+      "git_index_edits",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_index_edits:retry_attempts": [
+      "git_index_edits",
+      "retry_attempts"
+    ],
+    "primary:git_index_edits:retry_elapsed_ns": [
+      "git_index_edits",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_index_edits:retry_failures": [
+      "git_index_edits",
+      "retry_failures"
+    ],
+    "primary:git_index_edits:retry_scheduled_sleep_ns": [
+      "git_index_edits",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_index_edits:retry_sleep_calls": [
+      "git_index_edits",
+      "retry_sleep_calls"
+    ],
+    "primary:git_index_edits:udp_received_datagrams": [
+      "git_index_edits",
+      "udp_received_datagrams"
+    ],
+    "primary:git_index_edits:udp_received_payload_bytes": [
+      "git_index_edits",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_index_edits:udp_sent_datagrams": [
+      "git_index_edits",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_index_edits:udp_sent_payload_bytes": [
+      "git_index_edits",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:git_index_files:git_tracked_fs_bytes": [
+      "git_index_files",
+      "git_tracked_fs_bytes"
+    ],
+    "seen_control:git_index_files:git_untracked_files": [
+      "git_index_files",
+      "git_untracked_files"
+    ],
+    "seen_control:git_index_files:git_untracked_fs_bytes": [
+      "git_index_files",
+      "git_untracked_fs_bytes"
+    ],
+    "seen_control:git_index_files:git_worktree_edits": [
+      "git_index_files",
+      "git_worktree_edits"
+    ],
+    "primary:git_index_files:retry_actual_sleep_ns": [
+      "git_index_files",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_index_files:retry_attempts": [
+      "git_index_files",
+      "retry_attempts"
+    ],
+    "primary:git_index_files:retry_elapsed_ns": [
+      "git_index_files",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_index_files:retry_failures": [
+      "git_index_files",
+      "retry_failures"
+    ],
+    "primary:git_index_files:retry_scheduled_sleep_ns": [
+      "git_index_files",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_index_files:retry_sleep_calls": [
+      "git_index_files",
+      "retry_sleep_calls"
+    ],
+    "seen_control:git_index_files:udp_received_datagrams": [
+      "git_index_files",
+      "udp_received_datagrams"
+    ],
+    "primary:git_index_files:udp_received_payload_bytes": [
+      "git_index_files",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_index_files:udp_sent_datagrams": [
+      "git_index_files",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_index_files:udp_sent_payload_bytes": [
+      "git_index_files",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:git_tracked_fs_bytes:git_untracked_files": [
+      "git_tracked_fs_bytes",
+      "git_untracked_files"
+    ],
+    "seen_control:git_tracked_fs_bytes:git_untracked_fs_bytes": [
+      "git_tracked_fs_bytes",
+      "git_untracked_fs_bytes"
+    ],
+    "seen_control:git_tracked_fs_bytes:git_worktree_edits": [
+      "git_tracked_fs_bytes",
+      "git_worktree_edits"
+    ],
+    "primary:git_tracked_fs_bytes:retry_actual_sleep_ns": [
+      "git_tracked_fs_bytes",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_tracked_fs_bytes:retry_attempts": [
+      "git_tracked_fs_bytes",
+      "retry_attempts"
+    ],
+    "primary:git_tracked_fs_bytes:retry_elapsed_ns": [
+      "git_tracked_fs_bytes",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_tracked_fs_bytes:retry_failures": [
+      "git_tracked_fs_bytes",
+      "retry_failures"
+    ],
+    "primary:git_tracked_fs_bytes:retry_scheduled_sleep_ns": [
+      "git_tracked_fs_bytes",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_tracked_fs_bytes:retry_sleep_calls": [
+      "git_tracked_fs_bytes",
+      "retry_sleep_calls"
+    ],
+    "primary:git_tracked_fs_bytes:udp_received_datagrams": [
+      "git_tracked_fs_bytes",
+      "udp_received_datagrams"
+    ],
+    "primary:git_tracked_fs_bytes:udp_received_payload_bytes": [
+      "git_tracked_fs_bytes",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_tracked_fs_bytes:udp_sent_datagrams": [
+      "git_tracked_fs_bytes",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_tracked_fs_bytes:udp_sent_payload_bytes": [
+      "git_tracked_fs_bytes",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:git_untracked_files:git_untracked_fs_bytes": [
+      "git_untracked_files",
+      "git_untracked_fs_bytes"
+    ],
+    "seen_control:git_untracked_files:git_worktree_edits": [
+      "git_untracked_files",
+      "git_worktree_edits"
+    ],
+    "primary:git_untracked_files:retry_actual_sleep_ns": [
+      "git_untracked_files",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_untracked_files:retry_attempts": [
+      "git_untracked_files",
+      "retry_attempts"
+    ],
+    "primary:git_untracked_files:retry_elapsed_ns": [
+      "git_untracked_files",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_untracked_files:retry_failures": [
+      "git_untracked_files",
+      "retry_failures"
+    ],
+    "primary:git_untracked_files:retry_scheduled_sleep_ns": [
+      "git_untracked_files",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_untracked_files:retry_sleep_calls": [
+      "git_untracked_files",
+      "retry_sleep_calls"
+    ],
+    "primary:git_untracked_files:udp_received_datagrams": [
+      "git_untracked_files",
+      "udp_received_datagrams"
+    ],
+    "primary:git_untracked_files:udp_received_payload_bytes": [
+      "git_untracked_files",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_untracked_files:udp_sent_datagrams": [
+      "git_untracked_files",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_untracked_files:udp_sent_payload_bytes": [
+      "git_untracked_files",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:git_untracked_fs_bytes:git_worktree_edits": [
+      "git_untracked_fs_bytes",
+      "git_worktree_edits"
+    ],
+    "primary:git_untracked_fs_bytes:retry_actual_sleep_ns": [
+      "git_untracked_fs_bytes",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_untracked_fs_bytes:retry_attempts": [
+      "git_untracked_fs_bytes",
+      "retry_attempts"
+    ],
+    "primary:git_untracked_fs_bytes:retry_elapsed_ns": [
+      "git_untracked_fs_bytes",
+      "retry_elapsed_ns"
+    ],
+    "primary:git_untracked_fs_bytes:retry_failures": [
+      "git_untracked_fs_bytes",
+      "retry_failures"
+    ],
+    "primary:git_untracked_fs_bytes:retry_scheduled_sleep_ns": [
+      "git_untracked_fs_bytes",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_untracked_fs_bytes:retry_sleep_calls": [
+      "git_untracked_fs_bytes",
+      "retry_sleep_calls"
+    ],
+    "primary:git_untracked_fs_bytes:udp_received_datagrams": [
+      "git_untracked_fs_bytes",
+      "udp_received_datagrams"
+    ],
+    "primary:git_untracked_fs_bytes:udp_received_payload_bytes": [
+      "git_untracked_fs_bytes",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_untracked_fs_bytes:udp_sent_datagrams": [
+      "git_untracked_fs_bytes",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_untracked_fs_bytes:udp_sent_payload_bytes": [
+      "git_untracked_fs_bytes",
+      "udp_sent_payload_bytes"
+    ],
+    "primary:git_worktree_edits:retry_actual_sleep_ns": [
+      "git_worktree_edits",
+      "retry_actual_sleep_ns"
+    ],
+    "primary:git_worktree_edits:retry_attempts": [
+      "git_worktree_edits",
+      "retry_attempts"
+    ],
+    "primary:git_worktree_edits:retry_elapsed_ns": [
+      "git_worktree_edits",
+      "retry_elapsed_ns"
+    ],
+    "seen_control:git_worktree_edits:retry_failures": [
+      "git_worktree_edits",
+      "retry_failures"
+    ],
+    "primary:git_worktree_edits:retry_scheduled_sleep_ns": [
+      "git_worktree_edits",
+      "retry_scheduled_sleep_ns"
+    ],
+    "primary:git_worktree_edits:retry_sleep_calls": [
+      "git_worktree_edits",
+      "retry_sleep_calls"
+    ],
+    "primary:git_worktree_edits:udp_received_datagrams": [
+      "git_worktree_edits",
+      "udp_received_datagrams"
+    ],
+    "primary:git_worktree_edits:udp_received_payload_bytes": [
+      "git_worktree_edits",
+      "udp_received_payload_bytes"
+    ],
+    "primary:git_worktree_edits:udp_sent_datagrams": [
+      "git_worktree_edits",
+      "udp_sent_datagrams"
+    ],
+    "primary:git_worktree_edits:udp_sent_payload_bytes": [
+      "git_worktree_edits",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:retry_actual_sleep_ns:retry_attempts": [
+      "retry_actual_sleep_ns",
+      "retry_attempts"
+    ],
+    "seen_control:retry_actual_sleep_ns:retry_elapsed_ns": [
+      "retry_actual_sleep_ns",
+      "retry_elapsed_ns"
+    ],
+    "seen_control:retry_actual_sleep_ns:retry_failures": [
+      "retry_actual_sleep_ns",
+      "retry_failures"
+    ],
+    "seen_control:retry_actual_sleep_ns:retry_scheduled_sleep_ns": [
+      "retry_actual_sleep_ns",
+      "retry_scheduled_sleep_ns"
+    ],
+    "seen_control:retry_actual_sleep_ns:retry_sleep_calls": [
+      "retry_actual_sleep_ns",
+      "retry_sleep_calls"
+    ],
+    "primary:retry_actual_sleep_ns:udp_received_datagrams": [
+      "retry_actual_sleep_ns",
+      "udp_received_datagrams"
+    ],
+    "primary:retry_actual_sleep_ns:udp_received_payload_bytes": [
+      "retry_actual_sleep_ns",
+      "udp_received_payload_bytes"
+    ],
+    "primary:retry_actual_sleep_ns:udp_sent_datagrams": [
+      "retry_actual_sleep_ns",
+      "udp_sent_datagrams"
+    ],
+    "primary:retry_actual_sleep_ns:udp_sent_payload_bytes": [
+      "retry_actual_sleep_ns",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:retry_attempts:retry_elapsed_ns": [
+      "retry_attempts",
+      "retry_elapsed_ns"
+    ],
+    "seen_control:retry_attempts:retry_failures": [
+      "retry_attempts",
+      "retry_failures"
+    ],
+    "seen_control:retry_attempts:retry_scheduled_sleep_ns": [
+      "retry_attempts",
+      "retry_scheduled_sleep_ns"
+    ],
+    "seen_control:retry_attempts:retry_sleep_calls": [
+      "retry_attempts",
+      "retry_sleep_calls"
+    ],
+    "primary:retry_attempts:udp_received_datagrams": [
+      "retry_attempts",
+      "udp_received_datagrams"
+    ],
+    "primary:retry_attempts:udp_received_payload_bytes": [
+      "retry_attempts",
+      "udp_received_payload_bytes"
+    ],
+    "seen_control:retry_attempts:udp_sent_datagrams": [
+      "retry_attempts",
+      "udp_sent_datagrams"
+    ],
+    "primary:retry_attempts:udp_sent_payload_bytes": [
+      "retry_attempts",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:retry_elapsed_ns:retry_failures": [
+      "retry_elapsed_ns",
+      "retry_failures"
+    ],
+    "seen_control:retry_elapsed_ns:retry_scheduled_sleep_ns": [
+      "retry_elapsed_ns",
+      "retry_scheduled_sleep_ns"
+    ],
+    "seen_control:retry_elapsed_ns:retry_sleep_calls": [
+      "retry_elapsed_ns",
+      "retry_sleep_calls"
+    ],
+    "primary:retry_elapsed_ns:udp_received_datagrams": [
+      "retry_elapsed_ns",
+      "udp_received_datagrams"
+    ],
+    "primary:retry_elapsed_ns:udp_received_payload_bytes": [
+      "retry_elapsed_ns",
+      "udp_received_payload_bytes"
+    ],
+    "primary:retry_elapsed_ns:udp_sent_datagrams": [
+      "retry_elapsed_ns",
+      "udp_sent_datagrams"
+    ],
+    "primary:retry_elapsed_ns:udp_sent_payload_bytes": [
+      "retry_elapsed_ns",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:retry_failures:retry_scheduled_sleep_ns": [
+      "retry_failures",
+      "retry_scheduled_sleep_ns"
+    ],
+    "seen_control:retry_failures:retry_sleep_calls": [
+      "retry_failures",
+      "retry_sleep_calls"
+    ],
+    "primary:retry_failures:udp_received_datagrams": [
+      "retry_failures",
+      "udp_received_datagrams"
+    ],
+    "primary:retry_failures:udp_received_payload_bytes": [
+      "retry_failures",
+      "udp_received_payload_bytes"
+    ],
+    "primary:retry_failures:udp_sent_datagrams": [
+      "retry_failures",
+      "udp_sent_datagrams"
+    ],
+    "primary:retry_failures:udp_sent_payload_bytes": [
+      "retry_failures",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:retry_scheduled_sleep_ns:retry_sleep_calls": [
+      "retry_scheduled_sleep_ns",
+      "retry_sleep_calls"
+    ],
+    "primary:retry_scheduled_sleep_ns:udp_received_datagrams": [
+      "retry_scheduled_sleep_ns",
+      "udp_received_datagrams"
+    ],
+    "primary:retry_scheduled_sleep_ns:udp_received_payload_bytes": [
+      "retry_scheduled_sleep_ns",
+      "udp_received_payload_bytes"
+    ],
+    "primary:retry_scheduled_sleep_ns:udp_sent_datagrams": [
+      "retry_scheduled_sleep_ns",
+      "udp_sent_datagrams"
+    ],
+    "primary:retry_scheduled_sleep_ns:udp_sent_payload_bytes": [
+      "retry_scheduled_sleep_ns",
+      "udp_sent_payload_bytes"
+    ],
+    "primary:retry_sleep_calls:udp_received_datagrams": [
+      "retry_sleep_calls",
+      "udp_received_datagrams"
+    ],
+    "primary:retry_sleep_calls:udp_received_payload_bytes": [
+      "retry_sleep_calls",
+      "udp_received_payload_bytes"
+    ],
+    "primary:retry_sleep_calls:udp_sent_datagrams": [
+      "retry_sleep_calls",
+      "udp_sent_datagrams"
+    ],
+    "primary:retry_sleep_calls:udp_sent_payload_bytes": [
+      "retry_sleep_calls",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:udp_received_datagrams:udp_received_payload_bytes": [
+      "udp_received_datagrams",
+      "udp_received_payload_bytes"
+    ],
+    "seen_control:udp_received_datagrams:udp_sent_datagrams": [
+      "udp_received_datagrams",
+      "udp_sent_datagrams"
+    ],
+    "seen_control:udp_received_datagrams:udp_sent_payload_bytes": [
+      "udp_received_datagrams",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:udp_received_payload_bytes:udp_sent_datagrams": [
+      "udp_received_payload_bytes",
+      "udp_sent_datagrams"
+    ],
+    "seen_control:udp_received_payload_bytes:udp_sent_payload_bytes": [
+      "udp_received_payload_bytes",
+      "udp_sent_payload_bytes"
+    ],
+    "seen_control:udp_sent_datagrams:udp_sent_payload_bytes": [
+      "udp_sent_datagrams",
+      "udp_sent_payload_bytes"
+    ]
+  },
+  "pair_classes": {
+    "seen_control:git_clean_tracked_files:git_ignored_files": "seen_pair_control",
+    "seen_control:git_clean_tracked_files:git_index_edits": "seen_pair_control",
+    "seen_control:git_clean_tracked_files:git_index_files": "seen_pair_control",
+    "seen_control:git_clean_tracked_files:git_tracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_clean_tracked_files:git_untracked_files": "seen_pair_control",
+    "seen_control:git_clean_tracked_files:git_untracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_clean_tracked_files:git_worktree_edits": "seen_pair_control",
+    "primary:git_clean_tracked_files:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_clean_tracked_files:retry_attempts": "unseen_pair",
+    "primary:git_clean_tracked_files:retry_elapsed_ns": "unseen_pair",
+    "primary:git_clean_tracked_files:retry_failures": "unseen_pair",
+    "primary:git_clean_tracked_files:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_clean_tracked_files:retry_sleep_calls": "unseen_pair",
+    "primary:git_clean_tracked_files:udp_received_datagrams": "unseen_pair",
+    "primary:git_clean_tracked_files:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_clean_tracked_files:udp_sent_datagrams": "unseen_pair",
+    "primary:git_clean_tracked_files:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:git_ignored_files:git_index_edits": "seen_pair_control",
+    "seen_control:git_ignored_files:git_index_files": "seen_pair_control",
+    "seen_control:git_ignored_files:git_tracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_ignored_files:git_untracked_files": "seen_pair_control",
+    "seen_control:git_ignored_files:git_untracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_ignored_files:git_worktree_edits": "seen_pair_control",
+    "primary:git_ignored_files:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_ignored_files:retry_attempts": "unseen_pair",
+    "primary:git_ignored_files:retry_elapsed_ns": "unseen_pair",
+    "primary:git_ignored_files:retry_failures": "unseen_pair",
+    "primary:git_ignored_files:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_ignored_files:retry_sleep_calls": "unseen_pair",
+    "primary:git_ignored_files:udp_received_datagrams": "unseen_pair",
+    "primary:git_ignored_files:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_ignored_files:udp_sent_datagrams": "unseen_pair",
+    "primary:git_ignored_files:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:git_index_edits:git_index_files": "seen_pair_control",
+    "seen_control:git_index_edits:git_tracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_index_edits:git_untracked_files": "seen_pair_control",
+    "seen_control:git_index_edits:git_untracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_index_edits:git_worktree_edits": "seen_pair_control",
+    "primary:git_index_edits:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_index_edits:retry_attempts": "unseen_pair",
+    "primary:git_index_edits:retry_elapsed_ns": "unseen_pair",
+    "primary:git_index_edits:retry_failures": "unseen_pair",
+    "primary:git_index_edits:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_index_edits:retry_sleep_calls": "unseen_pair",
+    "primary:git_index_edits:udp_received_datagrams": "unseen_pair",
+    "primary:git_index_edits:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_index_edits:udp_sent_datagrams": "unseen_pair",
+    "primary:git_index_edits:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:git_index_files:git_tracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_index_files:git_untracked_files": "seen_pair_control",
+    "seen_control:git_index_files:git_untracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_index_files:git_worktree_edits": "seen_pair_control",
+    "primary:git_index_files:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_index_files:retry_attempts": "unseen_pair",
+    "primary:git_index_files:retry_elapsed_ns": "unseen_pair",
+    "primary:git_index_files:retry_failures": "unseen_pair",
+    "primary:git_index_files:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_index_files:retry_sleep_calls": "unseen_pair",
+    "seen_control:git_index_files:udp_received_datagrams": "seen_pair_control",
+    "primary:git_index_files:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_index_files:udp_sent_datagrams": "unseen_pair",
+    "primary:git_index_files:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:git_tracked_fs_bytes:git_untracked_files": "seen_pair_control",
+    "seen_control:git_tracked_fs_bytes:git_untracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_tracked_fs_bytes:git_worktree_edits": "seen_pair_control",
+    "primary:git_tracked_fs_bytes:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_tracked_fs_bytes:retry_attempts": "unseen_pair",
+    "primary:git_tracked_fs_bytes:retry_elapsed_ns": "unseen_pair",
+    "primary:git_tracked_fs_bytes:retry_failures": "unseen_pair",
+    "primary:git_tracked_fs_bytes:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_tracked_fs_bytes:retry_sleep_calls": "unseen_pair",
+    "primary:git_tracked_fs_bytes:udp_received_datagrams": "unseen_pair",
+    "primary:git_tracked_fs_bytes:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_tracked_fs_bytes:udp_sent_datagrams": "unseen_pair",
+    "primary:git_tracked_fs_bytes:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:git_untracked_files:git_untracked_fs_bytes": "seen_pair_control",
+    "seen_control:git_untracked_files:git_worktree_edits": "seen_pair_control",
+    "primary:git_untracked_files:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_untracked_files:retry_attempts": "unseen_pair",
+    "primary:git_untracked_files:retry_elapsed_ns": "unseen_pair",
+    "primary:git_untracked_files:retry_failures": "unseen_pair",
+    "primary:git_untracked_files:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_untracked_files:retry_sleep_calls": "unseen_pair",
+    "primary:git_untracked_files:udp_received_datagrams": "unseen_pair",
+    "primary:git_untracked_files:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_untracked_files:udp_sent_datagrams": "unseen_pair",
+    "primary:git_untracked_files:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:git_untracked_fs_bytes:git_worktree_edits": "seen_pair_control",
+    "primary:git_untracked_fs_bytes:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_untracked_fs_bytes:retry_attempts": "unseen_pair",
+    "primary:git_untracked_fs_bytes:retry_elapsed_ns": "unseen_pair",
+    "primary:git_untracked_fs_bytes:retry_failures": "unseen_pair",
+    "primary:git_untracked_fs_bytes:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_untracked_fs_bytes:retry_sleep_calls": "unseen_pair",
+    "primary:git_untracked_fs_bytes:udp_received_datagrams": "unseen_pair",
+    "primary:git_untracked_fs_bytes:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_untracked_fs_bytes:udp_sent_datagrams": "unseen_pair",
+    "primary:git_untracked_fs_bytes:udp_sent_payload_bytes": "unseen_pair",
+    "primary:git_worktree_edits:retry_actual_sleep_ns": "unseen_pair",
+    "primary:git_worktree_edits:retry_attempts": "unseen_pair",
+    "primary:git_worktree_edits:retry_elapsed_ns": "unseen_pair",
+    "seen_control:git_worktree_edits:retry_failures": "seen_pair_control",
+    "primary:git_worktree_edits:retry_scheduled_sleep_ns": "unseen_pair",
+    "primary:git_worktree_edits:retry_sleep_calls": "unseen_pair",
+    "primary:git_worktree_edits:udp_received_datagrams": "unseen_pair",
+    "primary:git_worktree_edits:udp_received_payload_bytes": "unseen_pair",
+    "primary:git_worktree_edits:udp_sent_datagrams": "unseen_pair",
+    "primary:git_worktree_edits:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:retry_actual_sleep_ns:retry_attempts": "seen_pair_control",
+    "seen_control:retry_actual_sleep_ns:retry_elapsed_ns": "seen_pair_control",
+    "seen_control:retry_actual_sleep_ns:retry_failures": "seen_pair_control",
+    "seen_control:retry_actual_sleep_ns:retry_scheduled_sleep_ns": "seen_pair_control",
+    "seen_control:retry_actual_sleep_ns:retry_sleep_calls": "seen_pair_control",
+    "primary:retry_actual_sleep_ns:udp_received_datagrams": "unseen_pair",
+    "primary:retry_actual_sleep_ns:udp_received_payload_bytes": "unseen_pair",
+    "primary:retry_actual_sleep_ns:udp_sent_datagrams": "unseen_pair",
+    "primary:retry_actual_sleep_ns:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:retry_attempts:retry_elapsed_ns": "seen_pair_control",
+    "seen_control:retry_attempts:retry_failures": "seen_pair_control",
+    "seen_control:retry_attempts:retry_scheduled_sleep_ns": "seen_pair_control",
+    "seen_control:retry_attempts:retry_sleep_calls": "seen_pair_control",
+    "primary:retry_attempts:udp_received_datagrams": "unseen_pair",
+    "primary:retry_attempts:udp_received_payload_bytes": "unseen_pair",
+    "seen_control:retry_attempts:udp_sent_datagrams": "seen_pair_control",
+    "primary:retry_attempts:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:retry_elapsed_ns:retry_failures": "seen_pair_control",
+    "seen_control:retry_elapsed_ns:retry_scheduled_sleep_ns": "seen_pair_control",
+    "seen_control:retry_elapsed_ns:retry_sleep_calls": "seen_pair_control",
+    "primary:retry_elapsed_ns:udp_received_datagrams": "unseen_pair",
+    "primary:retry_elapsed_ns:udp_received_payload_bytes": "unseen_pair",
+    "primary:retry_elapsed_ns:udp_sent_datagrams": "unseen_pair",
+    "primary:retry_elapsed_ns:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:retry_failures:retry_scheduled_sleep_ns": "seen_pair_control",
+    "seen_control:retry_failures:retry_sleep_calls": "seen_pair_control",
+    "primary:retry_failures:udp_received_datagrams": "unseen_pair",
+    "primary:retry_failures:udp_received_payload_bytes": "unseen_pair",
+    "primary:retry_failures:udp_sent_datagrams": "unseen_pair",
+    "primary:retry_failures:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:retry_scheduled_sleep_ns:retry_sleep_calls": "seen_pair_control",
+    "primary:retry_scheduled_sleep_ns:udp_received_datagrams": "unseen_pair",
+    "primary:retry_scheduled_sleep_ns:udp_received_payload_bytes": "unseen_pair",
+    "primary:retry_scheduled_sleep_ns:udp_sent_datagrams": "unseen_pair",
+    "primary:retry_scheduled_sleep_ns:udp_sent_payload_bytes": "unseen_pair",
+    "primary:retry_sleep_calls:udp_received_datagrams": "unseen_pair",
+    "primary:retry_sleep_calls:udp_received_payload_bytes": "unseen_pair",
+    "primary:retry_sleep_calls:udp_sent_datagrams": "unseen_pair",
+    "primary:retry_sleep_calls:udp_sent_payload_bytes": "unseen_pair",
+    "seen_control:udp_received_datagrams:udp_received_payload_bytes": "seen_pair_control",
+    "seen_control:udp_received_datagrams:udp_sent_datagrams": "seen_pair_control",
+    "seen_control:udp_received_datagrams:udp_sent_payload_bytes": "seen_pair_control",
+    "seen_control:udp_received_payload_bytes:udp_sent_datagrams": "seen_pair_control",
+    "seen_control:udp_received_payload_bytes:udp_sent_payload_bytes": "seen_pair_control",
+    "seen_control:udp_sent_datagrams:udp_sent_payload_bytes": "seen_pair_control"
+  },
+  "query_frames": {
+    "final": {
+      "en": [
+        "Identify the log entry that records {}.",
+        "Retrieve the reported measurement for {}.",
+        "Which stored field names {}?",
+        "Point to the entry supplying {}."
+      ],
+      "pt": [
+        "Identifique a entrada que registra {}.",
+        "Recupere a medição informada de {}.",
+        "Qual campo armazenado indica {}?",
+        "Aponte a entrada que fornece {}."
+      ]
+    }
+  },
+  "semantic_UNKNOWN_frames": {
+    "final": {
+      "derived_or_multifield_goal": {
+        "en": [
+          "Calculate a quantity that is not explicitly present, using {}.",
+          "Combine {} with a missing field to obtain a new result."
+        ],
+        "pt": [
+          "Calcule uma grandeza não escrita no registro usando {}.",
+          "Combine {} com um campo ausente para obter um novo resultado."
+        ]
+      },
+      "diagnosis_goal": {
+        "en": [
+          "Establish the explanation behind the behavior using {}.",
+          "Account for the underlying problem from the measurement of {}."
+        ],
+        "pt": [
+          "Estabeleça a explicação do comportamento usando {}.",
+          "Explique o problema subjacente a partir da medição de {}."
+        ]
+      },
+      "broader_usefulness_goal": {
+        "en": [
+          "Decide which evidence the entire investigation needs using {}.",
+          "Select all context necessary to solve the wider task from {}."
+        ],
+        "pt": [
+          "Decida quais evidências toda a investigação exige usando {}.",
+          "Selecione todo o contexto necessário para resolver a tarefa ampla a partir de {}."
+        ]
+      }
+    }
+  },
+  "wording_assignments": {
+    "final": [
+      [
+        0,
+        3,
+        "pt"
+      ],
+      [
+        2,
+        3,
+        "en"
+      ],
+      [
+        1,
+        1,
+        "pt"
+      ],
+      [
+        0,
+        0,
+        "en"
+      ],
+      [
+        0,
+        3,
+        "en"
+      ],
+      [
+        2,
+        1,
+        "en"
+      ],
+      [
+        3,
+        2,
+        "en"
+      ],
+      [
+        0,
+        0,
+        "pt"
+      ],
+      [
+        2,
+        3,
+        "pt"
+      ],
+      [
+        3,
+        3,
+        "en"
+      ],
+      [
+        0,
+        2,
+        "en"
+      ],
+      [
+        0,
+        2,
+        "pt"
+      ],
+      [
+        3,
+        1,
+        "pt"
+      ],
+      [
+        0,
+        3,
+        "pt"
+      ],
+      [
+        2,
+        2,
+        "pt"
+      ],
+      [
+        2,
+        3,
+        "en"
+      ],
+      [
+        0,
+        0,
+        "pt"
+      ],
+      [
+        1,
+        3,
+        "pt"
+      ],
+      [
+        0,
+        1,
+        "pt"
+      ],
+      [
+        3,
+        2,
+        "en"
+      ],
+      [
+        1,
+        3,
+        "en"
+      ],
+      [
+        1,
+        1,
+        "pt"
+      ],
+      [
+        2,
+        2,
+        "en"
+      ],
+      [
+        2,
+        1,
+        "pt"
+      ],
+      [
+        1,
+        0,
+        "en"
+      ],
+      [
+        2,
+        2,
+        "en"
+      ],
+      [
+        0,
+        0,
+        "en"
+      ],
+      [
+        1,
+        3,
+        "en"
+      ],
+      [
+        3,
+        0,
+        "en"
+      ],
+      [
+        2,
+        0,
+        "en"
+      ],
+      [
+        1,
+        2,
+        "en"
+      ],
+      [
+        3,
+        3,
+        "pt"
+      ],
+      [
+        3,
+        0,
+        "pt"
+      ],
+      [
+        1,
+        0,
+        "pt"
+      ],
+      [
+        3,
+        2,
+        "pt"
+      ],
+      [
+        2,
+        1,
+        "en"
+      ],
+      [
+        2,
+        0,
+        "pt"
+      ],
+      [
+        3,
+        2,
+        "pt"
+      ],
+      [
+        0,
+        3,
+        "en"
+      ],
+      [
+        3,
+        1,
+        "en"
+      ],
+      [
+        2,
+        2,
+        "pt"
+      ],
+      [
+        1,
+        2,
+        "en"
+      ],
+      [
+        1,
+        0,
+        "pt"
+      ],
+      [
+        1,
+        2,
+        "pt"
+      ],
+      [
+        3,
+        0,
+        "pt"
+      ],
+      [
+        1,
+        2,
+        "pt"
+      ],
+      [
+        2,
+        0,
+        "en"
+      ],
+      [
+        0,
+        1,
+        "en"
+      ],
+      [
+        3,
+        3,
+        "pt"
+      ],
+      [
+        0,
+        2,
+        "en"
+      ],
+      [
+        2,
+        0,
+        "pt"
+      ],
+      [
+        0,
+        1,
+        "en"
+      ],
+      [
+        3,
+        0,
+        "en"
+      ],
+      [
+        3,
+        3,
+        "en"
+      ],
+      [
+        1,
+        0,
+        "en"
+      ],
+      [
+        2,
+        3,
+        "pt"
+      ],
+      [
+        3,
+        1,
+        "pt"
+      ],
+      [
+        1,
+        1,
+        "en"
+      ],
+      [
+        0,
+        2,
+        "pt"
+      ],
+      [
+        1,
+        3,
+        "pt"
+      ],
+      [
+        3,
+        1,
+        "en"
+      ],
+      [
+        2,
+        1,
+        "pt"
+      ],
+      [
+        0,
+        1,
+        "pt"
+      ],
+      [
+        1,
+        1,
+        "en"
+      ]
+    ]
+  },
+  "label_rule": "1 only same explicitly requested and reported direct field;0other direct field;null derived/diagnostic/broader or unbound. False claims of relevant field remain relevant.",
+  "population_recipe": "Every153pairs perfixture:bothquerylanguages,bothrequestedfields,bothreportedfields,measured/value-swap variants; then every18fields x3semanticUNKNOWN kinds x2querylanguages and2structuralUNKNOWN. Same established row envelope/projection; aliases/captions/questions frozen here.",
+  "numeric_balance": "Each query/competing pair has identical value multiset for positive and negative through measured/value-swap variants. No label/truth/role annotation in model inputs.",
+  "wording": "Two newly authored semantic bases per role/language/axis, four surface renderings;32alias/caption/report-language combinations independently shuffled and repeated twice across64fixtures. Both query languages on everyfixture. Same known envelope/primitive meanings, lexical confirmation only.",
+  "expected_rows": {
+    "final": 163712
+  },
+  "expected_binary_rows": 156672,
+  "expected_primary_binary_rows": 103424,
+  "expected_control_binary_rows": 53248,
+  "expected_semantic_unknown": 6912,
+  "expected_structural_unknown": 128,
+  "known_primitives": 18,
+  "known_tools": 3,
+  "unseen_pair_edges": 101,
+  "seen_control_edges": 52,
+  "window": 512,
+  "candidate_seeds": [
+    101,
+    202,
+    303
+  ],
+  "seed101_reuse": "Already completed audited immutable derivative and validation-only cutoffs; no repeated identical training.202/303new adaptations from same base/unchanged original train and validation.",
+  "criteria": {
+    "pooled_auc": 0.9,
+    "within_goal_auc": 0.9,
+    "positive_keep_recall": 0.95,
+    "contradiction_keep_recall": 0.95,
+    "negative_drop_rejection": 0.7,
+    "semantic_unknown_recognition": 0.95,
+    "structural_unknown_recognition": 1.0,
+    "unknown_drops": 0
+  },
+  "confirmation_gate": "Everyseed,aggregate,EN/PTquery,EN/PTreport,unseen-pair and seen-wording-control slices; no mean rescuing failure. Unknown rows shared in slice calculations, forwards counted only once.",
+  "scalar_control": "Immutable prior ordering only, no trained support/DROP authority",
+  "primary_references": {
+    "retry": "https://tenacity.readthedocs.io/en/stable/api.html",
+    "udp": "https://docs.python.org/3.13/library/socket.html",
+    "git": "https://git-scm.com/docs/git-status"
+  },
+  "actual_final_rows_emitted": false,
+  "actual_final_tokenizer_recount_complete": false,
+  "candidate_final_model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "quality_approved": false,
+  "default_changed": false,
+  "publishing": false,
+  "scope": "64fresh authored actual-tool fixtures; all18fields/3tools known.101newcross-tool pair combinations plus52known-pair wording controls. Correlated cases, no new domain/production/human/P2/LCC usefulness certification.",
+  "sha256": "617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2"
+}

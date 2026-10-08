@@ -1,0 +1,2859 @@
+{
+  "raw_sha256": "55bb902100000e5729b2499a453d4530a946585255ebac080d6a7241a265155b",
+  "n_raw_rows": 5784,
+  "invalid_current_cells": [],
+  "measured": {
+    "ModernBERT-base": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 48,
+          "pairs": 64,
+          "auc": 0.75
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 49,
+          "pairs": 64,
+          "auc": 0.765625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "D": {
+          "wins": 52,
+          "pairs": 64,
+          "auc": 0.8125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 47,
+          "pairs": 64,
+          "auc": 0.734375
+        },
+        "D": {
+          "wins": 56,
+          "pairs": 64,
+          "auc": 0.875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "D": {
+          "wins": 49,
+          "pairs": 64,
+          "auc": 0.765625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 33,
+          "pairs": 64,
+          "auc": 0.515625
+        },
+        "D": {
+          "wins": 41,
+          "pairs": 64,
+          "auc": 0.640625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 35,
+          "pairs": 64,
+          "auc": 0.546875
+        },
+        "D": {
+          "wins": 41,
+          "pairs": 64,
+          "auc": 0.640625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "bge-small-en-v1.5": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 27,
+          "pairs": 64,
+          "auc": 0.421875
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 33,
+          "pairs": 64,
+          "auc": 0.515625
+        },
+        "D": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 31,
+          "pairs": 64,
+          "auc": 0.484375
+        },
+        "D": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "rows": 24,
+        "truncated": 10,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 25,
+          "pairs": 64,
+          "auc": 0.390625
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "D": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "D": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 35,
+          "pairs": 64,
+          "auc": 0.546875
+        },
+        "D": {
+          "wins": 42,
+          "pairs": 64,
+          "auc": 0.65625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "laya-lcc-relevance-v1": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 24,
+          "pairs": 64,
+          "auc": 0.375
+        },
+        "D": {
+          "wins": 18,
+          "pairs": 64,
+          "auc": 0.28125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 26,
+          "pairs": 64,
+          "auc": 0.40625
+        },
+        "D": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "D": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 18,
+          "pairs": 64,
+          "auc": 0.28125
+        },
+        "D": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "D": {
+          "wins": 41,
+          "pairs": 64,
+          "auc": 0.640625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 22,
+          "pairs": 64,
+          "auc": 0.34375
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "laya-multilingual": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 24,
+          "pairs": 64,
+          "auc": 0.375
+        },
+        "D": {
+          "wins": 16,
+          "pairs": 64,
+          "auc": 0.25
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "D": {
+          "wins": 42,
+          "pairs": 64,
+          "auc": 0.65625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 27,
+          "pairs": 64,
+          "auc": 0.421875
+        },
+        "D": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 26,
+          "pairs": 64,
+          "auc": 0.40625
+        },
+        "D": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 38,
+          "pairs": 64,
+          "auc": 0.59375
+        },
+        "D": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 35,
+          "pairs": 64,
+          "auc": 0.546875
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "D": {
+          "wins": 26,
+          "pairs": 64,
+          "auc": 0.40625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 20,
+          "pairs": 64,
+          "auc": 0.3125
+        },
+        "D": {
+          "wins": 33,
+          "pairs": 64,
+          "auc": 0.515625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "laya-typed-decisions": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "D": {
+          "wins": 59,
+          "pairs": 64,
+          "auc": 0.921875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 33,
+          "pairs": 64,
+          "auc": 0.515625
+        },
+        "D": {
+          "wins": 43,
+          "pairs": 64,
+          "auc": 0.671875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "D": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 33,
+          "pairs": 64,
+          "auc": 0.515625
+        },
+        "D": {
+          "wins": 50,
+          "pairs": 64,
+          "auc": 0.78125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 23,
+          "pairs": 64,
+          "auc": 0.359375
+        },
+        "D": {
+          "wins": 31,
+          "pairs": 64,
+          "auc": 0.484375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 51,
+          "pairs": 64,
+          "auc": 0.796875
+        },
+        "D": {
+          "wins": 32,
+          "pairs": 64,
+          "auc": 0.5
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "D": {
+          "wins": 39,
+          "pairs": 64,
+          "auc": 0.609375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "lexical-overlap": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 33,
+          "pairs": 64,
+          "auc": 0.515625
+        },
+        "D": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 42,
+          "pairs": 64,
+          "auc": 0.65625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 42,
+          "pairs": 64,
+          "auc": 0.65625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 42,
+          "pairs": 64,
+          "auc": 0.65625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "D": {
+          "wins": 42,
+          "pairs": 64,
+          "auc": 0.65625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "minilm-msmarco-ce": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "D": {
+          "wins": 57,
+          "pairs": 64,
+          "auc": 0.890625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 49,
+          "pairs": 64,
+          "auc": 0.765625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 10,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 25,
+          "pairs": 64,
+          "auc": 0.390625
+        },
+        "D": {
+          "wins": 32,
+          "pairs": 64,
+          "auc": 0.5
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 25,
+          "pairs": 64,
+          "auc": 0.390625
+        },
+        "D": {
+          "wins": 26,
+          "pairs": 64,
+          "auc": 0.40625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 31,
+          "pairs": 64,
+          "auc": 0.484375
+        },
+        "D": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 35,
+          "pairs": 64,
+          "auc": 0.546875
+        },
+        "D": {
+          "wins": 32,
+          "pairs": 64,
+          "auc": 0.5
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp02-512": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "D": {
+          "wins": 52,
+          "pairs": 64,
+          "auc": 0.8125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 18,
+          "pairs": 64,
+          "auc": 0.28125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 36,
+          "pairs": 64,
+          "auc": 0.5625
+        },
+        "D": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "rows": 24,
+        "truncated": 10,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 21,
+          "pairs": 64,
+          "auc": 0.328125
+        },
+        "D": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 25,
+          "pairs": 64,
+          "auc": 0.390625
+        },
+        "D": {
+          "wins": 31,
+          "pairs": 64,
+          "auc": 0.484375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 32,
+          "pairs": 64,
+          "auc": 0.5
+        },
+        "D": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "D": {
+          "wins": 41,
+          "pairs": 64,
+          "auc": 0.640625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp02-8k": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "D": {
+          "wins": 52,
+          "pairs": 64,
+          "auc": 0.8125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 18,
+          "pairs": 64,
+          "auc": 0.28125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 30,
+          "pairs": 64,
+          "auc": 0.46875
+        },
+        "D": {
+          "wins": 15,
+          "pairs": 64,
+          "auc": 0.234375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 27,
+          "pairs": 64,
+          "auc": 0.421875
+        },
+        "D": {
+          "wins": 0,
+          "pairs": 64,
+          "auc": 0.0
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 11,
+          "pairs": 64,
+          "auc": 0.171875
+        },
+        "D": {
+          "wins": 7,
+          "pairs": 64,
+          "auc": 0.109375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 26,
+          "pairs": 64,
+          "auc": 0.40625
+        },
+        "D": {
+          "wins": 15,
+          "pairs": 64,
+          "auc": 0.234375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 24,
+          "pairs": 64,
+          "auc": 0.375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 27,
+          "pairs": 64,
+          "auc": 0.421875
+        },
+        "D": {
+          "wins": 20,
+          "pairs": 64,
+          "auc": 0.3125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "unknown"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp02c-12k": {
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 56,
+          "pairs": 64,
+          "auc": 0.875
+        },
+        "D": {
+          "wins": 55,
+          "pairs": 64,
+          "auc": 0.859375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp02c-1k": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 57,
+          "pairs": 64,
+          "auc": 0.890625
+        },
+        "D": {
+          "wins": 47,
+          "pairs": 64,
+          "auc": 0.734375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 61,
+          "pairs": 64,
+          "auc": 0.953125
+        },
+        "D": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 53,
+          "pairs": 64,
+          "auc": 0.828125
+        },
+        "D": {
+          "wins": 61,
+          "pairs": 64,
+          "auc": 0.953125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 27,
+          "pairs": 64,
+          "auc": 0.421875
+        },
+        "D": {
+          "wins": 31,
+          "pairs": 64,
+          "auc": 0.484375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 38,
+          "pairs": 64,
+          "auc": 0.59375
+        },
+        "D": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 48,
+          "pairs": 64,
+          "auc": 0.75
+        },
+        "D": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "D": {
+          "wins": 43,
+          "pairs": 64,
+          "auc": 0.671875
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp02c-512": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 57,
+          "pairs": 64,
+          "auc": 0.890625
+        },
+        "D": {
+          "wins": 47,
+          "pairs": 64,
+          "auc": 0.734375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 59,
+          "pairs": 64,
+          "auc": 0.921875
+        },
+        "D": {
+          "wins": 45,
+          "pairs": 64,
+          "auc": 0.703125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 50,
+          "pairs": 64,
+          "auc": 0.78125
+        },
+        "D": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 19,
+          "pairs": 64,
+          "auc": 0.296875
+        },
+        "D": {
+          "wins": 28,
+          "pairs": 64,
+          "auc": 0.4375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 29,
+          "pairs": 64,
+          "auc": 0.453125
+        },
+        "D": {
+          "wins": 48,
+          "pairs": 64,
+          "auc": 0.75
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "D": {
+          "wins": 40,
+          "pairs": 64,
+          "auc": 0.625
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 35,
+          "pairs": 64,
+          "auc": 0.546875
+        },
+        "D": {
+          "wins": 34,
+          "pairs": 64,
+          "auc": 0.53125
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp02c-8k": {
+      "0": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "D": {
+          "wins": 37,
+          "pairs": 64,
+          "auc": 0.578125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "64": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 57,
+          "pairs": 64,
+          "auc": 0.890625
+        },
+        "D": {
+          "wins": 47,
+          "pairs": 64,
+          "auc": 0.734375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "256": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 61,
+          "pairs": 64,
+          "auc": 0.953125
+        },
+        "D": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 53,
+          "pairs": 64,
+          "auc": 0.828125
+        },
+        "D": {
+          "wins": 61,
+          "pairs": 64,
+          "auc": 0.953125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "1024": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 58,
+          "pairs": 64,
+          "auc": 0.90625
+        },
+        "D": {
+          "wins": 47,
+          "pairs": 64,
+          "auc": 0.734375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "2048": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 60,
+          "pairs": 64,
+          "auc": 0.9375
+        },
+        "D": {
+          "wins": 64,
+          "pairs": 64,
+          "auc": 1.0
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 57,
+          "pairs": 64,
+          "auc": 0.890625
+        },
+        "D": {
+          "wins": 44,
+          "pairs": 64,
+          "auc": 0.6875
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 39,
+          "pairs": 64,
+          "auc": 0.609375
+        },
+        "D": {
+          "wins": 24,
+          "pairs": 64,
+          "auc": 0.375
+        },
+        "rows": 24,
+        "truncated": 24,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp03-dynamic-49k": {
+      "0": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2524,
+          "pairs": 3844,
+          "auc": 0.6566077003121749
+        },
+        "D": {
+          "wins": 2128,
+          "pairs": 3844,
+          "auc": 0.5535900104058272
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2629,
+          "pairs": 3844,
+          "auc": 0.6839229968782519
+        },
+        "D": {
+          "wins": 2157,
+          "pairs": 3844,
+          "auc": 0.5611342351716961
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2856,
+          "pairs": 3844,
+          "auc": 0.7429760665972945
+        },
+        "D": {
+          "wins": 2159,
+          "pairs": 3844,
+          "auc": 0.5616545265348595
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2850,
+          "pairs": 3844,
+          "auc": 0.7414151925078044
+        },
+        "D": {
+          "wins": 2163,
+          "pairs": 3844,
+          "auc": 0.5626951092611863
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "16384": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2792,
+          "pairs": 3844,
+          "auc": 0.7263267429760666
+        },
+        "D": {
+          "wins": 2196,
+          "pairs": 3844,
+          "auc": 0.5712799167533819
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "32768": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 53,
+          "pairs": 64,
+          "auc": 0.828125
+        },
+        "D": {
+          "wins": 48,
+          "pairs": 64,
+          "auc": 0.75
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp03-extrap-49k": {
+      "8192": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 56,
+          "pairs": 64,
+          "auc": 0.875
+        },
+        "D": {
+          "wins": 55,
+          "pairs": 64,
+          "auc": 0.859375
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "16384": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 57,
+          "pairs": 64,
+          "auc": 0.890625
+        },
+        "D": {
+          "wins": 50,
+          "pairs": 64,
+          "auc": 0.78125
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "32768": {
+        "n_unique_cases": 8,
+        "J": {
+          "wins": 46,
+          "pairs": 64,
+          "auc": 0.71875
+        },
+        "D": {
+          "wins": 41,
+          "pairs": 64,
+          "auc": 0.640625
+        },
+        "rows": 24,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.1"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp04-frozen-dyn-49k": {
+      "0": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2524,
+          "pairs": 3844,
+          "auc": 0.6566077003121749
+        },
+        "D": {
+          "wins": 2165,
+          "pairs": 3844,
+          "auc": 0.5632154006243496
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2776,
+          "pairs": 3844,
+          "auc": 0.7221644120707597
+        },
+        "D": {
+          "wins": 2112,
+          "pairs": 3844,
+          "auc": 0.5494276795005203
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp04-unfreeze2-dyn-49k": {
+      "0": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2658,
+          "pairs": 3844,
+          "auc": 0.6914672216441207
+        },
+        "D": {
+          "wins": 2252,
+          "pairs": 3844,
+          "auc": 0.5858480749219563
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2996,
+          "pairs": 3844,
+          "auc": 0.7793964620187305
+        },
+        "D": {
+          "wins": 2042,
+          "pairs": 3844,
+          "auc": 0.5312174817898023
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 4,
+        "J": {
+          "wins": 12,
+          "pairs": 16,
+          "auc": 0.75
+        },
+        "D": {
+          "wins": 10,
+          "pairs": 16,
+          "auc": 0.625
+        },
+        "rows": 12,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      },
+      "16384": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2907,
+          "pairs": 3844,
+          "auc": 0.7562434963579605
+        },
+        "D": {
+          "wins": 1965,
+          "pairs": 3844,
+          "auc": 0.5111862643080125
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "unknown"
+        ]
+      }
+    },
+    "specialist-exp05-frozen-8k": {
+      "0": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2530,
+          "pairs": 3844,
+          "auc": 0.658168574401665
+        },
+        "D": {
+          "wins": 2586,
+          "pairs": 3844,
+          "auc": 0.6727367325702394
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2737,
+          "pairs": 3844,
+          "auc": 0.7120187304890739
+        },
+        "D": {
+          "wins": 2530,
+          "pairs": 3844,
+          "auc": 0.658168574401665
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2877,
+          "pairs": 3844,
+          "auc": 0.7484391259105099
+        },
+        "D": {
+          "wins": 2536,
+          "pairs": 3844,
+          "auc": 0.659729448491155
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2428,
+          "pairs": 3844,
+          "auc": 0.631633714880333
+        },
+        "D": {
+          "wins": 2095,
+          "pairs": 3844,
+          "auc": 0.5450052029136316
+        },
+        "rows": 186,
+        "truncated": 186,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      }
+    },
+    "specialist-exp05-unfreeze2-8k": {
+      "0": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2875,
+          "pairs": 3844,
+          "auc": 0.7479188345473465
+        },
+        "D": {
+          "wins": 2921,
+          "pairs": 3844,
+          "auc": 0.7598855359001041
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      },
+      "512": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 3131,
+          "pairs": 3844,
+          "auc": 0.8145161290322581
+        },
+        "D": {
+          "wins": 2739,
+          "pairs": 3844,
+          "auc": 0.7125390218522373
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      },
+      "4096": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 3168,
+          "pairs": 3844,
+          "auc": 0.8241415192507804
+        },
+        "D": {
+          "wins": 2698,
+          "pairs": 3844,
+          "auc": 0.7018730489073881
+        },
+        "rows": 186,
+        "truncated": 0,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      },
+      "8192": {
+        "n_unique_cases": 62,
+        "J": {
+          "wins": 2378,
+          "pairs": 3844,
+          "auc": 0.6186264308012487
+        },
+        "D": {
+          "wins": 2111,
+          "pairs": 3844,
+          "auc": 0.5491675338189386
+        },
+        "rows": 186,
+        "truncated": 186,
+        "errors": 0,
+        "versions": [
+          "1.2"
+        ],
+        "devices": [
+          "mps"
+        ]
+      }
+    }
+  },
+  "passing_depths": {
+    "specialist-exp04-unfreeze2-dyn-49k": {
+      "J": [],
+      "D": []
+    },
+    "specialist-exp05-unfreeze2-8k": {
+      "J": [],
+      "D": []
+    }
+  },
+  "corpus": {
+    "exp02d": {
+      "train": {
+        "n": 2340,
+        "domains": {
+          "http_status": 130,
+          "disk_quota": 130,
+          "config_change": 130,
+          "pool_saturation": 130,
+          "cache_perf": 130,
+          "retry_storm": 130,
+          "sweep_jobs": 130,
+          "deploy_rollout": 130,
+          "api_contract": 130,
+          "geoshard_routing": 130,
+          "audit_log_gap": 130,
+          "cost_runaway": 130,
+          "fraud_false_positive": 130,
+          "i18n_missing": 130,
+          "image_pull_failure": 130,
+          "monitoring_flap": 130,
+          "pii_in_logs": 130,
+          "grpc_deadline": 130
+        },
+        "holdout_signature_examples": {
+          "vector_drift": 36,
+          "bot_traffic": 44,
+          "pdf_render": 46,
+          "sms_delivery": 46
+        }
+      },
+      "val": {
+        "n": 810,
+        "domains": {
+          "http_status": 45,
+          "disk_quota": 45,
+          "config_change": 45,
+          "pool_saturation": 45,
+          "cache_perf": 45,
+          "retry_storm": 45,
+          "sweep_jobs": 45,
+          "deploy_rollout": 45,
+          "api_contract": 45,
+          "geoshard_routing": 45,
+          "audit_log_gap": 45,
+          "cost_runaway": 45,
+          "fraud_false_positive": 45,
+          "i18n_missing": 45,
+          "image_pull_failure": 45,
+          "monitoring_flap": 45,
+          "pii_in_logs": 45,
+          "grpc_deadline": 45
+        },
+        "holdout_signature_examples": {
+          "vector_drift": 7,
+          "bot_traffic": 10,
+          "pdf_render": 7,
+          "sms_delivery": 8
+        }
+      }
+    },
+    "exp02e": {
+      "train": {
+        "n": 2340,
+        "domains": {
+          "http_status": 130,
+          "disk_quota": 130,
+          "config_change": 130,
+          "pool_saturation": 130,
+          "cache_perf": 130,
+          "retry_storm": 130,
+          "sweep_jobs": 130,
+          "deploy_rollout": 130,
+          "api_contract": 130,
+          "geoshard_routing": 130,
+          "audit_log_gap": 130,
+          "cost_runaway": 130,
+          "fraud_false_positive": 130,
+          "i18n_missing": 130,
+          "image_pull_failure": 130,
+          "monitoring_flap": 130,
+          "pii_in_logs": 130,
+          "grpc_deadline": 130
+        },
+        "holdout_signature_examples": {
+          "vector_drift": 0,
+          "bot_traffic": 0,
+          "pdf_render": 0,
+          "sms_delivery": 0
+        }
+      },
+      "val": {
+        "n": 810,
+        "domains": {
+          "http_status": 45,
+          "disk_quota": 45,
+          "config_change": 45,
+          "pool_saturation": 45,
+          "cache_perf": 45,
+          "retry_storm": 45,
+          "sweep_jobs": 45,
+          "deploy_rollout": 45,
+          "api_contract": 45,
+          "geoshard_routing": 45,
+          "audit_log_gap": 45,
+          "cost_runaway": 45,
+          "fraud_false_positive": 45,
+          "i18n_missing": 45,
+          "image_pull_failure": 45,
+          "monitoring_flap": 45,
+          "pii_in_logs": 45,
+          "grpc_deadline": 45
+        },
+        "holdout_signature_examples": {
+          "vector_drift": 0,
+          "bot_traffic": 0,
+          "pdf_render": 0,
+          "sms_delivery": 0
+        }
+      }
+    }
+  },
+  "clean_epochs": {
+    "exp02e-line-attn": {
+      "current_epoch": 3,
+      "history_epochs": [
+        1,
+        2,
+        3
+      ]
+    },
+    "exp02e-unfreeze2": {
+      "current_epoch": 3,
+      "history_epochs": [
+        1,
+        2,
+        3
+      ]
+    }
+  },
+  "inventory": {
+    "scope": "excludes this audit directory; includes existing caches and archived experiments",
+    "n_files": 3337,
+    "bytes": 911339333,
+    "absent_root": [
+      ".git",
+      "README.md",
+      "LICENSE",
+      "CONTRIBUTING.md",
+      "CODE_OF_CONDUCT.md",
+      "CITATION.cff",
+      "SECURITY.md",
+      "pyproject.toml",
+      "requirements.txt",
+      ".gitignore",
+      ".github/workflows"
+    ],
+    "files_over_100mib": [
+      {
+        "path": "models/exp05-joint-detect/weights.pt",
+        "bytes": 599271059
+      }
+    ]
+  }
+}

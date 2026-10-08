@@ -1,0 +1,126 @@
+frozen/101 epoch 1: 0/1440
+frozen/101 epoch 1: 320/1440
+frozen/101 epoch 1: 640/1440
+frozen/101 epoch 1: 960/1440
+frozen/101 epoch 1: 1280/1440
+frozen/101 epoch 2: 0/1440
+frozen/101 epoch 2: 320/1440
+frozen/101 epoch 2: 640/1440
+frozen/101 epoch 2: 960/1440
+frozen/101 epoch 2: 1280/1440
+frozen/101 epoch 3: 0/1440
+frozen/101 epoch 3: 320/1440
+frozen/101 epoch 3: 640/1440
+frozen/101 epoch 3: 960/1440
+frozen/101 epoch 3: 1280/1440
+frozen 101 {'n': 672, 'known': 480, 'eligible_known': 480, 'errors': 0, 'cuts': 0, 'auc': 0.6524522569444444, 'healthy_auc': 0.6527054398148148, 'healthy_recall': 0.9583333333333334, 'anomalous_auc': 0.6521990740740741, 'anomalous_recall': 0.9583333333333334, 'wrong_entity_anomaly_rejection': 0.0625}
+frozen/202 epoch 1: 0/1440
+frozen/202 epoch 1: 320/1440
+frozen/202 epoch 1: 640/1440
+frozen/202 epoch 1: 960/1440
+frozen/202 epoch 1: 1280/1440
+frozen/202 epoch 2: 0/1440
+frozen/202 epoch 2: 320/1440
+frozen/202 epoch 2: 640/1440
+frozen/202 epoch 2: 960/1440
+frozen/202 epoch 2: 1280/1440
+frozen/202 epoch 3: 0/1440
+frozen/202 epoch 3: 320/1440
+frozen/202 epoch 3: 640/1440
+frozen/202 epoch 3: 960/1440
+frozen/202 epoch 3: 1280/1440
+frozen 202 {'n': 672, 'known': 480, 'eligible_known': 480, 'errors': 0, 'cuts': 0, 'auc': 0.6498842592592593, 'healthy_auc': 0.6462673611111112, 'healthy_recall': 0.9791666666666666, 'anomalous_auc': 0.6535011574074074, 'anomalous_recall': 0.9583333333333334, 'wrong_entity_anomaly_rejection': 0.020833333333333332}
+frozen/303 epoch 1: 0/1440
+frozen/303 epoch 1: 320/1440
+frozen/303 epoch 1: 640/1440
+frozen/303 epoch 1: 960/1440
+frozen/303 epoch 1: 1280/1440
+frozen/303 epoch 2: 0/1440
+frozen/303 epoch 2: 320/1440
+frozen/303 epoch 2: 640/1440
+frozen/303 epoch 2: 960/1440
+frozen/303 epoch 2: 1280/1440
+frozen/303 epoch 3: 0/1440
+frozen/303 epoch 3: 320/1440
+frozen/303 epoch 3: 640/1440
+frozen/303 epoch 3: 960/1440
+frozen/303 epoch 3: 1280/1440
+frozen 303 {'n': 672, 'known': 480, 'eligible_known': 480, 'errors': 0, 'cuts': 0, 'auc': 0.5790653935185185, 'healthy_auc': 0.5783420138888888, 'healthy_recall': 0.9583333333333334, 'anomalous_auc': 0.5797887731481481, 'anomalous_recall': 0.96875, 'wrong_entity_anomaly_rejection': 0.0}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 19131.86it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+last-two/101 epoch 1: 0/1440
+last-two/101 epoch 1: 320/1440
+last-two/101 epoch 1: 640/1440
+last-two/101 epoch 1: 960/1440
+last-two/101 epoch 1: 1280/1440
+last-two/101 epoch 2: 0/1440
+last-two/101 epoch 2: 320/1440
+last-two/101 epoch 2: 640/1440
+last-two/101 epoch 2: 960/1440
+last-two/101 epoch 2: 1280/1440
+last-two/101 epoch 3: 0/1440
+last-two/101 epoch 3: 320/1440
+last-two/101 epoch 3: 640/1440
+last-two/101 epoch 3: 960/1440
+last-two/101 epoch 3: 1280/1440
+last-two 101 {'n': 672, 'known': 480, 'eligible_known': 480, 'errors': 0, 'cuts': 0, 'auc': 0.7110098379629629, 'healthy_auc': 0.7057291666666666, 'healthy_recall': 0.9583333333333334, 'anomalous_auc': 0.7162905092592593, 'anomalous_recall': 0.96875, 'wrong_entity_anomaly_rejection': 0.0625}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 17416.15it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+last-two/202 epoch 1: 0/1440
+last-two/202 epoch 1: 320/1440
+last-two/202 epoch 1: 640/1440
+last-two/202 epoch 1: 960/1440
+last-two/202 epoch 1: 1280/1440
+last-two/202 epoch 2: 0/1440
+last-two/202 epoch 2: 320/1440
+last-two/202 epoch 2: 640/1440
+last-two/202 epoch 2: 960/1440
+last-two/202 epoch 2: 1280/1440
+last-two/202 epoch 3: 0/1440
+last-two/202 epoch 3: 320/1440
+last-two/202 epoch 3: 640/1440
+last-two/202 epoch 3: 960/1440
+last-two/202 epoch 3: 1280/1440
+last-two 202 {'n': 672, 'known': 480, 'eligible_known': 480, 'errors': 0, 'cuts': 0, 'auc': 0.7157479745370371, 'healthy_auc': 0.7098885995370371, 'healthy_recall': 0.9583333333333334, 'anomalous_auc': 0.7216073495370371, 'anomalous_recall': 0.9583333333333334, 'wrong_entity_anomaly_rejection': 0.0}
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 19066.96it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+decoder.bias      | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+last-two/303 epoch 1: 0/1440
+last-two/303 epoch 1: 320/1440
+last-two/303 epoch 1: 640/1440
+last-two/303 epoch 1: 960/1440
+last-two/303 epoch 1: 1280/1440
+last-two/303 epoch 2: 0/1440
+last-two/303 epoch 2: 320/1440
+last-two/303 epoch 2: 640/1440
+last-two/303 epoch 2: 960/1440
+last-two/303 epoch 2: 1280/1440
+last-two/303 epoch 3: 0/1440
+last-two/303 epoch 3: 320/1440
+last-two/303 epoch 3: 640/1440
+last-two/303 epoch 3: 960/1440
+last-two/303 epoch 3: 1280/1440
+last-two 303 {'n': 672, 'known': 480, 'eligible_known': 480, 'errors': 0, 'cuts': 0, 'auc': 0.6904477719907407, 'healthy_auc': 0.6866319444444444, 'healthy_recall': 0.96875, 'anomalous_auc': 0.6942635995370371, 'anomalous_recall': 0.9583333333333334, 'wrong_entity_anomaly_rejection': 0.0}

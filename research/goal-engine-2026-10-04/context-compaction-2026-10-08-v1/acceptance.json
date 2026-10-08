@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Local byte equality and report/source integrity only; no semantic recall certification",
+  "input_sha256": "45e22ea52de13332707d925ea80705df9d2460a29d9f60d8602dcd0886517354",
+  "candidate_sha256": "45e22ea52de13332707d925ea80705df9d2460a29d9f60d8602dcd0886517354",
+  "input_byte_identical": true,
+  "original_sources_unchanged": true,
+  "protected_prefix_unchanged": true,
+  "adopt_compacted_candidate": false,
+  "selected_context": "input.md",
+  "reason": "No reduction; retain original input. Missing Jev confidence warnings do not certify semantic pruning.",
+  "confidence_missing_warnings": 91,
+  "worth_it_note": "CLI worth_it is true because no mutation occurred; this does not indicate savings.",
+  "token_count_method": "exact",
+  "provider_used": "jev",
+  "break_even_reuses": null,
+  "live_chat_mutated": false,
+  "quality_gates_changed": false
+}

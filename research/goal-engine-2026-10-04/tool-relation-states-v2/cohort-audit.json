@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "cohort_sha256": "82eb8ca05308cb985a22908eddf695253be5318ea4dd2bc3d636686b3d4cd30a",
+  "audit_source_sha256": "7206ce7e9794408affae838ddf0d9c1f653b6a1e7fd668fd1981343789b8718f",
+  "captures": {
+    "calibration": {
+      "status": "PASS",
+      "protocol_sha256": "76c39327ee120d49e02f8e9e8253933525d78520503da8128ef90fcd767f87f7",
+      "raw_sha256": "a67ce99b9b27b443f506a27af8c0be814beef2a4040b0326cd64bed7348f7c23",
+      "fixtures": 16,
+      "verified_fields": 288,
+      "retry_outcomes": {
+        "success": 11,
+        "exhausted": 5
+      },
+      "udp_read_modes": {
+        "0": 6,
+        "1": 5,
+        "2": 5
+      },
+      "git_index_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "git_worktree_edits": [
+        0,
+        1,
+        3,
+        4,
+        5
+      ],
+      "git_clean_tracked": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "git_staged_delete_fixtures": 4,
+      "zero_observed_receive_fixtures": 5,
+      "actual_git_blob_identities_verified": true,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "observed_capture_wall_s": 1.0246742920135148,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Exposed calibration only, excluded from train/validation/confirmation; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+    },
+    "train": {
+      "status": "PASS",
+      "protocol_sha256": "591ba1d7e10c2df82c855ea099ae87908fc0fc4acf828ffd66b89b45be2354ce",
+      "raw_sha256": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+      "fixtures": 64,
+      "verified_fields": 1152,
+      "retry_outcomes": {
+        "success": 43,
+        "exhausted": 21
+      },
+      "udp_read_modes": {
+        "0": 22,
+        "1": 21,
+        "2": 21
+      },
+      "git_index_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "git_worktree_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "git_clean_tracked": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "git_staged_delete_fixtures": 16,
+      "zero_observed_receive_fixtures": 21,
+      "actual_git_blob_identities_verified": true,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "observed_capture_wall_s": 1.934019000036642,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored varied-state training development fixtures; no model confirmation/production/P2; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+    },
+    "validation": {
+      "status": "PASS",
+      "protocol_sha256": "43dbc10473d4354eb6d7a183f0c833a83f932b6e0df48c7a8bb49d1b1c939da8",
+      "raw_sha256": "e606a1cf3c8cbb70c8e33737f80e92cb2f51ae3e2e8e73c319ce34abed178a5d",
+      "fixtures": 32,
+      "verified_fields": 576,
+      "retry_outcomes": {
+        "success": 22,
+        "exhausted": 10
+      },
+      "udp_read_modes": {
+        "0": 11,
+        "1": 11,
+        "2": 10
+      },
+      "git_index_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "git_worktree_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "git_clean_tracked": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "git_staged_delete_fixtures": 8,
+      "zero_observed_receive_fixtures": 10,
+      "actual_git_blob_identities_verified": true,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "observed_capture_wall_s": 1.242571584007237,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored varied-state validation development fixtures; no model confirmation/production/P2; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+    }
+  },
+  "fixture_content_intersections": {
+    "train:validation": 0,
+    "train:calibration": 0,
+    "validation:calibration": 0
+  },
+  "development_fixtures": 96,
+  "development_fields": 1728,
+  "calibration_fixtures": 16,
+  "calibration_fields": 288,
+  "calibration_excluded": true,
+  "model_forwards": 0,
+  "tools_reexecuted_during_audit": false,
+  "P2_admission": false,
+  "default_changed": false,
+  "audit_source": "research/audit_tool_relation_state_cohort.py",
+  "scope": "Authored actual varied-state development fixtures; raw split/content only, no effective-input/label/token or model-quality certification"
+}

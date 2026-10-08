@@ -1,0 +1,34 @@
+{
+  "state": {
+    "objective": "Decide whether to execute full container rollback or flip dynamic flag.",
+    "context": [
+      {
+        "block_id": "b_da7d4111",
+        "content": "Errors started immediately after flag enable at 14:00Z; container binary itself is identical to build v4.2.1.",
+        "source": "deploy/audit.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_cef3da42",
+        "content": "deploy v4.2.2 started 13:50Z, healthy checks 200/200",
+        "source": "ci/deploy.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Disable the dynamic feature flag; do not roll back the identical binary.",
+      "mechanism": "disable_feature_flag",
+      "parameters": {
+        "seed": 42
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

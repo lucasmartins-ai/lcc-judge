@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Determine why browser blocks POST requests from app.domain.com to api.domain.com.",
+    "context": [
+      {
+        "block_id": "b_7de963c9",
+        "content": "Cookie session: domain=.domain.com, SameSite=Lax, Secure=true",
+        "source": "session.json",
+        "block_type": "config"
+      },
+      {
+        "block_id": "b_ec4cedce",
+        "content": "CORS middleware config: origins=['*'], allow_credentials=True",
+        "source": "server/cors.py",
+        "block_type": "code"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "The browser blocks the credentialed cross-origin POST because CORS combines a wildcard origin with allow_credentials=true, which is invalid. Configure an explicit allowed origin such as https://app.domain.com and enable credentials only for that origin.",
+      "mechanism": "cors_wildcard_credentials",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

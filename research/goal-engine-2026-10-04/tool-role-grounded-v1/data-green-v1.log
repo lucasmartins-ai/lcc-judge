@@ -1,0 +1,13 @@
+test_counterfactual_values_cannot_predict_relevance (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_counterfactual_values_cannot_predict_relevance) ... ok
+test_semantic_unknown_is_distinct_from_parser_unknown (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_semantic_unknown_is_distinct_from_parser_unknown) ... ok
+test_source_roles_are_separate_from_the_only_two_model_inputs (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_source_roles_are_separate_from_the_only_two_model_inputs) ... ok
+test_tampered_or_failed_receipts_cannot_supply_labels (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_tampered_or_failed_receipts_cannot_supply_labels) ... ok
+test_freeze_is_immutable_and_changed_protocol_cannot_be_reused (tests.test_tool_role_data.ToolRoleDataTests.test_freeze_is_immutable_and_changed_protocol_cannot_be_reused) ... ok
+test_unknown_measurement_is_saved_but_never_rendered_or_retried (tests.test_tool_role_data.ToolRoleDataTests.test_unknown_measurement_is_saved_but_never_rendered_or_retried) ... ok
+test_command_identity_is_part_of_measurement_evidence (tests.test_tool_role_audit.ToolRoleAuditTests.test_command_identity_is_part_of_measurement_evidence) ... ok
+test_every_saved_field_is_reconstructed_from_raw_receipts (tests.test_tool_role_audit.ToolRoleAuditTests.test_every_saved_field_is_reconstructed_from_raw_receipts) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.064s
+
+OK

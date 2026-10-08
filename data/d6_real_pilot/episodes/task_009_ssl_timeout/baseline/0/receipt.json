@@ -1,0 +1,106 @@
+{
+  "task_id": "task_009_ssl_timeout",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "ee27786689d9259a66996d1038248402c44da8a7fb88c67bf8851dfaac530dbb",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_009_ssl_timeout/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_009_ssl_timeout/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "TLS handshakes fail because a PMTUD blackhole drops certificate fragments: the 4096-bit RSA certificate chain exceeds the 1500-byte MTU, DF blocks fragmentation, router 10.0.1.1 drops ICMP Fragmentation Needed messages, and TCP MTU probing is disabled.",
+    "mechanism": "pmtud_blackhole",
+    "parameters": {
+      "certificate_bits": 4096,
+      "path_mtu_bytes": 1500,
+      "tcp_mtu_probing": 0
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211118_da1335",
+      "timestamp": 1791058278500
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211118_da1335",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because a PMTUD blackhole drops certificate fragments: the 4096-bit RSA certificate chain exceeds the 1500-byte MTU, DF blocks fragmentation, router 10.0.1.1 drops ICMP Fragmentation Needed messages, and TCP MTU probing is disabled.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{\"certificate_bits\":4096,\"path_mtu_bytes\":1500,\"tcp_mtu_probing\":0},\"python\":\"\"}",
+    "tokens": {
+      "input": 1389,
+      "output": 328,
+      "total": 1857,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 4757,
+    "timestamp": 1791058283257
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.91
+        }
+      },
+      "usage": {
+        "input_tokens": 699,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 304.323833,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.9358e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 7.175853332999395
+}

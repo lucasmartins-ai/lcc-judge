@@ -1,0 +1,8 @@
+{
+  "3": "def reserve_items(items):\n    for item in sorted(items,key=lambda x:x.id):\n        with lock_item(item.id):\n            decrement_stock(item)\n",
+  "6": "def search_users(tenant_id,query):\n    return db.execute(\"SELECT * FROM users WHERE tenant_id = ? AND name LIKE ?\",(tenant_id,\"%\"+query+\"%\")).fetchall()\n",
+  "10": "def process_payment(idempotency_key,amount):\n    key=\"idemp:\"+idempotency_key\n    if not redis.set(key,\"pending\",nx=True,ex=120):\n        return redis.get(key)\n    response=stripe.Charge.create(amount=amount)\n    redis.set(key,response,ex=120)\n    return response\n",
+  "13": "def transfer(from_acc,to_acc,amount):\n    with db.transaction():\n        b=db.query(\"SELECT balance FROM accounts WHERE id = ? FOR UPDATE\",from_acc)\n        if b < amount: return False\n        db.execute(\"UPDATE accounts SET balance = balance - ? WHERE id = ?\",amount,from_acc)\n        db.execute(\"UPDATE accounts SET balance = balance + ? WHERE id = ?\",amount,to_acc)\n        return True\n",
+  "16": "def rate_limit(leak_rate,capacity,clock):\n    def decorate(fn):\n        water=0.0\n        last=clock()\n        def wrapper(*a,**k):\n            nonlocal water,last\n            now=clock()\n            water=max(0,water-(now-last)*leak_rate)\n            last=now\n            if water+1>capacity:return False\n            water+=1\n            return fn(*a,**k)\n        return wrapper\n    return decorate\n",
+  "20": "def test_burst(TokenBucket):\n    t=[0.0]\n    b=TokenBucket(capacity=5,refill_rate=1.0,clock=lambda:t[0])\n    assert all(b.allow() for _ in range(5))\n    assert b.allow() is False\n    t[0]=1.0\n    assert b.allow() is True\n"
+}

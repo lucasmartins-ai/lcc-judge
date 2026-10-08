@@ -1,0 +1,64 @@
+{
+  "model_dir": "models/exp02e-line-attn",
+  "device": "cpu",
+  "load_time_s": 1.2,
+  "rss_delta_mb": 69.25,
+  "total_rss_mb": 396.53,
+  "per_block_latency": {
+    "64_tokens": {
+      "p50_ms": 49.46,
+      "p90_ms": 55.71,
+      "p95_ms": 58.8,
+      "min_ms": 47.15,
+      "max_ms": 96.11,
+      "mean_ms": 52.06
+    },
+    "128_tokens": {
+      "p50_ms": 65.41,
+      "p90_ms": 70.95,
+      "p95_ms": 71.9,
+      "min_ms": 63.53,
+      "max_ms": 74.86,
+      "mean_ms": 66.44
+    },
+    "256_tokens": {
+      "p50_ms": 98.04,
+      "p90_ms": 103.77,
+      "p95_ms": 105.21,
+      "min_ms": 93.94,
+      "max_ms": 106.17,
+      "mean_ms": 98.01
+    },
+    "512_tokens": {
+      "p50_ms": 159.52,
+      "p90_ms": 188.09,
+      "p95_ms": 209.33,
+      "min_ms": 152.11,
+      "max_ms": 262.67,
+      "mean_ms": 165.78
+    },
+    "1024_tokens": {
+      "p50_ms": 309.94,
+      "p90_ms": 343.62,
+      "p95_ms": 359.7,
+      "min_ms": 288.94,
+      "max_ms": 386.75,
+      "mean_ms": 316.28
+    }
+  },
+  "reference_dossier": {
+    "blocks_count": 100,
+    "avg_block_tokens": 350,
+    "total_time_s": 16.11,
+    "throughput_blocks_per_s": 6.2
+  },
+  "m8_evaluation": {
+    "per_block_target": "<50 ms p50",
+    "per_block_p50_256_ms": 98.04,
+    "per_block_pass": false,
+    "dossier_target": "<= 43.0 s",
+    "dossier_measured_s": 16.11,
+    "dossier_pass": true,
+    "overall_m8_compliant": false
+  }
+}

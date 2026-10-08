@@ -1,0 +1,62 @@
+[
+  {
+    "selection": "first saved ID per category; illustrative, not random",
+    "category": "unknown_accept",
+    "id": "0d3124cbc3bc7c7cd34b1047f6d6c1c2bd91885bf0983d0dcd9d8082017be351",
+    "question": "Judge the usefulness of observed retry pause runtime expressed in nanoseconds for the complete analysis.",
+    "expected": null,
+    "predicted": "retry_actual_sleep_ns",
+    "kind": "broader_usefulness_goal",
+    "support_logit": 6.216324412046552,
+    "field_logits": {
+      "retry_attempts": -10.531453112009167,
+      "retry_failures": -1.9568370166724192,
+      "retry_scheduled_sleep_ns": 17.211274077423052,
+      "retry_actual_sleep_ns": 25.64537442082333,
+      "udp_sent_datagrams": -5.373600762608294,
+      "udp_sent_payload_bytes": -5.13715597396555,
+      "git_index_edits": -9.050900880106306,
+      "git_worktree_edits": -10.203805922552313
+    }
+  },
+  {
+    "selection": "first saved ID per category; illustrative, not random",
+    "category": "direct_reject",
+    "id": "0178b7a7be75391fc05fae51b7872dcffa8fde272d7a5eeb5ed9628ebaca52e0",
+    "question": "Find the observation that states how many datagram transmissions the sender submitted successfully.",
+    "expected": "udp_sent_datagrams",
+    "predicted": null,
+    "kind": "direct",
+    "support_logit": -3.889658008232436,
+    "field_logits": {
+      "retry_attempts": 12.01473466576623,
+      "retry_failures": 0.5151740913283698,
+      "retry_scheduled_sleep_ns": -1.0650605325852482,
+      "retry_actual_sleep_ns": 4.276868558617982,
+      "udp_sent_datagrams": -0.9457911789839917,
+      "udp_sent_payload_bytes": -10.718824381472148,
+      "git_index_edits": -14.848305094301455,
+      "git_worktree_edits": -1.6749238144022955
+    }
+  },
+  {
+    "selection": "first saved ID per category; illustrative, not random",
+    "category": "direct_wrong",
+    "id": "19074b4bbfc8cd17d1d624f77aeaedc911d8443e2f5d3c2190a8030ad0306466",
+    "question": "Ache a observação que informa contagem de alterações do diretório de trabalho incluindo exclusões locais.",
+    "expected": "git_worktree_edits",
+    "predicted": "retry_actual_sleep_ns",
+    "kind": "direct",
+    "support_logit": 2.9739413512588544,
+    "field_logits": {
+      "retry_attempts": 5.992354122348004,
+      "retry_failures": -1.1377146467407888,
+      "retry_scheduled_sleep_ns": -0.6729061509046064,
+      "retry_actual_sleep_ns": 6.177715089077957,
+      "udp_sent_datagrams": 5.187137653459001,
+      "udp_sent_payload_bytes": -1.5761551560966003,
+      "git_index_edits": -4.582300447663151,
+      "git_worktree_edits": -7.201982329323011
+    }
+  }
+]

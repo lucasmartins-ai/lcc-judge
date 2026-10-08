@@ -1,0 +1,60 @@
+{
+  "protocol_sha256": "f029d0b44e485a9428696f91f309cbcb6f44275e341655f12dc69de185ddfda2",
+  "selected_arm": "bce",
+  "arms": {
+    "bce": {
+      "mean": {
+        "auc": 0.8279469807942709,
+        "paired_auc": 0.91796875,
+        "positive_recall": 0.96875,
+        "negative_rejection": 0.3776041666666667
+      },
+      "mean_within_objective_auc": 0.8541666666666666,
+      "seeds_pass": [
+        false,
+        false,
+        false
+      ],
+      "all_seeds_pass": false
+    },
+    "joint": {
+      "mean": {
+        "auc": 0.8331197102864584,
+        "paired_auc": 0.92578125,
+        "positive_recall": 0.97265625,
+        "negative_rejection": 0.3684895833333333
+      },
+      "mean_within_objective_auc": 0.8665364583333334,
+      "seeds_pass": [
+        false,
+        false,
+        false
+      ],
+      "all_seeds_pass": false
+    }
+  },
+  "frozen_final": {
+    "n": 512,
+    "eligible": 512,
+    "cuts": 0,
+    "errors": 0,
+    "auc": 0.733612060546875,
+    "paired_auc": 0.77734375,
+    "paired_reports": 256,
+    "positive_recall": 0.984375,
+    "negative_rejection": 0.08984375,
+    "within_objective": {
+      "wins": 405,
+      "comparisons": 512,
+      "auc": 0.791015625,
+      "objectives": 128
+    }
+  },
+  "selected_pass": false,
+  "peak_study_process_rss_bytes": 1321680896,
+  "bootstrap_intervals_computed": false,
+  "API_calls": 0,
+  "adoption": false,
+  "P2_admission": false,
+  "current_default_changed": false
+}

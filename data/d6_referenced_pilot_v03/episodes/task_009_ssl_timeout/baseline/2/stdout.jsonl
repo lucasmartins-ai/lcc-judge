@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113614_c1c946", "timestamp": 1791110174579}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because PMTUD blackholes drop fragmented certificate", "timestamp": 1791110178626}
+{"type": "text", "text": " messages when ICMP Fragmentation Needed is blocked.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110178627}
+{"type": "result", "session_id": "20261004_113614_c1c946", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because PMTUD blackholes drop fragmented certificate messages when ICMP Fragmentation Needed is blocked.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 2, "output": 178, "total": 1700, "cache_read": 1520, "cache_write": 0}, "duration_ms": 4088, "timestamp": 1791110178667}

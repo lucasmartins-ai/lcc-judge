@@ -1,0 +1,40 @@
+{
+  "state": {
+    "objective": "Recommend circuit breaker trip threshold for partner billing service.",
+    "context": [
+      {
+        "block_id": "b_5a42bacb",
+        "content": "Partner billing SLA guarantees 99.5% availability with max acceptable latency 1500ms; downstream cascading timeout at 2000ms.",
+        "source": "slas/partner.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_72caab3f",
+        "content": "Current traffic: 300 req/sec; current failure rate 2.1% under normal loads.",
+        "source": "metrics/traffic.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_181032fd",
+        "content": "DNS resolution time: 2ms via local Unbound cache.",
+        "source": "dns.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Set the circuit breaker latency trip threshold to 1500 ms.",
+      "mechanism": "circuit_breaker_timeout",
+      "parameters": {
+        "timeout_ms": 1500
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

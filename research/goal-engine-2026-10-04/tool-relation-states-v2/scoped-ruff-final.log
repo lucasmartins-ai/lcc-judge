@@ -1,0 +1,20 @@
+F401 [*] `research.tool_relation_contracts.REFERENCES` imported but unused
+  --> research/tool_relation_state_contracts.py:12:70
+   |
+10 | import random
+11 |
+12 | from research.tool_relation_contracts import ROLES as PREVIOUS_ROLES,REFERENCES
+   |                                                                      ^^^^^^^^^^
+13 |
+14 | ROLES=dict(PREVIOUS_ROLES)
+   |
+help: Remove unused import: `research.tool_relation_contracts.REFERENCES`
+   |
+11 |
+   - from research.tool_relation_contracts import ROLES as PREVIOUS_ROLES,REFERENCES
+12 + from research.tool_relation_contracts import ROLES as PREVIOUS_ROLES
+13 |
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

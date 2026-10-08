@@ -1,0 +1,37 @@
+{
+  "case_id": "c_a52ec2d30b41a7bc",
+  "split": "eval",
+  "task_number": 3,
+  "kind": "code",
+  "family": "eval_valid_implementation_0",
+  "expected": true,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "c6a8aaab93616915d0da79b5ac4ed924f23b6bd2360aad4214e1b37fdc1c201a",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "global_lock_order",
+      "all_items_reserved_once",
+      "locks_released"
+    ],
+    "program_stdout": "",
+    "source_sha256": "caa94a6a605b98e946f18a7fafdb13133b1e48c41d99dcf2bf52105c0fb8a595"
+  },
+  "candidate_verification": {
+    "passed": true,
+    "reason": "expanded_executable_contract",
+    "checks": [
+      "five_inventory_inputs",
+      "ascending_lock_order",
+      "all_reservations_under_lock"
+    ],
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": true,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12138691695872694
+}

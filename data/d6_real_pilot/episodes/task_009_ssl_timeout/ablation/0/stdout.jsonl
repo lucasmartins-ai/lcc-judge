@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211125_d8c100", "timestamp": 1791058285676}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"TCP MTU probing is disabled, allowing a path-MTU-discovery blackhole to drop TLS certificate fragments and abort the handshake.\",\"mechanism\":\"pm", "timestamp": 1791058291736}
+{"type": "text", "text": "tud_blackhole\",\"parameters\":{\"net.ipv4.tcp_mtu_probing\":1},\"python\":\"\"}", "timestamp": 1791058291737}
+{"type": "result", "session_id": "20261003_211125_d8c100", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"TCP MTU probing is disabled, allowing a path-MTU-discovery blackhole to drop TLS certificate fragments and abort the handshake.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{\"net.ipv4.tcp_mtu_probing\":1},\"python\":\"\"}", "tokens": {"input": 520, "output": 437, "total": 1877, "cache_read": 920, "cache_write": 0}, "duration_ms": 6080, "timestamp": 1791058291757}

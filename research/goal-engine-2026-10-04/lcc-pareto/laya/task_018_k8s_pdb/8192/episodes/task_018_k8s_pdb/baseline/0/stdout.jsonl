@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141904_b5d6b2", "timestamp": 1791119944776}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget for the search-indexing pods to require", "timestamp": 1791119950166}
+{"type": "text", "text": " at least 3 of 5 replicas during voluntary disruptions.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "timestamp": 1791119950167}
+{"type": "result", "session_id": "20261004_141904_b5d6b2", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget for the search-indexing pods to require at least 3 of 5 replicas during voluntary disruptions.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 2, "output": 238, "total": 9074, "cache_read": 8834, "cache_write": 0}, "duration_ms": 5419, "timestamp": 1791119950196}

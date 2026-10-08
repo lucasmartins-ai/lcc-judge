@@ -1,0 +1,29 @@
+{
+  "case_id": "c_48583a7366ca679f",
+  "split": "eval",
+  "task_number": 13,
+  "kind": "code",
+  "family": "allow_overdraft",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "74f3679fc2871881815250a82574b3e42f7a54ec8a5d709be5cf5271e6f82dee",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Double spending or no transfer: {1: 400, 2: 300}",
+    "program_stdout": "",
+    "source_sha256": "74ac560e3912cadb15de411554352c4ccd0099f54c21eece7b12bca8ce7e0a45"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.17536370904417709
+}

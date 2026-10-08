@@ -1,0 +1,45 @@
+{
+  "protocol_sha256": "1fca8ea4cd2fbbde0d4f06abc0ef0c52eb905a92c1010448dfff5ea0dcae8681",
+  "model_forwards": 0,
+  "splits": {
+    "train": {
+      "rows": 4864,
+      "rows_sha256": "339357fac4e5dccb170238b6b6ccfc87b2081252ea20f3e8a3357db8d82f6077",
+      "views_sha256": "bebb607d63b1555963e4118008f76879c169b01fe0e028881b839def59317d79",
+      "raw_max_tokens": 113,
+      "projected_max_tokens": 50,
+      "projected_rows": 4800,
+      "unique_projected_inputs": 3592,
+      "binary": 4608,
+      "unknown": 256,
+      "structural_unknown": 64,
+      "cuts": 0
+    },
+    "validation": {
+      "rows": 1824,
+      "rows_sha256": "47ca77ac989caa497c338ebf1c93d16bf0db43e6de747c3eae7d8c5e8c265f41",
+      "views_sha256": "5bac45abd65a9f17d570a75261848c0abe1b79ed5a05e211818b3a8c9709b8cb",
+      "raw_max_tokens": 109,
+      "projected_max_tokens": 46,
+      "projected_rows": 1800,
+      "unique_projected_inputs": 996,
+      "binary": 1728,
+      "unknown": 96,
+      "structural_unknown": 24,
+      "cuts": 0
+    },
+    "final": {
+      "rows": 2496,
+      "rows_sha256": "47886d00b0062639a1612c6e297276227bb3bdc37ff817410bbc0cf533fc6ea7",
+      "views_sha256": "5518d02047a7ec31eb46256da8cfd14a48db027a0020afaff239a82300b8cd26",
+      "raw_max_tokens": 114,
+      "projected_max_tokens": 51,
+      "projected_rows": 2448,
+      "unique_projected_inputs": 864,
+      "binary": 2304,
+      "unknown": 192,
+      "structural_unknown": 48,
+      "cuts": 0
+    }
+  }
+}

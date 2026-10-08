@@ -1,0 +1,49 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5512,
+      "auc_ood": 0.6336,
+      "auc_val": 0.9495,
+      "seconds": 364.7,
+      "params_trained_m": 10.42
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2616,
+      "auc_ood": 0.6311,
+      "auc_val": 0.9262,
+      "seconds": 454.9,
+      "params_trained_m": 10.42
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.2395,
+      "auc_ood": 0.6482,
+      "auc_val": 0.9445,
+      "seconds": 207.0,
+      "params_trained_m": 10.42
+    }
+  ],
+  "args": {
+    "device": "mps",
+    "epochs": 3,
+    "batch_size": 8,
+    "max_len": 1024,
+    "lr_head": 0.001,
+    "lr_encoder": 2e-05,
+    "unfreeze_last_n": 2,
+    "pooling": "line-attn",
+    "seed": 0,
+    "out": "models/exp02e-unfreeze2",
+    "resume": false,
+    "data_dir": "data/exp02e",
+    "eval_limit": 30,
+    "no_final_eval": false
+  },
+  "current_epoch": 3,
+  "final": {
+    "auc_ood_full": 0.6242,
+    "auc_val_full": 0.9429
+  }
+}

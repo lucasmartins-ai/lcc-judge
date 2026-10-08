@@ -1,0 +1,80 @@
+{
+  "task_id": "task_001_conn_pool",
+  "condition": "ablation",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "e97e70cc0cc78ad9b9673b9429afb03d53ce80ef38dcf83ae1a8b51e8e8539bf",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_001_conn_pool/ablation/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_001_conn_pool/ablation/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "The 20-connection pool is saturating under demand, producing p99 waits around the 5-second acquisition timeout; the evidence does not confirm a connection leak.",
+    "mechanism": "capacity_exhaustion",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113357_67d72a",
+      "timestamp": 1791110037534
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113357_67d72a",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"The 20-connection pool is saturating under demand, producing p99 waits around the 5-second acquisition timeout; the evidence does not confirm a connection leak.\",\"mechanism\":\"capacity_exhaustion\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1413,
+      "output": 789,
+      "total": 2342,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 15487,
+    "timestamp": 1791110053021
+  },
+  "verification": {
+    "passed": false,
+    "reason": "typed_constraint_failure"
+  },
+  "wall_time_s": 17.44557891698787
+}

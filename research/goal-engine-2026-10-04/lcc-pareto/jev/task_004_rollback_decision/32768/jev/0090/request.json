@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Decide whether to execute full container rollback or flip dynamic flag.",
+    "blocks": [
+      {
+        "id": "blk_0090_5b8aedf2b9c4",
+        "text": "Errors started immediately after flag enable at 14:00Z; container binary itself is identical to build v4.2.1.\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0090_5b8aedf2b9c4": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0090_5b8aedf2b9c4 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

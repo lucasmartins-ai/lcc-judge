@@ -1,0 +1,82 @@
+{
+  "protocol_sha256": "237e778898faf3764a516f77524fb02bc05c2f71c71c8801df65d63e4b1a1c7e",
+  "selected_arm": "last-two",
+  "arms": {
+    "frozen": {
+      "mean": {
+        "auc": 0.5591182002314815,
+        "paired_auc": 0.6892361111111112,
+        "positive_recall": 0.967013888888889,
+        "negative_rejection": 0.03993055555555555
+      },
+      "seeds_pass": [
+        false,
+        false,
+        false
+      ],
+      "all_seed_gate_pass": false,
+      "pooled_auc_family_bootstrap_95": [
+        0.5203954626012731,
+        0.6049985532407408
+      ]
+    },
+    "last-two": {
+      "mean": {
+        "auc": 0.5660626446759259,
+        "paired_auc": 0.6909722222222222,
+        "positive_recall": 0.9618055555555557,
+        "negative_rejection": 0.041666666666666664
+      },
+      "seeds_pass": [
+        false,
+        false,
+        false
+      ],
+      "all_seed_gate_pass": false,
+      "pooled_auc_family_bootstrap_95": [
+        0.5238335503472222,
+        0.6145742910879629
+      ]
+    }
+  },
+  "baselines": {
+    "lexical": {
+      "auc": 0.5895182291666666,
+      "cuts": 0,
+      "eligible": 384,
+      "errors": 0,
+      "n": 384,
+      "paired_auc": 0.625,
+      "paired_reports": 192
+    },
+    "parent": {
+      "auc": 0.5167914496527778,
+      "cuts": 0,
+      "eligible": 384,
+      "errors": 0,
+      "n": 384,
+      "paired_auc": 0.6145833333333334,
+      "paired_reports": 192
+    },
+    "bge": {
+      "auc": 0.6268988715277778,
+      "cuts": 0,
+      "eligible": 384,
+      "errors": 0,
+      "n": 384,
+      "paired_auc": 0.6666666666666666,
+      "paired_reports": 192
+    },
+    "laya": {
+      "auc": 0.5101182725694444,
+      "cuts": 0,
+      "eligible": 384,
+      "errors": 0,
+      "n": 384,
+      "paired_auc": 0.515625,
+      "paired_reports": 192
+    }
+  },
+  "adoption": false,
+  "scope": "six authored held-out pair families; no external/human/P2 or deployment reliability claim"
+}

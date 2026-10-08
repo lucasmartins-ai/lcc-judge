@@ -1,0 +1,49 @@
+{
+  "protocol_sha256": "932c23cd40b323e88186a9755e887a44ede076d168d6f08264b0446a022ce96b",
+  "tokenizer": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "window": 512,
+    "files": {
+      "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "use": "Coverage count only; zero model forwards"
+  },
+  "model_forwards": 0,
+  "splits": {
+    "train": {
+      "rows": 4864,
+      "rows_sha256": "de03d3407a0b32d985670efe9a67e87059395bea39dd9c18657c84d7bcd69785",
+      "raw_sha256": "3a08836330a2f1e4dd01021ad18075c30242cac7d57b3e828f024dfe03926ae9",
+      "views_sha256": "20643e3050fbd968def1ef2ab16ade0854a1fb8c5174470e12d6eea8340901c4",
+      "raw_max_tokens": 112,
+      "projected_max_tokens": 51,
+      "raw_overflow": 0,
+      "projected_overflow": 0
+    },
+    "validation": {
+      "rows": 1824,
+      "rows_sha256": "52d92ddb092faa7ef0f852439efc7d6ba8301e2439d267c7e6aaaaf31ff8b13b",
+      "raw_sha256": "89905701a22ba4cdce3b54997b145b3fcce17fecd531c81976e02324ce0dfefb",
+      "views_sha256": "bd436510140aacfebf55a797499883ecfe4dce52cf7699a345787cf27d4ceff9",
+      "raw_max_tokens": 109,
+      "projected_max_tokens": 48,
+      "raw_overflow": 0,
+      "projected_overflow": 0
+    },
+    "final": {
+      "rows": 2496,
+      "rows_sha256": "114f319358c26176be6c297828e848b90b291a0bc75e8406f39906f957228fec",
+      "raw_sha256": "4ca5949d018bba66ae9c1c51e38c62163863ddc64c9af2d96fd68ca402c11598",
+      "views_sha256": "89c864ab49a37a744bbb12f4f5bd255601c553bc8d7a532e4cc7bef685570c34",
+      "raw_max_tokens": 120,
+      "projected_max_tokens": 58,
+      "raw_overflow": 0,
+      "projected_overflow": 0
+    }
+  }
+}

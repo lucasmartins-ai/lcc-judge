@@ -1,0 +1,22 @@
+Downloading ruff (9.3MiB)
+ Downloaded ruff
+Installed 1 package in 3ms
+F401 [*] `tempfile` imported but unused
+  --> research/tool_measurement_runtime.py:10:8
+   |
+ 8 | import shutil
+ 9 | import subprocess
+10 | import tempfile
+   |        ^^^^^^^^
+11 | import threading
+12 | import time
+   |
+help: Remove unused import: `tempfile`
+   |
+9  | import subprocess
+   - import tempfile
+10 | import threading
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

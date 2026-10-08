@@ -1,0 +1,23 @@
+{
+  "n": 2340,
+  "config_training_max_len": 1024,
+  "actual_hf_min": 304,
+  "actual_hf_max": 1711,
+  "counts": {
+    "pos_related_lines": 777,
+    "neg_decoy_related_lines": 804,
+    "full_pairs_over_training_limit": 1135,
+    "neg_decoy_line_partially_cut": 8,
+    "pos_line_partially_cut": 3,
+    "neg_decoy_entire_line_missing": 3,
+    "pos_entire_line_missing": 1
+  },
+  "data_sha256": "5f66ee54a3c4ac2e94e8f6845f22ca3647bdb013ae4ecfaeac82ed6d136327fd",
+  "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+  "analysis_sha256": "05e77c18df7cb9c3e969ae2d31851a415cced74e1bb3b54dc4ec7f379e3b34b6",
+  "tokenizer_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "historical_training_reexecuted": false,
+  "historical_tokenizer_identity_certified": false,
+  "loss_causality_established": false,
+  "scope": "Current pinned tokenizer and saved training max_len; exact complete-line coverage, not outcome necessity or a causal training diagnosis"
+}

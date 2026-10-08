@@ -1,0 +1,39 @@
+{
+  "case_id": "c_2e93ab985d0b4518",
+  "split": "calibration",
+  "task_number": 16,
+  "kind": "code",
+  "family": "calibration_valid_implementation_1",
+  "expected": true,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "1f77ae2be68e69b5dd1fcc54c01ec9471c677812d2f2836e1a5ecb95dff4dc82",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "burst_capacity",
+      "deny_without_execution",
+      "fractional_time_recovery",
+      "capacity_cap"
+    ],
+    "program_stdout": "",
+    "source_sha256": "b97c7d0e4205d96c9ace5efb8b3dff387f553c6e8ded93b8bead7c5bd063c2f1"
+  },
+  "candidate_verification": {
+    "passed": true,
+    "reason": "expanded_executable_contract",
+    "checks": [
+      "three_rate_capacity_configs",
+      "deterministic_trace",
+      "no_denied_side_effects",
+      "fractional_refill"
+    ],
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": true,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.11744525001267903
+}

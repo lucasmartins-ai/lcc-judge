@@ -1,0 +1,15 @@
+{
+  "conversion_checks": 4240,
+  "policy_checks": 290752,
+  "mismatch_count": 0,
+  "mismatches": [],
+  "upstream_module": "k8s.io/apimachinery@v0.36.0",
+  "replica_range": [
+    1,
+    32
+  ],
+  "candidate_sha256": "20057717934086a579b59101d6e48ac462cd21c794f71c1ab91be2d5078ad261",
+  "oracle_binary_sha256": "07982817c5ace6c839ac86dda992fdc950dd33fe5d5349c1716e70926043d7d0",
+  "oracle_source_sha256": "fc19b4898b6a9bb56271b2fed1225474249bfcc7173d5f1519bff207ecb77bad",
+  "scope": "upstream int32/percentage conversion plus independently enumerated voluntary-removal policy; not Kubernetes server or selector validation"
+}

@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Implement rate limiting decorator with leak rate and capacity.",
+    "context": [
+      {
+        "block_id": "b_f39ee3ac",
+        "content": "Target rate: 100 requests per minute with burst capacity 150.",
+        "source": "api_limits.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_e24f4b9f",
+        "content": "HTTP 429 Too Many Requests response payload schema.",
+        "source": "responses.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Token-bucket decorator; leak_rate is tokens per second, so use rate_limit(100 / 60, 150, clock) for the stated limit.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "import math\nimport threading\nfrom functools import wraps\n\ndef rate_limit(leak_rate, capacity, clock):\n    rate = float(leak_rate)\n    cap = float(capacity)\n    if not math.isfinite(rate) or rate < 0:\n        raise ValueError('leak_rate must be finite and non-negative')\n    if not math.isfinite(cap) or cap < 0:\n        raise ValueError('capacity must be finite and non-negative')\n\n    def decorator(func):\n        tokens = cap\n        last_time = None\n        lock = threading.Lock()\n\n        @wraps(func)\n        def wrapped(*args, **kwargs):\n            nonlocal tokens, last_time\n            with lock:\n                now = float(clock())\n                if last_time is None:\n                    last_time = now\n                else:\n                    elapsed = now - last_time\n                    if elapsed > 0:\n                        tokens = min(cap, tokens + elapsed * rate)\n                        last_time = now\n                if tokens < 1.0:\n                    return False\n                tokens -= 1.0\n            return func(*args, **kwargs)\n\n        return wrapped\n\n    return decorator"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

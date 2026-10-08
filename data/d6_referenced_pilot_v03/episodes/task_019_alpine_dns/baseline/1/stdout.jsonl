@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114316_17f412", "timestamp": 1791110597219}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Alpine musl's parallel A/AAAA DNS queries reuse a source port, causing", "timestamp": 1791110601365}
+{"type": "text", "text": " Linux conntrack NAT drops and 5-second resolver retries.\",\"mechanism\":\"musl_conntrack_dns\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110601366}
+{"type": "result", "session_id": "20261004_114316_17f412", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Alpine musl's parallel A/AAAA DNS queries reuse a source port, causing Linux conntrack NAT drops and 5-second resolver retries.\",\"mechanism\":\"musl_conntrack_dns\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 1383, "output": 194, "total": 1717, "cache_read": 140, "cache_write": 0}, "duration_ms": 4172, "timestamp": 1791110601391}

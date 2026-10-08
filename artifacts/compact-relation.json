@@ -1,0 +1,71 @@
+{
+  "schema": "compact-relation-artifacts/0.1",
+  "base_repo": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "base_revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "parameters": 22713601,
+  "license_status": "local research derivatives, not released; upstream Apache-2.0 obligations apply",
+  "native_ContextEngine_compatible": false,
+  "public_download_url": null,
+  "artifacts": [
+    {
+      "id": "bce-101",
+      "path": "models/compact-relation-v1/bce-101/model.safetensors",
+      "sha256": "a5c04d627c875b0cf31ce23dafc26df08939cdc17b20fa2376e620f221581206",
+      "bytes": 90866380,
+      "training_meta": "research/goal-engine-2026-10-04/compact-relation-v1/bce-101/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "bce-202",
+      "path": "models/compact-relation-v1/bce-202/model.safetensors",
+      "sha256": "ac4ae62d33aac22945157dba1c59fd23bc6fd32bc8fe93816cb1b036af2fc4bc",
+      "bytes": 90866380,
+      "training_meta": "research/goal-engine-2026-10-04/compact-relation-v1/bce-202/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "bce-303",
+      "path": "models/compact-relation-v1/bce-303/model.safetensors",
+      "sha256": "8d48d38da8d5234f36a99dc12668743ba8fcf0ec51503027d1dfe8553e7d6dd4",
+      "bytes": 90866380,
+      "training_meta": "research/goal-engine-2026-10-04/compact-relation-v1/bce-303/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "joint-101",
+      "path": "models/compact-relation-v1/joint-101/model.safetensors",
+      "sha256": "35807f589966fe47f2a4a11d17ce7769bd092c66d8329e8094717865f8302a3a",
+      "bytes": 90866380,
+      "training_meta": "research/goal-engine-2026-10-04/compact-relation-v1/joint-101/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "joint-202",
+      "path": "models/compact-relation-v1/joint-202/model.safetensors",
+      "sha256": "d0b267ba104bea6e31ed4c392edd4b60f7334f5fdaa26d88a86731bbcd9b3057",
+      "bytes": 90866380,
+      "training_meta": "research/goal-engine-2026-10-04/compact-relation-v1/joint-202/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "joint-303",
+      "path": "models/compact-relation-v1/joint-303/model.safetensors",
+      "sha256": "f27b97c4058e9a3b9e0ce5a5c3144d9afd173d7b51c405212eb8ac0dffb7d604",
+      "bytes": 90866380,
+      "training_meta": "research/goal-engine-2026-10-04/compact-relation-v1/joint-303/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    }
+  ]
+}

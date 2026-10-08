@@ -1,0 +1,4 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141931_da218a", "timestamp": 1791119971399}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Set the search-indexing PodDisruptionBudget to minAvailable: 3, preserving quorum while one node drains at a time.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "timestamp": 1791119979473}
+{"type": "result", "session_id": "20261004_141931_da218a", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Set the search-indexing PodDisruptionBudget to minAvailable: 3, preserving quorum while one node drains at a time.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 2, "output": 392, "total": 31350, "cache_read": 30956, "cache_write": 0}, "duration_ms": 8105, "timestamp": 1791119979505}

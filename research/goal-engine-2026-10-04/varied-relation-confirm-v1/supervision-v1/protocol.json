@@ -1,0 +1,226 @@
+{
+  "schema": "varied-direct-record-fresh-confirmation-supervision/0.1",
+  "frozen_at_utc": "2026-10-07T15:10:29.068299+00:00",
+  "design_sha256": "20c8789872f16ba54b4f3a5319f13bcc022188aaeec6f98c9a1ad84ddf1a2540",
+  "capture_design_sha256": "617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2",
+  "design_audit": {
+    "status": "PASS",
+    "design_sha256": "20c8789872f16ba54b4f3a5319f13bcc022188aaeec6f98c9a1ad84ddf1a2540",
+    "capture_design_sha256": "617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2",
+    "captures": {
+      "calibration": {
+        "status": "PASS",
+        "protocol_sha256": "2bdc84bea655d83fa13598a9208780971a3a0c374dbdb450a33b347737dca3da",
+        "raw_sha256": "0440b0e4abec9eed58ae093f77f5fd890a947627bcd66d422f64f78d82d3e668",
+        "fixtures": 16,
+        "verified_fields": 288,
+        "retry_outcomes": {
+          "success": 11,
+          "exhausted": 5
+        },
+        "udp_read_modes": {
+          "0": 6,
+          "1": 5,
+          "2": 5
+        },
+        "git_index_edits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "git_worktree_edits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "git_clean_tracked": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        "git_staged_delete_fixtures": 4,
+        "zero_observed_receive_fixtures": 5,
+        "actual_git_blob_identities_verified": true,
+        "source_image_dependency_and_raw_fields_verified": true,
+        "observed_capture_wall_s": 0.8500493330066092,
+        "model_forwards": 0,
+        "API_calls": 0,
+        "P2_admission": false,
+        "default_changed": false,
+        "tools_reexecuted_during_audit": false,
+        "admission": false,
+        "scope": "Fresh confirmation calibration; bound pre-scoring design 617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2; calibration excluded, no P2 or model scoring; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+      },
+      "final": {
+        "status": "PASS",
+        "protocol_sha256": "74305ef056795e7bc2dd65be696d068cb863e80d49247fbbd1f9d76280b53268",
+        "raw_sha256": "f223aa4065689cfd0a2b9b888e837600591d86ad8b23e5e6d03a383f18b3d2f0",
+        "fixtures": 64,
+        "verified_fields": 1152,
+        "retry_outcomes": {
+          "success": 43,
+          "exhausted": 21
+        },
+        "udp_read_modes": {
+          "0": 22,
+          "1": 21,
+          "2": 21
+        },
+        "git_index_edits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "git_worktree_edits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "git_clean_tracked": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        "git_staged_delete_fixtures": 16,
+        "zero_observed_receive_fixtures": 21,
+        "actual_git_blob_identities_verified": true,
+        "source_image_dependency_and_raw_fields_verified": true,
+        "observed_capture_wall_s": 1.8539523340296,
+        "model_forwards": 0,
+        "API_calls": 0,
+        "P2_admission": false,
+        "default_changed": false,
+        "tools_reexecuted_during_audit": false,
+        "admission": false,
+        "scope": "Fresh confirmation final; bound pre-scoring design 617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2; calibration excluded, no P2 or model scoring; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+      }
+    },
+    "prior_capture_files": {
+      "tool-relation-states-v2/calibration/raw.json": "a67ce99b9b27b443f506a27af8c0be814beef2a4040b0326cd64bed7348f7c23",
+      "tool-relation-states-v2/supervision-v1/captures/calibration/raw.json": "a67ce99b9b27b443f506a27af8c0be814beef2a4040b0326cd64bed7348f7c23",
+      "tool-relation-states-v2/supervision-v1/captures/train/raw.json": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+      "tool-relation-states-v2/supervision-v1/captures/validation/raw.json": "e606a1cf3c8cbb70c8e33737f80e92cb2f51ae3e2e8e73c319ce34abed178a5d",
+      "tool-relation-states-v2/train/raw.json": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+      "tool-relation-states-v2/validation/raw.json": "e606a1cf3c8cbb70c8e33737f80e92cb2f51ae3e2e8e73c319ce34abed178a5d",
+      "tool-relations-grounded-v1/calibration/raw.json": "831398600f4e85c3b2233d457132ac485995a91e57fccbdedcc04c42cef2be58",
+      "tool-relations-grounded-v1/final/raw.json": "717ef71325e4e50d12f4540cb40a3d91f9196447976bccd756a1f808d96af22b",
+      "tool-relations-grounded-v1/supervision-v1/captures/final/raw.json": "717ef71325e4e50d12f4540cb40a3d91f9196447976bccd756a1f808d96af22b",
+      "tool-relations-grounded-v1/supervision-v1/captures/train/raw.json": "9c407ce12ca355fc7b71916e65568ed8639dde746e4732281c269290dc3b7db8",
+      "tool-relations-grounded-v1/supervision-v1/captures/validation/raw.json": "228741a28aa714f6ecec25a04add1f170c3ae0c7c8c9baabf70993f1ddca7379",
+      "tool-relations-grounded-v1/train/raw.json": "9c407ce12ca355fc7b71916e65568ed8639dde746e4732281c269290dc3b7db8",
+      "tool-relations-grounded-v1/validation/raw.json": "228741a28aa714f6ecec25a04add1f170c3ae0c7c8c9baabf70993f1ddca7379",
+      "tool-role-grounded-v1/calibration-probe-v1/raw.json": "51cd5474e96cafc8686aaa02bac90f4f1fce7703e6b2eefe056b86e3403bd263"
+    },
+    "prior_unique_fixtures": 188,
+    "final_prior_fixture_overlap": 0,
+    "calibration_prior_fixture_overlap": 0,
+    "model_forwards": 0,
+    "quality_approved": false
+  },
+  "sources": {
+    "research/tool_relation_confirmation.py": "580e1f8130f78e1a59ae44625a811d07681f3fea21e6311ad261604ef1014641",
+    "research/audit_tool_relation_confirmation.py": "24e9cf0ad1d6c2ba1b97f9ea67225202b74c44b6acbbbdcaa63e293c9acf2769",
+    "research/tool_relation_state_supervision.py": "d5d595197fc8ef644e951dcc3da02d04c3b9cac2ed69c3d48746a8826bac6d46",
+    "research/audit_tool_relation_state_supervision.py": "5a78b0248674d64fb49ae6896c6ce754ee96a7ba446f8b4a725d5be8dd980873",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1"
+  },
+  "capture_files": {
+    "calibration/completion.json": "079705fd632fe5e7a08e3e98e7db97743ab7cad3609706d8de89f080182cb416",
+    "calibration/protocol.json": "071f8148139f45e98fbbd6225572bafbc8e8374c58682d5d74807e402e2fb52e",
+    "calibration/raw.json": "0440b0e4abec9eed58ae093f77f5fd890a947627bcd66d422f64f78d82d3e668",
+    "calibration/sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "calibration/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "calibration/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "calibration/sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+    "calibration/sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "calibration/sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+    "calibration/sources/research/tool_relation_state_runtime.py": "de8c4bb3dd8b0c92e0db7c1388a3ed61e801a2fa9ae0d4f6f6419131b2fcd911",
+    "calibration/sources/research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "calibration/sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+    "calibration/started.json": "a30fa1cd2c60658f3784a1b20d4b04fe020253a232a154da6e9f75efb2dcfd16",
+    "design/protocol.json": "3d539e1211f4fe8b9df448c30931a77e2cd24765923fe3a1403b34957cffb61a",
+    "design/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "design/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "design/sources/research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "design/sources/research/tool_relation_confirmation_contracts.py": "61217c6e547e2c589b03bec0f8df8a852eace96c0e5e236988aa33b0487d41a3",
+    "design/sources/research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4",
+    "design/sources/research/tool_relation_state_contracts.py": "ff86c51c968f74094ad950c8c4321b31b6a858d5899dda124b98e256a545b2fe",
+    "design/superseded-before-derivation.json": "bbddb0901881b130236310aa1a370ab50c18cd13d25905e07818770ccf3002a4",
+    "design-v2/audit.json": "b4d458b407d583220c8e6e8270a182b940fcd2038521fa4e5802dd13794b26cd",
+    "design-v2/protocol.json": "4b3b0f0b215ebc97ece7313cde556a09bb65f129a5375faaa75f077ff9637e5d",
+    "design-v2/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "design-v2/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "design-v2/sources/research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "design-v2/sources/research/tool_relation_confirmation_contracts.py": "e73c4b9c8c9a3cb39dfd97d6524032712f726c225d132f1ee31bdb6ef25ba42d",
+    "design-v2/sources/research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4",
+    "design-v2/sources/research/tool_relation_state_contracts.py": "ff86c51c968f74094ad950c8c4321b31b6a858d5899dda124b98e256a545b2fe",
+    "final/completion.json": "040c128558e11312e1bd2c49e9e92e7b609e3e3db4f7bf6b516fc41dd5c2d3e1",
+    "final/protocol.json": "46578fd9f649395712a12638c98e55f23dfcdd9d8c900978e5d265d4d10dd9e8",
+    "final/raw.json": "f223aa4065689cfd0a2b9b888e837600591d86ad8b23e5e6d03a383f18b3d2f0",
+    "final/sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "final/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "final/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "final/sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+    "final/sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "final/sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+    "final/sources/research/tool_relation_state_runtime.py": "de8c4bb3dd8b0c92e0db7c1388a3ed61e801a2fa9ae0d4f6f6419131b2fcd911",
+    "final/sources/research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "final/sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+    "final/started.json": "a725f0fb34a9eaa85d05bbb06a78e1ec3396ff25609d4950d3562ab71c197e79"
+  },
+  "requests": {
+    "final": {
+      "seed": 552601,
+      "fixtures": 64
+    }
+  },
+  "calibration_excluded": {
+    "seed": 552600,
+    "fixtures": 16
+  },
+  "tokenizer": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "files": {
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "window": 512
+  },
+  "compression": "gzip JSONL,mtime0,empty filename;full rows/views, no truncation or data omission",
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "quality_approved": false,
+  "default_changed": false,
+  "publishing": false,
+  "sha256": "c0a33bb29f8c1eaa95c68802ddfe2b7d654aac6e7f72fa22c9b69d9470d41640"
+}

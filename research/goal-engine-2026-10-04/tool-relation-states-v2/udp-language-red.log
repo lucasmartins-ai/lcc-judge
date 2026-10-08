@@ -1,0 +1,15 @@
+test_every_received_counter_query_and_caption_names_the_observation_budget (tests.test_tool_relation_state_contracts.ToolRelationStateContractsTests.test_every_received_counter_query_and_caption_names_the_observation_budget) ... FAIL
+
+======================================================================
+FAIL: test_every_received_counter_query_and_caption_names_the_observation_budget (tests.test_tool_relation_state_contracts.ToolRelationStateContractsTests.test_every_received_counter_query_and_caption_names_the_observation_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_relation_state_contracts.py", line 47, in test_every_received_counter_query_and_caption_names_the_observation_budget
+    self.assertIn('read budget',goal(role,'en',alias,'train',None,0))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'read budget' not found in 'Select the direct recorded value of UDP datagrams received.'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

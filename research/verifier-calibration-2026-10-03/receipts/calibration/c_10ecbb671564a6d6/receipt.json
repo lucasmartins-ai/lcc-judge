@@ -1,0 +1,29 @@
+{
+  "case_id": "c_10ecbb671564a6d6",
+  "split": "calibration",
+  "task_number": 13,
+  "kind": "code",
+  "family": "no_transaction",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "932787465e7a1f72b45beb04b9e00b283ccff4cb24afcca856277731a3c303cb",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Double spending or no transfer: {1: -200, 2: 300}",
+    "program_stdout": "",
+    "source_sha256": "94b46a536b53fd11b4cc9f503b715f480776a029c221ca96a7e1731d8445efb0"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12911424998310395
+}

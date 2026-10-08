@@ -1,0 +1,96 @@
+{
+  "task_id": "task_013_account_transfer",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "f92d46a6199a508ef62a83f37e14c7b87f2a4486aaccefc44beed5e8afebf14c",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_013_account_transfer/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_013_account_transfer/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Serialize each transfer with a database transaction and a FOR UPDATE lock on the sender account, preventing concurrent spends of the same balance.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def transfer(from_acc, to_acc, amount):\n    with db.transaction():\n        balance = db.query(\n            'SELECT balance FROM accounts WHERE id = ? FOR UPDATE',\n            from_acc\n        )\n        if balance < amount:\n            return False\n\n        db.execute(\n            'UPDATE accounts SET balance = balance - ? WHERE id = ?',\n            amount,\n            from_acc\n        )\n        db.execute(\n            'UPDATE accounts SET balance = balance + ? WHERE id = ?',\n            amount,\n            to_acc\n        )\n\n    return True"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113947_75ee7d",
+      "timestamp": 1791110387879
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113947_75ee7d",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Serialize each transfer with a database transaction and a FOR UPDATE lock on the sender account, preventing concurrent spends of the same balance.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def transfer(from_acc, to_acc, amount):\\n    with db.transaction():\\n        balance = db.query(\\n            'SELECT balance FROM accounts WHERE id = ? FOR UPDATE',\\n            from_acc\\n        )\\n        if balance < amount:\\n            return False\\n\\n        db.execute(\\n            'UPDATE accounts SET balance = balance - ? WHERE id = ?',\\n            amount,\\n            from_acc\\n        )\\n        db.execute(\\n            'UPDATE accounts SET balance = balance + ? WHERE id = ?',\\n            amount,\\n            to_acc\\n        )\\n\\n    return True\"}",
+    "tokens": {
+      "input": 1090,
+      "output": 533,
+      "total": 1763,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 8502,
+    "timestamp": 1791110396382
+  },
+  "verification": {
+    "passed": true,
+    "reason": "confined_executable_fixture_checks",
+    "checks": [
+      "three_concurrent_transfers",
+      "two_amounts",
+      "insufficient_funds",
+      "actual_sql_semantics",
+      "failure_rollback"
+    ],
+    "program_stdout": "",
+    "sandbox": {
+      "docker": "/usr/local/bin/docker",
+      "image_id": "sha256:1805d67d171b19ef73cc264f2083881fbd86bfc9d6313f0b54256ae314341a79",
+      "source_sha256": "c5b0f89c4f566ff2d9c50b32c1d4352f967db7eb7f483373edffd9da32e5da08",
+      "profile": "lcc-fixture-container/0.1",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  },
+  "wall_time_s": 10.883609833021183
+}

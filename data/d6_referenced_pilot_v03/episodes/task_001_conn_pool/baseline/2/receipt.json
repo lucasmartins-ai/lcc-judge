@@ -1,0 +1,104 @@
+{
+  "task_id": "task_001_conn_pool",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "77d01addfe532af7b05550d9f4eca4154cf4f9026415c03fea91315610d8dafa",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_001_conn_pool/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_001_conn_pool/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "The pool is exhausted because stripe_webhook_handler acquires connections in billing.py:144 without releasing them, causing 20 active connections and 42 waiters.",
+    "mechanism": "pool_connection_leak",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113347_e8ba1c",
+      "timestamp": 1791110028104
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113347_e8ba1c",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"The pool is exhausted because stripe_webhook_handler acquires connections in billing.py:144 without releasing them, causing 20 active connections and 42 waiters.\",\"mechanism\":\"pool_connection_leak\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1497,
+      "output": 196,
+      "total": 1833,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 5847,
+    "timestamp": 1791110033951
+  },
+  "verification": {
+    "passed": true,
+    "reason": "math_then_text_review",
+    "text_probability": 0.97,
+    "threshold": 0.5
+  },
+  "wall_time_s": 8.64893020899035,
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.97
+        }
+      },
+      "usage": {
+        "input_tokens": 1382,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 367.593458,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 5.8044e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

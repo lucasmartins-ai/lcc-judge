@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Write unit test verifying burst handling in token bucket.",
+    "context": [
+      {
+        "block_id": "b_27541d40",
+        "content": "import unittest; from unittest.mock import patch",
+        "source": "tests/base.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_c747c03c",
+        "content": "DEFAULT_BURST = 5; REFILL_RATE = 1.0",
+        "source": "limits.py",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Deterministically verify that the bucket permits exactly capacity requests, rejects the next request, and permits one request after one second of refill.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def test_burst(TokenBucket):\n    capacity = 5\n    refill_rate = 1.0\n    now = [0.0]\n    bucket = TokenBucket(capacity, refill_rate, lambda: now[0])\n\n    for _ in range(capacity):\n        assert bucket.allow() is True\n    assert bucket.allow() is False\n\n    now[0] += 1.0 / refill_rate\n    assert bucket.allow() is True\n    assert bucket.allow() is False\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

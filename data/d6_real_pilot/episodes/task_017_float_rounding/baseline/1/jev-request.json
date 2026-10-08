@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Find why billing reconciliation showed 1-cent discrepancy on monthly invoices.",
+    "context": [
+      {
+        "block_id": "b_e9d80825",
+        "content": "Tax calculation function: `total = float(subtotal) * 1.0825`; rounding happens via Python float `round(total, 2)` instead of `decimal.Decimal(subtotal) * Decimal('1.0825')` with ROUND_HALF_EVEN",
+        "source": "accounting/tax.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_4efacbd7",
+        "content": "Monthly audit report: 1,420 invoices had mismatch of -$0.01 between line items sum and invoice total.",
+        "source": "audit/sep2026.csv",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_f3e879e3",
+        "content": "Invoices generated on the 1st of every month via Celery cron.",
+        "source": "celery.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Binary floating-point tax arithmetic and rounding caused the recurring 1-cent invoice-total discrepancies.",
+      "mechanism": "binary_float_rounding",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

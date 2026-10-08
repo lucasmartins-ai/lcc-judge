@@ -1,0 +1,55 @@
+{
+  "schema": "semantic-tool-p1-audit/0.1",
+  "sources_data_labels_scores_epochs_selection_verified": true,
+  "data_counts": {
+    "final": 384,
+    "train": 1152,
+    "validation": 384
+  },
+  "selected_arm": "last-two",
+  "selected_pass": false,
+  "raw_training_seconds": 344.0461307091755,
+  "controls": {
+    "lexical": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.5895182291666666,
+      "paired_auc": 0.625,
+      "paired_reports": 192
+    },
+    "parent": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.5167914496527778,
+      "paired_auc": 0.6145833333333334,
+      "paired_reports": 192
+    },
+    "bge": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.6268988715277778,
+      "paired_auc": 0.6666666666666666,
+      "paired_reports": 192
+    },
+    "laya": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.5101182725694444,
+      "paired_auc": 0.515625,
+      "paired_reports": 192
+    }
+  },
+  "bootstrap_intervals_rederived": false,
+  "weights_sha256_verified": true,
+  "source_attribution": "archived source fingerprints; no external temporal attestation or training reexecution",
+  "ground_truth": "authored P1 measurement-slot contract, not human-reviewed/external/production/P2",
+  "API_calls_during_audit": 0
+}

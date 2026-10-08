@@ -1,0 +1,81 @@
+{
+  "task_id": "task_001_conn_pool",
+  "condition": "baseline",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "77d01addfe532af7b05550d9f4eca4154cf4f9026415c03fea91315610d8dafa",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_001_conn_pool/baseline/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_001_conn_pool/baseline/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "The Stripe webhook handler acquires database connections at billing.py:144 without releasing them, exhausting the 20-connection pool while 42 requests wait.",
+    "mechanism": "pool_connection_leak",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113347_042cea",
+      "timestamp": 1791110028139
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113347_042cea",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"The Stripe webhook handler acquires database connections at billing.py:144 without releasing them, exhausting the 20-connection pool while 42 requests wait.\",\"mechanism\":\"pool_connection_leak\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1497,
+      "output": 166,
+      "total": 1803,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 6307,
+    "timestamp": 1791110034446
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 8.625521666021086
+}

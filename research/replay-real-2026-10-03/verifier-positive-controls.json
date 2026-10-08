@@ -1,0 +1,74 @@
+{
+  "3": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "global_lock_order",
+      "all_items_reserved_once",
+      "locks_released"
+    ],
+    "program_stdout": "",
+    "source_sha256": "99b7598eeb9131dcc2782989eefe959c5e94001629b4a42e4a39e21fac6a0bef"
+  },
+  "6": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "normal_query",
+      "tenant_isolation",
+      "tenant_injection",
+      "query_injection",
+      "table_preserved"
+    ],
+    "program_stdout": "",
+    "source_sha256": "6a31178bb1bf4471df372082b4a2d6aaa7955d6bbb9d4191f7410d778d33fdb2"
+  },
+  "10": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "duplicate_not_charged",
+      "cached_receipt",
+      "atomic_key_and_ttl",
+      "distinct_key"
+    ],
+    "program_stdout": "",
+    "source_sha256": "e55b9402fbc5d524c6a37f1de218a8ef30003a0b33b5bac0f3c2754a178edd04"
+  },
+  "13": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "three_concurrent_transfers",
+      "no_overdraft",
+      "no_money_creation",
+      "one_transfer_completes"
+    ],
+    "program_stdout": "",
+    "source_sha256": "90a2fa313256c53e2bfe3ae3117d02a9b47e04bfe13c80bb589c43a11a33f637"
+  },
+  "16": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "burst_capacity",
+      "deny_without_execution",
+      "fractional_time_recovery",
+      "capacity_cap"
+    ],
+    "program_stdout": "",
+    "source_sha256": "bfe8a35f75e563d7bf2a460eb99093f3a8d9661e13afb7b5c5863db779bc0f39"
+  },
+  "20": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "correct_bucket_passes",
+      "kills_always_allow",
+      "kills_no_refill",
+      "kills_wrong_burst"
+    ],
+    "program_stdout": "",
+    "source_sha256": "c92cc1b1d6608ddabaf92abc47b3665ea1d7b63c2aeeaf944f1a519a42459d05"
+  }
+}

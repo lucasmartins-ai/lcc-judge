@@ -1,0 +1,30 @@
+{
+  "schema": "actual-tool-relations-cohort/0.1",
+  "requests": {
+    "train": {
+      "seed": 442511,
+      "fixtures": 32
+    },
+    "validation": {
+      "seed": 442512,
+      "fixtures": 12
+    },
+    "final": {
+      "seed": 442513,
+      "fixtures": 24
+    }
+  },
+  "protocols": {
+    "train": "7424fa2b761bbc241a789c3318b370a34fe37b8938e4d99464dc79e4f7fe5c17",
+    "validation": "60f195228e6e0bf86bf76c6ede6f447a1ee80ee59807db6a35be3b331877ba54",
+    "final": "6f57994838e2fd59ac7c321fd8ae800d5f31545c72a1d726219feaef62670aa9"
+  },
+  "calibration_seed": 442500,
+  "source_scope": "Actual retry/UDP/Git18fields on authored fixtures; eventual binary supervision/wording/family holdouts need separate freeze and audits",
+  "final_model_scores_inspected": false,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "sha256": "91c44e2e9150b6cf73571c556aeed422ce0ebdcb32335dbb08acaa22850265aa"
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/Master/Downloads/LCC-judge/research/audit_tool_relation_confirmation.py", line 196, in <module>
+    print(json.dumps(audit_design() if args.design_only else audit(recount_tokenizer=args.recount_tokenizer),indent=2,allow_nan=False))
+                                                             ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/audit_tool_relation_confirmation.py", line 114, in audit
+    assert p['design_audit'] == audit_design()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

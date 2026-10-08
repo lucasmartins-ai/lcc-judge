@@ -1,0 +1,7 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114048_903ce1", "timestamp": 1791110448903}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"", "timestamp": 1791110451104}
+{"type": "text", "text": "Use online logical replication/CDC for shard 7; it avoids the six-hour outage and enables cut", "timestamp": 1791110451366}
+{"type": "text", "text": "over in under 15 seconds.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"cutover_seconds\":\"<15\",\"maintenance_window_max_minutes\":30,\"full_dump_restore_h", "timestamp": 1791110451417}
+{"type": "text", "text": "ours\":6},\"python\":\"\"}", "timestamp": 1791110451418}
+{"type": "result", "session_id": "20261004_114048_903ce1", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Use online logical replication/CDC for shard 7; it avoids the six-hour outage and enables cutover in under 15 seconds.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"cutover_seconds\":\"<15\",\"maintenance_window_max_minutes\":30,\"full_dump_restore_hours\":6},\"python\":\"\"}", "tokens": {"input": 2, "output": 76, "total": 1586, "cache_read": 1508, "cache_write": 0}, "duration_ms": 8928, "timestamp": 1791110457831}

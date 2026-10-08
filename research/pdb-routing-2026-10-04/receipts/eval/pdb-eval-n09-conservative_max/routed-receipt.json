@@ -1,0 +1,29 @@
+{
+  "called": true,
+  "probability": 0.89,
+  "request_sha256": "9d0fd0a4a1216f76dc41157fbd3db4bd88e22a39e4e3f990c0f942b4ab84696b",
+  "jev": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.89
+        }
+      },
+      "usage": {
+        "input_tokens": 575,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 273.09554099999997,
+    "cost_usd": null
+  },
+  "decision": {
+    "passed": true,
+    "reason": "math_then_text_review",
+    "text_probability": 0.89,
+    "threshold": 0.5
+  }
+}

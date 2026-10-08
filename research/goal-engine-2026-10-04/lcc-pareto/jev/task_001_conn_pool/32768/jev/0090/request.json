@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Identify the root cause of connection pool timeout errors in payment-gateway.",
+    "blocks": [
+      {
+        "id": "blk_0090_f3eb2282aa53",
+        "text": "pg_pool: max_connections=20 timeout_ms=5000 leak_detection_threshold_ms=10000\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0090_f3eb2282aa53": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0090_f3eb2282aa53 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

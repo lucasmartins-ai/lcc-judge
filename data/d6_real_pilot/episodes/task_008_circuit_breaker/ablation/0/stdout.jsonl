@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211109_798fa3", "timestamp": 1791058270009}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Set the circuit breaker latency-trip threshold to 1000 ms; the", "timestamp": 1791058276977}
+{"type": "text", "text": " 2 ms DNS resolution time does not justify a similarly tiny request timeout.\",\"mechanism\":\"circuit_breaker_timeout\",\"parameters\":{\"timeout_ms\":1000},\"", "timestamp": 1791058276978}
+{"type": "text", "text": "python\":\"\"}", "timestamp": 1791058276979}
+{"type": "result", "session_id": "20261003_211109_798fa3", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Set the circuit breaker latency-trip threshold to 1000 ms; the 2 ms DNS resolution time does not justify a similarly tiny request timeout.\",\"mechanism\":\"circuit_breaker_timeout\",\"parameters\":{\"timeout_ms\":1000},\"python\":\"\"}", "tokens": {"input": 1335, "output": 418, "total": 1893, "cache_read": 140, "cache_write": 0}, "duration_ms": 6993, "timestamp": 1791058277002}

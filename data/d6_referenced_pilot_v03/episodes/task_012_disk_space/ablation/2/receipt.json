@@ -1,0 +1,82 @@
+{
+  "task_id": "task_012_disk_space",
+  "condition": "ablation",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "732a96c44bb59e2ac069aed25b23c13b2e38fda6fb79794b1fa1f7c7cb19bfd6",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_012_disk_space/ablation/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_012_disk_space/ablation/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ABSTAIN",
+    "answer": "The context confirms /var is 100% full, but logrotate settings do not identify which files, directories, or open deleted files consume the space.",
+    "mechanism": "INSUFFICIENT_EVIDENCE",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113943_05d51d",
+      "timestamp": 1791110384119
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113943_05d51d",
+    "exit_code": 0,
+    "text": "{\"status\":\"ABSTAIN\",\"answer\":\"The context confirms /var is 100% full, but logrotate settings do not identify which files, directories, or open deleted files consume the space.\",\"mechanism\":\"INSUFFICIENT_EVIDENCE\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 2,
+      "output": 1765,
+      "total": 3206,
+      "cache_read": 1439,
+      "cache_write": 0
+    },
+    "duration_ms": 23565,
+    "timestamp": 1791110407685
+  },
+  "verification": {
+    "passed": false,
+    "reason": "abstained"
+  },
+  "wall_time_s": 25.505608208011836,
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

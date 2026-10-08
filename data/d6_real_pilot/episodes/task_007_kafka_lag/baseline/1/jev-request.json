@@ -1,0 +1,41 @@
+{
+  "state": {
+    "objective": "Identify why payment-consumer lag grew to 500k messages on partition 4.",
+    "context": [
+      {
+        "block_id": "b_5231a830",
+        "content": "partition 4 consumer offset=12000 log_end_offset=512000 lag=500000",
+        "source": "kafka/metrics.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_d1fa83e1",
+        "content": "Thread-4 (partition 4): BLOCKED on external HTTP call to vendor-fraud-api.com:443 with timeout=None in fraud_check.py:42",
+        "source": "stacks/thread_dump.txt",
+        "block_type": "trace"
+      },
+      {
+        "block_id": "b_39083721",
+        "content": "partitions 0, 1, 2, 3 processing rate: 2500 msg/sec",
+        "source": "kafka/consumer.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Partition 4 lag grew to 500,000 messages because its consumer thread was indefinitely blocked on a vendor fraud API HTTP call configured without a timeout.",
+      "mechanism": "blocked_external_http_no_timeout",
+      "parameters": {
+        "partition": 4,
+        "http_timeout": null
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.................................................................................................F..............s..............................s..................s.....................................................................FFF.
+======================================================================
+FAIL: test_sql_fix_is_executed_against_injection_and_normal_search (test_real_replay.RealReplayTests.test_sql_fix_is_executed_against_injection_and_normal_search)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_real_replay.py", line 37, in test_sql_fix_is_executed_against_injection_and_normal_search
+    self.assertTrue(verify_artifact(TASKS[5], {'status':'ANSWER','python':good})['passed'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not true
+
+======================================================================
+FAIL: test_inventory_is_not_allowed_to_handle_only_the_original_ids (test_verifier_calibration.VerifierCalibrationTests.test_inventory_is_not_allowed_to_handle_only_the_original_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 35, in test_inventory_is_not_allowed_to_handle_only_the_original_ids
+    self.assertIs(verify_artifact(TASKS[2],dict(status='ANSWER',python=source))['passed'],False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not False
+
+======================================================================
+FAIL: test_positive_inventory_program_actually_runs (test_verifier_calibration.VerifierCalibrationTests.test_positive_inventory_program_actually_runs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 39, in test_positive_inventory_program_actually_runs
+    self.assertIs(verify_artifact(TASKS[2],dict(status='ANSWER',python=source))['passed'],True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not True
+
+======================================================================
+FAIL: test_test_contract_requires_assertion_failures (test_verifier_calibration.VerifierCalibrationTests.test_test_contract_requires_assertion_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 27, in test_test_contract_requires_assertion_failures
+    self.assertIs(verify_artifact(TASKS[19],dict(status='ANSWER',python=source))['passed'],False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not False
+
+----------------------------------------------------------------------
+Ran 235 tests in 14.790s
+
+FAILED (failures=4, skipped=3)
+{
+  "protocol_sha256": "fixed",
+  "raw_sha256": "8c2ad676bd05f6b75e5fef93a02bd14933b061e08c6d441abc0f148f36c95719",
+  "status": "UNKNOWN",
+  "finished_at_utc": "2026-10-07T15:15:02.698216+00:00",
+  "no_retry": true,
+  "admission": false,
+  "model_forwards": 0,
+  "API_calls": 0
+}

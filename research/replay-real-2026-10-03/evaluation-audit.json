@@ -1,0 +1,2539 @@
+{
+  "episode_receipts_unchanged": true,
+  "episode_receipt_sha256": {
+    "data/d6_real_pilot/episodes/task_001_conn_pool/ablation/0/receipt.json": "64973dc575c264f7ea797070c66184ee7f6762d03f1345bad9aa5b2595da1b24",
+    "data/d6_real_pilot/episodes/task_001_conn_pool/ablation/1/receipt.json": "b3c748add838c03ea458ee7130b4c8a3699b1b54da3c981dce797621dcfe3902",
+    "data/d6_real_pilot/episodes/task_001_conn_pool/ablation/2/receipt.json": "1b2e66b1d8ebb78cdc1700515d91d3832a6c0bad7b1405ac736b4cba92c4353a",
+    "data/d6_real_pilot/episodes/task_001_conn_pool/baseline/0/receipt.json": "14c0316812a90ec95e9512e3eb01b24c9003ee11b44aaa6d25f6b4ee3ab023cf",
+    "data/d6_real_pilot/episodes/task_001_conn_pool/baseline/1/receipt.json": "4f0b1c46038b8b8b6c4fadca4995d4def2fe96de4c2a1894d35c4dc4184b4b17",
+    "data/d6_real_pilot/episodes/task_001_conn_pool/baseline/2/receipt.json": "94f80c6030d5f00401a533f3474ecfded531199d1cdbc1359733139d4f1bc4c8",
+    "data/d6_real_pilot/episodes/task_002_redis_stampede/ablation/0/receipt.json": "c5609dd1710e83351309c926a0ae2defa7ffeafa63e5acd5b998d47b640268eb",
+    "data/d6_real_pilot/episodes/task_002_redis_stampede/ablation/1/receipt.json": "800a1b5834df7b407e5a343a4fb90e1d7fb62182e4cb7ecc317a3d6fe04cd2b9",
+    "data/d6_real_pilot/episodes/task_002_redis_stampede/ablation/2/receipt.json": "f96218843be6ee9f7dd5049f77408caac95c51841c1e25aa3c46d13da402bb9a",
+    "data/d6_real_pilot/episodes/task_002_redis_stampede/baseline/0/receipt.json": "eaa1334169e84ee06b493cad1e517fb11f0a4a5665e7a8071238b2b60d565553",
+    "data/d6_real_pilot/episodes/task_002_redis_stampede/baseline/1/receipt.json": "ab2ef624ff1e6fea32cd4b5890e52e21bccb72c6f360df01dafba11cf4a777a8",
+    "data/d6_real_pilot/episodes/task_002_redis_stampede/baseline/2/receipt.json": "467494cff528440616c4d1befb2a9ecb0f82483925af679ec888d18112414551",
+    "data/d6_real_pilot/episodes/task_003_inv_deadlock/ablation/0/receipt.json": "96143d733df5dd6e26c77cafd80258fdb929b3c173099855b814d955ec2c0267",
+    "data/d6_real_pilot/episodes/task_003_inv_deadlock/ablation/1/receipt.json": "756caa77dd0cf86430908f4689b09e5c8cb7ae3932cb2e15041863da216987c2",
+    "data/d6_real_pilot/episodes/task_003_inv_deadlock/ablation/2/receipt.json": "52b76be19b716dcb7ab1d5d0808339f6d41f3bf6d3fb805cda1064ba7aa70f16",
+    "data/d6_real_pilot/episodes/task_003_inv_deadlock/baseline/0/receipt.json": "25e251f3f1c0247b1897771485c0ec7b95858891a519c076195c838b2cb705cc",
+    "data/d6_real_pilot/episodes/task_003_inv_deadlock/baseline/1/receipt.json": "8d5667534304602b0c3d8650d1cd9cfa284d1533135e718be300213e46d22d63",
+    "data/d6_real_pilot/episodes/task_003_inv_deadlock/baseline/2/receipt.json": "0f87bdcb71a8b25f01866c109624536775c038a16d05a8eb2ef82ce370fafdd6",
+    "data/d6_real_pilot/episodes/task_004_rollback_decision/ablation/0/receipt.json": "04c198409f136f29d1b323d6d6e8be0d42d069fe2aa66b158c168a9dfc1349ae",
+    "data/d6_real_pilot/episodes/task_004_rollback_decision/ablation/1/receipt.json": "ae85b7d0d3c04fe49d9305401cb7cc8d6fa227f1d9371cbe3a409ee2f68eeaef",
+    "data/d6_real_pilot/episodes/task_004_rollback_decision/ablation/2/receipt.json": "007b00baf8863f747beb6229d598d33e3ea3722f6633910b813aecae300bb713",
+    "data/d6_real_pilot/episodes/task_004_rollback_decision/baseline/0/receipt.json": "85f92ca66babbc3f182a4e3e32789d7912cf43ff54ff90541ae743d73ce9d008",
+    "data/d6_real_pilot/episodes/task_004_rollback_decision/baseline/1/receipt.json": "9e422a3909a6413259806abda7504c5ab7273e4100a708801502c7f59d577ee1",
+    "data/d6_real_pilot/episodes/task_004_rollback_decision/baseline/2/receipt.json": "bbe040316aabcab8a35f224a688cf2a2c3c10dc2e8b0146b8898de365bf6036c",
+    "data/d6_real_pilot/episodes/task_005_ws_leak/ablation/0/receipt.json": "9268bc30b33654c33716bbb794f0bb17766880fc70fea846b77f4e28b0cec5b9",
+    "data/d6_real_pilot/episodes/task_005_ws_leak/ablation/1/receipt.json": "9efc3d31d3375da264696e14649809bc940eb03ffc6e851663699adf6a3c102b",
+    "data/d6_real_pilot/episodes/task_005_ws_leak/ablation/2/receipt.json": "d19641fdb8b50e83b84ccdeb6cdb3e42fe4326b6b6ddc73e7168a7bb443ff95e",
+    "data/d6_real_pilot/episodes/task_005_ws_leak/baseline/0/receipt.json": "56f16170cfbb2d8ea8c77d50dc128eae2a8f81b5403dda7d493b385b8b0f02c7",
+    "data/d6_real_pilot/episodes/task_005_ws_leak/baseline/1/receipt.json": "efc83ae5d9e75ea8a78d48dde157620e899372f75e20aac094f1a43440e1efea",
+    "data/d6_real_pilot/episodes/task_005_ws_leak/baseline/2/receipt.json": "67661a4cab5d8ab6c4baa137d14163a1085bcd96730dd3938defc449773db5c1",
+    "data/d6_real_pilot/episodes/task_006_sql_injection/ablation/0/receipt.json": "69f87b1f67b732374c8b2a18a874eebbb4b06b4ea961eeee1fdbd76a602ddd56",
+    "data/d6_real_pilot/episodes/task_006_sql_injection/ablation/1/receipt.json": "332b6c5d60dc0e9d3f6086b199aab0bfe3c8b09880e5c61b1dd50030975929b3",
+    "data/d6_real_pilot/episodes/task_006_sql_injection/ablation/2/receipt.json": "f892d73af6e6804c7600a1893d8900ccf2a95533f4925442a263fdea3551462f",
+    "data/d6_real_pilot/episodes/task_006_sql_injection/baseline/0/receipt.json": "a3da568e3f7af948d0356c3f6f4e410a1ae554e3e99aa4ac49ffee389a475695",
+    "data/d6_real_pilot/episodes/task_006_sql_injection/baseline/1/receipt.json": "adccc5f179ccbc98d6d0b42a53f4dfe5c3510959e53e9cf5288546eef0082efb",
+    "data/d6_real_pilot/episodes/task_006_sql_injection/baseline/2/receipt.json": "2eb29a568b36b579b920a828ab7d6164fd9683986c6c5c20bd4e3e29baba49bf",
+    "data/d6_real_pilot/episodes/task_007_kafka_lag/ablation/0/receipt.json": "4948d8ac24595f3e6f7e3bb61f19499a5ad4fbf3eaa886911f459146a6318923",
+    "data/d6_real_pilot/episodes/task_007_kafka_lag/ablation/1/receipt.json": "bf10f50cee30812a073684c2889044f6fd6f81d68214a6c369a7e60244a7d4bc",
+    "data/d6_real_pilot/episodes/task_007_kafka_lag/ablation/2/receipt.json": "56a393336dac30b152914fc4c05aede37319035bae07e1fce843686d1b61912d",
+    "data/d6_real_pilot/episodes/task_007_kafka_lag/baseline/0/receipt.json": "5f4fb33db31223d224cf1b4ef9bc4dd59069b732a8d8871b98b432b7c84a02c2",
+    "data/d6_real_pilot/episodes/task_007_kafka_lag/baseline/1/receipt.json": "fb89ada33e1583764bbfb7b980883c78ae3c0f6e77b838c769237afc8ed0cfe2",
+    "data/d6_real_pilot/episodes/task_007_kafka_lag/baseline/2/receipt.json": "c68cf0e7d7f7e4490cf324fa60172e9e6cfc118ac4c9a6201a85db64345a4bc5",
+    "data/d6_real_pilot/episodes/task_008_circuit_breaker/ablation/0/receipt.json": "5f218883a052f4b15218fb122da6bdf9345ceb40b93e229faeedb4b5b00dabc4",
+    "data/d6_real_pilot/episodes/task_008_circuit_breaker/ablation/1/receipt.json": "d18655764b1c0c78fb21b98ed592dab11ed797fd7f2bcfdd76dddd080ab46ae8",
+    "data/d6_real_pilot/episodes/task_008_circuit_breaker/ablation/2/receipt.json": "cbf59c44fe762add91138f8e8a70d50eddf4c185425483d74f1bd8cfb6a05320",
+    "data/d6_real_pilot/episodes/task_008_circuit_breaker/baseline/0/receipt.json": "283c8d98168605a845e4a18b99c50d4b742adc2e75a29b1e39575424f6bab402",
+    "data/d6_real_pilot/episodes/task_008_circuit_breaker/baseline/1/receipt.json": "fb1cbd3ccbd1d5aa5f153f8f32ee9c2de50423cf7d73dd4003b461892c409386",
+    "data/d6_real_pilot/episodes/task_008_circuit_breaker/baseline/2/receipt.json": "abc57255dfcc8264684a6eb5f8b0d3d697fabb86780cf53c8678661cca0c89b1",
+    "data/d6_real_pilot/episodes/task_009_ssl_timeout/ablation/0/receipt.json": "75bc669fcf622364543b068237311bed808bdd0291c61bddd4475f264d9e089e",
+    "data/d6_real_pilot/episodes/task_009_ssl_timeout/ablation/1/receipt.json": "bd05193eca4f103585503a0ebf0a307937050dc96d268eeea08ec9cd35d2d23a",
+    "data/d6_real_pilot/episodes/task_009_ssl_timeout/ablation/2/receipt.json": "112a1391894fcdd870e169f5ad1aa89b9c50762dd1fb0f62184f757d78588bb0",
+    "data/d6_real_pilot/episodes/task_009_ssl_timeout/baseline/0/receipt.json": "45f8acaa094f009d64dd497f44d8f7b40a48eeca1cd4e576de5668fd51bb5b8a",
+    "data/d6_real_pilot/episodes/task_009_ssl_timeout/baseline/1/receipt.json": "7301e20f6ba403c55e8110fa3f47da13a329b4b554f10dc9498dbc82f08cd9a7",
+    "data/d6_real_pilot/episodes/task_009_ssl_timeout/baseline/2/receipt.json": "5622bb2f20b728e2c9aa6577f06b9b25e491b3ef3f05ed7e9617f0086e4b9306",
+    "data/d6_real_pilot/episodes/task_010_idempotency/ablation/0/receipt.json": "a5c84f6dfe12968a78e8dd8ac350a75d87d6d14cbb051617511c953b709250ee",
+    "data/d6_real_pilot/episodes/task_010_idempotency/ablation/1/receipt.json": "d6ed448171d1bb2f4148135982ed2c35a31b91eab2faa98f64b2fe85306dbef5",
+    "data/d6_real_pilot/episodes/task_010_idempotency/ablation/2/receipt.json": "1ebf0768fe033b553577992b57b38123dddd6b40373fa36b41a09ad8eca74b1a",
+    "data/d6_real_pilot/episodes/task_010_idempotency/baseline/0/receipt.json": "b085b7a9f77e4a20782eef14fd34e2ee5cceef1efb9b723b80586d8686a5acbc",
+    "data/d6_real_pilot/episodes/task_010_idempotency/baseline/1/receipt.json": "a2b421af48996f16251201e3234fad7da18f5d4c3bb276c92be3d0c1ba964540",
+    "data/d6_real_pilot/episodes/task_010_idempotency/baseline/2/receipt.json": "60606a9be9e659e7b809f4eadf06381a0af18a233673fb366375903685356814",
+    "data/d6_real_pilot/episodes/task_011_regex_backtrack/ablation/0/receipt.json": "73a2042f116b6ffedb961af3c3d91195c18da4721a198bacdfefe37562b77727",
+    "data/d6_real_pilot/episodes/task_011_regex_backtrack/ablation/1/receipt.json": "834ee82cffa425e5cd725169546d8abd37cb9947457c89d0d27fb7f8ba7180c6",
+    "data/d6_real_pilot/episodes/task_011_regex_backtrack/ablation/2/receipt.json": "bebe95e2a909ca1dc850e2bd359ac025b5619a157d22a283f1aaf259577c8744",
+    "data/d6_real_pilot/episodes/task_011_regex_backtrack/baseline/0/receipt.json": "f4e5d7ec3afeaec42deba63ef6f1e200e65d63919824cbc3507760a9eb588497",
+    "data/d6_real_pilot/episodes/task_011_regex_backtrack/baseline/1/receipt.json": "94ab68840f9672630697c940d3a891623565d79cfd4b1e415f393fd239381d9b",
+    "data/d6_real_pilot/episodes/task_011_regex_backtrack/baseline/2/receipt.json": "14f031227ed8089bd783e275e2ea7dbb456bf271af98a7aa21a84ee0f04ba2fa",
+    "data/d6_real_pilot/episodes/task_012_disk_space/ablation/0/receipt.json": "32cd9f2fed3a5b845771f9e3277abaae474698d346ab07acf52bc75f00d5de59",
+    "data/d6_real_pilot/episodes/task_012_disk_space/ablation/1/receipt.json": "75e1e4533031ab1e4d5a3db730e6c5b898b6077ec6e5c102f0ee581579a8741f",
+    "data/d6_real_pilot/episodes/task_012_disk_space/ablation/2/receipt.json": "cbb84757a3b60ac2251021536494591126451887138055ba8cbad0447bba1acd",
+    "data/d6_real_pilot/episodes/task_012_disk_space/baseline/0/receipt.json": "6e81d4d68f1df7a6ce27392ec610e6f0f108e506515bb6af5b538fb8b7a6ea3b",
+    "data/d6_real_pilot/episodes/task_012_disk_space/baseline/1/receipt.json": "f684a55b49a0e1e90fc05a6562b648f86c0e24a682f918ffa94ea633ca462e62",
+    "data/d6_real_pilot/episodes/task_012_disk_space/baseline/2/receipt.json": "f2942577621a618b018a7b9b7e4372225f08fe1f8a1edc2ae1b0a7207b7cfb3d",
+    "data/d6_real_pilot/episodes/task_013_account_transfer/ablation/0/receipt.json": "dc9a3bb95a23124e18d683beae1f40a0e843e0865ef5c1348c4307ada99723ed",
+    "data/d6_real_pilot/episodes/task_013_account_transfer/ablation/1/receipt.json": "87d3c658779998bb8b6ff57dbd5d849fd896c0242b0e702d16dcc7be8629cbdb",
+    "data/d6_real_pilot/episodes/task_013_account_transfer/ablation/2/receipt.json": "f31f8f87330b5aeb5bad82e7f912b83063f92dac90ec9c6c3d790db17cc14d8f",
+    "data/d6_real_pilot/episodes/task_013_account_transfer/baseline/0/receipt.json": "01f83a41a8c4aa1d65fe2f95c33ee52e2efeeec9b84e025e47c8ab5d41f7a1f5",
+    "data/d6_real_pilot/episodes/task_013_account_transfer/baseline/1/receipt.json": "cc3443f2725e4fc0488087c9cea00039ee9357b2177853a82a62845a97545b19",
+    "data/d6_real_pilot/episodes/task_013_account_transfer/baseline/2/receipt.json": "b3e2de0fa1b851917f91ee10004ded7d877ef53f6afa1419f0672baf44d70255",
+    "data/d6_real_pilot/episodes/task_014_shard_rebalance/ablation/0/receipt.json": "a7b78cdbd1d662596dce44a2cb53635af23eb7edba056d6c635080b702287aa6",
+    "data/d6_real_pilot/episodes/task_014_shard_rebalance/ablation/1/receipt.json": "f741518686553fa6d1164e2985e5e96eba1d0414040df2ac34c6e269f39598b0",
+    "data/d6_real_pilot/episodes/task_014_shard_rebalance/ablation/2/receipt.json": "205f58d1185ccfb7ab4c85263fec60ed7b12031225ca7af1b25d3275c6dbaa46",
+    "data/d6_real_pilot/episodes/task_014_shard_rebalance/baseline/0/receipt.json": "41ee1bb2db6307fc495b3e249126f52e0815a94819f75ab2ab3d9c256b9d64f2",
+    "data/d6_real_pilot/episodes/task_014_shard_rebalance/baseline/1/receipt.json": "d39242f7ddeddba66ff5b630ac041737b5e81d4483b4f39db36d2339e61a6ad1",
+    "data/d6_real_pilot/episodes/task_014_shard_rebalance/baseline/2/receipt.json": "6658fcd772c8d85982f52b30dadbef5d9837516371ddd17fdb5f1eb2a9560fd6",
+    "data/d6_real_pilot/episodes/task_015_cors_error/ablation/0/receipt.json": "83e70f0018306c639156eccf53945ed93b78d288bcf4db06fba95b9bad8273d5",
+    "data/d6_real_pilot/episodes/task_015_cors_error/ablation/1/receipt.json": "4cbdf83f2aefda27c9b79f4868ce3421e80dfe4170f0d7ce1b5dec342a75c147",
+    "data/d6_real_pilot/episodes/task_015_cors_error/ablation/2/receipt.json": "d5634f30392b3d40a62b3bf2d00f379b18b8b1e7bb6de4ee8d332c7f8a4d038b",
+    "data/d6_real_pilot/episodes/task_015_cors_error/baseline/0/receipt.json": "b02f32cc0f79a47625d322507d7c8888be5ea0a43c99ff4374555573ec8003bd",
+    "data/d6_real_pilot/episodes/task_015_cors_error/baseline/1/receipt.json": "9f186a7e73ebf355838fa9fdcb589b07f0a55b61ad24ed62e0112c5ebc2d33fd",
+    "data/d6_real_pilot/episodes/task_015_cors_error/baseline/2/receipt.json": "ff956d5038b4da4ef904c6569e937146f52c63a3ed28eaf2edbfe52b615f3ede",
+    "data/d6_real_pilot/episodes/task_016_rate_limiter/ablation/0/receipt.json": "dcf502300b208ee02c5da7ed9f4dd6a1d032b4f1a53354cffff778029dae745d",
+    "data/d6_real_pilot/episodes/task_016_rate_limiter/ablation/1/receipt.json": "5507d6b3de71352471208a6a6869bc870c44de9cfbe93c0334ecc171644d4494",
+    "data/d6_real_pilot/episodes/task_016_rate_limiter/ablation/2/receipt.json": "caf110067de2bab41106b8bf0aae88fdf174118178f68217eda1ac79eee8db24",
+    "data/d6_real_pilot/episodes/task_016_rate_limiter/baseline/0/receipt.json": "7c98b3ba54232b9ddf1f8c1cb9f7a9ed2ec43cb74a68b0161f172ed3f8e2c745",
+    "data/d6_real_pilot/episodes/task_016_rate_limiter/baseline/1/receipt.json": "1016b13ebfb43b4449bec0457ce0057c5355d2bf49d8ec85a3f5f31b4c720217",
+    "data/d6_real_pilot/episodes/task_016_rate_limiter/baseline/2/receipt.json": "a5f7a6d8923b762946f83a97de9b8256a0658954f5b0985e7eeb0b8b8346d33b",
+    "data/d6_real_pilot/episodes/task_017_float_rounding/ablation/0/receipt.json": "87800dfb6a50b18d09a4348d422dd37ce22c82f38c3fcbadc701694b4f0e0efa",
+    "data/d6_real_pilot/episodes/task_017_float_rounding/ablation/1/receipt.json": "b4801bfab1486d0c44cfa243c637e1933dd62ff39b04260a7901e14f80093313",
+    "data/d6_real_pilot/episodes/task_017_float_rounding/ablation/2/receipt.json": "84af4fd75b883845652b0ad73c53161ee39a5452c27806b93f64001a1f4b1474",
+    "data/d6_real_pilot/episodes/task_017_float_rounding/baseline/0/receipt.json": "b856e784f0a20685221a63e16dd18134346373856c4dd276c4a9c0b590fd35bf",
+    "data/d6_real_pilot/episodes/task_017_float_rounding/baseline/1/receipt.json": "67a27fd6fc163c4f24d6dfdfaae1e50615ff2029e349ba75f47cd83aba570acd",
+    "data/d6_real_pilot/episodes/task_017_float_rounding/baseline/2/receipt.json": "e38de9ac94136daa0dd333271ee175c009e1cfb8cd9f4f0d75f4cda9164770f0",
+    "data/d6_real_pilot/episodes/task_018_k8s_pdb/ablation/0/receipt.json": "d1c570e99f35118e446199c806286024ef59c7c14bc5b9af2441b7cc4a7d2bf6",
+    "data/d6_real_pilot/episodes/task_018_k8s_pdb/ablation/1/receipt.json": "bed8f5ebe4e35c0f593643f68a480a20c745fe9320f412fb1a3a3d00a8e824c1",
+    "data/d6_real_pilot/episodes/task_018_k8s_pdb/ablation/2/receipt.json": "7d2d3d1f00f4332aa4e9aa33a3e72e4403adea3b4f49f2b64da89ab41e1e3b39",
+    "data/d6_real_pilot/episodes/task_018_k8s_pdb/baseline/0/receipt.json": "7544f40ad91de0d5853f721dc49499b23b8796103154db2e29135e9368b20ca5",
+    "data/d6_real_pilot/episodes/task_018_k8s_pdb/baseline/1/receipt.json": "548cf59bef858cc56de62cfa33245e066a638e4529c4135fcc891e0164ae0b26",
+    "data/d6_real_pilot/episodes/task_018_k8s_pdb/baseline/2/receipt.json": "3f8738bf932b7cb5408ed43ce247ddd9bf041f0c08f4c5114ff754e1164f54e1",
+    "data/d6_real_pilot/episodes/task_019_alpine_dns/ablation/0/receipt.json": "4b4b43e5b5881f1827d94fa183234cc09a2596b766c3120fd3bcca03d9a32d41",
+    "data/d6_real_pilot/episodes/task_019_alpine_dns/ablation/1/receipt.json": "0133d156f7d07e6ba8de5a4f23ef75fe815bb88e4eb6cdcdff319e50d3e8cfdd",
+    "data/d6_real_pilot/episodes/task_019_alpine_dns/ablation/2/receipt.json": "d4e7325dbbffccb32f692169bd2599e97ccac252a6a828d800f44d8b46bf18a6",
+    "data/d6_real_pilot/episodes/task_019_alpine_dns/baseline/0/receipt.json": "dee8292592ca969806e09966cf35201a0c978245d35e7f4d34826f62cfbc7a51",
+    "data/d6_real_pilot/episodes/task_019_alpine_dns/baseline/1/receipt.json": "c869eeb0101bd233014056878ccec4dba7c6f2de40191d43eb5ca5db1d5b535c",
+    "data/d6_real_pilot/episodes/task_019_alpine_dns/baseline/2/receipt.json": "fcc5d6c6f93cd7c0e61f397d32ab69bba7191c7caaec7cf19777c5bf6d0e3dea",
+    "data/d6_real_pilot/episodes/task_020_limiter_tests/ablation/0/receipt.json": "4448b00859d142ac0a97dd58c7fce86cd4370304970014a36717274497d4a812",
+    "data/d6_real_pilot/episodes/task_020_limiter_tests/ablation/1/receipt.json": "2d82bcee77ce33cbd7401abb64b5c2134e57dcc10b92aec6283350e09afe457b",
+    "data/d6_real_pilot/episodes/task_020_limiter_tests/ablation/2/receipt.json": "d63b494da63ab344aea9a0807adcaa246cfe78024c12de696c0d0b99e7c74e4e",
+    "data/d6_real_pilot/episodes/task_020_limiter_tests/baseline/0/receipt.json": "f8b8b6bf55ad1abfa66461c5eff5951e2eed944eb92ec1aca8ca39cd19aa111d",
+    "data/d6_real_pilot/episodes/task_020_limiter_tests/baseline/1/receipt.json": "c5a057c94a63fea44f8e6f096df69b5cd44eccb5d1b07389ff75a0c16e57bf3e",
+    "data/d6_real_pilot/episodes/task_020_limiter_tests/baseline/2/receipt.json": "d8aa43dc1a523125304d51f072815108fca29ec7f9d0758a02d21b2742333e4c"
+  },
+  "original_verifier_sha256": "5a401025255b3be509b4d7b45bd950ee5e7b22925adb3dad41f0bbc08522a110",
+  "audited_verifier_sha256": "5a1c7641f5b1d239e0e18f6380432c1d7c19775d905c964faade24a3cbb3cc9c",
+  "changed_verdicts": [
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    }
+  ],
+  "evaluations": [
+    {
+      "task_id": "task_001_conn_pool",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_001_conn_pool",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_001_conn_pool",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_001_conn_pool",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_001_conn_pool",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_001_conn_pool",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_002_redis_stampede",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_002_redis_stampede",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_002_redis_stampede",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_002_redis_stampede",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_002_redis_stampede",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_002_redis_stampede",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_003_inv_deadlock",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "fab4111cec6ff2645db751e790420927cd43f3571d242508213a3b7285c0ce3f"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "fab4111cec6ff2645db751e790420927cd43f3571d242508213a3b7285c0ce3f"
+      }
+    },
+    {
+      "task_id": "task_003_inv_deadlock",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "ddd515335bbcbf12698fc633f4ac07bd86cef08cb1be74e5f6f8b0c2032f9782"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "ddd515335bbcbf12698fc633f4ac07bd86cef08cb1be74e5f6f8b0c2032f9782"
+      }
+    },
+    {
+      "task_id": "task_003_inv_deadlock",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "d00e56b9332213dd37f381f4f4dc000b1fe8242867dad3b62b1de70bba200f98"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "d00e56b9332213dd37f381f4f4dc000b1fe8242867dad3b62b1de70bba200f98"
+      }
+    },
+    {
+      "task_id": "task_003_inv_deadlock",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "06423c273e8987e9acf7e28b58b162d3e3dc97ab7d40ab279f0f7934e076da10"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "06423c273e8987e9acf7e28b58b162d3e3dc97ab7d40ab279f0f7934e076da10"
+      }
+    },
+    {
+      "task_id": "task_003_inv_deadlock",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "c7b83b472ed241723e443086eb6b2ac3e247e694efc6184a0c9c69d0c913a34b"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "c7b83b472ed241723e443086eb6b2ac3e247e694efc6184a0c9c69d0c913a34b"
+      }
+    },
+    {
+      "task_id": "task_003_inv_deadlock",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "1749ef1b965f791e4a7b486cb308492042b344caa874309cb02d684c668a7945"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "global_lock_order",
+          "all_items_reserved_once",
+          "locks_released"
+        ],
+        "program_stdout": "",
+        "source_sha256": "1749ef1b965f791e4a7b486cb308492042b344caa874309cb02d684c668a7945"
+      }
+    },
+    {
+      "task_id": "task_004_rollback_decision",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_004_rollback_decision",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_004_rollback_decision",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_004_rollback_decision",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_004_rollback_decision",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_004_rollback_decision",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_005_ws_leak",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_005_ws_leak",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_005_ws_leak",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_005_ws_leak",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_005_ws_leak",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_005_ws_leak",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "73aa5e94ab9152235576869520e78161d80e431135fcf3f1066249549567a9d6"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "73aa5e94ab9152235576869520e78161d80e431135fcf3f1066249549567a9d6"
+      }
+    },
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "TypeError: Connection.execute() takes no keyword arguments",
+        "program_stdout": "",
+        "source_sha256": "ee3a9c2dba6cb2066b9d99588eb91a566313310d834a7d663b6a33ccfb86a48b"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "TypeError: Connection.execute() takes no keyword arguments",
+        "program_stdout": "",
+        "source_sha256": "ee3a9c2dba6cb2066b9d99588eb91a566313310d834a7d663b6a33ccfb86a48b"
+      }
+    },
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "348d3293d4c1ff848debad4a72882bf9cca053cdf7edb27c4a05989181b03797"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "348d3293d4c1ff848debad4a72882bf9cca053cdf7edb27c4a05989181b03797"
+      }
+    },
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f887327a776d7faba53b1e187d58225cd388922617b5184665ac4e39106ddfc3"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f887327a776d7faba53b1e187d58225cd388922617b5184665ac4e39106ddfc3"
+      }
+    },
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f887327a776d7faba53b1e187d58225cd388922617b5184665ac4e39106ddfc3"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f887327a776d7faba53b1e187d58225cd388922617b5184665ac4e39106ddfc3"
+      }
+    },
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "625eec45028e3094d368ce19b0df4644497b244020cadc90df37231d1d7a0ca3"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "normal_query",
+          "tenant_isolation",
+          "tenant_injection",
+          "query_injection",
+          "table_preserved"
+        ],
+        "program_stdout": "",
+        "source_sha256": "625eec45028e3094d368ce19b0df4644497b244020cadc90df37231d1d7a0ca3"
+      }
+    },
+    {
+      "task_id": "task_007_kafka_lag",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_007_kafka_lag",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_007_kafka_lag",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_007_kafka_lag",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_007_kafka_lag",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_007_kafka_lag",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "AssertionError: Missing atomic reservation with required key/TTL",
+        "program_stdout": "",
+        "source_sha256": "d6ead282af80cd35426fae8bd7f2959038c2ed592c74b39820f9e500bca1b493"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "AssertionError: Missing atomic reservation with required key/TTL",
+        "program_stdout": "",
+        "source_sha256": "d6ead282af80cd35426fae8bd7f2959038c2ed592c74b39820f9e500bca1b493"
+      }
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "AssertionError: Missing atomic reservation with required key/TTL",
+        "program_stdout": "",
+        "source_sha256": "8c49ee46be52def8337e72c33c97b6bdcf613cc90247826e5fb6aaef0f5490ff"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "AssertionError: Missing atomic reservation with required key/TTL",
+        "program_stdout": "",
+        "source_sha256": "8c49ee46be52def8337e72c33c97b6bdcf613cc90247826e5fb6aaef0f5490ff"
+      }
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "AssertionError: Missing atomic reservation with required key/TTL",
+        "program_stdout": "",
+        "source_sha256": "8613c95ef0fc2b30d5e3d290a9f5b14b5d06701b9b03f286cfec0150c7ed8c17"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "generated_program_failed_fixture",
+        "error": "AssertionError: Missing atomic reservation with required key/TTL",
+        "program_stdout": "",
+        "source_sha256": "8613c95ef0fc2b30d5e3d290a9f5b14b5d06701b9b03f286cfec0150c7ed8c17"
+      }
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "duplicate_not_charged",
+          "cached_receipt",
+          "atomic_key_and_ttl",
+          "distinct_key"
+        ],
+        "program_stdout": "",
+        "source_sha256": "444557ce1d8ba794e8a316868c27c0c10ea4332adff184e3f7178a854d989f30"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "duplicate_not_charged",
+          "cached_receipt",
+          "atomic_key_and_ttl",
+          "distinct_key"
+        ],
+        "program_stdout": "",
+        "source_sha256": "444557ce1d8ba794e8a316868c27c0c10ea4332adff184e3f7178a854d989f30"
+      }
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "duplicate_not_charged",
+          "cached_receipt",
+          "atomic_key_and_ttl",
+          "distinct_key"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f988a8f0cf1fb342acbf922e0f32c3850e52b294c8d1a64bff8b019c970ad1d1"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "duplicate_not_charged",
+          "cached_receipt",
+          "atomic_key_and_ttl",
+          "distinct_key"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f988a8f0cf1fb342acbf922e0f32c3850e52b294c8d1a64bff8b019c970ad1d1"
+      }
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "duplicate_not_charged",
+          "cached_receipt",
+          "atomic_key_and_ttl",
+          "distinct_key"
+        ],
+        "program_stdout": "",
+        "source_sha256": "127bb4549e1e6c9f7326289f70638ba8b68b2682897c73020cf1f4bd45ee6c9f"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "duplicate_not_charged",
+          "cached_receipt",
+          "atomic_key_and_ttl",
+          "distinct_key"
+        ],
+        "program_stdout": "",
+        "source_sha256": "127bb4549e1e6c9f7326289f70638ba8b68b2682897c73020cf1f4bd45ee6c9f"
+      }
+    },
+    {
+      "task_id": "task_011_regex_backtrack",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_011_regex_backtrack",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_011_regex_backtrack",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_011_regex_backtrack",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_011_regex_backtrack",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_011_regex_backtrack",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_012_disk_space",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_012_disk_space",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_012_disk_space",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "executor_abstained"
+      },
+      "audited": {
+        "passed": false,
+        "reason": "executor_abstained"
+      }
+    },
+    {
+      "task_id": "task_012_disk_space",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_012_disk_space",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_012_disk_space",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_013_account_transfer",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "be545c28ad490fb0fd675896aec369533ec67169b53961a4df5537c85d95a01a"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "be545c28ad490fb0fd675896aec369533ec67169b53961a4df5537c85d95a01a"
+      }
+    },
+    {
+      "task_id": "task_013_account_transfer",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "32336db9b3044e6b01d19f52a86c468467d999e91678aa852a76bbf06ddd91a6"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "32336db9b3044e6b01d19f52a86c468467d999e91678aa852a76bbf06ddd91a6"
+      }
+    },
+    {
+      "task_id": "task_013_account_transfer",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "e0fa0c1ef29f110d48fa62561be825eb580e731491928111afe55bdeb48a4d26"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "e0fa0c1ef29f110d48fa62561be825eb580e731491928111afe55bdeb48a4d26"
+      }
+    },
+    {
+      "task_id": "task_013_account_transfer",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "378dea2b61924f065abde6f3a102fb4e69a3b42136a93e543d231d72940425ff"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "378dea2b61924f065abde6f3a102fb4e69a3b42136a93e543d231d72940425ff"
+      }
+    },
+    {
+      "task_id": "task_013_account_transfer",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "499c75dcbc2715cbca3dfc8569a309e20fd0527d957385dabaa7ac517b8bc96c"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "499c75dcbc2715cbca3dfc8569a309e20fd0527d957385dabaa7ac517b8bc96c"
+      }
+    },
+    {
+      "task_id": "task_013_account_transfer",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "2e9bee58d2b62e1808dead34ed830f9060a48b814000b8aabbeed1ea4a5fec3f"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "three_concurrent_transfers",
+          "no_overdraft",
+          "no_money_creation",
+          "one_transfer_completes"
+        ],
+        "program_stdout": "",
+        "source_sha256": "2e9bee58d2b62e1808dead34ed830f9060a48b814000b8aabbeed1ea4a5fec3f"
+      }
+    },
+    {
+      "task_id": "task_014_shard_rebalance",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_014_shard_rebalance",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_014_shard_rebalance",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_014_shard_rebalance",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_014_shard_rebalance",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_014_shard_rebalance",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_015_cors_error",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_015_cors_error",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_015_cors_error",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_015_cors_error",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_015_cors_error",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_015_cors_error",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_016_rate_limiter",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "21497c80b077cd2a02a69b24b6e95f4e5052004fe2f2efdf59c0c8012a9496e9"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "21497c80b077cd2a02a69b24b6e95f4e5052004fe2f2efdf59c0c8012a9496e9"
+      }
+    },
+    {
+      "task_id": "task_016_rate_limiter",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "bfdbafbcba77df9fab705a6ac8a4544622f36b29ded1ea281f5fe03c602d0055"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "bfdbafbcba77df9fab705a6ac8a4544622f36b29ded1ea281f5fe03c602d0055"
+      }
+    },
+    {
+      "task_id": "task_016_rate_limiter",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": null,
+        "reason": "executor_error"
+      },
+      "audited": {
+        "passed": null,
+        "reason": "executor_error"
+      }
+    },
+    {
+      "task_id": "task_016_rate_limiter",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "443a7e77f4c9f31cd54e5857857298cd9b513a31eb1cd505a103d36fb5e35bd6"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "443a7e77f4c9f31cd54e5857857298cd9b513a31eb1cd505a103d36fb5e35bd6"
+      }
+    },
+    {
+      "task_id": "task_016_rate_limiter",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "326c55ec72be3ed46cc3893f9291bedca4e4206f236f642d91aa84224cfa8837"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "326c55ec72be3ed46cc3893f9291bedca4e4206f236f642d91aa84224cfa8837"
+      }
+    },
+    {
+      "task_id": "task_016_rate_limiter",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "9b903692a1ece6f246cd0f1b2c6636193298006188ca91e617304ebc76d6d961"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "burst_capacity",
+          "deny_without_execution",
+          "fractional_time_recovery",
+          "capacity_cap"
+        ],
+        "program_stdout": "",
+        "source_sha256": "9b903692a1ece6f246cd0f1b2c6636193298006188ca91e617304ebc76d6d961"
+      }
+    },
+    {
+      "task_id": "task_017_float_rounding",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_017_float_rounding",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_017_float_rounding",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_017_float_rounding",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_017_float_rounding",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_017_float_rounding",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_018_k8s_pdb",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "audited": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      }
+    },
+    {
+      "task_id": "task_020_limiter_tests",
+      "condition": "ablation",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f9dd2f3a7420093d05c244955ee09b6b790ba1de700641bfa61b19f0d3e330a7"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "f9dd2f3a7420093d05c244955ee09b6b790ba1de700641bfa61b19f0d3e330a7"
+      }
+    },
+    {
+      "task_id": "task_020_limiter_tests",
+      "condition": "ablation",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "cba73a7fa4bc4f6814eb998a799b56f1b44e5b9d3ae903123640b6a9125b527f"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "cba73a7fa4bc4f6814eb998a799b56f1b44e5b9d3ae903123640b6a9125b527f"
+      }
+    },
+    {
+      "task_id": "task_020_limiter_tests",
+      "condition": "ablation",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "275333d24033063a5342a1d001efa0a00f01ac271000b55b902ce9c644d05ebb"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "275333d24033063a5342a1d001efa0a00f01ac271000b55b902ce9c644d05ebb"
+      }
+    },
+    {
+      "task_id": "task_020_limiter_tests",
+      "condition": "baseline",
+      "repeat": 0,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "0836602d49b079a76f81b9a444e96493f69e7d1b47c9a942adf0a62ac48813f4"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "0836602d49b079a76f81b9a444e96493f69e7d1b47c9a942adf0a62ac48813f4"
+      }
+    },
+    {
+      "task_id": "task_020_limiter_tests",
+      "condition": "baseline",
+      "repeat": 1,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "cec443a0b77cc2c683ab498a49d9eccef4d6af2caf7ef4800eddb6d850c865f4"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "cec443a0b77cc2c683ab498a49d9eccef4d6af2caf7ef4800eddb6d850c865f4"
+      }
+    },
+    {
+      "task_id": "task_020_limiter_tests",
+      "condition": "baseline",
+      "repeat": 2,
+      "original": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "7f04ef73039163729e35b996edfdcf6acbca968ad9578a45de5c94163f8cdbc7"
+      },
+      "audited": {
+        "passed": true,
+        "reason": "executable_fixture_checks",
+        "checks": [
+          "correct_bucket_passes",
+          "kills_always_allow",
+          "kills_no_refill",
+          "kills_wrong_burst"
+        ],
+        "program_stdout": "",
+        "source_sha256": "7f04ef73039163729e35b996edfdcf6acbca968ad9578a45de5c94163f8cdbc7"
+      }
+    }
+  ],
+  "reason": "PDB maxUnavailable=1 preserves at least three of five replicas and permits one-node maintenance; original verifier erroneously required exactly two.",
+  "no_new_api_calls": true,
+  "original_source_archive": "research/replay-real-2026-10-03/executed-source"
+}

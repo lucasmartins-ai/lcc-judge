@@ -1,0 +1,9 @@
+test_configuration_limits_are_not_silently_capped (tests.test_reranker_control.RerankerControlTests.test_configuration_limits_are_not_silently_capped) ... ok
+test_nonfinite_score_retains_submitted_accounting (tests.test_reranker_control.RerankerControlTests.test_nonfinite_score_retains_submitted_accounting) ... ok
+test_oversized_input_never_reaches_model (tests.test_reranker_control.RerankerControlTests.test_oversized_input_never_reaches_model) ... ok
+test_raw_logit_and_order_preserved_without_clipping (tests.test_reranker_control.RerankerControlTests.test_raw_logit_and_order_preserved_without_clipping) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.015s
+
+OK

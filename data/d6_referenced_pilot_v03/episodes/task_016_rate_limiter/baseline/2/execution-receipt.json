@@ -1,0 +1,98 @@
+{
+  "task_id": "task_016_rate_limiter",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "baea2008cc0a175d6c5beb3a98adad33dd90710146a22811f87f2916cd100d2f",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_016_rate_limiter/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_016_rate_limiter/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Use a per-function leaky-bucket closure. Configure 100 requests/minute as leak_rate=100/60 requests/second and capacity=150.",
+    "mechanism": null,
+    "parameters": {
+      "leak_rate": 1.6666666666666667,
+      "capacity": 150
+    },
+    "python": "from functools import wraps\n\ndef rate_limit(leak_rate, capacity, clock):\n    def decorator(func):\n        water = 0\n        last_leak = clock()\n\n        @wraps(func)\n        def limited(*args, **kwargs):\n            nonlocal water, last_leak\n            now = clock()\n            water = max(0, water - (now - last_leak) * leak_rate)\n            last_leak = now\n            if water + 1 <= capacity:\n                water += 1\n                return func(*args, **kwargs)\n            return False\n\n        return limited\n\n    return decorator"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_114129_e1e73f",
+      "timestamp": 1791110489743
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_114129_e1e73f",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Use a per-function leaky-bucket closure. Configure 100 requests/minute as leak_rate=100/60 requests/second and capacity=150.\",\"mechanism\":null,\"parameters\":{\"leak_rate\":1.6666666666666667,\"capacity\":150},\"python\":\"from functools import wraps\\n\\ndef rate_limit(leak_rate, capacity, clock):\\n    def decorator(func):\\n        water = 0\\n        last_leak = clock()\\n\\n        @wraps(func)\\n        def limited(*args, **kwargs):\\n            nonlocal water, last_leak\\n            now = clock()\\n            water = max(0, water - (now - last_leak) * leak_rate)\\n            last_leak = now\\n            if water + 1 <= capacity:\\n                water += 1\\n                return func(*args, **kwargs)\\n            return False\\n\\n        return limited\\n\\n    return decorator\"}",
+    "tokens": {
+      "input": 1021,
+      "output": 4874,
+      "total": 6035,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 56608,
+    "timestamp": 1791110546351
+  },
+  "verification": {
+    "passed": true,
+    "reason": "confined_executable_fixture_checks",
+    "checks": [
+      "three_rate_capacity_configs",
+      "deterministic_trace",
+      "no_denied_side_effects",
+      "fractional_refill"
+    ],
+    "program_stdout": "",
+    "sandbox": {
+      "docker": "/usr/local/bin/docker",
+      "image_id": "sha256:1805d67d171b19ef73cc264f2083881fbd86bfc9d6313f0b54256ae314341a79",
+      "source_sha256": "c5b0f89c4f566ff2d9c50b32c1d4352f967db7eb7f483373edffd9da32e5da08",
+      "profile": "lcc-fixture-container/0.1",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  },
+  "wall_time_s": 59.25641837500734
+}

@@ -1,0 +1,160 @@
+{
+  "protocol_sha256": "3ed77e23bd08256d7a846d38607e6c945f7c001cb13f8d85f140c7d9eb1fd89e",
+  "metrics": {
+    "n": 60288,
+    "binary": 53248,
+    "positive": 26624,
+    "negative": 26624,
+    "pooled_wins": 695479527,
+    "pooled_comparisons": 708837376,
+    "pooled_auc": 0.9811552699500993,
+    "within_goal": {
+      "wins": 52629,
+      "comparisons": 53248,
+      "auc": 0.9883751502403846
+    },
+    "within_goal_auc": 0.9883751502403846,
+    "same_report_goal": {
+      "wins": 26304,
+      "comparisons": 26624,
+      "auc": 0.9879807692307693
+    },
+    "positive_keep_recall": 0.9850135216346154,
+    "contradiction_keep_recall": 0.9846973283733513,
+    "negative_drop_rejection": 0.8705679086538461,
+    "binary_unknown_rate": 0.08152418870192307,
+    "semantic_unknown": 6912,
+    "structural_unknown": 128,
+    "semantic_unknown_recognition": 1.0,
+    "structural_unknown_recognition": 1.0,
+    "unknown_drops": 0,
+    "control_shadow": false
+  },
+  "by_language": {
+    "en": {
+      "n": 30144,
+      "binary": 26624,
+      "positive": 13312,
+      "negative": 13312,
+      "pooled_wins": 173808421,
+      "pooled_comparisons": 177209344,
+      "pooled_auc": 0.9808084442770693,
+      "within_goal": {
+        "wins": 26298,
+        "comparisons": 26624,
+        "auc": 0.9877554086538461
+      },
+      "within_goal_auc": 0.9877554086538461,
+      "same_report_goal": {
+        "wins": 13156,
+        "comparisons": 13312,
+        "auc": 0.98828125
+      },
+      "positive_keep_recall": 0.98828125,
+      "contradiction_keep_recall": 0.9883327696990193,
+      "negative_drop_rejection": 0.8641826923076923,
+      "binary_unknown_rate": 0.07906400240384616,
+      "semantic_unknown": 3456,
+      "structural_unknown": 64,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "pt": {
+      "n": 30144,
+      "binary": 26624,
+      "positive": 13312,
+      "negative": 13312,
+      "pooled_wins": 173956722,
+      "pooled_comparisons": 177209344,
+      "pooled_auc": 0.9816453132403673,
+      "within_goal": {
+        "wins": 26331,
+        "comparisons": 26624,
+        "auc": 0.9889948918269231
+      },
+      "within_goal_auc": 0.9889948918269231,
+      "same_report_goal": {
+        "wins": 13148,
+        "comparisons": 13312,
+        "auc": 0.9876802884615384
+      },
+      "positive_keep_recall": 0.9817457932692307,
+      "contradiction_keep_recall": 0.9810618870476835,
+      "negative_drop_rejection": 0.876953125,
+      "binary_unknown_rate": 0.083984375,
+      "semantic_unknown": 3456,
+      "structural_unknown": 64,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    }
+  },
+  "by_report_language": {
+    "en": {
+      "n": 30144,
+      "binary": 26624,
+      "positive": 13312,
+      "negative": 13312,
+      "pooled_wins": 173834444,
+      "pooled_comparisons": 177209344,
+      "pooled_auc": 0.980955293192666,
+      "within_goal": {
+        "wins": 26327,
+        "comparisons": 26624,
+        "auc": 0.9888446514423077
+      },
+      "within_goal_auc": 0.9888446514423077,
+      "same_report_goal": {
+        "wins": 13139,
+        "comparisons": 13312,
+        "auc": 0.9870042067307693
+      },
+      "positive_keep_recall": 0.9797175480769231,
+      "contradiction_keep_recall": 0.9817114093959731,
+      "negative_drop_rejection": 0.8836388221153846,
+      "binary_unknown_rate": 0.06959885817307693,
+      "semantic_unknown": 3456,
+      "structural_unknown": 64,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "pt": {
+      "n": 30144,
+      "binary": 26624,
+      "positive": 13312,
+      "negative": 13312,
+      "pooled_wins": 173953433,
+      "pooled_comparisons": 177209344,
+      "pooled_auc": 0.9816267532709788,
+      "within_goal": {
+        "wins": 26302,
+        "comparisons": 26624,
+        "auc": 0.9879056490384616
+      },
+      "within_goal_auc": 0.9879056490384616,
+      "same_report_goal": {
+        "wins": 13165,
+        "comparisons": 13312,
+        "auc": 0.9889573317307693
+      },
+      "positive_keep_recall": 0.9903094951923077,
+      "contradiction_keep_recall": 0.9877300613496932,
+      "negative_drop_rejection": 0.8574969951923077,
+      "binary_unknown_rate": 0.09344951923076923,
+      "semantic_unknown": 3456,
+      "structural_unknown": 64,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    }
+  },
+  "passes_point_criteria": true,
+  "development_only": true,
+  "adoption": false
+}

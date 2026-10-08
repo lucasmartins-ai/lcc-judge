@@ -1,0 +1,1563 @@
+{
+  "request": {
+    "seed": 442500,
+    "fixtures": 4
+  },
+  "request_sha256": "a8117dc8e8026f22537046f915edbbe9d8a13146c244dc29cc26715253254a14",
+  "runtime": {
+    "image_id": "sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4",
+    "source_sha256": "b7d1db093b638050280917604068e42909d095a5baafa640ad962f0f2557b375",
+    "dependency_sha256": "255600482631fdd1a04f299af2f0f1e748d783caafa896bdee322fce18f099bf",
+    "profile": "trusted-tool-relations/0.1",
+    "os": "linux",
+    "architecture": "arm64"
+  },
+  "container_argv": [
+    "run",
+    "--rm",
+    "--pull=never",
+    "--init",
+    "-i",
+    "--name",
+    "lcc-tool-relations-24ee1e5851ba4087bb8121bc1d1167a7",
+    "--label",
+    "lcc.tool-relation-run=true",
+    "--network=none",
+    "--read-only",
+    "--cap-drop=ALL",
+    "--security-opt=no-new-privileges",
+    "--pids-limit=64",
+    "--memory=256m",
+    "--memory-swap=256m",
+    "--cpus=1",
+    "--ulimit",
+    "nofile=64:64",
+    "--log-driver=none",
+    "--user=65534:65534",
+    "--tmpfs",
+    "/tmp:rw,noexec,nosuid,size=64m",
+    "--workdir=/tmp",
+    "--env",
+    "LCC_TOOL_RELATION_WORKER=1",
+    "sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4",
+    "python",
+    "-I",
+    "-m",
+    "research.tool_relation_worker"
+  ],
+  "stdout": "{\"schema\": \"trusted-tool-relations/0.1\", \"request\": {\"seed\": 442500, \"fixtures\": 4}, \"versions\": {\"git\": \"git version 2.47.3\", \"tenacity\": \"9.1.4\"}, \"python\": \"3.13.16 (main, Oct  1 2026, 21:44:19) [GCC 14.2.0]\", \"fixtures\": [{\"index\": 0, \"fixture_content\": \"{\\\"git\\\": {\\\"baseline_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6f726967696e616c20626f74680a\\\", \\\"clean-0.txt\\\": \\\"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\\\", \\\"clean-1.txt\\\": \\\"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\\\", \\\"clean-2.txt\\\": \\\"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\\\", \\\"removed.txt\\\": \\\"6f726967696e616c2072656d6f7665640a\\\", \\\"staged name.txt\\\": \\\"6f726967696e616c207374616765640a\\\", \\\"unstaged name.txt\\\": \\\"6f726967696e616c20776f726b747265650a\\\"}, \\\"current_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6368616e67656420776f726b7472656520626f746820961471982a58117bb0\\\", \\\"clean-0.txt\\\": \\\"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\\\", \\\"clean-1.txt\\\": \\\"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\\\", \\\"clean-2.txt\\\": \\\"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\\\", \\\"ignored-0.tmp\\\": \\\"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\\\", \\\"ignored-1.tmp\\\": \\\"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\\\", \\\"staged name.txt\\\": \\\"6368616e67656420737461676564200eee556da5feca27aa739824\\\", \\\"unstaged name.txt\\\": \\\"6368616e67656420776f726b7472656520755168fd6e18e65cedc5260bfaa1bf\\\", \\\"untracked 0.txt\\\": \\\"593d7ddc8331edbaa5b59489cd278c53\\\", \\\"untracked 1.txt\\\": \\\"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\\\", \\\"untracked 2.txt\\\": \\\"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\\\"}, \\\"ignored_file_hex\\\": {\\\"ignored-0.tmp\\\": \\\"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\\\", \\\"ignored-1.tmp\\\": \\\"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\\\"}, \\\"untracked_file_hex\\\": {\\\"untracked 0.txt\\\": \\\"593d7ddc8331edbaa5b59489cd278c53\\\", \\\"untracked 1.txt\\\": \\\"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\\\", \\\"untracked 2.txt\\\": \\\"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\\\"}}, \\\"retry\\\": {\\\"failures\\\": 2, \\\"wait_ms\\\": 1}, \\\"udp_payloads\\\": [\\\"\\\", \\\"910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c\\\", \\\"c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26\\\", \\\"4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef\\\", \\\"11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be\\\"]}\", \"fixture_content_sha256\": \"3da5df3add99404be9560b8ec0bc665f95987399376d9bd5748b4344c09463e1\", \"fields\": {\"retry_attempts\": 3, \"retry_failures\": 2, \"retry_sleep_calls\": 2, \"retry_scheduled_sleep_ns\": 2000000, \"retry_actual_sleep_ns\": 2906333, \"retry_elapsed_ns\": 3182375, \"udp_sent_datagrams\": 5, \"udp_received_datagrams\": 5, \"udp_sent_payload_bytes\": 599, \"udp_received_payload_bytes\": 599, \"git_index_files\": 8, \"git_untracked_files\": 3, \"git_ignored_files\": 2, \"git_index_edits\": 2, \"git_worktree_edits\": 3, \"git_clean_tracked_files\": 4, \"git_tracked_fs_bytes\": 241, \"git_untracked_fs_bytes\": 175}, \"raw_observations\": {\"retry\": {\"api\": \"tenacity.Retrying\", \"attempts\": [{\"number\": 1, \"failed\": true, \"at_ns\": 295527493929365}, {\"number\": 2, \"failed\": true, \"at_ns\": 295527495653740}, {\"number\": 3, \"failed\": false, \"at_ns\": 295527497057240}], \"sleeps\": [{\"seconds\": 0.001, \"before_ns\": 295527493973115, \"after_ns\": 295527495550073}, {\"seconds\": 0.001, \"before_ns\": 295527495709948, \"after_ns\": 295527497039323}], \"statistics\": {\"start_time\": 295527.493915323, \"attempt_number\": 3, \"idle_for\": 0.002, \"delay_since_first_attempt\": 0.0017412499873898923}, \"before_ns\": 295527493907907, \"after_ns\": 295527497090282, \"result\": \"observed success\", \"authored\": {\"failures\": 2, \"wait_ms\": 1}}, \"udp\": {\"api\": \"socket.sendto/recvfrom\", \"events\": [{\"sent_hex\": \"\", \"received_hex\": \"\", \"sent_bytes\": 0, \"received_bytes\": 0, \"from_address\": [\"127.0.0.1\", 49861]}, {\"sent_hex\": \"910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c\", \"received_hex\": \"910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c\", \"sent_bytes\": 76, \"received_bytes\": 76, \"from_address\": [\"127.0.0.1\", 49861]}, {\"sent_hex\": \"c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26\", \"received_hex\": \"c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26\", \"sent_bytes\": 166, \"received_bytes\": 166, \"from_address\": [\"127.0.0.1\", 49861]}, {\"sent_hex\": \"4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef\", \"received_hex\": \"4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef\", \"sent_bytes\": 127, \"received_bytes\": 127, \"from_address\": [\"127.0.0.1\", 49861]}, {\"sent_hex\": \"11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be\", \"received_hex\": \"11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be\", \"sent_bytes\": 230, \"received_bytes\": 230, \"from_address\": [\"127.0.0.1\", 49861]}], \"source\": [\"127.0.0.1\", 49861], \"destination\": [\"127.0.0.1\", 53260], \"sent_payloads\": [\"\", \"910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c\", \"c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26\", \"4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef\", \"11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be\"], \"scope\": \"local UDP payload/datagram observations, not wire/IP packet counters\"}, \"git\": {\"api\": \"git status/ls-files\", \"status_stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000?? untracked 1.txt\\u0000?? untracked 2.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000\", \"index_stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000clean-2.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"untracked_stdout\": \"untracked 0.txt\\u0000untracked 1.txt\\u0000untracked 2.txt\\u0000\", \"ignored_stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000\", \"current_file_hex\": {\"ignored-1.tmp\": \"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\", \"ignored-0.tmp\": \"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\", \"untracked 2.txt\": \"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\", \"untracked 1.txt\": \"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\", \"untracked 0.txt\": \"593d7ddc8331edbaa5b59489cd278c53\", \"clean-2.txt\": \"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\", \"clean-1.txt\": \"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\", \"clean-0.txt\": \"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f746820961471982a58117bb0\", \"unstaged name.txt\": \"6368616e67656420776f726b7472656520755168fd6e18e65cedc5260bfaa1bf\", \"staged name.txt\": \"6368616e67656420737461676564200eee556da5feca27aa739824\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}, \"commands\": [{\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"init\", \"--quiet\", \"--template=\", \"--initial-branch=main\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \".gitignore\", \"both\\nname.txt\", \"clean-0.txt\", \"clean-1.txt\", \"clean-2.txt\", \"removed.txt\", \"staged name.txt\", \"unstaged name.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"commit\", \"--quiet\", \"--no-gpg-sign\", \"-m\", \"authored initial state\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \"staged name.txt\", \"both\\nname.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"status\", \"--porcelain=v1\", \"-z\", \"--untracked-files=all\", \"--ignored=matching\"], \"returncode\": 0, \"stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000?? untracked 1.txt\\u0000?? untracked 2.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--cached\", \"-z\"], \"returncode\": 0, \"stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000clean-2.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"untracked 0.txt\\u0000untracked 1.txt\\u0000untracked 2.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--ignored\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000\", \"stderr\": \"\"}], \"authored\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"clean-0.txt\": \"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\", \"clean-1.txt\": \"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\", \"clean-2.txt\": \"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"593d7ddc8331edbaa5b59489cd278c53\", \"untracked 1.txt\": \"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\", \"untracked 2.txt\": \"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\", \"ignored-1.tmp\": \"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\"}, \"current_file_hex\": {\"ignored-1.tmp\": \"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\", \"ignored-0.tmp\": \"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\", \"untracked 2.txt\": \"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\", \"untracked 1.txt\": \"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\", \"untracked 0.txt\": \"593d7ddc8331edbaa5b59489cd278c53\", \"clean-2.txt\": \"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\", \"clean-1.txt\": \"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\", \"clean-0.txt\": \"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f746820961471982a58117bb0\", \"unstaged name.txt\": \"6368616e67656420776f726b7472656520755168fd6e18e65cedc5260bfaa1bf\", \"staged name.txt\": \"6368616e67656420737461676564200eee556da5feca27aa739824\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}}}}, \"all_reference_checks_passed\": true, \"scope\": \"actual APIs on authored fixtures; no production/model/P2 evidence\"}, {\"index\": 1, \"fixture_content\": \"{\\\"git\\\": {\\\"baseline_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6f726967696e616c20626f74680a\\\", \\\"clean-0.txt\\\": \\\"cb2d35a3eef269d6\\\", \\\"clean-1.txt\\\": \\\"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\\\", \\\"removed.txt\\\": \\\"6f726967696e616c2072656d6f7665640a\\\", \\\"staged name.txt\\\": \\\"6f726967696e616c207374616765640a\\\", \\\"unstaged name.txt\\\": \\\"6f726967696e616c20776f726b747265650a\\\"}, \\\"current_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6368616e67656420776f726b7472656520626f7468208df922373914dc3f60\\\", \\\"clean-0.txt\\\": \\\"cb2d35a3eef269d6\\\", \\\"clean-1.txt\\\": \\\"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\\\", \\\"ignored-0.tmp\\\": \\\"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\\\", \\\"ignored-1.tmp\\\": \\\"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\\\", \\\"ignored-2.tmp\\\": \\\"51a97266452a3ba440c02bc941\\\", \\\"ignored-3.tmp\\\": \\\"127be3f87ea81e2f4d57cba1c287d4968e8116825914\\\", \\\"staged name.txt\\\": \\\"6368616e6765642073746167656420d57b11de8b19f70a8b81cf3e\\\", \\\"unstaged name.txt\\\": \\\"6368616e67656420776f726b74726565202c9f05c133bad2d8330e86e334c36f\\\", \\\"untracked 0.txt\\\": \\\"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\\\", \\\"untracked 1.txt\\\": \\\"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\\\", \\\"untracked 2.txt\\\": \\\"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\\\", \\\"untracked 3.txt\\\": \\\"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\\\", \\\"untracked 4.txt\\\": \\\"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\\\"}, \\\"ignored_file_hex\\\": {\\\"ignored-0.tmp\\\": \\\"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\\\", \\\"ignored-1.tmp\\\": \\\"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\\\", \\\"ignored-2.tmp\\\": \\\"51a97266452a3ba440c02bc941\\\", \\\"ignored-3.tmp\\\": \\\"127be3f87ea81e2f4d57cba1c287d4968e8116825914\\\"}, \\\"untracked_file_hex\\\": {\\\"untracked 0.txt\\\": \\\"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\\\", \\\"untracked 1.txt\\\": \\\"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\\\", \\\"untracked 2.txt\\\": \\\"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\\\", \\\"untracked 3.txt\\\": \\\"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\\\", \\\"untracked 4.txt\\\": \\\"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\\\"}}, \\\"retry\\\": {\\\"failures\\\": 5, \\\"wait_ms\\\": 2}, \\\"udp_payloads\\\": [\\\"\\\", \\\"5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8\\\", \\\"9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb\\\", \\\"68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b\\\", \\\"e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b\\\"]}\", \"fixture_content_sha256\": \"7b0ab61d31e8a7abc1dc83cf378b35dc21a42ad742ec986f10ac7409925c4688\", \"fields\": {\"retry_attempts\": 6, \"retry_failures\": 5, \"retry_sleep_calls\": 5, \"retry_scheduled_sleep_ns\": 10000000, \"retry_actual_sleep_ns\": 13611500, \"retry_elapsed_ns\": 14214917, \"udp_sent_datagrams\": 5, \"udp_received_datagrams\": 5, \"udp_sent_payload_bytes\": 621, \"udp_received_payload_bytes\": 621, \"git_index_files\": 7, \"git_untracked_files\": 5, \"git_ignored_files\": 4, \"git_index_edits\": 2, \"git_worktree_edits\": 3, \"git_clean_tracked_files\": 3, \"git_tracked_fs_bytes\": 201, \"git_untracked_fs_bytes\": 250}, \"raw_observations\": {\"retry\": {\"api\": \"tenacity.Retrying\", \"attempts\": [{\"number\": 1, \"failed\": true, \"at_ns\": 295527521031698}, {\"number\": 2, \"failed\": true, \"at_ns\": 295527523584323}, {\"number\": 3, \"failed\": true, \"at_ns\": 295527527745407}, {\"number\": 4, \"failed\": true, \"at_ns\": 295527530361032}, {\"number\": 5, \"failed\": true, \"at_ns\": 295527532550157}, {\"number\": 6, \"failed\": false, \"at_ns\": 295527535117782}], \"sleeps\": [{\"seconds\": 0.002, \"before_ns\": 295527521074032, \"after_ns\": 295527523547032}, {\"seconds\": 0.002, \"before_ns\": 295527523668365, \"after_ns\": 295527527723198}, {\"seconds\": 0.002, \"before_ns\": 295527527790323, \"after_ns\": 295527530311032}, {\"seconds\": 0.002, \"before_ns\": 295527530443740, \"after_ns\": 295527532528573}, {\"seconds\": 0.002, \"before_ns\": 295527532593073, \"after_ns\": 295527535071198}], \"statistics\": {\"start_time\": 295527.520997573, \"attempt_number\": 6, \"idle_for\": 0.01, \"delay_since_first_attempt\": 0.01153687504120171}, \"before_ns\": 295527520986573, \"after_ns\": 295527535201490, \"result\": \"observed success\", \"authored\": {\"failures\": 5, \"wait_ms\": 2}}, \"udp\": {\"api\": \"socket.sendto/recvfrom\", \"events\": [{\"sent_hex\": \"\", \"received_hex\": \"\", \"sent_bytes\": 0, \"received_bytes\": 0, \"from_address\": [\"127.0.0.1\", 53903]}, {\"sent_hex\": \"5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8\", \"received_hex\": \"5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8\", \"sent_bytes\": 156, \"received_bytes\": 156, \"from_address\": [\"127.0.0.1\", 53903]}, {\"sent_hex\": \"9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb\", \"received_hex\": \"9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb\", \"sent_bytes\": 190, \"received_bytes\": 190, \"from_address\": [\"127.0.0.1\", 53903]}, {\"sent_hex\": \"68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b\", \"received_hex\": \"68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b\", \"sent_bytes\": 240, \"received_bytes\": 240, \"from_address\": [\"127.0.0.1\", 53903]}, {\"sent_hex\": \"e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b\", \"received_hex\": \"e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b\", \"sent_bytes\": 35, \"received_bytes\": 35, \"from_address\": [\"127.0.0.1\", 53903]}], \"source\": [\"127.0.0.1\", 53903], \"destination\": [\"127.0.0.1\", 59658], \"sent_payloads\": [\"\", \"5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8\", \"9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb\", \"68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b\", \"e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b\"], \"scope\": \"local UDP payload/datagram observations, not wire/IP packet counters\"}, \"git\": {\"api\": \"git status/ls-files\", \"status_stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000?? untracked 1.txt\\u0000?? untracked 2.txt\\u0000?? untracked 3.txt\\u0000?? untracked 4.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000!! ignored-2.tmp\\u0000!! ignored-3.tmp\\u0000\", \"index_stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"untracked_stdout\": \"untracked 0.txt\\u0000untracked 1.txt\\u0000untracked 2.txt\\u0000untracked 3.txt\\u0000untracked 4.txt\\u0000\", \"ignored_stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000ignored-2.tmp\\u0000ignored-3.tmp\\u0000\", \"current_file_hex\": {\"ignored-3.tmp\": \"127be3f87ea81e2f4d57cba1c287d4968e8116825914\", \"ignored-2.tmp\": \"51a97266452a3ba440c02bc941\", \"ignored-1.tmp\": \"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\", \"ignored-0.tmp\": \"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\", \"untracked 4.txt\": \"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\", \"untracked 3.txt\": \"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\", \"untracked 2.txt\": \"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\", \"untracked 1.txt\": \"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\", \"untracked 0.txt\": \"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\", \"clean-1.txt\": \"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\", \"clean-0.txt\": \"cb2d35a3eef269d6\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f7468208df922373914dc3f60\", \"unstaged name.txt\": \"6368616e67656420776f726b74726565202c9f05c133bad2d8330e86e334c36f\", \"staged name.txt\": \"6368616e6765642073746167656420d57b11de8b19f70a8b81cf3e\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}, \"commands\": [{\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"init\", \"--quiet\", \"--template=\", \"--initial-branch=main\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \".gitignore\", \"both\\nname.txt\", \"clean-0.txt\", \"clean-1.txt\", \"removed.txt\", \"staged name.txt\", \"unstaged name.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"commit\", \"--quiet\", \"--no-gpg-sign\", \"-m\", \"authored initial state\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \"staged name.txt\", \"both\\nname.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"status\", \"--porcelain=v1\", \"-z\", \"--untracked-files=all\", \"--ignored=matching\"], \"returncode\": 0, \"stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000?? untracked 1.txt\\u0000?? untracked 2.txt\\u0000?? untracked 3.txt\\u0000?? untracked 4.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000!! ignored-2.tmp\\u0000!! ignored-3.tmp\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--cached\", \"-z\"], \"returncode\": 0, \"stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"untracked 0.txt\\u0000untracked 1.txt\\u0000untracked 2.txt\\u0000untracked 3.txt\\u0000untracked 4.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--ignored\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000ignored-2.tmp\\u0000ignored-3.tmp\\u0000\", \"stderr\": \"\"}], \"authored\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"clean-0.txt\": \"cb2d35a3eef269d6\", \"clean-1.txt\": \"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\", \"untracked 1.txt\": \"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\", \"untracked 2.txt\": \"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\", \"untracked 3.txt\": \"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\", \"untracked 4.txt\": \"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\", \"ignored-1.tmp\": \"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\", \"ignored-2.tmp\": \"51a97266452a3ba440c02bc941\", \"ignored-3.tmp\": \"127be3f87ea81e2f4d57cba1c287d4968e8116825914\"}, \"current_file_hex\": {\"ignored-3.tmp\": \"127be3f87ea81e2f4d57cba1c287d4968e8116825914\", \"ignored-2.tmp\": \"51a97266452a3ba440c02bc941\", \"ignored-1.tmp\": \"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\", \"ignored-0.tmp\": \"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\", \"untracked 4.txt\": \"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\", \"untracked 3.txt\": \"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\", \"untracked 2.txt\": \"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\", \"untracked 1.txt\": \"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\", \"untracked 0.txt\": \"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\", \"clean-1.txt\": \"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\", \"clean-0.txt\": \"cb2d35a3eef269d6\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f7468208df922373914dc3f60\", \"unstaged name.txt\": \"6368616e67656420776f726b74726565202c9f05c133bad2d8330e86e334c36f\", \"staged name.txt\": \"6368616e6765642073746167656420d57b11de8b19f70a8b81cf3e\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}}}}, \"all_reference_checks_passed\": true, \"scope\": \"actual APIs on authored fixtures; no production/model/P2 evidence\"}, {\"index\": 2, \"fixture_content\": \"{\\\"git\\\": {\\\"baseline_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6f726967696e616c20626f74680a\\\", \\\"clean-0.txt\\\": \\\"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\\\", \\\"clean-1.txt\\\": \\\"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\\\", \\\"clean-2.txt\\\": \\\"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\\\", \\\"clean-3.txt\\\": \\\"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\\\", \\\"removed.txt\\\": \\\"6f726967696e616c2072656d6f7665640a\\\", \\\"staged name.txt\\\": \\\"6f726967696e616c207374616765640a\\\", \\\"unstaged name.txt\\\": \\\"6f726967696e616c20776f726b747265650a\\\"}, \\\"current_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6368616e67656420776f726b7472656520626f7468204589a1b47be6c6433c\\\", \\\"clean-0.txt\\\": \\\"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\\\", \\\"clean-1.txt\\\": \\\"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\\\", \\\"clean-2.txt\\\": \\\"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\\\", \\\"clean-3.txt\\\": \\\"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\\\", \\\"ignored-0.tmp\\\": \\\"a145c27f0d6eaaec020923989026e72743d2cc13a80985\\\", \\\"ignored-1.tmp\\\": \\\"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\\\", \\\"staged name.txt\\\": \\\"6368616e67656420737461676564206b293e60b907a9d63242c3e2\\\", \\\"unstaged name.txt\\\": \\\"6368616e67656420776f726b747265652037bc563745d6d6dee6d14a4e8bea29\\\", \\\"untracked 0.txt\\\": \\\"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\\\"}, \\\"ignored_file_hex\\\": {\\\"ignored-0.tmp\\\": \\\"a145c27f0d6eaaec020923989026e72743d2cc13a80985\\\", \\\"ignored-1.tmp\\\": \\\"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\\\"}, \\\"untracked_file_hex\\\": {\\\"untracked 0.txt\\\": \\\"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\\\"}}, \\\"retry\\\": {\\\"failures\\\": 3, \\\"wait_ms\\\": 1}, \\\"udp_payloads\\\": [\\\"\\\", \\\"5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833\\\", \\\"aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e\\\", \\\"e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1\\\", \\\"70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532\\\"]}\", \"fixture_content_sha256\": \"fa2ed9b6665594407cf624c4af1dabcd7eb4eb344a180c8eacc83520bc90231f\", \"fields\": {\"retry_attempts\": 4, \"retry_failures\": 3, \"retry_sleep_calls\": 3, \"retry_scheduled_sleep_ns\": 3000000, \"retry_actual_sleep_ns\": 3565500, \"retry_elapsed_ns\": 4395708, \"udp_sent_datagrams\": 5, \"udp_received_datagrams\": 5, \"udp_sent_payload_bytes\": 351, \"udp_received_payload_bytes\": 351, \"git_index_files\": 9, \"git_untracked_files\": 1, \"git_ignored_files\": 2, \"git_index_edits\": 2, \"git_worktree_edits\": 3, \"git_clean_tracked_files\": 5, \"git_tracked_fs_bytes\": 305, \"git_untracked_fs_bytes\": 68}, \"raw_observations\": {\"retry\": {\"api\": \"tenacity.Retrying\", \"attempts\": [{\"number\": 1, \"failed\": true, \"at_ns\": 295527556757615}, {\"number\": 2, \"failed\": true, \"at_ns\": 295527558613490}, {\"number\": 3, \"failed\": true, \"at_ns\": 295527559845365}, {\"number\": 4, \"failed\": false, \"at_ns\": 295527561107115}], \"sleeps\": [{\"seconds\": 0.001, \"before_ns\": 295527557384073, \"after_ns\": 295527558583157}, {\"seconds\": 0.001, \"before_ns\": 295527558663115, \"after_ns\": 295527559824240}, {\"seconds\": 0.001, \"before_ns\": 295527559888907, \"after_ns\": 295527561094198}], \"statistics\": {\"start_time\": 295527.556745573, \"attempt_number\": 4, \"idle_for\": 0.003, \"delay_since_first_attempt\": 0.0031019580201245844}, \"before_ns\": 295527556733407, \"after_ns\": 295527561129115, \"result\": \"observed success\", \"authored\": {\"failures\": 3, \"wait_ms\": 1}}, \"udp\": {\"api\": \"socket.sendto/recvfrom\", \"events\": [{\"sent_hex\": \"\", \"received_hex\": \"\", \"sent_bytes\": 0, \"received_bytes\": 0, \"from_address\": [\"127.0.0.1\", 34698]}, {\"sent_hex\": \"5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833\", \"received_hex\": \"5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833\", \"sent_bytes\": 76, \"received_bytes\": 76, \"from_address\": [\"127.0.0.1\", 34698]}, {\"sent_hex\": \"aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e\", \"received_hex\": \"aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e\", \"sent_bytes\": 35, \"received_bytes\": 35, \"from_address\": [\"127.0.0.1\", 34698]}, {\"sent_hex\": \"e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1\", \"received_hex\": \"e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1\", \"sent_bytes\": 52, \"received_bytes\": 52, \"from_address\": [\"127.0.0.1\", 34698]}, {\"sent_hex\": \"70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532\", \"received_hex\": \"70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532\", \"sent_bytes\": 188, \"received_bytes\": 188, \"from_address\": [\"127.0.0.1\", 34698]}], \"source\": [\"127.0.0.1\", 34698], \"destination\": [\"127.0.0.1\", 46229], \"sent_payloads\": [\"\", \"5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833\", \"aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e\", \"e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1\", \"70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532\"], \"scope\": \"local UDP payload/datagram observations, not wire/IP packet counters\"}, \"git\": {\"api\": \"git status/ls-files\", \"status_stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000\", \"index_stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000clean-2.txt\\u0000clean-3.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"untracked_stdout\": \"untracked 0.txt\\u0000\", \"ignored_stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000\", \"current_file_hex\": {\"ignored-1.tmp\": \"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\", \"ignored-0.tmp\": \"a145c27f0d6eaaec020923989026e72743d2cc13a80985\", \"untracked 0.txt\": \"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\", \"clean-3.txt\": \"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\", \"clean-2.txt\": \"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\", \"clean-1.txt\": \"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\", \"clean-0.txt\": \"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f7468204589a1b47be6c6433c\", \"unstaged name.txt\": \"6368616e67656420776f726b747265652037bc563745d6d6dee6d14a4e8bea29\", \"staged name.txt\": \"6368616e67656420737461676564206b293e60b907a9d63242c3e2\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}, \"commands\": [{\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"init\", \"--quiet\", \"--template=\", \"--initial-branch=main\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \".gitignore\", \"both\\nname.txt\", \"clean-0.txt\", \"clean-1.txt\", \"clean-2.txt\", \"clean-3.txt\", \"removed.txt\", \"staged name.txt\", \"unstaged name.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"commit\", \"--quiet\", \"--no-gpg-sign\", \"-m\", \"authored initial state\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \"staged name.txt\", \"both\\nname.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"status\", \"--porcelain=v1\", \"-z\", \"--untracked-files=all\", \"--ignored=matching\"], \"returncode\": 0, \"stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--cached\", \"-z\"], \"returncode\": 0, \"stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000clean-2.txt\\u0000clean-3.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"untracked 0.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--ignored\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000\", \"stderr\": \"\"}], \"authored\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"clean-0.txt\": \"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\", \"clean-1.txt\": \"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\", \"clean-2.txt\": \"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\", \"clean-3.txt\": \"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"a145c27f0d6eaaec020923989026e72743d2cc13a80985\", \"ignored-1.tmp\": \"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\"}, \"current_file_hex\": {\"ignored-1.tmp\": \"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\", \"ignored-0.tmp\": \"a145c27f0d6eaaec020923989026e72743d2cc13a80985\", \"untracked 0.txt\": \"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\", \"clean-3.txt\": \"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\", \"clean-2.txt\": \"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\", \"clean-1.txt\": \"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\", \"clean-0.txt\": \"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f7468204589a1b47be6c6433c\", \"unstaged name.txt\": \"6368616e67656420776f726b747265652037bc563745d6d6dee6d14a4e8bea29\", \"staged name.txt\": \"6368616e67656420737461676564206b293e60b907a9d63242c3e2\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}}}}, \"all_reference_checks_passed\": true, \"scope\": \"actual APIs on authored fixtures; no production/model/P2 evidence\"}, {\"index\": 3, \"fixture_content\": \"{\\\"git\\\": {\\\"baseline_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6f726967696e616c20626f74680a\\\", \\\"clean-0.txt\\\": \\\"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\\\", \\\"clean-1.txt\\\": \\\"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\\\", \\\"removed.txt\\\": \\\"6f726967696e616c2072656d6f7665640a\\\", \\\"staged name.txt\\\": \\\"6f726967696e616c207374616765640a\\\", \\\"unstaged name.txt\\\": \\\"6f726967696e616c20776f726b747265650a\\\"}, \\\"current_file_hex\\\": {\\\".gitignore\\\": \\\"69676e6f7265642d2a2e746d700a\\\", \\\"both\\\\nname.txt\\\": \\\"6368616e67656420776f726b7472656520626f74682041da005396ef081791\\\", \\\"clean-0.txt\\\": \\\"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\\\", \\\"clean-1.txt\\\": \\\"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\\\", \\\"ignored-0.tmp\\\": \\\"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\\\", \\\"ignored-1.tmp\\\": \\\"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\\\", \\\"staged name.txt\\\": \\\"6368616e6765642073746167656420d7fe1233750087e9b86763a6\\\", \\\"unstaged name.txt\\\": \\\"6368616e67656420776f726b74726565203c4a9837fed445876187537dce7331\\\", \\\"untracked 0.txt\\\": \\\"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\\\", \\\"untracked 1.txt\\\": \\\"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\\\", \\\"untracked 2.txt\\\": \\\"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\\\"}, \\\"ignored_file_hex\\\": {\\\"ignored-0.tmp\\\": \\\"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\\\", \\\"ignored-1.tmp\\\": \\\"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\\\"}, \\\"untracked_file_hex\\\": {\\\"untracked 0.txt\\\": \\\"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\\\", \\\"untracked 1.txt\\\": \\\"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\\\", \\\"untracked 2.txt\\\": \\\"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\\\"}}, \\\"retry\\\": {\\\"failures\\\": 5, \\\"wait_ms\\\": 3}, \\\"udp_payloads\\\": [\\\"\\\", \\\"9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be\\\", \\\"e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488\\\", \\\"813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5\\\", \\\"41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7\\\"]}\", \"fixture_content_sha256\": \"04fe1d0389322cd3a0a447952ffa32f5f9516c8efb500588d2f67e1267c07e70\", \"fields\": {\"retry_attempts\": 6, \"retry_failures\": 5, \"retry_sleep_calls\": 5, \"retry_scheduled_sleep_ns\": 15000000, \"retry_actual_sleep_ns\": 15869083, \"retry_elapsed_ns\": 16386208, \"udp_sent_datagrams\": 5, \"udp_received_datagrams\": 5, \"udp_sent_payload_bytes\": 331, \"udp_received_payload_bytes\": 331, \"git_index_files\": 7, \"git_untracked_files\": 3, \"git_ignored_files\": 2, \"git_index_edits\": 2, \"git_worktree_edits\": 3, \"git_clean_tracked_files\": 3, \"git_tracked_fs_bytes\": 250, \"git_untracked_fs_bytes\": 258}, \"raw_observations\": {\"retry\": {\"api\": \"tenacity.Retrying\", \"attempts\": [{\"number\": 1, \"failed\": true, \"at_ns\": 295527584931615}, {\"number\": 2, \"failed\": true, \"at_ns\": 295527588113865}, {\"number\": 3, \"failed\": true, \"at_ns\": 295527591388407}, {\"number\": 4, \"failed\": true, \"at_ns\": 295527594643782}, {\"number\": 5, \"failed\": true, \"at_ns\": 295527597867323}, {\"number\": 6, \"failed\": false, \"at_ns\": 295527601257865}], \"sleeps\": [{\"seconds\": 0.003, \"before_ns\": 295527584969907, \"after_ns\": 295527588087240}, {\"seconds\": 0.003, \"before_ns\": 295527588164740, \"after_ns\": 295527591358240}, {\"seconds\": 0.003, \"before_ns\": 295527591441948, \"after_ns\": 295527594591115}, {\"seconds\": 0.003, \"before_ns\": 295527594739782, \"after_ns\": 295527597836865}, {\"seconds\": 0.003, \"before_ns\": 295527597920657, \"after_ns\": 295527601232657}], \"statistics\": {\"start_time\": 295527.584920282, \"attempt_number\": 6, \"idle_for\": 0.015, \"delay_since_first_attempt\": 0.0129505840013735}, \"before_ns\": 295527584908365, \"after_ns\": 295527601294573, \"result\": \"observed success\", \"authored\": {\"failures\": 5, \"wait_ms\": 3}}, \"udp\": {\"api\": \"socket.sendto/recvfrom\", \"events\": [{\"sent_hex\": \"\", \"received_hex\": \"\", \"sent_bytes\": 0, \"received_bytes\": 0, \"from_address\": [\"127.0.0.1\", 39834]}, {\"sent_hex\": \"9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be\", \"received_hex\": \"9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be\", \"sent_bytes\": 177, \"received_bytes\": 177, \"from_address\": [\"127.0.0.1\", 39834]}, {\"sent_hex\": \"e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488\", \"received_hex\": \"e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488\", \"sent_bytes\": 52, \"received_bytes\": 52, \"from_address\": [\"127.0.0.1\", 39834]}, {\"sent_hex\": \"813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5\", \"received_hex\": \"813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5\", \"sent_bytes\": 79, \"received_bytes\": 79, \"from_address\": [\"127.0.0.1\", 39834]}, {\"sent_hex\": \"41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7\", \"received_hex\": \"41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7\", \"sent_bytes\": 23, \"received_bytes\": 23, \"from_address\": [\"127.0.0.1\", 39834]}], \"source\": [\"127.0.0.1\", 39834], \"destination\": [\"127.0.0.1\", 44252], \"sent_payloads\": [\"\", \"9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be\", \"e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488\", \"813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5\", \"41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7\"], \"scope\": \"local UDP payload/datagram observations, not wire/IP packet counters\"}, \"git\": {\"api\": \"git status/ls-files\", \"status_stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000?? untracked 1.txt\\u0000?? untracked 2.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000\", \"index_stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"untracked_stdout\": \"untracked 0.txt\\u0000untracked 1.txt\\u0000untracked 2.txt\\u0000\", \"ignored_stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000\", \"current_file_hex\": {\"ignored-1.tmp\": \"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\", \"ignored-0.tmp\": \"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\", \"untracked 2.txt\": \"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\", \"untracked 1.txt\": \"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\", \"untracked 0.txt\": \"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\", \"clean-1.txt\": \"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\", \"clean-0.txt\": \"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f74682041da005396ef081791\", \"unstaged name.txt\": \"6368616e67656420776f726b74726565203c4a9837fed445876187537dce7331\", \"staged name.txt\": \"6368616e6765642073746167656420d7fe1233750087e9b86763a6\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}, \"commands\": [{\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"init\", \"--quiet\", \"--template=\", \"--initial-branch=main\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \".gitignore\", \"both\\nname.txt\", \"clean-0.txt\", \"clean-1.txt\", \"removed.txt\", \"staged name.txt\", \"unstaged name.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"commit\", \"--quiet\", \"--no-gpg-sign\", \"-m\", \"authored initial state\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"add\", \"--\", \"staged name.txt\", \"both\\nname.txt\"], \"returncode\": 0, \"stdout\": \"\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"status\", \"--porcelain=v1\", \"-z\", \"--untracked-files=all\", \"--ignored=matching\"], \"returncode\": 0, \"stdout\": \"MM both\\nname.txt\\u0000 D removed.txt\\u0000M  staged name.txt\\u0000 M unstaged name.txt\\u0000?? untracked 0.txt\\u0000?? untracked 1.txt\\u0000?? untracked 2.txt\\u0000!! ignored-0.tmp\\u0000!! ignored-1.tmp\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--cached\", \"-z\"], \"returncode\": 0, \"stdout\": \".gitignore\\u0000both\\nname.txt\\u0000clean-0.txt\\u0000clean-1.txt\\u0000removed.txt\\u0000staged name.txt\\u0000unstaged name.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"untracked 0.txt\\u0000untracked 1.txt\\u0000untracked 2.txt\\u0000\", \"stderr\": \"\"}, {\"argv\": [\"/usr/bin/git\", \"-c\", \"core.hooksPath=/dev/null\", \"-c\", \"core.fsmonitor=false\", \"-c\", \"core.autocrlf=false\", \"ls-files\", \"--others\", \"--ignored\", \"--exclude-standard\", \"-z\"], \"returncode\": 0, \"stdout\": \"ignored-0.tmp\\u0000ignored-1.tmp\\u0000\", \"stderr\": \"\"}], \"authored\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"clean-0.txt\": \"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\", \"clean-1.txt\": \"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\", \"untracked 1.txt\": \"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\", \"untracked 2.txt\": \"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\", \"ignored-1.tmp\": \"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\"}, \"current_file_hex\": {\"ignored-1.tmp\": \"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\", \"ignored-0.tmp\": \"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\", \"untracked 2.txt\": \"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\", \"untracked 1.txt\": \"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\", \"untracked 0.txt\": \"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\", \"clean-1.txt\": \"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\", \"clean-0.txt\": \"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f74682041da005396ef081791\", \"unstaged name.txt\": \"6368616e67656420776f726b74726565203c4a9837fed445876187537dce7331\", \"staged name.txt\": \"6368616e6765642073746167656420d7fe1233750087e9b86763a6\", \".gitignore\": \"69676e6f7265642d2a2e746d700a\"}}}}, \"all_reference_checks_passed\": true, \"scope\": \"actual APIs on authored fixtures; no production/model/P2 evidence\"}], \"all_reference_checks_passed\": true}\n",
+  "stderr": "",
+  "returncode": 0,
+  "elapsed_s": 0.871678541006986,
+  "host_measurement_executed": false,
+  "profile": "trusted-tool-relations/0.1",
+  "status": "MEASURED",
+  "error": null,
+  "measurements": {
+    "schema": "trusted-tool-relations/0.1",
+    "request": {
+      "seed": 442500,
+      "fixtures": 4
+    },
+    "versions": {
+      "git": "git version 2.47.3",
+      "tenacity": "9.1.4"
+    },
+    "python": "3.13.16 (main, Oct  1 2026, 21:44:19) [GCC 14.2.0]",
+    "fixtures": [
+      {
+        "index": 0,
+        "fixture_content": "{\"git\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"clean-0.txt\": \"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\", \"clean-1.txt\": \"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\", \"clean-2.txt\": \"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\"}, \"current_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f746820961471982a58117bb0\", \"clean-0.txt\": \"8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd\", \"clean-1.txt\": \"be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba\", \"clean-2.txt\": \"71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919\", \"ignored-0.tmp\": \"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\", \"ignored-1.tmp\": \"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\", \"staged name.txt\": \"6368616e67656420737461676564200eee556da5feca27aa739824\", \"unstaged name.txt\": \"6368616e67656420776f726b7472656520755168fd6e18e65cedc5260bfaa1bf\", \"untracked 0.txt\": \"593d7ddc8331edbaa5b59489cd278c53\", \"untracked 1.txt\": \"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\", \"untracked 2.txt\": \"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac\", \"ignored-1.tmp\": \"26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"593d7ddc8331edbaa5b59489cd278c53\", \"untracked 1.txt\": \"091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09\", \"untracked 2.txt\": \"2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279\"}}, \"retry\": {\"failures\": 2, \"wait_ms\": 1}, \"udp_payloads\": [\"\", \"910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c\", \"c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26\", \"4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef\", \"11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be\"]}",
+        "fixture_content_sha256": "3da5df3add99404be9560b8ec0bc665f95987399376d9bd5748b4344c09463e1",
+        "fields": {
+          "retry_attempts": 3,
+          "retry_failures": 2,
+          "retry_sleep_calls": 2,
+          "retry_scheduled_sleep_ns": 2000000,
+          "retry_actual_sleep_ns": 2906333,
+          "retry_elapsed_ns": 3182375,
+          "udp_sent_datagrams": 5,
+          "udp_received_datagrams": 5,
+          "udp_sent_payload_bytes": 599,
+          "udp_received_payload_bytes": 599,
+          "git_index_files": 8,
+          "git_untracked_files": 3,
+          "git_ignored_files": 2,
+          "git_index_edits": 2,
+          "git_worktree_edits": 3,
+          "git_clean_tracked_files": 4,
+          "git_tracked_fs_bytes": 241,
+          "git_untracked_fs_bytes": 175
+        },
+        "raw_observations": {
+          "retry": {
+            "api": "tenacity.Retrying",
+            "attempts": [
+              {
+                "number": 1,
+                "failed": true,
+                "at_ns": 295527493929365
+              },
+              {
+                "number": 2,
+                "failed": true,
+                "at_ns": 295527495653740
+              },
+              {
+                "number": 3,
+                "failed": false,
+                "at_ns": 295527497057240
+              }
+            ],
+            "sleeps": [
+              {
+                "seconds": 0.001,
+                "before_ns": 295527493973115,
+                "after_ns": 295527495550073
+              },
+              {
+                "seconds": 0.001,
+                "before_ns": 295527495709948,
+                "after_ns": 295527497039323
+              }
+            ],
+            "statistics": {
+              "start_time": 295527.493915323,
+              "attempt_number": 3,
+              "idle_for": 0.002,
+              "delay_since_first_attempt": 0.0017412499873898923
+            },
+            "before_ns": 295527493907907,
+            "after_ns": 295527497090282,
+            "result": "observed success",
+            "authored": {
+              "failures": 2,
+              "wait_ms": 1
+            }
+          },
+          "udp": {
+            "api": "socket.sendto/recvfrom",
+            "events": [
+              {
+                "sent_hex": "",
+                "received_hex": "",
+                "sent_bytes": 0,
+                "received_bytes": 0,
+                "from_address": [
+                  "127.0.0.1",
+                  49861
+                ]
+              },
+              {
+                "sent_hex": "910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c",
+                "received_hex": "910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c",
+                "sent_bytes": 76,
+                "received_bytes": 76,
+                "from_address": [
+                  "127.0.0.1",
+                  49861
+                ]
+              },
+              {
+                "sent_hex": "c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26",
+                "received_hex": "c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26",
+                "sent_bytes": 166,
+                "received_bytes": 166,
+                "from_address": [
+                  "127.0.0.1",
+                  49861
+                ]
+              },
+              {
+                "sent_hex": "4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef",
+                "received_hex": "4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef",
+                "sent_bytes": 127,
+                "received_bytes": 127,
+                "from_address": [
+                  "127.0.0.1",
+                  49861
+                ]
+              },
+              {
+                "sent_hex": "11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be",
+                "received_hex": "11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be",
+                "sent_bytes": 230,
+                "received_bytes": 230,
+                "from_address": [
+                  "127.0.0.1",
+                  49861
+                ]
+              }
+            ],
+            "source": [
+              "127.0.0.1",
+              49861
+            ],
+            "destination": [
+              "127.0.0.1",
+              53260
+            ],
+            "sent_payloads": [
+              "",
+              "910e618205141e5ba35111e14c89c250e47a3e9893242932a86436c32b483e6d490e789d7ef7524377b4b295b2ed8898b06c3e3eee1a91942d9c6e11588a60c34c16dc3ae164491263d9cd5c",
+              "c6ddd015328254afd5acfa6820114eadafca067ff5191e71fa19df056edfda51e00af98a3e42c1dbf41d2904d463779db15bb4467cb16ae9b2717cff98272e8c93148163b5d4942b48aaa7ab32b69c0ddedf86b82306d1f5caa00393675b949ec5194238a1096faeaa35f97c5311fd4c5fb447fc6f6763d14db0aa032164beeb7e0cdd265d213309ca9c3adcca285bd89ea7066e664e271de84747f657be23e8485c92da5d26",
+              "4e7eea9d4c0bf1693ff3c72b9e07e2c5886dc7e857335d5205ae4e267951b55bcca4943b3d7db65c53fb5825dd622727effe6d8a5722a41b6ce3dfa54b0444c9c739f10d08ad8ea824a386373b456a703b94b6b9a0566a77851a244c0e3a1803e1bf041594f3b323e2202aa3cc1bac3094c06e79ba8508d60c5df0e4530bef",
+              "11879645f2f74f93a1a9162aa1d45deef7c694cba9ff91f4daacc5d4b4c618f4cc650697b10be7db0bcc3aa21822d6df216f2ebe01d2e9e6130de25a810bc1f2b74c88340b0cc5be3f36e510e382ad1cad7c0897db9f299a6c8536a4b1ccc971cec7de041c07d374bd19de1ab0e252c19958b0b2e6f055eabb8d916df23d75f5293b16189d669cef8316fa8446d98412e87fc520aedbbf52146ae0c7296470b874f9030e3e0119c89684096b6681c0fcc493b46ef2d63e6731dbe43409a30b188cc047dfa771d268ba4073bc594aa1fc056b8e385986c5d2a0e6ce2c4a336e5f5ee990fb15be"
+            ],
+            "scope": "local UDP payload/datagram observations, not wire/IP packet counters"
+          },
+          "git": {
+            "api": "git status/ls-files",
+            "status_stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000?? untracked 1.txt\u0000?? untracked 2.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000",
+            "index_stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000clean-2.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+            "untracked_stdout": "untracked 0.txt\u0000untracked 1.txt\u0000untracked 2.txt\u0000",
+            "ignored_stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000",
+            "current_file_hex": {
+              "ignored-1.tmp": "26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db",
+              "ignored-0.tmp": "5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac",
+              "untracked 2.txt": "2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279",
+              "untracked 1.txt": "091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09",
+              "untracked 0.txt": "593d7ddc8331edbaa5b59489cd278c53",
+              "clean-2.txt": "71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919",
+              "clean-1.txt": "be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba",
+              "clean-0.txt": "8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd",
+              "both\nname.txt": "6368616e67656420776f726b7472656520626f746820961471982a58117bb0",
+              "unstaged name.txt": "6368616e67656420776f726b7472656520755168fd6e18e65cedc5260bfaa1bf",
+              "staged name.txt": "6368616e67656420737461676564200eee556da5feca27aa739824",
+              ".gitignore": "69676e6f7265642d2a2e746d700a"
+            },
+            "commands": [
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "init",
+                  "--quiet",
+                  "--template=",
+                  "--initial-branch=main"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  ".gitignore",
+                  "both\nname.txt",
+                  "clean-0.txt",
+                  "clean-1.txt",
+                  "clean-2.txt",
+                  "removed.txt",
+                  "staged name.txt",
+                  "unstaged name.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "commit",
+                  "--quiet",
+                  "--no-gpg-sign",
+                  "-m",
+                  "authored initial state"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  "staged name.txt",
+                  "both\nname.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "status",
+                  "--porcelain=v1",
+                  "-z",
+                  "--untracked-files=all",
+                  "--ignored=matching"
+                ],
+                "returncode": 0,
+                "stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000?? untracked 1.txt\u0000?? untracked 2.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--cached",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000clean-2.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "untracked 0.txt\u0000untracked 1.txt\u0000untracked 2.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--ignored",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000",
+                "stderr": ""
+              }
+            ],
+            "authored": {
+              "baseline_file_hex": {
+                ".gitignore": "69676e6f7265642d2a2e746d700a",
+                "staged name.txt": "6f726967696e616c207374616765640a",
+                "unstaged name.txt": "6f726967696e616c20776f726b747265650a",
+                "both\nname.txt": "6f726967696e616c20626f74680a",
+                "removed.txt": "6f726967696e616c2072656d6f7665640a",
+                "clean-0.txt": "8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd",
+                "clean-1.txt": "be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba",
+                "clean-2.txt": "71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919"
+              },
+              "untracked_file_hex": {
+                "untracked 0.txt": "593d7ddc8331edbaa5b59489cd278c53",
+                "untracked 1.txt": "091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09",
+                "untracked 2.txt": "2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279"
+              },
+              "ignored_file_hex": {
+                "ignored-0.tmp": "5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac",
+                "ignored-1.tmp": "26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db"
+              },
+              "current_file_hex": {
+                "ignored-1.tmp": "26d80c6d8953f83d5232a3d8c6b1c3d87bd1c903f4cb5161bef7278c2e21d1705a6bdd9c296822f0f48aef2f7bb3948cbdf79261ce80635cb46ab26c17341c53f5db",
+                "ignored-0.tmp": "5ca879caeed68cacbeefeb65ae053912b32da3ed28d313e031c40771bbdbe30795ae31a8321cc0c17f66c501743ab539d78d5811a8492c30afb248c5ac",
+                "untracked 2.txt": "2bdbda2c141b240e3d03abc4b893bb2c23305a09bb7bed0fcb9f9a437d52069c70958975e736f23615cd86598ca279",
+                "untracked 1.txt": "091830bb9f888cc76c7a7637ff965bc709d3a492bda75c36c976906a9dd9a79be391c04fdfeaf3f09a73cc055101661a37f773a8a07845ddc68d98b4076034c7898c43475fc76ccbaa4c1df4ba146678b61d91096a5a71c2390a7fa26733d99fc8845d63245385eac18a175dfdaf4a09",
+                "untracked 0.txt": "593d7ddc8331edbaa5b59489cd278c53",
+                "clean-2.txt": "71b13b13d5c877f96d4d1c4a782082161cb7c66afb4b5fb7be71519622c284a92d4d9b765485998e38c2b63060b9b162c2a404f8d5ec90d89a1efbaecaeb0ada604587fbde1919",
+                "clean-1.txt": "be57645b5b93f0212c83d62f46c233f4bb6c8eb01e470ef8254e04168fcc4d647e2aba",
+                "clean-0.txt": "8cd2ab6a67a080a12b0833888fe6757f8b69b237e565356a2fe049bece53dd",
+                "both\nname.txt": "6368616e67656420776f726b7472656520626f746820961471982a58117bb0",
+                "unstaged name.txt": "6368616e67656420776f726b7472656520755168fd6e18e65cedc5260bfaa1bf",
+                "staged name.txt": "6368616e67656420737461676564200eee556da5feca27aa739824",
+                ".gitignore": "69676e6f7265642d2a2e746d700a"
+              }
+            }
+          }
+        },
+        "all_reference_checks_passed": true,
+        "scope": "actual APIs on authored fixtures; no production/model/P2 evidence"
+      },
+      {
+        "index": 1,
+        "fixture_content": "{\"git\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"clean-0.txt\": \"cb2d35a3eef269d6\", \"clean-1.txt\": \"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\"}, \"current_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f7468208df922373914dc3f60\", \"clean-0.txt\": \"cb2d35a3eef269d6\", \"clean-1.txt\": \"6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0\", \"ignored-0.tmp\": \"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\", \"ignored-1.tmp\": \"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\", \"ignored-2.tmp\": \"51a97266452a3ba440c02bc941\", \"ignored-3.tmp\": \"127be3f87ea81e2f4d57cba1c287d4968e8116825914\", \"staged name.txt\": \"6368616e6765642073746167656420d57b11de8b19f70a8b81cf3e\", \"unstaged name.txt\": \"6368616e67656420776f726b74726565202c9f05c133bad2d8330e86e334c36f\", \"untracked 0.txt\": \"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\", \"untracked 1.txt\": \"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\", \"untracked 2.txt\": \"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\", \"untracked 3.txt\": \"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\", \"untracked 4.txt\": \"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d\", \"ignored-1.tmp\": \"c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f\", \"ignored-2.tmp\": \"51a97266452a3ba440c02bc941\", \"ignored-3.tmp\": \"127be3f87ea81e2f4d57cba1c287d4968e8116825914\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6\", \"untracked 1.txt\": \"b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221\", \"untracked 2.txt\": \"c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7\", \"untracked 3.txt\": \"d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd\", \"untracked 4.txt\": \"55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c\"}}, \"retry\": {\"failures\": 5, \"wait_ms\": 2}, \"udp_payloads\": [\"\", \"5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8\", \"9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb\", \"68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b\", \"e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b\"]}",
+        "fixture_content_sha256": "7b0ab61d31e8a7abc1dc83cf378b35dc21a42ad742ec986f10ac7409925c4688",
+        "fields": {
+          "retry_attempts": 6,
+          "retry_failures": 5,
+          "retry_sleep_calls": 5,
+          "retry_scheduled_sleep_ns": 10000000,
+          "retry_actual_sleep_ns": 13611500,
+          "retry_elapsed_ns": 14214917,
+          "udp_sent_datagrams": 5,
+          "udp_received_datagrams": 5,
+          "udp_sent_payload_bytes": 621,
+          "udp_received_payload_bytes": 621,
+          "git_index_files": 7,
+          "git_untracked_files": 5,
+          "git_ignored_files": 4,
+          "git_index_edits": 2,
+          "git_worktree_edits": 3,
+          "git_clean_tracked_files": 3,
+          "git_tracked_fs_bytes": 201,
+          "git_untracked_fs_bytes": 250
+        },
+        "raw_observations": {
+          "retry": {
+            "api": "tenacity.Retrying",
+            "attempts": [
+              {
+                "number": 1,
+                "failed": true,
+                "at_ns": 295527521031698
+              },
+              {
+                "number": 2,
+                "failed": true,
+                "at_ns": 295527523584323
+              },
+              {
+                "number": 3,
+                "failed": true,
+                "at_ns": 295527527745407
+              },
+              {
+                "number": 4,
+                "failed": true,
+                "at_ns": 295527530361032
+              },
+              {
+                "number": 5,
+                "failed": true,
+                "at_ns": 295527532550157
+              },
+              {
+                "number": 6,
+                "failed": false,
+                "at_ns": 295527535117782
+              }
+            ],
+            "sleeps": [
+              {
+                "seconds": 0.002,
+                "before_ns": 295527521074032,
+                "after_ns": 295527523547032
+              },
+              {
+                "seconds": 0.002,
+                "before_ns": 295527523668365,
+                "after_ns": 295527527723198
+              },
+              {
+                "seconds": 0.002,
+                "before_ns": 295527527790323,
+                "after_ns": 295527530311032
+              },
+              {
+                "seconds": 0.002,
+                "before_ns": 295527530443740,
+                "after_ns": 295527532528573
+              },
+              {
+                "seconds": 0.002,
+                "before_ns": 295527532593073,
+                "after_ns": 295527535071198
+              }
+            ],
+            "statistics": {
+              "start_time": 295527.520997573,
+              "attempt_number": 6,
+              "idle_for": 0.01,
+              "delay_since_first_attempt": 0.01153687504120171
+            },
+            "before_ns": 295527520986573,
+            "after_ns": 295527535201490,
+            "result": "observed success",
+            "authored": {
+              "failures": 5,
+              "wait_ms": 2
+            }
+          },
+          "udp": {
+            "api": "socket.sendto/recvfrom",
+            "events": [
+              {
+                "sent_hex": "",
+                "received_hex": "",
+                "sent_bytes": 0,
+                "received_bytes": 0,
+                "from_address": [
+                  "127.0.0.1",
+                  53903
+                ]
+              },
+              {
+                "sent_hex": "5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8",
+                "received_hex": "5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8",
+                "sent_bytes": 156,
+                "received_bytes": 156,
+                "from_address": [
+                  "127.0.0.1",
+                  53903
+                ]
+              },
+              {
+                "sent_hex": "9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb",
+                "received_hex": "9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb",
+                "sent_bytes": 190,
+                "received_bytes": 190,
+                "from_address": [
+                  "127.0.0.1",
+                  53903
+                ]
+              },
+              {
+                "sent_hex": "68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b",
+                "received_hex": "68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b",
+                "sent_bytes": 240,
+                "received_bytes": 240,
+                "from_address": [
+                  "127.0.0.1",
+                  53903
+                ]
+              },
+              {
+                "sent_hex": "e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b",
+                "received_hex": "e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b",
+                "sent_bytes": 35,
+                "received_bytes": 35,
+                "from_address": [
+                  "127.0.0.1",
+                  53903
+                ]
+              }
+            ],
+            "source": [
+              "127.0.0.1",
+              53903
+            ],
+            "destination": [
+              "127.0.0.1",
+              59658
+            ],
+            "sent_payloads": [
+              "",
+              "5194988dc76f29a7ff17e7993066e4d680a5c1aab58614c85cc7bece0d4858c64d9db054562b7bc842620d494a884405df7d3499a70e78e2a7e60ceaedfc641c5ec0dee58cdfdfef35567de33aa51083f915dfed33896eaf6773fc13062332b58112bf7353157e0c6a0400c82deb7bda6fe64d0f947ada62ce8de6b30478b74aea4dc5ec5344a7a9062e0efeb407987df3f5f7f8f0d4e5eee10563a8",
+              "9af64bfb94a9fd4ec09560aff940d189d68fcba19b4bcfd1a8ce93529ffb058dc37ac7792e59422750b55e136a47f0eef308bd48f580fb9c21acfacbe9cf653e60953c73980ccceadb0bbfd21b1c777a461882047a35f5d8ab1966e2843005527889e32b922e90bec1d0ad0e26b0276dbcbe741336557a5a8da93a27ac83003a7ba3c4bd41912d124456ff5d5ee6a38eb69e0f0602c06b01a4f33cb9e12229996b690b173e43386a5a988f707a560ee13fe2247a29c4ac4a07ec8c3c1cfb",
+              "68b713c35b424a635993b6bd8ee9051ca0291374a75311d38e704b495201b45d9cc2940192f37e6ff2a9de6cc0b637f81cf6f367eae76ea2f99380faa70b813a1bd8d784388b9f8c03c3f458359311bc08acef8b13aa78415c869dde269449a430fdb53b838e2c3578515870148861de8ea16bdf2e6f3f18b5a20e451148637541f2105ffc6cc08c59247f47f62d04602b0567a043641f41c964968eb6bb9200ec555119b671a52156dd8f6d29d69aff30329883a8a9fc5bcddeb5ae9074832961e3560cd6acc68119d7336c0b02fe284619e8f55ea06cccf69d6930a1c6738bf39d219cb96aa6c7bb9a4efa35b04e9b",
+              "e2cc9ed538ae847e080160727df6388e5474c53b2c2954b1886759b9488f71f6ac986b"
+            ],
+            "scope": "local UDP payload/datagram observations, not wire/IP packet counters"
+          },
+          "git": {
+            "api": "git status/ls-files",
+            "status_stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000?? untracked 1.txt\u0000?? untracked 2.txt\u0000?? untracked 3.txt\u0000?? untracked 4.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000!! ignored-2.tmp\u0000!! ignored-3.tmp\u0000",
+            "index_stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+            "untracked_stdout": "untracked 0.txt\u0000untracked 1.txt\u0000untracked 2.txt\u0000untracked 3.txt\u0000untracked 4.txt\u0000",
+            "ignored_stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000ignored-2.tmp\u0000ignored-3.tmp\u0000",
+            "current_file_hex": {
+              "ignored-3.tmp": "127be3f87ea81e2f4d57cba1c287d4968e8116825914",
+              "ignored-2.tmp": "51a97266452a3ba440c02bc941",
+              "ignored-1.tmp": "c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f",
+              "ignored-0.tmp": "2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d",
+              "untracked 4.txt": "55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c",
+              "untracked 3.txt": "d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd",
+              "untracked 2.txt": "c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7",
+              "untracked 1.txt": "b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221",
+              "untracked 0.txt": "f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6",
+              "clean-1.txt": "6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0",
+              "clean-0.txt": "cb2d35a3eef269d6",
+              "both\nname.txt": "6368616e67656420776f726b7472656520626f7468208df922373914dc3f60",
+              "unstaged name.txt": "6368616e67656420776f726b74726565202c9f05c133bad2d8330e86e334c36f",
+              "staged name.txt": "6368616e6765642073746167656420d57b11de8b19f70a8b81cf3e",
+              ".gitignore": "69676e6f7265642d2a2e746d700a"
+            },
+            "commands": [
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "init",
+                  "--quiet",
+                  "--template=",
+                  "--initial-branch=main"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  ".gitignore",
+                  "both\nname.txt",
+                  "clean-0.txt",
+                  "clean-1.txt",
+                  "removed.txt",
+                  "staged name.txt",
+                  "unstaged name.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "commit",
+                  "--quiet",
+                  "--no-gpg-sign",
+                  "-m",
+                  "authored initial state"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  "staged name.txt",
+                  "both\nname.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "status",
+                  "--porcelain=v1",
+                  "-z",
+                  "--untracked-files=all",
+                  "--ignored=matching"
+                ],
+                "returncode": 0,
+                "stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000?? untracked 1.txt\u0000?? untracked 2.txt\u0000?? untracked 3.txt\u0000?? untracked 4.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000!! ignored-2.tmp\u0000!! ignored-3.tmp\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--cached",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "untracked 0.txt\u0000untracked 1.txt\u0000untracked 2.txt\u0000untracked 3.txt\u0000untracked 4.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--ignored",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000ignored-2.tmp\u0000ignored-3.tmp\u0000",
+                "stderr": ""
+              }
+            ],
+            "authored": {
+              "baseline_file_hex": {
+                ".gitignore": "69676e6f7265642d2a2e746d700a",
+                "staged name.txt": "6f726967696e616c207374616765640a",
+                "unstaged name.txt": "6f726967696e616c20776f726b747265650a",
+                "both\nname.txt": "6f726967696e616c20626f74680a",
+                "removed.txt": "6f726967696e616c2072656d6f7665640a",
+                "clean-0.txt": "cb2d35a3eef269d6",
+                "clean-1.txt": "6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0"
+              },
+              "untracked_file_hex": {
+                "untracked 0.txt": "f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6",
+                "untracked 1.txt": "b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221",
+                "untracked 2.txt": "c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7",
+                "untracked 3.txt": "d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd",
+                "untracked 4.txt": "55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c"
+              },
+              "ignored_file_hex": {
+                "ignored-0.tmp": "2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d",
+                "ignored-1.tmp": "c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f",
+                "ignored-2.tmp": "51a97266452a3ba440c02bc941",
+                "ignored-3.tmp": "127be3f87ea81e2f4d57cba1c287d4968e8116825914"
+              },
+              "current_file_hex": {
+                "ignored-3.tmp": "127be3f87ea81e2f4d57cba1c287d4968e8116825914",
+                "ignored-2.tmp": "51a97266452a3ba440c02bc941",
+                "ignored-1.tmp": "c0a884a8ad36f12f981b4adf943f5a6a1c869ed53b5e5f",
+                "ignored-0.tmp": "2cf545810eb48c8200df496f40ce442fecd1270bc780f39850e9f88e87ffd3212755ef9681d67fb8f7d83686295d",
+                "untracked 4.txt": "55ab57a1ea247c1ea0329df82f26aaadafd2e065a9e31d6ebe19d10569eb9149602c",
+                "untracked 3.txt": "d9e6907207b698ea0e05e198f6e2d2a46609c15d75bebb3b8b595e6bc2a2e9e3dd",
+                "untracked 2.txt": "c79c2378e3f260555080996568965b9d1bda24bfbbd9dd25d25fc8196b6be62da932ff483e871e7555bfc58ab4fe8ba24bdf99264aa097efb797ff36bf9356da896c9f1d4e044bd8f0e46fe7",
+                "untracked 1.txt": "b99ab3a2ed22dcf3071f60c6004833125ac52a73a506b073fdb8819c02b376b2b1466ca6dcb69221",
+                "untracked 0.txt": "f60671d89fb79baee58693327380cada031a0f7dc6c0a643f366c95859fcde9dbe278ab0852476ad9683377e7368386ca922dd7a92201dc2c834a744ae18871354d8d6",
+                "clean-1.txt": "6808ec2a68f62fd99c07ae7fbb2e3297f97ef9b67dd25ca6427b45ecede9cf07136eb3d5b8f53dfb0dbbfe39ac668aeb2590fd7460b788fce87109535f61dea67313532caf76c5cef2a0f16579b016ab22cbc4e9c0362117e0",
+                "clean-0.txt": "cb2d35a3eef269d6",
+                "both\nname.txt": "6368616e67656420776f726b7472656520626f7468208df922373914dc3f60",
+                "unstaged name.txt": "6368616e67656420776f726b74726565202c9f05c133bad2d8330e86e334c36f",
+                "staged name.txt": "6368616e6765642073746167656420d57b11de8b19f70a8b81cf3e",
+                ".gitignore": "69676e6f7265642d2a2e746d700a"
+              }
+            }
+          }
+        },
+        "all_reference_checks_passed": true,
+        "scope": "actual APIs on authored fixtures; no production/model/P2 evidence"
+      },
+      {
+        "index": 2,
+        "fixture_content": "{\"git\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"clean-0.txt\": \"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\", \"clean-1.txt\": \"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\", \"clean-2.txt\": \"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\", \"clean-3.txt\": \"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\"}, \"current_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f7468204589a1b47be6c6433c\", \"clean-0.txt\": \"9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b\", \"clean-1.txt\": \"bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a\", \"clean-2.txt\": \"552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249\", \"clean-3.txt\": \"ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88\", \"ignored-0.tmp\": \"a145c27f0d6eaaec020923989026e72743d2cc13a80985\", \"ignored-1.tmp\": \"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\", \"staged name.txt\": \"6368616e67656420737461676564206b293e60b907a9d63242c3e2\", \"unstaged name.txt\": \"6368616e67656420776f726b747265652037bc563745d6d6dee6d14a4e8bea29\", \"untracked 0.txt\": \"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"a145c27f0d6eaaec020923989026e72743d2cc13a80985\", \"ignored-1.tmp\": \"140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374\"}}, \"retry\": {\"failures\": 3, \"wait_ms\": 1}, \"udp_payloads\": [\"\", \"5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833\", \"aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e\", \"e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1\", \"70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532\"]}",
+        "fixture_content_sha256": "fa2ed9b6665594407cf624c4af1dabcd7eb4eb344a180c8eacc83520bc90231f",
+        "fields": {
+          "retry_attempts": 4,
+          "retry_failures": 3,
+          "retry_sleep_calls": 3,
+          "retry_scheduled_sleep_ns": 3000000,
+          "retry_actual_sleep_ns": 3565500,
+          "retry_elapsed_ns": 4395708,
+          "udp_sent_datagrams": 5,
+          "udp_received_datagrams": 5,
+          "udp_sent_payload_bytes": 351,
+          "udp_received_payload_bytes": 351,
+          "git_index_files": 9,
+          "git_untracked_files": 1,
+          "git_ignored_files": 2,
+          "git_index_edits": 2,
+          "git_worktree_edits": 3,
+          "git_clean_tracked_files": 5,
+          "git_tracked_fs_bytes": 305,
+          "git_untracked_fs_bytes": 68
+        },
+        "raw_observations": {
+          "retry": {
+            "api": "tenacity.Retrying",
+            "attempts": [
+              {
+                "number": 1,
+                "failed": true,
+                "at_ns": 295527556757615
+              },
+              {
+                "number": 2,
+                "failed": true,
+                "at_ns": 295527558613490
+              },
+              {
+                "number": 3,
+                "failed": true,
+                "at_ns": 295527559845365
+              },
+              {
+                "number": 4,
+                "failed": false,
+                "at_ns": 295527561107115
+              }
+            ],
+            "sleeps": [
+              {
+                "seconds": 0.001,
+                "before_ns": 295527557384073,
+                "after_ns": 295527558583157
+              },
+              {
+                "seconds": 0.001,
+                "before_ns": 295527558663115,
+                "after_ns": 295527559824240
+              },
+              {
+                "seconds": 0.001,
+                "before_ns": 295527559888907,
+                "after_ns": 295527561094198
+              }
+            ],
+            "statistics": {
+              "start_time": 295527.556745573,
+              "attempt_number": 4,
+              "idle_for": 0.003,
+              "delay_since_first_attempt": 0.0031019580201245844
+            },
+            "before_ns": 295527556733407,
+            "after_ns": 295527561129115,
+            "result": "observed success",
+            "authored": {
+              "failures": 3,
+              "wait_ms": 1
+            }
+          },
+          "udp": {
+            "api": "socket.sendto/recvfrom",
+            "events": [
+              {
+                "sent_hex": "",
+                "received_hex": "",
+                "sent_bytes": 0,
+                "received_bytes": 0,
+                "from_address": [
+                  "127.0.0.1",
+                  34698
+                ]
+              },
+              {
+                "sent_hex": "5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833",
+                "received_hex": "5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833",
+                "sent_bytes": 76,
+                "received_bytes": 76,
+                "from_address": [
+                  "127.0.0.1",
+                  34698
+                ]
+              },
+              {
+                "sent_hex": "aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e",
+                "received_hex": "aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e",
+                "sent_bytes": 35,
+                "received_bytes": 35,
+                "from_address": [
+                  "127.0.0.1",
+                  34698
+                ]
+              },
+              {
+                "sent_hex": "e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1",
+                "received_hex": "e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1",
+                "sent_bytes": 52,
+                "received_bytes": 52,
+                "from_address": [
+                  "127.0.0.1",
+                  34698
+                ]
+              },
+              {
+                "sent_hex": "70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532",
+                "received_hex": "70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532",
+                "sent_bytes": 188,
+                "received_bytes": 188,
+                "from_address": [
+                  "127.0.0.1",
+                  34698
+                ]
+              }
+            ],
+            "source": [
+              "127.0.0.1",
+              34698
+            ],
+            "destination": [
+              "127.0.0.1",
+              46229
+            ],
+            "sent_payloads": [
+              "",
+              "5524f85f067a394d7b7b7057c29036b3fb467c6707a2458e22939beeda53e7842915ebef5dac3d3f0ed083139c7c8800be755567774a47c5647927e9d1275c3a08cfda544034732ae9d93833",
+              "aad15d970dc3bd24b80584915d6a9d41e4eea82b8209e57612425d156051bd70243e6e",
+              "e546c3db0a6dfac1c32f47d60b554552fbde5a3f7d9879595dd261081749aaa671eea412a0f063190cb1ab312097e618c9a325e1",
+              "70e098b467c793ec583d3842a22c70312c71b32acadfed112fb6da1e7551f8895541a2072c294c6d6acc1034daaef5378be6a55467709de011b33d7732829f42f8f8bb80438fbb66d5105c029fa1235cbff7a33f68b7987ad6fa4b01b318a1cfdd4dfdfe27c539e19334d8de05c787582ad82a70bd9ecd5750b003687f2b14fd7b5959984d227f5c1a0f5a9e3de5fd370e2df52e0329741b381f32fec5f12a6c6e79e21561e30fb1f10965d0ab2929b7ecb51694e41e3c1f2e6e4532"
+            ],
+            "scope": "local UDP payload/datagram observations, not wire/IP packet counters"
+          },
+          "git": {
+            "api": "git status/ls-files",
+            "status_stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000",
+            "index_stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000clean-2.txt\u0000clean-3.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+            "untracked_stdout": "untracked 0.txt\u0000",
+            "ignored_stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000",
+            "current_file_hex": {
+              "ignored-1.tmp": "140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d",
+              "ignored-0.tmp": "a145c27f0d6eaaec020923989026e72743d2cc13a80985",
+              "untracked 0.txt": "75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374",
+              "clean-3.txt": "ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88",
+              "clean-2.txt": "552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249",
+              "clean-1.txt": "bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a",
+              "clean-0.txt": "9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b",
+              "both\nname.txt": "6368616e67656420776f726b7472656520626f7468204589a1b47be6c6433c",
+              "unstaged name.txt": "6368616e67656420776f726b747265652037bc563745d6d6dee6d14a4e8bea29",
+              "staged name.txt": "6368616e67656420737461676564206b293e60b907a9d63242c3e2",
+              ".gitignore": "69676e6f7265642d2a2e746d700a"
+            },
+            "commands": [
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "init",
+                  "--quiet",
+                  "--template=",
+                  "--initial-branch=main"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  ".gitignore",
+                  "both\nname.txt",
+                  "clean-0.txt",
+                  "clean-1.txt",
+                  "clean-2.txt",
+                  "clean-3.txt",
+                  "removed.txt",
+                  "staged name.txt",
+                  "unstaged name.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "commit",
+                  "--quiet",
+                  "--no-gpg-sign",
+                  "-m",
+                  "authored initial state"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  "staged name.txt",
+                  "both\nname.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "status",
+                  "--porcelain=v1",
+                  "-z",
+                  "--untracked-files=all",
+                  "--ignored=matching"
+                ],
+                "returncode": 0,
+                "stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--cached",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000clean-2.txt\u0000clean-3.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "untracked 0.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--ignored",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000",
+                "stderr": ""
+              }
+            ],
+            "authored": {
+              "baseline_file_hex": {
+                ".gitignore": "69676e6f7265642d2a2e746d700a",
+                "staged name.txt": "6f726967696e616c207374616765640a",
+                "unstaged name.txt": "6f726967696e616c20776f726b747265650a",
+                "both\nname.txt": "6f726967696e616c20626f74680a",
+                "removed.txt": "6f726967696e616c2072656d6f7665640a",
+                "clean-0.txt": "9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b",
+                "clean-1.txt": "bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a",
+                "clean-2.txt": "552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249",
+                "clean-3.txt": "ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88"
+              },
+              "untracked_file_hex": {
+                "untracked 0.txt": "75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374"
+              },
+              "ignored_file_hex": {
+                "ignored-0.tmp": "a145c27f0d6eaaec020923989026e72743d2cc13a80985",
+                "ignored-1.tmp": "140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d"
+              },
+              "current_file_hex": {
+                "ignored-1.tmp": "140db1b58add6bde824f63fb2d4ef919d15ac2047a6f0c2ab834ba930ba05e37b661dd2728ba54066ddbc9c5658ce114eee9ce32592920411d",
+                "ignored-0.tmp": "a145c27f0d6eaaec020923989026e72743d2cc13a80985",
+                "untracked 0.txt": "75391f65b6c6421d8fdb79de66574d9b5a24ae04c65e6c06672c99a3201b85d5ffc87a5b65357e90a5ab145688e8ffc17f4cd3affe292c47a6e73c80be42246e2d1a5374",
+                "clean-3.txt": "ef3bb0d49bc73bc060a6e9d1d7a6377b9ec175057a2a3f172253297049a2f6d010a52f7993395ae9158739282e46e8452d6f9e4dfe7706586e4a6c4edd0a320070cf88",
+                "clean-2.txt": "552ce79e6908e14a54fd1f2667af5128163d368a375a710c9496bcb912a2005f9b28891ed2d0f49acca43ea06b3dc6aa1fab176f25bddc49b6a35b90df0a12adf7a249",
+                "clean-1.txt": "bb41b4f64033ba7d92b0650c8206c635f7b47dc507b6dbf12ad3f990ccf221a910833a",
+                "clean-0.txt": "9ccc444a91995002369167231a6954cf524169f2d59ed605e48b87b335e6867b",
+                "both\nname.txt": "6368616e67656420776f726b7472656520626f7468204589a1b47be6c6433c",
+                "unstaged name.txt": "6368616e67656420776f726b747265652037bc563745d6d6dee6d14a4e8bea29",
+                "staged name.txt": "6368616e67656420737461676564206b293e60b907a9d63242c3e2",
+                ".gitignore": "69676e6f7265642d2a2e746d700a"
+              }
+            }
+          }
+        },
+        "all_reference_checks_passed": true,
+        "scope": "actual APIs on authored fixtures; no production/model/P2 evidence"
+      },
+      {
+        "index": 3,
+        "fixture_content": "{\"git\": {\"baseline_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6f726967696e616c20626f74680a\", \"clean-0.txt\": \"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\", \"clean-1.txt\": \"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\", \"removed.txt\": \"6f726967696e616c2072656d6f7665640a\", \"staged name.txt\": \"6f726967696e616c207374616765640a\", \"unstaged name.txt\": \"6f726967696e616c20776f726b747265650a\"}, \"current_file_hex\": {\".gitignore\": \"69676e6f7265642d2a2e746d700a\", \"both\\nname.txt\": \"6368616e67656420776f726b7472656520626f74682041da005396ef081791\", \"clean-0.txt\": \"145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a\", \"clean-1.txt\": \"445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02\", \"ignored-0.tmp\": \"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\", \"ignored-1.tmp\": \"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\", \"staged name.txt\": \"6368616e6765642073746167656420d7fe1233750087e9b86763a6\", \"unstaged name.txt\": \"6368616e67656420776f726b74726565203c4a9837fed445876187537dce7331\", \"untracked 0.txt\": \"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\", \"untracked 1.txt\": \"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\", \"untracked 2.txt\": \"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\"}, \"ignored_file_hex\": {\"ignored-0.tmp\": \"c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f\", \"ignored-1.tmp\": \"41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98\"}, \"untracked_file_hex\": {\"untracked 0.txt\": \"dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa\", \"untracked 1.txt\": \"f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea\", \"untracked 2.txt\": \"df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02\"}}, \"retry\": {\"failures\": 5, \"wait_ms\": 3}, \"udp_payloads\": [\"\", \"9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be\", \"e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488\", \"813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5\", \"41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7\"]}",
+        "fixture_content_sha256": "04fe1d0389322cd3a0a447952ffa32f5f9516c8efb500588d2f67e1267c07e70",
+        "fields": {
+          "retry_attempts": 6,
+          "retry_failures": 5,
+          "retry_sleep_calls": 5,
+          "retry_scheduled_sleep_ns": 15000000,
+          "retry_actual_sleep_ns": 15869083,
+          "retry_elapsed_ns": 16386208,
+          "udp_sent_datagrams": 5,
+          "udp_received_datagrams": 5,
+          "udp_sent_payload_bytes": 331,
+          "udp_received_payload_bytes": 331,
+          "git_index_files": 7,
+          "git_untracked_files": 3,
+          "git_ignored_files": 2,
+          "git_index_edits": 2,
+          "git_worktree_edits": 3,
+          "git_clean_tracked_files": 3,
+          "git_tracked_fs_bytes": 250,
+          "git_untracked_fs_bytes": 258
+        },
+        "raw_observations": {
+          "retry": {
+            "api": "tenacity.Retrying",
+            "attempts": [
+              {
+                "number": 1,
+                "failed": true,
+                "at_ns": 295527584931615
+              },
+              {
+                "number": 2,
+                "failed": true,
+                "at_ns": 295527588113865
+              },
+              {
+                "number": 3,
+                "failed": true,
+                "at_ns": 295527591388407
+              },
+              {
+                "number": 4,
+                "failed": true,
+                "at_ns": 295527594643782
+              },
+              {
+                "number": 5,
+                "failed": true,
+                "at_ns": 295527597867323
+              },
+              {
+                "number": 6,
+                "failed": false,
+                "at_ns": 295527601257865
+              }
+            ],
+            "sleeps": [
+              {
+                "seconds": 0.003,
+                "before_ns": 295527584969907,
+                "after_ns": 295527588087240
+              },
+              {
+                "seconds": 0.003,
+                "before_ns": 295527588164740,
+                "after_ns": 295527591358240
+              },
+              {
+                "seconds": 0.003,
+                "before_ns": 295527591441948,
+                "after_ns": 295527594591115
+              },
+              {
+                "seconds": 0.003,
+                "before_ns": 295527594739782,
+                "after_ns": 295527597836865
+              },
+              {
+                "seconds": 0.003,
+                "before_ns": 295527597920657,
+                "after_ns": 295527601232657
+              }
+            ],
+            "statistics": {
+              "start_time": 295527.584920282,
+              "attempt_number": 6,
+              "idle_for": 0.015,
+              "delay_since_first_attempt": 0.0129505840013735
+            },
+            "before_ns": 295527584908365,
+            "after_ns": 295527601294573,
+            "result": "observed success",
+            "authored": {
+              "failures": 5,
+              "wait_ms": 3
+            }
+          },
+          "udp": {
+            "api": "socket.sendto/recvfrom",
+            "events": [
+              {
+                "sent_hex": "",
+                "received_hex": "",
+                "sent_bytes": 0,
+                "received_bytes": 0,
+                "from_address": [
+                  "127.0.0.1",
+                  39834
+                ]
+              },
+              {
+                "sent_hex": "9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be",
+                "received_hex": "9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be",
+                "sent_bytes": 177,
+                "received_bytes": 177,
+                "from_address": [
+                  "127.0.0.1",
+                  39834
+                ]
+              },
+              {
+                "sent_hex": "e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488",
+                "received_hex": "e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488",
+                "sent_bytes": 52,
+                "received_bytes": 52,
+                "from_address": [
+                  "127.0.0.1",
+                  39834
+                ]
+              },
+              {
+                "sent_hex": "813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5",
+                "received_hex": "813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5",
+                "sent_bytes": 79,
+                "received_bytes": 79,
+                "from_address": [
+                  "127.0.0.1",
+                  39834
+                ]
+              },
+              {
+                "sent_hex": "41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7",
+                "received_hex": "41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7",
+                "sent_bytes": 23,
+                "received_bytes": 23,
+                "from_address": [
+                  "127.0.0.1",
+                  39834
+                ]
+              }
+            ],
+            "source": [
+              "127.0.0.1",
+              39834
+            ],
+            "destination": [
+              "127.0.0.1",
+              44252
+            ],
+            "sent_payloads": [
+              "",
+              "9198a2c1b6c258198fe5d73b6447f95ff5dbeea39e6d70badedbb4cc21060d3665e44d8b58e139c76a090d665e289b0fd95e9984384d0c10c4d388a8ae561868a8b703ffd223e1ad098a231f2ee5dba600cfc4bfbed6b10b29231dd4578864a7df5fe7ad6063d3fc18f076dc8bfb655fc87794b9939de9cea9c3fc4d4971244f6ccebcfca97666fb27d8c2abe6dfab3f4f420f1a61b6b3a7b68db9443b40f472ef16d6ed50b85f7b63b255f19964d496be",
+              "e178e3c02b1def18861e0b86a46d40748ede46abf5a3c93b9d7f8a05395975c84d40d33651fc7ed4e8276d51a4e4ba1d85235488",
+              "813e5cee555733cf7df8a21e6dd8352354d6a740d68ce09743c4ff096ba6b30347023b4b524bea25a633f4f0611a75fa5fcc63d3e2182bf0fe43f1d7f779c34cb4beacae5fa89fd9bc522275b9f7f5",
+              "41b42d79f1ca2475a8d84eb4f1a40769650fb7857a91c7"
+            ],
+            "scope": "local UDP payload/datagram observations, not wire/IP packet counters"
+          },
+          "git": {
+            "api": "git status/ls-files",
+            "status_stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000?? untracked 1.txt\u0000?? untracked 2.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000",
+            "index_stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+            "untracked_stdout": "untracked 0.txt\u0000untracked 1.txt\u0000untracked 2.txt\u0000",
+            "ignored_stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000",
+            "current_file_hex": {
+              "ignored-1.tmp": "41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98",
+              "ignored-0.tmp": "c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f",
+              "untracked 2.txt": "df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02",
+              "untracked 1.txt": "f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea",
+              "untracked 0.txt": "dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa",
+              "clean-1.txt": "445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02",
+              "clean-0.txt": "145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a",
+              "both\nname.txt": "6368616e67656420776f726b7472656520626f74682041da005396ef081791",
+              "unstaged name.txt": "6368616e67656420776f726b74726565203c4a9837fed445876187537dce7331",
+              "staged name.txt": "6368616e6765642073746167656420d7fe1233750087e9b86763a6",
+              ".gitignore": "69676e6f7265642d2a2e746d700a"
+            },
+            "commands": [
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "init",
+                  "--quiet",
+                  "--template=",
+                  "--initial-branch=main"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  ".gitignore",
+                  "both\nname.txt",
+                  "clean-0.txt",
+                  "clean-1.txt",
+                  "removed.txt",
+                  "staged name.txt",
+                  "unstaged name.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "commit",
+                  "--quiet",
+                  "--no-gpg-sign",
+                  "-m",
+                  "authored initial state"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "add",
+                  "--",
+                  "staged name.txt",
+                  "both\nname.txt"
+                ],
+                "returncode": 0,
+                "stdout": "",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "status",
+                  "--porcelain=v1",
+                  "-z",
+                  "--untracked-files=all",
+                  "--ignored=matching"
+                ],
+                "returncode": 0,
+                "stdout": "MM both\nname.txt\u0000 D removed.txt\u0000M  staged name.txt\u0000 M unstaged name.txt\u0000?? untracked 0.txt\u0000?? untracked 1.txt\u0000?? untracked 2.txt\u0000!! ignored-0.tmp\u0000!! ignored-1.tmp\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--cached",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": ".gitignore\u0000both\nname.txt\u0000clean-0.txt\u0000clean-1.txt\u0000removed.txt\u0000staged name.txt\u0000unstaged name.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "untracked 0.txt\u0000untracked 1.txt\u0000untracked 2.txt\u0000",
+                "stderr": ""
+              },
+              {
+                "argv": [
+                  "/usr/bin/git",
+                  "-c",
+                  "core.hooksPath=/dev/null",
+                  "-c",
+                  "core.fsmonitor=false",
+                  "-c",
+                  "core.autocrlf=false",
+                  "ls-files",
+                  "--others",
+                  "--ignored",
+                  "--exclude-standard",
+                  "-z"
+                ],
+                "returncode": 0,
+                "stdout": "ignored-0.tmp\u0000ignored-1.tmp\u0000",
+                "stderr": ""
+              }
+            ],
+            "authored": {
+              "baseline_file_hex": {
+                ".gitignore": "69676e6f7265642d2a2e746d700a",
+                "staged name.txt": "6f726967696e616c207374616765640a",
+                "unstaged name.txt": "6f726967696e616c20776f726b747265650a",
+                "both\nname.txt": "6f726967696e616c20626f74680a",
+                "removed.txt": "6f726967696e616c2072656d6f7665640a",
+                "clean-0.txt": "145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a",
+                "clean-1.txt": "445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02"
+              },
+              "untracked_file_hex": {
+                "untracked 0.txt": "dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa",
+                "untracked 1.txt": "f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea",
+                "untracked 2.txt": "df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02"
+              },
+              "ignored_file_hex": {
+                "ignored-0.tmp": "c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f",
+                "ignored-1.tmp": "41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98"
+              },
+              "current_file_hex": {
+                "ignored-1.tmp": "41f7cf60b8d49306fd8317739ebe47177c0cce2f3a332559959d0a98",
+                "ignored-0.tmp": "c7f7650ec747464bb27f582aef202c7ed17bb8a03bebcbc6a4045bc16fa41ee58f",
+                "untracked 2.txt": "df4f6b5fa0be9b095117b93e878b2d249f9e854a11ae514f57bba16dbd9fca14790358e086e54c4ceb0cae1ee65a79586b1e578b832b288296bf2292ff91c5880da5d54063ef90145e0ee23bcccbf148c72fa67196343d7699bf86254f8dad473715607ec60c06e6a35570e76075ad02",
+                "untracked 1.txt": "f72f31b5287b1cfa453783977fd523d6f664fee4bf10432863e231aa211a4223708b9fe1faa58f641b2ab5a8f471ba36a525b8345a2ec0b59dff477288c7ed69f909a14a088082bb0edfbd0ba7bd89fe52a441bc6c3dd622f726a94de05d3886ccbe1ad64f852e971b37adb132caf225ddea",
+                "untracked 0.txt": "dc9bf987f3332e643da1437a388df1bc6980b3fdad958ce3c60c6809f74692fa",
+                "clean-1.txt": "445001505424126e385e5393e05baa9fccbc5fa439522557d01317e0a071487a00d9ac36475d70008e442a0cac5ad5d1630b3b4e07a2d02c2ad7dca92afa732e0ae7de319cf10961ff4022ffdad1027c02",
+                "clean-0.txt": "145577b80519ff77d05cc51c0f9108dc0e96d706aa882f8d3fb2c0f8104aaf226f24c4087b4261d20b5b5e31abce1a9dea1688977246297740d57a80ab2a980d0a",
+                "both\nname.txt": "6368616e67656420776f726b7472656520626f74682041da005396ef081791",
+                "unstaged name.txt": "6368616e67656420776f726b74726565203c4a9837fed445876187537dce7331",
+                "staged name.txt": "6368616e6765642073746167656420d7fe1233750087e9b86763a6",
+                ".gitignore": "69676e6f7265642d2a2e746d700a"
+              }
+            }
+          }
+        },
+        "all_reference_checks_passed": true,
+        "scope": "actual APIs on authored fixtures; no production/model/P2 evidence"
+      }
+    ],
+    "all_reference_checks_passed": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "case_id": "c_1e4d8691c9e23775",
+  "split": "calibration",
+  "task_number": 20,
+  "kind": "code",
+  "family": "vacuous_test",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "f5f532585f4d54534af5f9935d705ed74daece6b7dad9036af71b8a7097c0006",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Generated test accepted always_allow",
+    "program_stdout": "",
+    "source_sha256": "d7a62fb4651e010c09068a2d2676bb58a5feda05de35affeae70fd46819b8edb"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: generated test accepted always_allow",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.11442395902122371
+}

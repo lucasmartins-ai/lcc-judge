@@ -1,0 +1,35 @@
+test_affinity_without_support_and_field_ties_abstain (tests.test_goal_support_pilot.GoalSupportPilotTests.test_affinity_without_support_and_field_ties_abstain) ... FAIL
+test_separate_objectives_learn_support_despite_high_field_affinity (tests.test_goal_support_pilot.GoalSupportPilotTests.test_separate_objectives_learn_support_despite_high_field_affinity) ... FAIL
+test_train_policy_needs_correct_coverage_and_both_languages (tests.test_goal_support_pilot.GoalSupportPilotTests.test_train_policy_needs_correct_coverage_and_both_languages) ... FAIL
+
+======================================================================
+FAIL: test_affinity_without_support_and_field_ties_abstain (tests.test_goal_support_pilot.GoalSupportPilotTests.test_affinity_without_support_and_field_ties_abstain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_support_pilot.py", line 12, in setUp
+    self.assertIsNotNone(pilot, 'Supervised goal support pilot is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Supervised goal support pilot is absent
+
+======================================================================
+FAIL: test_separate_objectives_learn_support_despite_high_field_affinity (tests.test_goal_support_pilot.GoalSupportPilotTests.test_separate_objectives_learn_support_despite_high_field_affinity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_support_pilot.py", line 12, in setUp
+    self.assertIsNotNone(pilot, 'Supervised goal support pilot is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Supervised goal support pilot is absent
+
+======================================================================
+FAIL: test_train_policy_needs_correct_coverage_and_both_languages (tests.test_goal_support_pilot.GoalSupportPilotTests.test_train_policy_needs_correct_coverage_and_both_languages)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_support_pilot.py", line 12, in setUp
+    self.assertIsNotNone(pilot, 'Supervised goal support pilot is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Supervised goal support pilot is absent
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

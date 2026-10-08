@@ -1,0 +1,29 @@
+{
+  "case_id": "c_4c3c4ee6dccdd482",
+  "split": "calibration",
+  "task_number": 6,
+  "kind": "code",
+  "family": "all_rows",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "fab9ef7a8149a888087ea5c99ce2b4c491aaefb9ce1238a8b267da63c38bdfc8",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Normal query/tenant filter fails",
+    "program_stdout": "",
+    "source_sha256": "9340e24b7fd4759dfec97e840919ade14fddcc69f19bc54f0d6645761684cc06"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: query, tenant or injection failure",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12318325001979247
+}

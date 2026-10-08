@@ -1,0 +1,44 @@
+{
+  "3": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Inconsistent acquisition order: [7, 2, 5]",
+    "program_stdout": "",
+    "source_sha256": "5d1e27040e5c41a9fed25baec0ef681259b5c372bb1243f5feac15639893b63a"
+  },
+  "6": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Normal query/tenant filter fails",
+    "program_stdout": "",
+    "source_sha256": "6a870c441e35f90547138dc6e3a3e6f701c6379182d4f4d56b8f08114fc67d71"
+  },
+  "10": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Duplicate did not return the cached receipt",
+    "program_stdout": "",
+    "source_sha256": "778b80918aa7791e0d993bd3b6e2f081a4a7a9603591dd56d0e83ba2c74559c7"
+  },
+  "13": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Double spending or no transfer: {1: -200, 2: 300}",
+    "program_stdout": "",
+    "source_sha256": "791e0de9c73aed4a44f165fc35b5d86a7b58ebb3d25316ad07b5070eeb2fc3f9"
+  },
+  "16": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: ",
+    "program_stdout": "",
+    "source_sha256": "128bbab450cfad59613aa6c34ffdff386e0e30441b7f8f00d116195f4b0eba1a"
+  },
+  "20": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Generated test accepted always_allow",
+    "program_stdout": "",
+    "source_sha256": "d7a62fb4651e010c09068a2d2676bb58a5feda05de35affeae70fd46819b8edb"
+  }
+}

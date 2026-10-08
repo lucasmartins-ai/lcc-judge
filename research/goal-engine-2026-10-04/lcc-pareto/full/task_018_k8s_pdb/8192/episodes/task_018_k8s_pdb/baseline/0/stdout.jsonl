@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141849_d7b83a", "timestamp": 1791119930297}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget with minAvailable set to 3, preserving the search cluster", "timestamp": 1791119937095}
+{"type": "text", "text": "'s quorum during disruptions.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "timestamp": 1791119937095}
+{"type": "result", "session_id": "20261004_141849_d7b83a", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget with minAvailable set to 3, preserving the search cluster's quorum during disruptions.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 8696, "output": 407, "total": 9243, "cache_read": 140, "cache_write": 0}, "duration_ms": 6815, "timestamp": 1791119937112}

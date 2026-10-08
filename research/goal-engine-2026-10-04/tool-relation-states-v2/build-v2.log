@@ -1,0 +1,45 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 508B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4
+#2 ...
+
+#3 [auth] library/lcc-tool-relations:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4
+#2 ...
+
+#4 [auth] library/lcc-tool-relations:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4
+#2 ERROR: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+------
+ > [internal] load metadata for docker.io/library/lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4
+   2 |     ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+   3 |     COPY tool_relation_state_worker.py /usr/local/lib/python3.13/site-packages/research/
+--------------------
+ERROR: failed to build: failed to solve: lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4: failed to resolve source metadata for docker.io/library/lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4: pull access denied, repository does not exist or may require authorization: server message: insufficient_scope: authorization failed
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/yq35svmhl3uqcv5tv3wo0vbeg
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/Master/Downloads/LCC-judge/research/tool_relation_state_runtime.py", line 122, in <module>
+    args=parser.parse_args();print(json.dumps(build(args.out) if args.action=='build' else runtime_identity(),indent=2))
+                                              ~~~~~^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/tool_relation_state_runtime.py", line 111, in build
+    subprocess.run([parent['docker'],'build','--pull=false','--network=none','-t',IMAGE,str(out)],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/usr/local/bin/docker', 'build', '--pull=false', '--network=none', '-t', 'lcc-tool-relation-states:local', 'research/goal-engine-2026-10-04/tool-relation-states-v2/build-recipe-v2']' returned non-zero exit status 1.

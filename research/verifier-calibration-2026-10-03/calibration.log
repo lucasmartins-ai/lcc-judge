@@ -1,0 +1,65 @@
+calibration: 80 receipts saved
+{
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "threshold": 0.5,
+  "diagnostic_threshold": 0.5,
+  "calibration_targets_pass": true,
+  "calibration_legacy": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 11,
+      "fp": 4,
+      "fn": 1,
+      "unknown": 0,
+      "fpr": 0.3333333333333333,
+      "fnr": 0.08333333333333333,
+      "recall": 0.9166666666666666,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 56,
+      "positives": 28,
+      "negatives": 28,
+      "tp": 27,
+      "fp": 14,
+      "fn": 1,
+      "unknown": 0,
+      "fpr": 0.5,
+      "fnr": 0.03571428571428571,
+      "recall": 0.9642857142857143,
+      "unknown_rate": 0.0
+    }
+  },
+  "calibration_structural": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "recall": 1.0,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 56,
+      "positives": 28,
+      "negatives": 28,
+      "tp": 28,
+      "fp": 12,
+      "fn": 0,
+      "unknown": 0,
+      "fpr": 0.42857142857142855,
+      "fnr": 0.0,
+      "recall": 1.0,
+      "unknown_rate": 0.0
+    }
+  },
+  "training_admission": false,
+  "sha256": "d6afda3a7c96b41e6a3dfc1028f26eb10d6c717a5c775d257e3603047ba7e158"
+}

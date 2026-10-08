@@ -1,0 +1,13 @@
+E
+======================================================================
+ERROR: test_common_prefix_preserves_whole_evidence_under_pair_budget (test_hf_frontier.HFFrontierTests.test_common_prefix_preserves_whole_evidence_under_pair_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_hf_frontier.py", line 6, in test_common_prefix_preserves_whole_evidence_under_pair_budget
+    from research.hf_frontier import fit_prefix
+ModuleNotFoundError: No module named 'research.hf_frontier'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

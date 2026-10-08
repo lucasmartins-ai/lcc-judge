@@ -1,0 +1,40 @@
+{
+  "socket_connect_blocked": true,
+  "result": {
+    "schema": "lcc-context-ranking/0.1",
+    "operation": "rank_context",
+    "mode": "shadow",
+    "model": {
+      "model": "answerdotai/ModernBERT-base",
+      "backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+      "checkpoint_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+      "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+      "pooling": "line-attn",
+      "device": "cpu",
+      "revision_recorded_in_checkpoint": false
+    },
+    "items": [
+      {
+        "id": "b1",
+        "text_sha256": "d7723ab8f18cccbcb02127b7fa8f700cf48d67a423d1d460f531679e5487ee91",
+        "status": "SCORED",
+        "logit": -1.4395523071289062,
+        "decision": "KEEP",
+        "reason": "shadow_policy",
+        "actual_tokens": 35,
+        "latency_ms": 2995.2504159882665,
+        "truncated": false
+      }
+    ],
+    "ranking": [
+      "b1"
+    ],
+    "pair_window_tokens": 8192,
+    "useful_context_tokens": null,
+    "encoded_tokens": 35,
+    "calibrated_probability": false,
+    "necessity_estimated": false,
+    "set_sufficiency_estimated": false,
+    "latency_ms": 2995.3013749909587
+  }
+}

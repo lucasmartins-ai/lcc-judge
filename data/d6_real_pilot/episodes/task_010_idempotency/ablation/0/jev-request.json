@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Implement idempotency check before charge dispatch.",
+    "context": [
+      {
+        "block_id": "b_bc071b10",
+        "content": "def process_payment(idempotency_key, amount):\n    # TODO: implement check\n    return stripe.Charge.create(amount=amount)",
+        "source": "payment.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_d5237d14",
+        "content": "Stripe API version: 2024-06-12",
+        "source": "stripe.env",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Check Redis for an existing receipt first; on a miss, create the charge and cache the returned receipt.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def process_payment(idempotency_key, amount):\n    cached_receipt = redis.get(idempotency_key)\n    if cached_receipt is not None:\n        return cached_receipt\n\n    receipt = stripe.Charge.create(amount=amount)\n    redis.set(idempotency_key, receipt)\n    return receipt"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

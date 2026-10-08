@@ -1,0 +1,3838 @@
+{
+  "protocol": {
+    "version": "objective-zscore-logit/0.1",
+    "depths": [
+      0,
+      512
+    ],
+    "models": [
+      "specialist-exp05-frozen-8k",
+      "specialist-exp05-unfreeze2-8k"
+    ],
+    "bootstrap_repeats": 2000,
+    "bootstrap_seed": 42,
+    "transform": "zscore(logit(probability)) over all three candidates for each objective",
+    "criteria": {
+      "min_delta_J": 0.03,
+      "delta_J_ci_low_strictly_positive": true,
+      "max_D_loss": 0.01
+    },
+    "source_file": "bakeoff/results/results.json",
+    "source_sha256": "55bb902100000e5729b2499a453d4530a946585255ebac080d6a7241a265155b",
+    "script_sha256": "c1f174a3131bc8a3cd73bbc91e9df1da3dc6f80a2dc32664c7f321cde7fba3fa",
+    "limitations": [
+      "Exploratory continuation; original terminal-only pilot not reproduced.",
+      "No calibration fit and no untouched confirmatory split.",
+      "Requires a candidate set; score depends on its composition.",
+      "AUC gains are not probabilistic calibration evidence."
+    ]
+  },
+  "summary": {
+    "specialist-exp05-frozen-8k": {
+      "0": {
+        "n": 62,
+        "before": {
+          "J": 0.658168574401665,
+          "D": 0.6727367325702394
+        },
+        "after": {
+          "J": 0.7510405827263268,
+          "D": 0.677159209157128
+        },
+        "delta_J": 0.0928720083246618,
+        "delta_D": 0.004422476586888657,
+        "delta_J_95ci": [
+          0.028342872008324606,
+          0.149843912591051
+        ],
+        "exploratory_criteria_pass": true,
+        "gate_090_pass": false,
+        "validated_for_deployment": false
+      },
+      "512": {
+        "n": 62,
+        "before": {
+          "J": 0.7120187304890739,
+          "D": 0.658168574401665
+        },
+        "after": {
+          "J": 0.8160770031217481,
+          "D": 0.6677939646201873
+        },
+        "delta_J": 0.1040582726326742,
+        "delta_D": 0.009625390218522267,
+        "delta_J_95ci": [
+          0.05046826222684708,
+          0.1521852237252862
+        ],
+        "exploratory_criteria_pass": true,
+        "gate_090_pass": false,
+        "validated_for_deployment": false
+      }
+    },
+    "specialist-exp05-unfreeze2-8k": {
+      "0": {
+        "n": 62,
+        "before": {
+          "J": 0.7479188345473465,
+          "D": 0.7598855359001041
+        },
+        "after": {
+          "J": 0.8264828303850156,
+          "D": 0.8009885535900104
+        },
+        "delta_J": 0.07856399583766904,
+        "delta_D": 0.04110301768990632,
+        "delta_J_95ci": [
+          0.02003121748178982,
+          0.1287786160249739
+        ],
+        "exploratory_criteria_pass": true,
+        "gate_090_pass": false,
+        "validated_for_deployment": false
+      },
+      "512": {
+        "n": 62,
+        "before": {
+          "J": 0.8145161290322581,
+          "D": 0.7125390218522373
+        },
+        "after": {
+          "J": 0.8553590010405827,
+          "D": 0.7481789802289281
+        },
+        "delta_J": 0.04084287200832459,
+        "delta_D": 0.03563995837669087,
+        "delta_J_95ci": [
+          -0.014568158168574378,
+          0.09261836628511959
+        ],
+        "exploratory_criteria_pass": false,
+        "gate_090_pass": false,
+        "validated_for_deployment": false
+      }
+    }
+  },
+  "records": [
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "api_deprecation_410",
+      "probabilities": [
+        0.6606860115836117,
+        0.6327417582492141,
+        0.1866467944073683
+      ],
+      "normalized_scores": [
+        0.7685869348506311,
+        0.6437899886630917,
+        -1.4123769235137227
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "api_quota_exhaust",
+      "probabilities": [
+        0.6688414005315954,
+        0.7545516767796057,
+        0.018483783541772363
+      ],
+      "normalized_scores": [
+        0.6141977254250705,
+        0.7961104853089556,
+        -1.410308210734026
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "artifact_checksum",
+      "probabilities": [
+        0.916359135283609,
+        0.6840486087232142,
+        0.852566008375689
+      ],
+      "normalized_scores": [
+        1.1298607711239568,
+        -1.301517772371163,
+        0.1716570012472056
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "auth_regression",
+      "probabilities": [
+        0.7655204929421273,
+        0.7804581605376788,
+        0.8412315613970758
+      ],
+      "normalized_scores": [
+        -0.8991524683099497,
+        -0.4957510261359224,
+        1.394903494445872
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "autoscale_pending",
+      "probabilities": [
+        0.5137832582937046,
+        0.3832939073254818,
+        0.6510144995241876
+      ],
+      "normalized_scores": [
+        -0.027939602116760713,
+        -1.2105360315023175,
+        1.2384756336190783
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "backup_failure",
+      "probabilities": [
+        0.01083848027152504,
+        0.46322919636065646,
+        0.17990543907443887
+      ],
+      "normalized_scores": [
+        -1.3460757781804316,
+        1.048617440646154,
+        0.2974583375342774
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "booking_timeout",
+      "probabilities": [
+        0.7959311977885735,
+        0.6540998232805655,
+        0.55386339106626
+      ],
+      "normalized_scores": [
+        1.3175394333202675,
+        -0.21372209984303336,
+        -1.1038173334772345
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "breaker_trip",
+      "probabilities": [
+        0.16627691998439453,
+        0.09589415653722531,
+        0.383170794218734
+      ],
+      "normalized_scores": [
+        -0.23002104510548538,
+        -1.0934255490316982,
+        1.323446594137183
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "bucket_access_denied",
+      "probabilities": [
+        0.4771137540481674,
+        0.4608389515250987,
+        0.24042626861811375
+      ],
+      "normalized_scores": [
+        0.7734916440210946,
+        0.63857510700249,
+        -1.4120667510235847
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "cache_stampede",
+      "probabilities": [
+        0.28489695019057215,
+        0.1455148905610516,
+        0.15431753616177843
+      ],
+      "normalized_scores": [
+        1.4104212952763857,
+        -0.7948422680249863,
+        -0.6155790272513995
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "canary_rollback",
+      "probabilities": [
+        0.7822884181050814,
+        0.8022037276585446,
+        0.7836092061481278
+      ],
+      "normalized_scores": [
+        -0.7761731139822928,
+        1.4118865730334766,
+        -0.6357134590511797
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "cdn_origin_offload",
+      "probabilities": [
+        0.44945844319019196,
+        0.0742716345845938,
+        0.20740884503516072
+      ],
+      "normalized_scores": [
+        1.216843262382464,
+        -1.2324964312719606,
+        0.01565316888949683
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "ci_cache_miss",
+      "probabilities": [
+        0.9277930968289843,
+        0.922645376811683,
+        0.3059544551127775
+      ],
+      "normalized_scores": [
+        0.7306403699744577,
+        0.6833091524445878,
+        -1.4139495224190457
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "clock_skew",
+      "probabilities": [
+        0.7764858444934424,
+        0.7717809869821118,
+        0.10183632959124217
+      ],
+      "normalized_scores": [
+        0.715462684487478,
+        0.6987178332159604,
+        -1.4141805177034383
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "compaction_stall",
+      "probabilities": [
+        0.8904054259890437,
+        0.10672132925221867,
+        0.07896872410065697
+      ],
+      "normalized_scores": [
+        1.4111881624452893,
+        -0.6255255004264586,
+        -0.7856626620188311
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "config_drift",
+      "probabilities": [
+        0.728515092332201,
+        0.4238746982957327,
+        0.6922202952101786
+      ],
+      "normalized_scores": [
+        0.8555923946143646,
+        -1.402973740479985,
+        0.5473813458656199
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "connection_pool_exhaust",
+      "probabilities": [
+        0.2560096437528369,
+        0.07570248051774739,
+        0.8229564355172443
+      ],
+      "normalized_scores": [
+        -0.23288896657776498,
+        -1.0915795425213473,
+        1.3244685090991126
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "consumer_lag",
+      "probabilities": [
+        0.7687053024102872,
+        0.4437355474531197,
+        0.01594941441505904
+      ],
+      "normalized_scores": [
+        1.000134403264398,
+        0.36584178986472804,
+        -1.3659761931291259
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "cpu_throttling",
+      "probabilities": [
+        0.9598920019282091,
+        0.741065812702602,
+        0.038987120454710956
+      ],
+      "normalized_scores": [
+        1.0685702146681102,
+        0.267973125558018,
+        -1.3365433402261284
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "cron_skew",
+      "probabilities": [
+        0.1206829785259592,
+        0.02917165869144425,
+        0.5584625668277972
+      ],
+      "normalized_scores": [
+        -0.15235463319547543,
+        -1.14143963848621,
+        1.2937942716816853
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "csv_encoding",
+      "probabilities": [
+        0.0709692969708096,
+        0.27483341840623987,
+        0.018641165802640493
+      ],
+      "normalized_scores": [
+        -0.057231608799945724,
+        1.2523573650309856,
+        -1.1951257562310404
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "currency_mismatch",
+      "probabilities": [
+        0.23456682189682157,
+        0.5714715386127179,
+        0.09482852012672896
+      ],
+      "normalized_scores": [
+        -0.12697282526526651,
+        1.2832849313368972,
+        -1.1563121060716313
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "dedup_leak",
+      "probabilities": [
+        0.5415763313022213,
+        0.08605501034251627,
+        0.046019168725923564
+      ],
+      "normalized_scores": [
+        1.3861492809579479,
+        -0.4502936112060446,
+        -0.9358556697519033
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "disk_quota",
+      "probabilities": [
+        0.938520064324429,
+        0.90183526020862,
+        0.36032254084419413
+      ],
+      "normalized_scores": [
+        0.8748795584600056,
+        0.5248176284534192,
+        -1.3996971869134245
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "disk_write_latency",
+      "probabilities": [
+        0.24957113948447032,
+        0.24434801837968015,
+        0.49162618675513753
+      ],
+      "normalized_scores": [
+        -0.6793882264222612,
+        -0.734467759296506,
+        1.4138559857187665
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "dns_resolver_timeout",
+      "probabilities": [
+        0.7375447506876988,
+        0.10263338938781275,
+        0.3453191329671894
+      ],
+      "normalized_scores": [
+        1.242725065155757,
+        -1.2059357181801726,
+        -0.03678934697558484
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "duplicate_orders",
+      "probabilities": [
+        0.08580111994971934,
+        0.006904659175787971,
+        0.34442466903997526
+      ],
+      "normalized_scores": [
+        0.1650404532114642,
+        -1.2988964992297978,
+        1.133856046018334
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "email_bounce_rate",
+      "probabilities": [
+        0.5542654259638247,
+        0.32105045184412556,
+        0.19705896587377683
+      ],
+      "normalized_scores": [
+        1.2950915014778686,
+        -0.15555641945231896,
+        -1.1395350820255492
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "executor_rejections",
+      "probabilities": [
+        0.34569787991518225,
+        0.011686950350464442,
+        0.17812344373306674
+      ],
+      "normalized_scores": [
+        0.963729398716631,
+        -1.3782012625626514,
+        0.41447186384602047
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "flag_rollout_exposure",
+      "probabilities": [
+        0.2895330241218463,
+        0.2896805274017583,
+        0.5287281032913862
+      ],
+      "normalized_scores": [
+        -0.7078578326956547,
+        -0.7063554636741359,
+        1.41421329636979
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "full_table_scan",
+      "probabilities": [
+        0.49993799520422166,
+        0.010683497462839062,
+        0.1298473478582185
+      ],
+      "normalized_scores": [
+        1.1545661602785389,
+        -1.2845544114929115,
+        0.12998825121437269
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "gc_pause_storm",
+      "probabilities": [
+        0.8653589541824429,
+        0.8059754449286621,
+        0.12648073892518136
+      ],
+      "normalized_scores": [
+        0.8319716678386899,
+        0.5744016447652762,
+        -1.4063733126039664
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "gpu_oom",
+      "probabilities": [
+        0.44325697684632376,
+        0.07851834788748341,
+        0.11602508396097858
+      ],
+      "normalized_scores": [
+        1.3905315868406598,
+        -0.9184617376012161,
+        -0.47206984923944423
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "index_fragmentation",
+      "probabilities": [
+        0.6531477402752975,
+        0.2472552625640075,
+        0.06139785889185092
+      ],
+      "normalized_scores": [
+        1.2405225478160926,
+        -0.03218997187920032,
+        -1.2083325759368926
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "index_staleness",
+      "probabilities": [
+        0.9221709886182247,
+        0.37782881443041444,
+        0.45247994940051894
+      ],
+      "normalized_scores": [
+        1.407910983170816,
+        -0.8194543989405846,
+        -0.5884565842302315
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "ingest_throughput_drop",
+      "probabilities": [
+        0.7647036665564695,
+        0.6827736664975131,
+        0.011414592523702673
+      ],
+      "normalized_scores": [
+        0.7858506932459423,
+        0.6253226663599438,
+        -1.4111733596058857
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "jvm_heap_pressure",
+      "probabilities": [
+        0.9354758193092656,
+        0.9109622056817948,
+        0.1587017379891164
+      ],
+      "normalized_scores": [
+        0.7937390895316321,
+        0.6167791583419825,
+        -1.4105182478736145
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "lb_target_unhealthy",
+      "probabilities": [
+        0.08929531320594256,
+        0.0571345717091048,
+        0.8025869414586383
+      ],
+      "normalized_scores": [
+        -0.5752169664086054,
+        -0.8312498997766534,
+        1.4064668661852593
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "legacy_cipher",
+      "probabilities": [
+        0.7998048074569287,
+        0.4425585052972431,
+        0.7586857589938979
+      ],
+      "normalized_scores": [
+        0.8686515989460596,
+        -1.4008056491007086,
+        0.5321540501546489
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "lock_wait_time",
+      "probabilities": [
+        0.3037122037403882,
+        0.0004745328546189625,
+        0.12658117093758084
+      ],
+      "normalized_scores": [
+        0.883274188622051,
+        -1.3981254793871556,
+        0.5148512907651043
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "log_flood",
+      "probabilities": [
+        0.7618694697751298,
+        0.5556334230528881,
+        0.06523410729293391
+      ],
+      "normalized_scores": [
+        0.9758003802918928,
+        0.3985873807577004,
+        -1.3743877610495931
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "login_redirect",
+      "probabilities": [
+        0.6968431949051977,
+        0.7261933454949168,
+        0.08042676961178864
+      ],
+      "normalized_scores": [
+        0.6612195116447296,
+        0.752022022791781,
+        -1.4132415344365106
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "migration_lock",
+      "probabilities": [
+        0.6003017592796251,
+        0.07298445018056907,
+        0.3887808623699783
+      ],
+      "normalized_scores": [
+        1.0250999288597047,
+        -1.3562783578651278,
+        0.3311784290054233
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "oauth_token_ttl",
+      "probabilities": [
+        0.8658513652855648,
+        0.6482893070561563,
+        0.3182697130485446
+      ],
+      "normalized_scores": [
+        1.2056690963478283,
+        0.037299439819114016,
+        -1.2429685361669425
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "partition_skew",
+      "probabilities": [
+        0.013756135567577692,
+        0.07409023258406085,
+        0.011245389304718348
+      ],
+      "normalized_scores": [
+        -0.5873649727189282,
+        1.4077972881717233,
+        -0.8204323154527952
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "payment_decline_spike",
+      "probabilities": [
+        0.6988519176078378,
+        0.6889499633325646,
+        0.004623343148161169
+      ],
+      "normalized_scores": [
+        0.7150795799203732,
+        0.699103903905289,
+        -1.4141834838256624
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "pod_restart_loop",
+      "probabilities": [
+        0.4244409438169484,
+        5.070931761591968e-06,
+        0.8068447747374529
+      ],
+      "normalized_scores": [
+        0.5590286626465939,
+        -1.4045099827614127,
+        0.8454813201148191
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "queue_backlog",
+      "probabilities": [
+        0.17758728771360105,
+        0.08092282943550869,
+        0.7480183439089374
+      ],
+      "normalized_scores": [
+        -0.384966992732739,
+        -0.9860114382344259,
+        1.370978430967165
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "raft_leader_flap",
+      "probabilities": [
+        0.5837039489402936,
+        0.025676640283988153,
+        0.337174019303768
+      ],
+      "normalized_scores": [
+        0.986142283942421,
+        -1.3709336294176324,
+        0.38479134547521143
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "rate_limit_flood",
+      "probabilities": [
+        0.04781638403611579,
+        0.009190274263023525,
+        0.3785747055531361
+      ],
+      "normalized_scores": [
+        -0.15644956328255608,
+        -1.1390026624346117,
+        1.2954522257171674
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "redis_eviction",
+      "probabilities": [
+        0.6703165275377514,
+        0.10620808090948843,
+        0.5858789225966599
+      ],
+      "normalized_scores": [
+        0.8459221718192517,
+        -1.4044455531420168,
+        0.558523381322765
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "replica_lag",
+      "probabilities": [
+        0.9432553811382716,
+        0.8029064872598347,
+        0.34982578604656367
+      ],
+      "normalized_scores": [
+        1.145004273609031,
+        0.1463329695048463,
+        -1.2913372431138774
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "report_timezone",
+      "probabilities": [
+        0.13773279481209605,
+        0.272225429674904,
+        0.2362917284680646
+      ],
+      "normalized_scores": [
+        -1.381941702421809,
+        0.9511205164627248,
+        0.43082118595908436
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "retry_storm",
+      "probabilities": [
+        0.8201899690426342,
+        0.31142123630641966,
+        0.9011701908683658
+      ],
+      "normalized_scores": [
+        0.4200781362715638,
+        -1.379505087124772,
+        0.9594269508532083
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "seat_oversell",
+      "probabilities": [
+        0.04308420137983733,
+        0.025000613419679338,
+        0.4608820640645568
+      ],
+      "normalized_scores": [
+        -0.5161020118823899,
+        -0.8822248532254423,
+        1.398326865107832
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "session_leak",
+      "probabilities": [
+        0.5099656410235622,
+        0.010117551723661302,
+        0.005892887195999407
+      ],
+      "normalized_scores": [
+        1.4076916357075582,
+        -0.5863588225341507,
+        -0.8213328131734072
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "stale_nodes_after_rollback",
+      "probabilities": [
+        0.8844762193338079,
+        0.5535412936178216,
+        0.5877493003967326
+      ],
+      "normalized_scores": [
+        1.410849680466422,
+        -0.789848677778341,
+        -0.6210010026880808
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "stream_backpressure",
+      "probabilities": [
+        0.13358633845948112,
+        0.28827430147663624,
+        0.7572689223374154
+      ],
+      "normalized_scores": [
+        -1.0564266822920114,
+        -0.28601758353453044,
+        1.3424442658265414
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "tls_cert_expiry",
+      "probabilities": [
+        0.06468281867044273,
+        0.3141789612157689,
+        0.25586876447869383
+      ],
+      "normalized_scores": [
+        -1.4001288052076584,
+        0.8724868391393074,
+        0.5276419660683513
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "upload_incomplete",
+      "probabilities": [
+        0.12309081146777505,
+        0.0794370139133576,
+        0.6966048001251327
+      ],
+      "normalized_scores": [
+        -0.5321427424593402,
+        -0.8686612299746352,
+        1.4008039724339756
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "vpn_tunnel_drops",
+      "probabilities": [
+        0.9386064591339208,
+        0.8181454619987533,
+        0.4247697199962053
+      ],
+      "normalized_scores": [
+        1.1390703947093823,
+        0.15633598744496652,
+        -1.2954063821543487
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 0,
+      "case_id": "webhook_delivery_failures",
+      "probabilities": [
+        0.8854670126545665,
+        0.694891161461236,
+        0.23352406830314368
+      ],
+      "normalized_scores": [
+        1.1140705734640404,
+        0.19737512412279282,
+        -1.3114456975868332
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "api_deprecation_410",
+      "probabilities": [
+        0.5818761110184314,
+        0.025170322662076382,
+        0.28047415898763517
+      ],
+      "normalized_scores": [
+        1.0543675833540487,
+        -1.343413997794825,
+        0.289046414440776
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "api_quota_exhaust",
+      "probabilities": [
+        0.033357757199790714,
+        0.09700896650160086,
+        0.15583632473700712
+      ],
+      "normalized_scores": [
+        -1.3416212617223062,
+        0.2834615730709137,
+        1.058159688651392
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "artifact_checksum",
+      "probabilities": [
+        0.872257530130283,
+        0.4696404713328812,
+        0.11383831091978489
+      ],
+      "normalized_scores": [
+        1.2361015939534887,
+        -0.02303849704569844,
+        -1.2130630969077905
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "auth_regression",
+      "probabilities": [
+        0.4178803961902741,
+        0.28356777898219726,
+        0.014761076772437903
+      ],
+      "normalized_scores": [
+        0.8748343463743369,
+        0.5248710631551654,
+        -1.3997054095295025
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "autoscale_pending",
+      "probabilities": [
+        0.09069140806132042,
+        0.0019047047502870707,
+        0.027534726733533566
+      ],
+      "normalized_scores": [
+        1.0534175919821809,
+        -1.3438584350883906,
+        0.2904408431062094
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "backup_failure",
+      "probabilities": [
+        0.02086924732180542,
+        0.6239902114305227,
+        0.22979706627324595
+      ],
+      "normalized_scores": [
+        -1.3015593652444333,
+        1.129796815988426,
+        0.17176254925600665
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "booking_timeout",
+      "probabilities": [
+        0.5047485912038611,
+        0.23062467346102344,
+        0.002719755244322755
+      ],
+      "normalized_scores": [
+        0.9330880790117082,
+        0.4537874103559223,
+        -1.386875489367631
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "breaker_trip",
+      "probabilities": [
+        0.11944145821653569,
+        0.12834337248889138,
+        0.42437427721745824
+      ],
+      "normalized_scores": [
+        -0.7590850359657794,
+        -0.6538220987568283,
+        1.4129071347226072
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "bucket_access_denied",
+      "probabilities": [
+        0.005285470257386368,
+        0.004075408799543049,
+        0.1904210602574423
+      ],
+      "normalized_scores": [
+        -0.6353886441229194,
+        -0.7764770325214179,
+        1.4118656766443367
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "cache_stampede",
+      "probabilities": [
+        0.6787691120604261,
+        0.4876350899633777,
+        0.21464049372870125
+      ],
+      "normalized_scores": [
+        1.1258485082654415,
+        0.17825646089389147,
+        -1.304104969159333
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "canary_rollback",
+      "probabilities": [
+        0.12761821331010179,
+        0.036216382142567116,
+        0.1768644155945298
+      ],
+      "normalized_scores": [
+        0.4343773626457231,
+        -1.3827302850915604,
+        0.9483529224458364
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "cdn_origin_offload",
+      "probabilities": [
+        0.1980118869709308,
+        0.02599443320831758,
+        0.48066261017180034
+      ],
+      "normalized_scores": [
+        0.20579044988730474,
+        -1.3146038194709775,
+        1.1088133695836728
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "ci_cache_miss",
+      "probabilities": [
+        0.8129724792039921,
+        0.8593899390911588,
+        0.10427899031835132
+      ],
+      "normalized_scores": [
+        0.6098978476452958,
+        0.8000481176115032,
+        -1.409945965256799
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "clock_skew",
+      "probabilities": [
+        0.6131971897495135,
+        0.12903397047048867,
+        0.16996275523567295
+      ],
+      "normalized_scores": [
+        1.4029606485827475,
+        -0.8556752136236963,
+        -0.5472854349590516
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "compaction_stall",
+      "probabilities": [
+        0.6768893063583737,
+        0.037024735248743515,
+        0.5403270259622226
+      ],
+      "normalized_scores": [
+        0.8645203785021094,
+        -1.401514225283883,
+        0.5369938467817733
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "config_drift",
+      "probabilities": [
+        0.19443588476354412,
+        0.10105979974299999,
+        0.011183751688806774
+      ],
+      "normalized_scores": [
+        0.9801946025344203,
+        0.39274691255071686,
+        -1.3729415150851363
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "connection_pool_exhaust",
+      "probabilities": [
+        0.08447565665204913,
+        0.005440459614102048,
+        0.4374159106261374
+      ],
+      "normalized_scores": [
+        0.11395036260182088,
+        -1.2777378470747232,
+        1.163787484472902
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "consumer_lag",
+      "probabilities": [
+        0.5109688153445645,
+        0.45430958021634565,
+        0.06980210025415517
+      ],
+      "normalized_scores": [
+        0.8002795915738572,
+        0.6096445532117994,
+        -1.409924144785657
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "cpu_throttling",
+      "probabilities": [
+        0.8284423191282348,
+        0.02617984096432251,
+        0.00750433100138388
+      ],
+      "normalized_scores": [
+        1.3897160728718363,
+        -0.4678846291802188,
+        -0.9218314436916171
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "cron_skew",
+      "probabilities": [
+        0.01662976577375818,
+        0.0015508971243890855,
+        0.08528034849628038
+      ],
+      "normalized_scores": [
+        0.13506589045175973,
+        -1.2866793285315747,
+        1.1516134380798138
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "csv_encoding",
+      "probabilities": [
+        0.017411385442193533,
+        0.0007710522564934888,
+        0.004884038177445146
+      ],
+      "normalized_scores": [
+        1.144764908813541,
+        -1.291503430085998,
+        0.14673852127245696
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "currency_mismatch",
+      "probabilities": [
+        0.01318974154446296,
+        0.17425113664633135,
+        0.14450578946082268
+      ],
+      "normalized_scores": [
+        -1.4104817376593752,
+        0.7941562825499329,
+        0.616325455109442
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "dedup_leak",
+      "probabilities": [
+        0.045824220390633656,
+        0.05358469494002753,
+        0.25157944246034186
+      ],
+      "normalized_scores": [
+        -0.798468821160372,
+        -0.6116244599977375,
+        1.410093281158109
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "disk_quota",
+      "probabilities": [
+        0.7247476585149549,
+        0.005142576752958581,
+        0.08177396359831773
+      ],
+      "normalized_scores": [
+        1.2585429443438738,
+        -1.187887836890775,
+        -0.07065510745309864
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "disk_write_latency",
+      "probabilities": [
+        0.29752293786871375,
+        0.18447853764503222,
+        0.23052907970731656
+      ],
+      "normalized_scores": [
+        1.2649304542128545,
+        -1.1801541986072657,
+        -0.0847762556055889
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "dns_resolver_timeout",
+      "probabilities": [
+        0.162451807912175,
+        0.007826286398478155,
+        0.11043361324555699
+      ],
+      "normalized_scores": [
+        0.8587770495934259,
+        -1.4024643102927388,
+        0.5436872606993132
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "duplicate_orders",
+      "probabilities": [
+        0.01764948337882897,
+        0.0002862092227461278,
+        0.08315748370646318
+      ],
+      "normalized_scores": [
+        0.34646359573242536,
+        -1.360654314337969,
+        1.0141907186055437
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "email_bounce_rate",
+      "probabilities": [
+        0.09849759859560504,
+        0.021106251190036836,
+        0.6389592039926097
+      ],
+      "normalized_scores": [
+        -0.21281178848663618,
+        -1.1043927500451693,
+        1.3172045385318056
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "executor_rejections",
+      "probabilities": [
+        0.08623178705272018,
+        0.027940490644824588,
+        0.04842295131654203
+      ],
+      "normalized_scores": [
+        1.2403693291244424,
+        -1.2084983100996465,
+        -0.031871019024795985
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "flag_rollout_exposure",
+      "probabilities": [
+        0.656363445635579,
+        0.036880061173620936,
+        0.2294080530928369
+      ],
+      "normalized_scores": [
+        1.2042051496695056,
+        -1.2442999495818647,
+        0.040094799912358994
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "full_table_scan",
+      "probabilities": [
+        0.14301773292291423,
+        0.0010498445848480958,
+        0.16850282334850245
+      ],
+      "normalized_scores": [
+        0.6668765868204549,
+        -1.4134645493239555,
+        0.7465879625035005
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "gc_pause_storm",
+      "probabilities": [
+        0.9351383713545607,
+        0.8638952666352275,
+        0.022054620404374503
+      ],
+      "normalized_scores": [
+        0.8451263656373527,
+        0.5594353251121912,
+        -1.4045616907495437
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "gpu_oom",
+      "probabilities": [
+        0.14681463610080897,
+        0.02746311559082552,
+        0.05562580564033619
+      ],
+      "normalized_scores": [
+        1.2933755497929453,
+        -1.1420510409935334,
+        -0.1513245087994113
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "index_fragmentation",
+      "probabilities": [
+        0.30503117931629903,
+        0.03813988133305949,
+        0.023964957241569163
+      ],
+      "normalized_scores": [
+        1.3970993066215145,
+        -0.5085887479163519,
+        -0.8885105587051629
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "index_staleness",
+      "probabilities": [
+        0.6197009134473679,
+        0.14835737061432436,
+        0.4314823999189838
+      ],
+      "normalized_scores": [
+        1.0776860990657176,
+        -1.3319032640880888,
+        0.2542171650223709
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "ingest_throughput_drop",
+      "probabilities": [
+        0.3454171224006048,
+        0.18964388844026261,
+        0.0025251574137214734
+      ],
+      "normalized_scores": [
+        0.8730756140292024,
+        0.5269476516928194,
+        -1.4000232657220213
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "jvm_heap_pressure",
+      "probabilities": [
+        0.7844317556525405,
+        0.2850931223555067,
+        0.2690929446737769
+      ],
+      "normalized_scores": [
+        1.413545958086711,
+        -0.6691449538155788,
+        -0.744401004271132
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "lb_target_unhealthy",
+      "probabilities": [
+        0.00892049464074642,
+        0.014576686916062287,
+        0.01717281563908505
+      ],
+      "normalized_scores": [
+        -1.372425622616764,
+        0.3906862764782052,
+        0.9817393461385682
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "legacy_cipher",
+      "probabilities": [
+        0.1082779942521173,
+        0.0039728156117838954,
+        0.013079190817819317
+      ],
+      "normalized_scores": [
+        1.3266224559992963,
+        -1.0876396909016748,
+        -0.23898276509762148
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "lock_wait_time",
+      "probabilities": [
+        0.7848007367455022,
+        0.00042022388421906456,
+        0.31369468739943057
+      ],
+      "normalized_scores": [
+        0.9576994854423722,
+        -1.3800205210354641,
+        0.4223210355930919
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "log_flood",
+      "probabilities": [
+        0.7440202292376704,
+        0.701638915423066,
+        0.39918769397994497
+      ],
+      "normalized_scores": [
+        0.863429403398936,
+        0.5382684161998169,
+        -1.401697819598753
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "login_redirect",
+      "probabilities": [
+        0.17842653221130023,
+        0.4400970500413525,
+        0.6695205733032986
+      ],
+      "normalized_scores": [
+        -1.2818820008903007,
+        0.12365587418970742,
+        1.158226126700593
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "migration_lock",
+      "probabilities": [
+        0.8656809422737919,
+        0.010353288621483244,
+        0.02239040803692001
+      ],
+      "normalized_scores": [
+        1.405347328538853,
+        -0.8396012532591259,
+        -0.5657460752797269
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "oauth_token_ttl",
+      "probabilities": [
+        0.8634312713060915,
+        0.10145552476658266,
+        0.0015732638861576684
+      ],
+      "normalized_scores": [
+        1.2124312088790214,
+        0.024266689365886693,
+        -1.2366978982449084
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "partition_skew",
+      "probabilities": [
+        0.007283791551167024,
+        0.4288819670653792,
+        0.08804722051205892
+      ],
+      "normalized_scores": [
+        -1.2683962125826913,
+        1.1758421646261648,
+        0.09255404795652672
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "payment_decline_spike",
+      "probabilities": [
+        0.25753144163444447,
+        0.2531752681929685,
+        0.46970874331994145
+      ],
+      "normalized_scores": [
+        -0.6813519457398102,
+        -0.7325526348961339,
+        1.4139045806359445
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "pod_restart_loop",
+      "probabilities": [
+        0.1351385251414741,
+        0.00018766554707525193,
+        0.12445783015889546
+      ],
+      "normalized_scores": [
+        0.7220808703685503,
+        -1.41410710566903,
+        0.69202623530048
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "queue_backlog",
+      "probabilities": [
+        0.07031134815891903,
+        0.05076198836291454,
+        0.010893192510712975
+      ],
+      "normalized_scores": [
+        0.9036178826900259,
+        0.4903195220622309,
+        -1.393937404752258
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "raft_leader_flap",
+      "probabilities": [
+        0.7026684813905144,
+        0.011150815945092775,
+        0.00575487186037969
+      ],
+      "normalized_scores": [
+        1.406954945394962,
+        -0.5795487180781648,
+        -0.8274062273167969
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "rate_limit_flood",
+      "probabilities": [
+        0.19183156259781325,
+        0.026799850189806348,
+        0.183402900686835
+      ],
+      "normalized_scores": [
+        0.7345084015113842,
+        -1.4138549154897748,
+        0.6793465139783914
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "redis_eviction",
+      "probabilities": [
+        0.2712289337904426,
+        0.0031492071614969107,
+        0.006543381747280266
+      ],
+      "normalized_scores": [
+        1.3996656426998129,
+        -0.8750528729544226,
+        -0.524612769745391
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "replica_lag",
+      "probabilities": [
+        0.9441057322511767,
+        0.8949443007000142,
+        0.6743156089489057
+      ],
+      "normalized_scores": [
+        1.0615751781614011,
+        0.2784055929430319,
+        -1.339980771104432
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "report_timezone",
+      "probabilities": [
+        0.08192280240239158,
+        0.022443469637492695,
+        0.5231797228647069
+      ],
+      "normalized_scores": [
+        -0.2396752034759835,
+        -1.0871905038291736,
+        1.3268657073051566
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "retry_storm",
+      "probabilities": [
+        0.4587540868739236,
+        0.03105134588131995,
+        0.23813708032103495
+      ],
+      "normalized_scores": [
+        1.0390589154773318,
+        -1.3503528009502679,
+        0.311293885472936
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "seat_oversell",
+      "probabilities": [
+        0.13969303295448818,
+        0.2758356274900801,
+        0.006337071007974603
+      ],
+      "normalized_scores": [
+        0.45117636824248986,
+        0.9351572287728303,
+        -1.3863335970153206
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "session_leak",
+      "probabilities": [
+        0.8074976516307768,
+        0.07266884672271796,
+        0.05269498565135588
+      ],
+      "normalized_scores": [
+        1.4106136333915194,
+        -0.6179747895380098,
+        -0.7926388438535099
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "stale_nodes_after_rollback",
+      "probabilities": [
+        0.2690244199631789,
+        0.0028611416789154124,
+        0.27407444635130696
+      ],
+      "normalized_scores": [
+        0.7015356079731898,
+        -1.4141989691586834,
+        0.712663361185493
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "stream_backpressure",
+      "probabilities": [
+        0.028839772862334145,
+        0.03199057395184047,
+        0.007892272429833926
+      ],
+      "normalized_scores": [
+        0.6229376533265889,
+        0.7880590311242979,
+        -1.4109966844508868
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "tls_cert_expiry",
+      "probabilities": [
+        0.030838270809528116,
+        0.17605816635172505,
+        0.5577320778246689
+      ],
+      "normalized_scores": [
+        -1.2388185286955296,
+        0.028650015820512856,
+        1.2101685128750164
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "upload_incomplete",
+      "probabilities": [
+        0.028912743926632203,
+        0.014472883388023779,
+        0.03480605728385973
+      ],
+      "normalized_scores": [
+        0.44449488287936745,
+        -1.3849246211936102,
+        0.9404297383142417
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "vpn_tunnel_drops",
+      "probabilities": [
+        0.9398005065125868,
+        0.40836873560829906,
+        0.006059808220340292
+      ],
+      "normalized_scores": [
+        1.133038715930546,
+        0.16639772544310594,
+        -1.299436441373652
+      ]
+    },
+    {
+      "model": "specialist-exp05-frozen-8k",
+      "depth": 512,
+      "case_id": "webhook_delivery_failures",
+      "probabilities": [
+        0.2745989171635496,
+        0.051272875406177136,
+        0.4474985927257778
+      ],
+      "normalized_scores": [
+        0.34675884396283907,
+        -1.3607372989924607,
+        1.0139784550296216
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "api_deprecation_410",
+      "probabilities": [
+        0.09635741296694293,
+        0.009784533572671306,
+        0.0006388041960664045
+      ],
+      "normalized_scores": [
+        1.1950878576380277,
+        0.05730243437972333,
+        -1.2523902920177508
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "api_quota_exhaust",
+      "probabilities": [
+        0.12083751521821867,
+        0.016722713072603833,
+        0.005262950449911261
+      ],
+      "normalized_scores": [
+        1.322750635028241,
+        -0.22807626587739202,
+        -1.0946743691508494
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "artifact_checksum",
+      "probabilities": [
+        0.5434616875642918,
+        0.008217094850446624,
+        0.36828215007570675
+      ],
+      "normalized_scores": [
+        0.863603169089469,
+        -1.4016686758278492,
+        0.5380655067383805
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "auth_regression",
+      "probabilities": [
+        0.3847498846731166,
+        0.09363991694992857,
+        0.30897418516576597
+      ],
+      "normalized_scores": [
+        0.9107301130097217,
+        -1.3923431757493685,
+        0.4816130627396466
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "autoscale_pending",
+      "probabilities": [
+        0.1924874538067423,
+        0.005794987293678428,
+        0.058154262875533755
+      ],
+      "normalized_scores": [
+        1.1002182200641508,
+        -1.3196153810780975,
+        0.21939716101394732
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "backup_failure",
+      "probabilities": [
+        0.0002078343689946185,
+        0.24924927647810727,
+        0.005177957068787767
+      ],
+      "normalized_scores": [
+        -1.1698572467781705,
+        1.2730968561784584,
+        -0.10323960940028802
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "booking_timeout",
+      "probabilities": [
+        0.38478963883808376,
+        0.09548097318803149,
+        0.11390157585791291
+      ],
+      "normalized_scores": [
+        1.4069846231400067,
+        -0.8271681082550455,
+        -0.5798165148849611
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "breaker_trip",
+      "probabilities": [
+        0.005896618541629229,
+        0.014031025453478953,
+        0.004669814554411522
+      ],
+      "normalized_scores": [
+        -0.44720520114434553,
+        1.3855000276508647,
+        -0.9382948265065191
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "bucket_access_denied",
+      "probabilities": [
+        0.182669504159263,
+        0.03713111149908492,
+        0.027135741506011515
+      ],
+      "normalized_scores": [
+        1.3993412202611404,
+        -0.5225178174386489,
+        -0.8768234028224915
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "cache_stampede",
+      "probabilities": [
+        0.03153359330033196,
+        0.006979246247954123,
+        0.022331975365815892
+      ],
+      "normalized_scores": [
+        0.9601058778258096,
+        -1.379301251406872,
+        0.41919537358106523
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "canary_rollback",
+      "probabilities": [
+        0.20734255479870647,
+        0.035846270504548756,
+        0.26420694703297304
+      ],
+      "normalized_scores": [
+        0.5432341595597289,
+        -1.4024010936019455,
+        0.8591669340422168
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "cdn_origin_offload",
+      "probabilities": [
+        0.23992883024825248,
+        0.009273719412819268,
+        0.025617064510619212
+      ],
+      "normalized_scores": [
+        1.3553386430856398,
+        -1.0273732990996711,
+        -0.3279653439859692
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "ci_cache_miss",
+      "probabilities": [
+        0.5814454136499202,
+        0.6232848042618225,
+        0.004245245755018339
+      ],
+      "normalized_scores": [
+        0.6753173486769403,
+        0.7384267585765752,
+        -1.4137441072535155
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "clock_skew",
+      "probabilities": [
+        0.29061902994043187,
+        0.07782119128887038,
+        0.002308083075856992
+      ],
+      "normalized_scores": [
+        1.0397199062392621,
+        0.3103429663087249,
+        -1.3500628725479868
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "compaction_stall",
+      "probabilities": [
+        0.31531725161669244,
+        0.00011319247343897513,
+        0.00012626288088134742
+      ],
+      "normalized_scores": [
+        1.4141206463280245,
+        -0.7210994905755007,
+        -0.6930211557525238
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "config_drift",
+      "probabilities": [
+        0.09900151876689135,
+        0.04000454485963646,
+        0.19263282800574463
+      ],
+      "normalized_scores": [
+        0.09067934971262133,
+        -1.2675642620954033,
+        1.1768849123827834
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "connection_pool_exhaust",
+      "probabilities": [
+        0.019915349014503855,
+        0.0012936284591507188,
+        0.2890077640980029
+      ],
+      "normalized_scores": [
+        -0.034513937581383006,
+        -1.2071231156130329,
+        1.241637053194416
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "consumer_lag",
+      "probabilities": [
+        0.21166110303837324,
+        0.1068496882387907,
+        4.017835993957911e-05
+      ],
+      "normalized_scores": [
+        0.8063512716120088,
+        0.6029795311922437,
+        -1.4093308028042524
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "cpu_throttling",
+      "probabilities": [
+        0.8484120081103652,
+        0.04895010715673195,
+        0.0004183950391372193
+      ],
+      "normalized_scores": [
+        1.2194283360139826,
+        0.010564720876571456,
+        -1.2299930568905542
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "cron_skew",
+      "probabilities": [
+        0.1018088429288124,
+        0.00019687711339591826,
+        0.09783640855968423
+      ],
+      "normalized_scores": [
+        0.7144982055396498,
+        -1.4141877176905138,
+        0.6996895121508646
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "csv_encoding",
+      "probabilities": [
+        0.006578264728054221,
+        0.001531132992681318,
+        9.565036007373307e-05
+      ],
+      "normalized_scores": [
+        1.0812392545532616,
+        0.2488050086512275,
+        -1.3300442632044882
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "currency_mismatch",
+      "probabilities": [
+        0.01524982104682664,
+        0.17862129462256726,
+        0.0005882601265155187
+      ],
+      "normalized_scores": [
+        0.08654535612617192,
+        1.179176677124991,
+        -1.2657220332511634
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "dedup_leak",
+      "probabilities": [
+        0.008181559140101725,
+        0.0012889262693881638,
+        5.244541304232132e-05
+      ],
+      "normalized_scores": [
+        1.1029606763424975,
+        0.21507579795419832,
+        -1.3180364742966961
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "disk_quota",
+      "probabilities": [
+        0.7421713769777714,
+        0.5221453110406101,
+        0.01068359166070329
+      ],
+      "normalized_scores": [
+        0.8964683200160705,
+        0.49900309295748935,
+        -1.3954714129735597
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "disk_write_latency",
+      "probabilities": [
+        0.012554845916891702,
+        0.04768149547161147,
+        0.07262226169476764
+      ],
+      "normalized_scores": [
+        -1.3742357789298671,
+        0.3979691078113273,
+        0.976266671118541
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "dns_resolver_timeout",
+      "probabilities": [
+        0.20908198622979218,
+        0.0008127462992164694,
+        0.009244041166704776
+      ],
+      "normalized_scores": [
+        1.2833524858555476,
+        -1.1562195334158434,
+        -0.12713295243970443
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "duplicate_orders",
+      "probabilities": [
+        0.00968594935510798,
+        0.0005419820775878789,
+        0.04766860504182572
+      ],
+      "normalized_scores": [
+        0.22441415913705082,
+        -1.3214335736068041,
+        1.097019414469754
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "email_bounce_rate",
+      "probabilities": [
+        0.33511919346054997,
+        0.04808230841462765,
+        0.006680280245837138
+      ],
+      "normalized_scores": [
+        1.2507116620755276,
+        -0.0537001184264024,
+        -1.197011543649125
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "executor_rejections",
+      "probabilities": [
+        0.04671577001091049,
+        0.0007545884260981748,
+        0.01279313449072798
+      ],
+      "normalized_scores": [
+        1.053939026630309,
+        -1.3436147215354488,
+        0.28967569490513995
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "flag_rollout_exposure",
+      "probabilities": [
+        0.07632014636654738,
+        0.06767013939896657,
+        0.022876676226241247
+      ],
+      "normalized_scores": [
+        0.8184327506906192,
+        0.5895958564819445,
+        -1.4080286071725636
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "full_table_scan",
+      "probabilities": [
+        0.08867755776823176,
+        0.0007692265150319939,
+        0.004998141594601371
+      ],
+      "normalized_scores": [
+        1.3055815712770997,
+        -1.1235269862394968,
+        -0.182054585037603
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "gc_pause_storm",
+      "probabilities": [
+        0.6114455433123548,
+        0.20682925098523183,
+        0.00447998364970053
+      ],
+      "normalized_scores": [
+        1.0415055351696074,
+        0.3077698121668297,
+        -1.3492753473364374
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "gpu_oom",
+      "probabilities": [
+        0.13170496465538273,
+        0.0028986873920589717,
+        0.005782347632017557
+      ],
+      "normalized_scores": [
+        1.3950201410116059,
+        -0.8986048358005987,
+        -0.4964153052110083
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "index_fragmentation",
+      "probabilities": [
+        0.14605710144923384,
+        0.013955453399451943,
+        0.0024449879425377866
+      ],
+      "normalized_scores": [
+        1.2892772569527677,
+        -0.1413264827573876,
+        -1.1479507741953805
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "index_staleness",
+      "probabilities": [
+        0.5657718531362127,
+        0.0013029343393668811,
+        0.0502970692666018
+      ],
+      "normalized_scores": [
+        1.1940956153228026,
+        -1.2532503267819417,
+        0.05915471145913923
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "ingest_throughput_drop",
+      "probabilities": [
+        0.30996052264141644,
+        0.13394176133001706,
+        5.75683379976524e-05
+      ],
+      "normalized_scores": [
+        0.8362731617907548,
+        0.5695300628419573,
+        -1.4058032246327115
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "jvm_heap_pressure",
+      "probabilities": [
+        0.6755371386531526,
+        0.11877724945902315,
+        0.010619022640576474
+      ],
+      "normalized_scores": [
+        1.2404699269226405,
+        -0.03208041718933557,
+        -1.208389509733305
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "lb_target_unhealthy",
+      "probabilities": [
+        4.4141789109814055e-05,
+        0.00015377273610892893,
+        0.222716716610131
+      ],
+      "normalized_scores": [
+        -0.8619259830886337,
+        -0.5400224356159055,
+        1.4019484187045392
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "legacy_cipher",
+      "probabilities": [
+        0.608463209014394,
+        0.047714092623737006,
+        0.11701526006399102
+      ],
+      "normalized_scores": [
+        1.3598014251541766,
+        -1.0163603135866346,
+        -0.343441111567542
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "lock_wait_time",
+      "probabilities": [
+        0.024144231789680965,
+        2.9160063503962334e-05,
+        0.00619714667390804
+      ],
+      "normalized_scores": [
+        0.9306394353187558,
+        -1.387508787792065,
+        0.45686935247330984
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "log_flood",
+      "probabilities": [
+        0.4208230368666875,
+        0.23798229019334802,
+        0.005340317453529747
+      ],
+      "normalized_scores": [
+        0.8949558715856539,
+        0.5008313444189463,
+        -1.3957872160046003
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "login_redirect",
+      "probabilities": [
+        0.38278045993369947,
+        0.47659264611993635,
+        0.0023607012988121545
+      ],
+      "normalized_scores": [
+        0.6353345989541505,
+        0.7765275919973946,
+        -1.411862190951545
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "migration_lock",
+      "probabilities": [
+        0.12276676440159903,
+        0.00038353443460259837,
+        0.016746323305373352
+      ],
+      "normalized_scores": [
+        1.0932144566596824,
+        -1.323563864064878,
+        0.23034940740519586
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "oauth_token_ttl",
+      "probabilities": [
+        0.4242850061799391,
+        0.0650765960962753,
+        0.017882508222993976
+      ],
+      "normalized_scores": [
+        1.3205516030069822,
+        -0.2219749940130562,
+        -1.0985766089939262
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "partition_skew",
+      "probabilities": [
+        0.0001024384217862911,
+        0.0011894404602313335,
+        2.5205713194687972e-05
+      ],
+      "normalized_scores": [
+        -0.21983621708610815,
+        1.3197751365603947,
+        -1.0999389194742866
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "payment_decline_spike",
+      "probabilities": [
+        0.27447551834268363,
+        0.29468569280679263,
+        0.00013340111974139497
+      ],
+      "normalized_scores": [
+        0.6939008320545873,
+        0.7202310242421027,
+        -1.4141318562966905
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "pod_restart_loop",
+      "probabilities": [
+        0.057646713918613784,
+        5.307037103976696e-08,
+        0.3601461568330473
+      ],
+      "normalized_scores": [
+        0.5392604551052699,
+        -1.4018398464703257,
+        0.8625793913650562
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "queue_backlog",
+      "probabilities": [
+        0.015633747993329804,
+        2.4106376288003963e-05,
+        0.12410152582601013
+      ],
+      "normalized_scores": [
+        0.3891085416384371,
+        -1.3720286472359653,
+        0.9829201055975283
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "raft_leader_flap",
+      "probabilities": [
+        0.2159946780582813,
+        3.891758032742919e-05,
+        0.014761041273255875
+      ],
+      "normalized_scores": [
+        1.064008229196637,
+        -1.3387970658264372,
+        0.27478883662980025
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "rate_limit_flood",
+      "probabilities": [
+        0.0010585627577983738,
+        0.0003100216219581125,
+        0.044957782471984245
+      ],
+      "normalized_scores": [
+        -0.3999573604122196,
+        -0.9747662207783838,
+        1.3747235811906031
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "redis_eviction",
+      "probabilities": [
+        0.2817814934932074,
+        0.0022477771588358315,
+        0.17957502042468138
+      ],
+      "normalized_scores": [
+        0.8297980191048394,
+        -1.4066532309284938,
+        0.5768552118236546
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "replica_lag",
+      "probabilities": [
+        0.48489740090548783,
+        0.1697603964399015,
+        0.007648003476164336
+      ],
+      "normalized_scores": [
+        1.052886214154176,
+        0.29122000511097296,
+        -1.3441062192651487
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "report_timezone",
+      "probabilities": [
+        0.022806521575615402,
+        0.009222830018314641,
+        0.006704619397543296
+      ],
+      "normalized_scores": [
+        1.369448460363354,
+        -0.3790149143171921,
+        -0.9904335460461603
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "retry_storm",
+      "probabilities": [
+        0.4804498015273889,
+        0.003259487487302311,
+        0.434266390713666
+      ],
+      "normalized_scores": [
+        0.7423728941730959,
+        -1.413617195145044,
+        0.6712443009719481
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "seat_oversell",
+      "probabilities": [
+        0.011099783682203317,
+        0.0006807934989728387,
+        0.012728422427790887
+      ],
+      "normalized_scores": [
+        0.6553483866749791,
+        -1.4129800806622916,
+        0.7576316939873133
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "session_leak",
+      "probabilities": [
+        0.13996241333384274,
+        4.094219750993635e-05,
+        5.2721753009704015e-05
+      ],
+      "normalized_scores": [
+        1.4137046757546472,
+        -0.7397053029198604,
+        -0.6739993728347867
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "stale_nodes_after_rollback",
+      "probabilities": [
+        0.6878025042203049,
+        0.09782625535551848,
+        0.04174346792678878
+      ],
+      "normalized_scores": [
+        1.378898115936181,
+        -0.41745643049312087,
+        -0.9614416854430603
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "stream_backpressure",
+      "probabilities": [
+        0.09658693080851026,
+        0.16757945762849374,
+        0.14048929683225922
+      ],
+      "normalized_scores": [
+        -1.3384081777662435,
+        1.0648019431067428,
+        0.2736062346594981
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "tls_cert_expiry",
+      "probabilities": [
+        0.0015468361744143482,
+        0.034882525650823754,
+        0.013311606630051414
+      ],
+      "normalized_scores": [
+        -1.3464615711713945,
+        1.0477717419829842,
+        0.2986898291884107
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "upload_incomplete",
+      "probabilities": [
+        0.11244268155511528,
+        0.12601146271187091,
+        0.2420716977738118
+      ],
+      "normalized_scores": [
+        -0.8593600035592797,
+        -0.5430097165848276,
+        1.4023697201441068
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "vpn_tunnel_drops",
+      "probabilities": [
+        0.6089325117872688,
+        0.024839726561181903,
+        0.04294963638945571
+      ],
+      "normalized_scores": [
+        1.4027577412086036,
+        -0.8569521318335446,
+        -0.5458056093750593
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 0,
+      "case_id": "webhook_delivery_failures",
+      "probabilities": [
+        0.6430808502732142,
+        0.3093068498389882,
+        0.02016055736388003
+      ],
+      "normalized_scores": [
+        1.0460932068559736,
+        0.30112980482897067,
+        -1.3472230116849442
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "api_deprecation_410",
+      "probabilities": [
+        0.25620740046905377,
+        1.7000631469059665e-10,
+        0.06816465947566487
+      ],
+      "normalized_scores": [
+        0.818605943921303,
+        -1.4080087501718994,
+        0.5894028062505964
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "api_quota_exhaust",
+      "probabilities": [
+        0.019521508451935784,
+        2.4314554872978505e-05,
+        0.3737703602760125
+      ],
+      "normalized_scores": [
+        0.2625139651531896,
+        -1.3347165014531803,
+        1.072202536299991
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "artifact_checksum",
+      "probabilities": [
+        0.7571228060416122,
+        3.0534985761152796e-05,
+        0.06462829989797535
+      ],
+      "normalized_scores": [
+        1.065888953231606,
+        -1.3378733893367485,
+        0.2719844361051426
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "auth_regression",
+      "probabilities": [
+        0.7160093999177565,
+        4.7238126815246994e-05,
+        1.3393003720658112e-08
+      ],
+      "normalized_scores": [
+        1.3211478119831153,
+        -0.22362271401564482,
+        -1.0975250979674702
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "autoscale_pending",
+      "probabilities": [
+        0.2133119267866885,
+        2.3213998685928359e-10,
+        0.013984162185640123
+      ],
+      "normalized_scores": [
+        0.9249321481387084,
+        -1.388951579085291,
+        0.46401943094658293
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "backup_failure",
+      "probabilities": [
+        5.455639175745639e-06,
+        0.7284697429206729,
+        0.01065176124313904
+      ],
+      "normalized_scores": [
+        -1.2838818687431863,
+        1.1554927918644637,
+        0.1283890768787227
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "booking_timeout",
+      "probabilities": [
+        0.6445530996722063,
+        0.3637577368781216,
+        1.79104968293333e-08
+      ],
+      "normalized_scores": [
+        0.7814812511204722,
+        0.6300263853733981,
+        -1.4115076364938703
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "breaker_trip",
+      "probabilities": [
+        0.0022221132504167164,
+        0.05648519881944878,
+        0.475546788247002
+      ],
+      "normalized_scores": [
+        -1.2618049752388596,
+        0.07783273311567342,
+        1.1839722421231866
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "bucket_access_denied",
+      "probabilities": [
+        4.482047395612755e-05,
+        0.00012108743774415705,
+        0.26976198492401227
+      ],
+      "normalized_scores": [
+        -0.8266329955910928,
+        -0.5804180834433639,
+        1.4070510790344564
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "cache_stampede",
+      "probabilities": [
+        0.8537115942293393,
+        0.059051735778289836,
+        0.2524773433467537
+      ],
+      "normalized_scores": [
+        1.3153669089395537,
+        -1.1075250056298522,
+        -0.20784190330970131
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "canary_rollback",
+      "probabilities": [
+        0.06170075298694762,
+        1.4425357403445527e-09,
+        0.08745584551976793
+      ],
+      "normalized_scores": [
+        0.6775018879622658,
+        -1.4138060094804188,
+        0.736304121518153
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "cdn_origin_offload",
+      "probabilities": [
+        0.5287197331377841,
+        1.5287806431856513e-06,
+        0.13931800035339448
+      ],
+      "normalized_scores": [
+        0.8631974324202571,
+        -1.4017366674816507,
+        0.538539235061394
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "ci_cache_miss",
+      "probabilities": [
+        0.7673669063328754,
+        0.6680730060681279,
+        0.02325806678509718
+      ],
+      "normalized_scores": [
+        0.8155778193532927,
+        0.5927732400343031,
+        -1.4083510593875956
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "clock_skew",
+      "probabilities": [
+        0.4967516856928057,
+        0.13351405003234668,
+        0.009052767855610787
+      ],
+      "normalized_scores": [
+        1.1323034412024156,
+        0.16761710388023343,
+        -1.2999205450826488
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "compaction_stall",
+      "probabilities": [
+        0.2956532138932859,
+        4.080253344700136e-10,
+        0.3180468463514565
+      ],
+      "normalized_scores": [
+        0.699794307382784,
+        -1.4141884415989774,
+        0.7143941342161936
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "config_drift",
+      "probabilities": [
+        0.002395259247405902,
+        0.0037400578352179137,
+        2.6266603724054476e-08
+      ],
+      "normalized_scores": [
+        0.660658328127376,
+        0.7525595329439757,
+        -1.4132178610713513
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "connection_pool_exhaust",
+      "probabilities": [
+        0.006766512903654871,
+        2.27901765094051e-08,
+        0.26196542858942484
+      ],
+      "normalized_scores": [
+        0.3745993974799549,
+        -1.368297780260748,
+        0.9936983827807933
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "consumer_lag",
+      "probabilities": [
+        0.5226279525120955,
+        0.06186401327425934,
+        0.015919019699046133
+      ],
+      "normalized_scores": [
+        1.3362676952194474,
+        -0.2671457118317697,
+        -1.0691219833876782
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "cpu_throttling",
+      "probabilities": [
+        0.8005603618883542,
+        4.7229931236968954e-09,
+        7.818075542425914e-08
+      ],
+      "normalized_scores": [
+        1.414213562373095,
+        -0.7071067811865474,
+        -0.7071067811865474
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "cron_skew",
+      "probabilities": [
+        0.04360979605169599,
+        8.77264215773354e-09,
+        0.017976278628971002
+      ],
+      "normalized_scores": [
+        0.7825505262765116,
+        -1.4114277053586652,
+        0.628877179082154
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "csv_encoding",
+      "probabilities": [
+        0.005579017324055982,
+        3.090601005208066e-06,
+        4.6249330728823074e-09
+      ],
+      "normalized_scores": [
+        1.3460356328038088,
+        -0.2973303712871686,
+        -1.0487052615166401
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "currency_mismatch",
+      "probabilities": [
+        0.0006389675841780689,
+        0.05795370109919901,
+        0.008732918362033952
+      ],
+      "normalized_scores": [
+        -1.2807856507066475,
+        1.1597107315610358,
+        0.1210749191456131
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "dedup_leak",
+      "probabilities": [
+        2.3080388192394148e-06,
+        6.164364109866772e-07,
+        0.4600224423231155
+      ],
+      "normalized_scores": [
+        -0.6010617188344491,
+        -0.8080915323888554,
+        1.4091532512233043
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "disk_quota",
+      "probabilities": [
+        0.25765951523761216,
+        3.1850541684542925e-05,
+        0.05228821299169937
+      ],
+      "normalized_scores": [
+        0.9234317694813972,
+        -1.3893231967722184,
+        0.4658914272908212
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "disk_write_latency",
+      "probabilities": [
+        0.018931108516314077,
+        0.27360440018742016,
+        0.013402710241658303
+      ],
+      "normalized_scores": [
+        -0.5860859319953253,
+        1.4076628385272523,
+        -0.8215769065319262
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "dns_resolver_timeout",
+      "probabilities": [
+        0.8010496706826772,
+        7.243229112918767e-09,
+        0.023611477015143822
+      ],
+      "normalized_scores": [
+        1.02585208929183,
+        -1.3559685217321473,
+        0.3301164324403177
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "duplicate_orders",
+      "probabilities": [
+        0.0048084001065657545,
+        8.547841306270192e-12,
+        0.05745448774007175
+      ],
+      "normalized_scores": [
+        0.47619505401739015,
+        -1.391322874847109,
+        0.9151278208297193
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "email_bounce_rate",
+      "probabilities": [
+        0.5945095164651035,
+        8.173289528958828e-06,
+        0.41033565209620404
+      ],
+      "normalized_scores": [
+        0.7733514460403358,
+        -1.4120759647211787,
+        0.6387245186808428
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "executor_rejections",
+      "probabilities": [
+        0.021736957262942,
+        1.707332449687897e-08,
+        0.007030606843177752
+      ],
+      "normalized_scores": [
+        0.8075672681825449,
+        -1.4092070924013202,
+        0.6016398242187754
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "flag_rollout_exposure",
+      "probabilities": [
+        0.5772844382588963,
+        0.03348961799860025,
+        0.07831897889027412
+      ],
+      "normalized_scores": [
+        1.3748988662510468,
+        -0.9742243111852824,
+        -0.40067455506576444
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "full_table_scan",
+      "probabilities": [
+        0.18126234584505937,
+        1.0536867033565802e-05,
+        0.00549311631564026
+      ],
+      "normalized_scores": [
+        1.1070454838554262,
+        -1.315649845832619,
+        0.20860436197719245
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "gc_pause_storm",
+      "probabilities": [
+        0.877252855382482,
+        0.6453582044627192,
+        6.516769886828361e-08
+      ],
+      "normalized_scores": [
+        0.7886654092626756,
+        0.6222818507309203,
+        -1.4109472599935962
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "gpu_oom",
+      "probabilities": [
+        0.0047047981654458285,
+        1.3016310964362901e-05,
+        0.004526827813681681
+      ],
+      "normalized_scores": [
+        0.7140886639028834,
+        -1.4141905068317395,
+        0.7001018429288571
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "index_fragmentation",
+      "probabilities": [
+        0.30946889905479535,
+        0.00031191160379488616,
+        0.01679614208477991
+      ],
+      "normalized_scores": [
+        1.1814130648364154,
+        -1.2639058919510067,
+        0.08249282711459077
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "index_staleness",
+      "probabilities": [
+        0.4751829057522075,
+        7.525520066686002e-09,
+        0.4665231973236439
+      ],
+      "normalized_scores": [
+        0.7094094694003498,
+        -1.4142110600913147,
+        0.7048015906909647
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "ingest_throughput_drop",
+      "probabilities": [
+        0.025518411671974058,
+        0.005456530164068796,
+        3.824883939011728e-09
+      ],
+      "normalized_scores": [
+        0.8432384769362204,
+        0.5615957193415807,
+        -1.404834196277801
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "jvm_heap_pressure",
+      "probabilities": [
+        0.6865432554477108,
+        0.0785287706074189,
+        0.5658652507456106
+      ],
+      "normalized_scores": [
+        0.8814775674814206,
+        -1.398469420987049,
+        0.5169918535056285
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "lb_target_unhealthy",
+      "probabilities": [
+        1.1784600423054798e-11,
+        6.546678648832863e-06,
+        6.0918183666672535e-09
+      ],
+      "normalized_scores": [
+        -0.7071067811865475,
+        1.414213562373095,
+        -0.7071067811865475
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "legacy_cipher",
+      "probabilities": [
+        0.1699284783133593,
+        2.597883833404718e-06,
+        3.966723813973307e-08
+      ],
+      "normalized_scores": [
+        1.3815834570534689,
+        -0.42921886411389354,
+        -0.9523645929395756
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "lock_wait_time",
+      "probabilities": [
+        0.533126244038372,
+        7.367571223463032e-08,
+        0.462393444993882
+      ],
+      "normalized_scores": [
+        0.7256829469130188,
+        -1.414049443089411,
+        0.6883664961763921
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "log_flood",
+      "probabilities": [
+        0.6459512500681517,
+        0.5058021461597207,
+        0.531045497189586
+      ],
+      "normalized_scores": [
+        1.3951154044382732,
+        -0.8981561972889526,
+        -0.49695920714932096
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "login_redirect",
+      "probabilities": [
+        0.34783928021008115,
+        0.32300622710272053,
+        0.349224100628712
+      ],
+      "normalized_scores": [
+        0.6499128436636491,
+        -1.4127109767433506,
+        0.7627981330797015
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "migration_lock",
+      "probabilities": [
+        0.7379966943121662,
+        4.501929248449066e-06,
+        2.1159168887838268e-08
+      ],
+      "normalized_scores": [
+        1.3822776853121779,
+        -0.4323313842705058,
+        -0.9499463010416724
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "oauth_token_ttl",
+      "probabilities": [
+        0.5900871814135085,
+        0.04059965267250302,
+        1.8422333847638497e-09
+      ],
+      "normalized_scores": [
+        0.9412047152215884,
+        0.4435093768251481,
+        -1.3847140920467362
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "partition_skew",
+      "probabilities": [
+        1.003120270634265e-06,
+        4.816843549864638e-07,
+        0.019116384606454248
+      ],
+      "normalized_scores": [
+        -0.6299208984242419,
+        -0.7815794480539554,
+        1.411500346478197
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "payment_decline_spike",
+      "probabilities": [
+        0.4921974541246499,
+        0.5974667078740257,
+        0.397831310251432
+      ],
+      "normalized_scores": [
+        -0.04319044628504209,
+        1.2457687970331988,
+        -1.2025783507481564
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "pod_restart_loop",
+      "probabilities": [
+        0.01067854453282493,
+        3.288381440333424e-11,
+        0.019785610623490452
+      ],
+      "normalized_scores": [
+        0.6506499476562404,
+        -1.4127489869026886,
+        0.7620990392464481
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "queue_backlog",
+      "probabilities": [
+        0.20515333040553888,
+        1.3003400296539837e-06,
+        4.652678277866784e-09
+      ],
+      "normalized_scores": [
+        1.3953941779725536,
+        -0.4985581524112666,
+        -0.896836025561287
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "raft_leader_flap",
+      "probabilities": [
+        0.7826038570870936,
+        3.9941220660033513e-10,
+        2.6019612448046762e-08
+      ],
+      "normalized_scores": [
+        1.414213562373095,
+        -0.7071067811865474,
+        -0.7071067811865474
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "rate_limit_flood",
+      "probabilities": [
+        1.0635686917287087e-05,
+        4.313019123984315e-08,
+        0.06428889532569448
+      ],
+      "normalized_scores": [
+        -0.24568159908331844,
+        -1.0832812564310759,
+        1.3289628555143942
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "redis_eviction",
+      "probabilities": [
+        0.1536063952281172,
+        5.8632577051235634e-08,
+        4.255845938928073e-09
+      ],
+      "normalized_scores": [
+        1.4142135623730954,
+        -0.7071067811865471,
+        -0.7071067811865471
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "replica_lag",
+      "probabilities": [
+        0.8081093519721473,
+        0.594186681249401,
+        0.2949412099593425
+      ],
+      "normalized_scores": [
+        1.1886046443983525,
+        0.06933481471074668,
+        -1.257939459109099
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "report_timezone",
+      "probabilities": [
+        0.006195022810325613,
+        1.973195394865013e-05,
+        0.4638033566918917
+      ],
+      "normalized_scores": [
+        0.0627861094769125,
+        -1.2549303154471625,
+        1.1921442059702503
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "retry_storm",
+      "probabilities": [
+        0.8484552375838877,
+        7.131198438134867e-07,
+        0.07357913535410339
+      ],
+      "normalized_scores": [
+        1.0001018773578434,
+        -1.3659881050940073,
+        0.36588622773616336
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "seat_oversell",
+      "probabilities": [
+        0.5177968702603973,
+        5.421044843884017e-07,
+        2.090736600633844e-08
+      ],
+      "normalized_scores": [
+        1.4078216717033896,
+        -0.5875983020829502,
+        -0.8202233696204392
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "session_leak",
+      "probabilities": [
+        0.6597992704022507,
+        0.0008380576447948468,
+        0.002234940791904487
+      ],
+      "normalized_scores": [
+        1.4045905244712353,
+        -0.8449279861253871,
+        -0.5596625383458479
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "stale_nodes_after_rollback",
+      "probabilities": [
+        0.8040500379714279,
+        6.04988242885795e-09,
+        0.05735375585791314
+      ],
+      "normalized_scores": [
+        0.9699511698865961,
+        -1.3762645650315284,
+        0.4063133951449319
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "stream_backpressure",
+      "probabilities": [
+        0.04035833807364564,
+        0.002201128896529242,
+        1.3305612556655726e-09
+      ],
+      "normalized_scores": [
+        0.9561945787182115,
+        0.42427123054970994,
+        -1.3804658092679212
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "tls_cert_expiry",
+      "probabilities": [
+        0.001517540947328154,
+        0.03557467812140782,
+        0.17455724326989736
+      ],
+      "normalized_scores": [
+        -1.3253567973549962,
+        0.23539392695089648,
+        1.0899628704040993
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "upload_incomplete",
+      "probabilities": [
+        0.2331711819030622,
+        0.08703891788170674,
+        0.038663398236365054
+      ],
+      "normalized_scores": [
+        1.2800498269547944,
+        -0.11934811316385342,
+        -1.1607017137909414
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "vpn_tunnel_drops",
+      "probabilities": [
+        0.8585990181096245,
+        1.1478384615752465e-06,
+        2.5773615298868697e-07
+      ],
+      "normalized_scores": [
+        1.4097418908732056,
+        -0.6075526489146769,
+        -0.8021892419585286
+      ]
+    },
+    {
+      "model": "specialist-exp05-unfreeze2-8k",
+      "depth": 512,
+      "case_id": "webhook_delivery_failures",
+      "probabilities": [
+        0.6476600474075834,
+        1.6659566950956967e-06,
+        0.2341880910616995
+      ],
+      "normalized_scores": [
+        0.8472410717305734,
+        -1.4042514168697664,
+        0.5570103451391933
+      ]
+    }
+  ]
+}

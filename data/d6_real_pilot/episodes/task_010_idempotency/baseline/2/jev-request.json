@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Implement idempotency check before charge dispatch.",
+    "context": [
+      {
+        "block_id": "b_5c2a0960",
+        "content": "Idempotency requirements: check Redis key `idemp:{key}` with SET NX EX 120; if exists return cached response; otherwise execute charge.",
+        "source": "rfcs/idempotency.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_bc071b10",
+        "content": "def process_payment(idempotency_key, amount):\n    # TODO: implement check\n    return stripe.Charge.create(amount=amount)",
+        "source": "payment.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_d5237d14",
+        "content": "Stripe API version: 2024-06-12",
+        "source": "stripe.env",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Uses an atomic Redis reservation before charging, caches the receipt for 120 seconds, and waits for an in-flight duplicate.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "import json\nimport time\n\ndef process_payment(idempotency_key, amount):\n    cache_key = f'idemp:{idempotency_key}'\n    processing_value = '__idempotency_processing__'\n\n    while True:\n        if redis.set(cache_key, processing_value, nx=True, ex=120):\n            receipt = stripe.Charge.create(amount=amount)\n            redis.set(cache_key, json.dumps(receipt), ex=120)\n            return receipt\n\n        cached = redis.get(cache_key)\n        if cached is None:\n            continue\n        if isinstance(cached, (bytes, bytearray)):\n            cached = cached.decode('utf-8')\n        if cached == processing_value:\n            time.sleep(0.05)\n            continue\n        return json.loads(cached) if isinstance(cached, str) else cached\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

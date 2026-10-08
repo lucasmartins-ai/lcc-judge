@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114306_bde540", "timestamp": 1791110586687}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget with maxUnavailable set to 1, preserving at least ", "timestamp": 1791110592174}
+{"type": "text", "text": "4 of the 5 search-indexing replicas during voluntary disruptions such as node upgrades.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"max_unavailable\":1},\"python\":\"\"}", "timestamp": 1791110592174}
+{"type": "result", "session_id": "20261004_114306_bde540", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget with maxUnavailable set to 1, preserving at least 4 of the 5 search-indexing replicas during voluntary disruptions such as node upgrades.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"max_unavailable\":1},\"python\":\"\"}", "tokens": {"input": 2, "output": 241, "total": 1706, "cache_read": 1463, "cache_write": 0}, "duration_ms": 7492, "timestamp": 1791110594180}

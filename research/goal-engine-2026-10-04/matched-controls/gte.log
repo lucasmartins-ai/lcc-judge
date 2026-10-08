@@ -1,0 +1,105 @@
+Loading weights:   0%|          | 0/136 [00:00<?, ?it/s]Loading weights: 100%|██████████| 136/136 [00:00<00:00, 7318.96it/s]
+[transformers] [1mNewModel LOAD REPORT[0m from: Alibaba-NLP/gte-multilingual-base
+Key               | Status     |  | 
+------------------+------------+--+-
+classifier.bias   | UNEXPECTED |  | 
+classifier.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+[transformers] `use_return_dict` is deprecated! Use `return_dict` instead!
+[transformers] Detected the usage of `get_extended_attention_mask`: This function is deprecated and will be removed in v5.12.0. Please use the new API in `transformers.masking_utils`
+{
+  "model": "gte",
+  "n_rows": 372,
+  "summary": [
+    {
+      "model": "gte",
+      "protocol_sha256": "31d754297f9d7d3d034229ce670a94dfad366c7ca13de8f772b72134e7558223",
+      "declared_window": 8192,
+      "load_s": 2.641574750014115,
+      "peak_rss_after_load_gb": 0.940654592,
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "python": "3.14.3",
+      "versions": {
+        "torch": "2.12.0",
+        "transformers": "5.10.2",
+        "laya": "0.3.4"
+      },
+      "revision": "9bbca17d9273fd0d03d5725c7a4b0f6b45142062",
+      "code_revision": "40ced75c3017eb27626c9d4ea981bde21a2662f4",
+      "dtype": "torch.float16",
+      "scope": "exploratory curated probes; no downstream outcome or useful-context claim",
+      "by_depth": {
+        "0": {
+          "auc_detect": 0.848,
+          "auc_judge": 0.518,
+          "mean_fact": 0.801,
+          "mean_unrelated": 0.762,
+          "mean_decoy": 0.799,
+          "p50_latency_ms": 58.1,
+          "errors": 0,
+          "n": 62,
+          "n_by_kind": {
+            "fact": 62,
+            "noise_unrelated": 62,
+            "noise_decoy": 62
+          },
+          "probe_versions": [
+            "1.2"
+          ],
+          "truncated": 0,
+          "auc_method": "strict pooled P(fact > noise); ties count zero",
+          "cell_integrity": {
+            "detect": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            },
+            "judge": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            }
+          }
+        },
+        "512": {
+          "auc_detect": 0.573,
+          "auc_judge": 0.503,
+          "mean_fact": 0.781,
+          "mean_unrelated": 0.775,
+          "mean_decoy": 0.781,
+          "p50_latency_ms": 6075.2,
+          "errors": 0,
+          "n": 62,
+          "n_by_kind": {
+            "fact": 62,
+            "noise_unrelated": 62,
+            "noise_decoy": 62
+          },
+          "probe_versions": [
+            "1.2"
+          ],
+          "truncated": 0,
+          "auc_method": "strict pooled P(fact > noise); ties count zero",
+          "cell_integrity": {
+            "detect": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            },
+            "judge": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            }
+          }
+        }
+      },
+      "passing_depths_detect": [],
+      "effective_context_detect": 0,
+      "passing_depths_judge": [],
+      "effective_context_judge": 0
+    }
+  ]
+}

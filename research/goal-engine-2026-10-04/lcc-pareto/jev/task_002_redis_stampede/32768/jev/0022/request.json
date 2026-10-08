@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Determine why redis cache hit ratio dropped to 12% at 09:30 UTC.",
+    "blocks": [
+      {
+        "id": "blk_0022_24f856579b60",
+        "text": "archive-cleaner tick=96343 partition=98 records=613 checksum=valid state=healthy\narchive-cleaner tick=30488 partition=8 records=2637 checksum=valid state=healthy\narchive-cleaner tick=97749 partition=29 records=2193 checksum=valid state=healthy\narchive-cleaner tick=43857 partition=20 records=3585 checksum=valid state=healthy\narchive-cleaner tick=53853 partition=61 records=4424 checksum=valid state=healthy\narchive-cleaner tick=87194 partition=59 records=5426 checksum=valid state=healthy\narchive-cleaner tick=20965 partition=15 records=2490 checksum=valid state=healthy\narchive-cleaner tick=20640 partition=78 records=9529 checksum=valid state=healthy\narchive-cleaner tick=1101 partition=37 records=3807 checksum=valid state=healthy\narchive-cleaner tick=39 partition=70 records=8899 checksum=valid state=healthy\narchive-cleaner tick=71857 partition=76 records=6760 checksum=valid state=healthy\narchive-cleaner tick=47433 partition=2 records=534 checksum=valid state=healthy\narchive-cleaner tick=68690 partition=10 records=4215 checksum=valid state=healthy\narchive-cleaner tick=77911 partition=17 records=6066 checksum=valid state=healthy\narchive-cleaner tick=43951 partition=30 records=3481 checksum=valid state=healthy\narchive-cleaner tick=62621 partition=36 records=4390 checksum=valid state=healthy\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0022_24f856579b60": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0022_24f856579b60 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

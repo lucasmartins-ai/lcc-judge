@@ -1,0 +1,88 @@
+{
+  "case_id": "pdb-eval-n13-conservative_max",
+  "split": "eval",
+  "family": "conservative_max",
+  "expected": true,
+  "case_sha256": "ae4b5199d97286534a2dc94caae7a8fe624b623493756df2230dfc03295b674a",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": true,
+    "reason": "exact_pdb_budget_checks",
+    "facts": {
+      "min_remaining": 12,
+      "max_disruptions": 1,
+      "quorum": 7,
+      "requested_maintenance": 1,
+      "quorum_preserved": true,
+      "requested_maintenance_permitted": true,
+      "supported_controller": true,
+      "all_desired_replicas_healthy": true,
+      "applies_to_voluntary_evictions": true,
+      "prevents_involuntary_node_failures": false,
+      "maximal_disruption_required": false
+    }
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": true,
+      "probability": 0.88,
+      "request_sha256": "900480e5569b83c6a42c30edf7590517b1fa7e0fb15c1202d4e2ad8ba5f1914b",
+      "jev": {
+        "status": "SUCCESS",
+        "response": {
+          "model": "jev-1.13.0",
+          "answers": {
+            "consistent": {
+              "type": "noul",
+              "noul": 0.88
+            }
+          },
+          "usage": {
+            "input_tokens": 577,
+            "output_tokens": 20
+          }
+        },
+        "latency_ms": 246.35758399999997,
+        "cost_usd": null
+      },
+      "decision": {
+        "passed": true,
+        "reason": "math_then_text_review",
+        "text_probability": 0.88,
+        "threshold": 0.5
+      }
+    },
+    "coupled": {
+      "called": true,
+      "probability": 0.31,
+      "request_sha256": "39b7ea3cec1687954b5d17f29fe39150c922a0e806c036702932a0d61d55f27a",
+      "jev": {
+        "status": "SUCCESS",
+        "response": {
+          "model": "jev-1.13.0",
+          "answers": {
+            "consistent": {
+              "type": "noul",
+              "noul": 0.31
+            }
+          },
+          "usage": {
+            "input_tokens": 558,
+            "output_tokens": 20
+          }
+        },
+        "latency_ms": 289.843833,
+        "cost_usd": null
+      },
+      "decision": {
+        "passed": false,
+        "reason": "math_then_text_review",
+        "text_probability": 0.31,
+        "threshold": 0.5
+      }
+    }
+  },
+  "routed": true,
+  "coupled": false
+}

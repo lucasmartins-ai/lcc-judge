@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Implement idempotency check before charge dispatch.",
+    "context": [
+      {
+        "block_id": "b_5c2a0960",
+        "content": "Idempotency requirements: check Redis key `idemp:{key}` with SET NX EX 120; if exists return cached response; otherwise execute charge.",
+        "source": "rfcs/idempotency.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_bc071b10",
+        "content": "def process_payment(idempotency_key, amount):\n    # TODO: implement check\n    return stripe.Charge.create(amount=amount)",
+        "source": "payment.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_d5237d14",
+        "content": "Stripe API version: 2024-06-12",
+        "source": "stripe.env",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Uses Redis GET plus an atomic SET NX EX 120 claim, returns cached receipts, and stores successful charge receipts for 120 seconds.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def process_payment(idempotency_key, amount):\n    import json\n\n    cache_key = f'idemp:{idempotency_key}'\n\n    def decode(value):\n        if isinstance(value, bytes):\n            value = value.decode('utf-8')\n        return json.loads(value) if isinstance(value, str) else value\n\n    while True:\n        cached = redis.get(cache_key)\n        if cached is not None:\n            return decode(cached)\n\n        claimed = redis.set(\n            cache_key,\n            json.dumps({'status': 'processing'}),\n            nx=True,\n            ex=120,\n        )\n        if claimed:\n            break\n\n    receipt = stripe.Charge.create(amount=amount)\n    redis.set(cache_key, json.dumps(receipt), ex=120)\n    return receipt"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

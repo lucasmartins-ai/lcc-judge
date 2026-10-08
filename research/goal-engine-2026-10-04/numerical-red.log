@@ -1,0 +1,18 @@
+test_numerical_safety (unittest.loader._FailedTest.test_numerical_safety) ... ERROR
+
+======================================================================
+ERROR: test_numerical_safety (unittest.loader._FailedTest.test_numerical_safety)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_numerical_safety
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_numerical_safety.py", line 7, in <module>
+    from specialist.numerical import NonFiniteTrainingError, finite_update
+ModuleNotFoundError: No module named 'specialist.numerical'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

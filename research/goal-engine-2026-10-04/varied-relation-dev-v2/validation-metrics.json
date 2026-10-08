@@ -1,0 +1,160 @@
+{
+  "protocol_sha256": "b8240c1a93f70508e6f7a40d8590e4c408aa82b51e36a8b417b894d121713588",
+  "metrics": {
+    "n": 30144,
+    "binary": 26624,
+    "positive": 13312,
+    "negative": 13312,
+    "pooled_wins": 171697545,
+    "pooled_comparisons": 177209344,
+    "pooled_auc": 0.9688966796242979,
+    "within_goal": {
+      "wins": 26019,
+      "comparisons": 26624,
+      "auc": 0.9772761418269231
+    },
+    "within_goal_auc": 0.9772761418269231,
+    "same_report_goal": {
+      "wins": 13014,
+      "comparisons": 13312,
+      "auc": 0.9776141826923077
+    },
+    "positive_keep_recall": 0.9608623798076923,
+    "contradiction_keep_recall": 0.9577702702702703,
+    "negative_drop_rejection": 0.8104717548076923,
+    "binary_unknown_rate": 0.3892352764423077,
+    "semantic_unknown": 3456,
+    "structural_unknown": 64,
+    "semantic_unknown_recognition": 1.0,
+    "structural_unknown_recognition": 1.0,
+    "unknown_drops": 0,
+    "control_shadow": false
+  },
+  "by_language": {
+    "en": {
+      "n": 15072,
+      "binary": 13312,
+      "positive": 6656,
+      "negative": 6656,
+      "pooled_wins": 42921017,
+      "pooled_comparisons": 44302336,
+      "pooled_auc": 0.968820628329847,
+      "within_goal": {
+        "wins": 12978,
+        "comparisons": 13312,
+        "auc": 0.9749098557692307
+      },
+      "within_goal_auc": 0.9749098557692307,
+      "same_report_goal": {
+        "wins": 6510,
+        "comparisons": 6656,
+        "auc": 0.9780649038461539
+      },
+      "positive_keep_recall": 0.9591346153846154,
+      "contradiction_keep_recall": 0.95,
+      "negative_drop_rejection": 0.8581730769230769,
+      "binary_unknown_rate": 0.34705528846153844,
+      "semantic_unknown": 1728,
+      "structural_unknown": 32,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "pt": {
+      "n": 15072,
+      "binary": 13312,
+      "positive": 6656,
+      "negative": 6656,
+      "pooled_wins": 42930131,
+      "pooled_comparisons": 44302336,
+      "pooled_auc": 0.9690263511161127,
+      "within_goal": {
+        "wins": 13041,
+        "comparisons": 13312,
+        "auc": 0.9796424278846154
+      },
+      "within_goal_auc": 0.9796424278846154,
+      "same_report_goal": {
+        "wins": 6504,
+        "comparisons": 6656,
+        "auc": 0.9771634615384616
+      },
+      "positive_keep_recall": 0.9625901442307693,
+      "contradiction_keep_recall": 0.9655405405405405,
+      "negative_drop_rejection": 0.7627704326923077,
+      "binary_unknown_rate": 0.4314152644230769,
+      "semantic_unknown": 1728,
+      "structural_unknown": 32,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    }
+  },
+  "by_report_language": {
+    "en": {
+      "n": 15072,
+      "binary": 13312,
+      "positive": 6656,
+      "negative": 6656,
+      "pooled_wins": 42952910,
+      "pooled_comparisons": 44302336,
+      "pooled_auc": 0.969540522648738,
+      "within_goal": {
+        "wins": 13019,
+        "comparisons": 13312,
+        "auc": 0.9779897836538461
+      },
+      "within_goal_auc": 0.9779897836538461,
+      "same_report_goal": {
+        "wins": 6509,
+        "comparisons": 6656,
+        "auc": 0.9779146634615384
+      },
+      "positive_keep_recall": 0.9672475961538461,
+      "contradiction_keep_recall": 0.9607638888888889,
+      "negative_drop_rejection": 0.7991286057692307,
+      "binary_unknown_rate": 0.39498197115384615,
+      "semantic_unknown": 1728,
+      "structural_unknown": 32,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "pt": {
+      "n": 15072,
+      "binary": 13312,
+      "positive": 6656,
+      "negative": 6656,
+      "pooled_wins": 42912670,
+      "pooled_comparisons": 44302336,
+      "pooled_auc": 0.9686322184004021,
+      "within_goal": {
+        "wins": 13000,
+        "comparisons": 13312,
+        "auc": 0.9765625
+      },
+      "within_goal_auc": 0.9765625,
+      "same_report_goal": {
+        "wins": 6505,
+        "comparisons": 6656,
+        "auc": 0.9773137019230769
+      },
+      "positive_keep_recall": 0.9544771634615384,
+      "contradiction_keep_recall": 0.9549342105263158,
+      "negative_drop_rejection": 0.8218149038461539,
+      "binary_unknown_rate": 0.3834885817307692,
+      "semantic_unknown": 1728,
+      "structural_unknown": 32,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    }
+  },
+  "passes_point_criteria": true,
+  "development_only": true,
+  "adoption": false
+}

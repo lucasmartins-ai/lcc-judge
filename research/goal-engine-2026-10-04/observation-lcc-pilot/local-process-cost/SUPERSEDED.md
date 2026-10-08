@@ -1,0 +1,1 @@
+The supplemental measurement driver used wrong constructor argument names for LCC. Full and observations measurements completed, then Laya failed before any ranking call. The terminal log is ../local-cost.log. Corrected measurement uses local-process-cost-v1; original outcomes/protocol remain unchanged.

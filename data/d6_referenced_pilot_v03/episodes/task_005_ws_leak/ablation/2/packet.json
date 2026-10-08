@@ -1,0 +1,43 @@
+{
+  "objective": "Locate object accumulation causing OOM in websocket-gateway.",
+  "task_class": "debugging",
+  "context": [
+    {
+      "block_id": "b_a6e1d0e9",
+      "content": "GC pause duration: young=4ms mixed=120ms full=1400ms",
+      "source": "var/log/jvm.log",
+      "block_type": "log"
+    },
+    {
+      "block_id": "b_e7451d29",
+      "content": "websocket.max_connections: 50000 ping_interval: 30s",
+      "source": "ws.conf",
+      "block_type": "config"
+    }
+  ],
+  "interface": null,
+  "mechanism_options": {
+    "pool_connection_leak": "Connections acquired by a handler are not released.",
+    "cache_expiry_stampede": "Synchronized cache expiration without jitter causes a stampede.",
+    "disable_feature_flag": "Disable the dynamic feature flag rather than roll back the binary.",
+    "unclosed_client_session": "Unclosed client sessions retained by an event listener.",
+    "blocked_external_http_no_timeout": "Consumer thread blocked on an external HTTP call without timeout.",
+    "circuit_breaker_timeout": "Choose a latency trip timeout within the downstream latency budget.",
+    "pmtud_blackhole": "Path MTU discovery blackhole drops certificate fragments.",
+    "catastrophic_regex_backtracking": "Nested regex repetition causes catastrophic backtracking.",
+    "open_deleted_file": "An unlinked log still consumes space because a process holds it open.",
+    "online_logical_replication": "Online logical replication/CDC with a short cutover.",
+    "cors_wildcard_credentials": "Credentialed browser request cannot use wildcard allowed origin.",
+    "binary_float_rounding": "Binary floating-point currency arithmetic causes rounding differences.",
+    "configure_pdb": "Configure a valid Kubernetes PodDisruptionBudget preserving required replicas.",
+    "musl_conntrack_dns": "Musl parallel A/AAAA queries reuse a source port and encounter conntrack drops.",
+    "capacity_exhaustion": "Pool size alone is too small for ordinary demand.",
+    "dns_server_down": "DNS server is unavailable.",
+    "gc_pressure": "Garbage collection pause causes the incident.",
+    "deployment_binary_regression": "Roll back a changed application binary.",
+    "tls_certificate_expired": "TLS certificate expired.",
+    "disk_named_files": "Ordinary named files are filling the filesystem.",
+    "kafka_insufficient_partitions": "Too few Kafka partitions for throughput.",
+    "INSUFFICIENT_EVIDENCE": "The provided context does not support a specific answer."
+  }
+}

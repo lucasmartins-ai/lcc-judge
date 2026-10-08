@@ -1,0 +1,15 @@
+test_padding_cannot_change_query_representation_and_empty_input_is_invalid (tests.test_goal_embedding_pilot.GoalEmbeddingPilotTests.test_padding_cannot_change_query_representation_and_empty_input_is_invalid) ... FAIL
+
+======================================================================
+FAIL: test_padding_cannot_change_query_representation_and_empty_input_is_invalid (tests.test_goal_embedding_pilot.GoalEmbeddingPilotTests.test_padding_cannot_change_query_representation_and_empty_input_is_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_goal_embedding_pilot.py", line 12, in test_padding_cannot_change_query_representation_and_empty_input_is_invalid
+    self.assertIsNotNone(pilot, 'Frozen query embedding producer is absent')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : Frozen query embedding producer is absent
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

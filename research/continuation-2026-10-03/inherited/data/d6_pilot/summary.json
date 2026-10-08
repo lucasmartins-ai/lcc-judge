@@ -1,0 +1,20 @@
+{
+  "total_tasks": 20,
+  "concordance_rate": 0.9,
+  "unknown_rate": 0.1,
+  "label_counts": {
+    "NECESSARY": 16,
+    "UNNECESSARY": 2,
+    "UNKNOWN": 2
+  },
+  "telemetry": {
+    "total_time_s": 0.002,
+    "avg_latency_ms_per_task": 0.09,
+    "total_tokens": 17826,
+    "estimated_api_cost_usd": 0.05348,
+    "cost_per_label_usd": 0.00267
+  },
+  "frozen_reliability_threshold": 0.95,
+  "p2_admission_criterion": "concordance >= 0.95 and label != 'UNKNOWN'",
+  "records_file": "data/d6_pilot/records.jsonl"
+}

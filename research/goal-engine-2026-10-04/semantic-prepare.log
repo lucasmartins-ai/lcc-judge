@@ -1,0 +1,53 @@
+{
+  "train": {
+    "sha256": "b82fd6c802ee045f867510586574070393bdf70b71abca070e8c946f03b7c073",
+    "n": 1152,
+    "known": 1152,
+    "domains": [
+      "build",
+      "cache",
+      "command_result",
+      "database",
+      "dependency",
+      "disk",
+      "download",
+      "environment",
+      "file_mode",
+      "http",
+      "memory",
+      "queue"
+    ]
+  },
+  "validation": {
+    "sha256": "089e0d9350acffd866409fa1211f3b079ba0f4baccfbabedf8fb0ec0a09764b1",
+    "n": 384,
+    "known": 384,
+    "domains": [
+      "build",
+      "cache",
+      "command_result",
+      "database",
+      "dependency",
+      "disk",
+      "download",
+      "environment",
+      "file_mode",
+      "http",
+      "memory",
+      "queue"
+    ]
+  },
+  "final": {
+    "sha256": "2e8cd5f383eac9a928b1523f0b726a4a66111f1b11b1a27ada6348de3c053ede",
+    "n": 384,
+    "known": 384,
+    "domains": [
+      "connections",
+      "manifest",
+      "process_time",
+      "symlink_size",
+      "test_coverage",
+      "test_result"
+    ]
+  }
+}

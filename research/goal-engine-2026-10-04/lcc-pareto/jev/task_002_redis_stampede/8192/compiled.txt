@@ -1,0 +1,8 @@
+[lcc-compact: dropped 21 blocks (27426 chars)]
+redis-cluster node 1: 1420 keys loaded, memory_used=4.2gb
+
+2026-10-03T09:30:00Z [WARN] cache ttl expired synchronously for top_products_cache: key_expiry_time=3600s with jitter=0s; 1200 workers stampeded database
+
+db query latency p50=12ms p99=450ms during read traffic burst
+
+Cache guidelines: always set jitter on keys with high QPS to prevent stampedes.

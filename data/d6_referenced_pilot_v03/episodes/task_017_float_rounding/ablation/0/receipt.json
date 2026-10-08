@@ -1,0 +1,104 @@
+{
+  "task_id": "task_017_float_rounding",
+  "condition": "ablation",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "fdec88df6f74e34ee4fe63f186104feaeb38ae9a3e5a1e10dc2ec517eca02839",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_017_float_rounding/ablation/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_017_float_rounding/ablation/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Binary floating-point currency arithmetic caused rounding differences between summed line items and invoice totals.",
+    "mechanism": "binary_float_rounding",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_114235_8b084e",
+      "timestamp": 1791110556067
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_114235_8b084e",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Binary floating-point currency arithmetic caused rounding differences between summed line items and invoice totals.\",\"mechanism\":\"binary_float_rounding\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1311,
+      "output": 215,
+      "total": 1666,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 5260,
+    "timestamp": 1791110561328
+  },
+  "verification": {
+    "passed": true,
+    "reason": "math_then_text_review",
+    "text_probability": 0.78,
+    "threshold": 0.5
+  },
+  "wall_time_s": 7.86248454201268,
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.78
+        }
+      },
+      "usage": {
+        "input_tokens": 1098,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 246.18487499999998,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 4.6116e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

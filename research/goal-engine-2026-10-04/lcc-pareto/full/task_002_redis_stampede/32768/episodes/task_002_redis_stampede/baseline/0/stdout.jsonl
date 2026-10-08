@@ -1,0 +1,7 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141736_1d0cb8", "timestamp": 1791119857231}
+{"type": "text", "text": "{\"status\":\"ANSWER", "timestamp": 1791119864861}
+{"type": "text", "text": "\",\"answer\":\"top_products_cache keys expired synchronously at 09:30 UTC because TTL jitter was disabled, causing 1,200 workers to stampede the database; concurrent", "timestamp": 1791119865599}
+{"type": "text", "text": " misses drove the hit ratio to 12%. Add TTL jitter to high-QPS keys.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"key\":\"top_products_cache\",\"ttl_seconds\":3600,\"jitter_seconds\":0,\"workers", "timestamp": 1791119865601}
+{"type": "text", "text": "_stampeding\":1200,\"observed_hit_ratio_percent\":12},\"python\":\"\"}", "timestamp": 1791119865603}
+{"type": "result", "session_id": "20261004_141736_1d0cb8", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"top_products_cache keys expired synchronously at 09:30 UTC because TTL jitter was disabled, causing 1,200 workers to stampede the database; concurrent misses drove the hit ratio to 12%. Add TTL jitter to high-QPS keys.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"key\":\"top_products_cache\",\"ttl_seconds\":3600,\"jitter_seconds\":0,\"workers_stampeding\":1200,\"observed_hit_ratio_percent\":12},\"python\":\"\"}", "tokens": {"input": 30835, "output": 318, "total": 31293, "cache_read": 140, "cache_write": 0}, "duration_ms": 8410, "timestamp": 1791119865642}

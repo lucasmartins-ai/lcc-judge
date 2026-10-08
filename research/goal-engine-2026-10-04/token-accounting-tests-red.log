@@ -1,0 +1,14 @@
+E.......
+======================================================================
+ERROR: test_counted_inputs_are_distinct_from_tokens_forwarded_to_encoder (test_context_engine.ContextEngineTests.test_counted_inputs_are_distinct_from_tokens_forwarded_to_encoder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_context_engine.py", line 27, in test_counted_inputs_are_distinct_from_tokens_forwarded_to_encoder
+    self.assertEqual(result['counted_input_tokens'],tokens)
+                     ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'counted_input_tokens'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.004s
+
+FAILED (errors=1)

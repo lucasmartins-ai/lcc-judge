@@ -1,0 +1,102 @@
+{
+  "task_id": "task_002_redis_stampede",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "78bfee106a877736768fe30ae06b5300e9080f785ad50e1e3448a651ae81f90a",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_002_redis_stampede/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_002_redis_stampede/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "At 09:30 UTC, top_products_cache keys expired synchronously because their 3600s TTL had zero jitter, triggering 1,200 concurrent database requests and reducing the cache hit ratio to 12%.",
+    "mechanism": "cache_expiry_stampede",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_210925_8ab728",
+      "timestamp": 1791058165625
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_210925_8ab728",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"At 09:30 UTC, top_products_cache keys expired synchronously because their 3600s TTL had zero jitter, triggering 1,200 concurrent database requests and reducing the cache hit ratio to 12%.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1450,
+      "output": 235,
+      "total": 1825,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 6360,
+    "timestamp": 1791058171985
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.95
+        }
+      },
+      "usage": {
+        "input_tokens": 738,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 445.987875,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 3.0996e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 8.945465625001816
+}

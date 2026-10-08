@@ -1,0 +1,414 @@
+{
+  "status": "PASS",
+  "cohort_sha256": "91c44e2e9150b6cf73571c556aeed422ce0ebdcb32335dbb08acaa22850265aa",
+  "audits": {
+    "calibration": {
+      "status": "PASS",
+      "protocol_sha256": "d06f305f8d6266db6aee69b24b3f911106e0d7a9ae1023f7190941dd510b5ca8",
+      "raw_sha256": "831398600f4e85c3b2233d457132ac485995a91e57fccbdedcc04c42cef2be58",
+      "fixtures": 4,
+      "fields_per_fixture": 18,
+      "verified_fields": 72,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 0.871678541006986,
+      "minimum_datagrams": 5,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Exposed calibration only, excluded from all train/validation/fresh confirmation; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    },
+    "train": {
+      "status": "PASS",
+      "protocol_sha256": "7424fa2b761bbc241a789c3318b370a34fe37b8938e4d99464dc79e4f7fe5c17",
+      "raw_sha256": "9c407ce12ca355fc7b71916e65568ed8639dde746e4732281c269290dc3b7db8",
+      "fixtures": 32,
+      "fields_per_fixture": 18,
+      "verified_fields": 576,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 1.3557425419567153,
+      "minimum_datagrams": 2,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored actual-tool raw train collection, calibration seed442500 excluded; not yet binary supervision or evidence of model transfer; no model/API/P2/adoption; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    },
+    "validation": {
+      "status": "PASS",
+      "protocol_sha256": "60f195228e6e0bf86bf76c6ede6f447a1ee80ee59807db6a35be3b331877ba54",
+      "raw_sha256": "228741a28aa714f6ecec25a04add1f170c3ae0c7c8c9baabf70993f1ddca7379",
+      "fixtures": 12,
+      "fields_per_fixture": 18,
+      "verified_fields": 216,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 0.9764168750261888,
+      "minimum_datagrams": 2,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored actual-tool raw validation collection, calibration seed442500 excluded; not yet binary supervision or evidence of model transfer; no model/API/P2/adoption; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    },
+    "final": {
+      "status": "PASS",
+      "protocol_sha256": "6f57994838e2fd59ac7c321fd8ae800d5f31545c72a1d726219feaef62670aa9",
+      "raw_sha256": "717ef71325e4e50d12f4540cb40a3d91f9196447976bccd756a1f808d96af22b",
+      "fixtures": 24,
+      "fields_per_fixture": 18,
+      "verified_fields": 432,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 1.1882469169795513,
+      "minimum_datagrams": 2,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored actual-tool raw final collection, calibration seed442500 excluded; not yet binary supervision or evidence of model transfer; no model/API/P2/adoption; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    }
+  },
+  "fixture_content_hash_overlaps": {
+    "calibration vs train": 0,
+    "calibration vs validation": 0,
+    "calibration vs final": 0,
+    "train vs validation": 0,
+    "train vs final": 0,
+    "validation vs final": 0
+  },
+  "field_ranges": {
+    "calibration": {
+      "retry_attempts": [
+        3,
+        6
+      ],
+      "retry_failures": [
+        2,
+        5
+      ],
+      "retry_sleep_calls": [
+        2,
+        5
+      ],
+      "retry_scheduled_sleep_ns": [
+        2000000,
+        15000000
+      ],
+      "retry_actual_sleep_ns": [
+        2906333,
+        15869083
+      ],
+      "retry_elapsed_ns": [
+        3182375,
+        16386208
+      ],
+      "udp_sent_datagrams": [
+        5,
+        5
+      ],
+      "udp_received_datagrams": [
+        5,
+        5
+      ],
+      "udp_sent_payload_bytes": [
+        331,
+        621
+      ],
+      "udp_received_payload_bytes": [
+        331,
+        621
+      ],
+      "git_index_files": [
+        7,
+        9
+      ],
+      "git_untracked_files": [
+        1,
+        5
+      ],
+      "git_ignored_files": [
+        2,
+        4
+      ],
+      "git_index_edits": [
+        2,
+        2
+      ],
+      "git_worktree_edits": [
+        3,
+        3
+      ],
+      "git_clean_tracked_files": [
+        3,
+        5
+      ],
+      "git_tracked_fs_bytes": [
+        201,
+        305
+      ],
+      "git_untracked_fs_bytes": [
+        68,
+        258
+      ]
+    },
+    "train": {
+      "retry_attempts": [
+        2,
+        6
+      ],
+      "retry_failures": [
+        1,
+        5
+      ],
+      "retry_sleep_calls": [
+        1,
+        5
+      ],
+      "retry_scheduled_sleep_ns": [
+        2000000,
+        25000000
+      ],
+      "retry_actual_sleep_ns": [
+        2077917,
+        28096832
+      ],
+      "retry_elapsed_ns": [
+        2154958,
+        28364875
+      ],
+      "udp_sent_datagrams": [
+        2,
+        8
+      ],
+      "udp_received_datagrams": [
+        2,
+        8
+      ],
+      "udp_sent_payload_bytes": [
+        50,
+        1052
+      ],
+      "udp_received_payload_bytes": [
+        50,
+        1052
+      ],
+      "git_index_files": [
+        6,
+        10
+      ],
+      "git_untracked_files": [
+        1,
+        6
+      ],
+      "git_ignored_files": [
+        1,
+        4
+      ],
+      "git_index_edits": [
+        2,
+        2
+      ],
+      "git_worktree_edits": [
+        3,
+        3
+      ],
+      "git_clean_tracked_files": [
+        2,
+        6
+      ],
+      "git_tracked_fs_bytes": [
+        146,
+        380
+      ],
+      "git_untracked_fs_bytes": [
+        2,
+        463
+      ]
+    },
+    "validation": {
+      "retry_attempts": [
+        2,
+        6
+      ],
+      "retry_failures": [
+        1,
+        5
+      ],
+      "retry_sleep_calls": [
+        1,
+        5
+      ],
+      "retry_scheduled_sleep_ns": [
+        3000000,
+        20000000
+      ],
+      "retry_actual_sleep_ns": [
+        3306000,
+        24912667
+      ],
+      "retry_elapsed_ns": [
+        3531125,
+        25214792
+      ],
+      "udp_sent_datagrams": [
+        2,
+        8
+      ],
+      "udp_received_datagrams": [
+        2,
+        8
+      ],
+      "udp_sent_payload_bytes": [
+        17,
+        1044
+      ],
+      "udp_received_payload_bytes": [
+        17,
+        1044
+      ],
+      "git_index_files": [
+        6,
+        10
+      ],
+      "git_untracked_files": [
+        1,
+        6
+      ],
+      "git_ignored_files": [
+        1,
+        4
+      ],
+      "git_index_edits": [
+        2,
+        2
+      ],
+      "git_worktree_edits": [
+        3,
+        3
+      ],
+      "git_clean_tracked_files": [
+        2,
+        6
+      ],
+      "git_tracked_fs_bytes": [
+        122,
+        432
+      ],
+      "git_untracked_fs_bytes": [
+        79,
+        473
+      ]
+    },
+    "final": {
+      "retry_attempts": [
+        2,
+        6
+      ],
+      "retry_failures": [
+        1,
+        5
+      ],
+      "retry_sleep_calls": [
+        1,
+        5
+      ],
+      "retry_scheduled_sleep_ns": [
+        1000000,
+        20000000
+      ],
+      "retry_actual_sleep_ns": [
+        1281084,
+        26913876
+      ],
+      "retry_elapsed_ns": [
+        1376625,
+        27247292
+      ],
+      "udp_sent_datagrams": [
+        2,
+        8
+      ],
+      "udp_received_datagrams": [
+        2,
+        8
+      ],
+      "udp_sent_payload_bytes": [
+        38,
+        935
+      ],
+      "udp_received_payload_bytes": [
+        38,
+        935
+      ],
+      "git_index_files": [
+        6,
+        10
+      ],
+      "git_untracked_files": [
+        1,
+        6
+      ],
+      "git_ignored_files": [
+        1,
+        4
+      ],
+      "git_index_edits": [
+        2,
+        2
+      ],
+      "git_worktree_edits": [
+        3,
+        3
+      ],
+      "git_clean_tracked_files": [
+        2,
+        6
+      ],
+      "git_tracked_fs_bytes": [
+        109,
+        489
+      ],
+      "git_untracked_fs_bytes": [
+        32,
+        426
+      ]
+    }
+  },
+  "main_fixtures": 68,
+  "main_verified_fields": 1224,
+  "calibration_fixtures": 4,
+  "calibration_fields": 72,
+  "derived_supervision_rows": 0,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "scope": "Source/raw/hash/value receipts and authored content separation only; no input/wording/role/family supervision audit or quality/outcome claim yet"
+}

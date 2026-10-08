@@ -1,0 +1,119 @@
+{
+  "verified_episode_count": 120,
+  "unique_sessions": 120,
+  "label_counts": {
+    "NECESSARY": 5,
+    "UNNECESSARY": 11,
+    "UNKNOWN": 4
+  },
+  "labels": {
+    "task_001_conn_pool": "NECESSARY",
+    "task_002_redis_stampede": "UNNECESSARY",
+    "task_003_inv_deadlock": "UNNECESSARY",
+    "task_004_rollback_decision": "UNNECESSARY",
+    "task_005_ws_leak": "UNKNOWN",
+    "task_006_sql_injection": "UNKNOWN",
+    "task_007_kafka_lag": "NECESSARY",
+    "task_008_circuit_breaker": "UNKNOWN",
+    "task_009_ssl_timeout": "UNNECESSARY",
+    "task_010_idempotency": "NECESSARY",
+    "task_011_regex_backtrack": "NECESSARY",
+    "task_012_disk_space": "NECESSARY",
+    "task_013_account_transfer": "UNNECESSARY",
+    "task_014_shard_rebalance": "UNNECESSARY",
+    "task_015_cors_error": "UNNECESSARY",
+    "task_016_rate_limiter": "UNKNOWN",
+    "task_017_float_rounding": "UNNECESSARY",
+    "task_018_k8s_pdb": "UNNECESSARY",
+    "task_019_alpine_dns": "UNNECESSARY",
+    "task_020_limiter_tests": "UNNECESSARY"
+  },
+  "concordance_rate": 0.8,
+  "concordance_wilson_95ci": [
+    0.5839782779742401,
+    0.9193436467288
+  ],
+  "unknown_rate": 0.2,
+  "pilot_targets_pass": false,
+  "source_versions_verified": true,
+  "archived_executed_sources": [
+    "executed-source/replay/real_pilot.py",
+    "executed-source/replay/real_fixtures.py",
+    "executed-source/replay/jev_bridge.ts"
+  ],
+  "source_verification_mode": "archived",
+  "canonical_ledger_scope": "run-local-export",
+  "canonical_ledger_entries": 119,
+  "temporal_preregistration_certified": false,
+  "episode_receipts_unchanged": true,
+  "post_execution_changed_verdicts": 3,
+  "jev_diagnostic_disagreements": [
+    {
+      "task_id": "task_006_sql_injection",
+      "condition": "ablation",
+      "repeat": 1,
+      "fixture_pass": false,
+      "jev_noul": 0.92
+    },
+    {
+      "task_id": "task_008_circuit_breaker",
+      "condition": "ablation",
+      "repeat": 0,
+      "fixture_pass": true,
+      "jev_noul": 0.35
+    },
+    {
+      "task_id": "task_009_ssl_timeout",
+      "condition": "ablation",
+      "repeat": 2,
+      "fixture_pass": true,
+      "jev_noul": 0.44
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "ablation",
+      "repeat": 0,
+      "fixture_pass": false,
+      "jev_noul": 0.63
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "ablation",
+      "repeat": 1,
+      "fixture_pass": false,
+      "jev_noul": 0.63
+    },
+    {
+      "task_id": "task_010_idempotency",
+      "condition": "ablation",
+      "repeat": 2,
+      "fixture_pass": false,
+      "jev_noul": 0.54
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "ablation",
+      "repeat": 0,
+      "fixture_pass": true,
+      "jev_noul": 0.27
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "ablation",
+      "repeat": 1,
+      "fixture_pass": true,
+      "jev_noul": 0.28
+    },
+    {
+      "task_id": "task_019_alpine_dns",
+      "condition": "ablation",
+      "repeat": 2,
+      "fixture_pass": true,
+      "jev_noul": 0.45
+    }
+  ],
+  "requested_seed_is_metadata_not_sampling_seed": true,
+  "input_seed_field_changes_between_repetitions": true,
+  "production_sessions_replayed": false,
+  "training_eligible_records": 0
+}

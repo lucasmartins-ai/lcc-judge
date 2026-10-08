@@ -1,0 +1,27 @@
+{
+  "objective": "Write unit test verifying burst handling in token bucket.",
+  "task_class": "coding",
+  "context": [
+    {
+      "block_id": "b_d377b8e8",
+      "content": "Test must assert that 5 consecutive requests at t=0 succeed when capacity=5, and the 6th immediately returns False; then after 1s recovery 1 request succeeds.",
+      "source": "specs/test_spec.md",
+      "block_type": "doc"
+    },
+    {
+      "block_id": "b_27541d40",
+      "content": "import unittest; from unittest.mock import patch",
+      "source": "tests/base.py",
+      "block_type": "code"
+    },
+    {
+      "block_id": "b_c747c03c",
+      "content": "DEFAULT_BURST = 5; REFILL_RATE = 1.0",
+      "source": "limits.py",
+      "block_type": "config"
+    }
+  ],
+  "requested_seed": 76,
+  "interface": "Define test_burst(TokenBucket), a Python test that raises AssertionError when the behavior is incorrect. TokenBucket(capacity,refill_rate,clock) accepts a callable clock() in seconds and has .allow() -> bool. Control time without sleeping.",
+  "mechanism_options": null
+}

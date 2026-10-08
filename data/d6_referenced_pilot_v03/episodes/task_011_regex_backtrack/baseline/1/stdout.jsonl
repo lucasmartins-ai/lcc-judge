@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113906_2a537e", "timestamp": 1791110347283}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The 100% CPU lockup is caused by catastrophic backtracking in the validation regex", "timestamp": 1791110352614}
+{"type": "text", "text": " `^([a-zA-Z0-9]+)*$` when the trailing `!` forces exhaustive failure after a long run of characters.\",\"mechanism\":\"catastrophic_regex", "timestamp": 1791110352615}
+{"type": "text", "text": "_backtracking\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110352615}
+{"type": "result", "session_id": "20261004_113906_2a537e", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The 100% CPU lockup is caused by catastrophic backtracking in the validation regex `^([a-zA-Z0-9]+)*$` when the trailing `!` forces exhaustive failure after a long run of characters.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 2, "output": 204, "total": 1713, "cache_read": 1507, "cache_write": 0}, "duration_ms": 5352, "timestamp": 1791110352635}

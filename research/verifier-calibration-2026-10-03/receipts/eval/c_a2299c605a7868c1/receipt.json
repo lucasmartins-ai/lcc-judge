@@ -1,0 +1,29 @@
+{
+  "case_id": "c_a2299c605a7868c1",
+  "split": "eval",
+  "task_number": 6,
+  "kind": "code",
+  "family": "bound_but_wrong_tenant",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "0d755264fc00faf0b535ab70ebefe690e7e7e2d0008491a50b77cf8f988480f2",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Tenant parameter injection succeeds",
+    "program_stdout": "",
+    "source_sha256": "466c2a66a4b0c65a11908975822c85d7425b38863f30ed64b2608a1f37befa06"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: query, tenant or injection failure",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.11788766598328948
+}

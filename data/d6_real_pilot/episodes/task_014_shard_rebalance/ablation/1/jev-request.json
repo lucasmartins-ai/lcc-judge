@@ -1,0 +1,35 @@
+{
+  "state": {
+    "objective": "Select online versus maintenance window migration for shard 7.",
+    "context": [
+      {
+        "block_id": "b_ec46cb6c",
+        "content": "Logical replication CDC via Debezium supports cutover in <15 seconds once caught up.",
+        "source": "cdc.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_5f748c91",
+        "content": "Hardware: AWS r6i.4xlarge instances with gp3 EBS volumes.",
+        "source": "infra.tf",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Use online migration for shard 7 via logical replication/CDC, with cutover under 15 seconds once caught up.",
+      "mechanism": "online_logical_replication",
+      "parameters": {
+        "shard": 7,
+        "cutover_seconds_max": 15
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

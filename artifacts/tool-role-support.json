@@ -1,0 +1,49 @@
+{
+  "schema": "tool-role-support-artifacts/0.1",
+  "protocol_sha256": "53f9a7b42cb6d2dbf3e003031872d43c53f272a379d833904ab22a28ed10be4b",
+  "base_repo": "cross-encoder/ms-marco-MiniLM-L6-v2",
+  "base_revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+  "parameters": 22714371,
+  "classes": [
+    "IRRELEVANT",
+    "RELEVANT",
+    "UNKNOWN"
+  ],
+  "initialization": "Pretrained encoder retained; scalar ranking head discarded and replaced with fresh seeded three-class head",
+  "license_status": "local unadopted research derivatives; upstream Apache-2.0 obligations apply",
+  "native_ContextEngine_compatible": false,
+  "public_download_url": null,
+  "all_seeds_pass": false,
+  "artifacts": [
+    {
+      "id": "seed-101",
+      "path": "models/tool-role-support-v1/seed-101/model.safetensors",
+      "sha256": "7634bd50601dbf15f9e8f7a23d75ef7ac6a407eceae11a1e6ad4f5de0a15c2b8",
+      "bytes": 90869460,
+      "training_meta": "research/goal-engine-2026-10-04/tool-role-support-v1/seed-101/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "seed-202",
+      "path": "models/tool-role-support-v1/seed-202/model.safetensors",
+      "sha256": "850e514a52ce773567075a12199fc6c150d83c85734d6f83a5834d6d2c8e1cb0",
+      "bytes": 90869460,
+      "training_meta": "research/goal-engine-2026-10-04/tool-role-support-v1/seed-202/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    },
+    {
+      "id": "seed-303",
+      "path": "models/tool-role-support-v1/seed-303/model.safetensors",
+      "sha256": "0f77f1278f1c0f0f0d0e43a349a32710598c8b4376f318c8555d25567ae2c623",
+      "bytes": 90869460,
+      "training_meta": "research/goal-engine-2026-10-04/tool-role-support-v1/seed-303/training_meta.json",
+      "epochs_completed": 3,
+      "quality_gate_pass": false,
+      "hosted": false
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+test_block_ids_and_request_slots_are_validated (test_observations.ObservationEngineTests.test_block_ids_and_request_slots_are_validated) ... ERROR
+test_healthy_matches_and_unrelated_anomaly_drops (test_observations.ObservationEngineTests.test_healthy_matches_and_unrelated_anomaly_drops) ... ERROR
+test_invalid_timestamp_and_duplicate_json_keys_are_unknown (test_observations.ObservationEngineTests.test_invalid_timestamp_and_duplicate_json_keys_are_unknown) ... ERROR
+test_opaque_lines_and_ambiguous_records_keep_the_entire_block (test_observations.ObservationEngineTests.test_opaque_lines_and_ambiguous_records_keep_the_entire_block) ... ERROR
+test_supported_text_formats_and_kept_bytes_are_unchanged (test_observations.ObservationEngineTests.test_supported_text_formats_and_kept_bytes_are_unchanged) ... ERROR
+test_unknown_line_overrides_an_obvious_match (test_observations.ObservationEngineTests.test_unknown_line_overrides_an_obvious_match) ... ERROR
+test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant (test_observations.ObservationEngineTests.test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant) ... ERROR
+
+======================================================================
+ERROR: test_block_ids_and_request_slots_are_validated (test_observations.ObservationEngineTests.test_block_ids_and_request_slots_are_validated)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 57, in test_block_ids_and_request_slots_are_validated
+    from lcc_engine.observations import ObservationEngine, ObservationRequest
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+======================================================================
+ERROR: test_healthy_matches_and_unrelated_anomaly_drops (test_observations.ObservationEngineTests.test_healthy_matches_and_unrelated_anomaly_drops)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 18, in test_healthy_matches_and_unrelated_anomaly_drops
+    from lcc_engine.observations import ObservationEngine
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+======================================================================
+ERROR: test_invalid_timestamp_and_duplicate_json_keys_are_unknown (test_observations.ObservationEngineTests.test_invalid_timestamp_and_duplicate_json_keys_are_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 41, in test_invalid_timestamp_and_duplicate_json_keys_are_unknown
+    from lcc_engine.observations import ObservationEngine
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+======================================================================
+ERROR: test_opaque_lines_and_ambiguous_records_keep_the_entire_block (test_observations.ObservationEngineTests.test_opaque_lines_and_ambiguous_records_keep_the_entire_block)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 28, in test_opaque_lines_and_ambiguous_records_keep_the_entire_block
+    from lcc_engine.observations import ObservationEngine
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+======================================================================
+ERROR: test_supported_text_formats_and_kept_bytes_are_unchanged (test_observations.ObservationEngineTests.test_supported_text_formats_and_kept_bytes_are_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 65, in test_supported_text_formats_and_kept_bytes_are_unchanged
+    from lcc_engine.observations import ObservationEngine
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+======================================================================
+ERROR: test_unknown_line_overrides_an_obvious_match (test_observations.ObservationEngineTests.test_unknown_line_overrides_an_obvious_match)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 35, in test_unknown_line_overrides_an_obvious_match
+    from lcc_engine.observations import ObservationEngine
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+======================================================================
+ERROR: test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant (test_observations.ObservationEngineTests.test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observations.py", line 50, in test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant
+    from lcc_engine.observations import ObservationEngine
+ModuleNotFoundError: No module named 'lcc_engine.observations'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.010s
+
+FAILED (errors=7)

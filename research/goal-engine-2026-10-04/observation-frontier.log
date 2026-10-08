@@ -1,0 +1,44 @@
+robot_battery 8192 1.22 1.0
+robot_battery 32768 4.59 1.0
+robot_battery 131072 18.05 1.0
+broker_consumer 8192 1.02 1.0
+broker_consumer 32768 4.28 1.0
+broker_consumer 131072 18.02 1.0
+browser_webrtc 8192 1.04 1.0
+browser_webrtc 32768 4.28 1.0
+browser_webrtc 131072 17.64 1.0
+data_contract 8192 1.14 1.0
+data_contract 32768 4.51 1.0
+data_contract 131072 17.73 1.0
+edge_power 8192 1.06 1.0
+edge_power 32768 4.24 1.0
+edge_power 131072 18.69 1.0
+search_segment 8192 1.05 1.0
+search_segment 32768 4.59 1.0
+search_segment 131072 17.78 1.0
+{
+  "8192": {
+    "n": 6,
+    "observation_coverage_min": 1.0,
+    "unknown_retention_min": 1.0,
+    "removed_bytes_min": 0.9466407955372301,
+    "p50_rank_ms": 1.0544584947638214,
+    "candidate_tokens_max": 447
+  },
+  "32768": {
+    "n": 6,
+    "observation_coverage_min": 1.0,
+    "unknown_retention_min": 1.0,
+    "removed_bytes_min": 0.9871192808265128,
+    "p50_rank_ms": 4.392791510326788,
+    "candidate_tokens_max": 447
+  },
+  "131072": {
+    "n": 6,
+    "observation_coverage_min": 1.0,
+    "unknown_retention_min": 1.0,
+    "removed_bytes_min": 0.9968062991394427,
+    "p50_rank_ms": 17.89879146963358,
+    "candidate_tokens_max": 447
+  }
+}

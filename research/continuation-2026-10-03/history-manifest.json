@@ -1,0 +1,28 @@
+{
+  "schema": "training-history-archive/0.1",
+  "exported_after_execution": true,
+  "external_attestation": false,
+  "sources": {
+    "specialist/corpus.py": "4ddb3dafe69ea884e715406bec7a871755d324eee788d63b467ad06d91d4d6d3",
+    "bakeoff/probes.py": "4f438a3cb9f5a7be65f4e4fb319064de7ec7b76a434bebe5d714dc0ad7e7b153",
+    "specialist/train_detect.py": "a7add3f6a351d807ee2384d4ba3e1066ac21d5772192de053cd889d3423ca0f5",
+    "research/normalization_pilot.py": "c1f174a3131bc8a3cd73bbc91e9df1da3dc6f80a2dc32664c7f321cde7fba3fa",
+    "research/bench_cpu.py": "60109d6568c1bd9ea9ecb62a61270d01d285243c202c310f62f2ea2931454b12",
+    "research/continuation-2026-10-03/evaluate_clean.py": "d13fc227ede17692b628bdef400275bb6a666f2fbd0743ddc329b150f282ace4"
+  },
+  "metadata": {
+    "checkpoint-metadata/exp02e-line-attn/config.json": "92ddc20e35ceaf5a8c5f2b283b7abbfbd50875fb7069db3c3a0243b860dc006e",
+    "checkpoint-metadata/exp02e-line-attn/training_meta.json": "db405198a60796ddb1e8e2459601858414e9f5e2504d97fc14c31dd535fd3ecb",
+    "checkpoint-metadata/exp02e-unfreeze2/config.json": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+    "checkpoint-metadata/exp02e-unfreeze2/training_meta.json": "29705145fb02402eee86b5a663e89a5e8a9c2797fcd480b7df5979cd3b785318"
+  },
+  "weights": {
+    "models/exp02e-line-attn/weights.pt": "03dad5f0558f3f8621780056d51c062ee7d6b907d3617e5afa8a178a90fca768",
+    "models/exp02e-unfreeze2/weights.pt": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+    "models/exp05-joint-detect/weights.pt": "be136be52387f56464f3678fa6e1bf3d22ac490d9ff8d81c9e3542e68536fda6"
+  },
+  "original_protocol_source_mapping": {
+    "bakeoff/probes.py": "executed-source/bakeoff/probes.py",
+    "/Users/Master/Downloads/LCC-judge/specialist/train_detect.py": "executed-source/specialist/train_detect.py"
+  }
+}

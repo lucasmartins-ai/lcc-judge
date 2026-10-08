@@ -1,0 +1,167 @@
+{
+  "protocol_sha256": "cbc41131673d23a9e8163fc6d878708a9707f0b8e11b7e8e1784210d94d83444",
+  "finished_at_utc": "2026-10-08T11:20:30.397320+00:00",
+  "router_gate_pass": false,
+  "train_policy_available": true,
+  "validation": {
+    "n": 1136,
+    "supported": 240,
+    "accepted": 70,
+    "correct_bindings": 9,
+    "supported_accepted": 15,
+    "unknown": 896,
+    "unknown_abstained": 841,
+    "accepted_binding_precision": 0.12857142857142856,
+    "supported_coverage": 0.0625,
+    "correct_supported_coverage": 0.0375,
+    "unknown_recognition": 0.9386160714285714,
+    "confusion": [
+      {
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "n": 841
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "git_index_edits",
+        "n": 5
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 16
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_attempts",
+        "n": 7
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_failures",
+        "n": 10
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_scheduled_sleep_ns",
+        "n": 9
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "udp_sent_datagrams",
+        "n": 6
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "udp_sent_payload_bytes",
+        "n": 2
+      },
+      {
+        "expected": "git_index_edits",
+        "predicted": "UNKNOWN",
+        "n": 28
+      },
+      {
+        "expected": "git_index_edits",
+        "predicted": "git_index_edits",
+        "n": 1
+      },
+      {
+        "expected": "git_index_edits",
+        "predicted": "git_worktree_edits",
+        "n": 1
+      },
+      {
+        "expected": "git_worktree_edits",
+        "predicted": "UNKNOWN",
+        "n": 29
+      },
+      {
+        "expected": "git_worktree_edits",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 1
+      },
+      {
+        "expected": "retry_actual_sleep_ns",
+        "predicted": "UNKNOWN",
+        "n": 28
+      },
+      {
+        "expected": "retry_actual_sleep_ns",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 1
+      },
+      {
+        "expected": "retry_actual_sleep_ns",
+        "predicted": "retry_scheduled_sleep_ns",
+        "n": 1
+      },
+      {
+        "expected": "retry_attempts",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "retry_failures",
+        "predicted": "UNKNOWN",
+        "n": 30
+      },
+      {
+        "expected": "retry_scheduled_sleep_ns",
+        "predicted": "UNKNOWN",
+        "n": 26
+      },
+      {
+        "expected": "retry_scheduled_sleep_ns",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 1
+      },
+      {
+        "expected": "retry_scheduled_sleep_ns",
+        "predicted": "retry_scheduled_sleep_ns",
+        "n": 3
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "UNKNOWN",
+        "n": 24
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "retry_attempts",
+        "n": 1
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "udp_sent_datagrams",
+        "n": 4
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "udp_sent_payload_bytes",
+        "n": 1
+      },
+      {
+        "expected": "udp_sent_payload_bytes",
+        "predicted": "UNKNOWN",
+        "n": 30
+      }
+    ],
+    "gate_pass": false
+  },
+  "next_action": "STOP_before_fresh_confirmation_and_LCC",
+  "encoder_query_forwards": 2308,
+  "encoder_batch_forwards": 145,
+  "scored_encoder_tokens": 57727,
+  "trained_parameters": 3465,
+  "completed_updates": 200,
+  "head_fit_s": 0.8118917079409584,
+  "elapsed_s": 25.592704250011593,
+  "peak_process_rss_bytes": 1831731200,
+  "performance_scope": "Local encoder loading/whole-query encoding/head fit/evaluation; not LCC serving",
+  "API_calls": 0,
+  "backbone_updates": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "independent_human_review": false
+}

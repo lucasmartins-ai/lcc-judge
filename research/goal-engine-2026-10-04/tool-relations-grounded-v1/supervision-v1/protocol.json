@@ -1,0 +1,694 @@
+{
+  "schema": "tool-relation-direct-record/0.1",
+  "frozen_at_utc": "2026-10-04T22:44:26.709852+00:00",
+  "capture_files": {
+    "train": {
+      "raw.json": "9c407ce12ca355fc7b71916e65568ed8639dde746e4732281c269290dc3b7db8",
+      "protocol.json": "13ddd4de8bb8b94033dd7a00a0b5fd845604ea299546d8ae7a440b4f6182440a",
+      "completion.json": "4c081218e8500653397c0d75762341b7ff512690c210719e7c73b1e9a3bda0a1",
+      "started.json": "14d4de7ad22f24f561678fee98de0b2bed115cf76c812c9e5cbb720abac1990c",
+      "sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+      "sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+      "sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+      "sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+      "sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+      "sources/research/capture_tool_relations.py": "d269561ca9a9e373fb8cb68bf1260c511e0e84d31340efcaec76dc092cf92eb7",
+      "sources/research/audit_tool_relations.py": "85ded27ebe64a85b2f041ef5443340844faf97f716842217d533e35c6af0f3b1"
+    },
+    "validation": {
+      "raw.json": "228741a28aa714f6ecec25a04add1f170c3ae0c7c8c9baabf70993f1ddca7379",
+      "protocol.json": "8d27f7da1c8859fa6e7335a28abc37e4c11adca3e43254cecc268c437b7760ef",
+      "completion.json": "021ed70520cb3968c32762abb046b94a53153fa796f57c8685eb96d8faa9fb01",
+      "started.json": "b0bd9062d1882c9cc13e2a332e0dc2fda27d8e0f7e602ed599e04ecf057ad739",
+      "sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+      "sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+      "sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+      "sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+      "sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+      "sources/research/capture_tool_relations.py": "d269561ca9a9e373fb8cb68bf1260c511e0e84d31340efcaec76dc092cf92eb7",
+      "sources/research/audit_tool_relations.py": "85ded27ebe64a85b2f041ef5443340844faf97f716842217d533e35c6af0f3b1"
+    },
+    "final": {
+      "raw.json": "717ef71325e4e50d12f4540cb40a3d91f9196447976bccd756a1f808d96af22b",
+      "protocol.json": "a8a2b163ff0a8377ad45f6c294b14c6a5d54f9420398bf9d582a3b3f414887de",
+      "completion.json": "566adfb4f74f605fb9487ae8f0dfc11e6436a855587faa0ba770a90da4cb5dcc",
+      "started.json": "676fef3770658f19b63618d29440f42e6e0dd3e673fcf101106b714484e10265",
+      "sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+      "sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+      "sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+      "sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+      "sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+      "sources/research/capture_tool_relations.py": "d269561ca9a9e373fb8cb68bf1260c511e0e84d31340efcaec76dc092cf92eb7",
+      "sources/research/audit_tool_relations.py": "85ded27ebe64a85b2f041ef5443340844faf97f716842217d533e35c6af0f3b1"
+    }
+  },
+  "requests": {
+    "train": {
+      "seed": 442511,
+      "fixtures": 32
+    },
+    "validation": {
+      "seed": 442512,
+      "fixtures": 12
+    },
+    "final": {
+      "seed": 442513,
+      "fixtures": 24
+    }
+  },
+  "sources": {
+    "research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4",
+    "research/tool_relation_supervision.py": "f5383b375087d2e911383fb7b72b6fc00cab748963341552be234e9a62191f82",
+    "research/audit_tool_relation_supervision.py": "6ffb3d2d6e36b8f37616ae6c52a6fd81e62d2ea05b3c8a0d1e5393a658e4bc41",
+    "research/audit_tool_relations.py": "85ded27ebe64a85b2f041ef5443340844faf97f716842217d533e35c6af0f3b1",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c"
+  },
+  "roles": {
+    "retry_attempts": [
+      "retry",
+      "calls",
+      [
+        "total retry attempts including the first call",
+        "all operation calls made by the retry loop",
+        "number of attempts from initial invocation to success",
+        "complete count of executions in the retry sequence"
+      ],
+      [
+        "total de tentativas incluindo a primeira chamada",
+        "todas as chamadas da operação no laço de retry",
+        "número de tentativas da invocação inicial até o sucesso",
+        "contagem completa de execuções na sequência de retry"
+      ],
+      [
+        "Retrying attempt_number observed at success",
+        "Initial call plus all repeated calls",
+        "Total invocations logged by the retry callback",
+        "Operation attempt events, counting the initial execution"
+      ]
+    ],
+    "retry_failures": [
+      "retry",
+      "calls",
+      [
+        "failed retry calls",
+        "attempts that raised an exception",
+        "unsuccessful invocations before completion",
+        "count of failed executions in the retry loop"
+      ],
+      [
+        "chamadas de retry que falharam",
+        "tentativas que geraram uma exceção",
+        "invocações sem sucesso antes da conclusão",
+        "contagem de execuções falhas no laço de retry"
+      ],
+      [
+        "Exception-bearing attempts recorded by Retrying",
+        "Failed operation calls before success",
+        "Callback events marked as unsuccessful",
+        "Retry attempt failures observed before termination"
+      ]
+    ],
+    "retry_sleep_calls": [
+      "retry",
+      "calls",
+      [
+        "retry sleep callback count",
+        "number of waits invoked between attempts",
+        "calls to the retry sleeper",
+        "total inter-attempt sleep invocations"
+      ],
+      [
+        "contagem de chamadas ao sleep do retry",
+        "número de esperas invocadas entre tentativas",
+        "chamadas à função de espera do retry",
+        "total de invocações de sleep entre tentativas"
+      ],
+      [
+        "Sleep callback invocations observed by Retrying",
+        "Inter-attempt wait event count",
+        "Recorded calls to the bounded retry sleeper",
+        "Number of executed sleep callbacks"
+      ]
+    ],
+    "retry_scheduled_sleep_ns": [
+      "retry",
+      "nanoseconds",
+      [
+        "planned retry sleep time",
+        "sum of scheduled inter-attempt delays",
+        "nominal waiting duration assigned by the retry policy",
+        "total requested sleep interval"
+      ],
+      [
+        "tempo de espera planejado no retry",
+        "soma dos atrasos programados entre tentativas",
+        "duração nominal de espera atribuída pela política de retry",
+        "intervalo total de sleep solicitado"
+      ],
+      [
+        "Scheduled delay sum from Retrying idle_for in nanoseconds",
+        "Nominal retry backoff nanoseconds",
+        "Total sleep duration requested by wait_fixed",
+        "Planned intervals passed to the sleep callback in nanoseconds"
+      ]
+    ],
+    "retry_actual_sleep_ns": [
+      "retry",
+      "nanoseconds",
+      [
+        "actual time inside retry sleep callbacks",
+        "observed duration spent sleeping between attempts",
+        "measured sleeper execution time",
+        "elapsed time within the invoked retry waits"
+      ],
+      [
+        "tempo real dentro dos callbacks de sleep do retry",
+        "duração observada dormindo entre tentativas",
+        "tempo de execução medido da função de espera",
+        "tempo transcorrido dentro das esperas invocadas pelo retry"
+      ],
+      [
+        "Measured sleep callback nanoseconds from monotonic timestamps",
+        "Observed time spent inside the retry sleeper",
+        "Sum of actual before-and-after sleep durations in nanoseconds",
+        "Real callback waiting time, excluding operation calls, in nanoseconds"
+      ]
+    ],
+    "retry_elapsed_ns": [
+      "retry",
+      "nanoseconds",
+      [
+        "whole retry operation elapsed time",
+        "end-to-end duration of the retry sequence",
+        "total real time including calls and waiting",
+        "wall-clock duration from retry start until success"
+      ],
+      [
+        "tempo total transcorrido da operação de retry",
+        "duração de ponta a ponta da sequência de retry",
+        "tempo real total incluindo chamadas e esperas",
+        "duração no relógio do início do retry até o sucesso"
+      ],
+      [
+        "Full Retrying invocation elapsed nanoseconds",
+        "Monotonic start-to-finish retry duration",
+        "Operation calls and sleeps together in nanoseconds",
+        "Entire retry-loop wall duration measured around Retrying"
+      ]
+    ],
+    "udp_sent_datagrams": [
+      "udp",
+      "datagrams",
+      [
+        "UDP datagrams sent",
+        "number of outgoing UDP messages",
+        "count of sendto datagram events",
+        "total datagrams emitted including empty payloads"
+      ],
+      [
+        "datagramas UDP enviados",
+        "número de mensagens UDP de saída",
+        "contagem de eventos de datagrama sendto",
+        "total de datagramas emitidos incluindo conteúdos vazios"
+      ],
+      [
+        "Outgoing sendto event count, empty payloads included",
+        "Sent UDP message total",
+        "Number of locally transmitted UDP datagrams",
+        "Datagram submissions observed on the sending socket"
+      ]
+    ],
+    "udp_received_datagrams": [
+      "udp",
+      "datagrams",
+      [
+        "UDP datagrams received",
+        "number of incoming UDP messages",
+        "count of recvfrom datagram events",
+        "total arrivals including empty payloads"
+      ],
+      [
+        "datagramas UDP recebidos",
+        "número de mensagens UDP de entrada",
+        "contagem de eventos de datagrama recvfrom",
+        "total de chegadas incluindo conteúdos vazios"
+      ],
+      [
+        "Incoming recvfrom event count, empty payloads included",
+        "Received UDP message total",
+        "Number of locally delivered UDP datagrams",
+        "Datagram arrivals observed on the receiving socket"
+      ]
+    ],
+    "udp_sent_payload_bytes": [
+      "udp",
+      "bytes",
+      [
+        "UDP payload bytes sent",
+        "total outgoing message content length",
+        "sum of bytes passed as datagram payloads",
+        "sent application-data volume excluding network headers"
+      ],
+      [
+        "bytes de conteúdo UDP enviados",
+        "comprimento total do conteúdo das mensagens de saída",
+        "soma dos bytes passados como conteúdo de datagramas",
+        "volume de dados enviados sem cabeçalhos de rede"
+      ],
+      [
+        "Sum of sendto payload lengths in bytes",
+        "Outgoing UDP application-content byte total",
+        "Sent data bytes, excluding IP and UDP headers",
+        "Content volume submitted to the datagram socket in bytes"
+      ]
+    ],
+    "udp_received_payload_bytes": [
+      "udp",
+      "bytes",
+      [
+        "UDP payload bytes received",
+        "total incoming message content length",
+        "sum of bytes returned as datagram payloads",
+        "received application-data volume excluding network headers"
+      ],
+      [
+        "bytes de conteúdo UDP recebidos",
+        "comprimento total do conteúdo das mensagens de entrada",
+        "soma dos bytes retornados como conteúdo de datagramas",
+        "volume de dados recebidos sem cabeçalhos de rede"
+      ],
+      [
+        "Sum of recvfrom payload lengths in bytes",
+        "Incoming UDP application-content byte total",
+        "Delivered data bytes, excluding IP and UDP headers",
+        "Content volume returned by the datagram socket in bytes"
+      ]
+    ],
+    "git_index_files": [
+      "git",
+      "paths",
+      [
+        "Git index file count",
+        "number of tracked paths listed in the index",
+        "all file entries known to Git including a deleted worktree file",
+        "total cached file paths"
+      ],
+      [
+        "contagem de arquivos no índice do Git",
+        "número de caminhos rastreados listados no índice",
+        "todas as entradas conhecidas pelo Git incluindo um arquivo removido do diretório de trabalho",
+        "total de caminhos de arquivos no cache do índice"
+      ],
+      [
+        "Paths returned by git ls-files --cached -z",
+        "Tracked index entry total",
+        "Cached Git paths including missing worktree files",
+        "Number of indexed file names reported by Git"
+      ]
+    ],
+    "git_untracked_files": [
+      "git",
+      "paths",
+      [
+        "untracked Git file count",
+        "number of files outside the index and ignore rules",
+        "untracked nonignored paths in the worktree",
+        "total unknown file entries reported by Git"
+      ],
+      [
+        "contagem de arquivos não rastreados pelo Git",
+        "número de arquivos fora do índice e das regras de ignore",
+        "caminhos não rastreados e não ignorados no diretório de trabalho",
+        "total de entradas de arquivo desconhecidas informado pelo Git"
+      ],
+      [
+        "Paths returned by git ls-files --others --exclude-standard",
+        "Nonignored untracked path total",
+        "Git status entries with the question-mark pair",
+        "Number of new files absent from the Git index"
+      ]
+    ],
+    "git_ignored_files": [
+      "git",
+      "paths",
+      [
+        "ignored Git file count",
+        "number of untracked paths excluded by ignore rules",
+        "ignored files present in the worktree",
+        "total file entries matching the repository ignore patterns"
+      ],
+      [
+        "contagem de arquivos ignorados pelo Git",
+        "número de caminhos não rastreados excluídos pelas regras de ignore",
+        "arquivos ignorados presentes no diretório de trabalho",
+        "total de entradas que correspondem aos padrões de ignore do repositório"
+      ],
+      [
+        "Paths returned by git ls-files --others --ignored --exclude-standard",
+        "Ignored untracked path total",
+        "Git status entries with the exclamation-mark pair",
+        "Number of present files excluded by Git ignore patterns"
+      ]
+    ],
+    "git_index_edits": [
+      "git",
+      "paths",
+      [
+        "paths with staged index edits",
+        "number of changes in the first Git status column",
+        "indexed paths changed against the committed tree",
+        "total files whose index state differs from HEAD"
+      ],
+      [
+        "caminhos com alterações preparadas no índice",
+        "número de alterações na primeira coluna de status do Git",
+        "caminhos do índice alterados em relação à árvore commitada",
+        "total de arquivos cujo estado no índice difere do HEAD"
+      ],
+      [
+        "Nonblank index-status columns in Git porcelain output",
+        "Staged path change count",
+        "File entries modified between HEAD and the index",
+        "Git status X-column edits, counting each path once"
+      ]
+    ],
+    "git_worktree_edits": [
+      "git",
+      "paths",
+      [
+        "paths with unstaged worktree edits",
+        "number of changes in the second Git status column",
+        "tracked paths changed on disk against the index",
+        "total files whose worktree state differs from the index"
+      ],
+      [
+        "caminhos com alterações não preparadas no diretório de trabalho",
+        "número de alterações na segunda coluna de status do Git",
+        "caminhos rastreados alterados no disco em relação ao índice",
+        "total de arquivos cujo estado no diretório de trabalho difere do índice"
+      ],
+      [
+        "Nonblank worktree-status columns in Git porcelain output",
+        "Unstaged path change count including deletion",
+        "Tracked file entries modified between index and disk",
+        "Git status Y-column edits, counting each path once"
+      ]
+    ],
+    "git_clean_tracked_files": [
+      "git",
+      "paths",
+      [
+        "unchanged tracked Git file count",
+        "number of indexed paths without index or worktree edits",
+        "clean file entries matching both HEAD and index",
+        "total tracked files absent from changed status rows"
+      ],
+      [
+        "contagem de arquivos rastreados sem alterações no Git",
+        "número de caminhos no índice sem alterações preparadas ou locais",
+        "entradas de arquivo limpas iguais ao HEAD e ao índice",
+        "total de arquivos rastreados ausentes das linhas alteradas de status"
+      ],
+      [
+        "Indexed paths without either Git status edit column",
+        "Clean tracked path total",
+        "File entries with no staged or unstaged changes",
+        "Number of unchanged files from index minus changed tracked paths"
+      ]
+    ],
+    "git_tracked_fs_bytes": [
+      "git",
+      "bytes",
+      [
+        "current bytes of tracked files on disk",
+        "worktree content size of existing index paths",
+        "sum of file lengths for tracked paths still present",
+        "data volume in current tracked worktree files"
+      ],
+      [
+        "bytes atuais dos arquivos rastreados no disco",
+        "tamanho do conteúdo local dos caminhos existentes no índice",
+        "soma dos comprimentos dos arquivos rastreados ainda presentes",
+        "volume de dados nos arquivos rastreados atuais do diretório de trabalho"
+      ],
+      [
+        "Byte lengths of existing worktree files named in the index",
+        "Present tracked file content bytes",
+        "Tracked on-disk data total excluding the deleted path",
+        "Current filesystem byte volume for indexed paths that exist"
+      ]
+    ],
+    "git_untracked_fs_bytes": [
+      "git",
+      "bytes",
+      [
+        "current bytes of nonignored untracked files",
+        "worktree content size outside the index excluding ignored files",
+        "sum of file lengths for new untracked paths",
+        "data volume in files Git has not yet tracked"
+      ],
+      [
+        "bytes atuais dos arquivos não rastreados e não ignorados",
+        "tamanho do conteúdo local fora do índice excluindo arquivos ignorados",
+        "soma dos comprimentos dos arquivos novos não rastreados",
+        "volume de dados nos arquivos que o Git ainda não rastreia"
+      ],
+      [
+        "Byte lengths of nonignored untracked worktree paths",
+        "New untracked file content bytes",
+        "Nonindexed on-disk data total after ignore filtering",
+        "Current filesystem byte volume for Git untracked paths"
+      ]
+    ]
+  },
+  "train_families": {
+    "retry_calls": [
+      "retry_attempts",
+      "retry_failures"
+    ],
+    "retry_count_vs_wait": [
+      "retry_sleep_calls",
+      "retry_scheduled_sleep_ns"
+    ],
+    "retry_sleep_vs_total": [
+      "retry_actual_sleep_ns",
+      "retry_elapsed_ns"
+    ],
+    "udp_sent_count_vs_bytes": [
+      "udp_sent_datagrams",
+      "udp_sent_payload_bytes"
+    ],
+    "udp_received_count_vs_bytes": [
+      "udp_received_datagrams",
+      "udp_received_payload_bytes"
+    ],
+    "git_index_vs_ignored": [
+      "git_index_files",
+      "git_ignored_files"
+    ],
+    "git_untracked_vs_clean": [
+      "git_untracked_files",
+      "git_clean_tracked_files"
+    ],
+    "git_index_vs_worktree_edits": [
+      "git_index_edits",
+      "git_worktree_edits"
+    ],
+    "git_tracked_vs_untracked_bytes": [
+      "git_tracked_fs_bytes",
+      "git_untracked_fs_bytes"
+    ]
+  },
+  "final_families": {
+    "retry_attempts_vs_wait": [
+      "retry_attempts",
+      "retry_scheduled_sleep_ns"
+    ],
+    "retry_scheduled_vs_actual": [
+      "retry_scheduled_sleep_ns",
+      "retry_actual_sleep_ns"
+    ],
+    "udp_sent_vs_received_count": [
+      "udp_sent_datagrams",
+      "udp_received_datagrams"
+    ],
+    "udp_sent_vs_received_bytes": [
+      "udp_sent_payload_bytes",
+      "udp_received_payload_bytes"
+    ],
+    "git_index_vs_untracked": [
+      "git_index_files",
+      "git_untracked_files"
+    ],
+    "git_clean_vs_worktree_edits": [
+      "git_clean_tracked_files",
+      "git_worktree_edits"
+    ]
+  },
+  "templates": {
+    "train": {
+      "en": [
+        "Select the direct recorded value of {}.",
+        "Which record explicitly states {}?"
+      ],
+      "pt": [
+        "Selecione o valor registrado diretamente de {}.",
+        "Qual registro informa explicitamente {}?"
+      ]
+    },
+    "validation": {
+      "en": [
+        "I need the observation that directly reports {}."
+      ],
+      "pt": [
+        "Preciso da observação que relata diretamente {}."
+      ]
+    },
+    "final": {
+      "en": [
+        "Retrieve the explicit measurement record for {}."
+      ],
+      "pt": [
+        "Recupere o registro explícito da medição de {}."
+      ]
+    }
+  },
+  "unknown_queries": {
+    "train": {
+      "en": [
+        "Calculate a missing counter using the other measurements.",
+        "Explain the root cause of the operation failure.",
+        "Keep every measurement that could help fix this system."
+      ],
+      "pt": [
+        "Calcule um contador ausente usando as outras medições.",
+        "Explique a causa principal da falha da operação.",
+        "Mantenha toda medição que possa ajudar a corrigir esse sistema."
+      ]
+    },
+    "validation": {
+      "en": [
+        "Infer the unreported value from multiple related fields.",
+        "What caused this operation to fail?",
+        "Select all evidence useful for resolving the overall incident."
+      ],
+      "pt": [
+        "Infira o valor não informado a partir de vários campos relacionados.",
+        "O que causou essa operação a falhar?",
+        "Selecione toda evidência útil para resolver o incidente geral."
+      ]
+    },
+    "final": {
+      "en": [
+        "Derive the answer by combining the available counters.",
+        "Diagnose why this system operation failed.",
+        "Choose whichever observations could aid the broader investigation."
+      ],
+      "pt": [
+        "Derive a resposta combinando os contadores disponíveis.",
+        "Diagnostique por que essa operação do sistema falhou.",
+        "Escolha as observações que possam ajudar na investigação mais ampla."
+      ]
+    }
+  },
+  "primary_references": {
+    "retry": "https://tenacity.readthedocs.io/en/stable/api.html",
+    "udp": "https://docs.python.org/3.13/library/socket.html",
+    "git": "https://git-scm.com/docs/git-status"
+  },
+  "raw_receipt_audits": {
+    "train": {
+      "status": "PASS",
+      "protocol_sha256": "7424fa2b761bbc241a789c3318b370a34fe37b8938e4d99464dc79e4f7fe5c17",
+      "raw_sha256": "9c407ce12ca355fc7b71916e65568ed8639dde746e4732281c269290dc3b7db8",
+      "fixtures": 32,
+      "fields_per_fixture": 18,
+      "verified_fields": 576,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 1.3557425419567153,
+      "minimum_datagrams": 2,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored actual-tool raw train collection, calibration seed442500 excluded; not yet binary supervision or evidence of model transfer; no model/API/P2/adoption; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    },
+    "validation": {
+      "status": "PASS",
+      "protocol_sha256": "60f195228e6e0bf86bf76c6ede6f447a1ee80ee59807db6a35be3b331877ba54",
+      "raw_sha256": "228741a28aa714f6ecec25a04add1f170c3ae0c7c8c9baabf70993f1ddca7379",
+      "fixtures": 12,
+      "fields_per_fixture": 18,
+      "verified_fields": 216,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 0.9764168750261888,
+      "minimum_datagrams": 2,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored actual-tool raw validation collection, calibration seed442500 excluded; not yet binary supervision or evidence of model transfer; no model/API/P2/adoption; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    },
+    "final": {
+      "status": "PASS",
+      "protocol_sha256": "6f57994838e2fd59ac7c321fd8ae800d5f31545c72a1d726219feaef62670aa9",
+      "raw_sha256": "717ef71325e4e50d12f4540cb40a3d91f9196447976bccd756a1f808d96af22b",
+      "fixtures": 24,
+      "fields_per_fixture": 18,
+      "verified_fields": 432,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "versions": {
+        "git": "git version 2.47.3",
+        "tenacity": "9.1.4"
+      },
+      "observed_capture_wall_s": 1.1882469169795513,
+      "minimum_datagrams": 2,
+      "empty_datagram_checked_in_each_fixture": true,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh authored actual-tool raw final collection, calibration seed442500 excluded; not yet binary supervision or evidence of model transfer; no model/API/P2/adoption; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+    }
+  },
+  "tokenizer": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "files": {
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "window": 512
+  },
+  "wording": "Train intent (fixture_index//2)%2 and caption fixture_index%2: four combinations, eight fixtures each. Validation index2; final index3. Report form/level vary separately.",
+  "label": "1 report directly claims the requested recorded field; 0 claims the other field; null broader/derived/diagnostic goal or unbound record. False requested claims remain relevant contradictions.",
+  "heldout_scope": "New raw fixture/content/entity/effective input, six pair combinations and aliases/captions. All eighteen field primitives and all three sources occur in training; no unseen tool/domain or production claim.",
+  "limits": "Authored language/fixtures and successful bounded APIs. Related/derivable counters may be useful to LCC; binary labels never authorize their general dismissal. UDP is payload/datagram, not wire/IP capture. Git index/worktree edits are fixed2/3.",
+  "calibration_excluded": 442500,
+  "model_forwards": 0,
+  "training": false,
+  "P2_admission": false,
+  "default_changed": false,
+  "production": false,
+  "quality_approved": false,
+  "sha256": "1fca8ea4cd2fbbde0d4f06abc0ef0c52eb905a92c1010448dfff5ea0dcae8681"
+}

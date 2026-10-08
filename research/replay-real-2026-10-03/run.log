@@ -1,0 +1,54 @@
+6/120 receipts saved; task_001_conn_pool
+12/120 receipts saved; task_002_redis_stampede
+18/120 receipts saved; task_003_inv_deadlock
+24/120 receipts saved; task_004_rollback_decision
+30/120 receipts saved; task_005_ws_leak
+36/120 receipts saved; task_006_sql_injection
+42/120 receipts saved; task_007_kafka_lag
+48/120 receipts saved; task_008_circuit_breaker
+54/120 receipts saved; task_009_ssl_timeout
+60/120 receipts saved; task_011_regex_backtrack
+66/120 receipts saved; task_011_regex_backtrack
+72/120 receipts saved; task_012_disk_space
+78/120 receipts saved; task_014_shard_rebalance
+84/120 receipts saved; task_015_cors_error
+90/120 receipts saved; task_015_cors_error
+96/120 receipts saved; task_016_rate_limiter
+102/120 receipts saved; task_018_k8s_pdb
+108/120 receipts saved; task_018_k8s_pdb
+114/120 receipts saved; task_019_alpine_dns
+120/120 receipts saved; task_020_limiter_tests
+{
+  "tasks": 20,
+  "episodes": 120,
+  "expected_episodes": 120,
+  "executor_successes": 119,
+  "execution_errors": 1,
+  "label_counts": {
+    "NECESSARY": 6,
+    "UNNECESSARY": 10,
+    "UNKNOWN": 4
+  },
+  "concordance_rate": 0.8,
+  "unknown_rate": 0.2,
+  "baseline_verified_runs": 60,
+  "ablation_verified_runs": 36,
+  "training_eligible_records": 0,
+  "proposed_reliability_threshold": 0.95,
+  "threshold_validated": false,
+  "costing": {
+    "hermes_input_tokens": 118008,
+    "hermes_output_tokens": 91522,
+    "hermes_actual_cost_usd": null,
+    "jev_calls": 120,
+    "jev_successes": 119,
+    "jev_input_tokens": 74931,
+    "jev_tariff_estimated_cost_usd": 0.003147102,
+    "tariff_source": "https://docs.typesafe.ai/models",
+    "actual_invoice_cost_known": false
+  },
+  "median_episode_wall_s": 7.678628145513358,
+  "scope": "120 actual stateless calls on curated fixture contracts; six coding cases execute Python; fourteen typed-answer checks; Jev sidecar not label source",
+  "generation_seed_applied": false,
+  "model_snapshot_immutable": false
+}

@@ -1,0 +1,53 @@
+{
+  "train": {
+    "sha256": "e35afdfe92192aae0b3cd886d598c690809c53eeb3a502b53ac18a6b51583548",
+    "n": 2016,
+    "known": 1440,
+    "domains": [
+      "build_cache",
+      "cert_rotation",
+      "container_cpu",
+      "disk_health",
+      "dns_resolution",
+      "memory_pressure",
+      "nginx_requests",
+      "object_storage",
+      "postgres_replica",
+      "rpc_latency",
+      "task_scheduler",
+      "worker_queue"
+    ]
+  },
+  "validation": {
+    "sha256": "1fd6deb5ccddd9757c6018583e45135092cd9015da4214f4cece4de4ada754d6",
+    "n": 672,
+    "known": 480,
+    "domains": [
+      "build_cache",
+      "cert_rotation",
+      "container_cpu",
+      "disk_health",
+      "dns_resolution",
+      "memory_pressure",
+      "nginx_requests",
+      "object_storage",
+      "postgres_replica",
+      "rpc_latency",
+      "task_scheduler",
+      "worker_queue"
+    ]
+  },
+  "final": {
+    "sha256": "1ac126e5558393486fb839326e15a433aa13762f76d29e0cc8d906a0c910eaab",
+    "n": 504,
+    "known": 360,
+    "domains": [
+      "broker_consumer",
+      "browser_webrtc",
+      "data_contract",
+      "edge_power",
+      "robot_battery",
+      "search_segment"
+    ]
+  }
+}

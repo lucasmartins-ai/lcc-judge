@@ -1,0 +1,5 @@
+FROM python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+LABEL lcc.tool-measurement.source-sha256="f6ae4ab14f3a3af664b494ec78bbb120c7a4f90cd0905f74e51252f9640c3269"
+COPY worker.py /opt/lcc-measure/worker.py
+USER 65534:65534

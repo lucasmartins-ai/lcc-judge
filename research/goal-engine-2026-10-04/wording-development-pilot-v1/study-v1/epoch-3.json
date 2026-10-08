@@ -1,0 +1,26 @@
+{
+  "protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+  "epoch": 3,
+  "stages": {
+    "classification": {
+      "steps": 653,
+      "units": 10434,
+      "pairs": 10434,
+      "nonpadding_tokens": 444384,
+      "padded_slots": 574536,
+      "weighted_mean_loss": 0.7633865248638253
+    },
+    "conditional": {
+      "steps": 230,
+      "units": 918,
+      "pairs": 3672,
+      "nonpadding_tokens": 154584,
+      "padded_slots": 186040,
+      "weighted_mean_loss": 0.3645018769310451
+    }
+  },
+  "all_updates_finite": true,
+  "frozen_parameter_sha256": "1a268b097aabe2976c50a16d79ea438d6ae3d774680edb74bce0a400b38faf0d",
+  "seconds": 98.32820562506095,
+  "finished_at_utc": "2026-10-07T23:08:46.652585+00:00"
+}

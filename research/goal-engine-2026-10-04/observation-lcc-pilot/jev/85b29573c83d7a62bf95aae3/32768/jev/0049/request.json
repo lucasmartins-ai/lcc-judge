@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0049_b8bed42abd47": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0049_b8bed42abd47 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0049_b8bed42abd47",
+        "text": "{\"entity\": \"archive-00000180\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000181\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000182\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000183\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000184\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000185\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000186\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000187\", \"field\": \"supply_current_ma\", \"level\": \"ERROR\", \"time\": \"2027-01-27T15:00:00Z\", \"unit\": \"count\", \"value\": 99}\n"
+      }
+    ],
+    "objective": "Report all observations for entity node-270a90fa, field supply_current_ma, between 2027-01-27T15:00:00Z and 2027-01-27T15:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

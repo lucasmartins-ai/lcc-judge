@@ -1,0 +1,97 @@
+{
+  "raw_receipt_count": 108,
+  "raw_code_receipt_count": 24,
+  "raw_typed_receipt_count": 84,
+  "source_summary": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "recall": 1.0,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 84,
+      "positives": 42,
+      "negatives": 42,
+      "tp": 40,
+      "fp": 0,
+      "fn": 2,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.047619047619047616,
+      "recall": 0.9523809523809523,
+      "unknown_rate": 0.0
+    }
+  },
+  "independent_verification": {
+    "eval_candidate": {
+      "code": {
+        "n": 24,
+        "positives": 12,
+        "negatives": 12,
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0,
+        "fpr": 0.0,
+        "fnr": 0.0,
+        "recall": 1.0,
+        "unknown_rate": 0.0
+      },
+      "typed": {
+        "n": 84,
+        "positives": 42,
+        "negatives": 42,
+        "tp": 40,
+        "fp": 0,
+        "fn": 2,
+        "unknown": 0,
+        "fpr": 0.0,
+        "fnr": 0.047619047619047616,
+        "recall": 0.9523809523809523,
+        "unknown_rate": 0.0
+      }
+    },
+    "eval_legacy": {
+      "code": {
+        "n": 24,
+        "positives": 12,
+        "negatives": 12,
+        "tp": 11,
+        "fp": 2,
+        "fn": 1,
+        "unknown": 0,
+        "fpr": 0.16666666666666666,
+        "fnr": 0.08333333333333333,
+        "recall": 0.9166666666666666,
+        "unknown_rate": 0.0
+      },
+      "typed": {
+        "n": 84,
+        "positives": 42,
+        "negatives": 42,
+        "tp": 41,
+        "fp": 37,
+        "fn": 1,
+        "unknown": 0,
+        "fpr": 0.8809523809523809,
+        "fnr": 0.023809523809523808,
+        "recall": 0.9761904761904762,
+        "unknown_rate": 0.0
+      }
+    },
+    "frozen_threshold": 0.5,
+    "threshold_unchanged_before_eval": true,
+    "calibration_cases": 80,
+    "eval_cases": 108,
+    "canonical_ledger_entries": 140,
+    "all_training_ineligible": true
+  }
+}

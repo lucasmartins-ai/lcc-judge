@@ -1,0 +1,29 @@
+{
+  "data_protocol_sha256": "932c23cd40b323e88186a9755e887a44ede076d168d6f08264b0446a022ce96b",
+  "training_rows": 4864,
+  "projected_training_rows": 4800,
+  "unique_training_views": 3676,
+  "class_counts": {
+    "1": 1772,
+    "0": 1772,
+    "2": 132
+  },
+  "global_class_weights": [
+    0.6914973664409331,
+    0.6914973664409331,
+    9.282828282828282
+  ],
+  "class_id_meanings": [
+    "irrelevant",
+    "relevant",
+    "semantic_UNKNOWN"
+  ],
+  "train_sha256": "de03d3407a0b32d985670efe9a67e87059395bea39dd9c18657c84d7bcd69785",
+  "views_sha256": "20643e3050fbd968def1ef2ab16ade0854a1fb8c5174470e12d6eea8340901c4",
+  "helper_sha256": "4c5e5787b3bd16532a5008d6e0ab1f2ed2fa83b206782063dec999a81451ea1b",
+  "unique_items_sha256": "2611824642cb1aa691611b4b913cfd27a5bfd9683ae7591595d55d566bf3585e",
+  "conflicting_effective_input_labels": 0,
+  "model_forwards": 0,
+  "training_updates": 0,
+  "scope": "Training preparation only; no executed candidate protocol or quality result"
+}

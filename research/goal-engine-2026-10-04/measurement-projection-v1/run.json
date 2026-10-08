@@ -1,0 +1,63 @@
+{
+  "protocol_sha256": "0ea543937cf8335b8c65ab67beada697a631e45cd6b67e3f353af1fd8a98bfe7",
+  "metrics": {
+    "validation": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.8477105034722222,
+      "paired_auc": 0.921875,
+      "paired_reports": 192,
+      "positive_recall": 0.953125,
+      "negative_rejection": 0.34375,
+      "within_objective": {
+        "wins": 350,
+        "comparisons": 384,
+        "auc": 0.9114583333333334,
+        "objectives": 96
+      }
+    },
+    "final": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.69287109375,
+      "paired_auc": 0.765625,
+      "paired_reports": 192,
+      "positive_recall": 0.9479166666666666,
+      "negative_rejection": 0.09895833333333333,
+      "within_objective": {
+        "wins": 265,
+        "comparisons": 384,
+        "auc": 0.6901041666666666,
+        "objectives": 96
+      }
+    }
+  },
+  "observed_pass_s": {
+    "validation": [
+      0.5179697499843314,
+      0.46591841703047976,
+      0.458320708014071
+    ],
+    "final": [
+      0.49153054098133,
+      0.4952736250124872,
+      0.4901807499700226
+    ]
+  },
+  "all_scores_identical": true,
+  "accounting": {
+    "counted_tokens": 49212,
+    "submitted_tokens": 49212,
+    "forward_completed_tokens": 49212,
+    "valid_score_tokens": 49212
+  },
+  "peak_process_rss_bytes": 663617536,
+  "final_gate_pass": false,
+  "adoption": false,
+  "API_calls": 0,
+  "training_executed": false
+}

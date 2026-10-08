@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211451_10bf87", "timestamp": 1791058491409}
+{"type": "text", "text": "{\"status\":\"ANSWER", "timestamp": 1791058495923}
+{"type": "text", "text": "\",\"answer\":\"Select online migration for shard 7 using logical replication/CDC, with cutover under 15 seconds after catch-up.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"shard\":7,\"maximum", "timestamp": 1791058495924}
+{"type": "text", "text": "_cutover_seconds\":15},\"python\":\"\"}", "timestamp": 1791058495925}
+{"type": "result", "session_id": "20261003_211451_10bf87", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Select online migration for shard 7 using logical replication/CDC, with cutover under 15 seconds after catch-up.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"shard\":7,\"maximum_cutover_seconds\":15},\"python\":\"\"}", "tokens": {"input": 1305, "output": 184, "total": 1629, "cache_read": 140, "cache_write": 0}, "duration_ms": 4535, "timestamp": 1791058495945}

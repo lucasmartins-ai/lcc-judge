@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141831_4a452f", "timestamp": 1791119911865}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Disable FAST_CHECKOUT via the dynamic flag; do not roll back the unchanged, healthy binary.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"endpoint\":\"/", "timestamp": 1791119917507}
+{"type": "text", "text": "api/flags/fast_checkout=false\",\"effective_within_ms\":500},\"python\":\"\"}", "timestamp": 1791119917508}
+{"type": "result", "session_id": "20261004_141831_4a452f", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Disable FAST_CHECKOUT via the dynamic flag; do not roll back the unchanged, healthy binary.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"endpoint\":\"/api/flags/fast_checkout=false\",\"effective_within_ms\":500},\"python\":\"\"}", "tokens": {"input": 2, "output": 173, "total": 31132, "cache_read": 30957, "cache_write": 0}, "duration_ms": 5660, "timestamp": 1791119917525}

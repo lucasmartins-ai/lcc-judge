@@ -1,0 +1,109 @@
+{
+  "task_id": "task_006_sql_injection",
+  "condition": "ablation",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "31162a74c917cd105d15521d8763c9e48c5414ab0ff7d41b017d4704bed3968a",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_006_sql_injection/ablation/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_006_sql_injection/ablation/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Use bound parameters and treat the search text literally to prevent SQL injection and unintended wildcard expansion.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def search_users(tenant_id, query):\n    escaped_query = query.replace(\"\\\\\", \"\\\\\\\\\").replace(\"%\", \"\\\\%\").replace(\"_\", \"\\\\_\")\n    return db.execute(\n        \"SELECT id, tenant_id, name FROM users \"\n        \"WHERE tenant_id = ? AND name LIKE ? ESCAPE '\\\\'\",\n        (tenant_id, \"%\" + escaped_query + \"%\"),\n    ).fetchall()\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211041_76713d",
+      "timestamp": 1791058241506
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211041_76713d",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Use bound parameters and treat the search text literally to prevent SQL injection and unintended wildcard expansion.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def search_users(tenant_id, query):\\n    escaped_query = query.replace(\\\"\\\\\\\\\\\", \\\"\\\\\\\\\\\\\\\\\\\").replace(\\\"%\\\", \\\"\\\\\\\\%\\\").replace(\\\"_\\\", \\\"\\\\\\\\_\\\")\\n    return db.execute(\\n        \\\"SELECT id, tenant_id, name FROM users \\\"\\n        \\\"WHERE tenant_id = ? AND name LIKE ? ESCAPE '\\\\\\\\'\\\",\\n        (tenant_id, \\\"%\\\" + escaped_query + \\\"%\\\"),\\n    ).fetchall()\\n\"}",
+    "tokens": {
+      "input": 962,
+      "output": 591,
+      "total": 1693,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 8274,
+    "timestamp": 1791058249780
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "normal_query",
+      "tenant_isolation",
+      "tenant_injection",
+      "query_injection",
+      "table_preserved"
+    ],
+    "program_stdout": "",
+    "source_sha256": "348d3293d4c1ff848debad4a72882bf9cca053cdf7edb27c4a05989181b03797"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.71
+        }
+      },
+      "usage": {
+        "input_tokens": 579,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 267.079875,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.4318e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 10.545865083986428
+}

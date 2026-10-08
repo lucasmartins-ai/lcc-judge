@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "design_sha256": "617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2",
+  "captures": {
+    "calibration": {
+      "status": "PASS",
+      "protocol_sha256": "2bdc84bea655d83fa13598a9208780971a3a0c374dbdb450a33b347737dca3da",
+      "raw_sha256": "0440b0e4abec9eed58ae093f77f5fd890a947627bcd66d422f64f78d82d3e668",
+      "fixtures": 16,
+      "verified_fields": 288,
+      "retry_outcomes": {
+        "success": 11,
+        "exhausted": 5
+      },
+      "udp_read_modes": {
+        "0": 6,
+        "1": 5,
+        "2": 5
+      },
+      "git_index_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "git_worktree_edits": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "git_clean_tracked": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "git_staged_delete_fixtures": 4,
+      "zero_observed_receive_fixtures": 5,
+      "actual_git_blob_identities_verified": true,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "observed_capture_wall_s": 0.8500493330066092,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh confirmation calibration; bound pre-scoring design 617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2; calibration excluded, no P2 or model scoring; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+    },
+    "final": {
+      "status": "PASS",
+      "protocol_sha256": "74305ef056795e7bc2dd65be696d068cb863e80d49247fbbd1f9d76280b53268",
+      "raw_sha256": "f223aa4065689cfd0a2b9b888e837600591d86ad8b23e5e6d03a383f18b3d2f0",
+      "fixtures": 64,
+      "verified_fields": 1152,
+      "retry_outcomes": {
+        "success": 43,
+        "exhausted": 21
+      },
+      "udp_read_modes": {
+        "0": 22,
+        "1": 21,
+        "2": 21
+      },
+      "git_index_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "git_worktree_edits": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "git_clean_tracked": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "git_staged_delete_fixtures": 16,
+      "zero_observed_receive_fixtures": 21,
+      "actual_git_blob_identities_verified": true,
+      "source_image_dependency_and_raw_fields_verified": true,
+      "observed_capture_wall_s": 1.8539523340296,
+      "model_forwards": 0,
+      "API_calls": 0,
+      "P2_admission": false,
+      "default_changed": false,
+      "tools_reexecuted_during_audit": false,
+      "admission": false,
+      "scope": "Fresh confirmation final; bound pre-scoring design 617cb24510eb6cc538b640ef73b7b917fc5ff5f28f6e46c7026b10174a2dc9b2; calibration excluded, no P2 or model scoring; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+    }
+  },
+  "expected_final_rows": 163712,
+  "final_fixtures": 64,
+  "final_fields": 1152,
+  "excluded_calibration_fixtures": 16,
+  "excluded_calibration_fields": 288,
+  "final_calibration_fixture_overlap": 0,
+  "final_prior_fixture_overlap": 0,
+  "calibration_prior_fixture_overlap": 0,
+  "prior_fixture_hashes_checked": 188,
+  "prior_capture_files_checked": [
+    "tool-relations-grounded-v1/calibration/raw.json",
+    "tool-relations-grounded-v1/train/raw.json",
+    "tool-relations-grounded-v1/final/raw.json",
+    "tool-relations-grounded-v1/validation/raw.json",
+    "tool-relations-grounded-v1/supervision-v1/captures/train/raw.json",
+    "tool-relations-grounded-v1/supervision-v1/captures/final/raw.json",
+    "tool-relations-grounded-v1/supervision-v1/captures/validation/raw.json",
+    "tool-relation-states-v2/calibration/raw.json",
+    "tool-relation-states-v2/train/raw.json",
+    "tool-relation-states-v2/validation/raw.json",
+    "tool-relation-states-v2/supervision-v1/captures/calibration/raw.json",
+    "tool-relation-states-v2/supervision-v1/captures/train/raw.json",
+    "tool-relation-states-v2/supervision-v1/captures/validation/raw.json",
+    "tool-role-grounded-v1/calibration-probe-v1/raw.json"
+  ],
+  "capture_seconds": {
+    "calibration": 0.8500493330066092,
+    "final": 1.8539523340296
+  },
+  "candidate_final_model_forwards": 0,
+  "derived_final_rows_emitted": false,
+  "actual_final_tokenizer_recount_complete": false,
+  "P2_admission": false,
+  "quality_approved": false,
+  "scope": "Existing independent raw-tool audit plus declaration/pair/wording/request/chronology/prior-content checks. Full final row/input/token audit and model quality remain pending; authored known primitives are not production or P2 ground truth."
+}

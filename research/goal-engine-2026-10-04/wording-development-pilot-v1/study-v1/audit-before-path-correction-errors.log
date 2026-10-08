@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/Master/Downloads/LCC-judge/research/audit_wording_pilot_study.py", line 123, in <module>
+    result = inspected_data(DATA,True) if args.data_only else audit()
+                                                              ~~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/research/audit_wording_pilot_study.py", line 99, in audit
+    result = core.audit(OUT,verify_weights=True)
+  File "/Users/Master/Downloads/LCC-judge/research/audit_varied_relation_dev.py", line 124, in audit
+    for name,value in p['data_files'].items():assert sha(data/name)==value
+                                                     ~~~^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/audit_tool_relation_weights.py", line 25, in sha
+    with path.open('rb') as stream:return hashlib.file_digest(stream,'sha256').hexdigest()
+         ~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/pathlib/__init__.py", line 771, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/wording-development-pilot-v1/../protocol.json'

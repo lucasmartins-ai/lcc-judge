@@ -1,0 +1,86 @@
+{
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/observation-lcc-pilot/laya/9ca941274fb98e342e4a443e/8192/episodes/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/observation-lcc-pilot/laya/9ca941274fb98e342e4a443e/8192/episodes/1/query.txt"
+  ],
+  "artifact": {
+    "observations": [
+      {
+        "time": "2027-03-17T02:02:00Z",
+        "unit": "count",
+        "value": 0
+      },
+      {
+        "time": "2027-03-17T02:02:00Z",
+        "unit": "count",
+        "value": 12
+      }
+    ],
+    "status": "ANSWER",
+    "unresolved": []
+  },
+  "budget_cl100k": 8192,
+  "generation_seed_applied": false,
+  "hermes_receipt": {
+    "duration_ms": 4229,
+    "exit_code": 0,
+    "session_id": "20261004_171547_58840c",
+    "text": "{\"status\":\"ANSWER\",\"observations\":[{\"time\":\"2027-03-17T02:02:00Z\",\"value\":0,\"unit\":\"count\"},{\"time\":\"2027-03-17T02:02:00Z\",\"value\":12,\"unit\":\"count\"}],\"unresolved\":[]}",
+    "timestamp": 1791130552556,
+    "tokens": {
+      "cache_read": 9099,
+      "cache_write": 0,
+      "input": 2,
+      "output": 187,
+      "total": 9288
+    },
+    "type": "result"
+  },
+  "input_sha256": "e22f0fa3e5d0ce7af1a49063559a5c65d3b0028f955eaadaad69e6f1dbedebdb",
+  "model_init": [
+    {
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_171547_58840c",
+      "subtype": "init",
+      "timestamp": 1791130548327,
+      "type": "system"
+    }
+  ],
+  "profile": "laya",
+  "protocol_sha256": "e28c4f16209e629ece255cbf23359675aad8ec90d8be05b62476bde9a538334c",
+  "repeat": 1,
+  "resumed_session": false,
+  "returncode": 0,
+  "status": "SUCCESS",
+  "task_id": "9ca941274fb98e342e4a443e",
+  "tool_events": 0,
+  "tools": "none",
+  "training_admission": false,
+  "verification": {
+    "actual_observations": 2,
+    "expected_observations": 2,
+    "passed": true,
+    "reason": "exact_observations_and_unknowns"
+  },
+  "wall_s": 6.239396958029829
+}

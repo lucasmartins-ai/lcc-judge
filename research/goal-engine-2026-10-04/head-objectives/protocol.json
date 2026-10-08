@@ -1,0 +1,46 @@
+{
+  "schema": "frozen-head-objectives/0.1",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "epochs": 3,
+  "learning_rate": 0.0003,
+  "batch_size": 32,
+  "encoder_batch_size": 8,
+  "max_pair_tokens": 2048,
+  "device": "mps",
+  "threads": 8,
+  "arms": [
+    "bce",
+    "pairwise",
+    "joint"
+  ],
+  "encoder_frozen": true,
+  "validation_seed": 442378,
+  "final_eval_seed": 442379,
+  "new_items_per_domain": 120,
+  "selection": "highest validation mean(J,D), averaged over three seeds; no OOD or probe selection",
+  "criteria": {
+    "normalization_delta_J_min": 0.03,
+    "normalization_CI_low_positive": true,
+    "normalization_max_D_loss": 0.01,
+    "candidate_D_min": 0.7,
+    "candidate_D_gain_CI_low_positive": true,
+    "candidate_max_J_loss": 0.02
+  },
+  "metric": "strict pooled P(pos > noise); bootstrap whole domain/objective groups",
+  "calibration": "none; logits/rank scores are not necessity probabilities",
+  "evaluation_scope": "fresh synthetic texts in known generator families; diagnostic, not external confirmation",
+  "parent_weights_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+  "parent_config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+  "train_sha256": "5f66ee54a3c4ac2e94e8f6845f22ca3647bdb013ae4ecfaeac82ed6d136327fd",
+  "sources": {
+    "research/head_objective_study.py": "56430b10de197c62977d2cfcf4779d5282f644f26af7593c9341e53dca3d22dc",
+    "specialist/model.py": "7acd4fc759c4ea3ec9bd24290b0bb2d8427ff19807c801d9262a7d868ed34b62",
+    "specialist/checkpoint.py": "fb85b55bf8dd340b8fd94d4e6d2f03f25380009f6167ee8d1521e39a1ac33f87",
+    "specialist/corpus.py": "4ddb3dafe69ea884e715406bec7a871755d324eee788d63b467ad06d91d4d6d3"
+  },
+  "sha256": "cd652aa1e89c385258d0ef6c18243ade5814bf5f3b8cbc8f250602bbbaaa1c6f"
+}

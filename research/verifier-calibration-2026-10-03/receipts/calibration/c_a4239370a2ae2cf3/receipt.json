@@ -1,0 +1,29 @@
+{
+  "case_id": "c_a4239370a2ae2cf3",
+  "split": "calibration",
+  "task_number": 10,
+  "kind": "code",
+  "family": "no_idempotency",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "bcf5b6563a29d427f756a4a7945e9b30187da7bcc1059f0388667e323bdd22e1",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Duplicate did not return the cached receipt",
+    "program_stdout": "",
+    "source_sha256": "778b80918aa7791e0d993bd3b6e2f081a4a7a9603591dd56d0e83ba2c74559c7"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12001670800964348
+}

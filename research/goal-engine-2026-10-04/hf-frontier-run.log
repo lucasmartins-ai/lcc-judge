@@ -1,0 +1,43 @@
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (14396 > 8192). Running this sequence through the model will result in indexing errors
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 23508.31it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.norm.weight  | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+head.dense.weight | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+24/744 saved
+48/744 saved
+72/744 saved
+96/744 saved
+120/744 saved
+144/744 saved
+168/744 saved
+192/744 saved
+216/744 saved
+240/744 saved
+264/744 saved
+288/744 saved
+312/744 saved
+336/744 saved
+360/744 saved
+384/744 saved
+408/744 saved
+432/744 saved
+456/744 saved
+480/744 saved
+504/744 saved
+528/744 saved
+552/744 saved
+576/744 saved
+600/744 saved
+624/744 saved
+648/744 saved
+672/744 saved
+696/744 saved
+720/744 saved
+744/744 saved
+All native-window frontier calls saved

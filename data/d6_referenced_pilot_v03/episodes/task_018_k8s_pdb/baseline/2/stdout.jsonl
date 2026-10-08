@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114256_72ae0c", "timestamp": 1791110576691}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget requiring at least 3 replicas to remain available, preserving quorum during", "timestamp": 1791110582488}
+{"type": "text", "text": " one-node drains.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "timestamp": 1791110582489}
+{"type": "result", "session_id": "20261004_114256_72ae0c", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a PodDisruptionBudget requiring at least 3 replicas to remain available, preserving quorum during one-node drains.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 2, "output": 249, "total": 1769, "cache_read": 1518, "cache_write": 0}, "duration_ms": 7342, "timestamp": 1791110584034}

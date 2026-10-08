@@ -1,0 +1,170 @@
+{
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "threshold_sha256": "d6afda3a7c96b41e6a3dfc1028f26eb10d6c717a5c775d257e3603047ba7e158",
+  "frozen_threshold": 0.5,
+  "diagnostic_threshold": 0.5,
+  "eval_legacy": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 11,
+      "fp": 2,
+      "fn": 1,
+      "unknown": 0,
+      "fpr": 0.16666666666666666,
+      "fnr": 0.08333333333333333,
+      "recall": 0.9166666666666666,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 84,
+      "positives": 42,
+      "negatives": 42,
+      "tp": 41,
+      "fp": 37,
+      "fn": 1,
+      "unknown": 0,
+      "fpr": 0.8809523809523809,
+      "fnr": 0.023809523809523808,
+      "recall": 0.9761904761904762,
+      "unknown_rate": 0.0
+    }
+  },
+  "eval_candidate": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "recall": 1.0,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 84,
+      "positives": 42,
+      "negatives": 42,
+      "tp": 40,
+      "fp": 0,
+      "fn": 2,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.047619047619047616,
+      "recall": 0.9523809523809523,
+      "unknown_rate": 0.0
+    }
+  },
+  "provisional_targets_pass": true,
+  "training_eligible_records": 0,
+  "jev_calls": 140,
+  "jev_successes": 140,
+  "jev_input_tokens": 140995,
+  "tariff_estimated_cost_usd": 0.0059217900000000006,
+  "actual_billed_cost_usd": null,
+  "errors": [
+    {
+      "case_id": "c_9a5a6c1b74da0a2b",
+      "split": "eval",
+      "task_number": 18,
+      "kind": "typed",
+      "family": "eval_valid_answer_0",
+      "expected": true,
+      "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+      "case_sha256": "856e9655a04495b277d320ace1932337b26b6dbedec392fad9f92940c732c7c7",
+      "legacy_verification": {
+        "passed": false,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "candidate_verification": {
+        "passed": true,
+        "reason": "bounded_typed_constraints",
+        "semantic_checked": false
+      },
+      "legacy": false,
+      "structural": true,
+      "semantic_probability": 0.4,
+      "jev_called": true,
+      "training_eligible": false,
+      "request_sha256": "7275c538f7da4da39518ebae422f0dd949e295c73cfd3c9f9b5c8eca62a45772",
+      "jev": {
+        "status": "SUCCESS",
+        "response": {
+          "model": "jev-1.13.0",
+          "answers": {
+            "consistent": {
+              "type": "noul",
+              "noul": 0.4
+            }
+          },
+          "usage": {
+            "input_tokens": 1048,
+            "output_tokens": 20
+          }
+        },
+        "latency_ms": 268.158542,
+        "cost_usd": null,
+        "tariff_estimated_cost_usd": 4.401600000000001e-05,
+        "tariff_source": "https://docs.typesafe.ai/models"
+      },
+      "wall_s": 0.3911323330248706,
+      "combined": false
+    },
+    {
+      "case_id": "c_581587d2de2b72ca",
+      "split": "eval",
+      "task_number": 18,
+      "kind": "typed",
+      "family": "eval_valid_answer_2",
+      "expected": true,
+      "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+      "case_sha256": "17ec9b8e95279ee0f09070732f98246c02f9e6ceaea725a4e6e645c43bf13eb7",
+      "legacy_verification": {
+        "passed": true,
+        "reason": "curated_typed_outcome_constraints",
+        "verifier_kind": "curated_answer_assertions",
+        "production_environment_replayed": false
+      },
+      "candidate_verification": {
+        "passed": true,
+        "reason": "bounded_typed_constraints",
+        "semantic_checked": false
+      },
+      "legacy": true,
+      "structural": true,
+      "semantic_probability": 0.36,
+      "jev_called": true,
+      "training_eligible": false,
+      "request_sha256": "8e63ab30a30d5fd2bbd9e7ce0d0268b15e78e9543ccfe6b820004f36af3c175d",
+      "jev": {
+        "status": "SUCCESS",
+        "response": {
+          "model": "jev-1.13.0",
+          "answers": {
+            "consistent": {
+              "type": "noul",
+              "noul": 0.36
+            }
+          },
+          "usage": {
+            "input_tokens": 1043,
+            "output_tokens": 20
+          }
+        },
+        "latency_ms": 273.769625,
+        "cost_usd": null,
+        "tariff_estimated_cost_usd": 4.380600000000001e-05,
+        "tariff_source": "https://docs.typesafe.ai/models"
+      },
+      "wall_s": 0.40601600002264604,
+      "combined": false
+    }
+  ],
+  "scope": "single-author curated challenges; no external label independence, no production replay, no P2 admission"
+}

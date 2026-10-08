@@ -1,0 +1,23 @@
+{
+  "total_tasks": 20,
+  "dataset_type": "SYNTHETIC",
+  "status": "SMOKE_ONLY",
+  "label_counts": {
+    "NECESSARY": 16,
+    "UNNECESSARY": 2,
+    "UNKNOWN": 2
+  },
+  "concordance_rate": 0.9,
+  "unknown_rate": 0.1,
+  "training_eligible_records": 0,
+  "telemetry": {
+    "total_time_s": 0.0046862919989507645,
+    "actual_reported_cost_usd": 0.0,
+    "cost_per_task_usd": 0.0,
+    "costs_are_measured": false
+  },
+  "proposed_reliability_threshold": 0.95,
+  "reliability_threshold_validated": false,
+  "verifier_kind": "diagnostic_keyword_match",
+  "records_file": "data/d6_pilot/records.jsonl"
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "d06f305f8d6266db6aee69b24b3f911106e0d7a9ae1023f7190941dd510b5ca8",
+  "raw_sha256": "831398600f4e85c3b2233d457132ac485995a91e57fccbdedcc04c42cef2be58",
+  "fixtures": 4,
+  "fields_per_fixture": 18,
+  "verified_fields": 72,
+  "source_image_dependency_and_raw_fields_verified": true,
+  "versions": {
+    "git": "git version 2.47.3",
+    "tenacity": "9.1.4"
+  },
+  "observed_capture_wall_s": 0.871678541006986,
+  "minimum_datagrams": 5,
+  "empty_datagram_checked_in_each_fixture": true,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "tools_reexecuted_during_audit": false,
+  "admission": false,
+  "scope": "Exposed calibration only, excluded from all train/validation/fresh confirmation; saved authored fixtures/actual tool receipts, not independent production/P2 certification"
+}

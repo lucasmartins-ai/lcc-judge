@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114056_83ccb1", "timestamp": 1791110457319}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Use online logical replication/CDC for shard 7; it supports cutover in under 15 seconds once caught up.\",\"mechanism\":\"online_logical_replication", "timestamp": 1791110460894}
+{"type": "text", "text": "\",\"parameters\":{\"shard\":7,\"cutover_seconds\":\"<15\"},\"python\":\"\"}", "timestamp": 1791110460903}
+{"type": "result", "session_id": "20261004_114056_83ccb1", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Use online logical replication/CDC for shard 7; it supports cutover in under 15 seconds once caught up.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"shard\":7,\"cutover_seconds\":\"<15\"},\"python\":\"\"}", "tokens": {"input": 2, "output": 133, "total": 1571, "cache_read": 1436, "cache_write": 0}, "duration_ms": 4468, "timestamp": 1791110461788}

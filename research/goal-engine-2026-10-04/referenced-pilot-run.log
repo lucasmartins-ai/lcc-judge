@@ -1,0 +1,58 @@
+6/120 receipts
+12/120 receipts
+18/120 receipts
+24/120 receipts
+30/120 receipts
+36/120 receipts
+42/120 receipts
+48/120 receipts
+54/120 receipts
+60/120 receipts
+66/120 receipts
+72/120 receipts
+78/120 receipts
+84/120 receipts
+90/120 receipts
+96/120 receipts
+102/120 receipts
+108/120 receipts
+114/120 receipts
+120/120 receipts
+{
+  "tasks": 20,
+  "episodes": 120,
+  "expected_episodes": 120,
+  "executor_successes": 117,
+  "execution_errors": 15,
+  "label_counts": {
+    "NECESSARY": 5,
+    "UNNECESSARY": 7,
+    "UNKNOWN": 8
+  },
+  "concordance_rate": 0.6,
+  "unknown_rate": 0.4,
+  "baseline_verified_runs": 50,
+  "ablation_verified_runs": 27,
+  "training_eligible_records": 0,
+  "proposed_reliability_threshold": 0.95,
+  "threshold_validated": false,
+  "costing": {
+    "hermes_input_tokens": 85951,
+    "hermes_output_tokens": 76925,
+    "hermes_actual_cost_usd": null,
+    "jev_calls": 62,
+    "jev_successes": 62,
+    "jev_input_tokens": 69949,
+    "jev_tariff_estimated_cost_usd": 0.0029378580000000002,
+    "tariff_source": "https://docs.typesafe.ai/models",
+    "actual_invoice_cost_known": false
+  },
+  "median_episode_wall_s": 8.57730931250262,
+  "scope": "Referenced bounded curated replay; expanded Docker code checks; typed consistency after structure; two quarantined contracts",
+  "generation_seed_applied": false,
+  "model_snapshot_immutable": false,
+  "pilot_targets_pass": false,
+  "reference_contracts": 20,
+  "independent_human_label_review": false,
+  "training_admission": false
+}

@@ -1,0 +1,48 @@
+{
+  "case_id": "c_0cab8509f2681eb7",
+  "split": "calibration",
+  "task_number": 8,
+  "kind": "typed",
+  "family": "calibration_valid_answer_1",
+  "expected": true,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "a316621cc1e45cf44ff33f389b2316737be97d3200e0231ba086e9d191ec4662",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "candidate_verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "legacy": true,
+  "structural": true,
+  "semantic_probability": 0.88,
+  "jev_called": true,
+  "training_eligible": false,
+  "request_sha256": "22f632146633609b83169005687e1a12fb601ac28f4a6855179399aaaf054220",
+  "jev": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.88
+        }
+      },
+      "usage": {
+        "input_tokens": 1022,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 263.04925000000003,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 4.2924e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_s": 0.3908047919976525
+}

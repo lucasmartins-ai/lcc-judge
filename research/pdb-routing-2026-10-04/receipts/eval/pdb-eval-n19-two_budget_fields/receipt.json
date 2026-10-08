@@ -1,0 +1,33 @@
+{
+  "case_id": "pdb-eval-n19-two_budget_fields",
+  "split": "eval",
+  "family": "two_budget_fields",
+  "expected": false,
+  "case_sha256": "cde8e9981ce6393fd7c7f15c8ec7ae2bc8377ff76a039653347a05ace744eb2f",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "one_budget_field_required"
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "one_budget_field_required"
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "one_budget_field_required"
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

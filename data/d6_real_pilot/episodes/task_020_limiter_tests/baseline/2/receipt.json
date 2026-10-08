@@ -1,0 +1,108 @@
+{
+  "task_id": "task_020_limiter_tests",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "10445f0279a77e29cf70ef85c018970f6badcfb66a3ffd434d07693bfc7b1f76",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_020_limiter_tests/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_020_limiter_tests/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Add a deterministic test for a five-request burst, immediate rejection, and one-token recovery after one second.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def test_burst(TokenBucket):\n    now = [0.0]\n    bucket = TokenBucket(capacity=5, refill_rate=1.0, clock=lambda: now[0])\n\n    results = [bucket.allow() for _ in range(5)]\n    assert all(results), f\"Expected 5 successful requests, got {results}\"\n    assert bucket.allow() is False, \"The sixth request should be rejected\"\n\n    now[0] += 1.0\n    assert bucket.allow() is True, \"One request should succeed after 1 second\"\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211716_c939b0",
+      "timestamp": 1791058636713
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211716_c939b0",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Add a deterministic test for a five-request burst, immediate rejection, and one-token recovery after one second.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def test_burst(TokenBucket):\\n    now = [0.0]\\n    bucket = TokenBucket(capacity=5, refill_rate=1.0, clock=lambda: now[0])\\n\\n    results = [bucket.allow() for _ in range(5)]\\n    assert all(results), f\\\"Expected 5 successful requests, got {results}\\\"\\n    assert bucket.allow() is False, \\\"The sixth request should be rejected\\\"\\n\\n    now[0] += 1.0\\n    assert bucket.allow() is True, \\\"One request should succeed after 1 second\\\"\\n\"}",
+    "tokens": {
+      "input": 1036,
+      "output": 666,
+      "total": 1842,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 8902,
+    "timestamp": 1791058645616
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "correct_bucket_passes",
+      "kills_always_allow",
+      "kills_no_refill",
+      "kills_wrong_burst"
+    ],
+    "program_stdout": "",
+    "source_sha256": "7f04ef73039163729e35b996edfdcf6acbca968ad9578a45de5c94163f8cdbc7"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.83
+        }
+      },
+      "usage": {
+        "input_tokens": 709,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 266.09695800000003,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.9778000000000002e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 11.373587292007869
+}

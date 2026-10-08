@@ -1,0 +1,616 @@
+{
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "profile": "laya",
+  "task_id": "task_004_rollback_decision",
+  "budget_hf": 8192,
+  "input_sha256": "586fa580460226ad401c4480904d75a3ba9c7943b9766804459575fe3a41d443",
+  "output_sha256": "586fa580460226ad401c4480904d75a3ba9c7943b9766804459575fe3a41d443",
+  "compilation_wall_s": 5.291869415959809,
+  "additional_load_s": 0,
+  "report": {
+    "schema_version": "relevance-compaction-1.2",
+    "provider_requested": "laya",
+    "provider_used": "laya",
+    "degraded": false,
+    "objective": "Decide whether to execute full container rollback or flip dynamic flag.",
+    "threshold": 0.4,
+    "trim_threshold": null,
+    "trim_head_chars": 0,
+    "blocks_total": 24,
+    "blocks_scored": 24,
+    "blocks_protected": 0,
+    "blocks_dropped": 0,
+    "blocks_trimmed": 0,
+    "blocks_restored": 0,
+    "chars_before": 27748,
+    "chars_after": 27748,
+    "chars_removed": 0,
+    "tokens_before": 7103,
+    "tokens_after": 7103,
+    "token_count_method": "exact",
+    "tokenizer": "tiktoken",
+    "tokenizer_id": "o200k_base",
+    "tokenizer_version": "0.13.0",
+    "is_estimate": false,
+    "jev_model_requested": "jev-latest",
+    "jev_model_resolved": null,
+    "laya_model_requested": "convaiinnovations/laya-multilingual",
+    "laya_model_resolved": "laya-multilingual@052592a15d198d9ad47da779604259b10b47b7aa",
+    "laya_context_limit": 1024,
+    "context_budget_used": 349,
+    "laya_temperature": null,
+    "reduction_ratio": 0.0,
+    "worth_it": true,
+    "min_reduction": 0.25,
+    "calls": 24,
+    "latency_ms": 5253,
+    "compilation_ms": 5289,
+    "reused_decisions": 0,
+    "semantic_decisions": 24,
+    "semantic_cache_hits": 0,
+    "semantic_cache_misses": 24,
+    "sufficiency_checks": 0,
+    "sufficiency_failures": 0,
+    "sufficiency_confidence": null,
+    "relationship_edges": 0,
+    "marker_tokens": 0,
+    "policy_version": "relevance-compaction-1.2",
+    "trim_policy_version": "trim-1.2",
+    "parser_version": "blocks-1.0",
+    "protection_version": "protection-1.1",
+    "relationship_version": "relationships-1.0",
+    "prefix_protected": false,
+    "prefix_untouched": true,
+    "first_mutation_offset": null,
+    "prefix_sha256": "586fa580460226ad401c4480904d75a3ba9c7943b9766804459575fe3a41d443",
+    "output_sha256": "586fa580460226ad401c4480904d75a3ba9c7943b9766804459575fe3a41d443",
+    "degradation_reason": null,
+    "semantic_guarantee": "judged",
+    "invalidated_tokens": 0,
+    "break_even_reuses": null,
+    "needs_review": false,
+    "review_reason": null,
+    "semantic_verifier_sufficient": null,
+    "semantic_verifier_decision": null,
+    "semantic_verifier_confidence": null,
+    "semantic_verifier_model": null,
+    "semantic_verifier_missing": [],
+    "semantic_verifier_risks": [],
+    "warnings": [],
+    "decisions": [
+      {
+        "id": "blk_0001_00567093b859",
+        "index": 1,
+        "line_start": 1,
+        "line_end": 16,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9188,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9188,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0002_344628240a39",
+        "index": 2,
+        "line_start": 18,
+        "line_end": 33,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9062,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9062,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0003_96d23641d246",
+        "index": 3,
+        "line_start": 35,
+        "line_end": 50,
+        "chars": 1306,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9061,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9061,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0004_3c8b564b6bdf",
+        "index": 4,
+        "line_start": 52,
+        "line_end": 67,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8437,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8437,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0005_56847ce5c6f5",
+        "index": 5,
+        "line_start": 69,
+        "line_end": 84,
+        "chars": 1307,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9283,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9283,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0006_cac5e67d5535",
+        "index": 6,
+        "line_start": 86,
+        "line_end": 101,
+        "chars": 1306,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9299,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9299,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0007_dc28a6a5b30b",
+        "index": 7,
+        "line_start": 103,
+        "line_end": 118,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8925,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8925,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0008_e3dc5834d54f",
+        "index": 8,
+        "line_start": 120,
+        "line_end": 135,
+        "chars": 1304,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9128,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9128,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0009_6545642cc589",
+        "index": 9,
+        "line_start": 137,
+        "line_end": 152,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8948,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8948,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0010_02ada6c82961",
+        "index": 10,
+        "line_start": 154,
+        "line_end": 169,
+        "chars": 1307,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9233,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9233,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0011_ca49906f48d4",
+        "index": 11,
+        "line_start": 171,
+        "line_end": 186,
+        "chars": 1303,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9051,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9051,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0012_fd8a3f8eb5c5",
+        "index": 12,
+        "line_start": 188,
+        "line_end": 203,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8749,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8749,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0013_74c581d95b79",
+        "index": 13,
+        "line_start": 205,
+        "line_end": 220,
+        "chars": 1305,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8981,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8981,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0014_a68405742b81",
+        "index": 14,
+        "line_start": 222,
+        "line_end": 237,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9056,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9056,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0015_2257735a8e79",
+        "index": 15,
+        "line_start": 239,
+        "line_end": 254,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9056,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9056,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0016_1535f60f4d43",
+        "index": 16,
+        "line_start": 256,
+        "line_end": 271,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9004,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9004,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0017_fd2657fe43c9",
+        "index": 17,
+        "line_start": 273,
+        "line_end": 288,
+        "chars": 1303,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8575,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8575,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0018_3ac84b10fefc",
+        "index": 18,
+        "line_start": 290,
+        "line_end": 305,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9022,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9022,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0019_9ced05c23963",
+        "index": 19,
+        "line_start": 307,
+        "line_end": 322,
+        "chars": 1307,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8894,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8894,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0020_d4e702b110fa",
+        "index": 20,
+        "line_start": 324,
+        "line_end": 339,
+        "chars": 1306,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9275,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9275,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0021_c1b5f6cca317",
+        "index": 21,
+        "line_start": 341,
+        "line_end": 356,
+        "chars": 1311,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9101,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9101,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0022_ee2ee0a175ca",
+        "index": 22,
+        "line_start": 358,
+        "line_end": 358,
+        "chars": 113,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.8901,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.8901,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0023_5b8aedf2b9c4",
+        "index": 23,
+        "line_start": 360,
+        "line_end": 360,
+        "chars": 110,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.7768,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.7768,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0024_c69abe85fa02",
+        "index": 24,
+        "line_start": 362,
+        "line_end": 362,
+        "chars": 52,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.7418,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.7418,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      }
+    ]
+  },
+  "input_dossier_hf": 7825,
+  "same_bytes": true,
+  "laya_calls": [
+    {
+      "actual_tokens": [
+        604
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        603
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        601
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        599
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        600
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        597
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        602
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        597
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        601
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        598
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        596
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        600
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        600
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        604
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        604
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        603
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        594
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        597
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        598
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        599
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        602
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        187
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        185
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        179
+      ],
+      "refused_before_forward": false
+    }
+  ],
+  "jev_receipts": []
+}

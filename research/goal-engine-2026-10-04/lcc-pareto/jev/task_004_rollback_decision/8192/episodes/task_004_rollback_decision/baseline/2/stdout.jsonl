@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141823_bfb29f", "timestamp": 1791119903743}
+{"type": "text", "text": "{\"status\":\"ANSWER", "timestamp": 1791119907960}
+{"type": "text", "text": "\",\"answer\":\"Disable FAST_CHECKOUT via the dynamic kill switch; do not roll back the unchanged healthy binary.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"enabled\":false,\"endpoint\":", "timestamp": 1791119907977}
+{"type": "text", "text": "\"/api/flags/fast_checkout\",\"effective_within_ms\":500},\"python\":\"\"}", "timestamp": 1791119907986}
+{"type": "result", "session_id": "20261004_141823_bfb29f", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Disable FAST_CHECKOUT via the dynamic kill switch; do not roll back the unchanged healthy binary.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"enabled\":false,\"endpoint\":\"/api/flags/fast_checkout\",\"effective_within_ms\":500},\"python\":\"\"}", "tokens": {"input": 2, "output": 180, "total": 7069, "cache_read": 6887, "cache_write": 0}, "duration_ms": 4278, "timestamp": 1791119908021}

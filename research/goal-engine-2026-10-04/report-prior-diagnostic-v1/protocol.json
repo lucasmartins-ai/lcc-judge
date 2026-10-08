@@ -1,0 +1,158 @@
+{
+  "schema": "generic-report-control/0.1",
+  "base_protocol_sha256": "f029d0b44e485a9428696f91f309cbcb6f44275e341655f12dc69de185ddfda2",
+  "model": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "apache-2.0",
+    "architecture": [
+      "BertForSequenceClassification"
+    ],
+    "layers": 6,
+    "hidden_size": 384,
+    "max_position_embeddings": 512,
+    "model_inference_executed": false,
+    "scope": "artifact preparation only; no claim on exposed semantic cohorts or local performance",
+    "files": {
+      "model.safetensors": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+      "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "README.md": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "primary_sources": [
+      "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2",
+      "https://www.sbert.net/docs/cross_encoder/pretrained_models.html"
+    ]
+  },
+  "selected_by_original_validation": "bce",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "weights_sha256": {
+    "101": "a5c04d627c875b0cf31ce23dafc26df08939cdc17b20fa2376e620f221581206",
+    "202": "ac4ae62d33aac22945157dba1c59fd23bc6fd32bc8fe93816cb1b036af2fc4bc",
+    "303": "8d48d38da8d5234f36a99dc12668743ba8fcf0ec51503027d1dfe8553e7d6dd4"
+  },
+  "base_receipt_sha256": {
+    "101": {
+      "validation": "c44de86496346d27a87d3f0187d73bb05e84173a3058734d86adaf65267c4e7e",
+      "final": "b685b1db680e09c9bdd482d0c9e1682865d3b62332ef8667e0ac18e45cfd6625"
+    },
+    "202": {
+      "validation": "b121ec16ba9842d4e3bd5bcf0fc7ad8c29a7bf6e64e667374f6d040e465783da",
+      "final": "0adaba013291426a8d5fda2bcc3a9eaa210663d472666a66405d7f637fe6baeb"
+    },
+    "303": {
+      "validation": "f2a05f13cec781128a41fa919faad6970906685945968ebe36e0a0a575b7b372",
+      "final": "adeb7894cce09b7b0c8f27828a2775c633ae74242bc76fc4b538ce1e2e48ac8b"
+    }
+  },
+  "data": {
+    "train": {
+      "n": 2304,
+      "domains": [
+        "build",
+        "cache",
+        "command_result",
+        "connections",
+        "database",
+        "dependency",
+        "disk",
+        "download",
+        "environment",
+        "file_mode",
+        "http",
+        "manifest",
+        "memory",
+        "process_time",
+        "queue",
+        "symlink_size",
+        "test_coverage",
+        "test_result"
+      ],
+      "sha256": "ddb8d069fcf3bdc522b9b022f56940d47f5ef3ad5d4937df81c16539443b4184",
+      "views_sha256": "c5754dfea4cc3d2ae6a226ff616227bf25a9ace37b2bd257be7667ec4c99b656",
+      "max_pair_tokens": 31
+    },
+    "validation": {
+      "n": 576,
+      "domains": [
+        "build",
+        "cache",
+        "command_result",
+        "connections",
+        "database",
+        "dependency",
+        "disk",
+        "download",
+        "environment",
+        "file_mode",
+        "http",
+        "manifest",
+        "memory",
+        "process_time",
+        "queue",
+        "symlink_size",
+        "test_coverage",
+        "test_result"
+      ],
+      "sha256": "614a6e023d1016a2ff71d7c14cefce43cc02f2b92f621d3c492fd8f32de9730b",
+      "views_sha256": "e90101a1a16af62df4ef7e8651f8172043969b931e72be42165b92696116e4d8",
+      "max_pair_tokens": 30
+    },
+    "final": {
+      "n": 512,
+      "domains": [
+        "certificate",
+        "file_text",
+        "network_receive",
+        "repository_files",
+        "retry_wait",
+        "scheduler_duration",
+        "search_lines",
+        "storage_entries"
+      ],
+      "sha256": "8eb12f5a53e72f5a1ad61e122e61ed79624a71a30fee2f79cc79a07985ebc07a",
+      "views_sha256": "8a80a501a0bdec4ec2bdb1cf6876cb287b44f43beed1adf816398b73a03e18c5",
+      "max_pair_tokens": 28
+    }
+  },
+  "criteria": {
+    "auc_min": 0.9,
+    "paired_auc_min": 0.9,
+    "within_objective_auc_min": 0.9,
+    "positive_recall_min": 0.95,
+    "negative_rejection_min": 0.7,
+    "all_rows_complete": true,
+    "all_seeds_pass": true
+  },
+  "reference_question": "Report the observed measurement and its value.",
+  "recipe": "raw goal/report logit minus raw fixed-reference/report logit, coefficient1; no fitted query/label offsets",
+  "unique_reference_recipe": "one forward per original report_id; identical control input reused for the two original goals; labels/slots never passed to model",
+  "sources": {
+    "research/report_prior_study.py": "25e1a82e9ccf7b1ed7b65ac27c31bcddb0010bc379fca83a85c29f878e03cffd",
+    "research/reranker_control.py": "e6008735455efea368fa8f0f314d0b2feb6b9f630d32bc25c36265242ab61725",
+    "research/audit_reranker_diagnostic.py": "01ac1e270f9cb5651da8f6cc73f73aa055a2d7558f2fe97de092f09e2f39991b",
+    "research/reranker_diagnostic.py": "be9b0b796a433b55a9d8498894a9a67210e1004aadbf36e0693a153c1bf988f3",
+    "specialist/checkpoint.py": "ce9d6b97294ba784b377865bb9f6319b639f5439d878be421ad692686f616d20"
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 8,
+  "batch_size": 16,
+  "pair_window": 512,
+  "scope": "now-exposed compact-study cohorts, diagnostic only; no new transfer confirmation or probability interpretation",
+  "threshold": "greatest normalized validation threshold with >=.95 positive recall",
+  "training_executed": false,
+  "base_inference_reexecuted": false,
+  "API_calls": 0,
+  "coefficient_tuning_allowed": false,
+  "adoption": false,
+  "current_default_changed": false,
+  "sha256": "25873a220dcb0f0205d700c517b51a1e631035ad0d1428cb856b4f3c8b8756c4"
+}

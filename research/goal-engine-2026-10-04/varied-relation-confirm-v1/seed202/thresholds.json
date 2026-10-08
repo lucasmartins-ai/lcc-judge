@@ -1,0 +1,13 @@
+{
+  "protocol_sha256": "345f4dc58dd4448a02c99cd9bce86be91f1b6e943c8b31282b407dd876ac8092",
+  "thresholds": {
+    "support": -4.756104469299316,
+    "relevance": -1.197269320487976,
+    "validation_semantic_unknown_recall": 1.0,
+    "recipe": "minimum semantic-UNKNOWN independent logit; greatest global relevance cutoff preserving .95 positive/contradiction retention in each EN/PT query and report language, strict DROP below cutoff"
+  },
+  "calibration_data": "Development validation only, both query/report languages",
+  "independent_scope_axis": true,
+  "frozen_at_utc": "2026-10-07T15:59:27.374507+00:00",
+  "final_inspected": false
+}

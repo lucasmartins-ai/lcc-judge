@@ -1,0 +1,332 @@
+{
+  "protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+  "development_promising": false,
+  "train_metrics": {
+    "protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+    "metrics": {
+      "n": 11136,
+      "binary": 4096,
+      "positive": 2048,
+      "negative": 2048,
+      "pooled_wins": 3526813,
+      "pooled_comparisons": 4194304,
+      "pooled_auc": 0.840857744216919,
+      "within_goal": {
+        "wins": 3565,
+        "comparisons": 4096,
+        "auc": 0.870361328125
+      },
+      "within_goal_auc": 0.870361328125,
+      "same_report_goal": {
+        "wins": 1775,
+        "comparisons": 2048,
+        "auc": 0.86669921875
+      },
+      "positive_keep_recall": 0.93798828125,
+      "contradiction_keep_recall": 0.9285714285714286,
+      "negative_drop_rejection": 0.0,
+      "binary_unknown_rate": 0.968994140625,
+      "semantic_unknown": 6912,
+      "structural_unknown": 128,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "by_language": {
+      "en": {
+        "n": 5568,
+        "binary": 2048,
+        "positive": 1024,
+        "negative": 1024,
+        "pooled_wins": 890760,
+        "pooled_comparisons": 1048576,
+        "pooled_auc": 0.8494949340820312,
+        "within_goal": {
+          "wins": 1804,
+          "comparisons": 2048,
+          "auc": 0.880859375
+        },
+        "within_goal_auc": 0.880859375,
+        "same_report_goal": {
+          "wins": 894,
+          "comparisons": 1024,
+          "auc": 0.873046875
+        },
+        "positive_keep_recall": 0.9267578125,
+        "contradiction_keep_recall": 0.9088669950738916,
+        "negative_drop_rejection": 0.0,
+        "binary_unknown_rate": 0.96337890625,
+        "semantic_unknown": 3456,
+        "structural_unknown": 64,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      },
+      "pt": {
+        "n": 5568,
+        "binary": 2048,
+        "positive": 1024,
+        "negative": 1024,
+        "pooled_wins": 872781,
+        "pooled_comparisons": 1048576,
+        "pooled_auc": 0.8323488235473633,
+        "within_goal": {
+          "wins": 1761,
+          "comparisons": 2048,
+          "auc": 0.85986328125
+        },
+        "within_goal_auc": 0.85986328125,
+        "same_report_goal": {
+          "wins": 881,
+          "comparisons": 1024,
+          "auc": 0.8603515625
+        },
+        "positive_keep_recall": 0.94921875,
+        "contradiction_keep_recall": 0.9482758620689655,
+        "negative_drop_rejection": 0.0,
+        "binary_unknown_rate": 0.974609375,
+        "semantic_unknown": 3456,
+        "structural_unknown": 64,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      }
+    },
+    "by_report_language": {
+      "en": {
+        "n": 5568,
+        "binary": 2048,
+        "positive": 1024,
+        "negative": 1024,
+        "pooled_wins": 859654,
+        "pooled_comparisons": 1048576,
+        "pooled_auc": 0.8198299407958984,
+        "within_goal": {
+          "wins": 1730,
+          "comparisons": 2048,
+          "auc": 0.8447265625
+        },
+        "within_goal_auc": 0.8447265625,
+        "same_report_goal": {
+          "wins": 870,
+          "comparisons": 1024,
+          "auc": 0.849609375
+        },
+        "positive_keep_recall": 0.9443359375,
+        "contradiction_keep_recall": 0.9311224489795918,
+        "negative_drop_rejection": 0.0,
+        "binary_unknown_rate": 0.97216796875,
+        "semantic_unknown": 3456,
+        "structural_unknown": 64,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      },
+      "pt": {
+        "n": 5568,
+        "binary": 2048,
+        "positive": 1024,
+        "negative": 1024,
+        "pooled_wins": 904478,
+        "pooled_comparisons": 1048576,
+        "pooled_auc": 0.8625774383544922,
+        "within_goal": {
+          "wins": 1835,
+          "comparisons": 2048,
+          "auc": 0.89599609375
+        },
+        "within_goal_auc": 0.89599609375,
+        "same_report_goal": {
+          "wins": 905,
+          "comparisons": 1024,
+          "auc": 0.8837890625
+        },
+        "positive_keep_recall": 0.931640625,
+        "contradiction_keep_recall": 0.9261904761904762,
+        "negative_drop_rejection": 0.0,
+        "binary_unknown_rate": 0.9658203125,
+        "semantic_unknown": 3456,
+        "structural_unknown": 64,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      }
+    },
+    "passes_point_criteria": false,
+    "development_only": true,
+    "adoption": false
+  },
+  "validation_metrics": {
+    "protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+    "metrics": {
+      "n": 5568,
+      "binary": 2048,
+      "positive": 1024,
+      "negative": 1024,
+      "pooled_wins": 656020,
+      "pooled_comparisons": 1048576,
+      "pooled_auc": 0.6256294250488281,
+      "within_goal": {
+        "wins": 1423,
+        "comparisons": 2048,
+        "auc": 0.69482421875
+      },
+      "within_goal_auc": 0.69482421875,
+      "same_report_goal": {
+        "wins": 652,
+        "comparisons": 1024,
+        "auc": 0.63671875
+      },
+      "positive_keep_recall": 0.998046875,
+      "contradiction_keep_recall": 0.9975728155339806,
+      "negative_drop_rejection": 0.001953125,
+      "binary_unknown_rate": 0.998046875,
+      "semantic_unknown": 3456,
+      "structural_unknown": 64,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "by_language": {
+      "en": {
+        "n": 2784,
+        "binary": 1024,
+        "positive": 512,
+        "negative": 512,
+        "pooled_wins": 162105,
+        "pooled_comparisons": 262144,
+        "pooled_auc": 0.6183815002441406,
+        "within_goal": {
+          "wins": 701,
+          "comparisons": 1024,
+          "auc": 0.6845703125
+        },
+        "within_goal_auc": 0.6845703125,
+        "same_report_goal": {
+          "wins": 325,
+          "comparisons": 512,
+          "auc": 0.634765625
+        },
+        "positive_keep_recall": 1.0,
+        "contradiction_keep_recall": 1.0,
+        "negative_drop_rejection": 0.0,
+        "binary_unknown_rate": 1.0,
+        "semantic_unknown": 1728,
+        "structural_unknown": 32,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      },
+      "pt": {
+        "n": 2784,
+        "binary": 1024,
+        "positive": 512,
+        "negative": 512,
+        "pooled_wins": 165864,
+        "pooled_comparisons": 262144,
+        "pooled_auc": 0.632720947265625,
+        "within_goal": {
+          "wins": 722,
+          "comparisons": 1024,
+          "auc": 0.705078125
+        },
+        "within_goal_auc": 0.705078125,
+        "same_report_goal": {
+          "wins": 327,
+          "comparisons": 512,
+          "auc": 0.638671875
+        },
+        "positive_keep_recall": 0.99609375,
+        "contradiction_keep_recall": 0.9951456310679612,
+        "negative_drop_rejection": 0.00390625,
+        "binary_unknown_rate": 0.99609375,
+        "semantic_unknown": 1728,
+        "structural_unknown": 32,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      }
+    },
+    "by_report_language": {
+      "en": {
+        "n": 2784,
+        "binary": 1024,
+        "positive": 512,
+        "negative": 512,
+        "pooled_wins": 162824,
+        "pooled_comparisons": 262144,
+        "pooled_auc": 0.621124267578125,
+        "within_goal": {
+          "wins": 689,
+          "comparisons": 1024,
+          "auc": 0.6728515625
+        },
+        "within_goal_auc": 0.6728515625,
+        "same_report_goal": {
+          "wins": 330,
+          "comparisons": 512,
+          "auc": 0.64453125
+        },
+        "positive_keep_recall": 1.0,
+        "contradiction_keep_recall": 1.0,
+        "negative_drop_rejection": 0.0,
+        "binary_unknown_rate": 1.0,
+        "semantic_unknown": 1728,
+        "structural_unknown": 32,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      },
+      "pt": {
+        "n": 2784,
+        "binary": 1024,
+        "positive": 512,
+        "negative": 512,
+        "pooled_wins": 165174,
+        "pooled_comparisons": 262144,
+        "pooled_auc": 0.6300888061523438,
+        "within_goal": {
+          "wins": 734,
+          "comparisons": 1024,
+          "auc": 0.716796875
+        },
+        "within_goal_auc": 0.716796875,
+        "same_report_goal": {
+          "wins": 322,
+          "comparisons": 512,
+          "auc": 0.62890625
+        },
+        "positive_keep_recall": 0.99609375,
+        "contradiction_keep_recall": 0.9953703703703703,
+        "negative_drop_rejection": 0.00390625,
+        "binary_unknown_rate": 0.99609375,
+        "semantic_unknown": 1728,
+        "structural_unknown": 32,
+        "semantic_unknown_recognition": 1.0,
+        "structural_unknown_recognition": 1.0,
+        "unknown_drops": 0,
+        "control_shadow": false
+      }
+    },
+    "passes_point_criteria": false,
+    "development_only": true,
+    "adoption": false
+  },
+  "final_evaluated": false,
+  "new_confirmation_required": true,
+  "peak_study_process_rss_bytes": 2151464960,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "adoption": false,
+  "finished_at_utc": "2026-10-07T23:09:42.709262+00:00"
+}

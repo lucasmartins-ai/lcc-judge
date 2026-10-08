@@ -1,0 +1,131 @@
+{
+  "schema": "tool-role-support/0.1",
+  "frozen_at_utc": "2026-10-04T20:31:38.001018+00:00",
+  "model": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "apache-2.0",
+    "architecture": [
+      "BertForSequenceClassification"
+    ],
+    "layers": 6,
+    "hidden_size": 384,
+    "max_position_embeddings": 512,
+    "model_inference_executed": false,
+    "scope": "artifact preparation only; no claim on exposed semantic cohorts or local performance",
+    "files": {
+      "model.safetensors": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+      "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "README.md": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "primary_sources": [
+      "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2",
+      "https://www.sbert.net/docs/cross_encoder/pretrained_models.html"
+    ]
+  },
+  "data_protocol_sha256": "932c23cd40b323e88186a9755e887a44ede076d168d6f08264b0446a022ce96b",
+  "data_directory": "tool-role-grounded-v1",
+  "data_files": {
+    "protocol.json": "eefbe42fc16bdf200f1ea5f4e76b957c4d148738ac579103f528063f48e7c98c",
+    "coverage.json": "8d087791b102f76d6d4a785062508ed79506eaf60dae2302512bf35bfb5c2645",
+    "train.jsonl": "de03d3407a0b32d985670efe9a67e87059395bea39dd9c18657c84d7bcd69785",
+    "train-views.jsonl": "20643e3050fbd968def1ef2ab16ade0854a1fb8c5174470e12d6eea8340901c4",
+    "train-raw.json": "3a08836330a2f1e4dd01021ad18075c30242cac7d57b3e828f024dfe03926ae9",
+    "validation.jsonl": "52d92ddb092faa7ef0f852439efc7d6ba8301e2439d267c7e6aaaaf31ff8b13b",
+    "validation-views.jsonl": "bd436510140aacfebf55a797499883ecfe4dce52cf7699a345787cf27d4ceff9",
+    "validation-raw.json": "89905701a22ba4cdce3b54997b145b3fcce17fecd531c81976e02324ce0dfefb",
+    "final.jsonl": "114f319358c26176be6c297828e848b90b291a0bc75e8406f39906f957228fec",
+    "final-views.jsonl": "89c864ab49a37a744bbb12f4f5bd255601c553bc8d7a532e4cc7bef685570c34",
+    "final-raw.json": "4ca5949d018bba66ae9c1c51e38c62163863ddc64c9af2d96fd68ca402c11598"
+  },
+  "data_scope": "Actual tools on authored fixtures, authored EN/PT goals and English captions; counterfactual claims; only DU/DF/GZIP binary supervision/strings withheld, raw receipts include every tool; three correlated final sources and shared concepts",
+  "sources": {
+    "research/tool_role_study.py": "1e1e303b95370a3002d4db5b7536c8ee387cc215692b00251b177a39ee3795b2",
+    "research/tool_role_training.py": "4c5e5787b3bd16532a5008d6e0ab1f2ed2fa83b206782063dec999a81451ea1b",
+    "research/tool_role_policy.py": "2aca27219708d79d4476579162a55f89ba41a273d9fb42561c9d9ce1c8e05a49",
+    "research/audit_tool_role_support.py": "4418885862bfa2292dc4302b9931ddcb7d308dc2eeac557257e9bf59196eb54d",
+    "research/audit_tool_role_data.py": "5ffb9bc35b5e88b34d0ef353d3aaf4f6513009ad1765b7b8e470d1be5192d735",
+    "research/reranker_control.py": "e6008735455efea368fa8f0f314d0b2feb6b9f630d32bc25c36265242ab61725",
+    "specialist/checkpoint.py": "ce9d6b97294ba784b377865bb9f6319b639f5439d878be421ad692686f616d20",
+    "specialist/numerical.py": "e8692ff1fc3ab53c25687fec527ae2fa855f05c8779feb00627bc26b149c014b"
+  },
+  "versions": {
+    "torch": "2.12.0",
+    "transformers": "5.10.2",
+    "tokenizers": "0.22.2",
+    "numpy": "2.4.6",
+    "safetensors": "0.7.0"
+  },
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "epochs": 3,
+  "batch_size": 16,
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 8,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "adaptation": "All pretrained encoder parameters; scalar head replaced by Linear(hidden_size,3), Normal(0,.02) weight/zero bias at declared seed; no encoder reset",
+  "labels": [
+    "IRRELEVANT",
+    "RELEVANT",
+    "UNKNOWN"
+  ],
+  "train_unique": 3676,
+  "train_class_counts": [
+    1772,
+    1772,
+    132
+  ],
+  "global_class_weights": [
+    0.6914973664409331,
+    0.6914973664409331,
+    9.282828282828282
+  ],
+  "train_unique_items_sha256": "2611824642cb1aa691611b4b913cfd27a5bfd9683ae7591595d55d566bf3585e",
+  "objective": "Mean per-item cross entropy times fixed N/(3*n_class) after training-view deduplication; structural UNKNOWN bypasses model; no P2 labels",
+  "batch_recipe": "Sorted unique input hashes shuffled by random.Random(seed*100+epoch), chunks of16, last partial batch retained",
+  "numerical_guard": "Finite loss/gradients/parameters/optimizer state each update; abort invalid run, no selective retry/extra epochs",
+  "score_axes": {
+    "relevance": "logit1-logit0",
+    "unsupported": "logit2-logsumexp(logit0,logit1)"
+  },
+  "calibration": "Per seed: lowest validation semantic UNKNOWN support score; greatest single global relevance threshold satisfying .95 positive/contradiction keep recall in each language",
+  "criteria": {
+    "aggregate_and_each_language": true,
+    "pooled_auc": 0.9,
+    "within_goal_auc": 0.9,
+    "positive_keep_recall": 0.95,
+    "contradiction_keep_recall": 0.95,
+    "negative_drop_rejection": 0.7,
+    "semantic_unknown_recognition": 0.95,
+    "structural_unknown_recognition": 1.0,
+    "unknown_drops": 0,
+    "all_seeds_required": true,
+    "complete_pairs": true
+  },
+  "controls": "Original frozen scalar MiniLM on identical views; scores measured, policy blanket UNKNOWN/KEEP, no support detector or DROP authority",
+  "selection": "Fixed three-class candidate, all seeds required; calibration only on validation; all3weights/thresholds frozen before any final scores",
+  "final_action": "One complete final pass per seed and frozen control; no tuning/retry/selection on final",
+  "no_independence_interval": true,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "publishing": false,
+  "sha256": "53f9a7b42cb6d2dbf3e003031872d43c53f272a379d833904ab22a28ed10be4b"
+}

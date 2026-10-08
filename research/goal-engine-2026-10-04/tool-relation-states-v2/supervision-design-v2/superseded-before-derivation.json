@@ -1,0 +1,8 @@
+{
+  "superseded_by": "../supervision-design-v3/protocol.json",
+  "old_sha256": "2682887b046357f03efce7cfe2c605d1b58468a56d179535f321807d05daf61e",
+  "new_sha256": "0c0d269123ee2abedb78cfd60d3bce97573f4b836cfcbfaccc4f83987b212ebb",
+  "labels_emitted": false,
+  "model_forwards": 0,
+  "reason": "Before labels/forwards, qualify every UDP received counter query and caption as observed within recorded receiver read budget; these counts cannot claim all arrivals or packet loss. Raw measurement sources/values unchanged."
+}

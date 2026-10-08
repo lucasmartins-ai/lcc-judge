@@ -1,0 +1,36 @@
+COMPLETE 101 {'pooled_auc': 0.8585902687485691, 'support_pooled_auc': 0.8226461195824539}
+COMPLETE 202 {'pooled_auc': 0.8703477416168269, 'support_pooled_auc': 0.8494795533999552}
+COMPLETE 303 {'pooled_auc': 0.8502049496419417, 'support_pooled_auc': 0.7668154958200004}
+COMPLETE scalar {'pooled_auc': 0.8742109521388947, 'support_pooled_auc': None}
+{
+  "status": "PASS",
+  "protocol_sha256": "a000415a32264fc43686f29b89ae833c03effa880bb1928661684e96d9491f37",
+  "candidates": {
+    "101": {
+      "pooled_auc": 0.8585902687485691,
+      "support_pooled_auc": 0.8226461195824539
+    },
+    "202": {
+      "pooled_auc": 0.8703477416168269,
+      "support_pooled_auc": 0.8494795533999552
+    },
+    "303": {
+      "pooled_auc": 0.8502049496419417,
+      "support_pooled_auc": 0.7668154958200004
+    },
+    "scalar": {
+      "pooled_auc": 0.8742109521388947,
+      "support_pooled_auc": null
+    }
+  },
+  "finished_at_utc": "2026-10-07T22:49:42.793196+00:00",
+  "source_scores_preserved": true,
+  "original_thresholds_changed": false,
+  "hypothetical_cutoffs_final_fitted": true,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "quality_approved": false,
+  "default_changed": false,
+  "P2_admission": false,
+  "scope": "64fresh authored actual-tool fixtures; all18fields/3tools known.101newcross-tool pair combinations plus52known-pair wording controls. Correlated cases, no new domain/production/human/P2/LCC usefulness certification."
+}

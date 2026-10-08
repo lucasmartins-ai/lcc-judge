@@ -1,0 +1,108 @@
+{
+  "task_id": "task_020_limiter_tests",
+  "condition": "ablation",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "6f75918848400a761e865635d4fab447074382d0a2e81cac35e7dab66f56e280",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_020_limiter_tests/ablation/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_020_limiter_tests/ablation/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "A controlled-clock burst test for a five-token bucket refilling at one token per second.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def test_burst(TokenBucket):\n    now = [0.0]\n    bucket = TokenBucket(5, 1.0, lambda: now[0])\n\n    assert [bucket.allow() for _ in range(5)] == [True] * 5\n    assert bucket.allow() is False\n\n    now[0] += 1.0\n    assert bucket.allow() is True\n    assert bucket.allow() is False\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211723_d43340",
+      "timestamp": 1791058644308
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211723_d43340",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"A controlled-clock burst test for a five-token bucket refilling at one token per second.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def test_burst(TokenBucket):\\n    now = [0.0]\\n    bucket = TokenBucket(5, 1.0, lambda: now[0])\\n\\n    assert [bucket.allow() for _ in range(5)] == [True] * 5\\n    assert bucket.allow() is False\\n\\n    now[0] += 1.0\\n    assert bucket.allow() is True\\n    assert bucket.allow() is False\\n\"}",
+    "tokens": {
+      "input": 964,
+      "output": 1337,
+      "total": 2441,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 13682,
+    "timestamp": 1791058657991
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "correct_bucket_passes",
+      "kills_always_allow",
+      "kills_no_refill",
+      "kills_wrong_burst"
+    ],
+    "program_stdout": "",
+    "source_sha256": "cba73a7fa4bc4f6814eb998a799b56f1b44e5b9d3ae903123640b6a9125b527f"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.84
+        }
+      },
+      "usage": {
+        "input_tokens": 593,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 304.35475,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.4906000000000002e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 16.39466758299386
+}

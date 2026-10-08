@@ -1,0 +1,45 @@
+{
+  "schema": "local-research-derivatives/0.1",
+  "study_protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+  "base_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "revision": "8008f0154ca2387468013ed439df09d70c122412",
+  "base_weight_sha256": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+  "total_parameters": 117641859,
+  "trainable_parameters": 3697923,
+  "operation": "Research-only direct-record relevance plus explicit UNKNOWN; no deployed operation",
+  "derivatives": [
+    {
+      "seed": 101,
+      "weights_path": "models/tool-relation-support-v1/seed-101/model.safetensors",
+      "weights_sha256": "7883adbfcaaba282b2d294e0599da257c639acba3671517ad789f900215a568d",
+      "epochs_completed": 3,
+      "metadata_origin": "Direct accepted-update/epoch receipts after finite guards, fixed epochs and completed validation; no terminal reconstruction",
+      "quality_passed": false,
+      "adopted": false
+    },
+    {
+      "seed": 202,
+      "weights_path": "models/tool-relation-support-v1/seed-202/model.safetensors",
+      "weights_sha256": "f770d309edf7f74c78d028773ee7da9075d610a126e5e3788a4bdf8f0ad10b77",
+      "epochs_completed": 3,
+      "metadata_origin": "Direct accepted-update/epoch receipts after finite guards, fixed epochs and completed validation; no terminal reconstruction",
+      "quality_passed": false,
+      "adopted": false
+    },
+    {
+      "seed": 303,
+      "weights_path": "models/tool-relation-support-v1/seed-303/model.safetensors",
+      "weights_sha256": "15f347554f94150abf1f0d9ab79c6b4c1f400cb566d83e5a290b74405d9e3955",
+      "epochs_completed": 3,
+      "metadata_origin": "Direct accepted-update/epoch receipts after finite guards, fixed epochs and completed validation; no terminal reconstruction",
+      "quality_passed": false,
+      "adopted": false
+    }
+  ],
+  "all_seeds_pass": false,
+  "loaded_by_native_ModernBERT_provider": false,
+  "public_weight_URL": null,
+  "adoption": false,
+  "P2_admission": false,
+  "default_changed": false
+}

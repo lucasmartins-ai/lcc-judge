@@ -1,0 +1,79 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 21848.73it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.dense.weight | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+{
+  "protocol_sha256": "4b7ca05f5a28c75c1408afc69ea724068e6a9afc73954101335e2ee734f965e3",
+  "scores_sha256": "69a517c5106e528da975f3d2a8f2d06189a037c1bc6ef74819d1b7ba942e6222",
+  "n_objectives": 64,
+  "domains": [
+    "bot_traffic",
+    "pdf_render",
+    "sms_delivery",
+    "vector_drift"
+  ],
+  "summary": {
+    "parent": {
+      "before": {
+        "J": 0.635009765625,
+        "D": 0.64697265625
+      },
+      "after": {
+        "J": 0.704833984375,
+        "D": 0.640625
+      },
+      "delta": {
+        "J": 0.06982421875,
+        "D": -0.00634765625
+      },
+      "delta_J_95ci": [
+        -0.0390625,
+        0.1591796875
+      ],
+      "paired": {
+        "J": 0.734375,
+        "D": 0.625
+      },
+      "ranking_orders_unchanged_by_transform": true,
+      "normalization_criteria_pass": false,
+      "both_quality_gates_pass": false,
+      "calibrated_probabilities": false,
+      "validated_for_deployment": false
+    },
+    "selected_bce": {
+      "before": {
+        "J": 0.6143391927083334,
+        "D": 0.6416829427083334
+      },
+      "after": {
+        "J": 0.6708170572916666,
+        "D": 0.6377766927083334
+      },
+      "delta": {
+        "J": 0.05647786458333326,
+        "D": -0.00390625
+      },
+      "delta_J_95ci": [
+        -0.074462890625,
+        0.158203125
+      ],
+      "paired": {
+        "J": 0.625,
+        "D": 0.625
+      },
+      "ranking_orders_unchanged_by_transform": true,
+      "normalization_criteria_pass": false,
+      "both_quality_gates_pass": false,
+      "calibrated_probabilities": false,
+      "validated_for_deployment": false
+    }
+  },
+  "training_admission": false,
+  "temporal_preregistration_certified": false
+}

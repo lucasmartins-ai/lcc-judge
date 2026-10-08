@@ -1,0 +1,10 @@
+{
+  "status": "AUDITOR_REVISION_BEFORE_MODEL_SCORING",
+  "previous_auditor_sha256": "24e9cf0ad1d6c2ba1b97f9ea67225202b74c44b6acbbbdcaa63e293c9acf2769",
+  "current_auditor_sha256": "4c56e480ab7b4a0a1faf79e0e3230af2906db3d51b2fa9ef04ed3926c0140997",
+  "reason": "Compare the serialized raw-audit receipt by canonical digest after JSON converts integer read-mode keys to strings; add source receipt fields. No raw, row, tokenizer, weight or model change.",
+  "model_forwards": 0,
+  "API_calls": 0,
+  "quality_approved": false,
+  "data_sha256_unchanged": true
+}

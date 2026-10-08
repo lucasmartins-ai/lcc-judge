@@ -1,0 +1,167 @@
+{
+  "protocol_sha256": "20ebddaaba6dadecee2a8d05600a72408058f3e127f4dbccb12085f8c57fd7d0",
+  "finished_at_utc": "2026-10-08T10:15:36.896834+00:00",
+  "router_gate_pass": false,
+  "validation": {
+    "n": 1136,
+    "supported": 240,
+    "accepted": 1048,
+    "correct_bindings": 197,
+    "supported_accepted": 240,
+    "unknown": 896,
+    "unknown_abstained": 88,
+    "accepted_binding_precision": 0.18797709923664122,
+    "supported_coverage": 1.0,
+    "correct_supported_coverage": 0.8208333333333333,
+    "unknown_recognition": 0.09821428571428571,
+    "confusion": [
+      {
+        "expected": "UNKNOWN",
+        "predicted": "UNKNOWN",
+        "n": 88
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "git_index_edits",
+        "n": 136
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "git_worktree_edits",
+        "n": 213
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 101
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_attempts",
+        "n": 80
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_failures",
+        "n": 55
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "retry_scheduled_sleep_ns",
+        "n": 46
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "udp_sent_datagrams",
+        "n": 108
+      },
+      {
+        "expected": "UNKNOWN",
+        "predicted": "udp_sent_payload_bytes",
+        "n": 69
+      },
+      {
+        "expected": "git_index_edits",
+        "predicted": "git_index_edits",
+        "n": 30
+      },
+      {
+        "expected": "git_worktree_edits",
+        "predicted": "git_index_edits",
+        "n": 3
+      },
+      {
+        "expected": "git_worktree_edits",
+        "predicted": "git_worktree_edits",
+        "n": 23
+      },
+      {
+        "expected": "git_worktree_edits",
+        "predicted": "udp_sent_datagrams",
+        "n": 4
+      },
+      {
+        "expected": "retry_actual_sleep_ns",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 30
+      },
+      {
+        "expected": "retry_attempts",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 2
+      },
+      {
+        "expected": "retry_attempts",
+        "predicted": "retry_attempts",
+        "n": 22
+      },
+      {
+        "expected": "retry_attempts",
+        "predicted": "retry_failures",
+        "n": 5
+      },
+      {
+        "expected": "retry_attempts",
+        "predicted": "retry_scheduled_sleep_ns",
+        "n": 1
+      },
+      {
+        "expected": "retry_failures",
+        "predicted": "retry_attempts",
+        "n": 4
+      },
+      {
+        "expected": "retry_failures",
+        "predicted": "retry_failures",
+        "n": 26
+      },
+      {
+        "expected": "retry_scheduled_sleep_ns",
+        "predicted": "retry_actual_sleep_ns",
+        "n": 11
+      },
+      {
+        "expected": "retry_scheduled_sleep_ns",
+        "predicted": "retry_scheduled_sleep_ns",
+        "n": 19
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "udp_sent_datagrams",
+        "n": 21
+      },
+      {
+        "expected": "udp_sent_datagrams",
+        "predicted": "udp_sent_payload_bytes",
+        "n": 9
+      },
+      {
+        "expected": "udp_sent_payload_bytes",
+        "predicted": "udp_sent_datagrams",
+        "n": 4
+      },
+      {
+        "expected": "udp_sent_payload_bytes",
+        "predicted": "udp_sent_payload_bytes",
+        "n": 26
+      }
+    ],
+    "gate_pass": false
+  },
+  "accounting": {
+    "counted_tokens": 2949948,
+    "submitted_tokens": 2949948,
+    "forward_completed_tokens": 2949948,
+    "valid_score_tokens": 2949948
+  },
+  "pair_forwards": 27696,
+  "lexical_comparisons": 27696,
+  "peak_probe_process_rss_bytes": 1832255488,
+  "performance_scope": "Whole goal/definition scoring including tokenization; peak includes imports/model and controls, not LCC serving or model compression",
+  "next_action": "STOP_before_fresh_confirmation_and_LCC",
+  "training": false,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "independent_human_review": false
+}

@@ -1,0 +1,5 @@
+FROM lcc-tool-relations@sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+COPY tool_relation_state_worker.py /usr/local/lib/python3.13/site-packages/research/
+LABEL lcc.tool-relation-states.source-sha256="7f51adcc3bca9496172b0ab709cab504716ab52a8afadcd67792a8bcfc5e164c" lcc.tool-relation-states.dependency-sha256="660d71d602366c197b7f0aa13751390ec9fb5948edf998b656edd5e40e14f032"
+USER 65534:65534

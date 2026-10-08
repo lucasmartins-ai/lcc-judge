@@ -1,0 +1,119 @@
+{
+  "arms": [
+    "frozen",
+    "last-two"
+  ],
+  "baseline_device": "cpu",
+  "baselines": [
+    "typed",
+    "lexical",
+    "bge",
+    "laya",
+    "parent"
+  ],
+  "batch_size": 8,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 78111,
+    "unit": "whole final domain"
+  },
+  "data": {
+    "final": {
+      "domains": [
+        "broker_consumer",
+        "browser_webrtc",
+        "data_contract",
+        "edge_power",
+        "robot_battery",
+        "search_segment"
+      ],
+      "known": 360,
+      "n": 504,
+      "sha256": "1ac126e5558393486fb839326e15a433aa13762f76d29e0cc8d906a0c910eaab"
+    },
+    "train": {
+      "domains": [
+        "build_cache",
+        "cert_rotation",
+        "container_cpu",
+        "disk_health",
+        "dns_resolution",
+        "memory_pressure",
+        "nginx_requests",
+        "object_storage",
+        "postgres_replica",
+        "rpc_latency",
+        "task_scheduler",
+        "worker_queue"
+      ],
+      "known": 1440,
+      "n": 2016,
+      "sha256": "e35afdfe92192aae0b3cd886d598c690809c53eeb3a502b53ac18a6b51583548"
+    },
+    "validation": {
+      "domains": [
+        "build_cache",
+        "cert_rotation",
+        "container_cpu",
+        "disk_health",
+        "dns_resolution",
+        "memory_pressure",
+        "nginx_requests",
+        "object_storage",
+        "postgres_replica",
+        "rpc_latency",
+        "task_scheduler",
+        "worker_queue"
+      ],
+      "known": 480,
+      "n": 672,
+      "sha256": "1fd6deb5ccddd9757c6018583e45135092cd9015da4214f4cece4de4ada754d6"
+    }
+  },
+  "device": "mps",
+  "encoder_learning_rate": 2e-05,
+  "epochs": 3,
+  "final_scope": "new fields/entities in six withheld synthetic domains; shared schemas/author task, not external semantic confirmation",
+  "final_used_for_selection": false,
+  "frozen_batch_size": 8,
+  "groups_per_domain": {
+    "final": 12,
+    "train": 24,
+    "validation": 8
+  },
+  "initialization": "clean parent backbone/last-two/line scorer; new relevance head per matched seed",
+  "labels": "direct entity/field/inclusive-window observation relevance; normality independent; UNKNOWN excluded from binary loss",
+  "latency_comparison": "not measured; candidate MPS/cache and controls CPU do not support relative latency claims",
+  "learning_rate": 0.0003,
+  "max_pair_tokens": 2048,
+  "parent_config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+  "parent_weights_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+  "quality_gate": {
+    "anomalous_auc_min": 0.9,
+    "anomalous_recall_min": 0.95,
+    "applies_to": "each seed of validation-selected arm",
+    "healthy_auc_min": 0.9,
+    "healthy_recall_min": 0.95,
+    "pooled_auc_min": 0.9,
+    "unreported_cuts": 0,
+    "wrong_entity_anomaly_rejection_min": 0.7
+  },
+  "schema": "direct-p1-relevance/0.1",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "selection": "highest mean validation strict pooled relevance AUC across three seeds; fixed tie order frozen first",
+  "sha256": "015818ca4844360f2fb23d2800c9d0ba5839e9e059601493e48aaa7629407295",
+  "sources": {
+    "bakeoff/adapters.py": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+    "research/head_objective_study.py": "56430b10de197c62977d2cfcf4779d5282f644f26af7593c9341e53dca3d22dc",
+    "research/relevance_corpus.py": "813d5c14e82b31dce97c12d193aa593712d55a7132b585e48f22cedd15cf1454",
+    "research/relevance_study.py": "05f7ff1e532bbed9c76eccb02f5d94fb2e89c64e13e19c02116762e4cf4ed2d2",
+    "specialist/checkpoint.py": "fb85b55bf8dd340b8fd94d4e6d2f03f25380009f6167ee8d1521e39a1ac33f87",
+    "specialist/model.py": "7acd4fc759c4ea3ec9bd24290b0bb2d8427ff19807c801d9262a7d868ed34b62"
+  },
+  "threads": 8,
+  "threshold": "validation only: greatest raw-logit threshold with >=.95 recall in each healthy/anomalous positive stratum"
+}

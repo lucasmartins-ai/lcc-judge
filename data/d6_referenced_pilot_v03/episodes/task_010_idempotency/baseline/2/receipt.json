@@ -1,0 +1,92 @@
+{
+  "task_id": "task_010_idempotency",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "da4ca73e1fe758c3c7b1ac72c4318978cb96b7a5bffcd19597c8a64615bbf01d",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_010_idempotency/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_010_idempotency/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Uses Redis SET NX EX 120 to reserve each idempotency key, returns cached receipts, waits for concurrent completion, and caches new receipts for 120 seconds.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "import json\nimport time\n\ndef process_payment(idempotency_key, amount):\n    cache_key = f\"idemp:{idempotency_key}\"\n    pending = \"__idempotency_pending__\"\n\n    while True:\n        acquired = redis.set(cache_key, pending, nx=True, ex=120)\n        if acquired:\n            receipt = stripe.Charge.create(amount=amount)\n            redis.set(\n                cache_key,\n                json.dumps(receipt, separators=(\",\", \":\")),\n                ex=120,\n            )\n            return receipt\n\n        cached = redis.get(cache_key)\n        if cached is None:\n            continue\n        if isinstance(cached, (bytes, bytearray)):\n            cached = cached.decode(\"utf-8\")\n        if isinstance(cached, str):\n            if cached == pending:\n                time.sleep(0.01)\n                continue\n            return json.loads(cached)\n        return cached\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113632_d6f602",
+      "timestamp": 1791110192535
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113632_d6f602",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Uses Redis SET NX EX 120 to reserve each idempotency key, returns cached receipts, waits for concurrent completion, and caches new receipts for 120 seconds.\",\"mechanism\":null,\"parameters\":{},\"python\":\"import json\\nimport time\\n\\ndef process_payment(idempotency_key, amount):\\n    cache_key = f\\\"idemp:{idempotency_key}\\\"\\n    pending = \\\"__idempotency_pending__\\\"\\n\\n    while True:\\n        acquired = redis.set(cache_key, pending, nx=True, ex=120)\\n        if acquired:\\n            receipt = stripe.Charge.create(amount=amount)\\n            redis.set(\\n                cache_key,\\n                json.dumps(receipt, separators=(\\\",\\\", \\\":\\\")),\\n                ex=120,\\n            )\\n            return receipt\\n\\n        cached = redis.get(cache_key)\\n        if cached is None:\\n            continue\\n        if isinstance(cached, (bytes, bytearray)):\\n            cached = cached.decode(\\\"utf-8\\\")\\n        if isinstance(cached, str):\\n            if cached == pending:\\n                time.sleep(0.01)\\n                continue\\n            return json.loads(cached)\\n        return cached\\n\"}",
+    "tokens": {
+      "input": 1042,
+      "output": 5959,
+      "total": 7141,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 76800,
+    "timestamp": 1791110269335
+  },
+  "verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "TypeError: 'NoneType' object is not iterable",
+    "program_stdout": "",
+    "sandbox": {
+      "docker": "/usr/local/bin/docker",
+      "image_id": "sha256:1805d67d171b19ef73cc264f2083881fbd86bfc9d6313f0b54256ae314341a79",
+      "source_sha256": "c5b0f89c4f566ff2d9c50b32c1d4352f967db7eb7f483373edffd9da32e5da08",
+      "profile": "lcc-fixture-container/0.1",
+      "os": "linux",
+      "architecture": "arm64"
+    }
+  },
+  "wall_time_s": 79.16519637499005,
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

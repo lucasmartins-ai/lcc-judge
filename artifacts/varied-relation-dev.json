@@ -1,0 +1,20 @@
+{
+  "schema": "local-research-derivatives/0.1",
+  "study_protocol_sha256": "b8240c1a93f70508e6f7a40d8590e4c408aa82b51e36a8b417b894d121713588",
+  "base_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+  "revision": "8008f0154ca2387468013ed439df09d70c122412",
+  "operation": "Varied-state balanced conditional relevance / independent scope development only",
+  "seed": 101,
+  "epochs_completed": 3,
+  "weights_path": "models/varied-relation-dev-v2/model.safetensors",
+  "weights_sha256": "430a9e548a2e9f1f256f70ef2f5a6307768f936d555e4bfbe0b8f625e2017464",
+  "total_parameters": 117641859,
+  "trainable_parameters": 3697923,
+  "metadata_origin": "Direct accepted-update and completed finite epoch receipts; no terminal reconstruction",
+  "development_promising": true,
+  "private_weights_verified": true,
+  "fresh_final_evaluated": false,
+  "adopted": false,
+  "loaded_by_native_ModernBERT_provider": false,
+  "public_weight_URL": null
+}

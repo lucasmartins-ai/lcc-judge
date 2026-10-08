@@ -1,0 +1,35 @@
+{
+  "state": {
+    "objective": "Implement rate limiting decorator with leak rate and capacity.",
+    "context": [
+      {
+        "block_id": "b_f39ee3ac",
+        "content": "Target rate: 100 requests per minute with burst capacity 150.",
+        "source": "api_limits.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_e24f4b9f",
+        "content": "HTTP 429 Too Many Requests response payload schema.",
+        "source": "responses.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Per-decorated-callable token bucket; leak_rate is requests per second, so 100 requests/minute uses 5/3.",
+      "mechanism": null,
+      "parameters": {
+        "leak_rate": 1.6666666666666667,
+        "capacity": 150
+      },
+      "python": "import math\nimport threading\nfrom functools import wraps\n\n\ndef rate_limit(leak_rate, capacity, clock):\n    \"\"\"Limit func to leak_rate tokens per clock-second with burst capacity.\"\"\"\n    if not math.isfinite(leak_rate) or leak_rate < 0:\n        raise ValueError(\"leak_rate must be finite and non-negative\")\n    if not math.isfinite(capacity) or capacity < 1:\n        raise ValueError(\"capacity must be finite and at least 1\")\n\n    tokens = float(capacity)\n    last_refill = None\n    lock = threading.Lock()\n\n    def decorator(func):\n        @wraps(func)\n        def limited(*args, **kwargs):\n            nonlocal tokens, last_refill\n\n            with lock:\n                now = clock()\n                if last_refill is None:\n                    last_refill = now\n                elif now > last_refill:\n                    tokens = min(\n                        float(capacity),\n                        tokens + (now - last_refill) * leak_rate,\n                    )\n                    last_refill = now\n\n                if tokens < 1:\n                    return False\n                tokens -= 1\n\n            return func(*args, **kwargs)\n\n        return limited\n\n    return decorator\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

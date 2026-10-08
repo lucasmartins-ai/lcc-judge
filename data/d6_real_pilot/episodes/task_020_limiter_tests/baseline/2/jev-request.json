@@ -1,0 +1,38 @@
+{
+  "state": {
+    "objective": "Write unit test verifying burst handling in token bucket.",
+    "context": [
+      {
+        "block_id": "b_d377b8e8",
+        "content": "Test must assert that 5 consecutive requests at t=0 succeed when capacity=5, and the 6th immediately returns False; then after 1s recovery 1 request succeeds.",
+        "source": "specs/test_spec.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_27541d40",
+        "content": "import unittest; from unittest.mock import patch",
+        "source": "tests/base.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_c747c03c",
+        "content": "DEFAULT_BURST = 5; REFILL_RATE = 1.0",
+        "source": "limits.py",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Add a deterministic test for a five-request burst, immediate rejection, and one-token recovery after one second.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def test_burst(TokenBucket):\n    now = [0.0]\n    bucket = TokenBucket(capacity=5, refill_rate=1.0, clock=lambda: now[0])\n\n    results = [bucket.allow() for _ in range(5)]\n    assert all(results), f\"Expected 5 successful requests, got {results}\"\n    assert bucket.allow() is False, \"The sixth request should be rejected\"\n\n    now[0] += 1.0\n    assert bucket.allow() is True, \"One request should succeed after 1 second\"\n"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

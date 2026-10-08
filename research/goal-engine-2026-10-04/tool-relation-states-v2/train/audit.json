@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "591ba1d7e10c2df82c855ea099ae87908fc0fc4acf828ffd66b89b45be2354ce",
+  "raw_sha256": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+  "fixtures": 64,
+  "verified_fields": 1152,
+  "retry_outcomes": {
+    "success": 43,
+    "exhausted": 21
+  },
+  "udp_read_modes": {
+    "0": 22,
+    "1": 21,
+    "2": 21
+  },
+  "git_index_edits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "git_worktree_edits": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "git_clean_tracked": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "git_staged_delete_fixtures": 16,
+  "zero_observed_receive_fixtures": 21,
+  "actual_git_blob_identities_verified": true,
+  "source_image_dependency_and_raw_fields_verified": true,
+  "observed_capture_wall_s": 1.934019000036642,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "tools_reexecuted_during_audit": false,
+  "admission": false,
+  "scope": "Fresh authored varied-state training development fixtures; no model confirmation/production/P2; authored actual-tool states, prefix reads not loss, expected exhaustion not capture failure, no production/P2/model quality claim"
+}

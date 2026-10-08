@@ -1,0 +1,10 @@
+[lcc-compact: dropped 88 blocks (114995 chars)]
+Architecture: payment-gateway connects to Postgres via PgBouncer with pool_size=20.
+
+pg_pool: max_connections=20 timeout_ms=5000 leak_detection_threshold_ms=10000
+
+2026-10-03T10:00:01Z [INFO] payment-gateway healthcheck ok 200
+
+2026-10-03T10:01:23Z [ERROR] connection pool exhausted: active=20 idle=0 waiting=42; leaked_conn_holding_stack at billing.py:144 acquire_conn() without release in stripe_webhook_handler
+
+metric: pg_pool_wait_duration_p99 value=5012ms threshold=2000ms

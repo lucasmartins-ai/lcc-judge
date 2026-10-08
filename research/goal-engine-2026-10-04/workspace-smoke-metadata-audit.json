@@ -1,0 +1,9 @@
+{
+  "original_receipt": "lcc-native-offline-smoke.json",
+  "original_sha256": "b5b8eece23daaaa7f5744b135eabc75cce3d3f8622c8eed5eff79ff13912eefb",
+  "original_installed_package_flag": true,
+  "installed_package_inference_certified": false,
+  "reason": "This smoke used workspace cwd, which precedes site-packages. It validates workspace inference, not the installed package.",
+  "corrected_evidence": "lcc-installed-offline-smoke.json",
+  "historical_receipt_preserved": true
+}

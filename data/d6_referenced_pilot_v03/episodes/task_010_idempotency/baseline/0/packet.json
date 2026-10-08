@@ -1,0 +1,26 @@
+{
+  "objective": "Implement idempotency check before charge dispatch.",
+  "task_class": "coding",
+  "context": [
+    {
+      "block_id": "b_5c2a0960",
+      "content": "Idempotency requirements: check Redis key `idemp:{key}` with SET NX EX 120; if exists return cached response; otherwise execute charge.",
+      "source": "rfcs/idempotency.md",
+      "block_type": "doc"
+    },
+    {
+      "block_id": "b_bc071b10",
+      "content": "def process_payment(idempotency_key, amount):\n    # TODO: implement check\n    return stripe.Charge.create(amount=amount)",
+      "source": "payment.py",
+      "block_type": "code"
+    },
+    {
+      "block_id": "b_d5237d14",
+      "content": "Stripe API version: 2024-06-12",
+      "source": "stripe.env",
+      "block_type": "config"
+    }
+  ],
+  "interface": "Define process_payment(idempotency_key, amount). Provided globals: redis has .get(key), .set(key,value,nx=False,ex=None); stripe.Charge.create(amount=...) returns a JSON-compatible receipt. Return that receipt or the cached receipt.",
+  "mechanism_options": null
+}

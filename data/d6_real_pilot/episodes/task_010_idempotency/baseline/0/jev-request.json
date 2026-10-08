@@ -1,0 +1,42 @@
+{
+  "state": {
+    "objective": "Implement idempotency check before charge dispatch.",
+    "context": [
+      {
+        "block_id": "b_5c2a0960",
+        "content": "Idempotency requirements: check Redis key `idemp:{key}` with SET NX EX 120; if exists return cached response; otherwise execute charge.",
+        "source": "rfcs/idempotency.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_bc071b10",
+        "content": "def process_payment(idempotency_key, amount):\n    # TODO: implement check\n    return stripe.Charge.create(amount=amount)",
+        "source": "payment.py",
+        "block_type": "code"
+      },
+      {
+        "block_id": "b_d5237d14",
+        "content": "Stripe API version: 2024-06-12",
+        "source": "stripe.env",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Atomically claim the idempotency key before charging, cache the successful receipt for 120 seconds, and return cached receipts on retries.",
+      "mechanism": null,
+      "parameters": {
+        "ttl_seconds": 120,
+        "pending_poll_seconds": 0.01,
+        "pending_timeout_seconds": 120
+      },
+      "python": "def process_payment(idempotency_key, amount):\n    import json\n    import time\n\n    cache_key = f\"idemp:{idempotency_key}\"\n    pending_marker = \"__IDEMPOTENCY_PENDING__\"\n    deadline = time.monotonic() + 120\n\n    while True:\n        claimed = redis.set(cache_key, pending_marker, nx=True, ex=120)\n        if claimed:\n            receipt = stripe.Charge.create(amount=amount)\n            redis.set(cache_key, json.dumps(receipt), ex=120)\n            return receipt\n\n        cached = redis.get(cache_key)\n        if cached is None:\n            continue\n        if isinstance(cached, bytes):\n            cached = cached.decode(\"utf-8\")\n        if cached != pending_marker:\n            return json.loads(cached)\n        if time.monotonic() >= deadline:\n            raise TimeoutError(\"Timed out waiting for the cached payment receipt\")\n        time.sleep(0.01)"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

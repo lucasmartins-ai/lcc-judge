@@ -1,0 +1,409 @@
+{
+  "sources_hash_verified": true,
+  "pre_dispatch_freeze_verified": true,
+  "threshold": 0.5,
+  "development_scales": [
+    4,
+    6,
+    8,
+    10
+  ],
+  "eval_scales": [
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    23,
+    29
+  ],
+  "prior_pdb_scales": [
+    5,
+    7
+  ],
+  "shared_archetype_and_wording": true,
+  "receipts": 168,
+  "development": {
+    "routed": {
+      "n": 56,
+      "positives": 24,
+      "negatives": 32,
+      "tp": 24,
+      "tn": 32,
+      "fp": 0,
+      "fn": 0,
+      "unknown": 0
+    },
+    "coupled": {
+      "n": 56,
+      "positives": 24,
+      "negatives": 32,
+      "tp": 19,
+      "tn": 32,
+      "fp": 0,
+      "fn": 5,
+      "unknown": 0
+    }
+  },
+  "eval": {
+    "routed": {
+      "n": 112,
+      "positives": 48,
+      "negatives": 64,
+      "tp": 48,
+      "tn": 64,
+      "fp": 0,
+      "fn": 0,
+      "unknown": 0
+    },
+    "coupled": {
+      "n": 112,
+      "positives": 48,
+      "negatives": 64,
+      "tp": 21,
+      "tn": 64,
+      "fp": 0,
+      "fn": 27,
+      "unknown": 0
+    }
+  },
+  "per_family": {
+    "min_quorum": {
+      "routed": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "conservative_max": {
+      "routed": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 0,
+        "tn": 0,
+        "fp": 0,
+        "fn": 8,
+        "unknown": 0
+      }
+    },
+    "max_percent": {
+      "routed": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 1,
+        "tn": 0,
+        "fp": 0,
+        "fn": 7,
+        "unknown": 0
+      }
+    },
+    "leading_zero_percent": {
+      "routed": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 4,
+        "tn": 0,
+        "fp": 0,
+        "fn": 4,
+        "unknown": 0
+      }
+    },
+    "min_percent": {
+      "routed": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "equivalent_integer": {
+      "routed": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 8,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 8,
+        "negatives": 0,
+        "tp": 0,
+        "tn": 0,
+        "fp": 0,
+        "fn": 8,
+        "unknown": 0
+      }
+    },
+    "unsafe_quorum": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "blocks_maintenance": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "two_budget_fields": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "wrong_structured_claim": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "false_numeric_prose": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "false_involuntary_guarantee": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "denies_quorum_protection": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    },
+    "denies_maintenance": {
+      "routed": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      },
+      "coupled": {
+        "n": 8,
+        "positives": 0,
+        "negatives": 8,
+        "tp": 0,
+        "tn": 8,
+        "fp": 0,
+        "fn": 0,
+        "unknown": 0
+      }
+    }
+  },
+  "target_pass": true,
+  "upstream_reference_reexecuted": false,
+  "numeric_conversion_checks": 4240,
+  "numeric_policy_checks": 290752,
+  "numeric_mismatches": 0,
+  "jev_calls": 240,
+  "canonical_ledger_entries": 240,
+  "input_tokens": 133932,
+  "duplicate_scoring_payloads": 0,
+  "training_eligible_records": 0,
+  "tariff_estimate_usd": 0.005625144,
+  "actual_billed_cost_usd": null,
+  "descriptive_wilson95": {
+    "routed_fpr": [
+      0,
+      0.056626022971156334
+    ],
+    "routed_fnr": [
+      0,
+      0.0741026511527422
+    ]
+  },
+  "population_error_certified": false,
+  "production_ground_truth": false,
+  "comparison_causal_certification": false,
+  "source_verification_mode": "archived",
+  "canonical_ledger_scope": "run-local-export",
+  "temporal_preregistration_certified": false
+}

@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Recommend circuit breaker trip threshold for partner billing service.",
+    "context": [
+      {
+        "block_id": "b_72caab3f",
+        "content": "Current traffic: 300 req/sec; current failure rate 2.1% under normal loads.",
+        "source": "metrics/traffic.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_181032fd",
+        "content": "DNS resolution time: 2ms via local Unbound cache.",
+        "source": "dns.log",
+        "block_type": "log"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ABSTAIN",
+      "answer": "Cannot determine a defensible circuit-breaker timeout without the partner service's downstream latency budget or SLA.",
+      "mechanism": "INSUFFICIENT_EVIDENCE",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

@@ -1,0 +1,39 @@
+test_equivalent_budget_encodings_have_identical_text_review_state (test_pdb_routing.PDBRoutingRegressionTests.test_equivalent_budget_encodings_have_identical_text_review_state) ... FAIL
+test_integer_must_fit_kubernetes_int32 (test_pdb_routing.PDBRoutingRegressionTests.test_integer_must_fit_kubernetes_int32) ... ok
+test_invalid_math_is_rejected_without_semantic_probability (test_pdb_routing.PDBRoutingRegressionTests.test_invalid_math_is_rejected_without_semantic_probability) ... FAIL
+test_missing_text_review_is_unknown (test_pdb_routing.PDBRoutingRegressionTests.test_missing_text_review_is_unknown) ... FAIL
+test_numeric_prose_claim_is_checked_by_code (test_pdb_routing.PDBRoutingRegressionTests.test_numeric_prose_claim_is_checked_by_code) ... ok
+test_percentage_with_leading_zeroes_is_valid (test_pdb_routing.PDBRoutingRegressionTests.test_percentage_with_leading_zeroes_is_valid) ... ok
+test_unhealthy_scope_is_unknown (test_pdb_routing.PDBRoutingRegressionTests.test_unhealthy_scope_is_unknown) ... ok
+
+======================================================================
+FAIL: test_equivalent_budget_encodings_have_identical_text_review_state (test_pdb_routing.PDBRoutingRegressionTests.test_equivalent_budget_encodings_have_identical_text_review_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_pdb_routing.py", line 14, in test_equivalent_budget_encodings_have_identical_text_review_state
+    self.assertTrue(callable(getattr(pdb_verifier,'prepare_text_review',None)),'text routing is missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : text routing is missing
+
+======================================================================
+FAIL: test_invalid_math_is_rejected_without_semantic_probability (test_pdb_routing.PDBRoutingRegressionTests.test_invalid_math_is_rejected_without_semantic_probability)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_pdb_routing.py", line 22, in test_invalid_math_is_rejected_without_semantic_probability
+    self.assertTrue(callable(getattr(pdb_verifier,'combine',None)),'separate decision is missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : separate decision is missing
+
+======================================================================
+FAIL: test_missing_text_review_is_unknown (test_pdb_routing.PDBRoutingRegressionTests.test_missing_text_review_is_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_pdb_routing.py", line 27, in test_missing_text_review_is_unknown
+    self.assertTrue(callable(getattr(pdb_verifier,'combine',None)),'separate decision is missing')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : separate decision is missing
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=3)

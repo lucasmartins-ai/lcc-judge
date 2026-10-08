@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Add transaction isolation to prevent double spending during balance transfer.",
+    "context": [
+      {
+        "block_id": "b_7e2f44bd",
+        "content": "User was able to trigger 3 simultaneous transfers of $100 with only $100 balance.",
+        "source": "issues/892.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_dbef588d",
+        "content": "Transfer fee is 0% for domestic bank wires.",
+        "source": "fees.md",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Serialize each transfer in a transaction and lock the source account row before checking its balance; insufficient funds return False.",
+      "mechanism": null,
+      "parameters": {},
+      "python": "def transfer(from_acc, to_acc, amount):\n    with db.transaction():\n        balance = db.query('SELECT balance FROM accounts WHERE id = ? FOR UPDATE', from_acc)\n        if balance < amount:\n            return False\n        db.execute('UPDATE accounts SET balance = balance - ? WHERE id = ?', amount, from_acc)\n        db.execute('UPDATE accounts SET balance = balance + ? WHERE id = ?', amount, to_acc)\n        return True"
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

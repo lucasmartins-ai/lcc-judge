@@ -1,0 +1,29 @@
+test_bert_ranking_head_is_encoded_as_a_margin_not_discarded (test_ranking_support_initialization.RankingSupportInitializationTests.test_bert_ranking_head_is_encoded_as_a_margin_not_discarded) ... ok
+test_cpu_initialization_does_not_seed_other_device_generators (test_ranking_support_initialization.RankingSupportInitializationTests.test_cpu_initialization_does_not_seed_other_device_generators) ... FAIL
+test_non_scalar_input_is_rejected_before_model_mutation (test_ranking_support_initialization.RankingSupportInitializationTests.test_non_scalar_input_is_rejected_before_model_mutation) ... ok
+test_xlm_classifier_dense_and_scalar_ordering_survive_expansion (test_ranking_support_initialization.RankingSupportInitializationTests.test_xlm_classifier_dense_and_scalar_ordering_survive_expansion) ... ok
+
+======================================================================
+FAIL: test_cpu_initialization_does_not_seed_other_device_generators (test_ranking_support_initialization.RankingSupportInitializationTests.test_cpu_initialization_does_not_seed_other_device_generators)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_ranking_support_initialization.py", line 61, in test_cpu_initialization_does_not_seed_other_device_generators
+    retain_ranking_prior(model,101)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/ranking_support_initialization.py", line 60, in retain_ranking_prior
+    torch.manual_seed(seed)
+    ~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1234, in _execute_mock_call
+    raise effect
+AssertionError: global device RNG was reseeded
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.024s
+
+FAILED (failures=1)

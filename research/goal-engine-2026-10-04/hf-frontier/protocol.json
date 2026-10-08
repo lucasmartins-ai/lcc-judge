@@ -1,0 +1,29 @@
+{
+  "schema": "hf-frontier/0.1",
+  "pair_budgets_hf": [
+    512,
+    2048,
+    4096,
+    8192
+  ],
+  "seed": 442381,
+  "n_cases": 62,
+  "probe_version": "1.2",
+  "device": "mps",
+  "metric": "strict pooled P(fact > noise), ties zero",
+  "gate": 0.9,
+  "prefix": "same complete filler lines for each objective/candidate triplet; late whole evidence; no tail",
+  "scope": "Known authored suite; placement variant only; not unseen semantics or LCC outcome proof",
+  "checkpoint_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+  "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+  "backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "sources": {
+    "research/hf_frontier.py": "01e1299b874713cf0338974b64272e34d671ada41e66861a7a776212356f605c",
+    "specialist/model.py": "7acd4fc759c4ea3ec9bd24290b0bb2d8427ff19807c801d9262a7d868ed34b62",
+    "specialist/checkpoint.py": "fb85b55bf8dd340b8fd94d4e6d2f03f25380009f6167ee8d1521e39a1ac33f87",
+    "bakeoff/probes.py": "65e33dedbfa5797bdcf2bc3137f1b9ccbafefa886d8b669a14426da63bdcf43e",
+    "lcc_engine/engine.py": "daf9c44a7465db7c5400fa7e0aed5f58601fd52245857a611c8db77c6813abb8"
+  },
+  "grid_sha256": "75a5f27cd9cdcd88551d58ba25776dac555687c39c4e0cb3873ffa868ff6dee5",
+  "sha256": "da81852da94cab2f87dbe2f7a7c64edc96bd76556f5415e29d15c76de46633db"
+}

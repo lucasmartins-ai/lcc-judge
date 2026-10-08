@@ -1,0 +1,108 @@
+{
+  "task_id": "task_010_idempotency",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "feeaf5e1885a680d97b87c370b65c546592331cfda5ad70e5abd3b9a2f65bd2d",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_010_idempotency/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_010_idempotency/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Uses Redis GET plus an atomic SET NX EX 120 claim, returns cached receipts, and stores successful charge receipts for 120 seconds.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def process_payment(idempotency_key, amount):\n    import json\n\n    cache_key = f'idemp:{idempotency_key}'\n\n    def decode(value):\n        if isinstance(value, bytes):\n            value = value.decode('utf-8')\n        return json.loads(value) if isinstance(value, str) else value\n\n    while True:\n        cached = redis.get(cache_key)\n        if cached is not None:\n            return decode(cached)\n\n        claimed = redis.set(\n            cache_key,\n            json.dumps({'status': 'processing'}),\n            nx=True,\n            ex=120,\n        )\n        if claimed:\n            break\n\n    receipt = stripe.Charge.create(amount=amount)\n    redis.set(cache_key, json.dumps(receipt), ex=120)\n    return receipt"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211133_6a299c",
+      "timestamp": 1791058294085
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211133_6a299c",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Uses Redis GET plus an atomic SET NX EX 120 claim, returns cached receipts, and stores successful charge receipts for 120 seconds.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def process_payment(idempotency_key, amount):\\n    import json\\n\\n    cache_key = f'idemp:{idempotency_key}'\\n\\n    def decode(value):\\n        if isinstance(value, bytes):\\n            value = value.decode('utf-8')\\n        return json.loads(value) if isinstance(value, str) else value\\n\\n    while True:\\n        cached = redis.get(cache_key)\\n        if cached is not None:\\n            return decode(cached)\\n\\n        claimed = redis.set(\\n            cache_key,\\n            json.dumps({'status': 'processing'}),\\n            nx=True,\\n            ex=120,\\n        )\\n        if claimed:\\n            break\\n\\n    receipt = stripe.Charge.create(amount=amount)\\n    redis.set(cache_key, json.dumps(receipt), ex=120)\\n    return receipt\"}",
+    "tokens": {
+      "input": 1049,
+      "output": 6305,
+      "total": 7494,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 68890,
+    "timestamp": 1791058362975
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "duplicate_not_charged",
+      "cached_receipt",
+      "atomic_key_and_ttl",
+      "distinct_key"
+    ],
+    "program_stdout": "",
+    "source_sha256": "f988a8f0cf1fb342acbf922e0f32c3850e52b294c8d1a64bff8b019c970ad1d1"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.61
+        }
+      },
+      "usage": {
+        "input_tokens": 774,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 281.702125,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 3.2508e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 71.23390450002626
+}

@@ -1,0 +1,638 @@
+{
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "profile": "laya",
+  "task_id": "task_018_k8s_pdb",
+  "budget_hf": 8192,
+  "input_sha256": "01921466aff79128d826766cd2f149325f837008274bd6bc8e714b9d5fd2c11e",
+  "output_sha256": "01921466aff79128d826766cd2f149325f837008274bd6bc8e714b9d5fd2c11e",
+  "compilation_wall_s": 5.357273416011594,
+  "additional_load_s": 0,
+  "report": {
+    "schema_version": "relevance-compaction-1.2",
+    "provider_requested": "laya",
+    "provider_used": "laya",
+    "degraded": false,
+    "objective": "Configure PodDisruptionBudget for critical search-indexing cluster.",
+    "threshold": 0.4,
+    "trim_threshold": null,
+    "trim_head_chars": 0,
+    "blocks_total": 25,
+    "blocks_scored": 25,
+    "blocks_protected": 0,
+    "blocks_dropped": 0,
+    "blocks_trimmed": 0,
+    "blocks_restored": 0,
+    "chars_before": 29016,
+    "chars_after": 29016,
+    "chars_removed": 0,
+    "tokens_before": 7410,
+    "tokens_after": 7410,
+    "token_count_method": "exact",
+    "tokenizer": "tiktoken",
+    "tokenizer_id": "o200k_base",
+    "tokenizer_version": "0.13.0",
+    "is_estimate": false,
+    "jev_model_requested": "jev-latest",
+    "jev_model_resolved": null,
+    "laya_model_requested": "convaiinnovations/laya-multilingual",
+    "laya_model_resolved": "laya-multilingual@052592a15d198d9ad47da779604259b10b47b7aa",
+    "laya_context_limit": 1024,
+    "context_budget_used": 348,
+    "laya_temperature": null,
+    "reduction_ratio": 0.0,
+    "worth_it": true,
+    "min_reduction": 0.25,
+    "calls": 25,
+    "latency_ms": 5324,
+    "compilation_ms": 5355,
+    "reused_decisions": 0,
+    "semantic_decisions": 25,
+    "semantic_cache_hits": 0,
+    "semantic_cache_misses": 25,
+    "sufficiency_checks": 0,
+    "sufficiency_failures": 0,
+    "sufficiency_confidence": null,
+    "relationship_edges": 0,
+    "marker_tokens": 0,
+    "policy_version": "relevance-compaction-1.2",
+    "trim_policy_version": "trim-1.2",
+    "parser_version": "blocks-1.0",
+    "protection_version": "protection-1.1",
+    "relationship_version": "relationships-1.0",
+    "prefix_protected": false,
+    "prefix_untouched": true,
+    "first_mutation_offset": null,
+    "prefix_sha256": "01921466aff79128d826766cd2f149325f837008274bd6bc8e714b9d5fd2c11e",
+    "output_sha256": "01921466aff79128d826766cd2f149325f837008274bd6bc8e714b9d5fd2c11e",
+    "degradation_reason": null,
+    "semantic_guarantee": "judged",
+    "invalidated_tokens": 0,
+    "break_even_reuses": null,
+    "needs_review": false,
+    "review_reason": null,
+    "semantic_verifier_sufficient": null,
+    "semantic_verifier_decision": null,
+    "semantic_verifier_confidence": null,
+    "semantic_verifier_model": null,
+    "semantic_verifier_missing": [],
+    "semantic_verifier_risks": [],
+    "warnings": [],
+    "decisions": [
+      {
+        "id": "blk_0001_a8cb9e5aa39f",
+        "index": 1,
+        "line_start": 1,
+        "line_end": 16,
+        "chars": 1305,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9552,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9552,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0002_cd25f0087d48",
+        "index": 2,
+        "line_start": 18,
+        "line_end": 33,
+        "chars": 1305,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9558,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9558,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0003_e0bf489003d3",
+        "index": 3,
+        "line_start": 35,
+        "line_end": 50,
+        "chars": 1306,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9514,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9514,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0004_43321d973e91",
+        "index": 4,
+        "line_start": 52,
+        "line_end": 67,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9492,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9492,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0005_a3c15451522a",
+        "index": 5,
+        "line_start": 69,
+        "line_end": 84,
+        "chars": 1311,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9394,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9394,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0006_2bbb3d349c45",
+        "index": 6,
+        "line_start": 86,
+        "line_end": 101,
+        "chars": 1305,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9531,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9531,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0007_3d30bed9df43",
+        "index": 7,
+        "line_start": 103,
+        "line_end": 118,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9467,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9467,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0008_9f064258b447",
+        "index": 8,
+        "line_start": 120,
+        "line_end": 135,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9615,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9615,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0009_a07778ba4cd3",
+        "index": 9,
+        "line_start": 137,
+        "line_end": 152,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9311,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9311,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0010_e5865b14ec6a",
+        "index": 10,
+        "line_start": 154,
+        "line_end": 169,
+        "chars": 1305,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9454,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9454,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0011_8c3b03e5769c",
+        "index": 11,
+        "line_start": 171,
+        "line_end": 186,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9505,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9505,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0012_87473e522d0a",
+        "index": 12,
+        "line_start": 188,
+        "line_end": 203,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.953,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.953,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0013_f6afe6dbb145",
+        "index": 13,
+        "line_start": 205,
+        "line_end": 220,
+        "chars": 1303,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9661,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9661,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0014_d27ee8ade5cd",
+        "index": 14,
+        "line_start": 222,
+        "line_end": 237,
+        "chars": 1303,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9476,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9476,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0015_123e7b6a8de5",
+        "index": 15,
+        "line_start": 239,
+        "line_end": 254,
+        "chars": 1309,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9389,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9389,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0016_87fe8c7522c3",
+        "index": 16,
+        "line_start": 256,
+        "line_end": 271,
+        "chars": 1303,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9381,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9381,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0017_9012fa90dd0a",
+        "index": 17,
+        "line_start": 273,
+        "line_end": 288,
+        "chars": 1307,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.954,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.954,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0018_44222a3eebf2",
+        "index": 18,
+        "line_start": 290,
+        "line_end": 305,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9442,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9442,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0019_53cff797eaa3",
+        "index": 19,
+        "line_start": 307,
+        "line_end": 322,
+        "chars": 1311,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9494,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9494,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0020_af955d09c02b",
+        "index": 20,
+        "line_start": 324,
+        "line_end": 339,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9577,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9577,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0021_602e92395947",
+        "index": 21,
+        "line_start": 341,
+        "line_end": 356,
+        "chars": 1311,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9607,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9607,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0022_94a2c2145d85",
+        "index": 22,
+        "line_start": 358,
+        "line_end": 373,
+        "chars": 1308,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.9628,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.9628,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0023_ebea0d99d02c",
+        "index": 23,
+        "line_start": 375,
+        "line_end": 375,
+        "chars": 116,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.7658,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.7658,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0024_decf27b62858",
+        "index": 24,
+        "line_start": 377,
+        "line_end": 377,
+        "chars": 62,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.723,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.723,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      },
+      {
+        "id": "blk_0025_e56e9766568f",
+        "index": 25,
+        "line_start": 379,
+        "line_end": 379,
+        "chars": 56,
+        "decision": "keep",
+        "source": "laya",
+        "score": 0.3674,
+        "reason": "score_above_threshold",
+        "chars_after": null,
+        "confidence": 0.6326,
+        "relationships": [],
+        "policy_version": "relevance-compaction-1.2",
+        "content_type": "prose"
+      }
+    ]
+  },
+  "input_dossier_hf": 8166,
+  "same_bytes": true,
+  "laya_calls": [
+    {
+      "actual_tokens": [
+        596
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        598
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        599
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        604
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        606
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        596
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        597
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        603
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        600
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        598
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        603
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        603
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        592
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        590
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        602
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        596
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        598
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        601
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        598
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        601
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        606
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        603
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        177
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        172
+      ],
+      "refused_before_forward": false
+    },
+    {
+      "actual_tokens": [
+        174
+      ],
+      "refused_before_forward": false
+    }
+  ],
+  "jev_receipts": []
+}

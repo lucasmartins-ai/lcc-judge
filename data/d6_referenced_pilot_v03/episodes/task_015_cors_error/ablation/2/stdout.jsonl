@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114121_a24300", "timestamp": 1791110481739}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The CORS configuration is invalid for a credentialed request: wildcard", "timestamp": 1791110487357}
+{"type": "text", "text": " origins cannot be combined with allow_credentials=true. The browser blocks access to the API response, which is needed for cookie-auth", "timestamp": 1791110487358}
+{"type": "text", "text": "enticated POST requests.\",\"mechanism\":\"cors_wildcard_credentials\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110487359}
+{"type": "result", "session_id": "20261004_114121_a24300", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The CORS configuration is invalid for a credentialed request: wildcard origins cannot be combined with allow_credentials=true. The browser blocks access to the API response, which is needed for cookie-authenticated POST requests.\",\"mechanism\":\"cors_wildcard_credentials\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 2, "output": 218, "total": 1654, "cache_read": 1434, "cache_write": 0}, "duration_ms": 5659, "timestamp": 1791110487399}

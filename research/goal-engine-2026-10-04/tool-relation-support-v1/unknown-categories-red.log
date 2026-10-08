@@ -1,0 +1,19 @@
+test_all_semantic_unknown_kinds_participate_in_calibration_and_metrics (test_tool_role_policy.ToolRolePolicyTests.test_all_semantic_unknown_kinds_participate_in_calibration_and_metrics) ... ERROR
+test_semantic_unknown_is_retained_even_with_low_relevance (test_tool_role_policy.ToolRolePolicyTests.test_semantic_unknown_is_retained_even_with_low_relevance) ... ok
+test_strict_ties_and_missing_unknown_are_not_a_pass (test_tool_role_policy.ToolRolePolicyTests.test_strict_ties_and_missing_unknown_are_not_a_pass) ... ok
+test_threshold_cannot_sacrifice_portuguese_positives (test_tool_role_policy.ToolRolePolicyTests.test_threshold_cannot_sacrifice_portuguese_positives) ... ok
+
+======================================================================
+ERROR: test_all_semantic_unknown_kinds_participate_in_calibration_and_metrics (test_tool_role_policy.ToolRolePolicyTests.test_all_semantic_unknown_kinds_participate_in_calibration_and_metrics)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_role_policy.py", line 56, in test_all_semantic_unknown_kinds_participate_in_calibration_and_metrics
+    thresholds=calibrate(rows,scores)
+  File "/Users/Master/Downloads/LCC-judge/research/tool_role_policy.py", line 29, in calibrate
+    raise ValueError('Finite binary and semantic UNKNOWN validation required')
+ValueError: Finite binary and semantic UNKNOWN validation required
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=1)

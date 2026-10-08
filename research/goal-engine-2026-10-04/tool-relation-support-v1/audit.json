@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+  "finite_epoch_receipts": 9,
+  "accepted_update_steps": 2025,
+  "training_pair_presentations": 32328,
+  "training_nonpadding_tokens": 1111464,
+  "scored_pairs": 16992,
+  "scored_nonpadding_tokens": 658792,
+  "total_parameters": 117641859,
+  "trainable_parameters": 3697923,
+  "private_weight_hashes_verified": false,
+  "frozen_parameters_independently_verified": false,
+  "seed_passes": [
+    false,
+    false,
+    false
+  ],
+  "all_seeds_pass": false,
+  "mean_final": {
+    "pooled_auc": 0.643958825633359,
+    "within_goal_auc": 0.6662326388888888,
+    "positive_keep_recall": 0.9571759259259259,
+    "contradiction_keep_recall": 1.0,
+    "negative_drop_rejection": 0.08825231481481481,
+    "semantic_unknown_recognition": 0.9444444444444444
+  },
+  "unknown_drops": [
+    0,
+    0,
+    0
+  ],
+  "model_forwards_during_audit": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "training_reexecuted": false,
+  "scope": "Recorded direct-record data/source/epoch/selection/raw/math audit; known primitive fields/tools, authored fixture/wording transfer, not human-reviewed production/P2 or LCC replacement proof"
+}

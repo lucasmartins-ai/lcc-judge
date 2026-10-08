@@ -1,0 +1,84 @@
+{
+  "task_id": "task_009_ssl_timeout",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "62b211e59c89d136bd3bfd502f6f708b0d5c2ea90f18cb5fc285e893423978dc",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_009_ssl_timeout/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_009_ssl_timeout/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "TLS handshakes fail because the fragmented certificate response exceeds the 1500-byte path MTU, while router 10.0.1.1 drops ICMP Fragmentation Needed and TCP MTU probing is disabled, creating a PMTUD blackhole.",
+    "mechanism": "pmtud_blackhole",
+    "parameters": {
+      "path_mtu": 1500,
+      "tcp_mtu_probing": 0
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113613_688eaa",
+      "timestamp": 1791110173772
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113613_688eaa",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because the fragmented certificate response exceeds the 1500-byte path MTU, while router 10.0.1.1 drops ICMP Fragmentation Needed and TCP MTU probing is disabled, creating a PMTUD blackhole.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{\"path_mtu\":1500,\"tcp_mtu_probing\":0},\"python\":\"\"}",
+    "tokens": {
+      "input": 2,
+      "output": 513,
+      "total": 2035,
+      "cache_read": 1520,
+      "cache_write": 0
+    },
+    "duration_ms": 8031,
+    "timestamp": 1791110181804
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 10.166858166048769
+}

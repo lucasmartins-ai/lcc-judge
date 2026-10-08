@@ -1,0 +1,110 @@
+{
+  "task_id": "task_001_conn_pool",
+  "condition": "baseline",
+  "repeat": 2,
+  "requested_seed": 76,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "input_sha256": "278bf128a82fe91092edb8283c03b327bed03b31a727462e54c6060690d2c7ec",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_001_conn_pool/8192/episodes/task_001_conn_pool/baseline/2",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_001_conn_pool/8192/episodes/task_001_conn_pool/baseline/2/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "The payment-gateway connection pool is exhausted because stripe_webhook_handler acquires connections in billing.py:144 without releasing them.",
+    "mechanism": "pool_connection_leak",
+    "parameters": {
+      "pool_size": 20,
+      "active": 20,
+      "idle": 0,
+      "waiting": 42,
+      "leak_location": "billing.py:144"
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_141631_6c00ca",
+      "timestamp": 1791119791237
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_141631_6c00ca",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"The payment-gateway connection pool is exhausted because stripe_webhook_handler acquires connections in billing.py:144 without releasing them.\",\"mechanism\":\"pool_connection_leak\",\"parameters\":{\"pool_size\":20,\"active\":20,\"idle\":0,\"waiting\":42,\"leak_location\":\"billing.py:144\"},\"python\":\"\"}",
+    "tokens": {
+      "input": 8415,
+      "output": 190,
+      "total": 8745,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 6474,
+    "timestamp": 1791119797711
+  },
+  "verification": {
+    "passed": true,
+    "reason": "math_then_text_review",
+    "text_probability": 0.98,
+    "threshold": 0.5
+  },
+  "wall_time_s": 9.95894749998115,
+  "outcome_jev": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "consistent": {
+          "type": "noul",
+          "noul": 0.98
+        }
+      },
+      "usage": {
+        "input_tokens": 11224,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 385.79445899999996,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 0.00047140800000000004,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "outcome_review_completed": true,
+  "training_eligible": false
+}

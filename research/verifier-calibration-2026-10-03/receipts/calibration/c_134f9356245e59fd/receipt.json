@@ -1,0 +1,34 @@
+{
+  "case_id": "c_134f9356245e59fd",
+  "split": "calibration",
+  "task_number": 20,
+  "kind": "code",
+  "family": "runtime_not_assertion",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "1cc18d49eb4ddd6928da17288d666e9d978885be9bbe7dd518a033ac45820794",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "correct_bucket_passes",
+      "kills_always_allow",
+      "kills_no_refill",
+      "kills_wrong_burst"
+    ],
+    "program_stdout": "",
+    "source_sha256": "3c847dba12b5497048369f738cf923c79070adb10e394c1e7a7ff0dfd2775ec0"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "RuntimeError: burst",
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.11308637500042096
+}

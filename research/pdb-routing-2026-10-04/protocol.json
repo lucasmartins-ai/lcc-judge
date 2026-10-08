@@ -1,0 +1,55 @@
+{
+  "version": "pdb-routing/0.1",
+  "model": "jev-1.13.0",
+  "feature": "lcc_judge_pdb_routing",
+  "threshold": 0.5,
+  "threshold_policy": "Inherited .50, fixed before development and eval dispatch; no fitting or tuning.",
+  "targets": {
+    "eval_fp": 0,
+    "eval_fn": 0,
+    "eval_unknown": 0
+  },
+  "manifest_sha256": "32993c1121bf0572264a46eaf55f5a2cfbafb0820abe933208e8ae4981c8ca60",
+  "case_files": {
+    "development.jsonl": "ea4aeae8533fa906d62d89258aa625aa5172242e453f78c59823ad9a2128246f",
+    "eval.jsonl": "38f7cac12f997abdaef78ecceb88604548b5570e97f873499fce1d85daaaa061"
+  },
+  "sources": {
+    "replay/pdb_verifier.py": "20057717934086a579b59101d6e48ac462cd21c794f71c1ab91be2d5078ad261",
+    "replay/pdb_jev_bridge.ts": "db7894113e7aeb57503f159c251a13abb7bb989f68350c72c3ef2c6089dfa574",
+    "research/pdb-routing-2026-10-04/build_cases.py": "0a46fb6d3f2f1cfa5db735f78ced2ca7fa2707b69d86faa2989ee76123b4a909",
+    "research/pdb-routing-2026-10-04/run.py": "a111c99e0f11d27f47dd8d6f777cd20871640505e1800455533ac62461bb982a",
+    "research/pdb-routing-2026-10-04/numeric_check.py": "3f9539b620f9fe34dddf3653e575e8fc1f77898e7b43cfb8d3baec55a7458278",
+    "research/pdb-routing-2026-10-04/oracle/main.go": "fc19b4898b6a9bb56271b2fed1225474249bfcc7173d5f1519bff207ecb77bad",
+    "research/pdb-routing-2026-10-04/oracle/go.mod": "fa7220bd0088db3a6cd413ac1766b8dbf1f90bfcf2c835ccb5ffe7462c6c9655",
+    "research/pdb-routing-2026-10-04/oracle/go.sum": "a50eeb72708382bf2002e5179ceedbbce1a867f653c0811def4959a5746f59c0"
+  },
+  "oracle_binary_sha256": "07982817c5ace6c839ac86dda992fdc950dd33fe5d5349c1716e70926043d7d0",
+  "upstream_manifest_sha256": "f66622f3026e40516025a8f5be95e4db83b7e4d94dfe5b3619899ae57ef9fc95",
+  "numeric_verification_sha256": "fa6121c61f213b9a297addb5cafca0a94dd6bb2f456fe755bd51628904021138",
+  "questions": {
+    "routed": {
+      "consistent": {
+        "type": "noul",
+        "instructions": "Is explanation factually consistent with verified_facts? The facts are authoritative results of an exact PDB checker for a supported controller with all desired replicas healthy. Judge only the explanation against these facts; do not recompute a budget or require a maximal disruption allowance. A conservative budget is acceptable. Reject a materially contradictory claim, including an incorrect eviction count, denial of permitted maintenance, denial of quorum protection, or a guarantee against involuntary node failures. An omission alone is not a contradiction.",
+        "criteria": {
+          "true": "The explanation contains no material contradiction with the supplied verified facts.",
+          "false": "The explanation contradicts one or more supplied verified facts."
+        }
+      }
+    },
+    "coupled": {
+      "consistent": {
+        "type": "noul",
+        "instructions": "Is the submitted answer materially consistent with the explicit controlled observations in context? Evaluate the whole submitted_answer, including explanation and claimed mechanism. A correct mechanism key does not excuse an explanation that denies the observed cause or asserts a competing cause explicitly ruled out. For quantitative decisions consider the stated budget. This asks consistency with this supplied fixture, not production health.",
+        "criteria": {
+          "true": "Answer agrees with the explicit observations and contains no materially contradictory claim.",
+          "false": "Answer denies an explicit observation, asserts a ruled-out cause, or contradicts the stated quantitative constraint."
+        }
+      }
+    }
+  },
+  "comparison": "Same numeric guard and cutoff; different state representation and semantic question. One API judgment per arm per eligible case. Not a causal or repeated-production estimate.",
+  "scope": "Curated PDB controls only; all replicas healthy and supported controller; voluntary evictions. No full manifest, selectors, production ground truth or P2 admission.",
+  "sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6"
+}

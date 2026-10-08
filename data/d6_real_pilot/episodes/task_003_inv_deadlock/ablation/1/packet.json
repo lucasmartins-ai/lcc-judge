@@ -1,0 +1,21 @@
+{
+  "objective": "Propose a fix for concurrent deadlock in inventory reservation.",
+  "task_class": "coding",
+  "context": [
+    {
+      "block_id": "b_a8f40c80",
+      "content": "2026-10-03T11:15:00Z [ERROR] Deadlock detected: transaction 44 waiting for lock on item 89 held by tx 45; tx 45 waiting for lock on item 12 held by tx 44",
+      "source": "var/log/inventory.log",
+      "block_type": "trace"
+    },
+    {
+      "block_id": "b_dd4113a1",
+      "content": "order-service checkout started for user_id=99281",
+      "source": "var/log/orders.log",
+      "block_type": "log"
+    }
+  ],
+  "requested_seed": 59,
+  "interface": "Define reserve_items(items). Each item has integer .id. Provided globals: lock_item(id) is a context manager and decrement_stock(item) performs the reservation. Return runnable Python implementing the fix.",
+  "mechanism_options": null
+}

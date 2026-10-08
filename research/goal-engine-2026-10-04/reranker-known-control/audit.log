@@ -1,0 +1,91 @@
+{
+  "schema": "compact-reranker-offline-completion/0.1",
+  "protocol_sha256": "6bd25d58ce1111ab726f289f79e5be4580e6ad31bf2b0b4cb8ae5189cb858d49",
+  "sources_data_annotations_raw_metrics_threshold_verified": true,
+  "scoring_completed": true,
+  "original_report_serialization_failed": true,
+  "original_run_json_missing": true,
+  "failure_log_sha256": "d8802a247881aa83e9863b284733a47d2265de9efe4a92838fa40f93da2d64cc",
+  "setup_s": null,
+  "peak_process_rss_bytes": null,
+  "unsaved_environment_identity_recovered": false,
+  "metrics": {
+    "validation": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.8154296875,
+      "paired_auc": 0.8958333333333334,
+      "paired_reports": 192,
+      "positive_recall": 0.953125,
+      "negative_rejection": 0.2708333333333333,
+      "within_objective": {
+        "wins": 347,
+        "comparisons": 384,
+        "auc": 0.9036458333333334,
+        "objectives": 96
+      }
+    },
+    "final": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.6719835069444444,
+      "paired_auc": 0.703125,
+      "paired_reports": 192,
+      "positive_recall": 0.96875,
+      "negative_rejection": 0.052083333333333336,
+      "within_objective": {
+        "wins": 257,
+        "comparisons": 384,
+        "auc": 0.6692708333333334,
+        "objectives": 96
+      }
+    }
+  },
+  "metric_axes": {
+    "pooled": "all positive versus all negative rows; strict >",
+    "paired_auc": "same report under two different neighboring goals; strict >",
+    "within_objective": "positive versus negative reports under exactly the same goal; strict >"
+  },
+  "scored_pair_evaluations": 2304,
+  "accounting_reduced_from_raw": {
+    "counted_tokens": 161340,
+    "submitted_tokens": 161340,
+    "forward_completed_tokens": 161340,
+    "valid_score_tokens": 161340
+  },
+  "max_actual_pair_tokens": 93,
+  "all_repetitions_identical": true,
+  "observed_pass_s": {
+    "validation": [
+      1.0430162090342492,
+      1.011472665995825,
+      1.2316149169928394
+    ],
+    "final": [
+      1.0083274999633431,
+      1.054546583967749,
+      1.0496083330363035
+    ]
+  },
+  "final_auc_family_bootstrap_95": [
+    0.5898905436197917,
+    0.7639973958333334
+  ],
+  "final_gate_pass": false,
+  "annotation_source": {
+    "path": "research/goal-engine-2026-10-04/semantic-tool-cpu-v2/executed-source/research/semantic_corpus.py",
+    "sha256": "53ebca795c09b05def471e1fb17238a29971956e2d26ffc21253e9c64c31b42b",
+    "retrospective_supplement": true
+  },
+  "scope": "exposed authored short-input diagnostic, not independent transfer/production/P2",
+  "artifact_loading_reexecuted": false,
+  "API_calls_during_audit": 0,
+  "model_calls_during_audit": 0,
+  "adoption": false,
+  "current_default_changed": false,
+  "temporal_attestation": "source/data hashes do not provide external temporal attestation"
+}

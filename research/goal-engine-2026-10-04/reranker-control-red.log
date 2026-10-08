@@ -1,0 +1,18 @@
+test_reranker_control (unittest.loader._FailedTest.test_reranker_control) ... ERROR
+
+======================================================================
+ERROR: test_reranker_control (unittest.loader._FailedTest.test_reranker_control)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_reranker_control
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_reranker_control.py", line 8, in <module>
+    from research.reranker_control import PairReranker
+ModuleNotFoundError: No module named 'research.reranker_control'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

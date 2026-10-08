@@ -1,0 +1,29 @@
+{
+  "case_id": "c_4a354272ab32f320",
+  "split": "calibration",
+  "task_number": 3,
+  "kind": "code",
+  "family": "no_reservation",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "0858ba8e8d3ab66a66da31bd12052ef9e12525a2ea3c2760b15f7b9b99b427b6",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Inconsistent acquisition order: []",
+    "program_stdout": "",
+    "source_sha256": "691b9c3d097d2825ab0e3da895b9405b33646380bd984ad8a0d782e090f11760"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12062837497796863
+}

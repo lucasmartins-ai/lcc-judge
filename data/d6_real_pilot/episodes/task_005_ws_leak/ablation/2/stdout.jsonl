@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211026_319396", "timestamp": 1791058227298}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Unclosed websocket client sessions are likely accumulating and retaining objects, causing OOM;", "timestamp": 1791058231498}
+{"type": "text", "text": " inspect the session/event-listener lifecycle for missing cleanup.\",\"mechanism\":\"unclosed_client_session\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791058231499}
+{"type": "result", "session_id": "20261003_211026_319396", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Unclosed websocket client sessions are likely accumulating and retaining objects, causing OOM; inspect the session/event-listener lifecycle for missing cleanup.\",\"mechanism\":\"unclosed_client_session\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 400, "output": 326, "total": 1774, "cache_read": 1048, "cache_write": 0}, "duration_ms": 4225, "timestamp": 1791058231523}

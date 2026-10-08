@@ -1,0 +1,21 @@
+{
+  "objective": "Implement rate limiting decorator with leak rate and capacity.",
+  "task_class": "coding",
+  "context": [
+    {
+      "block_id": "b_f39ee3ac",
+      "content": "Target rate: 100 requests per minute with burst capacity 150.",
+      "source": "api_limits.md",
+      "block_type": "doc"
+    },
+    {
+      "block_id": "b_e24f4b9f",
+      "content": "HTTP 429 Too Many Requests response payload schema.",
+      "source": "responses.md",
+      "block_type": "doc"
+    }
+  ],
+  "requested_seed": 76,
+  "interface": "Define rate_limit(leak_rate,capacity,clock) returning a decorator. clock() gives seconds. The decorated callable returns its normal result when admitted and False when denied. Return working Python, including state management.",
+  "mechanism_options": null
+}

@@ -1,0 +1,35 @@
+baseline typed {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 1.0, 'healthy_auc': 1.0, 'anomalous_auc': 1.0}
+baseline lexical: 0/504
+baseline lexical: 100/504
+baseline lexical: 200/504
+baseline lexical: 300/504
+baseline lexical: 400/504
+baseline lexical: 500/504
+baseline lexical {'n': 504, 'known': 360, 'eligible_known': 360, 'errors': 0, 'cuts': 0, 'auc': 0.4314557613168724, 'healthy_auc': 0.4314557613168724, 'anomalous_auc': 0.4314557613168724}
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6662.14it/s]
+baseline bge: 0/504
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (535 > 512). Running this sequence through the model will result in indexing errors
+baseline bge: 100/504
+baseline bge: 200/504
+baseline bge: 300/504
+baseline bge: 400/504
+baseline bge: 500/504
+baseline bge {'n': 504, 'known': 360, 'eligible_known': 290, 'errors': 0, 'cuts': 99, 'auc': 0.5019322235434007, 'healthy_auc': 0.501684502576298, 'anomalous_auc': 0.5021799445105034}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/Master/Downloads/LCC-judge/research/relevance_study.py", line 470, in <module>
+    main()
+    ~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/research/relevance_study.py", line 444, in main
+    baselines(args.out, protocol)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/relevance_study.py", line 380, in baselines
+    adapter.load()
+    ~~~~~~~~~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/bakeoff/adapters.py", line 58, in load
+    self._load()
+    ~~~~~~~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/bakeoff/adapters.py", line 159, in _load
+    import laya
+ModuleNotFoundError: No module named 'laya'

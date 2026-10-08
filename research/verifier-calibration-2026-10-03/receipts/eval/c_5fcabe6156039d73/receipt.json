@@ -1,0 +1,29 @@
+{
+  "case_id": "c_5fcabe6156039d73",
+  "split": "eval",
+  "task_number": 16,
+  "kind": "code",
+  "family": "denied_side_effect",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "bba252091c1f237b20d1e12bb8703d8a695ee3f7f337d275db802faa908251a4",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: ",
+    "program_stdout": "",
+    "source_sha256": "ff865e7025efa8fb5af9a074bd597651251820f508c24e25c60541b31ad1fe24"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.14606350002577528
+}

@@ -1,0 +1,28 @@
+{
+  "version": "objective-zscore-logit/0.1",
+  "depths": [
+    0,
+    512
+  ],
+  "models": [
+    "specialist-exp05-frozen-8k",
+    "specialist-exp05-unfreeze2-8k"
+  ],
+  "bootstrap_repeats": 2000,
+  "bootstrap_seed": 42,
+  "transform": "zscore(logit(probability)) over all three candidates for each objective",
+  "criteria": {
+    "min_delta_J": 0.03,
+    "delta_J_ci_low_strictly_positive": true,
+    "max_D_loss": 0.01
+  },
+  "source_file": "bakeoff/results/results.json",
+  "source_sha256": "55bb902100000e5729b2499a453d4530a946585255ebac080d6a7241a265155b",
+  "script_sha256": "c1f174a3131bc8a3cd73bbc91e9df1da3dc6f80a2dc32664c7f321cde7fba3fa",
+  "limitations": [
+    "Exploratory continuation; original terminal-only pilot not reproduced.",
+    "No calibration fit and no untouched confirmatory split.",
+    "Requires a candidate set; score depends on its composition.",
+    "AUC gains are not probabilistic calibration evidence."
+  ]
+}

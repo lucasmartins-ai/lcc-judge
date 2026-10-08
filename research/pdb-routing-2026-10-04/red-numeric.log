@@ -1,0 +1,25 @@
+test_integer_must_fit_kubernetes_int32 (test_pdb_routing.PDBRoutingRegressionTests.test_integer_must_fit_kubernetes_int32) ... FAIL
+test_percentage_with_leading_zeroes_is_valid (test_pdb_routing.PDBRoutingRegressionTests.test_percentage_with_leading_zeroes_is_valid) ... FAIL
+
+======================================================================
+FAIL: test_integer_must_fit_kubernetes_int32 (test_pdb_routing.PDBRoutingRegressionTests.test_integer_must_fit_kubernetes_int32)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_pdb_routing.py", line 10, in test_integer_must_fit_kubernetes_int32
+    self.assertFalse(check_budget({'min_available':2147483648},replicas=2147483650,quorum=1))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_percentage_with_leading_zeroes_is_valid (test_pdb_routing.PDBRoutingRegressionTests.test_percentage_with_leading_zeroes_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_pdb_routing.py", line 7, in test_percentage_with_leading_zeroes_is_valid
+    self.assertTrue(check_budget({'min_available':'060%'},replicas=5,quorum=3))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

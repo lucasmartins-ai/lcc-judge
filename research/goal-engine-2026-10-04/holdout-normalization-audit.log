@@ -1,0 +1,61 @@
+{
+  "n_candidates": 192,
+  "n_objectives": 64,
+  "domains": [
+    "bot_traffic",
+    "pdf_render",
+    "sms_delivery",
+    "vector_drift"
+  ],
+  "summary": {
+    "parent": {
+      "before": {
+        "J": 0.635009765625,
+        "D": 0.64697265625
+      },
+      "after": {
+        "J": 0.704833984375,
+        "D": 0.640625
+      },
+      "delta_J_95ci": [
+        -0.0390625,
+        0.1591796875
+      ],
+      "paired": {
+        "J": 0.734375,
+        "D": 0.625
+      },
+      "criteria_pass": false
+    },
+    "selected_bce": {
+      "before": {
+        "J": 0.6143391927083334,
+        "D": 0.6416829427083334
+      },
+      "after": {
+        "J": 0.6708170572916666,
+        "D": 0.6377766927083334
+      },
+      "delta_J_95ci": [
+        -0.074462890625,
+        0.158203125
+      ],
+      "paired": {
+        "J": 0.625,
+        "D": 0.625
+      },
+      "criteria_pass": false
+    }
+  },
+  "archived_sources_verified": [
+    "executed-source/research/holdout_normalization.py",
+    "executed-source/research/head_objective_study.py",
+    "executed-source/specialist/corpus.py",
+    "executed-source/specialist/model.py",
+    "executed-source/specialist/checkpoint.py"
+  ],
+  "source_verification_mode": "archived",
+  "inference_reexecuted": false,
+  "training_admission": false,
+  "temporal_preregistration_certified": false
+}

@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Identify the root cause of connection pool timeout errors in payment-gateway.",
+    "blocks": [
+      {
+        "id": "blk_0091_7cb69406c301",
+        "text": "2026-10-03T10:00:01Z [INFO] payment-gateway healthcheck ok 200\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0091_7cb69406c301": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0091_7cb69406c301 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

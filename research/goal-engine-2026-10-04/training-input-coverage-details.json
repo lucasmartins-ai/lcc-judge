@@ -1,0 +1,175 @@
+{
+  "n": 2340,
+  "config_training_max_len": 1024,
+  "actual_hf_min": 304,
+  "actual_hf_max": 1711,
+  "counts": {
+    "pos_related_lines": 777,
+    "neg_decoy_related_lines": 804,
+    "full_pairs_over_training_limit": 1135,
+    "neg_decoy_line_partially_cut": 8,
+    "pos_line_partially_cut": 3,
+    "neg_decoy_entire_line_missing": 3,
+    "pos_entire_line_missing": 1
+  },
+  "affected_related_lines": [
+    {
+      "id": "disk_quota-train-00093",
+      "kind": "neg_decoy",
+      "domain": "disk_quota",
+      "actual_hf": 1594,
+      "visible_text_character_end": 3269,
+      "evidence_line_character_start": 3193,
+      "evidence_line_character_end": 3271,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "config_change-train-00075",
+      "kind": "neg_decoy",
+      "domain": "config_change",
+      "actual_hf": 1666,
+      "visible_text_character_end": 3186,
+      "evidence_line_character_start": 3117,
+      "evidence_line_character_end": 3211,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "pool_saturation-train-00110",
+      "kind": "neg_decoy",
+      "domain": "pool_saturation",
+      "actual_hf": 1612,
+      "visible_text_character_end": 3153,
+      "evidence_line_character_start": 3145,
+      "evidence_line_character_end": 3226,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "api_contract-train-00096",
+      "kind": "pos",
+      "domain": "api_contract",
+      "actual_hf": 1622,
+      "visible_text_character_end": 3202,
+      "evidence_line_character_start": 3121,
+      "evidence_line_character_end": 3208,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "api_contract-train-00098",
+      "kind": "neg_decoy",
+      "domain": "api_contract",
+      "actual_hf": 1616,
+      "visible_text_character_end": 3189,
+      "evidence_line_character_start": 3194,
+      "evidence_line_character_end": 3278,
+      "coverage": "entire_line_missing"
+    },
+    {
+      "id": "geoshard_routing-train-00062",
+      "kind": "neg_decoy",
+      "domain": "geoshard_routing",
+      "actual_hf": 1685,
+      "visible_text_character_end": 3134,
+      "evidence_line_character_start": 3297,
+      "evidence_line_character_end": 3387,
+      "coverage": "entire_line_missing"
+    },
+    {
+      "id": "audit_log_gap-train-00041",
+      "kind": "neg_decoy",
+      "domain": "audit_log_gap",
+      "actual_hf": 1606,
+      "visible_text_character_end": 3191,
+      "evidence_line_character_start": 3110,
+      "evidence_line_character_end": 3194,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "audit_log_gap-train-00108",
+      "kind": "pos",
+      "domain": "audit_log_gap",
+      "actual_hf": 1630,
+      "visible_text_character_end": 3203,
+      "evidence_line_character_start": 3181,
+      "evidence_line_character_end": 3257,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "cost_runaway-train-00076",
+      "kind": "neg_decoy",
+      "domain": "cost_runaway",
+      "actual_hf": 1649,
+      "visible_text_character_end": 3226,
+      "evidence_line_character_start": 3166,
+      "evidence_line_character_end": 3243,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "i18n_missing-train-00086",
+      "kind": "neg_decoy",
+      "domain": "i18n_missing",
+      "actual_hf": 1677,
+      "visible_text_character_end": 3249,
+      "evidence_line_character_start": 3228,
+      "evidence_line_character_end": 3308,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "monitoring_flap-train-00043",
+      "kind": "pos",
+      "domain": "monitoring_flap",
+      "actual_hf": 1622,
+      "visible_text_character_end": 3211,
+      "evidence_line_character_start": 3222,
+      "evidence_line_character_end": 3295,
+      "coverage": "entire_line_missing"
+    },
+    {
+      "id": "monitoring_flap-train-00052",
+      "kind": "neg_decoy",
+      "domain": "monitoring_flap",
+      "actual_hf": 1657,
+      "visible_text_character_end": 3091,
+      "evidence_line_character_start": 3293,
+      "evidence_line_character_end": 3356,
+      "coverage": "entire_line_missing"
+    },
+    {
+      "id": "monitoring_flap-train-00128",
+      "kind": "neg_decoy",
+      "domain": "monitoring_flap",
+      "actual_hf": 1592,
+      "visible_text_character_end": 3248,
+      "evidence_line_character_start": 3215,
+      "evidence_line_character_end": 3279,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "pii_in_logs-train-00097",
+      "kind": "neg_decoy",
+      "domain": "pii_in_logs",
+      "actual_hf": 1675,
+      "visible_text_character_end": 3122,
+      "evidence_line_character_start": 3102,
+      "evidence_line_character_end": 3176,
+      "coverage": "line_partially_cut"
+    },
+    {
+      "id": "grpc_deadline-train-00018",
+      "kind": "pos",
+      "domain": "grpc_deadline",
+      "actual_hf": 1688,
+      "visible_text_character_end": 3090,
+      "evidence_line_character_start": 3066,
+      "evidence_line_character_end": 3151,
+      "coverage": "line_partially_cut"
+    }
+  ],
+  "data_sha256": "5f66ee54a3c4ac2e94e8f6845f22ca3647bdb013ae4ecfaeac82ed6d136327fd",
+  "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+  "analysis_sha256": "05e77c18df7cb9c3e969ae2d31851a415cced74e1bb3b54dc4ec7f379e3b34b6",
+  "tokenizer_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+  "historical_training_reexecuted": false,
+  "historical_tokenizer_identity_certified": false,
+  "loss_causality_established": false,
+  "scope": "Current pinned tokenizer and saved training max_len; exact complete-line coverage, not outcome necessity or a causal training diagnosis"
+}

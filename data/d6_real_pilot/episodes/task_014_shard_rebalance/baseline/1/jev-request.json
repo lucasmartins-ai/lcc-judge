@@ -1,0 +1,41 @@
+{
+  "state": {
+    "objective": "Select online versus maintenance window migration for shard 7.",
+    "context": [
+      {
+        "block_id": "b_a33c36fe",
+        "content": "Shard 7 contains 4.8TB data, 12,000 IOPS write load. Maintenance window allows max 30 min downtime; full pg_dump/restore requires 6 hours.",
+        "source": "sharding/plan.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_ec46cb6c",
+        "content": "Logical replication CDC via Debezium supports cutover in <15 seconds once caught up.",
+        "source": "cdc.md",
+        "block_type": "doc"
+      },
+      {
+        "block_id": "b_5f748c91",
+        "content": "Hardware: AWS r6i.4xlarge instances with gp3 EBS volumes.",
+        "source": "infra.tf",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Select online migration using Debezium logical replication CDC.",
+      "mechanism": "online_logical_replication",
+      "parameters": {
+        "cutover_seconds": 15,
+        "downtime_budget_minutes": 30
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

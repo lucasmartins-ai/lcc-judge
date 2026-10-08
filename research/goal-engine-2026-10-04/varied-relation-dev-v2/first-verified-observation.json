@@ -1,0 +1,22 @@
+{
+  "protocol_sha256": "b8240c1a93f70508e6f7a40d8590e4c408aa82b51e36a8b417b894d121713588",
+  "state": "RUNNING",
+  "supervisor": {
+    "pid": 50655,
+    "birth": "Mon Oct 5 09:38:34 2026",
+    "live": true,
+    "command": "/Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m research.detached_varied_study supervise"
+  },
+  "child": {
+    "pid": 50657,
+    "birth": "Mon Oct 5 09:38:34 2026",
+    "live": true,
+    "command": "/Library/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m research.varied_relation_dev_detached run"
+  },
+  "supervisor_matches": true,
+  "child_matches": true,
+  "process_exit": null,
+  "observation_at_utc": "2026-10-05T08:41:52.481599+00:00",
+  "observer_source_sha256": "c7f14a53a20f5455dbb17756340ed9cfb9879e0ff83b069358d1f2041d4d44ff",
+  "scope": "PID/birth/fixed module/action observation; frozen source hashes checked, no study mutation/restart/model calls or quality approval"
+}

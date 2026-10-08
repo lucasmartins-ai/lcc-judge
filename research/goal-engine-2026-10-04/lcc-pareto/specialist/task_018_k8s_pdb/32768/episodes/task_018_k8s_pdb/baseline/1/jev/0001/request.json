@@ -1,0 +1,29 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "verified_facts": {
+      "min_remaining": 3,
+      "max_disruptions": 2,
+      "quorum": 3,
+      "requested_maintenance": 1,
+      "quorum_preserved": true,
+      "requested_maintenance_permitted": true,
+      "supported_controller": true,
+      "all_desired_replicas_healthy": true,
+      "applies_to_voluntary_evictions": true,
+      "prevents_involuntary_node_failures": false,
+      "maximal_disruption_required": false
+    },
+    "explanation": "Configure the search-indexing Deployment\u2019s PodDisruptionBudget to require at least 3 of its 5 replicas to remain available during voluntary disruptions."
+  },
+  "questions": {
+    "text_consistent": {
+      "type": "noul",
+      "instructions": "Does the explanation agree with the verified_facts, without claiming protection against involuntary failures? Evaluate only consistency of the explanation with supplied verified arithmetic and scope, not production health. Prefer false for a contradiction.",
+      "criteria": {
+        "true": "Explanation agrees with supplied facts and voluntary-disruption scope.",
+        "false": "Explanation contradicts supplied facts or promises involuntary-failure protection."
+      }
+    }
+  }
+}

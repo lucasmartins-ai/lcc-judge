@@ -1,0 +1,36 @@
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|██████████| 105/105 [00:00<00:00, 9736.73it/s]
+validation 0 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.8154296875, 'paired_auc': 0.8958333333333334, 'paired_reports': 192, 'positive_recall': 0.953125, 'negative_rejection': 0.2708333333333333} 1.043
+validation 1 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.8154296875, 'paired_auc': 0.8958333333333334, 'paired_reports': 192, 'positive_recall': 0.953125, 'negative_rejection': 0.2708333333333333} 1.011
+validation 2 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.8154296875, 'paired_auc': 0.8958333333333334, 'paired_reports': 192, 'positive_recall': 0.953125, 'negative_rejection': 0.2708333333333333} 1.232
+final 0 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.6719835069444444, 'paired_auc': 0.703125, 'paired_reports': 192, 'positive_recall': 0.96875, 'negative_rejection': 0.052083333333333336} 1.008
+final 1 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.6719835069444444, 'paired_auc': 0.703125, 'paired_reports': 192, 'positive_recall': 0.96875, 'negative_rejection': 0.052083333333333336} 1.055
+final 2 {'n': 384, 'eligible': 384, 'cuts': 0, 'errors': 0, 'auc': 0.6719835069444444, 'paired_auc': 0.703125, 'paired_reports': 192, 'positive_recall': 0.96875, 'negative_rejection': 0.052083333333333336} 1.05
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/Master/Downloads/LCC-judge/research/reranker_diagnostic.py", line 137, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/Master/Downloads/LCC-judge/research/reranker_diagnostic.py", line 134, in main
+    run(protocol,snapshot)
+    ~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/reranker_diagnostic.py", line 126, in run
+    save_once(OUT/'run.json',report);print(json.dumps(report,indent=2))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/research/reranker_diagnostic.py", line 35, in save_once
+    text=json.dumps(value,indent=2,allow_nan=False)+'\n'
+         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type set is not JSON serializable
+when serializing dict item 'missing_keys'
+when serializing dict item 'loading_info'
+when serializing dict item 'model'

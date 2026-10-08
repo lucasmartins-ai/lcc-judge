@@ -1,0 +1,67 @@
+{
+  "schema": "multilingual-frozen-ranking/0.1",
+  "frozen_at_utc": "2026-10-04T21:14:35.896379+00:00",
+  "model": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "license": "apache-2.0",
+    "files": {
+      "README.md": "c86bce75ae78f36287331388604a090cdba0ea394a9f2c1d4da364a4ca65c623",
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "model.safetensors": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "primary_source": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1/blob/8008f0154ca2387468013ed439df09d70c122412/README.md",
+    "upstream_blob_or_lfs_identity_verified": true,
+    "TLS_verified": true,
+    "inference_executed": false,
+    "training_executed": false,
+    "adoption": false
+  },
+  "data_protocol_sha256": "932c23cd40b323e88186a9755e887a44ede076d168d6f08264b0446a022ce96b",
+  "data_files": {
+    "validation.jsonl": "52d92ddb092faa7ef0f852439efc7d6ba8301e2439d267c7e6aaaaf31ff8b13b",
+    "validation-views.jsonl": "bd436510140aacfebf55a797499883ecfe4dce52cf7699a345787cf27d4ceff9",
+    "final.jsonl": "114f319358c26176be6c297828e848b90b291a0bc75e8406f39906f957228fec",
+    "final-views.jsonl": "89c864ab49a37a744bbb12f4f5bd255601c553bc8d7a532e4cc7bef685570c34"
+  },
+  "previous_scalar_scores": {
+    "validation": "469223bffb0b3631ae6fef92ebb6366d2f2e25b76be89a243f6c388c330585ef",
+    "final": "c4460ca5dbee12f0a7a71998114d0c5c71e4ba6a5bd3723094950fabca64ac42"
+  },
+  "sources": {
+    "research/multilingual_ranking_diagnostic.py": "a25d0e04965ab072f6c17f6b4fce329ebede831623ab7a3a772787385a43ad83",
+    "research/reranker_control.py": "5c10f04474659e114156cd11e3794eb61b1da11a8ffc7d661ac1ebf50848af5d",
+    "research/tool_role_policy.py": "2aca27219708d79d4476579162a55f89ba41a273d9fb42561c9d9ce1c8e05a49",
+    "research/audit_tool_role_data.py": "5ffb9bc35b5e88b34d0ef353d3aaf4f6513009ad1765b7b8e470d1be5192d735",
+    "research/audit_multilingual_diagnostic.py": "c6618470063c31eabb22c1f41affc599b45fce1eaab1d7f5008ef0c0f5fda965",
+    "research/audit_tool_role_support.py": "4418885862bfa2292dc4302b9931ddcb7d308dc2eeac557257e9bf59196eb54d"
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 8,
+  "batch_size": 16,
+  "complete_pair_window": 512,
+  "versions": {
+    "torch": "2.12.0",
+    "transformers": "5.10.2",
+    "tokenizers": "0.22.2",
+    "numpy": "2.4.6"
+  },
+  "scoring": "One complete validation and final pass; fixed original projected strings; all structural UNKNOWN bypasses the model",
+  "ranking_criterion": "Strict pooled and within-goal AUC >=.90 in aggregate AND each EN/PT language; diagnostic only",
+  "policy": "Blanket shadow UNKNOWN/KEEP; no learned support detection or calibrated threshold; no DROP authority",
+  "scope": "Already exposed authored tool-role cohorts/English captions/shared concepts; not fresh confirmation, production or P2",
+  "limitations": "Different upstream architecture/tokenizer/training data/parameter count; comparison does not isolate language pretraining as a cause",
+  "training_executed": false,
+  "final_threshold_tuning": false,
+  "adoption": false,
+  "API_calls": 0,
+  "P2_admission": false,
+  "default_changed": false,
+  "publishing": false,
+  "sha256": "cd41918e5f2692d46e616e65943f8c3428e51cc6cff64fb3b00b358e98036e99"
+}

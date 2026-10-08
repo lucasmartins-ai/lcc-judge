@@ -1,0 +1,71 @@
+eval: 108 receipts saved
+{
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "threshold_sha256": "d6afda3a7c96b41e6a3dfc1028f26eb10d6c717a5c775d257e3603047ba7e158",
+  "frozen_threshold": 0.5,
+  "diagnostic_threshold": 0.5,
+  "eval_legacy": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 11,
+      "fp": 2,
+      "fn": 1,
+      "unknown": 0,
+      "fpr": 0.16666666666666666,
+      "fnr": 0.08333333333333333,
+      "recall": 0.9166666666666666,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 84,
+      "positives": 42,
+      "negatives": 42,
+      "tp": 41,
+      "fp": 37,
+      "fn": 1,
+      "unknown": 0,
+      "fpr": 0.8809523809523809,
+      "fnr": 0.023809523809523808,
+      "recall": 0.9761904761904762,
+      "unknown_rate": 0.0
+    }
+  },
+  "eval_candidate": {
+    "code": {
+      "n": 24,
+      "positives": 12,
+      "negatives": 12,
+      "tp": 12,
+      "fp": 0,
+      "fn": 0,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.0,
+      "recall": 1.0,
+      "unknown_rate": 0.0
+    },
+    "typed": {
+      "n": 84,
+      "positives": 42,
+      "negatives": 42,
+      "tp": 40,
+      "fp": 0,
+      "fn": 2,
+      "unknown": 0,
+      "fpr": 0.0,
+      "fnr": 0.047619047619047616,
+      "recall": 0.9523809523809523,
+      "unknown_rate": 0.0
+    }
+  },
+  "provisional_targets_pass": true,
+  "training_eligible_records": 0,
+  "jev_calls": 140,
+  "jev_successes": 140,
+  "jev_input_tokens": 140995,
+  "tariff_estimated_cost_usd": 0.0059217900000000006,
+  "actual_billed_cost_usd": null,
+  "scope": "single-author curated challenges; no external label independence, no production replay, no P2 admission"
+}

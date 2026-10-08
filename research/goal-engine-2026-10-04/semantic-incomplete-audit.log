@@ -1,0 +1,105 @@
+{
+  "schema": "semantic-tool-p1-incomplete-audit/0.1",
+  "archived_sources_data_annotations_and_available_validation_verified": true,
+  "study_status": "incomplete: nonfinite last-two seed303; no selection or final inference",
+  "data_counts": {
+    "final": 384,
+    "train": 1152,
+    "validation": 384
+  },
+  "runs": {
+    "frozen-101": {
+      "finite_epochs": 3,
+      "nonfinite_passes": 0,
+      "weights_present": true,
+      "validation": {
+        "n": 384,
+        "eligible": 384,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.6691623263888888,
+        "paired_auc": 0.8854166666666666,
+        "paired_reports": 192,
+        "positive_recall": 0.953125,
+        "negative_rejection": 0.16145833333333334
+      }
+    },
+    "frozen-202": {
+      "finite_epochs": 3,
+      "nonfinite_passes": 0,
+      "weights_present": true,
+      "validation": {
+        "n": 384,
+        "eligible": 384,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.6631944444444444,
+        "paired_auc": 0.875,
+        "paired_reports": 192,
+        "positive_recall": 0.953125,
+        "negative_rejection": 0.09895833333333333
+      }
+    },
+    "frozen-303": {
+      "finite_epochs": 3,
+      "nonfinite_passes": 0,
+      "weights_present": true,
+      "validation": {
+        "n": 384,
+        "eligible": 384,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.6122233072916666,
+        "paired_auc": 0.9010416666666666,
+        "paired_reports": 192,
+        "positive_recall": 0.953125,
+        "negative_rejection": 0.16666666666666666
+      }
+    },
+    "last-two-101": {
+      "finite_epochs": 3,
+      "nonfinite_passes": 0,
+      "weights_present": true,
+      "validation": {
+        "n": 384,
+        "eligible": 384,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.6873914930555556,
+        "paired_auc": 0.890625,
+        "paired_reports": 192,
+        "positive_recall": 0.953125,
+        "negative_rejection": 0.140625
+      }
+    },
+    "last-two-202": {
+      "finite_epochs": 3,
+      "nonfinite_passes": 0,
+      "weights_present": true,
+      "validation": {
+        "n": 384,
+        "eligible": 384,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.6780327690972222,
+        "paired_auc": 0.8854166666666666,
+        "paired_reports": 192,
+        "positive_recall": 0.953125,
+        "negative_rejection": 0.10416666666666667
+      }
+    },
+    "last-two-303": {
+      "finite_epochs": 0,
+      "nonfinite_passes": 3,
+      "weights_present": false,
+      "validation": null
+    }
+  },
+  "finite_epochs": 15,
+  "nonfinite_passes": 3,
+  "selected_arm": null,
+  "adoption": false,
+  "weights_sha256_verified": true,
+  "bootstrap_intervals_rederived": false,
+  "API_calls_during_audit": 0
+}

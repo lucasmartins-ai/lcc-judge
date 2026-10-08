@@ -1,0 +1,140 @@
+{
+  "installed_package": "/Users/Master/Downloads/LCC-judge/.venv-repro/lib/python3.14/site-packages/lcc_engine/engine.py",
+  "engine_sha256": "5f7435e332abab73544ce83e37f5e200f7e343291aac2aa14bf0de697253a384",
+  "consumer_sha256": "9970a6ecb34a62df01c3706be6c38b35cb30fb9c757b5f1079cae74c8a1dd6fa",
+  "socket_connect_blocked": true,
+  "result": {
+    "schema": "lcc-context-ranking/0.1",
+    "operation": "rank_context",
+    "mode": "shadow",
+    "model": {
+      "model": "answerdotai/ModernBERT-base",
+      "backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+      "checkpoint_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+      "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+      "pooling": "line-attn",
+      "device": "cpu",
+      "revision_recorded_in_checkpoint": false
+    },
+    "items": [
+      {
+        "id": "a",
+        "text_sha256": "216ca85d2af98c30a32efb6669ed00277d37f4a42d606872d555bd58f46df9f0",
+        "status": "SCORED",
+        "logit": -1.6106377840042114,
+        "decision": "KEEP",
+        "reason": "shadow_policy",
+        "actual_tokens": 18,
+        "latency_ms": 1963.783290993888,
+        "truncated": false,
+        "window_exceeded": false,
+        "forwarded": true
+      },
+      {
+        "id": "b",
+        "text_sha256": "6c85e9f04d6a548ef6fb7009728218bcc801518b8cb15991ebe84e3ca4a4ac6b",
+        "status": "SCORED",
+        "logit": -4.700601100921631,
+        "decision": "KEEP",
+        "reason": "shadow_policy",
+        "actual_tokens": 17,
+        "latency_ms": 36.38116701040417,
+        "truncated": false,
+        "window_exceeded": false,
+        "forwarded": true
+      }
+    ],
+    "ranking": [
+      "a",
+      "b"
+    ],
+    "pair_window_tokens": 8192,
+    "useful_context_tokens": null,
+    "is_local": true,
+    "counted_input_tokens": 35,
+    "encoded_tokens": 35,
+    "calibrated_probability": false,
+    "necessity_estimated": false,
+    "set_sufficiency_estimated": false,
+    "latency_ms": 2000.271083030384
+  },
+  "over_window": {
+    "schema": "lcc-context-ranking/0.1",
+    "operation": "rank_context",
+    "mode": "shadow",
+    "model": {
+      "model": "answerdotai/ModernBERT-base",
+      "backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+      "checkpoint_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+      "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+      "pooling": "line-attn",
+      "device": "cpu",
+      "revision_recorded_in_checkpoint": false
+    },
+    "items": [
+      {
+        "id": "long",
+        "text_sha256": "e1c621a31eb9857a548f21f22c416ba156eb60e6c0a629b85c56d8091b08d83f",
+        "status": "UNKNOWN",
+        "logit": null,
+        "decision": "KEEP",
+        "reason": "input_exceeds_window",
+        "actual_tokens": 30007,
+        "latency_ms": 35.42424994520843,
+        "truncated": false,
+        "window_exceeded": true,
+        "forwarded": false
+      }
+    ],
+    "ranking": [],
+    "pair_window_tokens": 8192,
+    "useful_context_tokens": null,
+    "is_local": true,
+    "counted_input_tokens": 30007,
+    "encoded_tokens": 0,
+    "calibrated_probability": false,
+    "necessity_estimated": false,
+    "set_sufficiency_estimated": false,
+    "latency_ms": 35.5201669735834
+  },
+  "lcc_bytes_preserved": true,
+  "typed_observation": {
+    "schema": "lcc-observation-ranking/0.1",
+    "operation": "rank_observations",
+    "mode": "experimental_selection",
+    "is_local": true,
+    "items": [
+      {
+        "id": "healthy",
+        "status": "MATCH",
+        "decision": "KEEP",
+        "reason": "explicit_observation",
+        "records": 1,
+        "bytes": 95,
+        "text_sha256": "274b72450d4e78eff8347972a6a489ac4ba6baf87558b0ec25e3f6882d37e7a1"
+      },
+      {
+        "id": "other",
+        "status": "NO_MATCH",
+        "decision": "DROP",
+        "reason": "no_observation_in_requested_scope",
+        "records": 1,
+        "bytes": 96,
+        "text_sha256": "86f83f8da1654b793ca1594229719dbc1fbec189dab36fe2647067e3f3b6b2e9"
+      }
+    ],
+    "kept_ids": [
+      "healthy"
+    ],
+    "dropped_ids": [
+      "other"
+    ],
+    "input_bytes": 191,
+    "kept_bytes": 95,
+    "unknowns": 0,
+    "necessity_estimated": false,
+    "set_sufficiency_estimated": false,
+    "calibrated_probability": false,
+    "latency_ms": 0.4005830269306898
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "case_id": "c_83592eee1f8ec56e",
+  "split": "calibration",
+  "task_number": 3,
+  "kind": "code",
+  "family": "calibration_valid_implementation_0",
+  "expected": true,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "2edffbc25f83a026eda4667709b14b15ad0fd919f3d40d4361c980caed5f3293",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "global_lock_order",
+      "all_items_reserved_once",
+      "locks_released"
+    ],
+    "program_stdout": "",
+    "source_sha256": "7396cd38e845aadfdab4a16839ad7017cd38c8f5b02e5f9ba792f2a148dad9a9"
+  },
+  "candidate_verification": {
+    "passed": true,
+    "reason": "expanded_executable_contract",
+    "checks": [
+      "five_inventory_inputs",
+      "ascending_lock_order",
+      "all_reservations_under_lock"
+    ],
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": true,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.1210073749825824
+}

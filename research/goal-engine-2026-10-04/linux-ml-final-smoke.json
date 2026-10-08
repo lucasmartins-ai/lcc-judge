@@ -1,0 +1,66 @@
+{
+  "platform": "Linux-7.0.14-linuxkit-aarch64-with-glibc2.41",
+  "python": "3.13.16 (main, Oct  1 2026, 21:44:19) [GCC 14.2.0]",
+  "package": "/usr/local/lib/python3.13/site-packages/lcc_engine/__init__.py",
+  "versions": {
+    "lcc-context-engine": "0.1.0",
+    "torch": "2.12.0+cpu",
+    "transformers": "5.10.2",
+    "numpy": "2.4.6"
+  },
+  "socket_connect_blocked": true,
+  "result": {
+    "schema": "lcc-context-ranking/0.1",
+    "operation": "rank_context",
+    "mode": "shadow",
+    "model": {
+      "model": "answerdotai/ModernBERT-base",
+      "backbone_revision": "8949b909ec900327062f0ebf497f51aef5e6f0c8",
+      "checkpoint_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+      "config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+      "pooling": "line-attn",
+      "device": "cpu",
+      "revision_recorded_in_checkpoint": false
+    },
+    "items": [
+      {
+        "id": "invoice",
+        "text_sha256": "a6f4d3177647c81fdaf7039e6d73aa3a23ff9a87c6577c46032b1fd0b3c7abf0",
+        "status": "SCORED",
+        "logit": -0.7849059104919434,
+        "decision": "KEEP",
+        "reason": "shadow_policy",
+        "actual_tokens": 26,
+        "latency_ms": 1672.7824590052478,
+        "truncated": false,
+        "window_exceeded": false,
+        "forwarded": true
+      },
+      {
+        "id": "other",
+        "text_sha256": "35fc35f0836ae6df150b7f971b0d624bca03aacdce7d72b276d591610d4ab32c",
+        "status": "SCORED",
+        "logit": -5.6135640144348145,
+        "decision": "KEEP",
+        "reason": "shadow_policy",
+        "actual_tokens": 21,
+        "latency_ms": 109.24516699742526,
+        "truncated": false,
+        "window_exceeded": false,
+        "forwarded": true
+      }
+    ],
+    "ranking": [
+      "invoice",
+      "other"
+    ],
+    "pair_window_tokens": 8192,
+    "useful_context_tokens": null,
+    "is_local": true,
+    "encoded_tokens": 47,
+    "calibrated_probability": false,
+    "necessity_estimated": false,
+    "set_sufficiency_estimated": false,
+    "latency_ms": 1782.1222509955987
+  }
+}

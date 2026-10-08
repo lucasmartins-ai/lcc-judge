@@ -1,0 +1,34 @@
+{
+  "state": {
+    "objective": "Configure PodDisruptionBudget for critical search-indexing cluster.",
+    "context": [
+      {
+        "block_id": "b_7aabfa60",
+        "content": "Deployment replicas: 5; node upgrades drain 1 node at a time.",
+        "source": "k8s/deploy.yaml",
+        "block_type": "config"
+      },
+      {
+        "block_id": "b_f55a0abd",
+        "content": "Image: elasticsearch:8.11.2 with custom synonyms plugin.",
+        "source": "Dockerfile",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Set a PodDisruptionBudget allowing one pod to be unavailable during node upgrades.",
+      "mechanism": "configure_pdb",
+      "parameters": {
+        "max_unavailable": 1
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

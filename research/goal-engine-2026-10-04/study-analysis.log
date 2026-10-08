@@ -1,0 +1,99 @@
+{
+  "head_objectives": {
+    "parent": {
+      "J": 0.6524324324324324,
+      "D": 0.6325274725274725
+    },
+    "candidates": {
+      "bce": {
+        "mean_metrics": {
+          "J": 0.6343993993993994,
+          "D": 0.6339316239316238
+        },
+        "delta_from_parent": {
+          "J": -0.018033033033033052,
+          "D": 0.0014041514041512881
+        },
+        "delta_95ci": {
+          "J": [
+            -0.11048000890967813,
+            0.007925407925407912
+          ],
+          "D": [
+            -0.026818709745539127,
+            0.027808219178082183
+          ]
+        },
+        "candidate_criteria_pass": false,
+        "selected_on_validation": true
+      },
+      "pairwise": {
+        "mean_metrics": {
+          "J": 0.6395945945945947,
+          "D": 0.6366910866910866
+        },
+        "delta_from_parent": {
+          "J": -0.012837837837837762,
+          "D": 0.004163614163614104
+        },
+        "delta_95ci": {
+          "J": [
+            -0.08102238556632135,
+            0.014645124989952574
+          ],
+          "D": [
+            -0.017316017316017285,
+            0.025844748858447453
+          ]
+        },
+        "candidate_criteria_pass": false,
+        "selected_on_validation": false
+      },
+      "joint": {
+        "mean_metrics": {
+          "J": 0.600930930930931,
+          "D": 0.6193162393162392
+        },
+        "delta_from_parent": {
+          "J": -0.05150150150150146,
+          "D": -0.013211233211233298
+        },
+        "delta_95ci": {
+          "J": [
+            -0.19774814814814823,
+            -0.0033348646487332823
+          ],
+          "D": [
+            -0.05623196248196238,
+            0.022119341563786032
+          ]
+        },
+        "candidate_criteria_pass": false,
+        "selected_on_validation": false
+      }
+    },
+    "selected_arm": "bce",
+    "bootstrap": {
+      "repeats": 2000,
+      "seed": 78103,
+      "groups": [
+        "bot_traffic",
+        "pdf_render",
+        "sms_delivery",
+        "vector_drift"
+      ],
+      "method": "resample whole domains; average matched three-seed metrics; seeds held fixed",
+      "limitation": "Only four known synthetic domain groups; not production uncertainty"
+    },
+    "normalization_tested": false,
+    "normalization_reason": "Generated final items are single candidates; 357 objectives across 480 rows do not form complete matched candidate triplets",
+    "external_confirmation": false,
+    "approved_for_adoption": false,
+    "inputs": {
+      "protocol.json": "1c7100615d1b39a078b265f369248970be51a2c976b6bc86c8f8a3d26132d30c",
+      "selection.json": "b8754fb40a1c3443bf53a2d098b649b29137e6cd1edd751914ed148de796e48d",
+      "final-results.json": "cf72c4bfa96cc77684c3b610bd1363ff9b2e5cad064d56b9803afa62035e7a13"
+    }
+  },
+  "analysis_source_sha256": "c13f48c6098f075d22a9029a8e7ab76fbef759069e121607dd2cdb9a72d6bd1a"
+}

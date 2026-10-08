@@ -1,0 +1,100 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7800.77it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (865 > 512). Running this sequence through the model will result in indexing errors
+{
+  "model": "bge",
+  "n_rows": 372,
+  "summary": [
+    {
+      "model": "bge",
+      "protocol_sha256": "31d754297f9d7d3d034229ce670a94dfad366c7ca13de8f772b72134e7558223",
+      "declared_window": 512,
+      "load_s": 1.898589833988808,
+      "peak_rss_after_load_gb": 0.485179392,
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "python": "3.14.3",
+      "versions": {
+        "torch": "2.12.0",
+        "transformers": "5.10.2",
+        "laya": "0.3.4"
+      },
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "code_revision": null,
+      "dtype": "torch.float32",
+      "scope": "exploratory curated probes; no downstream outcome or useful-context claim",
+      "by_depth": {
+        "0": {
+          "auc_detect": 0.814,
+          "auc_judge": 0.531,
+          "mean_fact": 0.815,
+          "mean_unrelated": 0.782,
+          "mean_decoy": 0.812,
+          "p50_latency_ms": 12.5,
+          "errors": 0,
+          "n": 62,
+          "n_by_kind": {
+            "fact": 62,
+            "noise_unrelated": 62,
+            "noise_decoy": 62
+          },
+          "probe_versions": [
+            "1.2"
+          ],
+          "truncated": 0,
+          "auc_method": "strict pooled P(fact > noise); ties count zero",
+          "cell_integrity": {
+            "detect": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            },
+            "judge": {
+              "gate_eligible": true,
+              "reasons": [],
+              "matched_cases": 62
+            }
+          }
+        },
+        "512": {
+          "auc_detect": 0.519,
+          "auc_judge": 0.505,
+          "mean_fact": 0.796,
+          "mean_unrelated": 0.794,
+          "mean_decoy": 0.796,
+          "p50_latency_ms": 49.1,
+          "errors": 0,
+          "n": 62,
+          "n_by_kind": {
+            "fact": 62,
+            "noise_unrelated": 62,
+            "noise_decoy": 62
+          },
+          "probe_versions": [
+            "1.2"
+          ],
+          "truncated": 186,
+          "auc_method": "strict pooled P(fact > noise); ties count zero",
+          "cell_integrity": {
+            "detect": {
+              "gate_eligible": false,
+              "reasons": [
+                "truncated_input"
+              ],
+              "matched_cases": 62
+            },
+            "judge": {
+              "gate_eligible": false,
+              "reasons": [
+                "truncated_input"
+              ],
+              "matched_cases": 62
+            }
+          }
+        }
+      },
+      "passing_depths_detect": [],
+      "effective_context_detect": 0,
+      "passing_depths_judge": [],
+      "effective_context_judge": 0
+    }
+  ]
+}

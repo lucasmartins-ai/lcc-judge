@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113608_982581", "timestamp": 1791110169001}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because a PMTUD", "timestamp": 1791110173912}
+{"type": "text", "text": " blackhole drops the fragmented certificate response; fix router ICMP Fragmentation Needed handling or reduce the path MTU, and consider", "timestamp": 1791110173919}
+{"type": "text", "text": " enabling TCP MTU probing.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110173920}
+{"type": "result", "session_id": "20261004_113608_982581", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshakes fail because a PMTUD blackhole drops the fragmented certificate response; fix router ICMP Fragmentation Needed handling or reduce the path MTU, and consider enabling TCP MTU probing.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 1382, "output": 198, "total": 1720, "cache_read": 140, "cache_write": 0}, "duration_ms": 4944, "timestamp": 1791110173946}

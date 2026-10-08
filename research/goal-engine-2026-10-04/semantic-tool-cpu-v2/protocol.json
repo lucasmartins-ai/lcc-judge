@@ -1,0 +1,121 @@
+{
+  "arms": [
+    "frozen",
+    "last-two"
+  ],
+  "baseline_device": "cpu",
+  "baselines": [
+    "lexical",
+    "parent",
+    "bge",
+    "laya"
+  ],
+  "batch_size": 8,
+  "bootstrap": {
+    "draws": 2000,
+    "seed": 78112,
+    "unit": "whole final family"
+  },
+  "change_scope": "new CPU cached/native trajectories and finite guards; not an isolated explanation of MPS NaN",
+  "data": {
+    "final": {
+      "domains": [
+        "connections",
+        "manifest",
+        "process_time",
+        "symlink_size",
+        "test_coverage",
+        "test_result"
+      ],
+      "known": 384,
+      "n": 384,
+      "sha256": "2e8cd5f383eac9a928b1523f0b726a4a66111f1b11b1a27ada6348de3c053ede"
+    },
+    "train": {
+      "domains": [
+        "build",
+        "cache",
+        "command_result",
+        "database",
+        "dependency",
+        "disk",
+        "download",
+        "environment",
+        "file_mode",
+        "http",
+        "memory",
+        "queue"
+      ],
+      "known": 1152,
+      "n": 1152,
+      "sha256": "b82fd6c802ee045f867510586574070393bdf70b71abca070e8c946f03b7c073"
+    },
+    "validation": {
+      "domains": [
+        "build",
+        "cache",
+        "command_result",
+        "database",
+        "dependency",
+        "disk",
+        "download",
+        "environment",
+        "file_mode",
+        "http",
+        "memory",
+        "queue"
+      ],
+      "known": 384,
+      "n": 384,
+      "sha256": "089e0d9350acffd866409fa1211f3b079ba0f4baccfbabedf8fb0ec0a09764b1"
+    }
+  },
+  "device": "cpu",
+  "encoder_dropout": false,
+  "encoder_learning_rate": 2e-05,
+  "epochs": 3,
+  "final_scope": "six withheld authored concept-pair families; shared primitive vocabulary, schemas and author, not external semantic confirmation",
+  "final_used_for_selection": false,
+  "frozen_batch_size": 8,
+  "groups_per_domain": {
+    "final": 8,
+    "train": 12,
+    "validation": 4
+  },
+  "initialization": "same clean parent and matched fresh heads; parent line scorer retained",
+  "latency_comparison": "not measured: all candidates CPU/cache; remote/control operational costs differ",
+  "learning_rate": 0.0003,
+  "max_pair_tokens": 512,
+  "numerical_policy": "finite scalar loss, all gradients before update, parameters/optimizer after update; abort run on first invalid value",
+  "parent_config_sha256": "b46241416ca2ee23806d48522552bbe2739a895a0fc74d321ec5fdc60755e2ca",
+  "parent_weights_sha256": "0132faf6c2f1b17c0065c1424bec59ab6ec63d1c972271e43652ce9c05f1974e",
+  "prior_failed_protocol_sha256": "d02adc805702b68431cc631b6aabccdf6a15ac2b662dd69fe5719e1211d45cca",
+  "quality_gate": {
+    "auc_min": 0.9,
+    "negative_rejection_min": 0.7,
+    "paired_auc_min": 0.9,
+    "positive_recall_min": 0.95
+  },
+  "schema": "semantic-tool-p1-cpu/0.2",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "selection": "highest mean validation pooled AUC; tie order frozen then last-two; no final selection",
+  "sha256": "237e778898faf3764a516f77524fb02bc05c2f71c71c8801df65d63e4b1a1c7e",
+  "sources": {
+    "bakeoff/adapters.py": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+    "research/head_objective_study.py": "56430b10de197c62977d2cfcf4779d5282f644f26af7593c9341e53dca3d22dc",
+    "research/relevance_study.py": "05f7ff1e532bbed9c76eccb02f5d94fb2e89c64e13e19c02116762e4cf4ed2d2",
+    "research/semantic_corpus.py": "53ebca795c09b05def471e1fb17238a29971956e2d26ffc21253e9c64c31b42b",
+    "research/semantic_cpu_study.py": "a3351cfce29808adee5e369a15c80c4e839d9a4206ec66b800870afbb2ef6e81",
+    "research/semantic_study.py": "c52146e6829039d6ad59699a996032ce881e35fb664fb28b8c05ebb26a2d506d",
+    "specialist/checkpoint.py": "ce9d6b97294ba784b377865bb9f6319b639f5439d878be421ad692686f616d20",
+    "specialist/model.py": "7acd4fc759c4ea3ec9bd24290b0bb2d8427ff19807c801d9262a7d868ed34b62",
+    "specialist/numerical.py": "e8692ff1fc3ab53c25687fec527ae2fa855f05c8779feb00627bc26b149c014b"
+  },
+  "supervision": "authored concept-slot equality; low/high values and levels independent of label; no necessity labels",
+  "threads": 8,
+  "threshold": "greatest validation-only raw-logit threshold with >=.95 positive recall"
+}

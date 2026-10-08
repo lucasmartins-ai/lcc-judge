@@ -1,0 +1,23 @@
+test_counterfactual_values_cannot_predict_relevance (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_counterfactual_values_cannot_predict_relevance) ... ok
+test_semantic_unknown_is_distinct_from_parser_unknown (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_semantic_unknown_is_distinct_from_parser_unknown) ... ok
+test_source_roles_are_separate_from_the_only_two_model_inputs (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_source_roles_are_separate_from_the_only_two_model_inputs) ... ok
+test_tampered_or_failed_receipts_cannot_supply_labels (tests.test_tool_role_corpus.ToolRoleCorpusTests.test_tampered_or_failed_receipts_cannot_supply_labels) ... ok
+test_freeze_is_immutable_and_changed_protocol_cannot_be_reused (tests.test_tool_role_data.ToolRoleDataTests.test_freeze_is_immutable_and_changed_protocol_cannot_be_reused) ... FAIL
+test_unknown_measurement_is_saved_but_never_rendered_or_retried (tests.test_tool_role_data.ToolRoleDataTests.test_unknown_measurement_is_saved_but_never_rendered_or_retried) ... ok
+test_command_identity_is_part_of_measurement_evidence (tests.test_tool_role_audit.ToolRoleAuditTests.test_command_identity_is_part_of_measurement_evidence) ... ok
+test_every_saved_field_is_reconstructed_from_raw_receipts (tests.test_tool_role_audit.ToolRoleAuditTests.test_every_saved_field_is_reconstructed_from_raw_receipts) ... ok
+
+======================================================================
+FAIL: test_freeze_is_immutable_and_changed_protocol_cannot_be_reused (tests.test_tool_role_data.ToolRoleDataTests.test_freeze_is_immutable_and_changed_protocol_cannot_be_reused)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_role_data.py", line 18, in test_freeze_is_immutable_and_changed_protocol_cannot_be_reused
+    self.assertEqual(freeze(out), protocol)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'sch[1170 chars]ne': ['wc_newlines', 'wc', 'newlines', ['newli[17196 chars]9ef'} != {'sch[1170 chars]ne': ('wc_newlines', 'wc', 'newlines', ('newli[17196 chars]9ef'}
+Diff is 68517 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.090s
+
+FAILED (failures=1)

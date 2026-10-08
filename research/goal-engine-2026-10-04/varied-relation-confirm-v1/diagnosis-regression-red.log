@@ -1,0 +1,17 @@
+E
+======================================================================
+ERROR: test_varied_relation_failure_diagnosis (unittest.loader._FailedTest.test_varied_relation_failure_diagnosis)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_varied_relation_failure_diagnosis
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_varied_relation_failure_diagnosis.py", line 3, in <module>
+    from research.diagnose_varied_relation_confirmation import retention_cutoff, strict_auc
+ModuleNotFoundError: No module named 'research.diagnose_varied_relation_confirmation'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

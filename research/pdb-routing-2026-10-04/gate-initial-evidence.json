@@ -1,0 +1,48 @@
+{
+  "claim": "No eval curado pdb-routing/0.1 de 112 controles, a receita separada registrou 48 TP, 64 TN, 0 FP, 0 FN e 0 UNKNOWN; a revisão acoplada com o mesmo guard numérico e cutoff .50 registrou 27 FN.",
+  "evidence": {
+    "scope": "Observed single curated fixture experiment, not production/cause/population guarantee",
+    "source_1": {
+      "path": "/Users/Master/Downloads/LCC-judge/research/pdb-routing-2026-10-04/verification.json",
+      "command": "python3 research/pdb-routing-2026-10-04/verify.py",
+      "exit_code": 0,
+      "independent_stdlib_parser_no_candidate_import": true,
+      "eval": {
+        "routed": {
+          "n": 112,
+          "p": 48,
+          "n_negative": 64,
+          "tp": 48,
+          "tn": 64,
+          "fp": 0,
+          "fn": 0,
+          "unknown": 0
+        },
+        "coupled": {
+          "n": 112,
+          "tp": 21,
+          "tn": 64,
+          "fp": 0,
+          "fn": 27,
+          "unknown": 0
+        }
+      }
+    },
+    "source_2": {
+      "raw": "receipts/eval/*/{routed,coupled}/response.json + frozen controls",
+      "threshold": 0.5,
+      "protocol_hash": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+      "freeze_before_all_calls": true,
+      "numeric_guard_blocks_per_arm": 32,
+      "eval_api_responses_per_arm": 80
+    },
+    "source_3": {
+      "path": "/Users/Master/Downloads/LOOKAORCHESTRATOR/logs/typesafe/jev.jsonl",
+      "feature": "lcc_judge_pdb_routing",
+      "successful_calls_all_splits": 240,
+      "input_tokens": 133932,
+      "multiset_matches_raw_api_receipts": true
+    },
+    "training_eligible": 0
+  }
+}

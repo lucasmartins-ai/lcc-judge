@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "created_at_utc": "2026-10-08T00:02:44.388649+00:00",
+  "coverage": {
+    "train": {
+      "rows": 11136,
+      "unique_goal_questions": 1172,
+      "unique_questions_by_kind": {
+        "direct_field": 256,
+        "derived_or_multifield_goal": 288,
+        "diagnosis_goal": 288,
+        "broader_usefulness_goal": 288,
+        "direct_goal_bad_record": 96
+      },
+      "direct_questions_per_role": {
+        "git_index_edits": 32,
+        "git_worktree_edits": 32,
+        "retry_actual_sleep_ns": 32,
+        "retry_scheduled_sleep_ns": 32,
+        "retry_attempts": 32,
+        "retry_failures": 32,
+        "udp_sent_datagrams": 32,
+        "udp_sent_payload_bytes": 32
+      },
+      "record_shapes": {
+        "entity,level,measurement,value": 5504,
+        "entity,measurement,value": 128,
+        "prose": 5504
+      }
+    },
+    "validation": {
+      "rows": 5568,
+      "unique_goal_questions": 1136,
+      "unique_questions_by_kind": {
+        "direct_field": 240,
+        "derived_or_multifield_goal": 288,
+        "diagnosis_goal": 288,
+        "broader_usefulness_goal": 288,
+        "direct_goal_bad_record": 54
+      },
+      "direct_questions_per_role": {
+        "git_index_edits": 30,
+        "git_worktree_edits": 30,
+        "retry_actual_sleep_ns": 30,
+        "retry_scheduled_sleep_ns": 30,
+        "retry_attempts": 30,
+        "retry_failures": 30,
+        "udp_sent_datagrams": 30,
+        "udp_sent_payload_bytes": 30
+      },
+      "record_shapes": {
+        "entity,level,measurement,value": 2752,
+        "entity,measurement,value": 64,
+        "prose": 2752
+      }
+    }
+  },
+  "sampled_cases": 100,
+  "fixed_cases": 96,
+  "supplemental_cases": 4,
+  "actual_drops": 4,
+  "conflicting_question_targets": 0,
+  "reviewed_raw_fixtures": 96,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "interpretation_targets_are_diagnostic_annotations": true,
+  "independent_human_review": false,
+  "scope": "Mechanical input/raw/sample integrity only. Semantic agent review is recorded separately in REVIEW.md."
+}

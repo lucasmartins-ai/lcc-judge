@@ -1,0 +1,32 @@
+{
+  "state": {
+    "objective": "Diagnose 5-second latency spikes in Go service running on Alpine Linux.",
+    "context": [
+      {
+        "block_id": "b_a802de21",
+        "content": "nameserver 10.96.0.10\nsearch default.svc.cluster.local svc.cluster.local cluster.local\noptions ndots:5",
+        "source": "etc/resolv.conf",
+        "block_type": "config"
+      },
+      {
+        "block_id": "b_5e3a3aa5",
+        "content": "Go runtime version: go1.22.4 linux/arm64",
+        "source": "version.txt",
+        "block_type": "doc"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "Alpine\u2019s musl resolver is likely colliding with conntrack during parallel A/AAAA lookups, dropping DNS replies and causing approximately 5-second timeouts.",
+      "mechanism": "musl_conntrack_dns",
+      "parameters": {},
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}

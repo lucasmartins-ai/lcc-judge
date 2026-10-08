@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0051_0fba29daa202": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0051_0fba29daa202 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0051_0fba29daa202",
+        "text": "{\"entity\": \"archive-00000190\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000191\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000192\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000193\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000194\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000195\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000196\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000197\", \"field\": \"segment_merge_ms\", \"level\": \"ERROR\", \"time\": \"2027-03-10T12:00:00Z\", \"unit\": \"count\", \"value\": 99}\n"
+      }
+    ],
+    "objective": "Report all observations for entity node-d1b7c871, field segment_merge_ms, between 2027-03-10T12:00:00Z and 2027-03-10T12:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

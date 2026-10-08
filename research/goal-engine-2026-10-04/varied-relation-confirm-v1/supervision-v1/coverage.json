@@ -1,0 +1,26 @@
+{
+  "protocol_sha256": "c0a33bb29f8c1eaa95c68802ddfe2b7d654aac6e7f72fa22c9b69d9470d41640",
+  "model_forwards": 0,
+  "splits": {
+    "final": {
+      "rows": 163712,
+      "binary": 156672,
+      "projected_rows": 163584,
+      "unknown": 7040,
+      "structural_unknown": 128,
+      "semantic_unknown": 6912,
+      "unique_projected_inputs": 120220,
+      "unique_projected_labels": {
+        "0": 75420,
+        "1": 38050,
+        "None": 6750
+      },
+      "raw_max_tokens": 147,
+      "projected_max_tokens": 84,
+      "relevant_contradictions": 36500,
+      "cuts": 0,
+      "rows_sha256": "06763f79376fd6209b34dd44c0c5c8e4c68069843798ebffabd5a2abe51e6f93",
+      "views_sha256": "dc6fc7fc93eab45ffe42abe85e78b759f64207c3724b184f403bebd97c91e67a"
+    }
+  }
+}

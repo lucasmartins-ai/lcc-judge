@@ -1,0 +1,18 @@
+test_observe_detached_varied (unittest.loader._FailedTest.test_observe_detached_varied) ... ERROR
+
+======================================================================
+ERROR: test_observe_detached_varied (unittest.loader._FailedTest.test_observe_detached_varied)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_observe_detached_varied
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observe_detached_varied.py", line 3, in <module>
+    from research.observe_detached_varied import identity_matches, process_state
+ModuleNotFoundError: No module named 'research.observe_detached_varied'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

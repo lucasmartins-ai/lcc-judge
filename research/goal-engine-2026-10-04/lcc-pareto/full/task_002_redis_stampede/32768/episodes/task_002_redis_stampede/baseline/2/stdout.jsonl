@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141740_8817fc", "timestamp": 1791119860804}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"top_products_cache keys expired synchron", "timestamp": 1791119867843}
+{"type": "text", "text": "ously at the 3600-second TTL with zero jitter, sending 1,200 workers to the database and causing a cache-expiry stampede; hit ratio fell", "timestamp": 1791119867844}
+{"type": "text", "text": " to 12%.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"ttl_seconds\":3600,\"jitter_seconds\":0,\"workers_stampeding\":1200},\"python\":\"\"}", "timestamp": 1791119867845}
+{"type": "result", "session_id": "20261004_141740_8817fc", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"top_products_cache keys expired synchronously at the 3600-second TTL with zero jitter, sending 1,200 workers to the database and causing a cache-expiry stampede; hit ratio fell to 12%.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"ttl_seconds\":3600,\"jitter_seconds\":0,\"workers_stampeding\":1200},\"python\":\"\"}", "tokens": {"input": 30835, "output": 334, "total": 31309, "cache_read": 140, "cache_write": 0}, "duration_ms": 7067, "timestamp": 1791119867871}

@@ -1,0 +1,55 @@
+test_configuration_limits_are_not_silently_capped (tests.test_reranker_control.RerankerControlTests.test_configuration_limits_are_not_silently_capped) ... ok
+test_loader_metadata_is_strict_json_without_losing_key_names (tests.test_reranker_control.RerankerControlTests.test_loader_metadata_is_strict_json_without_losing_key_names) ... ok
+test_nonfinite_score_retains_submitted_accounting (tests.test_reranker_control.RerankerControlTests.test_nonfinite_score_retains_submitted_accounting) ... ok
+test_oversized_input_never_reaches_model (tests.test_reranker_control.RerankerControlTests.test_oversized_input_never_reaches_model) ... ok
+test_raw_logit_and_order_preserved_without_clipping (tests.test_reranker_control.RerankerControlTests.test_raw_logit_and_order_preserved_without_clipping) ... ok
+test_roberta_padding_positions_do_not_inflate_pair_window (tests.test_reranker_control.RerankerControlTests.test_roberta_padding_positions_do_not_inflate_pair_window) ... ERROR
+
+======================================================================
+ERROR: test_roberta_padding_positions_do_not_inflate_pair_window (tests.test_reranker_control.RerankerControlTests.test_roberta_padding_positions_do_not_inflate_pair_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_reranker_control.py", line 43, in test_roberta_padding_positions_do_not_inflate_pair_window
+    model(input_ids=torch.tensor([[0,4,4,4,4,4,2]]), attention_mask=torch.ones((1,7),dtype=torch.long))
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/Master/Library/Python/3.14/lib/python/site-packages/transformers/utils/generic.py", line 903, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/Users/Master/Library/Python/3.14/lib/python/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 958, in forward
+    outputs = self.roberta(
+        input_ids,
+    ...<5 lines>...
+        **kwargs,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/Master/Library/Python/3.14/lib/python/site-packages/transformers/utils/generic.py", line 1032, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/Users/Master/Library/Python/3.14/lib/python/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/Users/Master/Library/Python/3.14/lib/python/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 625, in forward
+    embedding_output = self.embeddings(
+        input_ids=input_ids,
+    ...<3 lines>...
+        past_key_values_length=past_key_values_length,
+    )
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/Master/Library/Python/3.14/lib/python/site-packages/transformers/models/xlm_roberta/modeling_xlm_roberta.py", line 110, in forward
+    buffered_token_type_ids = torch.gather(buffered_token_type_ids, dim=1, index=position_ids)
+RuntimeError: index 8 is out of bounds for dimension 1 with size 8
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.159s
+
+FAILED (errors=1)

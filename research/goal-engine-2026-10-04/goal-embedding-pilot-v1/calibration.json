@@ -1,0 +1,6817 @@
+{
+  "thresholds": {
+    "support_floor": 2.9717180328740613,
+    "margin_floor": 0.0007943026185683877
+  },
+  "policies_evaluated": 484,
+  "metrics": {
+    "aggregate": {
+      "n": 1172,
+      "supported": 256,
+      "accepted": 235,
+      "correct_bindings": 235,
+      "supported_accepted": 235,
+      "unknown": 916,
+      "unknown_abstained": 916,
+      "accepted_binding_precision": 1.0,
+      "supported_coverage": 0.91796875,
+      "correct_supported_coverage": 0.91796875,
+      "unknown_recognition": 1.0,
+      "confusion": [
+        {
+          "expected": "UNKNOWN",
+          "predicted": "UNKNOWN",
+          "n": 916
+        },
+        {
+          "expected": "git_index_edits",
+          "predicted": "UNKNOWN",
+          "n": 1
+        },
+        {
+          "expected": "git_index_edits",
+          "predicted": "git_index_edits",
+          "n": 31
+        },
+        {
+          "expected": "git_worktree_edits",
+          "predicted": "UNKNOWN",
+          "n": 2
+        },
+        {
+          "expected": "git_worktree_edits",
+          "predicted": "git_worktree_edits",
+          "n": 30
+        },
+        {
+          "expected": "retry_actual_sleep_ns",
+          "predicted": "UNKNOWN",
+          "n": 2
+        },
+        {
+          "expected": "retry_actual_sleep_ns",
+          "predicted": "retry_actual_sleep_ns",
+          "n": 30
+        },
+        {
+          "expected": "retry_attempts",
+          "predicted": "UNKNOWN",
+          "n": 4
+        },
+        {
+          "expected": "retry_attempts",
+          "predicted": "retry_attempts",
+          "n": 28
+        },
+        {
+          "expected": "retry_failures",
+          "predicted": "UNKNOWN",
+          "n": 3
+        },
+        {
+          "expected": "retry_failures",
+          "predicted": "retry_failures",
+          "n": 29
+        },
+        {
+          "expected": "retry_scheduled_sleep_ns",
+          "predicted": "UNKNOWN",
+          "n": 2
+        },
+        {
+          "expected": "retry_scheduled_sleep_ns",
+          "predicted": "retry_scheduled_sleep_ns",
+          "n": 30
+        },
+        {
+          "expected": "udp_sent_datagrams",
+          "predicted": "UNKNOWN",
+          "n": 5
+        },
+        {
+          "expected": "udp_sent_datagrams",
+          "predicted": "udp_sent_datagrams",
+          "n": 27
+        },
+        {
+          "expected": "udp_sent_payload_bytes",
+          "predicted": "UNKNOWN",
+          "n": 2
+        },
+        {
+          "expected": "udp_sent_payload_bytes",
+          "predicted": "udp_sent_payload_bytes",
+          "n": 30
+        }
+      ],
+      "gate_pass": true
+    },
+    "by_language": {
+      "en": {
+        "n": 586,
+        "supported": 128,
+        "accepted": 119,
+        "correct_bindings": 119,
+        "supported_accepted": 119,
+        "unknown": 458,
+        "unknown_abstained": 458,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.9296875,
+        "correct_supported_coverage": 0.9296875,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 458
+          },
+          {
+            "expected": "git_index_edits",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 15
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 14
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 15
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 15
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 15
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 16
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 14
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 15
+          }
+        ],
+        "gate_pass": true
+      },
+      "pt": {
+        "n": 586,
+        "supported": 128,
+        "accepted": 116,
+        "correct_bindings": 116,
+        "supported_accepted": 116,
+        "unknown": 458,
+        "unknown_abstained": 458,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.90625,
+        "correct_supported_coverage": 0.90625,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 458
+          },
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 16
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 16
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 15
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 3
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 13
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 14
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 14
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 3
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 13
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 15
+          }
+        ],
+        "gate_pass": true
+      }
+    },
+    "by_kind": {
+      "broader_usefulness_goal": {
+        "n": 288,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 288,
+        "unknown_abstained": 288,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 288
+          }
+        ],
+        "gate_pass": false
+      },
+      "derived_or_multifield_goal": {
+        "n": 288,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 288,
+        "unknown_abstained": 288,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 288
+          }
+        ],
+        "gate_pass": false
+      },
+      "diagnosis_goal": {
+        "n": 288,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 288,
+        "unknown_abstained": 288,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 288
+          }
+        ],
+        "gate_pass": false
+      },
+      "direct": {
+        "n": 256,
+        "supported": 256,
+        "accepted": 235,
+        "correct_bindings": 235,
+        "supported_accepted": 235,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.91796875,
+        "correct_supported_coverage": 0.91796875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 31
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 30
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 30
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 4
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 28
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "UNKNOWN",
+            "n": 3
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 29
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 30
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 5
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 27
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 30
+          }
+        ],
+        "gate_pass": false
+      },
+      "out_of_registry": {
+        "n": 52,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 52,
+        "unknown_abstained": 52,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 52
+          }
+        ],
+        "gate_pass": false
+      }
+    },
+    "by_wording_family": {
+      "git_clean_tracked_files:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:unbound_record:1": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_clean_tracked_files:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_ignored_files:unbound_record:3": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:unbound_record:2": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_edits:unbound_record:3": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_index_edits",
+            "predicted": "git_index_edits",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:unbound_record:1": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_index_files:unbound_record:3": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_tracked_fs_bytes:unbound_record:1": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_files:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:unbound_record:1": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_untracked_fs_bytes:unbound_record:3": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:unbound_record:2": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "git_worktree_edits:unbound_record:3": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "git_worktree_edits",
+            "predicted": "git_worktree_edits",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:unbound_record:0": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_actual_sleep_ns:unbound_record:2": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_actual_sleep_ns",
+            "predicted": "retry_actual_sleep_ns",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 6,
+        "correct_bindings": 6,
+        "supported_accepted": 6,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.75,
+        "correct_supported_coverage": 0.75,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 6
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:unbound_record:0": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_attempts:unbound_record:3": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_attempts",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_attempts",
+            "predicted": "retry_attempts",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:unbound_record:1": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_elapsed_ns:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 6,
+        "correct_bindings": 6,
+        "supported_accepted": 6,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.75,
+        "correct_supported_coverage": 0.75,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 6
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:unbound_record:2": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_failures:unbound_record:3": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_failures",
+            "predicted": "retry_failures",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_scheduled_sleep_ns:unbound_record:2": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "retry_scheduled_sleep_ns",
+            "predicted": "retry_scheduled_sleep_ns",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:unbound_record:1": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "retry_sleep_calls:unbound_record:3": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_datagrams:unbound_record:3": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:unbound_record:0": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_received_payload_bytes:unbound_record:2": {
+        "n": 2,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 2,
+        "unknown_abstained": 2,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 7,
+        "correct_bindings": 7,
+        "supported_accepted": 7,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.875,
+        "correct_supported_coverage": 0.875,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 7
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 6,
+        "correct_bindings": 6,
+        "supported_accepted": 6,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.75,
+        "correct_supported_coverage": 0.75,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 6
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 6,
+        "correct_bindings": 6,
+        "supported_accepted": 6,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.75,
+        "correct_supported_coverage": 0.75,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 6
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:unbound_record:0": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:unbound_record:1": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 1,
+        "correct_bindings": 1,
+        "supported_accepted": 1,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.5,
+        "correct_supported_coverage": 0.5,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 1
+          },
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "udp_sent_datagrams",
+            "n": 1
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_datagrams:unbound_record:3": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": null,
+        "supported_coverage": 0.0,
+        "correct_supported_coverage": 0.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_datagrams",
+            "predicted": "UNKNOWN",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:None:0": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:None:1": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 6,
+        "correct_bindings": 6,
+        "supported_accepted": 6,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 0.75,
+        "correct_supported_coverage": 0.75,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "UNKNOWN",
+            "n": 2
+          },
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 6
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:None:2": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:None:3": {
+        "n": 8,
+        "supported": 8,
+        "accepted": 8,
+        "correct_bindings": 8,
+        "supported_accepted": 8,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 8
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:broader_usefulness_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:broader_usefulness_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:broader_usefulness_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:broader_usefulness_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:derived_or_multifield_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:derived_or_multifield_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:derived_or_multifield_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:derived_or_multifield_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:diagnosis_goal:0": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:diagnosis_goal:1": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:diagnosis_goal:2": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:diagnosis_goal:3": {
+        "n": 4,
+        "supported": 0,
+        "accepted": 0,
+        "correct_bindings": 0,
+        "supported_accepted": 0,
+        "unknown": 4,
+        "unknown_abstained": 4,
+        "accepted_binding_precision": null,
+        "supported_coverage": null,
+        "correct_supported_coverage": null,
+        "unknown_recognition": 1.0,
+        "confusion": [
+          {
+            "expected": "UNKNOWN",
+            "predicted": "UNKNOWN",
+            "n": 4
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:unbound_record:0": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      },
+      "udp_sent_payload_bytes:unbound_record:3": {
+        "n": 2,
+        "supported": 2,
+        "accepted": 2,
+        "correct_bindings": 2,
+        "supported_accepted": 2,
+        "unknown": 0,
+        "unknown_abstained": 0,
+        "accepted_binding_precision": 1.0,
+        "supported_coverage": 1.0,
+        "correct_supported_coverage": 1.0,
+        "unknown_recognition": null,
+        "confusion": [
+          {
+            "expected": "udp_sent_payload_bytes",
+            "predicted": "udp_sent_payload_bytes",
+            "n": 2
+          }
+        ],
+        "gate_pass": false
+      }
+    },
+    "router_gate_pass": true
+  },
+  "fitted_on": "train_only",
+  "validation_used": false
+}

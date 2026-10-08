@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_141918_2eccfa", "timestamp": 1791119958844}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a policy/v1 PodDisruptionBudget for the 5-replica search-indexing deployment with minAvailable: 3, preserving quorum during one-node drains.\",\"me", "timestamp": 1791119989996}
+{"type": "text", "text": "chanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "timestamp": 1791119989997}
+{"type": "result", "session_id": "20261004_141918_2eccfa", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Configure a policy/v1 PodDisruptionBudget for the 5-replica search-indexing deployment with minAvailable: 3, preserving quorum during one-node drains.\",\"mechanism\":\"configure_pdb\",\"parameters\":{\"min_available\":3},\"python\":\"\"}", "tokens": {"input": 2, "output": 2471, "total": 33429, "cache_read": 30956, "cache_write": 0}, "duration_ms": 31178, "timestamp": 1791119990023}

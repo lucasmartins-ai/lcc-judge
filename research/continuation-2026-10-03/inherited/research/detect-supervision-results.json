@@ -1,0 +1,40 @@
+{
+  "depth_0": {
+    "judge_only": {
+      "J": 0.6993,
+      "D": 0.6223
+    },
+    "joint_supervision": {
+      "J": 0.6907,
+      "D": 0.6345
+    },
+    "delta_J": -0.0086,
+    "delta_D": 0.0122,
+    "delta_D_95ci": [
+      -0.006,
+      0.0294
+    ],
+    "d_passes_070": false,
+    "ci_strictly_positive": false,
+    "j_loss_under_002": true
+  },
+  "depth_512": {
+    "judge_only": {
+      "J": 0.7549,
+      "D": 0.6673
+    },
+    "joint_supervision": {
+      "J": 0.7222,
+      "D": 0.6129
+    },
+    "delta_J": -0.0328,
+    "delta_D": -0.0544,
+    "delta_D_95ci": [
+      -0.0991,
+      -0.0143
+    ],
+    "d_passes_070": false,
+    "ci_strictly_positive": false,
+    "j_loss_under_002": false
+  }
+}

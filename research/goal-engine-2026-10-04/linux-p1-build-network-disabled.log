@@ -1,0 +1,68 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 767B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#2 DONE 0.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [ 1/10] FROM docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+#5 resolve docker.io/library/python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 155.96kB done
+#6 DONE 0.0s
+
+#7 [ 2/10] COPY requirements.txt /opt/requirements.txt
+#7 CACHED
+
+#8 [ 3/10] RUN python -m pip install --no-cache-dir "https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3"
+#8 1.043 Collecting torch==2.12.0+cpu
+#8 1.044   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+#8 1.549   WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+#8 2.552   WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+#8 4.557   WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+#8 8.560   WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+#8 8.566 error: connection-failed
+#8 8.566 
+#8 8.566 × Failed to connect to download-r2.pytorch.org while fetching https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+#8 8.566 ╰─> Failed to resolve IP address for 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)
+#8 8.566 
+#8 8.566 hint: Are you connected to the Internet? If so, check whether your system can connect to download-r2.pytorch.org before trying again. There may be a firewall or proxy that's preventing the connection.
+#8 ERROR: process "/bin/sh -c python -m pip install --no-cache-dir \"https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3\"" did not complete successfully: exit code: 1
+------
+ > [ 3/10] RUN python -m pip install --no-cache-dir "https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3":
+1.549   WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+2.552   WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+4.557   WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+8.560   WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='download-r2.pytorch.org', port=443): Failed to resolve 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)")': /whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+8.566 error: connection-failed
+8.566 
+8.566 × Failed to connect to download-r2.pytorch.org while fetching https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl
+8.566 ╰─> Failed to resolve IP address for 'download-r2.pytorch.org' ([Errno -3] Temporary failure in name resolution)
+8.566 
+8.566 hint: Are you connected to the Internet? If so, check whether your system can connect to download-r2.pytorch.org before trying again. There may be a firewall or proxy that's preventing the connection.
+------
+Dockerfile:3
+--------------------
+   1 |     FROM python@sha256:3dd7cc108ec1493442514f5c2a871af6af0ec31d768ff6e378a93340c3b3db5f
+   2 |     COPY requirements.txt /opt/requirements.txt
+   3 | >>> RUN python -m pip install --no-cache-dir "https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3"
+   4 |     RUN python -m pip install --no-cache-dir -r /opt/requirements.txt
+   5 |     COPY *.whl /opt/wheels/
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c python -m pip install --no-cache-dir \"https://download-r2.pytorch.org/whl/cpu/torch-2.12.0%2Bcpu-cp313-cp313-manylinux_2_28_aarch64.whl#sha256=68b7ddd4db4603a03e106e74c7098c8d8c8943d33c1e5ada009ca4cd885759c3\"" did not complete successfully: exit code: 1
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/di1uvxy28ieffah6w50wiakl5

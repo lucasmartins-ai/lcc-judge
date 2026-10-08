@@ -1,0 +1,39 @@
+{
+  "case_id": "pdb-development-n10-blocks_maintenance",
+  "split": "development",
+  "family": "blocks_maintenance",
+  "expected": false,
+  "case_sha256": "81a7dc85a4a238291e1b00a6ec7b13669e5a66a6ff20acf2465ec4e34b741745",
+  "protocol_sha256": "5427d803d8b5b6a8e2bfd828ad9ca4446d1e742fe93ca1dd8727fce56a6f02d6",
+  "numeric": {
+    "passed": false,
+    "reason": "quorum_or_maintenance_violation",
+    "min_remaining": 10,
+    "max_disruptions": 0
+  },
+  "training_eligible": false,
+  "arms": {
+    "routed": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 10,
+        "max_disruptions": 0
+      }
+    },
+    "coupled": {
+      "called": false,
+      "probability": null,
+      "decision": {
+        "passed": false,
+        "reason": "quorum_or_maintenance_violation",
+        "min_remaining": 10,
+        "max_disruptions": 0
+      }
+    }
+  },
+  "routed": false,
+  "coupled": false
+}

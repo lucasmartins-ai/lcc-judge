@@ -1,0 +1,175 @@
+{
+  "schema": "compact-measurement-adaptation/0.1",
+  "model": {
+    "repo_id": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+    "license": "apache-2.0",
+    "architecture": [
+      "BertForSequenceClassification"
+    ],
+    "layers": 6,
+    "hidden_size": 384,
+    "max_position_embeddings": 512,
+    "model_inference_executed": false,
+    "scope": "artifact preparation only; no claim on exposed semantic cohorts or local performance",
+    "files": {
+      "model.safetensors": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+      "tokenizer_config.json": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8",
+      "special_tokens_map.json": "3c3507f36dff57bce437223db3b3081d1e2b52ec3e56ee55438193ecb2c94dd6",
+      "config.json": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc",
+      "tokenizer.json": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66",
+      "README.md": "7c0ec39941d0d1d766ccde671f592971d82fe45b7eea550a80d1ea864ebc3baa",
+      "vocab.txt": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3"
+    },
+    "primary_sources": [
+      "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2",
+      "https://www.sbert.net/docs/cross_encoder/pretrained_models.html"
+    ]
+  },
+  "data": {
+    "train": {
+      "n": 2304,
+      "domains": [
+        "build",
+        "cache",
+        "command_result",
+        "connections",
+        "database",
+        "dependency",
+        "disk",
+        "download",
+        "environment",
+        "file_mode",
+        "http",
+        "manifest",
+        "memory",
+        "process_time",
+        "queue",
+        "symlink_size",
+        "test_coverage",
+        "test_result"
+      ],
+      "sha256": "ddb8d069fcf3bdc522b9b022f56940d47f5ef3ad5d4937df81c16539443b4184",
+      "views_sha256": "c5754dfea4cc3d2ae6a226ff616227bf25a9ace37b2bd257be7667ec4c99b656",
+      "max_pair_tokens": 31
+    },
+    "validation": {
+      "n": 576,
+      "domains": [
+        "build",
+        "cache",
+        "command_result",
+        "connections",
+        "database",
+        "dependency",
+        "disk",
+        "download",
+        "environment",
+        "file_mode",
+        "http",
+        "manifest",
+        "memory",
+        "process_time",
+        "queue",
+        "symlink_size",
+        "test_coverage",
+        "test_result"
+      ],
+      "sha256": "614a6e023d1016a2ff71d7c14cefce43cc02f2b92f621d3c492fd8f32de9730b",
+      "views_sha256": "e90101a1a16af62df4ef7e8651f8172043969b931e72be42165b92696116e4d8",
+      "max_pair_tokens": 30
+    },
+    "final": {
+      "n": 512,
+      "domains": [
+        "certificate",
+        "file_text",
+        "network_receive",
+        "repository_files",
+        "retry_wait",
+        "scheduler_duration",
+        "search_lines",
+        "storage_entries"
+      ],
+      "sha256": "8eb12f5a53e72f5a1ad61e122e61ed79624a71a30fee2f79cc79a07985ebc07a",
+      "views_sha256": "8a80a501a0bdec4ec2bdb1cf6876cb287b44f43beed1adf816398b73a03e18c5",
+      "max_pair_tokens": 28
+    }
+  },
+  "sources": {
+    "research/compact_relation_study.py": "43ec694164f0074b10812ca4053c1ffe8c8c8eb54e7e41146336707494d06459",
+    "research/compact_relation_corpus.py": "85d136442e5011ebcd3cfe511c112f108b72b82fa43153829dd4105ca6fb6d16",
+    "research/compact_relation_training.py": "85490264d8f6bbd0eaec1650ed1d17096d2d60cbf30cbb16278ed1399ea8fb96",
+    "research/semantic_corpus.py": "53ebca795c09b05def471e1fb17238a29971956e2d26ffc21253e9c64c31b42b",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/reranker_control.py": "e6008735455efea368fa8f0f314d0b2feb6b9f630d32bc25c36265242ab61725",
+    "research/reranker_diagnostic.py": "be9b0b796a433b55a9d8498894a9a67210e1004aadbf36e0693a153c1bf988f3",
+    "research/audit_reranker_diagnostic.py": "01ac1e270f9cb5651da8f6cc73f73aa055a2d7558f2fe97de092f09e2f39991b",
+    "specialist/checkpoint.py": "ce9d6b97294ba784b377865bb9f6319b639f5439d878be421ad692686f616d20",
+    "specialist/numerical.py": "e8692ff1fc3ab53c25687fec527ae2fa855f05c8779feb00627bc26b149c014b"
+  },
+  "versions": {
+    "torch": "2.12.0",
+    "transformers": "5.10.2",
+    "tokenizers": "0.22.2",
+    "numpy": "2.4.6",
+    "safetensors": "0.7.0"
+  },
+  "arms": [
+    "bce",
+    "joint"
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "epochs": 3,
+  "groups_per_batch": 2,
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 2e-05,
+    "weight_decay": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08
+  },
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 8,
+  "trainable": "all 22,713,601 pretrained parameters; no random head reset",
+  "input_recipe": "frozen scope-checked two-grammar question/measurement view, entity verified by code; original evidence preserved; no annotations passed to model",
+  "objective": {
+    "bce": "binary_cross_entropy_with_logits",
+    "joint": "0.5 BCE + 0.5 mean softplus(negative-positive) over all same-objective alternatives"
+  },
+  "batch_recipe": "whole original 8-row groups; sorted ids within group; random.Random(seed*100+epoch) shuffles group names; no groups split",
+  "numerical_guards": "finite loss, gradient, parameters, optimizer state every update; any invalid run stops study without a candidate",
+  "threshold": "greatest first validation raw-logit threshold with >=.95 positive recall",
+  "selection": "highest mean validation pooled AUC across all three seeds; exact ties choose first arm bce; no final inspected for selection",
+  "criteria": {
+    "auc_min": 0.9,
+    "paired_auc_min": 0.9,
+    "within_objective_auc_min": 0.9,
+    "positive_recall_min": 0.95,
+    "negative_rejection_min": 0.7,
+    "all_rows_complete": true,
+    "all_seeds_pass": true
+  },
+  "controls": [
+    "frozen upstream on identical projected inputs"
+  ],
+  "bootstrap": {
+    "unit": "whole reserved final measurement family",
+    "draws": 2000,
+    "seed": 442413
+  },
+  "scope": "shared-author/schema/primitive vocabulary synthetic P1 measurement relevance; eight newly authored final pair families; previous 18 exposed families now all development, not blind/OOD/P2/production",
+  "API_calls": 0,
+  "current_default_changed": false,
+  "allow_selective_retry": false,
+  "extra_epochs_allowed": false,
+  "sha256": "f029d0b44e485a9428696f91f309cbcb6f44275e341655f12dc69de185ddfda2"
+}

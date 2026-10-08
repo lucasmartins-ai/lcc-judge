@@ -1,0 +1,29 @@
+{
+  "case_id": "c_13901cc3bb0ac1ce",
+  "split": "calibration",
+  "task_number": 6,
+  "kind": "code",
+  "family": "raw_interpolation",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "fff32b3af34cb6d64c5af5f8cf0db778fd8af44c3110e2773678b6e30bacb297",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Tenant parameter injection succeeds",
+    "program_stdout": "",
+    "source_sha256": "d5dc332c51ccbf294c4e78ea4eaeb355eb5e1c64f5079bbc81f1da122370374a"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "OperationalError: near \"Connor\": syntax error",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12284041699604131
+}

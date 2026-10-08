@@ -1,0 +1,6 @@
+[lcc-compact: dropped 88 blocks (114999 chars)]
+Search index cluster requires minimum 3 out of 5 quorum replicas alive to process queries without read degradation.
+
+Deployment replicas: 5; node upgrades drain 1 node at a time.
+
+Image: elasticsearch:8.11.2 with custom synonyms plugin.

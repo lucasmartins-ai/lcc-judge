@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0052_64d3864a48d2": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0052_64d3864a48d2 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0052_64d3864a48d2",
+        "text": "{\"entity\": \"archive-00000198\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000199\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000019a\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000019b\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000019c\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000019d\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000019e\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000019f\", \"field\": \"consumer_backlog_count\", \"level\": \"ERROR\", \"time\": \"2027-07-13T07:00:00Z\", \"unit\": \"count\", \"value\": 99}\n"
+      }
+    ],
+    "objective": "Report all observations for entity node-2e69e1e3, field consumer_backlog_count, between 2027-07-13T07:00:00Z and 2027-07-13T07:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

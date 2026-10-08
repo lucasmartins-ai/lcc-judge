@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113615_103cbc", "timestamp": 1791110176287}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshake packets", "timestamp": 1791110181957}
+{"type": "text", "text": " are likely being dropped by a path-MTU discovery black hole; tcp_mtu_probing=0 leaves blackholed paths without", "timestamp": 1791110181958}
+{"type": "text", "text": " recovery.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110181958}
+{"type": "result", "session_id": "20261004_113615_103cbc", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"TLS handshake packets are likely being dropped by a path-MTU discovery black hole; tcp_mtu_probing=0 leaves blackholed paths without recovery.\",\"mechanism\":\"pmtud_blackhole\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 513, "output": 217, "total": 1650, "cache_read": 920, "cache_write": 0}, "duration_ms": 5694, "timestamp": 1791110181981}

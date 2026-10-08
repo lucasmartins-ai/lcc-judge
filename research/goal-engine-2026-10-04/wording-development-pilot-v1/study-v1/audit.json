@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "f037d5d067aee03c03b4a6941dd4e816c1e4f23c19f99482de8d17390ae96461",
+  "private_weights_verified": true,
+  "accepted_updates": 2649,
+  "training_pair_presentations": 42318,
+  "training_nonpadding_tokens": 1796904,
+  "valid_evaluation_forwards": 16512,
+  "valid_evaluation_nonpadding_tokens": 704464,
+  "development_promising": false,
+  "final_evaluated": false,
+  "adoption": false,
+  "model_forwards_by_audit": 0,
+  "scope": "Eight known relevance fields/four hard within-tool pairs,18known fields in semantic UNKNOWN. Original64/32author fixtures and actual values reused; no final capture/rows or tools reexecuted. Exposed development pilot, not confirmation or full18field gate.",
+  "independent_data_tokenizer_recount": true,
+  "data_protocol_sha256": "94a3b391162767f1f3df9bc422c4200a758a627b76f4f9098821305237151d80",
+  "metadata_erratum": {
+    "original_data_directory": "..",
+    "correct_data_directory": ".",
+    "frozen_protocol_preserved": true,
+    "all_data_file_hashes_verified": true
+  },
+  "scalar_validation_forwards": 5504,
+  "scalar_validation_tokens": 236044,
+  "total_evaluation_forwards": 22016,
+  "total_evaluation_tokens": 940508,
+  "audit_source_sha256": "f7cbf325a1cacc88f7f0aab7806ef79bb31ffa03683c7b5f4b219cf5d67d11c1",
+  "core_audit_source_sha256": "50ca1a413cb1007aac5e3585c4d2733cd79052e110f8870110d03d6f0a59180c",
+  "quality_approved": false
+}

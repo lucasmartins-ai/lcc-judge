@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Determine why redis cache hit ratio dropped to 12% at 09:30 UTC.",
+    "blocks": [
+      {
+        "id": "blk_0091_a378638c2604",
+        "text": "db query latency p50=12ms p99=450ms during read traffic burst\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0091_a378638c2604": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0091_a378638c2604 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

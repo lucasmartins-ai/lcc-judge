@@ -1,0 +1,451 @@
+{
+  "schema": "generic-report-control-audit/0.1",
+  "protocol_sha256": "25873a220dcb0f0205d700c517b51a1e631035ad0d1428cb856b4f3c8b8756c4",
+  "archived_sources_base_controls_subtraction_threshold_metrics_gates_verified": true,
+  "reference_question": "Report the observed measurement and its value.",
+  "mean": {
+    "auc": 0.8226267496744791,
+    "paired_auc": 0.91796875,
+    "positive_recall": 0.96875,
+    "negative_rejection": 0.3190104166666667
+  },
+  "mean_within_objective_auc": 0.8450520833333334,
+  "seeds_pass": [
+    false,
+    false,
+    false
+  ],
+  "all_seeds_pass": false,
+  "base_mean": {
+    "auc": 0.8279469807942709,
+    "paired_auc": 0.91796875,
+    "positive_recall": 0.96875,
+    "negative_rejection": 0.3776041666666667
+  },
+  "new_reference_pair_forwards": 1632,
+  "reference_nonpadding_tokens": 33414,
+  "max_reference_pair_tokens": 26,
+  "paired_goal_axis_unchanged": true,
+  "base_inference_reexecuted": false,
+  "training_executed": false,
+  "model_calls_during_audit": 0,
+  "API_calls_during_audit": 0,
+  "adoption": false,
+  "family_metrics": {
+    "101": {
+      "certificate": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 1.0,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.5,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      },
+      "file_text": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.9658203125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.1875,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      },
+      "network_receive": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.728515625,
+        "paired_auc": 0.6875,
+        "paired_reports": 32,
+        "positive_recall": 0.96875,
+        "negative_rejection": 0.1875,
+        "within_objective": {
+          "wins": 47,
+          "comparisons": 64,
+          "auc": 0.734375,
+          "objectives": 16
+        }
+      },
+      "repository_files": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.7041015625,
+        "paired_auc": 0.65625,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.1875,
+        "within_objective": {
+          "wins": 52,
+          "comparisons": 64,
+          "auc": 0.8125,
+          "objectives": 16
+        }
+      },
+      "retry_wait": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.677734375,
+        "paired_auc": 0.78125,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.375,
+        "within_objective": {
+          "wins": 32,
+          "comparisons": 64,
+          "auc": 0.5,
+          "objectives": 16
+        }
+      },
+      "scheduler_duration": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.8525390625,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0,
+        "within_objective": {
+          "wins": 52,
+          "comparisons": 64,
+          "auc": 0.8125,
+          "objectives": 16
+        }
+      },
+      "search_lines": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.953125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.3125,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      },
+      "storage_entries": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.87890625,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 0.875,
+        "negative_rejection": 0.4375,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      }
+    },
+    "202": {
+      "certificate": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 1.0,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.8125,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      },
+      "file_text": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.9326171875,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.1875,
+        "within_objective": {
+          "wins": 59,
+          "comparisons": 64,
+          "auc": 0.921875,
+          "objectives": 16
+        }
+      },
+      "network_receive": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.677734375,
+        "paired_auc": 0.6875,
+        "paired_reports": 32,
+        "positive_recall": 0.8125,
+        "negative_rejection": 0.28125,
+        "within_objective": {
+          "wins": 36,
+          "comparisons": 64,
+          "auc": 0.5625,
+          "objectives": 16
+        }
+      },
+      "repository_files": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.728515625,
+        "paired_auc": 0.8125,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.34375,
+        "within_objective": {
+          "wins": 52,
+          "comparisons": 64,
+          "auc": 0.8125,
+          "objectives": 16
+        }
+      },
+      "retry_wait": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.73046875,
+        "paired_auc": 0.96875,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.5,
+        "within_objective": {
+          "wins": 40,
+          "comparisons": 64,
+          "auc": 0.625,
+          "objectives": 16
+        }
+      },
+      "scheduler_duration": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.83203125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0,
+        "within_objective": {
+          "wins": 54,
+          "comparisons": 64,
+          "auc": 0.84375,
+          "objectives": 16
+        }
+      },
+      "search_lines": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.8876953125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.3125,
+        "within_objective": {
+          "wins": 52,
+          "comparisons": 64,
+          "auc": 0.8125,
+          "objectives": 16
+        }
+      },
+      "storage_entries": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.8798828125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 0.875,
+        "negative_rejection": 0.4375,
+        "within_objective": {
+          "wins": 63,
+          "comparisons": 64,
+          "auc": 0.984375,
+          "objectives": 16
+        }
+      }
+    },
+    "303": {
+      "certificate": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 1.0,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.8125,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      },
+      "file_text": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.955078125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.1875,
+        "within_objective": {
+          "wins": 64,
+          "comparisons": 64,
+          "auc": 1,
+          "objectives": 16
+        }
+      },
+      "network_receive": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.7255859375,
+        "paired_auc": 0.6875,
+        "paired_reports": 32,
+        "positive_recall": 0.84375,
+        "negative_rejection": 0.03125,
+        "within_objective": {
+          "wins": 42,
+          "comparisons": 64,
+          "auc": 0.65625,
+          "objectives": 16
+        }
+      },
+      "repository_files": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.765625,
+        "paired_auc": 0.8125,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.3125,
+        "within_objective": {
+          "wins": 52,
+          "comparisons": 64,
+          "auc": 0.8125,
+          "objectives": 16
+        }
+      },
+      "retry_wait": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.734375,
+        "paired_auc": 0.9375,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.5,
+        "within_objective": {
+          "wins": 40,
+          "comparisons": 64,
+          "auc": 0.625,
+          "objectives": 16
+        }
+      },
+      "scheduler_duration": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.8779296875,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0,
+        "within_objective": {
+          "wins": 62,
+          "comparisons": 64,
+          "auc": 0.96875,
+          "objectives": 16
+        }
+      },
+      "search_lines": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.8662109375,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 1,
+        "negative_rejection": 0.3125,
+        "within_objective": {
+          "wins": 52,
+          "comparisons": 64,
+          "auc": 0.8125,
+          "objectives": 16
+        }
+      },
+      "storage_entries": {
+        "n": 64,
+        "eligible": 64,
+        "cuts": 0,
+        "errors": 0,
+        "auc": 0.8642578125,
+        "paired_auc": 1,
+        "paired_reports": 32,
+        "positive_recall": 0.875,
+        "negative_rejection": 0.4375,
+        "within_objective": {
+          "wins": 63,
+          "comparisons": 64,
+          "auc": 0.984375,
+          "objectives": 16
+        }
+      }
+    }
+  },
+  "scope": "one fixed reference on exposed authored compact cohorts, no transfer confirmation/calibrated probability/P2/production"
+}

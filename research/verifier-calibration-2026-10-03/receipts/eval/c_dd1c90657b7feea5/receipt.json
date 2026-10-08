@@ -1,0 +1,39 @@
+{
+  "case_id": "c_dd1c90657b7feea5",
+  "split": "eval",
+  "task_number": 10,
+  "kind": "code",
+  "family": "eval_valid_implementation_1",
+  "expected": true,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "95226e9f5303cf5da96d80b73468b4fb3144f5b31f3d1b28eae02fa0d73739ba",
+  "legacy_verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "duplicate_not_charged",
+      "cached_receipt",
+      "atomic_key_and_ttl",
+      "distinct_key"
+    ],
+    "program_stdout": "",
+    "source_sha256": "b2e1b31cb3040480e567a42adc6dd81b631b6463c30ac8a10f492932ee741d96"
+  },
+  "candidate_verification": {
+    "passed": true,
+    "reason": "expanded_executable_contract",
+    "checks": [
+      "multiple_keys_amounts",
+      "cached_receipt",
+      "required_atomic_ttl",
+      "lost_nx_does_not_charge"
+    ],
+    "stdout": ""
+  },
+  "legacy": true,
+  "structural": true,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.1302939170273021
+}

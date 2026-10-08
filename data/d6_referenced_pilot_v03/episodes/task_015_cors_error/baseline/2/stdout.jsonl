@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_114111_2f04ce", "timestamp": 1791110471776}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The credentialed POST is blocked because the API returns Access-Control-Allow-Origin: * while also allowing credentials", "timestamp": 1791110477150}
+{"type": "text", "text": ". Configure CORS with the explicit origin https://app.domain.com instead of a wildcard.\",\"mechanism\":\"cors_wildcard_credentials\",\"parameters\":{\"allow_origin\":\"https://app.domain", "timestamp": 1791110477151}
+{"type": "text", "text": ".com\",\"allow_credentials\":true},\"python\":\"\"}", "timestamp": 1791110477152}
+{"type": "result", "session_id": "20261004_114111_2f04ce", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The credentialed POST is blocked because the API returns Access-Control-Allow-Origin: * while also allowing credentials. Configure CORS with the explicit origin https://app.domain.com instead of a wildcard.\",\"mechanism\":\"cors_wildcard_credentials\",\"parameters\":{\"allow_origin\":\"https://app.domain.com\",\"allow_credentials\":true},\"python\":\"\"}", "tokens": {"input": 2, "output": 224, "total": 1744, "cache_read": 1518, "cache_write": 0}, "duration_ms": 5394, "timestamp": 1791110477171}

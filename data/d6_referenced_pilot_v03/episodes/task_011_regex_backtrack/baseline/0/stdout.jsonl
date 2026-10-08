@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113858_7c61ff", "timestamp": 1791110338995}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"The ingress worker is locked up by catastrophic regex", "timestamp": 1791110344839}
+{"type": "text", "text": " backtracking in validation.py:31. The nested repetition in ^([a-zA-Z0-9]+)*$ causes exponential backtracking on an invalid input ending in '!', consuming CPU until the watchdog kills", "timestamp": 1791110344845}
+{"type": "text", "text": " the worker.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "timestamp": 1791110344846}
+{"type": "result", "session_id": "20261004_113858_7c61ff", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"The ingress worker is locked up by catastrophic regex backtracking in validation.py:31. The nested repetition in ^([a-zA-Z0-9]+)*$ causes exponential backtracking on an invalid input ending in '!', consuming CPU until the watchdog kills the worker.\",\"mechanism\":\"catastrophic_regex_backtracking\",\"parameters\":{},\"python\":\"\"}", "tokens": {"input": 1369, "output": 221, "total": 1730, "cache_read": 140, "cache_write": 0}, "duration_ms": 5871, "timestamp": 1791110344866}

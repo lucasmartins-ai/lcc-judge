@@ -1,0 +1,138 @@
+{
+  "schema": "varied-direct-record-development-supervision/0.1",
+  "frozen_at_utc": "2026-10-05T00:56:02.695405+00:00",
+  "design_sha256": "0c0d269123ee2abedb78cfd60d3bce97573f4b836cfcbfaccc4f83987b212ebb",
+  "design_audit": {
+    "status": "PASS",
+    "design_sha256": "0c0d269123ee2abedb78cfd60d3bce97573f4b836cfcbfaccc4f83987b212ebb",
+    "cohort_sha256": "82eb8ca05308cb985a22908eddf695253be5318ea4dd2bc3d636686b3d4cd30a",
+    "graph": {
+      "roles": 18,
+      "unordered_pairs": 52,
+      "connected_components": 1,
+      "components": [
+        [
+          "git_clean_tracked_files",
+          "git_ignored_files",
+          "git_index_edits",
+          "git_index_files",
+          "git_tracked_fs_bytes",
+          "git_untracked_files",
+          "git_untracked_fs_bytes",
+          "git_worktree_edits",
+          "retry_actual_sleep_ns",
+          "retry_attempts",
+          "retry_elapsed_ns",
+          "retry_failures",
+          "retry_scheduled_sleep_ns",
+          "retry_sleep_calls",
+          "udp_received_datagrams",
+          "udp_received_payload_bytes",
+          "udp_sent_datagrams",
+          "udp_sent_payload_bytes"
+        ]
+      ],
+      "min_degree": 3,
+      "max_degree": 8
+    },
+    "fixtures": 96,
+    "fields": 1728,
+    "wording_combinations": 32,
+    "expected_rows": {
+      "train": 60288,
+      "validation": 30144
+    },
+    "model_forwards": 0,
+    "P2_admission": false,
+    "quality_approved": false
+  },
+  "sources": {
+    "research/tool_relation_state_supervision.py": "e1882fbee8b469d050cba3d3f95a2a91fb31a113f9561cff3042782c37a894bf",
+    "research/audit_tool_relation_state_supervision.py": "394bb56aca7fa0b00de69e0748090e284361a3d9281572b86af383ebfbbdd221",
+    "research/audit_tool_relation_state_cohort.py": "7206ce7e9794408affae838ddf0d9c1f653b6a1e7fd668fd1981343789b8718f",
+    "research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c"
+  },
+  "capture_files": {
+    "cohort.json": "6e12142a14230f22b59bbce3c67021e1b46153435088d0bfa1a781886c3df6bf",
+    "supervision-design-v3/protocol.json": "60f72c6ae0a489053771cfb820be290747de261603593bf6c500dc2887dadf14",
+    "supervision-design-v3/sources/research/tool_relation_state_contracts.py": "ff86c51c968f74094ad950c8c4321b31b6a858d5899dda124b98e256a545b2fe",
+    "supervision-design-v3/sources/research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4",
+    "supervision-design-v3/sources/research/audit_tool_relation_state_cohort.py": "7206ce7e9794408affae838ddf0d9c1f653b6a1e7fd668fd1981343789b8718f",
+    "supervision-design-v3/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "supervision-design-v3/sources/research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "calibration/protocol.json": "18702b1066d745214940bd87c596f8d78dd356ff3485b6190fdc3fd1ea7827df",
+    "calibration/started.json": "40df9d4f6a703172b8b2473016b1faf9ea9e56849317873b898d3cfcb7255b9e",
+    "calibration/completion.json": "4603114ba6ed3ba5578298d4653f9c0c3726d59c7369d6996e024cda528c8a3a",
+    "calibration/raw.json": "a67ce99b9b27b443f506a27af8c0be814beef2a4040b0326cd64bed7348f7c23",
+    "calibration/sources/research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "calibration/sources/research/tool_relation_state_runtime.py": "de8c4bb3dd8b0c92e0db7c1388a3ed61e801a2fa9ae0d4f6f6419131b2fcd911",
+    "calibration/sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+    "calibration/sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+    "calibration/sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "calibration/sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+    "calibration/sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "calibration/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "calibration/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "train/protocol.json": "b56b35b2cd584288c538e52347b9362c1ce9e4976c9b92a81e321b839c6b326b",
+    "train/started.json": "603107a61d789a5eee60bd54dea42c4003917a05acd2859bf41707c79b7def5e",
+    "train/completion.json": "4e7f3758583c58c6ddfffdcbdba949ec5ec61fc19aa83388ab7444e7b1c26dba",
+    "train/raw.json": "0ac50ce3c54c02c9179617058134149a37128ad545edf5b042f6cbff78629120",
+    "train/sources/research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "train/sources/research/tool_relation_state_runtime.py": "de8c4bb3dd8b0c92e0db7c1388a3ed61e801a2fa9ae0d4f6f6419131b2fcd911",
+    "train/sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+    "train/sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+    "train/sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "train/sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+    "train/sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "train/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "train/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "validation/protocol.json": "a16972743f28e3781113952241605ffbb8891cb92cb9d5b54f5e8a04031a5455",
+    "validation/started.json": "2877e23f485a29c762938fb71e0d5dde374d473bc8bedb13fbaa2d4ab6857f53",
+    "validation/completion.json": "c5f4a3b9acf1791ad99f2dc033414d5cd4e2f54e0430395335d7bbf747f74184",
+    "validation/raw.json": "e606a1cf3c8cbb70c8e33737f80e92cb2f51ae3e2e8e73c319ce34abed178a5d",
+    "validation/sources/research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "validation/sources/research/tool_relation_state_runtime.py": "de8c4bb3dd8b0c92e0db7c1388a3ed61e801a2fa9ae0d4f6f6419131b2fcd911",
+    "validation/sources/research/tool_relation_worker.py": "5b6b7703a0b7193f5a97802af310c12865e75600fd4cb20cc815e8241c6fb72a",
+    "validation/sources/research/tool_relation_runtime.py": "4eb9170a789dd9b634309f18505870d88166b701f2fe0f96400753b2d69e70c9",
+    "validation/sources/research/tool_measurement_worker.py": "e0b040be3c6a748e56a8ba32c6398d3120fcb6a1ddfbb47e13382f3240712fe8",
+    "validation/sources/research/tool_measurement_runtime.py": "63e5378113a438a585d27bb322577311248d94bc4793e6fdee8d6c71c161470e",
+    "validation/sources/replay/sandbox.py": "591d9224aa677a5ae287aae2440a256f860fd33db33f6d30ef17854656a9c06f",
+    "validation/sources/research/capture_tool_relation_states.py": "8b54873a231a126ef83902a3453715e06e26792c746e72c3780587150b10dcc8",
+    "validation/sources/research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1"
+  },
+  "requests": {
+    "train": {
+      "seed": 442601,
+      "fixtures": 64
+    },
+    "validation": {
+      "seed": 442602,
+      "fixtures": 32
+    }
+  },
+  "calibration_excluded": 442600,
+  "tokenizer": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "files": {
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "window": 512
+  },
+  "population": "942 authored rows per fixture:832 binary,108 semantic UNKNOWN,2 structural UNKNOWN. All52pairs/18primitives seen; no final.",
+  "projected_deduplication": "Report unique input counts/classes/conflicts; repeated rows are not independent tasks. Future balanced binary loss must account for deduplicated class imbalance.",
+  "compression": "gzip JSONL, mtime0 and empty archive filename; complete original rows/views, no data omitted",
+  "development_only": true,
+  "model_forwards": 0,
+  "API_calls": 0,
+  "P2_admission": false,
+  "quality_approved": false,
+  "default_changed": false,
+  "publishing": false,
+  "sha256": "b921938d794b597e068a25aad7375d7968e49d18a8d463e12219163626371c05"
+}

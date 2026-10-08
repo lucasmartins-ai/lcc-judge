@@ -1,0 +1,41 @@
+test_duplicate_json_keys_cannot_override_answer (test_observation_outcome.ObservationOutcomeTests.test_duplicate_json_keys_cannot_override_answer) ... ERROR
+test_fixture_unknown_flags_vary_and_unsupported_blocks_are_covered (test_observation_outcome.ObservationOutcomeTests.test_fixture_unknown_flags_vary_and_unsupported_blocks_are_covered) ... ERROR
+test_missing_unknowns_extra_evidence_and_bool_values_are_rejected (test_observation_outcome.ObservationOutcomeTests.test_missing_unknowns_extra_evidence_and_bool_values_are_rejected) ... ERROR
+test_order_does_not_matter_but_values_and_unknowns_do (test_observation_outcome.ObservationOutcomeTests.test_order_does_not_matter_but_values_and_unknowns_do) ... ERROR
+
+======================================================================
+ERROR: test_duplicate_json_keys_cannot_override_answer (test_observation_outcome.ObservationOutcomeTests.test_duplicate_json_keys_cannot_override_answer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observation_outcome.py", line 35, in test_duplicate_json_keys_cannot_override_answer
+    from research.observation_lcc_pilot import parse_answer
+ModuleNotFoundError: No module named 'research.observation_lcc_pilot'
+
+======================================================================
+ERROR: test_fixture_unknown_flags_vary_and_unsupported_blocks_are_covered (test_observation_outcome.ObservationOutcomeTests.test_fixture_unknown_flags_vary_and_unsupported_blocks_are_covered)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observation_outcome.py", line 40, in test_fixture_unknown_flags_vary_and_unsupported_blocks_are_covered
+    from research.observation_lcc_pilot import task_rows
+ModuleNotFoundError: No module named 'research.observation_lcc_pilot'
+
+======================================================================
+ERROR: test_missing_unknowns_extra_evidence_and_bool_values_are_rejected (test_observation_outcome.ObservationOutcomeTests.test_missing_unknowns_extra_evidence_and_bool_values_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observation_outcome.py", line 21, in test_missing_unknowns_extra_evidence_and_bool_values_are_rejected
+    from research.observation_lcc_pilot import verify_answer
+ModuleNotFoundError: No module named 'research.observation_lcc_pilot'
+
+======================================================================
+ERROR: test_order_does_not_matter_but_values_and_unknowns_do (test_observation_outcome.ObservationOutcomeTests.test_order_does_not_matter_but_values_and_unknowns_do)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_observation_outcome.py", line 11, in test_order_does_not_matter_but_values_and_unknowns_do
+    from research.observation_lcc_pilot import verify_answer
+ModuleNotFoundError: No module named 'research.observation_lcc_pilot'
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+FAILED (errors=4)

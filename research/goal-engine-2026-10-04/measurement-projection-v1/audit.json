@@ -1,0 +1,74 @@
+{
+  "schema": "scope-checked-measurement-view-audit/0.1",
+  "protocol_sha256": "0ea543937cf8335b8c65ab67beada697a631e45cd6b67e3f353af1fd8a98bfe7",
+  "archived_sources_data_views_scores_threshold_gate_verified": true,
+  "metrics": {
+    "validation": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.8477105034722222,
+      "paired_auc": 0.921875,
+      "paired_reports": 192,
+      "positive_recall": 0.953125,
+      "negative_rejection": 0.34375,
+      "within_objective": {
+        "wins": 350,
+        "comparisons": 384,
+        "auc": 0.9114583333333334,
+        "objectives": 96
+      }
+    },
+    "final": {
+      "n": 384,
+      "eligible": 384,
+      "cuts": 0,
+      "errors": 0,
+      "auc": 0.69287109375,
+      "paired_auc": 0.765625,
+      "paired_reports": 192,
+      "positive_recall": 0.9479166666666666,
+      "negative_rejection": 0.09895833333333333,
+      "within_objective": {
+        "wins": 265,
+        "comparisons": 384,
+        "auc": 0.6901041666666666,
+        "objectives": 96
+      }
+    }
+  },
+  "raw_control_final": {
+    "n": 384,
+    "eligible": 384,
+    "cuts": 0,
+    "errors": 0,
+    "auc": 0.6719835069444444,
+    "paired_auc": 0.703125,
+    "paired_reports": 192,
+    "positive_recall": 0.96875,
+    "negative_rejection": 0.052083333333333336,
+    "within_objective": {
+      "wins": 257,
+      "comparisons": 384,
+      "auc": 0.6692708333333334,
+      "objectives": 96
+    }
+  },
+  "final_gate_pass": false,
+  "max_actual_pair_tokens": 30,
+  "total_pair_evaluations": 2304,
+  "accounting_from_raw": {
+    "counted_tokens": 49212,
+    "submitted_tokens": 49212,
+    "forward_completed_tokens": 49212,
+    "valid_score_tokens": 49212
+  },
+  "setup_receipt_preserved": true,
+  "peak_process_rss_bytes": 663617536,
+  "inference_reexecuted": false,
+  "model_calls_during_audit": 0,
+  "API_calls_during_audit": 0,
+  "adoption": false,
+  "scope": "one altered-input representation on exposed authored data; no independent confirmation, causal attribution, production or P2"
+}

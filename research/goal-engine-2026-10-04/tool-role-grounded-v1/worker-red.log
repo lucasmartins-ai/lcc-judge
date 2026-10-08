@@ -1,0 +1,21 @@
+test_tool_measurement_worker (unittest.loader._FailedTest.test_tool_measurement_worker) ... ERROR
+
+======================================================================
+ERROR: test_tool_measurement_worker (unittest.loader._FailedTest.test_tool_measurement_worker)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tool_measurement_worker
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_measurement_worker.py", line 3, in <module>
+    from research.tool_measurement_worker import validate_request, require_worker, expected_wc
+ModuleNotFoundError: No module named 'research.tool_measurement_worker'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

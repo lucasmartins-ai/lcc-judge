@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Identify the root cause of connection pool timeout errors in payment-gateway.",
+    "blocks": [
+      {
+        "id": "blk_0025_9cf8c08eaace",
+        "text": "2026-10-03T10:01:23Z [ERROR] connection pool exhausted: active=20 idle=0 waiting=42; leaked_conn_holding_stack at billing.py:144 acquire_conn() without release in stripe_webhook_handler\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0025_9cf8c08eaace": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0025_9cf8c08eaace (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

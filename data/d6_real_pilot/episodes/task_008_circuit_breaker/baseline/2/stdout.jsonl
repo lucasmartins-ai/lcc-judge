@@ -1,0 +1,5 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261003_211105_47aa2b", "timestamp": 1791058265490}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"Set the circuit breaker latency trip", "timestamp": 1791058268740}
+{"type": "text", "text": " threshold to 1500 ms.\",\"mechanism\":\"circuit_breaker_timeout\",\"parameters\":{\"timeout_ms\":1500},\"python\":\"\"}", "timestamp": 1791058268741}
+{"type": "result", "session_id": "20261003_211105_47aa2b", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"Set the circuit breaker latency trip threshold to 1500 ms.\",\"mechanism\":\"circuit_breaker_timeout\",\"parameters\":{\"timeout_ms\":1500},\"python\":\"\"}", "tokens": {"input": 431, "output": 136, "total": 1673, "cache_read": 1106, "cache_write": 0}, "duration_ms": 3274, "timestamp": 1791058268764}

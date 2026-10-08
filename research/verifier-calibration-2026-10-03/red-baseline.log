@@ -1,0 +1,45 @@
+test_budget_boolean_is_not_a_replica_count (test_verifier_calibration.VerifierCalibrationTests.test_budget_boolean_is_not_a_replica_count) ... FAIL
+test_inventory_is_not_allowed_to_handle_only_the_original_ids (test_verifier_calibration.VerifierCalibrationTests.test_inventory_is_not_allowed_to_handle_only_the_original_ids) ... FAIL
+test_test_contract_requires_assertion_failures (test_verifier_calibration.VerifierCalibrationTests.test_test_contract_requires_assertion_failures) ... FAIL
+test_valid_budget_percentage_is_accepted (test_verifier_calibration.VerifierCalibrationTests.test_valid_budget_percentage_is_accepted) ... FAIL
+
+======================================================================
+FAIL: test_budget_boolean_is_not_a_replica_count (test_verifier_calibration.VerifierCalibrationTests.test_budget_boolean_is_not_a_replica_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 11, in test_budget_boolean_is_not_a_replica_count
+    self.assertFalse(result['passed'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_inventory_is_not_allowed_to_handle_only_the_original_ids (test_verifier_calibration.VerifierCalibrationTests.test_inventory_is_not_allowed_to_handle_only_the_original_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 35, in test_inventory_is_not_allowed_to_handle_only_the_original_ids
+    self.assertFalse(verify_artifact(TASKS[2],dict(status='ANSWER',python=source))['passed'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_test_contract_requires_assertion_failures (test_verifier_calibration.VerifierCalibrationTests.test_test_contract_requires_assertion_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 27, in test_test_contract_requires_assertion_failures
+    self.assertFalse(verify_artifact(TASKS[19],dict(status='ANSWER',python=source))['passed'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_valid_budget_percentage_is_accepted (test_verifier_calibration.VerifierCalibrationTests.test_valid_budget_percentage_is_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 16, in test_valid_budget_percentage_is_accepted
+    self.assertTrue(result['passed'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.116s
+
+FAILED (failures=4)

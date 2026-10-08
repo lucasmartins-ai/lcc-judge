@@ -1,0 +1,51 @@
+{
+  "protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+  "fixed_candidate": "retained multilingual last2+classifier",
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "weights_sha256": {
+    "101": "7883adbfcaaba282b2d294e0599da257c639acba3671517ad789f900215a568d",
+    "202": "f770d309edf7f74c78d028773ee7da9075d610a126e5e3788a4bdf8f0ad10b77",
+    "303": "15f347554f94150abf1f0d9ab79c6b4c1f400cb566d83e5a290b74405d9e3955"
+  },
+  "calibration": {
+    "101": {
+      "protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+      "thresholds": {
+        "support": -0.8072910278450626,
+        "relevance": -2.9832178354263306,
+        "validation_semantic_unknown_recall": 1.0,
+        "recipe": "minimum semantic-UNKNOWN support margin; greatest global relevance cutoff meeting .95 positive/contradiction keep recall in each language"
+      },
+      "final_inspected": false,
+      "frozen_at_utc": "2026-10-04T23:16:48.683737+00:00"
+    },
+    "202": {
+      "protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+      "thresholds": {
+        "support": -0.7835703871382415,
+        "relevance": -2.1849955320358276,
+        "validation_semantic_unknown_recall": 1.0,
+        "recipe": "minimum semantic-UNKNOWN support margin; greatest global relevance cutoff meeting .95 positive/contradiction keep recall in each language"
+      },
+      "final_inspected": false,
+      "frozen_at_utc": "2026-10-04T23:18:54.775669+00:00"
+    },
+    "303": {
+      "protocol_sha256": "f28b63f52d46f8ad6f3d974b383f9edd81cc84184383965f81b3bea29669fe4e",
+      "thresholds": {
+        "support": -0.7519125619986892,
+        "relevance": -2.539465069770813,
+        "validation_semantic_unknown_recall": 1.0,
+        "recipe": "minimum semantic-UNKNOWN support margin; greatest global relevance cutoff meeting .95 positive/contradiction keep recall in each language"
+      },
+      "final_inspected": false,
+      "frozen_at_utc": "2026-10-04T23:20:52.765568+00:00"
+    }
+  },
+  "final_inspected": false,
+  "frozen_at_utc": "2026-10-04T23:20:53.182345+00:00"
+}

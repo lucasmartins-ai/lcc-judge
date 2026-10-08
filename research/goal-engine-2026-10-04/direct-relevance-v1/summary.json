@@ -1,0 +1,100 @@
+{
+  "adoption": false,
+  "arms": {
+    "frozen": {
+      "all_seed_gate_pass": false,
+      "mean": {
+        "anomalous_auc": 0.6385459533607681,
+        "anomalous_recall": 0.9444444444444445,
+        "auc": 0.6379779663923183,
+        "healthy_auc": 0.6374099794238682,
+        "healthy_recall": 0.9444444444444445,
+        "wrong_entity_anomaly_rejection": 0.06481481481481481
+      },
+      "pooled_auc_domain_bootstrap_95": [
+        0.6267146776406035,
+        0.6701847029320986
+      ],
+      "seeds_pass": [
+        false,
+        false,
+        false
+      ]
+    },
+    "last-two": {
+      "all_seed_gate_pass": false,
+      "mean": {
+        "anomalous_auc": 0.7075831618655694,
+        "anomalous_recall": 0.9861111111111112,
+        "auc": 0.7145168895747599,
+        "healthy_auc": 0.7214506172839507,
+        "healthy_recall": 0.9907407407407408,
+        "wrong_entity_anomaly_rejection": 0.018518518518518517
+      },
+      "pooled_auc_domain_bootstrap_95": [
+        0.7069723079561042,
+        0.7281914437585734
+      ],
+      "seeds_pass": [
+        false,
+        false,
+        false
+      ]
+    }
+  },
+  "baselines": {
+    "bge": {
+      "anomalous_auc": 0.5021799445105034,
+      "auc": 0.5019322235434007,
+      "cuts": 99,
+      "eligible_known": 290,
+      "errors": 0,
+      "healthy_auc": 0.501684502576298,
+      "known": 360,
+      "n": 504
+    },
+    "laya": {
+      "anomalous_auc": 0.5055941358024691,
+      "auc": 0.5042438271604939,
+      "cuts": 0,
+      "eligible_known": 360,
+      "errors": 0,
+      "healthy_auc": 0.5028935185185185,
+      "known": 360,
+      "n": 504
+    },
+    "lexical": {
+      "anomalous_auc": 0.4314557613168724,
+      "auc": 0.4314557613168724,
+      "cuts": 0,
+      "eligible_known": 360,
+      "errors": 0,
+      "healthy_auc": 0.4314557613168724,
+      "known": 360,
+      "n": 504
+    },
+    "parent": {
+      "anomalous_auc": 0.5143389917695473,
+      "auc": 0.5109953703703703,
+      "cuts": 0,
+      "eligible_known": 360,
+      "errors": 0,
+      "healthy_auc": 0.5076517489711934,
+      "known": 360,
+      "n": 504
+    },
+    "typed": {
+      "anomalous_auc": 1.0,
+      "auc": 1.0,
+      "cuts": 0,
+      "eligible_known": 360,
+      "errors": 0,
+      "healthy_auc": 1.0,
+      "known": 360,
+      "n": 504
+    }
+  },
+  "protocol_sha256": "015818ca4844360f2fb23d2800c9d0ba5839e9e059601493e48aaa7629407295",
+  "reason": "Synthetic P1 gate is separate from old incident gate and downstream LCC outcomes; no policy promotion from this study",
+  "selected_arm": "last-two"
+}

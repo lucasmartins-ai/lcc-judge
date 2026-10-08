@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_observation_pilot",
+  "questions": {
+    "keep_blk_0008_4b672408f973": {
+      "criteria": {
+        "false": "The block is unrelated noise for the objective.",
+        "true": "The block is relevant or plausibly useful for the objective."
+      },
+      "instructions": "Judge the probability that block blk_0008_4b672408f973 (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "type": "noul"
+    }
+  },
+  "state": {
+    "blocks": [
+      {
+        "id": "blk_0008_4b672408f973",
+        "text": "{\"entity\": \"archive-00000038\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-00000039\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000003a\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000003b\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000003c\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000003d\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000003e\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n{\"entity\": \"archive-0000003f\", \"field\": \"battery_voltage_mv\", \"level\": \"ERROR\", \"time\": \"2027-06-13T06:00:00Z\", \"unit\": \"count\", \"value\": 99}\n"
+      }
+    ],
+    "objective": "Report all observations for entity node-f0b2dc83, field battery_voltage_mv, between 2027-06-13T06:00:00Z and 2027-06-13T06:05:00Z inclusive. Include healthy and anomalous values and identify unresolved identity/time. Do not guess missing evidence."
+  }
+}

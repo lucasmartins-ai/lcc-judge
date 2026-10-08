@@ -1,0 +1,26 @@
+{
+  "model_id": "answerdotai/ModernBERT-base",
+  "max_len": 1024,
+  "temperature": 0.6,
+  "unfreeze_last_n": 2,
+  "pooling": "line-attn",
+  "seed": 0,
+  "data_manifest": {
+    "generator_version": "corpus-exp02/0.4",
+    "seed": 0,
+    "splits": {
+      "train": {
+        "n": 2340,
+        "digest": "33f2bff8fe7897b0"
+      },
+      "val": {
+        "n": 810,
+        "digest": "6dd4c0f79467a874"
+      },
+      "ood": {
+        "n": 960,
+        "digest": "31cb5f7ece937ecb"
+      }
+    }
+  }
+}

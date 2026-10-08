@@ -1,0 +1,46 @@
+{
+  "protocol_sha256": "b921938d794b597e068a25aad7375d7968e49d18a8d463e12219163626371c05",
+  "model_forwards": 0,
+  "splits": {
+    "train": {
+      "rows": 60288,
+      "binary": 53248,
+      "projected_rows": 60160,
+      "unknown": 7040,
+      "structural_unknown": 128,
+      "semantic_unknown": 6912,
+      "unique_projected_inputs": 50084,
+      "unique_projected_labels": {
+        "0": 25016,
+        "1": 18282,
+        "None": 6786
+      },
+      "raw_max_tokens": 138,
+      "projected_max_tokens": 76,
+      "relevant_contradictions": 11828,
+      "cuts": 0,
+      "rows_sha256": "fd4e15088c55d85dc18ca7ecf7d542c7b9f8c4f5f12a4f0a6b1593e11f13d941",
+      "views_sha256": "7bc0d4bce92d5e0267f4c47b833c4fab0d6f2d51c50cb082cfa6215e9580e3a6"
+    },
+    "validation": {
+      "rows": 30144,
+      "binary": 26624,
+      "projected_rows": 30080,
+      "unknown": 3520,
+      "structural_unknown": 64,
+      "semantic_unknown": 3456,
+      "unique_projected_inputs": 23692,
+      "unique_projected_labels": {
+        "0": 12576,
+        "1": 7660,
+        "None": 3456
+      },
+      "raw_max_tokens": 137,
+      "projected_max_tokens": 76,
+      "relevant_contradictions": 5920,
+      "cuts": 0,
+      "rows_sha256": "dc4c14ed77c8a3d87b9031a046867dcf2e5c58ebbd353e5917a41d2a17471d20",
+      "views_sha256": "ed4b99adb62aa5f5d7672fc70b4ea0c195ac0f1442cdd920912306e997800e24"
+    }
+  }
+}

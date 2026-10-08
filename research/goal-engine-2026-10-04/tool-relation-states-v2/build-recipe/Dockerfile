@@ -1,0 +1,5 @@
+FROM sha256:3f6cf84bea54d6d34a9076b9a7142bf5dbafa676cc598bd952c744445ab81ef4
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+COPY tool_relation_state_worker.py /usr/local/lib/python3.13/site-packages/research/
+LABEL lcc.tool-relation-states.source-sha256="ba6fac4ee5ef49e9f5e6bab5bc3ced96d3c0ba2dc3304fa7e17841e71c4fb589" lcc.tool-relation-states.dependency-sha256="d5edf5545fea1b7c41e9ac85717db148a8ea2594f2b671de5b949ad32bcb73c7"
+USER 65534:65534

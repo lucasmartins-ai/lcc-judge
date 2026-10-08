@@ -1,0 +1,105 @@
+{
+  "task_id": "task_014_shard_rebalance",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "9b74a5155a0eabd03a20c7ac5f071e60c1e6128e8b5617dc3afdeb3d1669b0be",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_014_shard_rebalance/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_014_shard_rebalance/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Select online migration using Debezium logical replication CDC.",
+    "mechanism": "online_logical_replication",
+    "parameters": {
+      "cutover_seconds": 15,
+      "downtime_budget_minutes": 30
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_211435_f5c92a",
+      "timestamp": 1791058476264
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_211435_f5c92a",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Select online migration using Debezium logical replication CDC.\",\"mechanism\":\"online_logical_replication\",\"parameters\":{\"cutover_seconds\":15,\"downtime_budget_minutes\":30},\"python\":\"\"}",
+    "tokens": {
+      "input": 597,
+      "output": 164,
+      "total": 1681,
+      "cache_read": 920,
+      "cache_write": 0
+    },
+    "duration_ms": 5347,
+    "timestamp": 1791058481611
+  },
+  "verification": {
+    "passed": true,
+    "reason": "curated_typed_outcome_constraints",
+    "verifier_kind": "curated_answer_assertions",
+    "production_environment_replayed": false
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.93
+        }
+      },
+      "usage": {
+        "input_tokens": 615,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 283.25433300000003,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.5830000000000002e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 7.653697583009489
+}

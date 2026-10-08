@@ -1,0 +1,29 @@
+{
+  "case_id": "c_39a0bfbcbdefb343",
+  "split": "eval",
+  "task_number": 20,
+  "kind": "code",
+  "family": "no_refill_assertion",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "aad2c2e68418607b49aa41807c0ba6ccfb5e83078c4846c84b38c547d7ed0c0b",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Generated test accepted no_refill",
+    "program_stdout": "",
+    "source_sha256": "ecd00df777e580806cd590ef74c79ccd8fe68a267c57c5f1b5c4ad4d68ee37f7"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: generated test accepted no_refill",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.14103575004264712
+}

@@ -1,0 +1,53 @@
+{
+  "summary": {
+    "depth_0": {
+      "n": 62,
+      "single_head_baseline": {
+        "J": 0.6582,
+        "D": 0.6727
+      },
+      "joint_judge_head_ablation": {
+        "J": 0.6993,
+        "D": 0.6223
+      },
+      "joint_supervision": {
+        "J": 0.6907,
+        "D": 0.6345
+      },
+      "delta_J": 0.0325,
+      "delta_D": -0.0382,
+      "delta_D_95ci": [
+        -0.0731,
+        -0.0049
+      ],
+      "d_passes_070": false,
+      "ci_strictly_positive": false,
+      "j_loss_under_002": true
+    },
+    "depth_512": {
+      "n": 62,
+      "single_head_baseline": {
+        "J": 0.712,
+        "D": 0.6582
+      },
+      "joint_judge_head_ablation": {
+        "J": 0.7549,
+        "D": 0.6673
+      },
+      "joint_supervision": {
+        "J": 0.7222,
+        "D": 0.6129
+      },
+      "delta_J": 0.0101,
+      "delta_D": -0.0453,
+      "delta_D_95ci": [
+        -0.0762,
+        -0.0166
+      ],
+      "d_passes_070": false,
+      "ci_strictly_positive": false,
+      "j_loss_under_002": true
+    }
+  },
+  "evidence_file": "research/detect-supervision-results.scores.json"
+}

@@ -1,0 +1,6 @@
+Warning: Unknown toolsets: none
+{"type": "system", "subtype": "init", "model": "stealth/space-bunny-alpha", "session_id": "20261004_113402_5e2071", "timestamp": 1791110043071}
+{"type": "text", "text": "{\"status\":\"ANSWER\",\"answer\":\"At 09:30 UTC, 1,200 top_products_cache keys expired simultaneously", "timestamp": 1791110048884}
+{"type": "text", "text": " with zero TTL jitter, causing a cache stampede: 1,200 workers hit PostgreSQL, increasing query latency and reducing the Redis hit", "timestamp": 1791110048885}
+{"type": "text", "text": " ratio to 12%.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"expired_keys\":1200,\"ttl_seconds\":3600,\"jitter_seconds\":0},\"python\":\"\"}", "timestamp": 1791110048885}
+{"type": "result", "session_id": "20261004_113402_5e2071", "exit_code": 0, "text": "{\"status\":\"ANSWER\",\"answer\":\"At 09:30 UTC, 1,200 top_products_cache keys expired simultaneously with zero TTL jitter, causing a cache stampede: 1,200 workers hit PostgreSQL, increasing query latency and reducing the Redis hit ratio to 12%.\",\"mechanism\":\"cache_expiry_stampede\",\"parameters\":{\"expired_keys\":1200,\"ttl_seconds\":3600,\"jitter_seconds\":0},\"python\":\"\"}", "tokens": {"input": 1443, "output": 286, "total": 1869, "cache_read": 140, "cache_write": 0}, "duration_ms": 5834, "timestamp": 1791110048905}

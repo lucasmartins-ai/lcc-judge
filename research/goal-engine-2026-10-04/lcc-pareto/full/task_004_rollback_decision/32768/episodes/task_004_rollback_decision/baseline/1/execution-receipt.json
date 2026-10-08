@@ -1,0 +1,86 @@
+{
+  "task_id": "task_004_rollback_decision",
+  "condition": "baseline",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "e1d3e34e9b57ea4586d14636b3c5c459206b8f4e8c6e1f8c7a37d5a7380e6b91",
+  "input_sha256": "3f6d201f7783881979208f7a3c521f0aa44c132761273ac9c952adcdadaf8288",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_004_rollback_decision/32768/episodes/task_004_rollback_decision/baseline/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/research/goal-engine-2026-10-04/lcc-pareto/full/task_004_rollback_decision/32768/episodes/task_004_rollback_decision/baseline/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Disable FAST_CHECKOUT via /api/flags/fast_checkout=false; do not roll back the healthy v4.2.2 container.",
+    "mechanism": "disable_feature_flag",
+    "parameters": {
+      "flag": "FAST_CHECKOUT",
+      "endpoint": "/api/flags/fast_checkout",
+      "value": false,
+      "effective_within_ms": 500
+    },
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_141829_2c9cfa",
+      "timestamp": 1791119909705
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_141829_2c9cfa",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Disable FAST_CHECKOUT via /api/flags/fast_checkout=false; do not roll back the healthy v4.2.2 container.\",\"mechanism\":\"disable_feature_flag\",\"parameters\":{\"flag\":\"FAST_CHECKOUT\",\"endpoint\":\"/api/flags/fast_checkout\",\"value\":false,\"effective_within_ms\":500},\"python\":\"\"}",
+    "tokens": {
+      "input": 30819,
+      "output": 234,
+      "total": 31193,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 4799,
+    "timestamp": 1791119914505
+  },
+  "verification": {
+    "passed": true,
+    "reason": "bounded_typed_constraints",
+    "semantic_checked": false
+  },
+  "wall_time_s": 6.858745375007857
+}

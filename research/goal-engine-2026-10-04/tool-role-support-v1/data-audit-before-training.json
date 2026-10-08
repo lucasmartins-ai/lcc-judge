@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "protocol_sha256": "932c23cd40b323e88186a9755e887a44ede076d168d6f08264b0446a022ce96b",
+  "splits": {
+    "train": {
+      "fixtures": 32,
+      "measurement_fields": 992,
+      "raw_observations": 512,
+      "rows": 4864,
+      "binary": 4608,
+      "unknown": 256,
+      "semantic_unknown": 192,
+      "structural_unknown": 64,
+      "contradictions": 2304,
+      "relevant_contradictions": 1152,
+      "language_counts": {
+        "en": 2432,
+        "pt": 2432
+      },
+      "unique_raw_inputs": 4864,
+      "unique_projected_inputs": 3676,
+      "projected_rows": 4800,
+      "binary_source_clusters": [
+        "clock",
+        "command",
+        "environment",
+        "stat",
+        "wc"
+      ],
+      "raw_max_tokens": 112,
+      "projected_max_tokens": 51,
+      "worker_elapsed_s": 3.2793702079798095
+    },
+    "validation": {
+      "fixtures": 12,
+      "measurement_fields": 372,
+      "raw_observations": 192,
+      "rows": 1824,
+      "binary": 1728,
+      "unknown": 96,
+      "semantic_unknown": 72,
+      "structural_unknown": 24,
+      "contradictions": 848,
+      "relevant_contradictions": 424,
+      "language_counts": {
+        "en": 912,
+        "pt": 912
+      },
+      "unique_raw_inputs": 1808,
+      "unique_projected_inputs": 1292,
+      "projected_rows": 1800,
+      "binary_source_clusters": [
+        "clock",
+        "command",
+        "environment",
+        "stat",
+        "wc"
+      ],
+      "raw_max_tokens": 109,
+      "projected_max_tokens": 48,
+      "worker_elapsed_s": 1.5256219590082765
+    },
+    "final": {
+      "fixtures": 24,
+      "measurement_fields": 744,
+      "raw_observations": 384,
+      "rows": 2496,
+      "binary": 2304,
+      "unknown": 192,
+      "semantic_unknown": 144,
+      "structural_unknown": 48,
+      "contradictions": 1152,
+      "relevant_contradictions": 576,
+      "language_counts": {
+        "pt": 1248,
+        "en": 1248
+      },
+      "unique_raw_inputs": 2496,
+      "unique_projected_inputs": 1674,
+      "projected_rows": 2448,
+      "binary_source_clusters": [
+        "df",
+        "du",
+        "gzip"
+      ],
+      "raw_max_tokens": 120,
+      "projected_max_tokens": 58,
+      "worker_elapsed_s": 2.7405872080125846
+    }
+  },
+  "raw_outputs_reparsed": true,
+  "all_31_fields_recomputed": true,
+  "source_bindings_and_labels_verified": true,
+  "per_goal_numeric_label_multisets_equal": true,
+  "raw_and_projected_cross_split_overlap": 0,
+  "fixture_content_and_entity_cross_split_overlap": 0,
+  "tokenizer_recounted": true,
+  "model_forwards": 0,
+  "api_calls": 0,
+  "p2_labels": 0,
+  "default_changed": false,
+  "semantic_unknown_recognized_by_current_projection": false,
+  "interpretation": "Data/receipt validation only; authored fixtures/captions and counterfactuals, three correlated final source clusters, no candidate quality or external/LCC outcome claim"
+}

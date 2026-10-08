@@ -1,0 +1,22 @@
+{
+  "feature": "lcc_judge_pareto",
+  "state": {
+    "objective": "Decide whether to execute full container rollback or flip dynamic flag.",
+    "blocks": [
+      {
+        "id": "blk_0047_9268f457863f",
+        "text": "archive-cleaner tick=40855 partition=4 records=2314 checksum=valid state=healthy\narchive-cleaner tick=23077 partition=94 records=8182 checksum=valid state=healthy\narchive-cleaner tick=42319 partition=20 records=8152 checksum=valid state=healthy\narchive-cleaner tick=62045 partition=77 records=8872 checksum=valid state=healthy\narchive-cleaner tick=79852 partition=57 records=3013 checksum=valid state=healthy\narchive-cleaner tick=99198 partition=68 records=7367 checksum=valid state=healthy\narchive-cleaner tick=15129 partition=15 records=718 checksum=valid state=healthy\narchive-cleaner tick=3313 partition=13 records=4156 checksum=valid state=healthy\narchive-cleaner tick=89578 partition=52 records=507 checksum=valid state=healthy\narchive-cleaner tick=56794 partition=95 records=7020 checksum=valid state=healthy\narchive-cleaner tick=13554 partition=33 records=5303 checksum=valid state=healthy\narchive-cleaner tick=81828 partition=67 records=2005 checksum=valid state=healthy\narchive-cleaner tick=36555 partition=16 records=3147 checksum=valid state=healthy\narchive-cleaner tick=13732 partition=24 records=7034 checksum=valid state=healthy\narchive-cleaner tick=19781 partition=68 records=9571 checksum=valid state=healthy\narchive-cleaner tick=76531 partition=76 records=9167 checksum=valid state=healthy\n"
+      }
+    ]
+  },
+  "questions": {
+    "keep_blk_0047_9268f457863f": {
+      "type": "noul",
+      "instructions": "Judge the probability that block blk_0047_9268f457863f (in the state) is relevant and worth keeping in the context that will be shown to a larger model. The objective is also in the state. Irrelevant noise, redundant logs, and unrelated chatter should score low; when unsure, prefer keeping.",
+      "criteria": {
+        "true": "The block is relevant or plausibly useful for the objective.",
+        "false": "The block is unrelated noise for the objective."
+      }
+    }
+  }
+}

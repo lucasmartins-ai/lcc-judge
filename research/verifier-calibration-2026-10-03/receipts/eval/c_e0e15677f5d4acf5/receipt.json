@@ -1,0 +1,29 @@
+{
+  "case_id": "c_e0e15677f5d4acf5",
+  "split": "eval",
+  "task_number": 3,
+  "kind": "code",
+  "family": "duplicate_reservation",
+  "expected": false,
+  "protocol_sha256": "589d51c26ac8bfd2fae28bc3ca0b63cc57becdb224583fffc0834ddae86aabd1",
+  "case_sha256": "36041f5d3864be0a5a4ab556c594e12ce8fcf9c1f3290480c165411fb055d36e",
+  "legacy_verification": {
+    "passed": false,
+    "reason": "generated_program_failed_fixture",
+    "error": "AssertionError: Inconsistent acquisition order: [2, 5, 7, 2, 5, 7]",
+    "program_stdout": "",
+    "source_sha256": "fe64dd344ac416239a343f0a427459480f913624743265186f98b5f684e4473e"
+  },
+  "candidate_verification": {
+    "passed": false,
+    "reason": "program_failed_contract",
+    "error": "AssertionError: ",
+    "stdout": ""
+  },
+  "legacy": false,
+  "structural": false,
+  "semantic_probability": null,
+  "jev_called": false,
+  "training_eligible": false,
+  "wall_s": 0.12128929101163521
+}

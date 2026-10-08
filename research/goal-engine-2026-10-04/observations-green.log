@@ -1,0 +1,15 @@
+test_block_ids_and_request_slots_are_validated (test_observations.ObservationEngineTests.test_block_ids_and_request_slots_are_validated) ... ok
+test_healthy_matches_and_unrelated_anomaly_drops (test_observations.ObservationEngineTests.test_healthy_matches_and_unrelated_anomaly_drops) ... ok
+test_invalid_timestamp_and_duplicate_json_keys_are_unknown (test_observations.ObservationEngineTests.test_invalid_timestamp_and_duplicate_json_keys_are_unknown) ... ok
+test_long_supported_records_do_not_inherit_a_transformer_window (test_observations.ObservationEngineTests.test_long_supported_records_do_not_inherit_a_transformer_window) ... ok
+test_opaque_lines_and_ambiguous_records_keep_the_entire_block (test_observations.ObservationEngineTests.test_opaque_lines_and_ambiguous_records_keep_the_entire_block) ... ok
+test_oversized_blocks_are_kept_without_partial_parsing (test_observations.ObservationEngineTests.test_oversized_blocks_are_kept_without_partial_parsing) ... ok
+test_supported_text_formats_and_kept_bytes_are_unchanged (test_observations.ObservationEngineTests.test_supported_text_formats_and_kept_bytes_are_unchanged) ... ok
+test_typed_engine_agrees_with_frozen_task_oracle_in_all_schemas (test_observations.ObservationEngineTests.test_typed_engine_agrees_with_frozen_task_oracle_in_all_schemas) ... ok
+test_unknown_line_overrides_an_obvious_match (test_observations.ObservationEngineTests.test_unknown_line_overrides_an_obvious_match) ... ok
+test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant (test_observations.ObservationEngineTests.test_window_is_inclusive_and_does_not_assume_nearby_time_is_relevant) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.033s
+
+OK

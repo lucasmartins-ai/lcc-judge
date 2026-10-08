@@ -1,0 +1,37 @@
+test_budget_boolean_is_not_a_replica_count (test_verifier_calibration.VerifierCalibrationTests.test_budget_boolean_is_not_a_replica_count) ... ok
+test_inventory_is_not_allowed_to_handle_only_the_original_ids (test_verifier_calibration.VerifierCalibrationTests.test_inventory_is_not_allowed_to_handle_only_the_original_ids) ... FAIL
+test_positive_inventory_program_actually_runs (test_verifier_calibration.VerifierCalibrationTests.test_positive_inventory_program_actually_runs) ... FAIL
+test_test_contract_requires_assertion_failures (test_verifier_calibration.VerifierCalibrationTests.test_test_contract_requires_assertion_failures) ... FAIL
+test_valid_budget_percentage_is_accepted (test_verifier_calibration.VerifierCalibrationTests.test_valid_budget_percentage_is_accepted) ... ok
+
+======================================================================
+FAIL: test_inventory_is_not_allowed_to_handle_only_the_original_ids (test_verifier_calibration.VerifierCalibrationTests.test_inventory_is_not_allowed_to_handle_only_the_original_ids)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 35, in test_inventory_is_not_allowed_to_handle_only_the_original_ids
+    self.assertIs(verify_artifact(TASKS[2],dict(status='ANSWER',python=source))['passed'],False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not False
+
+======================================================================
+FAIL: test_positive_inventory_program_actually_runs (test_verifier_calibration.VerifierCalibrationTests.test_positive_inventory_program_actually_runs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 39, in test_positive_inventory_program_actually_runs
+    self.assertIs(verify_artifact(TASKS[2],dict(status='ANSWER',python=source))['passed'],True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not True
+
+======================================================================
+FAIL: test_test_contract_requires_assertion_failures (test_verifier_calibration.VerifierCalibrationTests.test_test_contract_requires_assertion_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_verifier_calibration.py", line 27, in test_test_contract_requires_assertion_failures
+    self.assertIs(verify_artifact(TASKS[19],dict(status='ANSWER',python=source))['passed'],False)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: None is not False
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.186s
+
+FAILED (failures=3)

@@ -1,0 +1,18 @@
+test_configuration_limits_are_not_silently_capped (test_reranker_control.RerankerControlTests.test_configuration_limits_are_not_silently_capped) ... ok
+test_loader_metadata_is_strict_json_without_losing_key_names (test_reranker_control.RerankerControlTests.test_loader_metadata_is_strict_json_without_losing_key_names) ... ERROR
+test_nonfinite_score_retains_submitted_accounting (test_reranker_control.RerankerControlTests.test_nonfinite_score_retains_submitted_accounting) ... ok
+test_oversized_input_never_reaches_model (test_reranker_control.RerankerControlTests.test_oversized_input_never_reaches_model) ... ok
+test_raw_logit_and_order_preserved_without_clipping (test_reranker_control.RerankerControlTests.test_raw_logit_and_order_preserved_without_clipping) ... ok
+
+======================================================================
+ERROR: test_loader_metadata_is_strict_json_without_losing_key_names (test_reranker_control.RerankerControlTests.test_loader_metadata_is_strict_json_without_losing_key_names)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_reranker_control.py", line 36, in test_loader_metadata_is_strict_json_without_losing_key_names
+    from research.reranker_control import loading_info_for_json
+ImportError: cannot import name 'loading_info_for_json' from 'research.reranker_control' (/Users/Master/Downloads/LCC-judge/research/reranker_control.py)
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.012s
+
+FAILED (errors=1)

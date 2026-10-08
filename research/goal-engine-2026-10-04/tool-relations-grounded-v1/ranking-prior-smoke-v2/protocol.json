@@ -1,0 +1,53 @@
+{
+  "schema": "ranking-margin-initialization/0.1",
+  "sources": {
+    "research/verify_ranking_initialization.py": "90a0f13d0b3a4c79f0b72de465727fca6ebc693405a9c24b3d8a1f687d95fdb1",
+    "research/ranking_support_initialization.py": "ffeb3c8bc54dcc23de5cf9f0a180d77929f139f286e36d3394939fd77213d47e",
+    "research/reranker_control.py": "5c10f04474659e114156cd11e3794eb61b1da11a8ffc7d661ac1ebf50848af5d"
+  },
+  "model": {
+    "repo_id": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "revision": "8008f0154ca2387468013ed439df09d70c122412",
+    "license": "apache-2.0",
+    "files": {
+      "README.md": "c86bce75ae78f36287331388604a090cdba0ea394a9f2c1d4da364a4ca65c623",
+      "config.json": "ce687425d03d18a7e999078c2d6bc663706a6f038a83c0c6f247abbda079f206",
+      "model.safetensors": "5daeca2481a76b5976a2bdc32f0a78532b6716da4f8cd3ff59460ef8d2f359b4",
+      "tokenizer.json": "3a56def25aa40facc030ea8b0b87f3688e4b3c39eb8b45d5702b3a1300fe2a20",
+      "tokenizer_config.json": "185f40a89596c504fd7dc7d91515b95844aab2994e778560df9215e0d1164264",
+      "special_tokens_map.json": "66715ae6a0dd4aff4fe228bcaaccac6e52c83fd0ba80992c2be7d0e43b362307",
+      "sentencepiece.bpe.model": "cfc8146abe2a0488e9e2a0c56de7952f7c11ab059eca145a0a727afce0db2865"
+    },
+    "primary_source": "https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1/blob/8008f0154ca2387468013ed439df09d70c122412/README.md",
+    "upstream_blob_or_lfs_identity_verified": true,
+    "TLS_verified": true,
+    "inference_executed": false,
+    "training_executed": false,
+    "adoption": false
+  },
+  "examples": [
+    [
+      "Which report directly states the total retry attempts?",
+      "Retry attempts including the first call: 4."
+    ],
+    [
+      "Qual relato informa diretamente os bytes de conte\u00fado recebidos?",
+      "Received UDP payload bytes: 120."
+    ],
+    [
+      "Explain why the Git operation failed.",
+      "Worktree edits: 3."
+    ]
+  ],
+  "seed": 101,
+  "device": "cpu",
+  "dtype": "float32",
+  "threads": 8,
+  "started_at_utc": "2026-10-04T22:51:55.060228+00:00",
+  "scope": "Exposed unlabeled implementation examples only; not a quality or outcome test",
+  "training": false,
+  "adoption": false,
+  "API_calls": 0,
+  "threshold_tuning": false,
+  "P2_admission": false
+}

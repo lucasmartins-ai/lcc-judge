@@ -1,0 +1,273 @@
+{
+  "status": "PASS",
+  "data_protocol_sha256": "1fca8ea4cd2fbbde0d4f06abc0ef0c52eb905a92c1010448dfff5ea0dcae8681",
+  "train_graph": {
+    "roles": 18,
+    "unordered_pairs": 9,
+    "connected_components": 9,
+    "components": [
+      [
+        "git_clean_tracked_files",
+        "git_untracked_files"
+      ],
+      [
+        "git_ignored_files",
+        "git_index_files"
+      ],
+      [
+        "git_index_edits",
+        "git_worktree_edits"
+      ],
+      [
+        "git_tracked_fs_bytes",
+        "git_untracked_fs_bytes"
+      ],
+      [
+        "retry_actual_sleep_ns",
+        "retry_elapsed_ns"
+      ],
+      [
+        "retry_attempts",
+        "retry_failures"
+      ],
+      [
+        "retry_scheduled_sleep_ns",
+        "retry_sleep_calls"
+      ],
+      [
+        "udp_received_datagrams",
+        "udp_received_payload_bytes"
+      ],
+      [
+        "udp_sent_datagrams",
+        "udp_sent_payload_bytes"
+      ]
+    ],
+    "role_degrees": {
+      "1": 18
+    },
+    "final_pairs": 6,
+    "final_pairs_between_different_train_components": 6
+  },
+  "final_contrasts": {
+    "101": {
+      "git_index_vs_untracked": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.09660821097592513
+      },
+      "git_clean_vs_worktree_edits": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 2.411761887681981
+      },
+      "retry_attempts_vs_wait": {
+        "matrices": 96,
+        "both_goals_correct": 96,
+        "one_goal_correct": 0,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 0,
+        "mean_interaction": 3.6491708501707762
+      },
+      "udp_sent_vs_received_count": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.5976323013504347
+      },
+      "udp_sent_vs_received_bytes": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.02136854191000263
+      },
+      "retry_scheduled_vs_actual": {
+        "matrices": 96,
+        "both_goals_correct": 96,
+        "one_goal_correct": 0,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 0,
+        "mean_interaction": 1.5988057089659076
+      }
+    },
+    "202": {
+      "git_index_vs_untracked": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": -0.02724413371955355
+      },
+      "git_clean_vs_worktree_edits": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 1.8892180581266682
+      },
+      "retry_attempts_vs_wait": {
+        "matrices": 96,
+        "both_goals_correct": 95,
+        "one_goal_correct": 1,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 1,
+        "mean_interaction": 2.6236608715068237
+      },
+      "udp_sent_vs_received_count": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.45641950021187466
+      },
+      "udp_sent_vs_received_bytes": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.06319664946446817
+      },
+      "retry_scheduled_vs_actual": {
+        "matrices": 96,
+        "both_goals_correct": 94,
+        "one_goal_correct": 2,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 2,
+        "mean_interaction": 1.122018372642439
+      }
+    },
+    "303": {
+      "git_index_vs_untracked": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.1592254793892304
+      },
+      "git_clean_vs_worktree_edits": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 2.4651763905615858
+      },
+      "retry_attempts_vs_wait": {
+        "matrices": 96,
+        "both_goals_correct": 96,
+        "one_goal_correct": 0,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 0,
+        "mean_interaction": 3.6614036320194523
+      },
+      "udp_sent_vs_received_count": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.6416946798563004
+      },
+      "udp_sent_vs_received_bytes": {
+        "matrices": 96,
+        "both_goals_correct": 0,
+        "one_goal_correct": 96,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 96,
+        "mean_interaction": 0.009445476966599623
+      },
+      "retry_scheduled_vs_actual": {
+        "matrices": 96,
+        "both_goals_correct": 96,
+        "one_goal_correct": 0,
+        "neither_goal_correct": 0,
+        "same_report_preference_after_goal_flip": 0,
+        "mean_interaction": 1.5897993263982546
+      }
+    }
+  },
+  "source_scores_preserved": true,
+  "threshold_fitting": false,
+  "model_forwards": 0,
+  "scope": "Measured contrast/coverage diagnosis on now-exposed final receipts; no causal attribution, new candidate, selective gate or generalization claim",
+  "fit": {
+    "status": "PASS",
+    "protocol_sha256": "b6c0a75fca27f2712d3acd5a4433c3638c6ac1ed5a48abdefb8f9604f95abcb1",
+    "metrics": {
+      "n": 4864,
+      "binary": 4608,
+      "positive": 2304,
+      "negative": 2304,
+      "pooled_wins": 4286923,
+      "pooled_comparisons": 5308416,
+      "pooled_auc": 0.8075710343725887,
+      "within_goal": {
+        "wins": 3687,
+        "comparisons": 4608,
+        "auc": 0.8001302083333334
+      },
+      "within_goal_auc": 0.8001302083333334,
+      "same_report_goal": {
+        "wins": 1938,
+        "comparisons": 2304,
+        "auc": 0.8411458333333334
+      },
+      "positive_keep_recall": 0.9965277777777778,
+      "contradiction_keep_recall": 0.9964664310954063,
+      "negative_drop_rejection": 0.026909722222222224,
+      "binary_unknown_rate": 0.6384548611111112,
+      "semantic_unknown": 192,
+      "structural_unknown": 64,
+      "semantic_unknown_recognition": 1.0,
+      "structural_unknown_recognition": 1.0,
+      "unknown_drops": 0,
+      "control_shadow": false
+    },
+    "unique_training_inputs": 3592,
+    "class_counts": {
+      "0": 1724,
+      "1": 1724,
+      "2": 144
+    },
+    "globally_balanced_unique_evaluation_CE": 0.9062372104505075,
+    "class_argmax_confusion": [
+      [
+        1363,
+        295,
+        66
+      ],
+      [
+        562,
+        1099,
+        63
+      ],
+      [
+        144,
+        0,
+        0
+      ]
+    ],
+    "valid_pair_forwards": 4800,
+    "valid_nonpadding_tokens": 164436,
+    "elapsed_s": 23.500791333965026,
+    "criterion_or_threshold_refit": false,
+    "model_forwards_by_audit": 0,
+    "training_reexecuted": false,
+    "scope": "Original exposed first-seed train population; original validation-only cutoffs, no generalization or optimization-cause claim. Unique CE uses first saved evaluation output per repeated input."
+  }
+}

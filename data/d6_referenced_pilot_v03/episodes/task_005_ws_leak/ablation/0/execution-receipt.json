@@ -1,0 +1,80 @@
+{
+  "task_id": "task_005_ws_leak",
+  "condition": "ablation",
+  "repeat": 0,
+  "requested_seed": 42,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "a7322939e587308e4876a99d212eb097247ca12dd733c0e5d50bc3dd7e8af4a4",
+  "input_sha256": "a460673e8c01c45e1d577f42137451ad1750b980e401dff6ab714ec199875e90",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_005_ws_leak/ablation/0",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_referenced_pilot_v03/episodes/task_005_ws_leak/ablation/0/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ABSTAIN",
+    "answer": "GC timings and connection settings do not identify which objects are accumulating; heap evidence or retention diagnostics are required.",
+    "mechanism": "INSUFFICIENT_EVIDENCE",
+    "parameters": {},
+    "python": ""
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261004_113508_ac82dc",
+      "timestamp": 1791110109281
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261004_113508_ac82dc",
+    "exit_code": 0,
+    "text": "{\"status\":\"ABSTAIN\",\"answer\":\"GC timings and connection settings do not identify which objects are accumulating; heap evidence or retention diagnostics are required.\",\"mechanism\":\"INSUFFICIENT_EVIDENCE\",\"parameters\":{},\"python\":\"\"}",
+    "tokens": {
+      "input": 1301,
+      "output": 380,
+      "total": 1821,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 6582,
+    "timestamp": 1791110115863
+  },
+  "verification": {
+    "passed": false,
+    "reason": "abstained"
+  },
+  "wall_time_s": 8.937058417010121
+}

@@ -1,0 +1,24 @@
+test_tool_relation_supervision (unittest.loader._FailedTest.test_tool_relation_supervision) ... ERROR
+
+======================================================================
+ERROR: test_tool_relation_supervision (unittest.loader._FailedTest.test_tool_relation_supervision)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_tool_relation_supervision
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_relation_supervision.py", line 6, in <module>
+    from research.tool_relation_supervision import build_rows, check_row_binding, prepare
+  File "/Users/Master/Downloads/LCC-judge/research/tool_relation_supervision.py", line 108
+    framing='authored direct-record claim retrieval, not generic LCC usefulness/P2')))
+                                                                                     ^
+SyntaxError: unmatched ')'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

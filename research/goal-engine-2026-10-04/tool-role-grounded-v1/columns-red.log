@@ -1,0 +1,17 @@
+test_partial_tool_output_is_not_a_complete_measurement (test_tool_measurement_worker.ToolMeasurementWorkerTests.test_partial_tool_output_is_not_a_complete_measurement) ... ERROR
+test_request_has_only_bounded_fixture_parameters (test_tool_measurement_worker.ToolMeasurementWorkerTests.test_request_has_only_bounded_fixture_parameters) ... ok
+test_wc_counts_newlines_instead_of_unterminated_display_lines (test_tool_measurement_worker.ToolMeasurementWorkerTests.test_wc_counts_newlines_instead_of_unterminated_display_lines) ... ok
+test_worker_cannot_be_invoked_on_host (test_tool_measurement_worker.ToolMeasurementWorkerTests.test_worker_cannot_be_invoked_on_host) ... ok
+
+======================================================================
+ERROR: test_partial_tool_output_is_not_a_complete_measurement (test_tool_measurement_worker.ToolMeasurementWorkerTests.test_partial_tool_output_is_not_a_complete_measurement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/Master/Downloads/LCC-judge/tests/test_tool_measurement_worker.py", line 28, in test_partial_tool_output_is_not_a_complete_measurement
+    from research.tool_measurement_worker import parse_integer_columns
+ImportError: cannot import name 'parse_integer_columns' from 'research.tool_measurement_worker' (/Users/Master/Downloads/LCC-judge/research/tool_measurement_worker.py)
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (errors=1)

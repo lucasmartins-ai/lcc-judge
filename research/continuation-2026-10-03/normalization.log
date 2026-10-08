@@ -1,0 +1,86 @@
+{
+  "specialist-exp05-frozen-8k": {
+    "0": {
+      "n": 62,
+      "before": {
+        "J": 0.658168574401665,
+        "D": 0.6727367325702394
+      },
+      "after": {
+        "J": 0.7510405827263268,
+        "D": 0.677159209157128
+      },
+      "delta_J": 0.0928720083246618,
+      "delta_D": 0.004422476586888657,
+      "delta_J_95ci": [
+        0.028342872008324606,
+        0.149843912591051
+      ],
+      "exploratory_criteria_pass": true,
+      "gate_090_pass": false,
+      "validated_for_deployment": false
+    },
+    "512": {
+      "n": 62,
+      "before": {
+        "J": 0.7120187304890739,
+        "D": 0.658168574401665
+      },
+      "after": {
+        "J": 0.8160770031217481,
+        "D": 0.6677939646201873
+      },
+      "delta_J": 0.1040582726326742,
+      "delta_D": 0.009625390218522267,
+      "delta_J_95ci": [
+        0.05046826222684708,
+        0.1521852237252862
+      ],
+      "exploratory_criteria_pass": true,
+      "gate_090_pass": false,
+      "validated_for_deployment": false
+    }
+  },
+  "specialist-exp05-unfreeze2-8k": {
+    "0": {
+      "n": 62,
+      "before": {
+        "J": 0.7479188345473465,
+        "D": 0.7598855359001041
+      },
+      "after": {
+        "J": 0.8264828303850156,
+        "D": 0.8009885535900104
+      },
+      "delta_J": 0.07856399583766904,
+      "delta_D": 0.04110301768990632,
+      "delta_J_95ci": [
+        0.02003121748178982,
+        0.1287786160249739
+      ],
+      "exploratory_criteria_pass": true,
+      "gate_090_pass": false,
+      "validated_for_deployment": false
+    },
+    "512": {
+      "n": 62,
+      "before": {
+        "J": 0.8145161290322581,
+        "D": 0.7125390218522373
+      },
+      "after": {
+        "J": 0.8553590010405827,
+        "D": 0.7481789802289281
+      },
+      "delta_J": 0.04084287200832459,
+      "delta_D": 0.03563995837669087,
+      "delta_J_95ci": [
+        -0.014568158168574378,
+        0.09261836628511959
+      ],
+      "exploratory_criteria_pass": false,
+      "gate_090_pass": false,
+      "validated_for_deployment": false
+    }
+  }
+}

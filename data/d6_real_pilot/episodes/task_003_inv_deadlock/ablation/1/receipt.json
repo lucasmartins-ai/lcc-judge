@@ -1,0 +1,107 @@
+{
+  "task_id": "task_003_inv_deadlock",
+  "condition": "ablation",
+  "repeat": 1,
+  "requested_seed": 59,
+  "generation_seed_applied": false,
+  "seed_note": "CLI does not expose a generation seed; independent repeated calls test observed consistency",
+  "protocol_sha256": "59677f6c7ea430edf9b835c27c5628f1af96ec46a3cbd0df5ec74b76e9c12c50",
+  "input_sha256": "09b61f5a2b51561cafc82a65a12565c5560f534c01458ca8112a705b2c2a892b",
+  "argv": [
+    "/Users/Master/.local/bin/hermes",
+    "chat",
+    "--oneshot",
+    "--safe-mode",
+    "--provider",
+    "commandcode",
+    "--model",
+    "stealth/space-bunny-alpha",
+    "--toolsets",
+    "none",
+    "--format",
+    "stream-json",
+    "--max-turns",
+    "1",
+    "--run-budget",
+    "90",
+    "--source",
+    "tool",
+    "--in",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_003_inv_deadlock/ablation/1",
+    "--query-file",
+    "/Users/Master/Downloads/LCC-judge/data/d6_real_pilot/episodes/task_003_inv_deadlock/ablation/1/query.txt"
+  ],
+  "status": "SUCCESS",
+  "cost_usd": null,
+  "artifact": {
+    "status": "ANSWER",
+    "answer": "Acquire all item locks in ascending item-id order before decrementing any stock, preventing circular lock waits.",
+    "mechanism": null,
+    "parameters": {},
+    "python": "def reserve_items(items):\n    from contextlib import ExitStack\n\n    ordered_items = sorted(items, key=lambda item: item.id)\n    lock_ids = sorted({item.id for item in ordered_items})\n\n    with ExitStack() as stack:\n        for item_id in lock_ids:\n            stack.enter_context(lock_item(item_id))\n        for item in ordered_items:\n            decrement_stock(item)\n"
+  },
+  "reset": {
+    "new_process": true,
+    "resumed_session": false,
+    "tools": "none",
+    "rules_memory_plugins_disabled": true
+  },
+  "returncode": 0,
+  "tool_events": 0,
+  "model_init": [
+    {
+      "type": "system",
+      "subtype": "init",
+      "model": "stealth/space-bunny-alpha",
+      "session_id": "20261003_210952_6cd579",
+      "timestamp": 1791058192509
+    }
+  ],
+  "hermes_receipt": {
+    "type": "result",
+    "session_id": "20261003_210952_6cd579",
+    "exit_code": 0,
+    "text": "{\"status\":\"ANSWER\",\"answer\":\"Acquire all item locks in ascending item-id order before decrementing any stock, preventing circular lock waits.\",\"mechanism\":null,\"parameters\":{},\"python\":\"def reserve_items(items):\\n    from contextlib import ExitStack\\n\\n    ordered_items = sorted(items, key=lambda item: item.id)\\n    lock_ids = sorted({item.id for item in ordered_items})\\n\\n    with ExitStack() as stack:\\n        for item_id in lock_ids:\\n            stack.enter_context(lock_item(item_id))\\n        for item in ordered_items:\\n            decrement_stock(item)\\n\"}",
+    "tokens": {
+      "input": 998,
+      "output": 621,
+      "total": 1759,
+      "cache_read": 140,
+      "cache_write": 0
+    },
+    "duration_ms": 9766,
+    "timestamp": 1791058202275
+  },
+  "verification": {
+    "passed": true,
+    "reason": "executable_fixture_checks",
+    "checks": [
+      "global_lock_order",
+      "all_items_reserved_once",
+      "locks_released"
+    ],
+    "program_stdout": "",
+    "source_sha256": "ddd515335bbcbf12698fc633f4ac07bd86cef08cb1be74e5f6f8b0c2032f9782"
+  },
+  "jev_diagnostic": {
+    "status": "SUCCESS",
+    "response": {
+      "model": "jev-1.13.0",
+      "answers": {
+        "supported": {
+          "type": "noul",
+          "noul": 0.9
+        }
+      },
+      "usage": {
+        "input_tokens": 644,
+        "output_tokens": 20
+      }
+    },
+    "latency_ms": 252.70429099999998,
+    "cost_usd": null,
+    "tariff_estimated_cost_usd": 2.7048000000000003e-05,
+    "tariff_source": "https://docs.typesafe.ai/models"
+  },
+  "wall_time_s": 12.129060041013872
+}

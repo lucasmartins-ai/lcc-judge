@@ -1,0 +1,79 @@
+{
+  "schema": "cached-goal-support-pilot/0.1",
+  "frozen_at_utc": "2026-10-08T11:10:56.293528+00:00",
+  "parent_protocol_sha256": "20ebddaaba6dadecee2a8d05600a72408058f3e127f4dbccb12085f8c57fd7d0",
+  "fields": [
+    "retry_attempts",
+    "retry_failures",
+    "retry_scheduled_sleep_ns",
+    "retry_actual_sleep_ns",
+    "udp_sent_datagrams",
+    "udp_sent_payload_bytes",
+    "git_index_edits",
+    "git_worktree_edits"
+  ],
+  "recipe": {
+    "updates": 200,
+    "lr": 0.05,
+    "weight_penalty": 0.01,
+    "threads": 2,
+    "dtype": "float64",
+    "initialization": "zero",
+    "optimizer": "Adam",
+    "quantiles": 21
+  },
+  "sources": {
+    "research/goal_interpreter_probe.py": "ee8b2b171c3201f28e92d498c47451131bef75946f57d3efc813d7482e3d5c82",
+    "tests/test_goal_interpreter_probe.py": "86c209c553e72629f3bacb3bf9d2b873db5cb9106542579dda37d0c9207eff95",
+    "research/reranker_control.py": "5c10f04474659e114156cd11e3794eb61b1da11a8ffc7d661ac1ebf50848af5d",
+    "research/measurement_projection.py": "9162c79274b67681c945e4de16102936222bfb24100c41b8a7c994c882b2253c",
+    "research/audit_varied_relation_dev.py": "50ca1a413cb1007aac5e3585c4d2733cd79052e110f8870110d03d6f0a59180c",
+    "research/audit_tool_relation_states.py": "aa9fa6ace2e768be9a8cfbe5ac8fd9db8d162be399c4b18142980958f5260ee1",
+    "research/audit_tool_relation_confirmation.py": "4c56e480ab7b4a0a1faf79e0e3230af2906db3d51b2fa9ef04ed3926c0140997",
+    "research/detached_varied_study.py": "7df7b560a6e3fdd6090948df809c0d7c8cea80229008b42151a131b0c29442ba",
+    "bakeoff/adapters.py": "da858e50aa5985bdbb00b3b679019b2027cf2186f7c4cb3b90b7e117a29c4cba",
+    "bakeoff/probes.py": "65e33dedbfa5797bdcf2bc3137f1b9ccbafefa886d8b669a14426da63bdcf43e",
+    "research/tool_relation_state_worker.py": "1fa57a175f394c0b51023518d43eb5dff1605ca3758c87413539d19ea386b8be",
+    "research/tool_relation_contracts.py": "360843d2b6af3f314d5354d3b1a9de024c8dc4245d924d3e4ac58935abc3fac4",
+    "research/goal_support_pilot.py": "4b9c032eb992bc9577fefb2569a698f396aeb108e13fa59c6efd190932b946a8",
+    "tests/test_goal_support_pilot.py": "4dc0719d2e6383497d2f527e6415309f4c2da4e474a90f2f7c68e2f9a18222b1",
+    "research/audit_goal_interpreter_probe.py": "8b7d1a1ed784d43b9b29207e6bf7a48c983341ce6cd2c6f7f22ab6d232239e7e"
+  },
+  "files": {
+    "research/goal-engine-2026-10-04/goal-support-pilot-v1/PLAN.md": "e9092dbab9811d0e232c85957ece30ee29f0f97dc9ae4a1e543876036d737c94",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/protocol.json": "ac2dceebd88c7de98751a34657b686fc4e3c4125b71c46ab35fa776ff010753d",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/audit-summary-supplement.json": "4773c8cd87c7f451547da063e4baa66d4c204f95947437eef0d1604af9d165cc",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-inputs.json": "048003abe7b692b3d1485e17d9f9778e8f1aac0b2f0b358ee38f59fb108d3739",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-annotations.json": "fbdf45116287b3996443b2f227e27ce4909fed32515074846923179be24c54c5",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/train-scores.json": "00ef66c8ac005585f72f973e19717cf00a061c6e611b0d048d82548d4e0f3471",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-inputs.json": "0cc78417ab49e376f40f799dac35fd7003ae3130f478a791b2f29fc38d12f182",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-annotations.json": "a682322bcb4aad01e4e2482903a12abfe026ca966000b1e79e62331077d34c3f",
+    "research/goal-engine-2026-10-04/goal-interpreter-probe-v1/validation-scores.json": "ede3991b278b542bccb55370c38614d54c2b705d8ac577ee8c99f2b6be5c3d58"
+  },
+  "populations": {
+    "train": {
+      "queries": 1172,
+      "supported": 256
+    },
+    "validation": {
+      "queries": 1136,
+      "supported": 240
+    }
+  },
+  "features": "12 immutable query/public-definition logits; no annotation or record features",
+  "trained_parameters": 117,
+  "backbone_updates": 0,
+  "additional_encoder_forwards": 0,
+  "newly_tokenized_inputs": 0,
+  "newly_scored_model_tokens": 0,
+  "API_calls": 0,
+  "scope": "Exposed authored development questions; not fresh confirmation, human certification, full selection or LCC serving",
+  "versions": {
+    "torch": "2.12.0",
+    "numpy": "2.4.6"
+  },
+  "P2_admission": false,
+  "default_changed": false,
+  "independent_human_review": false,
+  "sha256": "a1aae8e09162455ec94e162bf36c09daf3cad0cd7e734eef062af38e6227bb91"
+}

@@ -1,0 +1,40 @@
+{
+  "state": {
+    "objective": "Diagnose why external API webhooks fail during TLS handshake.",
+    "context": [
+      {
+        "block_id": "b_9bcf88be",
+        "content": "HTTP client pool created with max_connections=50.",
+        "source": "client.log",
+        "block_type": "log"
+      },
+      {
+        "block_id": "b_1004a7c5",
+        "content": "Packet capture analysis: Client sends TLS ClientHello; Server responds with fragmented Certificate (4096-bit RSA chain > MTU 1500); DF bit set causes PMTUD blackhole on router 10.0.1.1 drop ICMP Fragmentation Needed",
+        "source": "net/pcap_analysis.txt",
+        "block_type": "trace"
+      },
+      {
+        "block_id": "b_4e0c10f5",
+        "content": "net.ipv4.tcp_mtu_probing = 0",
+        "source": "etc/sysctl.conf",
+        "block_type": "config"
+      }
+    ],
+    "submitted_answer": {
+      "status": "ANSWER",
+      "answer": "TLS handshakes fail because the router drops ICMP Fragmentation Needed while the DF-bit client cannot fragment the oversized certificate, creating a PMTUD blackhole. Enable TCP MTU probing or fix router PMTUD.",
+      "mechanism": "pmtud_blackhole",
+      "parameters": {
+        "net.ipv4.tcp_mtu_probing": 1
+      },
+      "python": ""
+    }
+  },
+  "questions": {
+    "supported": {
+      "type": "noul",
+      "instructions": "Does the submitted answer solve the stated objective using the provided context, without materially incorrect claims? Coding: check conceptual consistency; executable tests are evaluated separately."
+    }
+  }
+}
