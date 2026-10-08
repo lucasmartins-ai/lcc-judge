@@ -137,6 +137,10 @@ def score(packet, key_path, probe=PROBE):
     ids = [r['item_id'] for r in rows]
     if len(ids) != len(set(ids)) or set(ids) != set(key):
         raise ValueError('Packet must hold every key item exactly once')
+    blank = [r['item_id'] for r in rows if not r['verdict'].strip()]
+    if blank:
+        raise ValueError(f'Packet not finished: {len(blank)}/{len(rows)} rows have no verdict '
+                         f'(first: {blank[0]}). Fill verdict in {packet} per INSTRUCTIONS_PT.md.')
     strata = {}
     for r in rows:
         k, verdict = key[r['item_id']], r['verdict'].strip().lower()
