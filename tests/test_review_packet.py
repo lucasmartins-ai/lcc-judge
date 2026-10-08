@@ -5,9 +5,9 @@ import tempfile
 import unittest
 
 try:
-    from research.review_packet import COLUMNS, build, score
+    from research.review_packet import COLUMNS, build, review, score
 except ModuleNotFoundError:
-    COLUMNS = build = score = None
+    COLUMNS = build = review = score = None
 
 SPLITS = ('train', 'validation', 'calibration', 'confirmation')
 
@@ -134,3 +134,23 @@ class ReviewPacketTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class InteractiveReviewTests(unittest.TestCase):
+    def test_review_fills_resumes_and_scores(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp)
+            build(out)
+            n = len(read(out / 'packet.csv'))
+            # first session: disagree on row 1 (label 1), agree on row 2, then quit
+            answers = iter(['d', '1', 'nota', 'a', '', 'q'])
+            review(out / 'packet.csv', ask=lambda _: next(answers), say=lambda _: None)
+            rows = read(out / 'packet.csv')
+            self.assertEqual([r['verdict'] for r in rows[:3]], ['disagree', 'agree', ''])
+            self.assertTrue(rows[0]['corrected_label'])
+            self.assertEqual(rows[0]['note'], 'nota')
+            # resume: agree on everything left, then score accepts the packet
+            answers = iter(['a', ''] * n)
+            review(out / 'packet.csv', ask=lambda _: next(answers), say=lambda _: None)
+            result = score(out / 'packet.csv', out / 'key.json')
+            self.assertEqual((result['n'], result['agree']), (n, n - 1))

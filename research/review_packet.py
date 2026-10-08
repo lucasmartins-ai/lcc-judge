@@ -169,6 +169,39 @@ def score(packet, key_path, probe=PROBE):
                 note='ambiguous counts as non-agreement; plan_complete is false while PLAN strata are missing')
 
 
+def review(packet, probe=PROBE, ask=input, say=print):
+    """Interactive terminal review: one blank row at a time, saved after every answer (resumable)."""
+    packet = Path(packet)
+    with open(packet, newline='', encoding='utf-8-sig') as f:
+        rows = list(csv.DictReader(f))
+    labels = sorted(candidates(probe)[1])
+    todo = [r for r in rows if not r['verdict'].strip()]
+    say(f'{len(rows) - len(todo)}/{len(rows)} já revisadas. a=concordo d=discordo ?=ambíguo s=pular q=sair')
+    for i, r in enumerate(todo, 1):
+        say(f"\n[{i}/{len(todo)}] {r['item_id']} ({r['language']})\nPergunta: {r['question']}\n"
+            f"Rótulo proposto: {r['proposed_label']}\nDefinição: {r['registry_definition']}")
+        answer = ask('Veredito [a/d/?/s/q]: ').strip().lower()
+        if answer == 'q':
+            break
+        if answer not in ('a', 'd', '?'):
+            continue
+        r['verdict'] = {'a': 'agree', 'd': 'disagree', '?': 'ambiguous'}[answer]
+        if answer == 'd':
+            say('\n'.join(f'  {n}. {label}' for n, label in enumerate(labels, 1)))
+            while not r['corrected_label']:
+                pick = ask('Número do rótulo correto: ').strip()
+                if pick.isdigit() and 1 <= int(pick) <= len(labels):
+                    r['corrected_label'] = labels[int(pick) - 1]
+        r['note'] = ask('Nota (opcional, Enter pula): ').strip() or r['note']
+        with open(packet, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=COLUMNS)
+            writer.writeheader()
+            writer.writerows(rows)
+    left = sum(not r['verdict'].strip() for r in rows)
+    say(f'\nFaltam {left}. ' + ('Rode: python3 -m research.review_packet score' if not left
+                               else 'Rode review de novo para continuar.'))
+
+
 def main():
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest='command', required=True)
@@ -180,8 +213,12 @@ def main():
     s.add_argument('--packet', default=OUT / 'packet.csv')
     s.add_argument('--key', default=OUT / 'key.json')
     s.add_argument('--result', default=OUT / 'score.json')
+    r = sub.add_parser('review', help='interactive terminal review of blank rows')
+    r.add_argument('--packet', default=OUT / 'packet.csv')
     args = parser.parse_args()
-    if args.command == 'build':
+    if args.command == 'review':
+        review(args.packet)
+    elif args.command == 'build':
         print(json.dumps(build(Path(args.out), args.seed, force=args.force), indent=1, sort_keys=True))
     else:
         result = score(args.packet, args.key)

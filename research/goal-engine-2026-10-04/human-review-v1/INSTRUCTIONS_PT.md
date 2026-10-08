@@ -41,3 +41,11 @@ Isso valida o arquivo e grava `score.json` nesta pasta. Passa com concordância 
 ## Limite conhecido
 
 O plano pede 240 itens em 16 estratos. Os dados atuais só têm 4 (EN/PT x suportado/UNKNOWN, todos `authored`). Faltam contraste, ambiguidade e `genuine_lcc`, por isso o pacote tem 60 itens e o `score` sempre informa `plan_complete: false`. Um resultado aprovado aqui valida os rótulos atuais. Ainda não permite adoção.
+
+## Atalho: revisar pelo terminal (sem planilha)
+
+```bash
+cd /Users/Master/Downloads/LCC-judge && python3 -m research.review_packet review
+```
+
+Mostra uma pergunta por vez. Responda `a` (concordo), `d` (discordo — escolha o número do rótulo correto), `?` (ambíguo), `s` (pular) ou `q` (sair). Salva a cada resposta; rode de novo para continuar de onde parou. Ao terminar, rode o `score`.
