@@ -120,7 +120,6 @@ class ReviewPacketTests(unittest.TestCase):
         bad_cases = {
             'verdict': [dict(good[0], verdict='yes')] + good[1:],
             'blank': [dict(good[0], verdict='')] + good[1:],
-            'no_correction': [dict(good[0], verdict='disagree')] + good[1:],
             'bad_correction': [dict(good[0], verdict='disagree', corrected_label='retry_nonsense')] + good[1:],
             'missing': good[1:],
             'duplicate': good + good[:1],
@@ -130,6 +129,13 @@ class ReviewPacketTests(unittest.TestCase):
             with self.subTest(name=name), self.assertRaises(ValueError):
                 write(tmp / f'{name}.csv', rows)
                 score(tmp / f'{name}.csv', self.out / 'key.json')
+
+    def test_disagree_without_correction_counts_as_uncorrected(self):
+        tmp = Path(self.tmp.name)
+        rows = [dict(r, verdict='agree') for r in self.rows]
+        write(tmp / 'uncorrected.csv', [dict(rows[0], verdict='disagree')] + rows[1:])
+        result = score(tmp / 'uncorrected.csv', self.out / 'key.json')
+        self.assertEqual((result['agree'], result['uncorrected_disagreements']), (len(rows) - 1, 1))
 
 
 if __name__ == '__main__':

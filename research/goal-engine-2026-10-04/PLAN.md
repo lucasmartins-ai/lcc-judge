@@ -88,6 +88,9 @@ controle197/240. Não ajustar validação ou investir mais epochs nestes candida
    fechada por auditor suplementar (`audit-metadata-v2.json` nos dois pilotos, PASS).
    Lacuna da API tipada documentada em [TYPED_API_METADATA_GAP.md](TYPED_API_METADATA_GAP.md).
    Próximo ciclo: [goal-family-corpus-v1/PLAN.md](goal-family-corpus-v1/PLAN.md).
+   Revisão humana dos rótulos (v2, PT, 60 itens, revisor único): concordância .417,
+   gate falha; não separa rótulo errado de pergunta técnica demais para o usuário-alvo.
+   Próxima revisão sobre pedidos reais do LCC. Ver [human-review-v2-pt/RESULTS.md](human-review-v2-pt/RESULTS.md).
 
 ## Fechamento das medições e próximo ciclo
 

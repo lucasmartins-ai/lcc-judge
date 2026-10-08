@@ -1,0 +1,36 @@
+{
+ "adoption_ready": false,
+ "agree": 25,
+ "agreement": 0.4166666666666667,
+ "gate_pass": false,
+ "key_sha256": "daa9b19135913bed9f0281fe1b83fcfe253bc1d2806714e883719de58df0f27d",
+ "n": 60,
+ "note": "ambiguous and unclear count as non-agreement; unclear = reviewer could not understand the question; plan_complete is false while PLAN strata are missing",
+ "packet_sha256": "8a7c7a5e6e407665b1e9a9df338bc60bea4e743c8b7e69e228350aaf8ffeacf8",
+ "pass_rule": {
+  "every_stratum": 0.9,
+  "overall": 0.95
+ },
+ "plan_complete": false,
+ "schema": "human-review-score/0.1",
+ "strata": {
+  "pt|supported|authored": {
+   "agree": 11,
+   "agreement": 0.36666666666666664,
+   "ambiguous": 1,
+   "disagree": 18,
+   "n": 30,
+   "unclear": 0
+  },
+  "pt|unknown|authored": {
+   "agree": 14,
+   "agreement": 0.4666666666666667,
+   "ambiguous": 1,
+   "disagree": 15,
+   "n": 30,
+   "unclear": 0
+  }
+ },
+ "unclear": 0,
+ "uncorrected_disagreements": 22
+}

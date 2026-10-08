@@ -166,12 +166,12 @@ def score(packet, key_path, probe=PROBE):
         if verdict not in VERDICTS:
             raise ValueError(f"{r['item_id']}: verdict must be one of {VERDICTS}, got {r['verdict']!r}")
         corrected = r['corrected_label'].strip()
-        if verdict == 'disagree' and label_id(corrected) not in valid:
-            raise ValueError(f"{r['item_id']}: disagree needs a registered corrected_label, got {corrected!r}")
+        # ponytail: disagree without a correction still counts as non-agreement; reported as uncorrected
         if corrected and label_id(corrected) not in valid:
             raise ValueError(f"{r['item_id']}: unknown corrected_label {corrected!r}")
         s = strata.setdefault(k['stratum'], Counter())
         s[verdict] += 1
+        s['uncorrected'] += verdict == 'disagree' and not corrected
         s['n'] += 1
     result = {name: dict(n=c['n'], **{v: c[v] for v in VERDICTS}, agreement=c['agree'] / c['n'])
               for name, c in sorted(strata.items())}
@@ -180,7 +180,8 @@ def score(packet, key_path, probe=PROBE):
     gate = agreement >= PASS_OVERALL and all(s['agreement'] >= PASS_STRATUM for s in result.values())
     complete = len(strata) == len(LANGUAGES) * len(GROUPS) * len(PROVENANCES)
     unclear = sum(c['unclear'] for c in strata.values())
-    return dict(schema='human-review-score/0.1', n=n, agree=agree, agreement=agreement, unclear=unclear,
+    uncorrected = sum(c['uncorrected'] for c in strata.values())
+    return dict(schema='human-review-score/0.1', n=n, agree=agree, agreement=agreement, unclear=unclear, uncorrected_disagreements=uncorrected,
                 pass_rule=dict(overall=PASS_OVERALL, every_stratum=PASS_STRATUM), strata=result,
                 gate_pass=gate, plan_complete=complete, adoption_ready=gate and complete,
                 packet_sha256=sha(packet), key_sha256=sha(key_path),
