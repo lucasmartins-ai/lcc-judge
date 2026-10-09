@@ -1,0 +1,49 @@
+{
+ "sample": {
+  "seed": 20261009,
+  "n": 619,
+  "cells": {
+   "antigravity|en": 6,
+   "antigravity|pt": 17,
+   "antigravity|other": 1,
+   "claude|en": 224,
+   "claude|pt": 448,
+   "claude|other": 21,
+   "codex|pt": 644,
+   "codex|en": 262,
+   "codex|other": 24,
+   "cursor|en": 22,
+   "cursor|pt": 37,
+   "grok|pt": 62,
+   "grok|en": 22,
+   "grok|other": 1,
+   "hermes|pt": 1257,
+   "hermes|en": 331,
+   "hermes|other": 38,
+   "opencode|en": 73,
+   "opencode|pt": 283,
+   "opencode|other": 9
+  }
+ },
+ "labels": {
+  "approve_or_pick": 82,
+  "specified_task": 68,
+  "failure_report": 56,
+  "correct_approach_or_rule": 55,
+  "supply_fact_or_step_done": 51,
+  "revise_recent_output": 50,
+  "git_ship": 50,
+  "task_status_or_control": 44,
+  "environment_and_infra": 42,
+  "external_accounts_and_comms": 34,
+  "handoff_prompt": 33,
+  "UNKNOWN": 25,
+  "project_audit_or_direction": 24,
+  "general_question": 5
+ },
+ "confidence": {
+  "medium": 212,
+  "high": 368,
+  "low": 39
+ }
+}
