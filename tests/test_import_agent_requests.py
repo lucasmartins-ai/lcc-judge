@@ -7,7 +7,10 @@ import unittest
 from collections import Counter
 from pathlib import Path
 
-from research import import_agent_requests as iar
+try:
+    from research import import_agent_requests as iar
+except ImportError:  # lcc.request_log lives on LCC branch feat/opt-in-request-log until merged
+    raise unittest.SkipTest('Needs lcc.request_log (LCC checkout on a branch that has it)')
 
 
 def jl(path, rows):
