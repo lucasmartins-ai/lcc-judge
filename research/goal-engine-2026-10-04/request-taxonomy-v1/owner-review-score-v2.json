@@ -1,0 +1,61 @@
+{
+ "schema": "request-taxonomy-review/0.1",
+ "n": 27,
+ "judged": 27,
+ "right": 26,
+ "agreement": 0.9629629629629629,
+ "unsure": 0,
+ "per_category": {
+  "UNKNOWN": {
+   "right": 2
+  },
+  "approve_or_pick": {
+   "right": 2
+  },
+  "correct_approach_or_rule": {
+   "right": 2
+  },
+  "environment_and_infra": {
+   "wrong": 1,
+   "right": 1
+  },
+  "external_accounts_and_comms": {
+   "right": 2
+  },
+  "failure_report": {
+   "right": 2
+  },
+  "general_question": {
+   "right": 1
+  },
+  "git_ship": {
+   "right": 2
+  },
+  "handoff_prompt": {
+   "right": 2
+  },
+  "project_audit_or_direction": {
+   "right": 2
+  },
+  "revise_recent_output": {
+   "right": 2
+  },
+  "specified_task": {
+   "right": 2
+  },
+  "supply_fact_or_step_done": {
+   "right": 2
+  },
+  "task_status_or_control": {
+   "right": 2
+  }
+ },
+ "corrections": {
+  "environment_and_infra -> task_status_or_control": 1
+ },
+ "wilson95": [
+  0.817,
+  0.993
+ ],
+ "sample": "27 held-out v2 high-confidence items, 2 per label, none previously reviewed"
+}

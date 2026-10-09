@@ -43,3 +43,10 @@ Held-out check: 27 new high-confidence items (2 per label, none previously revie
 `python3 -m research.request_taxonomy_review page --version v2 --only high --exclude-reviewed --per-category 2`.
 Caveat: one labeler (chunks 4-5) wrote a placeholder `reason` for every row; labels and
 confidences vary normally.
+
+## Held-out confirmation of v2 — 2026-10-09
+
+27 new high-confidence items: **26/27 right = .963** (Wilson 95% ~[.82, .99]); the one
+miss was environment_and_infra -> task_status_or_control. Combined with .732 on hard
+v1 items, the taxonomy is usable as LCC's target catalog. Single owner, one pass,
+exploratory (INFERIDO); no population rate is claimed. `owner-review-score-v2.json`.
