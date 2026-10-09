@@ -1,3 +1,15 @@
+# Status: independent review FAIL (2026-10-10) — not a held-out result
+
+Read this first. The review found that the "fresh" 60 items share all 25 sessions (and most
+tool calls) with the frozen 60, so v0.3 is not independent of v0/v0.2; the drop audit
+deviated from the pre-registered plan (judge routing: one judge saw all 150 and drops-c had a
+single judge; the "any judge flags" assembly and aggregation script were written after the
+verdicts; trim packets showed the original clipped to head+tail 1,500 chars, i.e. mostly the
+same text the trim keeps, so judges saw little of the removed middle). The counts below are
+recorded as exploratory observations only. A valid held-out check needs session-disjoint data
+(e.g. Codex sessions or sessions recorded after 2026-10-09), two judges per record with the
+assembly fixed in advance, and trim packets that show the removed middle.
+
 # Real-context bench v0.3: fresh 60 + blind drop audit, results 2026-10-09
 
 INFERIDO (exploratory). One offline pass over 60 fresh real Claude Code contexts. All 60 labels
@@ -91,7 +103,7 @@ is .0932, which is exactly the pass limit for n = 150 (at most k = 7).
 
 What the flagged records were, from the judges' one-line reasons (no content):
 
-- **The one needed (a trim).** The removed tail of an MCP tool output held a message that
+- **The one needed (a trim).** The removed middle of an MCP tool output (the trim keeps head + tail) held a message that
   explained a pending account status, and the user's request asked about that status.
 - **The six unsure:**
   - three trims: usage statistics, CRM notes, and a verification message;
@@ -119,11 +131,11 @@ On 60 real contexts that nobody looked at during development, the fixed rules po
 cut about 35% of tokens in milliseconds, offline. Its probe retention is perfect, but that is
 mostly by construction. Read blind, about 1 in 21 of the removals or trims it made was flagged as
 possibly needed (7/150), and only one was judged clearly needed. That needed case was a trim of
-an MCP output whose tail held the answer.
+an MCP output whose removed middle held the answer.
 
 This clears the pre-registered bar, but only just, and the judges were LLMs who could see only
 the clipped packets. The cheapest next checks that could change confidence:
 
 1. The owner re-judges the 7 flagged records and a random 20 of the not_needed ones.
-2. Look at the trim rule on MCP and other non-file outputs. The tail is where status and result
-   lines tend to sit, and this is the only cell with a needed verdict.
+2. Look at the trim rule on MCP and other non-file outputs. The removed middle can hold status
+   and result lines, and this is the only cell with a needed verdict.
