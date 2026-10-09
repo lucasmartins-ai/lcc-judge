@@ -482,5 +482,31 @@
   "full": 0,
   "mechanical": 0,
   "lcc_rules_transcript": 0
+ },
+ "audit": {
+  "population_drop_trim": 1408,
+  "judged": 150,
+  "needed": 1,
+  "unsure": 6,
+  "not_needed": 143,
+  "primary_false_drop": {
+   "k": 7,
+   "rate": 0.0467,
+   "wilson95": [
+    0.0228,
+    0.0932
+   ]
+  },
+  "secondary_needed_excl_unsure": {
+   "k": 1,
+   "n": 144,
+   "rate": 0.0069,
+   "wilson95": [
+    0.0012,
+    0.0383
+   ]
+  },
+  "acceptance": "PASS",
+  "detail": "audit-summary.json"
  }
 }

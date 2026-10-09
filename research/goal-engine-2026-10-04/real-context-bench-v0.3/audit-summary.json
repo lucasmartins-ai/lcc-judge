@@ -1,0 +1,391 @@
+{
+ "schema": "real-context-bench/0.3-audit",
+ "protocol_sha256": "a056cafd4f1f51964f1fe916be446d5f6ebb497bd8866d47e08aa6000c41a8c5",
+ "population_sampled": 150,
+ "sampled_by_rule": {
+  "drop:stale_read_far_from_recent_work": 44,
+  "drop:superseded_by_later_call": 25,
+  "trim:large_old_output_trimmed": 81
+ },
+ "key_run_join_mismatches": 0,
+ "judging_as_run": {
+  "planned": "one judge per file (a, b, c), each given only its own 50",
+  "realised": {
+   "a": {
+    "records": 150,
+    "packet_files": [
+     "a",
+     "b",
+     "c"
+    ]
+   },
+   "b": {
+    "records": 50,
+    "packet_files": [
+     "a"
+    ]
+   },
+   "c": {
+    "records": 50,
+    "packet_files": [
+     "b"
+    ]
+   }
+  },
+  "deviation": "judge a received drops.jsonl (all 150); judges b and c received drops-a and drops-b; drops-c was judged only by judge a. No judge saw key.jsonl.",
+  "double_judged": 100,
+  "agreement_on_double_judged": 99
+ },
+ "primary_assembly": "conservative: a record counts as needed/unsure if any judge said so",
+ "primary": {
+  "judged": 150,
+  "needed": 1,
+  "not_needed": 143,
+  "unsure": 6,
+  "primary_false_drop": {
+   "k": 7,
+   "rate": 0.0467,
+   "wilson95": [
+    0.0228,
+    0.0932
+   ]
+  },
+  "secondary_needed_excl_unsure": {
+   "k": 1,
+   "n": 144,
+   "rate": 0.0069,
+   "wilson95": [
+    0.0012,
+    0.0383
+   ]
+  },
+  "unsure_rate": 0.04
+ },
+ "acceptance": {
+  "rule": "pre-registered: PASS iff the upper Wilson 95% bound of the primary false_drop_rate <= 0.10. At n = 150 this is k <= 7 (k = 7: upper .0932; k = 8: upper .1017). If fewer than 150 records exist, the same bound applies at the realised n. FAIL otherwise; the result is reported either way, with the needed cases listed by rule after unblinding (private), counts only in the repo",
+  "upper_wilson95": 0.0932,
+  "threshold": 0.1,
+  "result": "PASS",
+  "note": "k = 7 is the largest count that passes at n = 150; the result sits on the boundary"
+ },
+ "sensitivity": {
+  "single_judge_all_150": {
+   "judged": 150,
+   "needed": 1,
+   "not_needed": 143,
+   "unsure": 6,
+   "primary_false_drop": {
+    "k": 7,
+    "rate": 0.0467,
+    "wilson95": [
+     0.0228,
+     0.0932
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 1,
+    "n": 144,
+    "rate": 0.0069,
+    "wilson95": [
+     0.0012,
+     0.0383
+    ]
+   },
+   "unsure_rate": 0.04
+  },
+  "one_judge_per_file": {
+   "judged": 150,
+   "needed": 1,
+   "not_needed": 144,
+   "unsure": 5,
+   "primary_false_drop": {
+    "k": 6,
+    "rate": 0.04,
+    "wilson95": [
+     0.0185,
+     0.0845
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 1,
+    "n": 145,
+    "rate": 0.0069,
+    "wilson95": [
+     0.0012,
+     0.038
+    ]
+   },
+   "unsure_rate": 0.0333
+  }
+ },
+ "by_decision": {
+  "drop": {
+   "judged": 69,
+   "needed": 0,
+   "not_needed": 66,
+   "unsure": 3,
+   "primary_false_drop": {
+    "k": 3,
+    "rate": 0.0435,
+    "wilson95": [
+     0.0149,
+     0.1202
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 66,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.055
+    ]
+   },
+   "unsure_rate": 0.0435
+  },
+  "trim": {
+   "judged": 81,
+   "needed": 1,
+   "not_needed": 77,
+   "unsure": 3,
+   "primary_false_drop": {
+    "k": 4,
+    "rate": 0.0494,
+    "wilson95": [
+     0.0194,
+     0.1202
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 1,
+    "n": 78,
+    "rate": 0.0128,
+    "wilson95": [
+     0.0023,
+     0.0691
+    ]
+   },
+   "unsure_rate": 0.037
+  }
+ },
+ "by_rule": {
+  "drop:stale_read_far_from_recent_work": {
+   "judged": 44,
+   "needed": 0,
+   "not_needed": 42,
+   "unsure": 2,
+   "primary_false_drop": {
+    "k": 2,
+    "rate": 0.0455,
+    "wilson95": [
+     0.0126,
+     0.1514
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 42,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.0838
+    ]
+   },
+   "unsure_rate": 0.0455
+  },
+  "drop:superseded_by_later_call": {
+   "judged": 25,
+   "needed": 0,
+   "not_needed": 24,
+   "unsure": 1,
+   "primary_false_drop": {
+    "k": 1,
+    "rate": 0.04,
+    "wilson95": [
+     0.0071,
+     0.1954
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 24,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.138
+    ]
+   },
+   "unsure_rate": 0.04
+  },
+  "trim:large_old_output_trimmed": {
+   "judged": 81,
+   "needed": 1,
+   "not_needed": 77,
+   "unsure": 3,
+   "primary_false_drop": {
+    "k": 4,
+    "rate": 0.0494,
+    "wilson95": [
+     0.0194,
+     0.1202
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 1,
+    "n": 78,
+    "rate": 0.0128,
+    "wilson95": [
+     0.0023,
+     0.0691
+    ]
+   },
+   "unsure_rate": 0.037
+  }
+ },
+ "by_tool": {
+  "Agent": {
+   "judged": 1,
+   "needed": 0,
+   "not_needed": 1,
+   "unsure": 0,
+   "primary_false_drop": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.7935
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 1,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.7935
+    ]
+   },
+   "unsure_rate": 0.0
+  },
+  "Bash": {
+   "judged": 67,
+   "needed": 0,
+   "not_needed": 65,
+   "unsure": 2,
+   "primary_false_drop": {
+    "k": 2,
+    "rate": 0.0299,
+    "wilson95": [
+     0.0082,
+     0.1025
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 65,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.0558
+    ]
+   },
+   "unsure_rate": 0.0299
+  },
+  "Read": {
+   "judged": 52,
+   "needed": 0,
+   "not_needed": 49,
+   "unsure": 3,
+   "primary_false_drop": {
+    "k": 3,
+    "rate": 0.0577,
+    "wilson95": [
+     0.0198,
+     0.1564
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 49,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.0727
+    ]
+   },
+   "unsure_rate": 0.0577
+  },
+  "WebSearch": {
+   "judged": 1,
+   "needed": 0,
+   "not_needed": 1,
+   "unsure": 0,
+   "primary_false_drop": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.7935
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 1,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.7935
+    ]
+   },
+   "unsure_rate": 0.0
+  },
+  "Write": {
+   "judged": 3,
+   "needed": 0,
+   "not_needed": 3,
+   "unsure": 0,
+   "primary_false_drop": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.5615
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 0,
+    "n": 3,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.5615
+    ]
+   },
+   "unsure_rate": 0.0
+  },
+  "mcp": {
+   "judged": 26,
+   "needed": 1,
+   "not_needed": 24,
+   "unsure": 1,
+   "primary_false_drop": {
+    "k": 2,
+    "rate": 0.0769,
+    "wilson95": [
+     0.0214,
+     0.2414
+    ]
+   },
+   "secondary_needed_excl_unsure": {
+    "k": 1,
+    "n": 25,
+    "rate": 0.04,
+    "wilson95": [
+     0.0071,
+     0.1954
+    ]
+   },
+   "unsure_rate": 0.0385
+  }
+ }
+}
