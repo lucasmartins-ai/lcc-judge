@@ -1,0 +1,321 @@
+{
+ "schema": "real-context-bench/0.4-audit",
+ "key_run_join_mismatches": 0,
+ "rejudge_requested": {},
+ "rejudge_substituted": 0,
+ "n": 150,
+ "needed": 7,
+ "unsure": 14,
+ "incomplete": 0,
+ "not_needed": 129,
+ "primary_flagged": {
+  "k": 21,
+  "rate": 0.14,
+  "wilson95": [
+   0.0934,
+   0.2046
+  ]
+ },
+ "secondary_needed_only": {
+  "k": 7,
+  "rate": 0.0467,
+  "wilson95": [
+   0.0228,
+   0.0932
+  ]
+ },
+ "acceptance": {
+  "upper_wilson95": 0.2046,
+  "threshold": 0.1,
+  "result": "FAIL"
+ },
+ "agreement": {
+  "pairs": 150,
+  "agree": 139,
+  "raw": 0.9267,
+  "cohen_kappa": 0.6454
+ },
+ "unsure_verdict_rate": 0.0833,
+ "by_decision": {
+  "drop": {
+   "n": 23,
+   "needed": 1,
+   "unsure": 1,
+   "incomplete": 0,
+   "not_needed": 21,
+   "primary_flagged": {
+    "k": 2,
+    "rate": 0.087,
+    "wilson95": [
+     0.0242,
+     0.268
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 1,
+    "rate": 0.0435,
+    "wilson95": [
+     0.0077,
+     0.2099
+    ]
+   }
+  },
+  "trim": {
+   "n": 127,
+   "needed": 6,
+   "unsure": 13,
+   "incomplete": 0,
+   "not_needed": 108,
+   "primary_flagged": {
+    "k": 19,
+    "rate": 0.1496,
+    "wilson95": [
+     0.0979,
+     0.2219
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 6,
+    "rate": 0.0472,
+    "wilson95": [
+     0.0218,
+     0.0992
+    ]
+   }
+  }
+ },
+ "by_rule": {
+  "drop:stale_read_far_from_recent_work": {
+   "n": 5,
+   "needed": 1,
+   "unsure": 0,
+   "incomplete": 0,
+   "not_needed": 4,
+   "primary_flagged": {
+    "k": 1,
+    "rate": 0.2,
+    "wilson95": [
+     0.0362,
+     0.6245
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 1,
+    "rate": 0.2,
+    "wilson95": [
+     0.0362,
+     0.6245
+    ]
+   }
+  },
+  "drop:superseded_by_later_call": {
+   "n": 18,
+   "needed": 0,
+   "unsure": 1,
+   "incomplete": 0,
+   "not_needed": 17,
+   "primary_flagged": {
+    "k": 1,
+    "rate": 0.0556,
+    "wilson95": [
+     0.0099,
+     0.2576
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.1759
+    ]
+   }
+  },
+  "trim:large_old_output_trimmed": {
+   "n": 127,
+   "needed": 6,
+   "unsure": 13,
+   "incomplete": 0,
+   "not_needed": 108,
+   "primary_flagged": {
+    "k": 19,
+    "rate": 0.1496,
+    "wilson95": [
+     0.0979,
+     0.2219
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 6,
+    "rate": 0.0472,
+    "wilson95": [
+     0.0218,
+     0.0992
+    ]
+   }
+  }
+ },
+ "by_tool": {
+  "apply_patch": {
+   "n": 1,
+   "needed": 0,
+   "unsure": 0,
+   "incomplete": 0,
+   "not_needed": 1,
+   "primary_flagged": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.7935
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.7935
+    ]
+   }
+  },
+  "exec": {
+   "n": 6,
+   "needed": 0,
+   "unsure": 0,
+   "incomplete": 0,
+   "not_needed": 6,
+   "primary_flagged": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.3903
+    ]
+   }
+  },
+  "exec_command": {
+   "n": 119,
+   "needed": 5,
+   "unsure": 11,
+   "incomplete": 0,
+   "not_needed": 103,
+   "primary_flagged": {
+    "k": 16,
+    "rate": 0.1345,
+    "wilson95": [
+     0.0845,
+     0.2073
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 5,
+    "rate": 0.042,
+    "wilson95": [
+     0.0181,
+     0.0946
+    ]
+   }
+  },
+  "mcp": {
+   "n": 10,
+   "needed": 1,
+   "unsure": 2,
+   "incomplete": 0,
+   "not_needed": 7,
+   "primary_flagged": {
+    "k": 3,
+    "rate": 0.3,
+    "wilson95": [
+     0.1078,
+     0.6032
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 1,
+    "rate": 0.1,
+    "wilson95": [
+     0.0179,
+     0.4042
+    ]
+   }
+  },
+  "multi_agent_v1__wait_agent": {
+   "n": 1,
+   "needed": 1,
+   "unsure": 0,
+   "incomplete": 0,
+   "not_needed": 0,
+   "primary_flagged": {
+    "k": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 1,
+    "rate": 1.0,
+    "wilson95": [
+     0.2065,
+     1.0
+    ]
+   }
+  },
+  "tool_search": {
+   "n": 2,
+   "needed": 0,
+   "unsure": 0,
+   "incomplete": 0,
+   "not_needed": 2,
+   "primary_flagged": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.6576
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.6576
+    ]
+   }
+  },
+  "write_stdin": {
+   "n": 11,
+   "needed": 0,
+   "unsure": 1,
+   "incomplete": 0,
+   "not_needed": 10,
+   "primary_flagged": {
+    "k": 1,
+    "rate": 0.0909,
+    "wilson95": [
+     0.0162,
+     0.3774
+    ]
+   },
+   "secondary_needed_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.2588
+    ]
+   }
+  }
+ }
+}
