@@ -1,0 +1,46 @@
+{
+ "jev_block": {
+  "items": 60,
+  "status": {
+   "ok": 60
+  },
+  "calls": 3226,
+  "calls_per_item": {
+   "median": 45.5,
+   "max": 157
+  },
+  "preflight_refusals": 0,
+  "request_tokens_preflight": 8540671,
+  "raw_tokens": 5891167,
+  "usd_cap_basis": 42.29,
+  "usd_per_item": {
+   "median": 0.5815,
+   "max": 2.1974
+  },
+  "usd_uninflated": 31.03
+ },
+ "jev_transcript": {
+  "items": 60,
+  "status": {
+   "TranscriptFitError": 9,
+   "ok": 51
+  },
+  "calls": 445,
+  "calls_per_item": {
+   "median": 6.0,
+   "max": 21
+  },
+  "preflight_refusals": 0,
+  "request_tokens_preflight": 9148631,
+  "raw_tokens": 6309548,
+  "usd_cap_basis": 39.71,
+  "usd_per_item": {
+   "median": 0.5034,
+   "max": 2.3538
+  },
+  "usd_uninflated": 27.64
+ },
+ "both_arms_usd_cap_basis": 82.0,
+ "basis": "$4.25/1M input tokens, +437 tokens per call; cap basis counts each request with lcc.relevance.jev._request_tokens (offline heuristic x1.45); uninflated uses count_tokens(json, gpt-4.1) of the same payload; preflight refusals cost nothing",
+ "guard_trips": 0
+}

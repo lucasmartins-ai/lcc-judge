@@ -1,0 +1,282 @@
+{
+ "schema": "real-context-bench/0.1",
+ "name": "real-context-bench-v0.1",
+ "frozen_on": "2026-10-09",
+ "status": "frozen-before-remote-run",
+ "amends": {
+  "name": "real-context-bench-v0",
+  "sha256": "f5608429a3740bc74da04c6bd77071fe08cebd3ad887ae996a32ba1df5e490c3",
+  "changes": "enables the two remote Jev arms with exact parameters, a cost cap, concurrency 1, no retries, a per-item timeout and a frozen run order; sample, context, probes, metrics, stop criterion, pins and privacy env are copied unchanged"
+ },
+ "question": "On real Claude Code contexts, does a learned LCC arm keep what each request category needs at least as well as LCC mechanical while removing strictly more?",
+ "privacy": {
+  "private_root": "/Users/Master/.lcc/bench/real-context-v0",
+  "rule": "Rendered contexts, prompt texts, sample ids and per-item outputs stay under private_root. The repo holds definitions, counts and aggregate metrics only.",
+  "network": "socket.socket.connect and socket.create_connection raise for the whole run; any trip invalidates the run.",
+  "env": {
+   "HF_HUB_OFFLINE": "1",
+   "TRANSFORMERS_OFFLINE": "1"
+  }
+ },
+ "pins": {
+  "lcc_worktree": "/Users/Master/.lcc/bench/real-context-v0/lcc-main",
+  "lcc_commit": "dd5dd80ca11aedc2202af7d78392f20dd015614e",
+  "python": "/Users/Master/LCC/.venv/bin/python (never -I; assert lcc.__file__ under lcc-main/src)",
+  "lcc_judge_commit": "f57a5189bd76a5866af6a1a7cb5d973154bd4a0e",
+  "taxonomy": "research/goal-engine-2026-10-04/request-taxonomy-v1/taxonomy-v2.json",
+  "request_log_ruleset_sha256_prefix": "4e99ffac1f9f"
+ },
+ "sample": {
+  "seed": 20261009,
+  "n": 60,
+  "source": "claude prompts in ~/.lcc/request-log/imported/claude.jsonl (693), all mapped to a transcript record",
+  "eligibility": [
+   "context has >=1 assistant record (595 of 693)",
+   "label confidence is not low"
+  ],
+  "label_precedence": [
+   "owner_confirmed_v1",
+   "owner_confirmed_v2 / owner_corrected_v2",
+   "llm_v2_pass (6-labeler pass, 91 usable claude items)",
+   "llm_bench_labeler_v2_rules (504 previously unlabeled usable claude prompts, labeled once by Claude with taxonomy-v2 rules for this bench; LLM labels, not owner-confirmed)"
+  ],
+  "allocation": "4 per stratum (capped by eligible count), leftover filled round-robin over strata with spare items in alphabetical order; within a stratum, random.Random(seed).shuffle of sorted ids",
+  "strata": [
+   "UNKNOWN",
+   "approve_or_pick",
+   "correct_approach_or_rule",
+   "environment_and_infra",
+   "external_accounts_and_comms",
+   "failure_report",
+   "general_question",
+   "git_ship",
+   "handoff_prompt",
+   "project_audit_or_direction",
+   "revise_recent_output",
+   "specified_task",
+   "supply_fact_or_step_done",
+   "task_status_or_control"
+  ],
+  "eligible_per_stratum": {
+   "UNKNOWN": 39,
+   "approve_or_pick": 105,
+   "correct_approach_or_rule": 34,
+   "environment_and_infra": 17,
+   "external_accounts_and_comms": 7,
+   "failure_report": 26,
+   "general_question": 2,
+   "git_ship": 70,
+   "handoff_prompt": 54,
+   "project_audit_or_direction": 4,
+   "revise_recent_output": 40,
+   "specified_task": 22,
+   "supply_fact_or_step_done": 85,
+   "task_status_or_control": 78
+  },
+  "sampled_per_stratum": {
+   "UNKNOWN": 5,
+   "approve_or_pick": 5,
+   "correct_approach_or_rule": 5,
+   "environment_and_infra": 5,
+   "external_accounts_and_comms": 5,
+   "failure_report": 5,
+   "general_question": 2,
+   "git_ship": 4,
+   "handoff_prompt": 4,
+   "project_audit_or_direction": 4,
+   "revise_recent_output": 4,
+   "specified_task": 4,
+   "supply_fact_or_step_done": 4,
+   "task_status_or_control": 4
+  },
+  "sampled_label_sources": {
+   "llm_bench_labeler_v2_rules": 47,
+   "llm_v2_pass": 11,
+   "owner_confirmed_v1": 1,
+   "owner_confirmed_v2": 1
+  },
+  "private_files_sha256": {
+   "sample.json": "8ebb7f1fae72b47050503c224b72ceda8c36f7c902bcf3cff4d8bcf5af8477c3",
+   "labels-claude-extra.jsonl": "1d0b77243c0b8fbf37a69a9eb3a94f1fced019ce3a598e41058bc6f7c77428ff",
+   "pool.json": "519d0bd7e5a4399b82bb23839923c4e1b721b89d12cd4b71e37cb78fb7e6fba6"
+  },
+  "context_size_visible_bytes": {
+   "median": 200748,
+   "p90": 552566,
+   "max": 955416,
+   "sum": 14964011,
+   "note": "text + tool_use name/input + tool_result text, thinking and images excluded"
+  }
+ },
+ "context": {
+  "walk": "start at the prompt record's parentUuid; follow parentUuid until None, a missing uuid, or a system record with subtype compact_boundary; keep type user/assistant; reverse to oldest-first; the prompt itself is excluded",
+  "render": "one paragraph per content block, joined by a blank line: header line '[m{i:04d} {role} {kind}[ {tool_name}]]' then content. text -> text; tool_use -> json.dumps(input, ensure_ascii=False, sort_keys=True); tool_result -> its text parts joined by newline, images as '[image omitted]'; plain-string user content -> text; image -> '[image omitted]'; thinking blocks dropped (signatures only, ~0.1% visible bytes)",
+  "goal": "raw prompt text from the transcript record (local only), passed as question"
+ },
+ "arms": {
+  "full": {
+   "kind": "control",
+   "run": "rendered context unchanged",
+   "v0.1": "not re-run: the v0 run records under private_root/runs/<arm> are reused as they are"
+  },
+  "mechanical": {
+   "kind": "deterministic baseline",
+   "run": "lcc.relevance.compact_context(RelevanceCompactionRequest(text, question=goal, provider='mechanical', threshold=0.4, min_block_chars=40, max_block_chars=6000, trim_head_chars=300, model='gpt-4.1'))",
+   "output": "result.compacted_text",
+   "v0.1": "not re-run: the v0 run records under private_root/runs/<arm> are reused as they are"
+  },
+  "specialist": {
+   "kind": "learned, local",
+   "run": "same request with provider='specialist', client=lcc_engine.ContextEngine('/Users/Master/Downloads/LCC-judge/models/exp02-specialist-head', device='cpu', max_len=512); HF_HOME=/Users/Master/Downloads/LCC-judge/release-staging/linux-ml/hf",
+   "can_mutate": false,
+   "mode": "shadow-score only: on dd5dd80 the specialist provider never drops or trims (provider_used specialist_shadow), so output == input, reduction 0, and it cannot win",
+   "diagnostic": "specialist_rank_at_mechanical_budget: keep protected blocks, then blocks in report.specialist_ranking order until kept tokens reach mechanical's kept tokens for that item; score probes on the result. Diagnostic only, never a candidate (reduction tied to mechanical by construction)",
+   "v0.1": "not re-run: the v0 run records under private_root/runs/<arm> are reused as they are"
+  },
+  "jev_block": {
+   "kind": "learned, remote",
+   "enabled": true,
+   "run": "lcc.relevance.compact_context(RelevanceCompactionRequest(text, question=goal, provider='jev', client=<metered JevClient>, threshold=0.4, min_block_chars=40, max_block_chars=6000, trim_head_chars=300, model='gpt-4.1', batch_size=8, max_state_chars=12000, max_workers=1, jev_model='jev-latest', enable_semantic_verify=False))",
+   "params_note": "block split and thresholds are v0 mechanical (MECH_KW) so blocks are identical across arms; batch_size, max_state_chars, jev_model and enable_semantic_verify are LCC dd5dd80 defaults; max_workers=1",
+   "output": "result.compacted_text",
+   "record": "decisions (id, decision, source, score, chars, chars_after), keep_ids/trim_ids/drop_ids, provider_used, degraded, degradation_reason, semantic_guarantee, calls, warnings, jev_model_resolved, sizes, latency, jev_meter (calls, failed_calls, request_tokens, api_input_tokens, projected_usd, cost_usd, call_latency_ms)",
+   "estimate": {
+    "source": "project-cost phase (offline, LCC batching replayed with a fake transport)",
+    "calls": 3226,
+    "total_usd_one_pass": 42.29,
+    "total_usd_one_pass_uninflated": 31.03,
+    "preflight_refusals": 0,
+    "caveat": "one full pass exceeds arm_cap_usd: the run is expected to be partial"
+   }
+  },
+  "jev_transcript": {
+   "kind": "learned, remote, tool calls only",
+   "enabled": true,
+   "run": "lcc.relevance.compact_transcript(TranscriptCompactionRequest(payload=transcript_payload(blocks), question=goal, provider='jev', client=<metered JevClient>, threshold=0.5, preserve_recent=6, trim_head_chars=300, max_state_tokens=25000, max_request_tokens=30000, batch_calls=8, max_workers=1, model='gpt-4.1', jev_model='jev-latest'))",
+   "params_note": "all LCC dd5dd80 defaults (v0 fixed none for this arm); compact_transcript ignores max_workers and fans out len(batches) threads, so the meter lock serializes requests (concurrency 1 on the wire)",
+   "payload": "one message per context record (block m): text and image placeholders joined by newline as text; tool_use -> toolUses {tool_use_id, tool, input=json.loads(content)}; tool_result -> toolResults {tool_use_id, text}",
+   "output": "dossier blocks re-rendered with the v0 renderer: tool_use and tool_result blocks of dropped calls removed, trimmed results replaced by LCC trimmed text; every text block unchanged",
+   "record": "decisions (id, decision, source, score, keep_call, keep_result, chars, chars_after, reason), keep_ids/trim_ids/drop_ids, report fields (provider_used, degraded, degradation_reason, semantic_guarantee, calls, requests, state_tokens, state_fit_stage, tool call counts, warnings), sizes, latency, jev_meter",
+   "estimate": {
+    "source": "project-cost phase",
+    "calls": 445,
+    "total_usd_one_pass": 39.71,
+    "total_usd_one_pass_uninflated": 27.64,
+    "fit_errors": 9,
+    "caveat": "TranscriptFitError items make no call and count as arm errors (fail on every applicable probe); one full pass exceeds arm_cap_usd"
+   }
+  },
+  "not_included": "laya (local, block and transcript) is not an arm in v0; transcript-mode laya requires client=LayaClient() because _resolve_client falls through to remote Jev on dd5dd80"
+ },
+ "remote": {
+  "approval": "owner approved in chat (2026-10-09): both remote Jev arms on the same 60 items, raw session context sent to the TypeSafe System One API; cap first US$35, raised by the owner in chat to a hard cap of US$85 total before any remote call (see AMENDMENT-cap.md)",
+  "data_sent": "goal plus block text clipped by LCC (block mode) or the fitted conversation state (transcript mode), to TYPESAFE_ENDPOINT (default https://api.typesafe.ai/v1/systemone)",
+  "cap_usd": 85,
+  "arm_cap_usd": 45,
+  "pricing": {
+   "usd_per_mtok_input": 4.25,
+   "overhead_tokens_per_call": 437,
+   "source": "LCC docs/JEV.md: $0.187 per 44K-token pass; calibration api = 437 + 0.90 * local",
+   "settle": "after each answered request the projection is replaced by the API figure: usage cost (cost_usd/total_cost_usd/cost) if present, else (usage.input_tokens + output_tokens) * rate, else the projection stays"
+  },
+  "cap_rule": "before every HTTP request the meter projects its cost as (lcc.relevance.jev._request_tokens(payload) + 437) * $4.25/1M (offline the token count is the heuristic x1.45, conservative). If arm spend + projection > arm_cap_usd, or spend of both arms + projection > cap_usd, the request is not sent, the run stops cleanly (item status aborted_cap, later items not run) and is reported as partial. Spend is charged before the request leaves; a failed request keeps its projected charge. Overshoot of the hard cap is bounded by one request whose API count exceeds its projection. Spend in every run dir under the private root counts (global ledger); remote runs refuse --runs/--ids",
+  "concurrency": 1,
+  "retries": 0,
+  "retry_rule": "JevClient built with attempts=1 (LCC default retries 3x on 408/425/429/5xx); a failed batch falls back inside LCC as usual and is recorded via degraded flags; a failed item is recorded as failed and never re-run; a second run into an arm dir that already holds records is refused",
+  "per_item_timeout_s": 1800,
+  "request_timeout_s": 45,
+  "run_order_seed": 20261009,
+  "run_order": "random.Random(run_order_seed).shuffle(sorted(sample ids)); both arms walk the same order, so a capped run covers a random subset across strata and the completed sets are prefixes of one list",
+  "arm_order": "jev_block first, then jev_transcript",
+  "key": "JevClient.from_env (TYPESAFE_API_KEY, ~/.config/lcc/typesafe.key, orchestrator .env, Keychain); the key is never printed, logged or written; every record is scrubbed for it before writing; no key -> refuse to run",
+  "network": "the v0 socket guard stays on; it is lifted only inside the metered request; any other connection is a guard trip and voids the run",
+  "outputs": "private_root/runs/<arm>/<id>.json, _cost.json (running spend, per-item cost, abort reason, partial flag), _jev_ledger.jsonl (LCC ledger); repo gets counts only"
+ },
+ "probes": {
+  "match": "probe text and arm output are whitespace-collapsed; pass iff probe text is a substring of the output. Probe text is block content without the header",
+  "min_chars": 12,
+  "not_applicable": "a probe whose target is absent from the context or shorter than min_chars is NOT_APPLICABLE and never counts as a pass or a fail",
+  "defs": {
+   "LAST_AGENT_TURN": "latest assistant block that is text, or tool_use named AskUserQuestion or ExitPlanMode",
+   "TASK_STATE": "latest tool_use named TodoWrite, TaskCreate, TaskUpdate, ExitPlanMode or update_plan",
+   "LAST_TOOL_RESULT": "latest tool_result block",
+   "ERROR_RESULT": "latest tool_result with is_error true or matching /Traceback \\(most recent call last\\)|\\bError\\b|\\bERROR\\b|\\bFAILED?\\b|\\bexit code [1-9]|Exception/; NOT_APPLICABLE when the goal itself matches the same regex (pasted error: the goal is never compacted)",
+   "GIT_STATE": "latest tool_result whose tool_use (by tool_use_id) is Bash with command matching /\\bgit\\s+(status|diff|log)\\b/",
+   "NAMED_REFS": "each path, filename or URL named in the goal (/https?:\\/\\/\\S+/, /[\\w.~-]*\\/[\\w.-]+(?:\\/[\\w.-]+)*/, /\\b[\\w-]+\\.(py|ts|tsx|js|jsx|md|json|toml|ya?ml|sql|css|html|sh|go|rs)\\b/) that occurs in the context: the latest block containing it must pass. All must pass; NOT_APPLICABLE if none occurs",
+   "LATEST_SUMMARY": "latest assistant text block with >= 500 chars",
+   "LAST_ARTIFACT_EDIT": "latest tool_use named Write, Edit, MultiEdit or NotebookEdit"
+  },
+  "per_category": {
+   "approve_or_pick": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ],
+   "supply_fact_or_step_done": [
+    "LAST_AGENT_TURN"
+   ],
+   "task_status_or_control": [
+    "TASK_STATE",
+    "LAST_AGENT_TURN",
+    "LAST_TOOL_RESULT"
+   ],
+   "revise_recent_output": [
+    "LAST_AGENT_TURN",
+    "LAST_ARTIFACT_EDIT"
+   ],
+   "correct_approach_or_rule": [
+    "LAST_AGENT_TURN"
+   ],
+   "failure_report": [
+    "ERROR_RESULT"
+   ],
+   "git_ship": [
+    "GIT_STATE"
+   ],
+   "handoff_prompt": [
+    "LATEST_SUMMARY",
+    "TASK_STATE"
+   ],
+   "specified_task": [
+    "NAMED_REFS"
+   ],
+   "project_audit_or_direction": [
+    "NAMED_REFS"
+   ],
+   "environment_and_infra": [
+    "NAMED_REFS",
+    "LAST_AGENT_TURN"
+   ],
+   "external_accounts_and_comms": [
+    "LAST_AGENT_TURN"
+   ],
+   "general_question": [],
+   "UNKNOWN": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ]
+  },
+  "short_goal_rule": "goal under 15 whitespace words: add LAST_AGENT_TURN and TASK_STATE (taxonomy-v2 combined_requests_rule)"
+ },
+ "metrics": {
+  "retention_item": "item passes iff every applicable probe passes; items with no applicable probe are excluded from retention and kept for reduction",
+  "retention_probe": "passes / applicable probe instances (secondary)",
+  "reduction_bytes": "pooled 1 - sum(out UTF-8 bytes)/sum(in bytes); also per-item median",
+  "reduction_tokens": "same with lcc.token_budget.counters.count_tokens(text, 'gpt-4.1'); offline this is heuristic-v1 (APPROXIMATE, tiktoken assets not cached and downloads are blocked); record method",
+  "latency": "wall ms per item per arm (median, p90); model load timed once and reported separately",
+  "ci": "Wilson 95% on item-level retention, per arm aggregate and per arm x category (category cells are 2-5 items: descriptive only)",
+  "failures": "an arm error or a 600 s per-item timeout counts as fail on every applicable probe and is reported"
+ },
+ "stop_criterion": "a learned arm wins iff aggregate item-level retention >= mechanical's AND pooled token reduction is strictly higher than mechanical's, on the same items, with zero network-guard trips. Point estimates decide; with n~58 no significance is claimed and the outcome is exploratory. full must score 100% retention (sanity); if not, the probe code is wrong and the run is void",
+ "scoring_v0.1": {
+  "intent_to_treat": "all 60 items; an item that was not run or aborted at the cap fails every applicable probe (v0 failure rule)",
+  "completed_only": "for a partial arm: aggregate over the items the arm completed (status ok, error or timeout) against mechanical on the same items; when an arm is partial, the stop criterion is decided on this same-items comparison and the intent-to-treat result is reported next to it",
+  "cost": "spend, calls, failed calls, abort reason and partial flag per arm from _cost.json"
+ },
+ "freeze": {
+  "rule": "sha256 of this file (protocol.json.sha256, PROTOCOL.md) and of the harness are recorded before any remote call; the runner refuses to start if any differs, or if the v0 protocol changed",
+  "files_sha256": {
+   "research/real_context_bench.py": "1d462543b39382113b1f03854d80f6850897f7591787c41c57c936f15604ec5e"
+  },
+  "scoring_code": "probes, metrics and scoring live in research/real_context_bench.py (probe_targets, score_item, aggregate, score_v01_phase), covered by the same hash"
+ }
+}

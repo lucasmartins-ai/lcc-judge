@@ -22,6 +22,7 @@ import argparse
 import contextlib
 import hashlib
 import importlib.util
+import io
 import json
 import math
 import os
@@ -32,6 +33,7 @@ import socket
 import statistics
 import subprocess
 import sys
+import threading
 import time
 from collections import defaultdict
 from pathlib import Path
@@ -80,6 +82,20 @@ def network_guard():
     socket.socket.connect, socket.create_connection = _blocked, _blocked
     try:
         yield GUARD
+    finally:
+        socket.socket.connect, socket.create_connection = saved
+
+
+_REAL_NET = socket.socket.connect, socket.create_connection
+
+
+@contextlib.contextmanager
+def network_allowed():
+    """v0.1: lift the guard for exactly one metered Jev request, then put it back."""
+    saved = socket.socket.connect, socket.create_connection
+    socket.socket.connect, socket.create_connection = _REAL_NET
+    try:
+        yield
     finally:
         socket.socket.connect, socket.create_connection = saved
 
@@ -523,6 +539,8 @@ def run_item(arm, dossier, runner, count, timeout=TIMEOUT_S):
     t0 = time.perf_counter()
     try:
         out, extra = runner(text, goal)
+    except MeterStop as exc:  # v0.1 remote arms only: cost cap or item deadline
+        status, error = exc.status, str(exc)[:300]
     except ItemTimeout:
         status, error = 'timeout', f'> {timeout} s'
     except Exception as exc:  # an arm error is a fail on every applicable probe, and is reported
@@ -605,10 +623,418 @@ def diagnostic_runs(dossiers, mech, spec):
     return out
 
 
+# --- v0.1 amendment: remote Jev arms --------------------------------------------------------------
+# New code paths only; the offline arms above run exactly as in v0. Protocol: real-context-bench-v0.1.
+BENCH_V01 = REPO / 'research' / 'goal-engine-2026-10-04' / 'real-context-bench-v0.1'
+PROTOCOL_V01 = BENCH_V01 / 'protocol.json'
+JEV_ARMS = ('jev_block', 'jev_transcript')
+REMOTE_TIMEOUT_S = 1800  # per item: requests are serial (concurrency 1), up to ~160 per item
+USD_PER_MTOK = 4.25  # docs/JEV.md: $0.187 per 44K-token pass
+OVERHEAD_TOKENS = 437  # docs/JEV.md calibration: api = 437 + 0.90 * local
+JEV_BLOCK_KW = dict(MECH_KW, provider='jev', batch_size=8, max_state_chars=12000, max_workers=1,
+                    jev_model='jev-latest', enable_semantic_verify=False)
+# max_workers is ignored by compact_transcript on dd5dd80 (it fans out len(batches)); the meter lock
+# serializes the HTTP requests instead, so concurrency is 1 on the wire for both arms.
+JEV_TRANSCRIPT_KW = dict(provider='jev', threshold=0.5, preserve_recent=6, trim_head_chars=300,
+                         max_state_tokens=25000, max_request_tokens=30000, batch_calls=8, max_workers=1,
+                         model='gpt-4.1', jev_model='jev-latest')
+FREEZE_FILES = ('research/real_context_bench.py',)  # harness + probes + scoring live in this one file
+
+
+def projected_usd(tokens, rate=USD_PER_MTOK, overhead=OVERHEAD_TOKENS):
+    return (tokens + overhead) * rate / 1e6
+
+
+def load_protocol_v01(path=PROTOCOL_V01):
+    proto = load_protocol(path)
+    if sha256_file(PROTOCOL) != proto['amends']['sha256']:
+        raise SystemExit('v0 protocol.json changed since the v0.1 amendment was frozen')
+    for rel, want in proto['freeze']['files_sha256'].items():
+        if sha256_file(REPO / rel) != want:
+            raise SystemExit(f'{rel} changed since the v0.1 freeze: refusing to run')
+    return proto
+
+
+class MeterStop(BaseException):
+    """BaseException on purpose: LCC catches Exception (transcript) / JevError (block) per batch and
+    falls back; a cap or deadline stop must not be swallowed into a 'degraded but ok' item."""
+    status = 'aborted'
+
+
+class CapExceeded(MeterStop):
+    status = 'aborted_cap'
+
+
+class ItemDeadline(MeterStop):
+    status = 'timeout'
+
+
+def call_cost(data, projected, rate):
+    """(usd, source) for one answered call: API-reported cost, else API-reported tokens, else projection."""
+    data = data if isinstance(data, dict) else {}
+    usage = data.get('usage') if isinstance(data.get('usage'), dict) else {}
+    num = lambda v: isinstance(v, (int, float)) and not isinstance(v, bool)  # noqa: E731
+    for src in (usage, data):
+        for k in ('cost_usd', 'total_cost_usd', 'cost'):
+            if num(src.get(k)):
+                return float(src[k]), 'api_cost'
+    if num(usage.get('input_tokens')) and usage['input_tokens'] > 0:
+        out = usage.get('output_tokens') if num(usage.get('output_tokens')) else 0
+        return (usage['input_tokens'] + out) * rate / 1e6, 'api_usage'
+    return projected, 'projected'
+
+
+class Meter:
+    """Wraps JevClient._post (one HTTP attempt): checks the cap before every request, serializes
+    requests (concurrency 1), charges the projection up front and settles to the API figure after."""
+
+    def __init__(self, cap_usd, *, count, arm_cap_usd=math.inf, rate_per_mtok=USD_PER_MTOK,
+                 overhead_tokens=OVERHEAD_TOKENS, spent_before=0.0, path=None, allow_network=True):
+        self.cap, self.count, self.rate, self.overhead = cap_usd, count, rate_per_mtok, overhead_tokens
+        self.arm_cap = arm_cap_usd
+        self.path, self.allow_network, self.lock = path, allow_network, threading.Lock()
+        self.spent_before = spent_before
+        self.state = dict(cap_usd=cap_usd, arm_cap_usd=arm_cap_usd, usd_per_mtok=rate_per_mtok, overhead_tokens=overhead_tokens,
+                          spent_before_usd=spent_before, spent_usd=0.0, calls=0, failed_calls=0,
+                          request_tokens=0, api_input_tokens=0, cost_sources={}, aborted=False,
+                          abort_reason=None, items={})
+        self.item, self.deadline = None, None
+
+    def save(self):
+        if self.path:
+            self.state['total_usd'] = round(self.spent_before + self.state['spent_usd'], 6)
+            tmp = Path(self.path).with_suffix('.tmp')
+            tmp.write_text(json.dumps(self.state, indent=1))
+            tmp.replace(self.path)
+
+    def begin_item(self, rid, deadline=None):
+        self.rid, self.deadline = rid, deadline
+        self.item = dict(calls=0, failed_calls=0, request_tokens=0, api_input_tokens=0, projected_usd=0.0,
+                         cost_usd=0.0, call_latency_ms=[])
+
+    def end_item(self):
+        item, self.item, self.deadline = self.item, None, None
+        self.state['items'][self.rid] = round(item['cost_usd'], 6)
+        self.save()
+        return item
+
+    def _add(self, key, v):
+        self.state[key] += v
+        self.item[key] += v
+
+    def wrap(self, post):
+        def metered(payload):
+            with self.lock:
+                if self.deadline is not None and time.monotonic() > self.deadline:
+                    raise ItemDeadline('per-item timeout reached before the next Jev request')
+                tokens, method = self.count(payload)
+                proj = (tokens + self.overhead) * self.rate / 1e6
+                arm = self.state['spent_usd']
+                total = self.spent_before + arm
+                if self.state['aborted'] or total + proj > self.cap or arm + proj > self.arm_cap:
+                    if not self.state['aborted']:
+                        self.state['aborted'] = True
+                        self.state['abort_reason'] = (
+                            f'next request projected ${proj:.4f} ({tokens} tokens, {method}) would pass a cap: '
+                            f'arm ${arm:.4f} of ${self.arm_cap}, total ${total:.4f} of ${self.cap}')
+                        self.save()
+                    raise CapExceeded(self.state['abort_reason'])
+                self.state['calls'] += 1
+                self.item['calls'] += 1
+                self._add('request_tokens', tokens)
+                self.state['spent_usd'] += proj  # charged before the request leaves
+                self.item['projected_usd'] += proj
+                self.item['cost_usd'] += proj
+                t0 = time.perf_counter()
+                try:
+                    with network_allowed() if self.allow_network else contextlib.nullcontext():
+                        data = post(payload)
+                except BaseException:  # failed attempt: no retry, keep the projected charge
+                    self._add('failed_calls', 1)
+                    self.item['call_latency_ms'].append(round((time.perf_counter() - t0) * 1000))
+                    self.save()
+                    raise
+                self.item['call_latency_ms'].append(round((time.perf_counter() - t0) * 1000))
+                usd, source = call_cost(data, proj, self.rate)
+                self.state['spent_usd'] += usd - proj
+                self.item['cost_usd'] += usd - proj
+                usage = data.get('usage') if isinstance(data, dict) and isinstance(data.get('usage'), dict) else {}
+                if isinstance(usage.get('input_tokens'), int):
+                    self._add('api_input_tokens', usage['input_tokens'])
+                self.state['cost_sources'][source] = self.state['cost_sources'].get(source, 0) + 1
+                self.save()
+                return data
+        return metered
+
+
+def scrub(text, secrets):
+    for s in secrets:
+        if s:
+            text = text.replace(s, '[redacted]')
+    return text
+
+
+def jev_client(ledger_path, cls=None):
+    """JevClient.from_env with no retries (attempts=1) and a private ledger. Never logs the key."""
+    if cls is None:
+        from lcc.relevance.jev import JevClient as cls
+    client = cls.from_env(attempts=1, ledger_path=Path(ledger_path))
+    if client is None:
+        raise SystemExit('no TypeSafe key resolved (or LCC_DISABLE_NETWORK=1): refusing, a keyless jev run '
+                         'would only measure the fail-safe')
+    return client
+
+
+def transcript_payload(blocks):
+    """Dossier blocks -> compact_transcript messages (one message per context record)."""
+    msgs = {}
+    for b in blocks:
+        m = msgs.setdefault(b['m'], dict(role=b['role'], text=[], toolUses=[], toolResults=[]))
+        if b['kind'] in ('text', 'image'):
+            m['text'].append(b['content'])
+        elif b['kind'] == 'tool_use':
+            try:
+                inp = json.loads(b['content'])
+            except ValueError:
+                inp = None
+            m['toolUses'].append(dict(tool_use_id=b['tool_use_id'], tool=b['tool_name'], input=inp))
+        elif b['kind'] == 'tool_result':
+            m['toolResults'].append(dict(tool_use_id=b['tool_use_id'], text=b['content']))
+    return [dict(role=v['role'], text='\n'.join(v['text']), toolUses=v['toolUses'], toolResults=v['toolResults'])
+            for _, v in sorted(msgs.items())]
+
+
+def apply_transcript(blocks, decisions, messages):
+    """Map transcript decisions back onto the dossier blocks, rendered exactly like the other arms:
+    dropped calls lose their tool_use and tool_result blocks, trimmed results take LCC's trimmed text."""
+    drop = {d['id'] for d in decisions if d.get('decision') == 'drop'}
+    texts = {r.id: r.text for m in messages for r in m.tool_results}
+    out = []
+    for b in blocks:
+        if b['kind'] in ('tool_use', 'tool_result') and b['tool_use_id'] in drop:
+            continue
+        if b['kind'] == 'tool_result' and b['tool_use_id'] in texts:
+            b = dict(b, content=texts[b['tool_use_id']])
+        out.append(b)
+    return render(out)
+
+
+TRANSCRIPT_KEEP = ('provider_used', 'degraded', 'degradation_reason', 'semantic_guarantee', 'calls', 'requests',
+                   'jev_model_resolved', 'state_tokens', 'state_fit_stage', 'blocks_total', 'blocks_scored',
+                   'blocks_protected', 'tool_calls_total', 'tool_calls_kept', 'tool_calls_trimmed',
+                   'tool_calls_dropped', 'tokens_before', 'tokens_after', 'reduction_ratio', 'warnings')
+
+
+def make_remote_runner(arm, client, dossier):
+    if arm == 'jev_block':
+        from lcc.relevance import RelevanceCompactionRequest, compact_context
+
+        def run(text, goal):
+            res = compact_context(RelevanceCompactionRequest(text=text, question=goal, client=client, **JEV_BLOCK_KW))
+            extra = _report(res)
+            extra.update(jev_model_resolved=res.report.jev_model_resolved, warnings=list(res.report.warnings))
+            return res.compacted_text, extra
+        return run
+    if arm == 'jev_transcript':
+        from lcc.relevance import TranscriptCompactionRequest, compact_transcript
+
+        def run(text, goal):
+            res = compact_transcript(TranscriptCompactionRequest(
+                payload=transcript_payload(dossier['blocks']), question=goal, client=client, **JEV_TRANSCRIPT_KW))
+            extra = {k: res.report.get(k) for k in TRANSCRIPT_KEEP}
+            extra['decisions'] = [{k: d.get(k) for k in ('id', 'decision', 'source', 'score', 'keep_call',
+                                                         'keep_result', 'chars', 'chars_after', 'reason')}
+                                  for d in res.decisions]
+            for kind in ('keep', 'trim', 'drop'):
+                extra[f'{kind}_ids'] = [d['id'] for d in res.decisions if d.get('decision') == kind]
+            return apply_transcript(dossier['blocks'], res.decisions, res.messages), extra
+        return run
+    raise SystemExit(f'{arm} is not a remote Jev arm')
+
+
+def run_remote(arm, dossiers, out, meter, runner_for, count, secrets=(), timeout=TIMEOUT_S):
+    """Concurrency 1, no retries, stop at the cap. One pass per arm dir: never re-runs an item."""
+    out = Path(out)
+    if any(out.glob('*.json')):
+        raise SystemExit(f'{out} already holds a run: v0.1 forbids re-running items (failed items stay failed)')
+    counts, processed = defaultdict(int), 0
+    for d in dossiers:
+        meter.begin_item(d['id'], time.monotonic() + timeout)
+        rec = run_item(arm, d, runner_for(d), count, timeout)
+        rec['jev_meter'] = meter.end_item()
+        (out / f"{d['id']}.json").write_text(scrub(json.dumps(rec, ensure_ascii=False), secrets))
+        counts[rec['status']] += 1
+        processed += 1
+        if rec['status'] == 'aborted_cap':
+            break
+    not_run = len(dossiers) - processed
+    meter.state.update(partial=bool(not_run or meter.state['aborted']), items_processed=processed,
+                       items_not_run=not_run, status=dict(counts))
+    meter.save()
+    return dict(arm=arm, items=len(dossiers), processed=processed, not_run=not_run,
+                partial=meter.state['partial'], status=dict(counts), spent_usd=round(meter.state['spent_usd'], 6),
+                total_usd=round(meter.spent_before + meter.state['spent_usd'], 6), aborted=meter.state['aborted'],
+                guard_trips=GUARD['trips'])
+
+
+def run_order(ids, seed):
+    """Frozen processing order: a capped (partial) run covers a random subset across strata, and both
+    arms walk the same order, so their completed sets are prefixes of one list."""
+    ids = sorted(ids)
+    random.Random(seed).shuffle(ids)
+    return ids
+
+
+def _spent_by_other_arms(root, runs, arm):
+    """Global ledger: every Jev _cost.json under the private root counts against the total cap,
+    whatever run dir it sits in, except this arm's own (fresh) dir."""
+    own = (root / runs / arm / '_cost.json').resolve()
+    return sum(json.loads(p.read_text())['spent_usd'] for p in sorted(root.glob('*/jev_*/_cost.json'))
+               if p.resolve() != own)
+
+
+def run_remote_phase(arm, root=PRIVATE, runs='runs', ids=None, allow_remote=False):
+    if not allow_remote:
+        raise SystemExit(f'{arm} sends raw context to the Jev API: refusing without --allow-remote')
+    if runs != 'runs' or ids:
+        # A second run dir or an id subset would let a remote arm re-send items (selective retry)
+        raise SystemExit('remote arms run once over the full frozen sample: --runs/--ids are refused')
+    proto = load_protocol_v01()
+    remote = proto['remote']
+    sample = load_sample(root, proto)
+    os.environ.update(proto['privacy']['env'])
+    check_lcc(proto)
+    from lcc.relevance.jev import _request_tokens
+    out = root / runs / arm
+    out.mkdir(parents=True, exist_ok=True)
+    meter = Meter(remote['cap_usd'], arm_cap_usd=remote['arm_cap_usd'], count=_request_tokens, rate_per_mtok=remote['pricing']['usd_per_mtok_input'],
+                  overhead_tokens=remote['pricing']['overhead_tokens_per_call'],
+                  spent_before=_spent_by_other_arms(root, runs, arm), path=out / '_cost.json')
+    todo = run_order([it['id'] for it in sample['items'] if not ids or it['id'] in ids], remote['run_order_seed'])
+    dossiers = [json.loads((root / 'dossiers' / f'{rid}.json').read_text()) for rid in todo]
+    with network_guard():
+        client = jev_client(out / '_jev_ledger.jsonl')
+        client._post = meter.wrap(client._post)
+        try:
+            return run_remote(arm, dossiers, out, meter, lambda d: make_remote_runner(arm, client, d), lcc_count,
+                              secrets=[client.api_key], timeout=remote['per_item_timeout_s'])
+        finally:
+            ledger = out / '_jev_ledger.jsonl'  # written by LCC itself, so scrub it too
+            if ledger.exists():
+                ledger.write_text(scrub(ledger.read_text(), [client.api_key]))
+
+
+def _fake_opener(raw):
+    """Offline stand-in for urlopen: answers keep=1.0 to every question, records the payload size."""
+    def opener(request, timeout=None):
+        payload = json.loads(request.data)
+        raw.append(lcc_count(json.dumps(payload, ensure_ascii=False))[0])
+        body = dict(answers={q: dict(type='noul', noul=1.0, confidence=1.0) for q in payload['questions']}, usage={})
+        return contextlib.nullcontext(io.BytesIO(json.dumps(body).encode()))
+    return opener
+
+
+def project_cost_phase(root=PRIVATE, arms=JEV_ARMS):
+    """Fully offline: run both Jev arms through LCC's real batching and pre-flight with a fake transport,
+    so call counts and payloads are exact (batches do not depend on the answers on dd5dd80). Cost uses
+    the cap basis: LCC's pre-flight token count (offline: heuristic x1.45) + 437 per call."""
+    proto = load_protocol()
+    sample = load_sample(root, proto)
+    os.environ.update(proto['privacy']['env'])
+    check_lcc(proto)
+    from lcc.relevance.jev import JevClient, _request_tokens
+    per, summary = {}, {}
+    with network_guard():
+        for arm in arms:
+            raw = []
+            client = JevClient('offline-projection', opener=_fake_opener(raw), attempts=1, ledger_path=None)
+            evaluate, asked = client.evaluate, []
+            client.evaluate = lambda state, q, _e=evaluate: asked.append(1) or _e(state, q)
+            meter = Meter(math.inf, count=_request_tokens, allow_network=False)
+            client._post = meter.wrap(client._post)
+            rows = []
+            for it in sample['items']:
+                d = json.loads((root / 'dossiers' / f"{it['id']}.json").read_text())
+                meter.begin_item(d['id'])
+                n_raw, n_ask, status = len(raw), len(asked), 'ok'
+                try:
+                    make_remote_runner(arm, client, d)(d['text'], d['goal'])
+                except Exception as exc:  # e.g. TranscriptFitError: no call is made
+                    status = type(exc).__name__
+                m = meter.end_item()
+                rows.append(dict(id=d['id'], status=status, calls=m['calls'], preflight_refusals=len(asked) - n_ask - m['calls'],
+                                 request_tokens=m['request_tokens'], raw_tokens=sum(raw[n_raw:]),
+                                 usd=round(m['projected_usd'], 6),
+                                 usd_uninflated=round((sum(raw[n_raw:]) + OVERHEAD_TOKENS * m['calls'])
+                                                      * USD_PER_MTOK / 1e6, 6)))
+            per[arm] = rows
+            calls = [r['calls'] for r in rows]
+            usd = [r['usd'] for r in rows]
+            summary[arm] = dict(
+                items=len(rows), status=dict(sorted(_counter(r['status'] for r in rows).items())),
+                calls=sum(calls), calls_per_item=dict(median=statistics.median(calls), max=max(calls)),
+                preflight_refusals=sum(r['preflight_refusals'] for r in rows),
+                request_tokens_preflight=sum(r['request_tokens'] for r in rows),
+                raw_tokens=sum(r['raw_tokens'] for r in rows),
+                usd_cap_basis=round(sum(usd), 2), usd_per_item=dict(median=round(statistics.median(usd), 4),
+                                                                    max=round(max(usd), 4)),
+                usd_uninflated=round(sum(r['usd_uninflated'] for r in rows), 2))
+    summary['both_arms_usd_cap_basis'] = round(sum(s['usd_cap_basis'] for s in summary.values()), 2)
+    summary['basis'] = (f'${USD_PER_MTOK}/1M input tokens, +{OVERHEAD_TOKENS} tokens per call; cap basis counts '
+                        'each request with lcc.relevance.jev._request_tokens (offline heuristic x1.45); uninflated '
+                        'uses count_tokens(json, gpt-4.1) of the same payload; preflight refusals cost nothing')
+    summary['guard_trips'] = GUARD['trips']
+    (root / 'project-cost.json').write_text(json.dumps(dict(summary=summary, items=per), indent=1))
+    BENCH_V01.mkdir(exist_ok=True)
+    (BENCH_V01 / 'project-cost.json').write_text(json.dumps(summary, indent=1) + '\n')
+    return summary
+
+
+def _counter(xs):
+    out = defaultdict(int)
+    for x in xs:
+        out[x] += 1
+    return out
+
+
+def score_v01_phase(root=PRIVATE, runs='runs', public=True):
+    """v0 metrics over full/mechanical/specialist + the Jev arms. Missing/aborted items fail (intent to
+    treat); a completed-only comparison against mechanical on the same items is added for partial runs."""
+    proto = load_protocol_v01()
+    sample = load_sample(root, proto)
+    dossiers = [json.loads((root / 'dossiers' / f"{it['id']}.json").read_text()) for it in sample['items']]
+    recs = {}
+    for arm in LOCAL_ARMS + JEV_ARMS:
+        recs[arm] = {}
+        for d in dossiers:
+            p = root / runs / arm / f"{d['id']}.json"
+            if p.exists():
+                recs[arm][d['id']] = json.loads(p.read_text())
+    score = aggregate(dossiers, recs, proto)
+    score.update(schema='real-context-bench-score/0.1.1', protocol_sha256=sha256_file(PROTOCOL_V01),
+                 amends_sha256=proto['amends']['sha256'], cost={}, completed_only={})
+    for arm in JEV_ARMS:
+        cp = root / runs / arm / '_cost.json'
+        if cp.exists():
+            c = json.loads(cp.read_text())
+            score['cost'][arm] = {k: c.get(k) for k in ('spent_usd', 'total_usd', 'calls', 'failed_calls', 'aborted',
+                                                        'partial', 'items_processed', 'items_not_run', 'cost_sources')}
+        done = [d for d in dossiers if recs[arm].get(d['id'], {}).get('status') in ('ok', 'error', 'timeout')]
+        if recs[arm] and len(done) < len(dossiers):
+            sub = aggregate(done, {a: recs[a] for a in ('mechanical', arm)}, proto)
+            score['completed_only'][arm] = dict(items=len(done), arms=sub['arms'], verdict=sub['verdict'].get(arm))
+    name = 'score-v0.1.json' if runs == 'runs' else f'score-v0.1-{runs}.json'
+    (root / name).write_text(json.dumps(score, ensure_ascii=False, indent=1))
+    if public and runs == 'runs':
+        (BENCH_V01 / 'score.json').write_text(json.dumps(counts_only(score), indent=1) + '\n')
+    return counts_only(score)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     sub = ap.add_subparsers(dest='phase', required=True)
     sub.add_parser('sample')
+    sub.add_parser('project-cost', help='v0.1: offline call/token/cost projection for the Jev arms')
     r = sub.add_parser('run')
     r.add_argument('--arm', required=True)
     r.add_argument('--ids', help='comma-separated subset (smoke runs)')
@@ -617,9 +1043,17 @@ def main(argv=None):
     s = sub.add_parser('score')
     s.add_argument('--runs', default='runs')
     s.add_argument('--no-public', action='store_true', help='do not write the repo counts-only copy')
+    s.add_argument('--protocol', choices=('v0', 'v0.1'), default='v0')
     a = ap.parse_args(argv)
     if a.phase == 'sample':
         res = sample_phase()
+    elif a.phase == 'project-cost':
+        res = project_cost_phase()
+    elif a.phase == 'run' and a.arm in JEV_ARMS:
+        res = run_remote_phase(a.arm, runs=a.runs, ids=set(a.ids.split(',')) if a.ids else None,
+                               allow_remote=a.allow_remote)
+    elif a.phase == 'score' and a.protocol == 'v0.1':
+        res = score_v01_phase(runs=a.runs, public=not a.no_public)
     elif a.phase == 'run':
         res = run_phase(a.arm, runs=a.runs, ids=set(a.ids.split(',')) if a.ids else None,
                         allow_remote=a.allow_remote)
