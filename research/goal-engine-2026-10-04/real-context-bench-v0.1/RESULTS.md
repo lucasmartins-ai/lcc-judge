@@ -9,9 +9,10 @@ Counts only; per-item data stays in `~/.lcc/bench/real-context-v0/`. Score: `sco
 - **jev_transcript is not a valid measure of Jev.** 102 of its 379 requests failed and LCC
   fell back to keeping context: 77 were rejected by the API (`max_tokens_exceeded`: LCC's
   transcript mode builds requests larger than Jev accepts; failed requests had a median
-  80,766 state chars), and 25 were blocked by this harness's own network guard (a defect:
-  transcript mode fans requests out on threads and the per-request guard lift is not
-  thread-safe). It is also partial: 42 ok, 9 TranscriptFitError, 1 stopped at the cap,
+  80,766 state chars), and 25 were blocked by this harness's own network guard (cause not
+  established: the guard lift is already serialized by the meter lock, jev_block also
+  batches on threads with 0 trips, and each trip happens once per affected item 15-20 ms
+  after a successful call; reproduce before changing the guard). It is also partial: 42 ok, 9 TranscriptFitError, 1 stopped at the cap,
   8 not run. No item was re-run (protocol: no selective retries).
 - jev_block is clean: 3,226/3,226 requests ok, 60/60 items, 0 failed calls.
 - `zero_guard_trips` is false for every arm because the frozen scorer sums trips over all
@@ -55,6 +56,15 @@ safely, then a model for the decisions that policy leaves open.
 ## Follow-ups
 
 1. LCC: transcript mode must fit requests to Jev's real token limit (77 rejections).
-2. Harness: make the network-guard lift thread-safe before any further remote run.
+2. Harness: reproduce the 25 guard trips and fix their real cause before any further remote run.
 3. Jev block decisions (3,226 requests) exported privately as candidate distillation
    labels: `~/.lcc/bench/real-context-v0/jev-decisions.jsonl` (to be generated).
+
+## Independent review (2026-10-09): PASS_WITH_NOTES
+
+Chronology (freeze 13:47:12Z, first remote call 13:58:33Z), spend ($84.93 from ledgers;
+jev_block 100% API-reported), no key in either tree, no selective retries, and all
+aggregates recompute. Notes: spend is modeled at the input rate for output tokens too
+(807K output tokens in jev_block) and charges the 102 failed calls at projection — check
+the TypeSafe invoice; PROTOCOL.md hash is unchanged since the freeze but not enforced by
+the runner; the guard-trip cause above was corrected after review.
