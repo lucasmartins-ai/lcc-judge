@@ -31,3 +31,15 @@ Reading: the owner treats "this is wrong" as a course correction more often than
 breakage, and short replies often steer the task rather than just approve. The sample
 over-weights hard cases, so .732 is not a population rate. Next: sharpen those two
 boundaries, relabel, then confirm a high-confidence sample to estimate overall agreement.
+
+## Taxonomy v2 — 2026-10-09
+
+`taxonomy-v2.json`: same 13 ids + UNKNOWN; definitions/decision rules revised from the
+56 owner judgments only (short steering replies -> task_status_or_control; "this is
+wrong" without a runtime error -> correct_approach_or_rule; git_ship only when git is
+the request itself). Independent relabel of all 619: 85 labels changed. Fit on the 56
+judged items: v1 41/56, v2 49/56 — in-sample by construction, not validation.
+Held-out check: 27 new high-confidence items (2 per label, none previously reviewed),
+`python3 -m research.request_taxonomy_review page --version v2 --only high --exclude-reviewed --per-category 2`.
+Caveat: one labeler (chunks 4-5) wrote a placeholder `reason` for every row; labels and
+confidences vary normally.

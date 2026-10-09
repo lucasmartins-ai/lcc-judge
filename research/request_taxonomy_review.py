@@ -14,17 +14,21 @@ CONFIDENCE_ORDER = {'low': 0, 'medium': 1, 'high': 2}
 VERDICTS = ('right', 'wrong', 'unsure')
 
 
-def load(data=DATA):
-    tax = json.loads((data / 'taxonomy.json').read_text())
+def load(data=DATA, version='v1'):
+    tax = json.loads((data / ('taxonomy.json' if version == 'v1' else f'taxonomy-{version}.json')).read_text())
     goals = {r['id']: r for f in sorted(data.glob('chunk-*.jsonl')) for r in map(json.loads, f.open())}
-    labels = {r['id']: r for f in sorted(data.glob('labels-*.jsonl')) for r in map(json.loads, f.open())}
+    pattern = 'labels-[0-9]*.jsonl' if version == 'v1' else f'labels-{version}-*.jsonl'
+    labels = {r['id']: r for f in sorted(data.glob(pattern)) for r in map(json.loads, f.open())}
     return tax, goals, labels
 
 
-def pick(labels, seed=SEED, per_category=PER_CATEGORY):
-    """Per label: lowest confidence first, ties broken by a seeded shuffle; then shuffle the whole page."""
+def pick(labels, seed=SEED, per_category=PER_CATEGORY, only=None, exclude=()):
+    """Per label: lowest confidence first, ties broken by a seeded shuffle; then shuffle the whole page.
+    only: keep a single confidence level; exclude: ids already reviewed."""
     rng, by_label = random.Random(seed), {}
     for item in sorted(labels.values(), key=lambda x: x['id']):
+        if item['id'] in exclude or (only and item['confidence'] != only):
+            continue
         by_label.setdefault(item['label'], []).append(item)
     chosen = []
     for label in sorted(by_label):
@@ -34,24 +38,24 @@ def pick(labels, seed=SEED, per_category=PER_CATEGORY):
     return chosen
 
 
-def page(data=DATA, seed=SEED):
-    tax, goals, labels = load(data)
+def page(data=DATA, seed=SEED, version='v1', per_category=PER_CATEGORY, only=None, exclude=()):
+    tax, goals, labels = load(data, version)
     cats = [dict(id=c['id'], name=c['name_pt'], definition=c['definition_pt']) for c in tax['categories']]
     cats.append(dict(id='UNKNOWN', name='Não dá para saber',
                      definition='Curto ou vago demais para saber de que contexto o agente precisa.'))
     names = {c['id']: c for c in cats}
-    items = [dict(id=x['id'], goal=goals[x['id']]['goal'][:600], label=x['label']) for x in pick(labels, seed)]
+    items = [dict(id=x['id'], goal=goals[x['id']]['goal'][:600], label=x['label']) for x in pick(labels, seed, per_category, only, exclude)]
     glossary = ''.join(f"<li><b>{html.escape(c['name'])}</b>: {html.escape(c['definition'])}</li>" for c in cats)
     body = PAGE.replace('__GLOSSARY__', glossary).replace('__N__', str(len(items)))
     body = body.replace('__ITEMS__', json.dumps(items, ensure_ascii=False).replace('</', '<\\/'))
-    body = body.replace('__CATS__', json.dumps(names, ensure_ascii=False).replace('</', '<\\/'))
-    out = data / 'confirmar.html'
+    body = body.replace('taxonomy-v1-review', f'taxonomy-{version}-review').replace('__CATS__', json.dumps(names, ensure_ascii=False).replace('</', '<\\/'))
+    out = data / ('confirmar.html' if version == 'v1' else f'confirmar-{version}.html')
     out.write_text(body)
     return out
 
 
-def score(result_csv, data=DATA):
-    _, _, labels = load(data)
+def score(result_csv, data=DATA, version='v1'):
+    _, _, labels = load(data, version)
     with open(result_csv, newline='', encoding='utf-8-sig') as f:
         rows = list(csv.DictReader(f))
     per, fixes = {}, Counter()
@@ -115,15 +119,22 @@ render();
 def main():
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest='command', required=True)
-    sub.add_parser('page')
+    p = sub.add_parser('page')
+    p.add_argument('--version', default='v1')
+    p.add_argument('--per-category', type=int, default=PER_CATEGORY)
+    p.add_argument('--only', choices=sorted(CONFIDENCE_ORDER), help='keep one labeler confidence level')
+    p.add_argument('--exclude-reviewed', action='store_true', help='skip ids in owner-judgments.json')
     s = sub.add_parser('score')
     s.add_argument('result')
+    s.add_argument('--version', default='v1')
     args = parser.parse_args()
     if args.command == 'page':
-        print(page())
+        reviewed = json.loads((DATA / 'owner-judgments.json').read_text()) if args.exclude_reviewed else []
+        print(page(version=args.version, per_category=args.per_category, only=args.only,
+                   exclude={r['id'] for r in reviewed}))
     else:
-        result = score(args.result)
-        (DATA / 'review-score.json').write_text(json.dumps(result, indent=1, ensure_ascii=False) + '\n')
+        result = score(args.result, version=args.version)
+        (DATA / ('review-score.json' if args.version == 'v1' else f'review-score-{args.version}.json')).write_text(json.dumps(result, indent=1, ensure_ascii=False) + '\n')
         print(json.dumps({k: result[k] for k in ('n', 'judged', 'right', 'agreement', 'unsure')}, indent=1))
 
 

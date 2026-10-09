@@ -38,3 +38,8 @@ class RequestTaxonomyReviewTests(unittest.TestCase):
         (root / 'bad.csv').write_text('id,verdict,corrected\n"r0","yes",""\n')
         with self.assertRaises(ValueError):
             score(root / 'bad.csv', root)
+
+    def test_pick_filters_confidence_and_excludes_reviewed(self):
+        labels = {x['id']: x for x in fixture(Path(tempfile.mkdtemp()))}
+        chosen = pick(labels, per_category=9, only='high', exclude={'r0'})
+        self.assertTrue(chosen and all(x['confidence'] == 'high' and x['id'] != 'r0' for x in chosen))

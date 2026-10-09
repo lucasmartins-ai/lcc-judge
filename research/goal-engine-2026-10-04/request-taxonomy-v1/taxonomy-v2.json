@@ -1,0 +1,112 @@
+{
+  "version": "taxonomy-v2",
+  "categories": [
+    {
+      "id": "approve_or_pick",
+      "name_pt": "Aprovar ou escolher",
+      "definition_pt": "Resposta curta que só aprova, escolhe ou manda seguir/tentar de novo o que o agente propôs ('sim', 'pode', 'continua', 'tenta de novo'), ou que escolhe itens numerados da lista do agente ('1 e 3', 'faz os itens 2 e 3'), mesmo que acrescente os passos finais de sempre (build, commit, deploy).",
+      "context_needed": "The agent's last turn verbatim (proposal, numbered options, failed action being retried), the active plan/todo and current step, plus whatever context the approved action itself needs.",
+      "context_droppable": "Older turns before the pending proposal, repo-wide docs, unrelated files and tool output, memory vault.",
+      "decision_rule": "Use only when the request is a bare go/pick/retry, or picks numbered items from the agent's own list (trailing routine steps like 'then build/commit/push' do not change this). If the approval carries a condition or a new instruction, it is not approve_or_pick: a change to the content of the output ('migra as 2, porém com os links atuais') is revise_recent_output; a gate, check or sequence for the current task ('pode, mas revisa primeiro', 'aprovei, faz os ajustes e comita') is task_status_or_control. If the user hands over a value or reports something they did and nothing else, use supply_fact_or_step_done."
+    },
+    {
+      "id": "supply_fact_or_step_done",
+      "name_pt": "Dado ou passo feito",
+      "definition_pt": "O usuário só entrega uma informação (número, link, hash, conta, arquivo, resultado que viu, quando algo aconteceu) ou avisa que fez um passo manual ('já loguei', 'rodei o SQL', 'deu só success row'), sem pedir nada novo.",
+      "context_needed": "The agent's open question or the manual-step checklist it gave, which step was blocked on this value or action, and any attached file. Secret-handling rules if the value looks like a credential.",
+      "context_droppable": "Code bodies, docs, logs and older turns not tied to the open question or blocked step.",
+      "decision_rule": "Carries only a fact or a 'done' signal. If the fact comes with an instruction ('tá tudo true, verifica se estão sendo cadastrados'), label by the instruction (usually task_status_or_control). A fact about a problem already under discussion (when it happened, what showed up) stays here; a new report that something failed is failure_report. A fact that changes a plan or premise ('na verdade é SQLite') is correct_approach_or_rule. A plain 'yes/pick' is approve_or_pick."
+    },
+    {
+      "id": "task_status_or_control",
+      "name_pt": "Andamento, próximo passo ou parar",
+      "definition_pt": "Pergunta onde a tarefa está ou o que falta, ou conduz a tarefa atual com uma ordem curta: o que fazer agora, em que ordem, conferir antes, parar, reduzir o escopo ('agora faz X', 'e o Y?', 'pode, mas revisa primeiro', 'verifica se está cadastrando', 'deixa').",
+      "context_needed": "Task state: plan/todo with done and pending items, running jobs or loops, the agent's recent outputs and tool results, known blockers, and the original scope.",
+      "context_droppable": "Full file contents, raw old logs, design details not touching the open items, older resolved threads.",
+      "decision_rule": "Asks about or steers the current task without a new spec and without changing the content of a delivered artifact. Includes conditional approvals and short chains like 'faz os ajustes e comita/pusha' where the git step just closes the current work. If it changes what an artifact shows or says, use revise_recent_output. If it reports a new breakage, use failure_report. If it asks for strategy across the whole project, use project_audit_or_direction. A bare 'continue' or a pick of numbered items is approve_or_pick. A question about something outside the current task (a repo or product the user saw online) is general_question."
+    },
+    {
+      "id": "revise_recent_output",
+      "name_pt": "Ajustar o que foi entregue",
+      "definition_pt": "Crítica ou pedido de ajuste sobre algo que o agente fez: página, layout, texto, vídeo, imagem, jogo, funcionalidade ('ficou com cara de IA', 'tira isso de aulas curtas', 'tem dois footers', 'o progresso diário mostra tudo'). Inclui apagar ou mudar o que foi gerado e corrigir um defeito de algo que o agente construiu quando o defeito já está descrito.",
+      "context_needed": "The artifact being criticized (its source files, render or text), the previous iteration, the user's original brief and supplied assets, and style/voice/design rules (anti-slop, brand).",
+      "context_droppable": "Backend/infra unrelated to the artifact, git history, old debugging logs, other pages and modules.",
+      "decision_rule": "The target is the content, look or behavior of something the agent produced. Wrong data or a described bug in a feature the agent built, with the cause or fix already stated, is here, not failure_report. A pick with a content condition ('as 2, porém com os valores atuais') is here. If the complaint is that the agent chose the wrong tool, platform, premise or method, use correct_approach_or_rule. If it asks for a new capability not yet built, use specified_task. If it reports an error whose cause is unknown, use failure_report."
+    },
+    {
+      "id": "correct_approach_or_rule",
+      "name_pt": "Corrigir rumo ou definir regra",
+      "definition_pt": "O usuário corrige uma premissa ou escolha do agente (ferramenta, plataforma, método, fato, escopo), rejeita a solução que o agente fez, manda revisar a lógica de um sistema que acha que está errado, ou define uma regra que vale daqui pra frente (tom das mensagens, limite de envios). Inclui 'use o lookacrawler', 'verifica esse feedback e corrige', 'corrige e otimiza tudo, a copy tem que ser mais direta', 'precisa ser mais inteligente, o CRM deve estar todo errado'.",
+      "context_needed": "The agent's earlier decisions or claims being corrected and why it made them, the original instruction, standing user constraints (preferred tools, browser-bridge rule, cost limits, voice rules), and where rules are persisted (memory/plan).",
+      "context_droppable": "Detailed code, logs and tool output not touched by the correction.",
+      "decision_rule": "Changes how the work is done, not the look of one artifact. Also here: (a) a general order to fix or optimize everything with no specific error; (b) worry that a system's logic or data is wrong and needs rethinking, even if it mentions a bad outcome; (c) rejecting the agent's solution, even when it also says to merge; (d) 'use X' redirecting current work to another tool. A new task that merely names the tool to use ('cria Y usando X') is specified_task. Taste feedback on a produced artifact is revise_recent_output. A specific failed run or pasted error is failure_report."
+    },
+    {
+      "id": "failure_report",
+      "name_pt": "Algo quebrou",
+      "definition_pt": "Algo deu erro e ninguém sabe ainda por quê: erro colado do terminal, deploy ou CI falhou, uma tentativa 'não funcionou', 'aconteceu de novo'. O agente precisa achar a causa.",
+      "context_needed": "The pasted error/log verbatim if present; otherwise runtime/CI/deploy logs and job state to fetch. The command or change that preceded it, the code and config the symptom points to, recent changes, sent-history or data records for automations.",
+      "context_droppable": "Design and copy discussion, unrelated features, planning docs, older resolved threads.",
+      "decision_rule": "Names one specific failed run, attempt or error, and the cause is still unknown. Not failure_report: a general 'corrige tudo / quero tudo funcionando' or distrust of a system's logic (correct_approach_or_rule); a bug in something the agent built whose cause or fix is already stated, or output that shows wrong content (revise_recent_output); a business problem like not ranking on Google (specified_task); 'is it working?' with no fault (task_status_or_control); 'check if something is duplicated' in the agent's own tooling (environment_and_infra)."
+    },
+    {
+      "id": "git_ship",
+      "name_pt": "Commit, push, PR",
+      "definition_pt": "Pedir commit, push, PR, merge, comentar no PR, limpar branches, ajustar .gitignore ou publicar o repositório, quando essa operação é o pedido em si.",
+      "context_needed": "git status/diff, branch, remotes, open PR, the list of changes made this session (to commit only its own work), commit conventions and attribution, test/build command.",
+      "context_droppable": "Design discussion, debugging transcript, research notes, file bodies beyond the diff.",
+      "decision_rule": "Main action is a repo/version-control operation. Not git_ship when the git step only closes other work: after 'faz os ajustes' it is task_status_or_control; after 'vou deixar trabalhando, quando terminar comita' it is specified_task; after picking list items it is approve_or_pick. If the request mainly rejects the agent's solution ('não gostei dessa solução, pode fazer o merge'), use correct_approach_or_rule. If combined with 'then write a prompt', handoff_prompt."
+    },
+    {
+      "id": "handoff_prompt",
+      "name_pt": "Escrever prompt de continuação",
+      "definition_pt": "Pedir que o agente escreva um prompt, plano ou documento para outra sessão ou outro agente continuar o trabalho.",
+      "context_needed": "Compact session state: goal, decisions taken, done and pending items, key file paths, roadmap/phase docs, repo conventions and gates, known pitfalls, any new decisions stated in the request.",
+      "context_droppable": "Raw tool output, full file contents, verbose logs, resolved failed attempts.",
+      "decision_rule": "The deliverable is text for another agent or session, not the work itself. If the request also asks a question or describes a problem but asks for a prompt/plan for another session, handoff_prompt wins."
+    },
+    {
+      "id": "specified_task",
+      "name_pt": "Tarefa com instrução própria",
+      "definition_pt": "Pedido novo que já traz o que fazer: construir ou mudar algo, uma nova funcionalidade, executar uma etapa escrita num arquivo, uma pesquisa com itens nomeados ('pesquisa o benchmark e o preço de A, B, C'), resolver um problema concreto do negócio ('não apareço no Google'), ou um mandato para trabalhar sozinho até terminar ('vou deixar rodando, quando terminar comita').",
+      "context_needed": "The request text in full, every file/path/URL/attachment it names (fetched), the code it targets, repo instructions (AGENTS.md/CONTEXT.md), stack and design conventions, test/deploy commands.",
+      "context_droppable": "Most prior conversation, older task state, unrelated project memory, git log detail.",
+      "decision_rule": "Can be executed mostly from the request plus the files it names. An imperative research brief is here; a question to be answered is general_question. Naming the tool for a new task ('cria usando a extensão do Chrome') is here; redirecting current work to a tool is correct_approach_or_rule. A concrete problem with a concrete goal is here, not project_audit_or_direction or failure_report. If it critiques or fixes something just produced, use revise_recent_output. If it is a whole-project review with no concrete change, use project_audit_or_direction."
+    },
+    {
+      "id": "project_audit_or_direction",
+      "name_pt": "Auditoria ou rumo do projeto",
+      "definition_pt": "Revisar o projeto inteiro, apontar pontos fortes e fracos, ou discutir próximos passos, estratégia, preço ou viabilidade de uma ideia do produto, sem um problema concreto a resolver.",
+      "context_needed": "Broad repo map, README/CONTEXT/ADR/roadmap, current feature status, product and business facts (users, pricing, goals), relevant prior decisions; a runnable app for UX audits.",
+      "context_droppable": "Turn-by-turn chat, narrow diffs, transient tool output, raw logs.",
+      "decision_rule": "Needs a wide view of one project or product and is open-ended (evaluate, how would you optimize, what next, can I sell it). If it names one concrete problem or goal ('meu site não aparece no Google'), use specified_task. If answerable without any project knowledge, use general_question. If it only asks what is left in the current task, use task_status_or_control."
+    },
+    {
+      "id": "environment_and_infra",
+      "name_pt": "Ferramentas e infraestrutura",
+      "definition_pt": "Pedido sobre o ambiente: as ferramentas do próprio agente (skills, harness, MCP, modelos locais, memória), a máquina, ou a configuração de serviços como Vercel, Cloudflare, Supabase, DNS, cron e variáveis de ambiente.",
+      "context_needed": "Agent/harness config files, installed tools/connectors/models list, relevant service config and state (env vars, deploy config, crons, DNS), machine paths, safety rules on credentials and external changes, current docs for the service.",
+      "context_droppable": "Application feature code, design and business context, conversation history.",
+      "decision_rule": "Target is configuration or capability, not product behavior. If something in that environment is broken, use failure_report. If the action is sending messages or posting, use external_accounts_and_comms."
+    },
+    {
+      "id": "external_accounts_and_comms",
+      "name_pt": "Contas externas e mensagens",
+      "definition_pt": "Agir em contas e canais de fora: enviar ou agendar mensagens e posts (WhatsApp, LinkedIn, e-mail), prospecção, CRM, caixa de entrada, candidaturas, ou escrever conteúdo para publicar a partir de material colado.",
+      "context_needed": "Browser bridge/integration availability and login state, outreach/posting pipeline config and caps, sent-message history (avoid duplicates), CRM/lead data, owner profile and voice/anti-slop rules, approval policy for sending.",
+      "context_droppable": "Codebase internals, build/test output, git state, design iterations.",
+      "decision_rule": "The work happens in a live external account or produces a message/post for one. Changing an automation's rules is correct_approach_or_rule; an automation misbehaving is failure_report."
+    },
+    {
+      "id": "general_question",
+      "name_pt": "Pergunta geral",
+      "definition_pt": "Pergunta que se responde com conhecimento geral ou pesquisa na web, sem precisar do projeto (qual plano compensa, comparar modelos, o que é um repositório que o usuário viu online).",
+      "context_needed": "The question and the facts it states; web search; at most the user profile.",
+      "context_droppable": "Repo, task state, logs, history, memory.",
+      "decision_rule": "A question; dropping all project context would not change the answer. Includes asking about an outside repo or product the user saw ('cadê o X? vi um repositório'). An imperative research deliverable with named items is specified_task. If product knowledge matters, use project_audit_or_direction."
+    }
+  ],
+  "combined_requests_rule": "When one request mixes categories, label it with the category of the main deliverable, and treat KEEP as the union of the context needs of all parts. Precedence for short mixed replies: a content change to an artifact -> revise_recent_output; a condition, check or next-step chain on the current task -> task_status_or_control; a pick of numbered list items -> approve_or_pick even with trailing build/commit steps; a request for a prompt for another session -> handoff_prompt; rejection of the agent's solution -> correct_approach_or_rule. Never drop the last agent turn or task state for requests under ~15 words.",
+  "unknown_rule": "Label UNKNOWN when the category cannot be told from the request text alone and the choice changes what to keep: (a) a fragment with no verb and no target that could be a pick, a fact or a complaint (e.g. a lone number, a noun phrase, 'nao funcionou mesmo' with no subject); (b) pasted content (URL, JSON, commands, config) with no instruction; (c) text reduced by redaction to mostly placeholders; (d) greetings or accidental pastes. Do not use UNKNOWN for a clear bare 'sim/pode/continua' (that is approve_or_pick) or for 'verifica esse feedback e corrige' (that is correct_approach_or_rule). For UNKNOWN, LCC keeps the last 1-3 agent turns and the task state and drops the rest.",
+  "merges": "approve_or_pick = continuation-or-approval (c1) + bare-continuation (c2) + reply-to-last-turn (c3,c4) + approval (c5) + bare_ack (c6). supply_fact_or_step_done = bare-data-reply (c1) + user-reports-own-step-done (c2) + user-supplies-fact (c3) + answer-to-question (c5) + manual_step_done (c6) + opaque data drop (c4). task_status_or_control = status-or-next-step (c1) + status-or-what-happened and stop-or-scope-down (c2) + resume/advance plan (c3) + continue/status/stop (c4) + next_steps and question_about_agent_prior_output (c6). revise_recent_output = feedback-on-recent-output (c1) + correction-of-last-output (c2) + rework feedback (c3) + iterate artifact (c4) + iterative feedback (c5) + ui_visual_feedback (c6). correct_approach_or_rule = pushback/steering (c3) + correcting understanding (c4) + standing constraint (c5) + correction_or_business_feedback (c6); split from revise because it needs agent decisions and standing rules, not the artifact. failure_report = pasted-error + live-system-symptom (c1) + bug-report-fix (c2) + diagnose external signal (c3) + bug/failure (c4) + failure/debug (c5) + terse_failure (c6); pasted vs fetched log kept as one class since both need the code/config path. git_ship: all six. handoff_prompt: all six (c3 includes plan docs). specified_task = self-contained-task-brief (c1) + new-feature build and ingest-external-url (c2) + new build and targeted change (c3) + execute referenced plan (c4,c5) + self_contained_new_task when project-bound (c6). project_audit_or_direction = open-advice (c1) + audit (c2,c3) + project-wide audit/planning (c4) + project direction (c5) + repo_wide_audit (c6). environment_and_infra = agent-harness-and-tooling (c1) + external-service-config and agent-tool-introspection (c2) + tooling how-to (c4) + agent/tool config (c5) + live_infra_or_tool_ops (c6). external_accounts_and_comms = ops-automation-policy actions (c1) + outbound-comms (c2) + act on external accounts (c3) + external account/CRM (c4) + external outreach and content-from-pasted-source (c5) + external_artifact_review where it acts on accounts (c6). general_question = standalone advice (c3) + open research (c5) + general how-to part of self_contained_new_task (c6). Standing ops rules from c1 ops-automation-policy go to correct_approach_or_rule; one-off ops actions go to external_accounts_and_comms."
+}
