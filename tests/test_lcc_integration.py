@@ -4,11 +4,16 @@ from pathlib import Path
 import unittest
 
 try:
-    from lcc.relevance.compactor import RelevanceCompactionRequest, compact_context
+    from lcc.relevance.compactor import RelevanceCompactionReport, RelevanceCompactionRequest, compact_context
 except ModuleNotFoundError as exc:
     if exc.name != 'lcc':
         raise
     RelevanceCompactionRequest = None
+else:
+    # An LCC checkout without provider="specialist" (e.g. a stale local main) would
+    # silently fall back to lexical dropping; skip instead of failing on that checkout.
+    if 'specialist_ranking' not in RelevanceCompactionReport.__dataclass_fields__:
+        RelevanceCompactionRequest = None
 
 from lcc_engine import ContextEngine
 
@@ -21,7 +26,7 @@ class Backend:
         return dict(logit=-99.,actual_tokens=10,latency_ms=1.,truncated=False,error=None)
 
 
-@unittest.skipIf(RelevanceCompactionRequest is None,'Put the LCC checkout src on PYTHONPATH')
+@unittest.skipIf(RelevanceCompactionRequest is None,'Put an LCC checkout with provider="specialist" on PYTHONPATH')
 class LCCIntegrationTests(unittest.TestCase):
     text = ('noise from a different subsystem '*10+'\n\n'+
             'more unrelated verbose output '*10+'\n')
