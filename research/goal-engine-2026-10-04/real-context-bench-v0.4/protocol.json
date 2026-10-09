@@ -1,0 +1,275 @@
+{
+ "schema": "real-context-bench/0.4",
+ "name": "real-context-bench-v0.4",
+ "frozen_on": "2026-10-09",
+ "status": "frozen-before-run",
+ "question": "On 60 held-out real Codex contexts (sessions never used by any earlier bench set), does LCC's offline rules policy for tool calls at 8997be6 keep what the v0 probes look for at least as well as mechanical while removing strictly more tokens, and, judged blind by two independent judges per record, how often does it remove or trim a tool output the follow-up request needed?",
+ "why": "v0.3 failed review: its fresh 60 shared all 25 sessions with the frozen 60, judging deviated from the planned routing, the any-judge assembly and aggregation code came after the verdicts, and trim packets showed mostly the kept text. v0.4 uses a different agent's sessions (Codex), fixes routing, validity, re-judging and aggregation code before judging, and shows judges the removed middle of each trim.",
+ "privacy": {
+  "private_root": "/Users/Master/.lcc/bench/codex-heldout-v0.4",
+  "rule": "Prompt texts, rendered contexts, ids, labels, per-item outputs, audit packets, verdicts and the unblinding key stay under private_root. The repo holds definitions, code, counts and aggregate metrics only.",
+  "network": "socket.socket.connect and socket.create_connection raise for the whole run; never lifted; any trip invalidates the arm. No remote or paid API is called by any phase",
+  "env": {
+   "HF_HUB_OFFLINE": "1",
+   "TRANSFORMERS_OFFLINE": "1"
+  }
+ },
+ "pins": {
+  "lcc_rules": {
+   "repo": "lucasmartins-ai/lcc",
+   "branch": "feat/transcript-rules-policy",
+   "pr": 45,
+   "worktree": "/Users/Master/lcc-wt-rules",
+   "commit": "8997be6871c3b82d9c2cb8ed05e77a06846e8b04",
+   "commit_note": "current HEAD of the branch at freeze (also on origin); includes the three post-v0.2 review fixes (partial/failed re-reads, error rule on Read results, goal-named file protection)",
+   "check": "lcc.__file__ under worktree/src, git HEAD == commit, no uncommitted tracked changes; else refuse (research.real_context_bench_v02.check_lcc_rules)"
+  },
+  "python": "/Users/Master/LCC/.venv/bin/python (never -I), PYTHONPATH=/Users/Master/lcc-wt-rules/src:<LCC-judge>",
+  "lcc_judge_parent_commit": "b5a83e418f1cd2f43fe1d79ae2e2089862be2c8e",
+  "request_log_ruleset_sha256_prefix": "4e99ffac1f9f",
+  "taxonomy": "research/goal-engine-2026-10-04/request-taxonomy-v1/taxonomy-v2.json"
+ },
+ "sample": {
+  "seed": 20261011,
+  "n": 60,
+  "max_per_session": 2,
+  "source": "Codex prompts in ~/.lcc/request-log/imported/codex.jsonl (930, imported 2026-10-08 with research.import_agent_requests; prompts after that import are out of scope), mapped back to their first record in ~/.codex/sessions/**/rollout-*.jsonl by research.codex_context.index_prompts (same order, filters and dedup as the importer; ids and session hashes reproduce codex.jsonl exactly, 930/930)",
+  "sessions": "a session is the Codex session id at the prompt record (session_meta id), hashed as codex.jsonl does (lcc.request_log.session_hash('codex:'+id, salt)). Only human sessions: session_meta source vscode or cli and no parent_thread_id (subagent, guardian, exec and automation sessions skipped, as the importer does)",
+  "eligibility": [
+   "context has >= 1 assistant message item before the prompt",
+   "session holds no item of any earlier bench set: every session_hash and path value in every JSON/JSONL file under /Users/Master/.lcc/bench/real-context-v0 is collected, and the run asserts 0 overlap with the sample's session hashes and rollout paths (and 0 prior paths under ~/.codex)",
+   "label confidence is not low (as in v0)"
+  ],
+  "draw": "research.real_context_bench_v04.draw_per_session: one random.Random(seed); for each eligible session in sorted session_hash order, shuffle its sorted eligible ids and keep the first 2 -> 372 candidates (255 sessions)",
+  "labels": "precedence: owner verdict on a v2 label (owner-judgments.json where proposed == the v2 label; 'right' -> owner_confirmed_v2, else owner_corrected_v2) > taxonomy-v2 LLM pass (labels-v2-*.jsonl, llm_v2_pass) > this bench's labels. The 302 drawn candidates without a v2 label were labeled before sampling by the Claude session that wrote this protocol, from the redacted request text alone, with the taxonomy-v2 definitions, decision rules, combined_requests_rule and unknown_rule; marked label_source llm_v04_codex_v2_rules (private labels-llm-v2.jsonl, pinned below). No labels were changed after the allocation was seen.",
+  "allocation": "research.real_context_bench_v04.allocate: random.Random(seed) shuffles each stratum's sorted ids in alphabetical stratum order; then one id per stratum per round (alphabetical) until 60 or every stratum is empty (equal allocation; low-confidence candidates excluded)",
+  "counts": {
+   "indexed": 931,
+   "imported": 930,
+   "mapped": 930,
+   "with_assistant_turn": 730,
+   "excluded_prior_session": 0,
+   "eligible_sessions": 255,
+   "drawn": 372,
+   "drawn_label_sources": {
+    "llm_v04_codex_v2_rules": 302,
+    "llm_v2_pass": 66,
+    "owner_confirmed_v2": 4
+   },
+   "drawn_low_confidence": 10,
+   "eligible_per_stratum": {
+    "UNKNOWN": 13,
+    "approve_or_pick": 27,
+    "correct_approach_or_rule": 26,
+    "environment_and_infra": 11,
+    "external_accounts_and_comms": 12,
+    "failure_report": 17,
+    "general_question": 1,
+    "git_ship": 48,
+    "handoff_prompt": 67,
+    "project_audit_or_direction": 10,
+    "revise_recent_output": 48,
+    "specified_task": 20,
+    "supply_fact_or_step_done": 40,
+    "task_status_or_control": 22
+   },
+   "sampled": 60,
+   "sampled_per_stratum": {
+    "UNKNOWN": 5,
+    "approve_or_pick": 5,
+    "correct_approach_or_rule": 5,
+    "environment_and_infra": 5,
+    "external_accounts_and_comms": 5,
+    "failure_report": 5,
+    "general_question": 1,
+    "git_ship": 5,
+    "handoff_prompt": 4,
+    "project_audit_or_direction": 4,
+    "revise_recent_output": 4,
+    "specified_task": 4,
+    "supply_fact_or_step_done": 4,
+    "task_status_or_control": 4
+   },
+   "sampled_label_sources": {
+    "llm_v04_codex_v2_rules": 45,
+    "llm_v2_pass": 14,
+    "owner_confirmed_v2": 1
+   },
+   "sampled_sessions": 59,
+   "max_per_session": 2,
+   "prior_overlap": {
+    "session_hash": 0,
+    "path": 0,
+    "prior_codex_paths": 0
+   },
+   "prior_keys": {
+    "session_hash": 199,
+    "path": 203
+   }
+  },
+  "session_note": "4 of the 60 items come from sessions whose working directory is an LCC repository (the owner developing LCC in Codex). None of those contexts was read while the rules policy was built; they are kept, and noted.",
+  "private_files_sha256": {
+   "sample.json": "42439c56ce5504bd3a0dd737a6b0159964c715a75daf198c9695bb526035a09d",
+   "labels-llm-v2.jsonl": "c00be7ef36aed1e185f82eb90a89254387559dc22cc1158d9a62e3a4ea59a9ee"
+  },
+  "dossiers_digest_sha256": "7aee317df21a59ef720261e1f94920c1ad7a2d5dea5d1421006658d597bc1600",
+  "dossiers": "private_root/dossiers/<id>.json built by research.codex_context.build_dossier (goal re-read from the rollout record and re-hashed: 60 built, 0 id mismatches, 0 empty); digest = sha256 over sorted 'name sha256' lines"
+ },
+ "context": {
+  "walk": "every response_item record before the prompt's first record in its rollout (the prompt record excluded); a 'compacted' record restarts the context at its replacement_history (or its summary message when there is no history), as the model saw it",
+  "mapping": "one block group m per response item. message user/assistant -> text blocks (input_image -> '[image omitted]'); developer messages, reasoning and encrypted compaction items dropped (system prompt / thinking analogues); agent_message -> user text. function_call / custom_tool_call / tool_search_call -> tool_use (role assistant; input = parsed JSON arguments, or {'input': raw} for custom tools); *_output -> tool_result (role user; list parts joined, images '[image omitted]'); web_search_call and image_generation_call -> tool_use without a result. A call or output without an id gets 'codex-item-<m>'. Rendered with research.real_context_bench.render",
+  "tool_names": "native: exec_command, write_stdin, apply_patch, exec (code mode), update_plan, view_image, web_search, tool_search, and namespace + '__' + name for namespaced tools (mcp__node_repl__js, mcp__<server>__<tool>, collaboration__spawn_agent). No renaming to Claude names",
+  "is_error": "true iff Codex recorded a nonzero exit code for the call: the 'Process exited with code N' / 'Exit code: N' header line before the first 'Output:' line, or an exit_code field in a JSON output part (apply_patch metadata, code-mode exec). Error text without an exit code (e.g. 'apply_patch verification failed') is not flagged",
+  "payload": "research.real_context_bench_v02.rules_payload over the dossier blocks: {role, text, toolUses[{tool_use_id, tool, input}], toolResults[{tool_use_id, text, is_error?}]}, one message per m",
+  "goal": "the prompt text the importer keeps (after '## My request for Codex:' when present), passed as question"
+ },
+ "arms": {
+  "mechanical": {
+   "kind": "deterministic baseline",
+   "run": "research.real_context_bench.make_runner('mechanical'): compact_context(RelevanceCompactionRequest(text, question=goal, provider='mechanical', threshold=0.4, min_block_chars=40, max_block_chars=6000, trim_head_chars=300, model='gpt-4.1'))",
+   "lcc": "runs on the pinned rules commit (one lcc per process), as in v0.3"
+  },
+  "lcc_rules_transcript": {
+   "kind": "candidate, offline deterministic policy (no model, no network)",
+   "run": "research.real_context_bench_v03.make_rules_runner (unchanged): compact_transcript(TranscriptCompactionRequest(payload=rules_payload(blocks), question=goal, provider='rules')), every other field at its committed default",
+   "output": "same as jev_transcript: research.real_context_bench.apply_transcript (dropped calls lose tool_use and tool_result blocks, trimmed results take LCC's text, text blocks unchanged)",
+   "record": "decisions (id, decision, source, keep_call, keep_result, chars, chars_after, reason), keep/trim/drop ids, TRANSCRIPT_KEEP report fields, sizes, latency, guard_trips, plus trimmed_results {tool_use_id: trimmed text} for the audit"
+  },
+  "full_control": "not run: scored from the dossier text itself; must retain 100% or the probe code is wrong and the run is void"
+ },
+ "probes": {
+  "match": "probe text and arm output are whitespace-collapsed; pass iff probe text is a substring of the output. Probe text is block content without the header",
+  "min_chars": 12,
+  "not_applicable": "a probe whose target is absent from the context or shorter than min_chars is NOT_APPLICABLE and never counts as a pass or a fail",
+  "defs": {
+   "LAST_AGENT_TURN": "latest assistant block that is text, or tool_use named AskUserQuestion or ExitPlanMode",
+   "TASK_STATE": "latest tool_use named TodoWrite, TaskCreate, TaskUpdate, ExitPlanMode or update_plan",
+   "LAST_TOOL_RESULT": "latest tool_result block",
+   "ERROR_RESULT": "latest tool_result with is_error true or matching /Traceback \\(most recent call last\\)|\\bError\\b|\\bERROR\\b|\\bFAILED?\\b|\\bexit code [1-9]|Exception/; NOT_APPLICABLE when the goal itself matches the same regex (pasted error: the goal is never compacted)",
+   "GIT_STATE": "latest tool_result whose tool_use (by tool_use_id) is Bash with command matching /\\bgit\\s+(status|diff|log)\\b/",
+   "NAMED_REFS": "each path, filename or URL named in the goal (/https?:\\/\\/\\S+/, /[\\w.~-]*\\/[\\w.-]+(?:\\/[\\w.-]+)*/, /\\b[\\w-]+\\.(py|ts|tsx|js|jsx|md|json|toml|ya?ml|sql|css|html|sh|go|rs)\\b/) that occurs in the context: the latest block containing it must pass. All must pass; NOT_APPLICABLE if none occurs",
+   "LATEST_SUMMARY": "latest assistant text block with >= 500 chars",
+   "LAST_ARTIFACT_EDIT": "latest tool_use named Write, Edit, MultiEdit or NotebookEdit"
+  },
+  "per_category": {
+   "approve_or_pick": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ],
+   "supply_fact_or_step_done": [
+    "LAST_AGENT_TURN"
+   ],
+   "task_status_or_control": [
+    "TASK_STATE",
+    "LAST_AGENT_TURN",
+    "LAST_TOOL_RESULT"
+   ],
+   "revise_recent_output": [
+    "LAST_AGENT_TURN",
+    "LAST_ARTIFACT_EDIT"
+   ],
+   "correct_approach_or_rule": [
+    "LAST_AGENT_TURN"
+   ],
+   "failure_report": [
+    "ERROR_RESULT"
+   ],
+   "git_ship": [
+    "GIT_STATE"
+   ],
+   "handoff_prompt": [
+    "LATEST_SUMMARY",
+    "TASK_STATE"
+   ],
+   "specified_task": [
+    "NAMED_REFS"
+   ],
+   "project_audit_or_direction": [
+    "NAMED_REFS"
+   ],
+   "environment_and_infra": [
+    "NAMED_REFS",
+    "LAST_AGENT_TURN"
+   ],
+   "external_accounts_and_comms": [
+    "LAST_AGENT_TURN"
+   ],
+   "general_question": [],
+   "UNKNOWN": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ]
+  },
+  "short_goal_rule": "goal under 15 whitespace words: add LAST_AGENT_TURN and TASK_STATE (taxonomy-v2 combined_requests_rule)"
+ },
+ "probe_caveat": "Copied from v0 unchanged. On Claude transcripts the rules policy mirrors these probes (same error, git, path/URL, task-tool and edit-tool predicates; goal-named protection re-implements NAMED_REFS; text blocks are never edited), so probe retention there was largely by construction. On Codex the names differ: GIT_STATE needs a Bash call and LAST_ARTIFACT_EDIT needs Write/Edit/MultiEdit/NotebookEdit, so both are NOT_APPLICABLE on every Codex item, and the policy's git, edit-file and whole-file-supersession rules do not fire either. What still mirrors: LAST_AGENT_TURN and LATEST_SUMMARY (text, never edited), TASK_STATE (update_plan is in both lists), ERROR_RESULT (policy protects the latest is_error result; the probe also matches the error regex on any result, so a regex-only error output the policy does not protect can show as a miss), LAST_TOOL_RESULT (policy protects it unless pinned), NAMED_REFS (policy protects the latest call mentioning each goal ref). Probe retention is therefore still mostly by construction; the drop audit is the measurement that does not share the policy's predicates.",
+ "metrics": {
+  "retention_item": "item passes iff every applicable probe passes; items with no applicable probe are excluded from retention and kept for reduction",
+  "retention_probe": "passes / applicable probe instances (secondary)",
+  "reduction_bytes": "pooled 1 - sum(out UTF-8 bytes)/sum(in bytes); also per-item median",
+  "reduction_tokens": "same with lcc.token_budget.counters.count_tokens(text, 'gpt-4.1'); offline this is heuristic-v1 (APPROXIMATE, tiktoken assets not cached and downloads are blocked); record method",
+  "latency": "wall ms per item per arm (median, p90); model load timed once and reported separately",
+  "ci": "Wilson 95% on item-level retention, per arm aggregate and per arm x category (category cells are 2-5 items: descriptive only)",
+  "failures": "an arm error or a 600 s per-item timeout counts as fail on every applicable probe and is reported"
+ },
+ "per_item_timeout_s": 600,
+ "run_rule": "each arm once over the 60 ids in sample order, network guard on, no retries; the runner refuses to write into an arm dir that already holds records; an error or timeout fails every applicable probe. Private runs: private_root/runs/<arm>/<id>.json; private score: private_root/score.json; counts-only copy: score.json next to this file",
+ "stop_criterion": "v0 criterion vs mechanical: rules wins iff item retention rate >= mechanical's AND pooled token reduction strictly > mechanical's AND zero guard trips in the rules arm. Point estimates; exploratory (n <= 60 scored items, no significance claimed). Because of probe_caveat, a win on this criterion alone does not establish retention",
+ "audit": {
+  "population": "every tool call with decision 'drop' or 'trim' in the lcc_rules_transcript run over the 60 items",
+  "n": 150,
+  "seed": 20261011,
+  "max_per_item": 3,
+  "sampling": "research.real_context_bench_v03.audit_select (unchanged code) with seed 20261011, n 150, cap 3: one random.Random(seed); for each item in sorted order, shuffle its sorted decision ids and keep the first 3; shuffle the item order; one decision per item per round until 150 or the population is exhausted; shuffle the picked list. If fewer than 150 exist, all are taken, the shortfall is reported, and acceptance uses the realised n",
+  "ids_and_files": "picked record i (1-based) gets audit_id D{i:03d}; f1 = D001-D050, f2 = D051-D100, f3 = D101-D150 (private_root/audit/f1.jsonl ...); written once, the audit phase refuses to overwrite",
+  "packet": "each record: audit_id; request; recent_turns = last 3 user/assistant records with text before the request, each clipped head+tail to 1500 chars; tool (name); tool_input clipped head+tail to 1000; change ('removed' | 'shortened'). For removals: original_output = the full original output clipped head+tail to 3000, and original_output_chars. For shortenings: kept_head and kept_tail (what the agent kept, exactly), removed_middle = the removed text itself clipped head+tail to 3000, removed_middle_chars, original_output_chars. The removed middle is computed from the run's trimmed text (head + note + tail) and checked to be exactly the original minus head and tail (else the audit stops)",
+  "blinding": "no rule name, reason, source, arm, compactor, item id or category in packets; every '[... lcc: ...]' note is replaced by '[...]' in every field; the 'change' field necessarily reveals removal vs shortening. key.jsonl (audit_id -> item, tool_use_id, decision, reason, source, tool, is_error, file) stays private and is not shown to judges",
+  "judging": {
+   "judges": "three judges A, B, C, each the owner or a fresh Claude Code subagent that receives only the instructions below and its packet file (no repo, no key, no other file, no network tools); no paid or remote API",
+   "routing": {
+    "A": [
+     "f1",
+     "f2"
+    ],
+    "B": [
+     "f2",
+     "f3"
+    ],
+    "C": [
+     "f3",
+     "f1"
+    ]
+   },
+   "routing_note": "each record gets exactly two independent assigned verdicts; the third judge of a file (f1 -> B, f2 -> C, f3 -> A) has not seen it and re-judges its invalid verdicts. Judge files: private_root/audit/judge-A.jsonl (f1+f2), judge-B.jsonl (f2+f3), judge-C.jsonl (f3+f1)",
+   "instructions": "You see a user request sent to a coding agent, the last few conversation turns before it, and one earlier tool call. A context-compaction step changed that call's output in the agent's context. When change is 'removed', the whole call and its output were removed and original_output shows that output. When change is 'shortened', the agent kept only kept_head and kept_tail; removed_middle shows the text that was cut out between them. Judge only from what is shown: would the agent, to handle this request correctly, plausibly need information that is in the removed text (original_output for a removal, removed_middle for a shortening) and absent from what remained? Answer needed, not_needed or unsure, with one sentence of reason that is specific to this record (name what the removed text holds and why it does or does not bear on the request). A generic reason reused across records is invalid and the record will be re-judged by another judge. Do not guess what policy made the choice. Re-running the tool is not a reason for not_needed: judge whether the removed content itself was needed. Use unsure when the shown context is not enough to tell.",
+   "outcomes": [
+    "needed",
+    "not_needed",
+    "unsure"
+   ],
+   "output": "private_root/audit/verdicts-<A|B|C>.jsonl: one {audit_id, verdict, reason} per record of the judge's file",
+   "validity": "a verdict is valid iff verdict is one of the outcomes, the reason normalized (casefold, non-alphanumerics -> space, whitespace collapsed) has >= 5 words, the normalized reason occurs on no other record of the same judge (a repeated reason is generic: every copy is invalid), and the audit_id appears once in the file. Missing verdicts are invalid",
+   "rejudge": "research.real_context_bench_v04_audit rejudge writes private_root/audit/rejudge-<J>.jsonl with the packets whose assigned verdict is missing or invalid, for each record's third judge J (one re-judgment per record). Answers go to verdicts-rejudge-<J>.jsonl and are valid by the same rule, with repetition counted over J's main and re-judge files. A valid re-judgment fills the invalid slot. A record that still lacks two valid verdicts is 'incomplete'"
+  },
+  "primary_metric": "a record is flagged iff either of its two final verdicts is needed or unsure, or it is incomplete. false_drop_rate = flagged / n, Wilson 95% (research.real_context_bench.wilson)",
+  "acceptance": "pre-registered: PASS iff the upper Wilson 95% bound of false_drop_rate <= 0.10. At n = 150 this is flagged <= 7 (7 -> .0932, 8 -> .1017). FAIL otherwise; the result is reported either way",
+  "secondary": [
+   "needed-only: records where either final verdict is needed / n, Wilson 95%",
+   "inter-judge agreement over records with two final verdicts: raw agreement and Cohen's kappa (needed / not_needed / unsure)",
+   "unsure verdict rate",
+   "primary and needed-only split by decision (drop/trim), by rule and by tool (MCP tools collapsed to 'mcp' in the repo copy) after unblinding"
+  ],
+  "aggregation_code": "research/real_context_bench_v04_audit.py (rejudge | score), written and tested before any judging; score joins every key row to the private rules run (item, tool_use_id, decision, reason) and stops on any mismatch; writes private audit/audit-score.json (with flagged cases) and a counts-only audit-summary.json next to this file"
+ },
+ "freeze": {
+  "rule": "sha256 of this file (protocol.json.sha256), of every runner/adapter/aggregation file below, of sample.json and labels-llm-v2.jsonl, and the dossiers digest are committed and pushed before any arm runs; the runner refuses if any differs",
+  "files_sha256": {
+   "research/real_context_bench.py": "1d462543b39382113b1f03854d80f6850897f7591787c41c57c936f15604ec5e",
+   "research/real_context_bench_v02.py": "ccbfe9abbe109f3a11c014c9c7ff9040078fdcf273abad1b8392439ff75f7ce0",
+   "research/real_context_bench_v03.py": "4bf10daf00f9cf2613b2ab7c16cd3203ca1122f6fe1810cbb4b4bee2d2a73940",
+   "research/codex_context.py": "60c296094bb37d059195dc9c5354a27d3a1e673122971a518a713f2851b4ed8e",
+   "research/real_context_bench_v04.py": "d483b60c2b6ed463cf5a2783865a7c932202f6aa35d03ce8cddc751be77d4ead",
+   "research/real_context_bench_v04_audit.py": "a54073344b6892aef1d116b13878e901045410070a6bb34ae20220ff69e9daa6"
+  }
+ }
+}
