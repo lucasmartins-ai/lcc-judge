@@ -91,6 +91,9 @@ controle197/240. Não ajustar validação ou investir mais epochs nestes candida
    Revisão humana dos rótulos (v2, PT, 60 itens, revisor único): concordância .417,
    gate falha; não separa rótulo errado de pergunta técnica demais para o usuário-alvo.
    Próxima revisão sobre pedidos reais do LCC. Ver [human-review-v2-pt/RESULTS.md](human-review-v2-pt/RESULTS.md).
+   Pedidos reais: 3.782 prompts próprios importados e redigidos (só em ~/.lcc); catálogo de
+   13 categorias de necessidade de contexto; confirmação do dono 41/56=.732 em casos difíceis.
+   Ver [request-taxonomy-v1/README.md](request-taxonomy-v1/README.md).
 
 ## Fechamento das medições e próximo ciclo
 

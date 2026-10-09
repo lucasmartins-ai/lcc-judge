@@ -15,3 +15,19 @@ confidence first) via `python3 -m research.request_taxonomy_review page`, scored
 `~/.lcc/request-log/taxonomy-v1/`; this folder holds definitions and counts only.
 
 Status: exploratory, single LLM labeling pass, not human-confirmed yet.
+
+## Owner confirmation — 2026-10-09
+
+56 items (54 low/medium confidence by design), owner judged all, no "unsure":
+**41/56 right = .732** (vs .417 on the authored retry/UDP/git corpus). Score and
+per-category counts: `owner-review-score.json` (ids only, no texts).
+
+Solid (4/4): environment_and_infra, external_accounts_and_comms, handoff_prompt,
+revise_recent_output, specified_task. Weak: approve_or_pick 1/4 (2 moved to
+task_status_or_control), failure_report 1/4 (2 moved to correct_approach_or_rule),
+git_ship 2/4, task_status_or_control 2/4.
+
+Reading: the owner treats "this is wrong" as a course correction more often than as a
+breakage, and short replies often steer the task rather than just approve. The sample
+over-weights hard cases, so .732 is not a population rate. Next: sharpen those two
+boundaries, relabel, then confirm a high-confidence sample to estimate overall agreement.

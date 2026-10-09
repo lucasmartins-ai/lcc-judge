@@ -1,0 +1,90 @@
+{
+ "schema": "request-taxonomy-review/0.1",
+ "n": 56,
+ "judged": 56,
+ "right": 41,
+ "agreement": 0.7321428571428571,
+ "unsure": 0,
+ "per_category": {
+  "UNKNOWN": {
+   "right": 3,
+   "wrong": 1
+  },
+  "approve_or_pick": {
+   "right": 1,
+   "wrong": 3
+  },
+  "correct_approach_or_rule": {
+   "right": 3,
+   "wrong": 1
+  },
+  "environment_and_infra": {
+   "right": 4
+  },
+  "external_accounts_and_comms": {
+   "right": 4
+  },
+  "failure_report": {
+   "right": 1,
+   "wrong": 3
+  },
+  "general_question": {
+   "right": 3,
+   "wrong": 1
+  },
+  "git_ship": {
+   "right": 2,
+   "wrong": 2
+  },
+  "handoff_prompt": {
+   "right": 4
+  },
+  "project_audit_or_direction": {
+   "right": 3,
+   "wrong": 1
+  },
+  "revise_recent_output": {
+   "right": 4
+  },
+  "specified_task": {
+   "right": 4
+  },
+  "supply_fact_or_step_done": {
+   "right": 3,
+   "wrong": 1
+  },
+  "task_status_or_control": {
+   "right": 2,
+   "wrong": 2
+  }
+ },
+ "corrections": {
+  "failure_report -> correct_approach_or_rule": 2,
+  "approve_or_pick -> task_status_or_control": 2,
+  "git_ship -> specified_task": 1,
+  "general_question -> specified_task": 1,
+  "supply_fact_or_step_done -> task_status_or_control": 1,
+  "failure_report -> revise_recent_output": 1,
+  "correct_approach_or_rule -> specified_task": 1,
+  "UNKNOWN -> correct_approach_or_rule": 1,
+  "task_status_or_control -> general_question": 1,
+  "project_audit_or_direction -> specified_task": 1,
+  "task_status_or_control -> revise_recent_output": 1,
+  "approve_or_pick -> revise_recent_output": 1,
+  "git_ship -> correct_approach_or_rule": 1
+ },
+ "by_labeler_confidence": {
+  "low": {
+   "right": 21,
+   "wrong": 8
+  },
+  "medium": {
+   "right": 19,
+   "wrong": 6
+  },
+  "high": {
+   "right": 1,
+   "wrong": 1
+  }
+ }
+}
