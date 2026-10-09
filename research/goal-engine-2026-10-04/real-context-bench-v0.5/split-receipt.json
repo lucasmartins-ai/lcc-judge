@@ -1,0 +1,90 @@
+{
+ "schema": "real-context-bench-split/0.5",
+ "seed": 20261012,
+ "population": {
+  "indexed": 931,
+  "imported": 930,
+  "mapped": 930,
+  "with_assistant_turn": 730,
+  "sessions_with_assistant_turn": 255,
+  "excluded_prior_sessions": 59,
+  "eligible_sessions": 196,
+  "eligible_prompts": 534
+ },
+ "prior_keys": {
+  "session_hash": 258,
+  "path": 262
+ },
+ "prior_overlap": {
+  "session_hash": 0,
+  "path": 0
+ },
+ "split": {
+  "dev_sessions": 98,
+  "test_sessions": 98,
+  "dev_prompts": 262,
+  "test_prompts": 272,
+  "session_overlap": 0,
+  "path_overlap": 0
+ },
+ "test_sample": {
+  "drawn": 140,
+  "drawn_label_sources": {
+   "llm_v04_codex_v2_rules": 97,
+   "llm_v05_codex_v2_rules": 24,
+   "llm_v2_pass": 19
+  },
+  "drawn_low_confidence": 4,
+  "eligible_per_stratum": {
+   "UNKNOWN": 6,
+   "approve_or_pick": 9,
+   "correct_approach_or_rule": 9,
+   "environment_and_infra": 1,
+   "external_accounts_and_comms": 2,
+   "failure_report": 6,
+   "git_ship": 24,
+   "handoff_prompt": 33,
+   "project_audit_or_direction": 3,
+   "revise_recent_output": 22,
+   "specified_task": 5,
+   "supply_fact_or_step_done": 7,
+   "task_status_or_control": 9
+  },
+  "sampled": 60,
+  "sampled_per_stratum": {
+   "UNKNOWN": 6,
+   "approve_or_pick": 6,
+   "correct_approach_or_rule": 6,
+   "environment_and_infra": 1,
+   "external_accounts_and_comms": 2,
+   "failure_report": 6,
+   "git_ship": 5,
+   "handoff_prompt": 5,
+   "project_audit_or_direction": 3,
+   "revise_recent_output": 5,
+   "specified_task": 5,
+   "supply_fact_or_step_done": 5,
+   "task_status_or_control": 5
+  },
+  "sampled_label_sources": {
+   "llm_v04_codex_v2_rules": 37,
+   "llm_v05_codex_v2_rules": 15,
+   "llm_v2_pass": 8
+  },
+  "sampled_sessions": 50,
+  "max_per_session": 2
+ },
+ "dev_dossiers": {
+  "built": 141,
+  "sessions": 98,
+  "id_mismatch": 0,
+  "empty_context": 0,
+  "digest_sha256": "acaf140304576c9cb0690779e9fd2fafa46a0baaaafc2ba7aaef009d67438104"
+ },
+ "test_dossiers_built": 0,
+ "sha256": {
+  "split.json": "42eae2ed70b061565021403c9fcf72133400542f24c6b7db3706b413dffbba25",
+  "test-sample.json": "b3a8573447be3931138607d2060daed9c028a8e9a5cef3ef064d024ca0e216bc",
+  "labels-llm-v2.jsonl": "2e2929bcb25caf4ebce6c87f7661c092bb3252ae2cfacb0eb78906161ce34564"
+ }
+}
