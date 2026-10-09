@@ -1,0 +1,232 @@
+{
+ "schema": "real-context-bench/0.3",
+ "name": "real-context-bench-v0.3",
+ "frozen_on": "2026-10-09",
+ "status": "frozen-before-run",
+ "question": "On 60 fresh real Claude Code contexts (none in the v0 test set or the dev split), does LCC's offline rules policy for tool calls (fixed commit) keep what the probes look for at least as well as mechanical while removing strictly more tokens, and, judged blind, how often does it drop or trim a tool output the follow-up request needed?",
+ "relation_to_v0_2": "new test set and a pinned post-review policy commit; probes, metrics, rendering, payload and run path copied from v0/v0.2; adds a blind drop audit whose pre-registered acceptance is independent of the probes",
+ "privacy": {
+  "private_root": "/Users/Master/.lcc/bench/real-context-v0",
+  "rule": "Rendered contexts, prompt texts, ids, per-item outputs and the audit packets stay under private_root. The repo holds definitions, counts and aggregate metrics only.",
+  "network": "socket.socket.connect and socket.create_connection raise for the whole run; never lifted; any trip invalidates the arm. No remote or paid API is called by any phase",
+  "env": {
+   "HF_HUB_OFFLINE": "1",
+   "TRANSFORMERS_OFFLINE": "1"
+  }
+ },
+ "pins": {
+  "lcc_rules": {
+   "repo": "lucasmartins-ai/lcc",
+   "branch": "feat/transcript-rules-policy",
+   "pr": 45,
+   "worktree": "/Users/Master/lcc-wt-rules",
+   "commit": "8997be6871c3b82d9c2cb8ed05e77a06846e8b04",
+   "commit_note": "current HEAD of the branch at freeze (also on origin); includes the three post-v0.2 review fixes (partial/failed re-reads, error rule on Read results, goal-named file protection)",
+   "check": "lcc.__file__ under worktree/src, git HEAD == commit, no uncommitted tracked changes; else refuse (research.real_context_bench_v02.check_lcc_rules)"
+  },
+  "python": "/Users/Master/LCC/.venv/bin/python (never -I), PYTHONPATH=/Users/Master/lcc-wt-rules/src:<LCC-judge>",
+  "lcc_judge_parent_commit": "48530a6c0dfaa9366f5dacfca2cc549658ec632b",
+  "request_log_ruleset_sha256_prefix": "4e99ffac1f9f",
+  "taxonomy": "research/goal-engine-2026-10-04/request-taxonomy-v1/taxonomy-v2.json"
+ },
+ "sample": {
+  "seed": 20261010,
+  "n": 60,
+  "source": "claude prompts in private_root/pool.json (693, all mapped to a transcript record)",
+  "exclusions": [
+   "the 60 ids of the frozen v0 sample.json",
+   "the 326 dev-split ids (private_root/dev-dossiers and dev-runs/*)"
+  ],
+  "eligibility": [
+   "context has >=1 assistant record",
+   "label confidence is not low (as in v0)"
+  ],
+  "label_precedence": [
+   "owner_confirmed_v1",
+   "pool label (owner_confirmed_v2 / owner_corrected_v2 / llm_v2_pass)",
+   "labels-claude-extra.jsonl (llm_bench_labeler_v2_rules)",
+   "unlabeled candidates would be labeled with taxonomy-v2 rules and marked LLM: there were 0"
+  ],
+  "allocation": "research.real_context_bench.allocate unchanged (4 per stratum capped by eligible count, leftover round-robin over alphabetical strata; one Random(seed) shuffles each stratum's sorted ids) on the pool restricted to the non-excluded ids",
+  "counts": {
+   "pool": 693,
+   "excluded_frozen_60": 60,
+   "excluded_dev": 326,
+   "candidates": 307,
+   "eligible": 197,
+   "eligible_per_stratum": {
+    "UNKNOWN": 14,
+    "approve_or_pick": 39,
+    "correct_approach_or_rule": 11,
+    "environment_and_infra": 8,
+    "external_accounts_and_comms": 2,
+    "failure_report": 9,
+    "git_ship": 15,
+    "handoff_prompt": 9,
+    "revise_recent_output": 11,
+    "specified_task": 11,
+    "supply_fact_or_step_done": 38,
+    "task_status_or_control": 30
+   },
+   "sampled": 60,
+   "sampled_per_stratum": {
+    "UNKNOWN": 6,
+    "approve_or_pick": 6,
+    "correct_approach_or_rule": 6,
+    "environment_and_infra": 5,
+    "external_accounts_and_comms": 2,
+    "failure_report": 5,
+    "git_ship": 5,
+    "handoff_prompt": 5,
+    "revise_recent_output": 5,
+    "specified_task": 5,
+    "supply_fact_or_step_done": 5,
+    "task_status_or_control": 5
+   },
+   "sampled_label_sources": {
+    "llm_bench_labeler_v2_rules": 56,
+    "llm_v2_pass": 4
+   },
+   "sampled_sessions": 25
+  },
+  "session_overlap": "all 60 sampled items come from the 25 sessions that also hold v0 frozen-60 items (every eligible non-dev, non-test item does: the dev split excluded those sessions). They share no session with the dev split. The policy was tuned on dev only; the 8997be6 fixes came from a code review with synthetic transcripts, after v0.2 per-item outputs on the frozen 60 existed. Earlier context of a fresh item can overlap the context of a frozen-60 item from the same session.",
+  "labels_note": "56/60 labels are llm_bench_labeler_v2_rules and 4 llm_v2_pass: no owner-confirmed label in the sample",
+  "private_files_sha256": {
+   "fresh-sample.json": "6158007050060d251be67e367f08a60a8a561e7cb4b3c919d39d4ae27eb11e38"
+  },
+  "dossiers": "private_root/fresh-dossiers/<id>.json, built with research.real_context_bench.build_dossier (same walk, render and goal as v0); 60 built, 0 id mismatches, 0 empty"
+ },
+ "context": {
+  "walk": "start at the prompt record's parentUuid; follow parentUuid until None, a missing uuid, or a system record with subtype compact_boundary; keep type user/assistant; reverse to oldest-first; the prompt itself is excluded",
+  "render": "one paragraph per content block, joined by a blank line: header line '[m{i:04d} {role} {kind}[ {tool_name}]]' then content. text -> text; tool_use -> json.dumps(input, ensure_ascii=False, sort_keys=True); tool_result -> its text parts joined by newline, images as '[image omitted]'; plain-string user content -> text; image -> '[image omitted]'; thinking blocks dropped (signatures only, ~0.1% visible bytes)",
+  "goal": "raw prompt text from the transcript record (local only), passed as question"
+ },
+ "arms": {
+  "mechanical": {
+   "kind": "deterministic baseline",
+   "run": "research.real_context_bench.make_runner('mechanical'): compact_context(RelevanceCompactionRequest(text, question=goal, provider='mechanical', threshold=0.4, min_block_chars=40, max_block_chars=6000, trim_head_chars=300, model='gpt-4.1'))",
+   "lcc": "runs on the pinned rules commit (one lcc per process). The mechanical path differs from the v0 pin dd5dd80 only in compactor.py/graph.py (shared REVERSAL_CUES regex; supersession closure names its source), so v0.3 mechanical numbers are not the v0 code"
+  },
+  "lcc_rules_transcript": {
+   "kind": "candidate, offline deterministic policy (no model, no network)",
+   "run": "compact_transcript(TranscriptCompactionRequest(payload=research.real_context_bench_v02.rules_payload(blocks), question=goal, provider='rules')), every other field at its committed default",
+   "payload": "the v0.1 transcript_payload (one message per context record) plus is_error=true on each tool result whose dossier block has is_error, as a Claude Code transcript carries it; the v0.1 jev_transcript arm did not forward is_error",
+   "output": "same as jev_transcript: research.real_context_bench.apply_transcript (dropped calls lose tool_use and tool_result blocks, trimmed results take LCC's text, text blocks unchanged)",
+   "record": "decisions (id, decision, source, keep_call, keep_result, chars, chars_after, reason), keep/trim/drop ids, TRANSCRIPT_KEEP report fields, sizes, latency, guard_trips, plus trimmed_results {tool_use_id: trimmed text} for the audit"
+  },
+  "full_control": "not run: scored from the dossier text itself; must retain 100% or the probe code is wrong and the run is void"
+ },
+ "probes": {
+  "match": "probe text and arm output are whitespace-collapsed; pass iff probe text is a substring of the output. Probe text is block content without the header",
+  "min_chars": 12,
+  "not_applicable": "a probe whose target is absent from the context or shorter than min_chars is NOT_APPLICABLE and never counts as a pass or a fail",
+  "defs": {
+   "LAST_AGENT_TURN": "latest assistant block that is text, or tool_use named AskUserQuestion or ExitPlanMode",
+   "TASK_STATE": "latest tool_use named TodoWrite, TaskCreate, TaskUpdate, ExitPlanMode or update_plan",
+   "LAST_TOOL_RESULT": "latest tool_result block",
+   "ERROR_RESULT": "latest tool_result with is_error true or matching /Traceback \\(most recent call last\\)|\\bError\\b|\\bERROR\\b|\\bFAILED?\\b|\\bexit code [1-9]|Exception/; NOT_APPLICABLE when the goal itself matches the same regex (pasted error: the goal is never compacted)",
+   "GIT_STATE": "latest tool_result whose tool_use (by tool_use_id) is Bash with command matching /\\bgit\\s+(status|diff|log)\\b/",
+   "NAMED_REFS": "each path, filename or URL named in the goal (/https?:\\/\\/\\S+/, /[\\w.~-]*\\/[\\w.-]+(?:\\/[\\w.-]+)*/, /\\b[\\w-]+\\.(py|ts|tsx|js|jsx|md|json|toml|ya?ml|sql|css|html|sh|go|rs)\\b/) that occurs in the context: the latest block containing it must pass. All must pass; NOT_APPLICABLE if none occurs",
+   "LATEST_SUMMARY": "latest assistant text block with >= 500 chars",
+   "LAST_ARTIFACT_EDIT": "latest tool_use named Write, Edit, MultiEdit or NotebookEdit"
+  },
+  "per_category": {
+   "approve_or_pick": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ],
+   "supply_fact_or_step_done": [
+    "LAST_AGENT_TURN"
+   ],
+   "task_status_or_control": [
+    "TASK_STATE",
+    "LAST_AGENT_TURN",
+    "LAST_TOOL_RESULT"
+   ],
+   "revise_recent_output": [
+    "LAST_AGENT_TURN",
+    "LAST_ARTIFACT_EDIT"
+   ],
+   "correct_approach_or_rule": [
+    "LAST_AGENT_TURN"
+   ],
+   "failure_report": [
+    "ERROR_RESULT"
+   ],
+   "git_ship": [
+    "GIT_STATE"
+   ],
+   "handoff_prompt": [
+    "LATEST_SUMMARY",
+    "TASK_STATE"
+   ],
+   "specified_task": [
+    "NAMED_REFS"
+   ],
+   "project_audit_or_direction": [
+    "NAMED_REFS"
+   ],
+   "environment_and_infra": [
+    "NAMED_REFS",
+    "LAST_AGENT_TURN"
+   ],
+   "external_accounts_and_comms": [
+    "LAST_AGENT_TURN"
+   ],
+   "general_question": [],
+   "UNKNOWN": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ]
+  },
+  "short_goal_rule": "goal under 15 whitespace words: add LAST_AGENT_TURN and TASK_STATE (taxonomy-v2 combined_requests_rule)"
+ },
+ "probe_caveat": "Known and stated before the run: the rules policy mirrors these probes. ERROR_RE, GIT_RE, REF_RES, TASK_TOOLS and EDIT_TOOLS in transcript_rules.py are the probes' patterns, and its goal-named protection re-implements NAMED_REFS; text blocks (LAST_AGENT_TURN, LATEST_SUMMARY) are never edited by compact_transcript. Probe retention for this arm is therefore largely satisfied by construction and is not evidence that the policy keeps what the user needed. At 8997be6 the error rule skips Read results while the ERROR_RESULT probe does not, so a protect/probe disagreement can show as a miss. The drop audit is the measurement that does not share the policy's predicates.",
+ "metrics": {
+  "retention_item": "item passes iff every applicable probe passes; items with no applicable probe are excluded from retention and kept for reduction",
+  "retention_probe": "passes / applicable probe instances (secondary)",
+  "reduction_bytes": "pooled 1 - sum(out UTF-8 bytes)/sum(in bytes); also per-item median",
+  "reduction_tokens": "same with lcc.token_budget.counters.count_tokens(text, 'gpt-4.1'); offline this is heuristic-v1 (APPROXIMATE, tiktoken assets not cached and downloads are blocked); record method",
+  "latency": "wall ms per item per arm (median, p90); model load timed once and reported separately",
+  "ci": "Wilson 95% on item-level retention, per arm aggregate and per arm x category (category cells are 2-5 items: descriptive only)",
+  "failures": "an arm error or a 600 s per-item timeout counts as fail on every applicable probe and is reported"
+ },
+ "per_item_timeout_s": 600,
+ "run_rule": "each arm once over the 60 fresh ids in sample order, network guard on, no retries; the runner refuses to write into an arm dir that already holds records; an error or timeout fails every applicable probe. Private runs: private_root/fresh-runs/<arm>/<id>.json; private score: private_root/fresh-score.json; counts-only copy: score.json next to this file",
+ "stop_criterion": "v0 criterion vs mechanical: rules wins iff item retention rate >= mechanical's AND pooled token reduction strictly > mechanical's AND zero guard trips in the rules arm. Point estimates; exploratory (n ~ 50 scored items, no significance claimed). Because of probe_caveat, a win on this criterion alone does not establish retention",
+ "audit": {
+  "population": "every tool call with decision 'drop' or 'trim' in the lcc_rules_transcript run over the 60 fresh items",
+  "n": 150,
+  "seed": 20261010,
+  "max_per_item": 6,
+  "sampling": "research.real_context_bench_v03.audit_select: one random.Random(seed); for each item in sorted order, shuffle its sorted decision ids and keep the first 6; shuffle the item order; take one decision per item per round until 150 (or the population is exhausted); shuffle the picked list. If fewer than 150 exist, all are taken and the shortfall is reported",
+  "packet": "private_root/audit/drops.jsonl (all) and drops-a/b/c.jsonl (consecutive 50s of the shuffled list). Each record: audit_id; request (the user's prompt); recent_turns (last 3 user/assistant records with text before the request, each clipped head+tail to 1500 chars); tool (name); tool_input (clipped 1000); original_output (full original tool result clipped head+tail to 3000) and original_output_chars; shortened_output (trimmed text clipped to 3000) for trims, null for drops",
+  "blinding": "packets carry no rule name, reason, source, score, arm, item id or category. The unblinding key (audit_id -> item, tool_use_id, decision, reason, source, file) is written to private_root/audit/key.jsonl and is not given to judges until all three files are judged. A packet's shortened_output field necessarily reveals trim vs drop",
+  "judging": {
+   "judges": "one judge per file (a, b, c): the owner, or a fresh Claude Code subagent that receives only these instructions and one file (no repo, no key, no other file, no network tools); no paid or remote API beyond the judging session itself",
+   "instructions": "You see a user request sent to a coding agent, the last few conversation turns before it, and one earlier tool call with its full output. A context-compaction step removed that output from the agent's context (when shortened_output is null) or replaced it with shortened_output. Judge only from what is shown: would the agent, to handle this request correctly, plausibly need information that is in original_output and absent from what remained (nothing for a removal, shortened_output for a shortening)? Answer needed, not_needed or unsure, with one sentence of reason. Do not guess what policy made the choice. Re-running the tool is not a reason for not_needed: judge whether the removed content itself was needed. Use unsure when the shown context is not enough to tell.",
+   "outcomes": [
+    "needed",
+    "not_needed",
+    "unsure"
+   ],
+   "output": "private_root/audit/verdicts-<file>.jsonl: {audit_id, verdict, reason}"
+  },
+  "primary_metric": "false_drop_rate = (needed + unsure) / judged, with Wilson 95% CI (research.real_context_bench.wilson); unsure counts against the policy",
+  "secondary": [
+   "needed / (needed + not_needed), unsure excluded, Wilson 95%",
+   "primary split by decision (drop vs trim) and by tool, after unblinding",
+   "unsure rate"
+  ],
+  "acceptance": "pre-registered: PASS iff the upper Wilson 95% bound of the primary false_drop_rate <= 0.10. At n = 150 this is k <= 7 (k = 7: upper .0932; k = 8: upper .1017). If fewer than 150 records exist, the same bound applies at the realised n. FAIL otherwise; the result is reported either way, with the needed cases listed by rule after unblinding (private), counts only in the repo"
+ },
+ "freeze": {
+  "rule": "sha256 of this file (protocol.json.sha256), of every runner file and of fresh-sample.json are committed and pushed before any arm runs; the runner refuses if any differs",
+  "files_sha256": {
+   "research/real_context_bench.py": "1d462543b39382113b1f03854d80f6850897f7591787c41c57c936f15604ec5e",
+   "research/real_context_bench_v02.py": "ccbfe9abbe109f3a11c014c9c7ff9040078fdcf273abad1b8392439ff75f7ce0",
+   "research/real_context_bench_v03.py": "4bf10daf00f9cf2613b2ab7c16cd3203ca1122f6fe1810cbb4b4bee2d2a73940"
+  },
+  "scoring_code": "probes, metrics and aggregate are research/real_context_bench.py unchanged (same sha256 as the v0.1/v0.2 freezes); v02 supplies rules_payload, check_lcc_rules and verdict; v03 adds the fresh sample, the run/score paths over it and the audit packet builder"
+ }
+}
