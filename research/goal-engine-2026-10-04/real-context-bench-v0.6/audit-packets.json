@@ -1,0 +1,62 @@
+{
+ "schema": "real-context-bench/0.6-audit-packets",
+ "protocol_sha256": "22fc47174b93fedeb34a5bead3b2da07747b591d921c8ed908474f45cba59f24",
+ "dossiers": {
+  "built": 60,
+  "id_mismatch": 0,
+  "empty_context": 0,
+  "prior_overlap": {
+   "session_hash": 0,
+   "path": 0,
+   "id": 0
+  },
+  "digest_sha256": "fa76024baa6ebd80fa0534761825fa3e90ebae9b0f8fc149b091dc1384e0056d"
+ },
+ "audit": {
+  "seed": 20261013,
+  "n_target": 150,
+  "max_per_item": 3,
+  "population": 166,
+  "items_with_candidates": 31,
+  "sampled": 77,
+  "shortfall": 73,
+  "shortfall_reason": "31 items with replace decisions x cap 3 (some have fewer than 3) < 150; per protocol acceptance uses realised n = 77 (PASS iff flagged <= 2: upper Wilson 2/77 = .0898, 3/77 = .1084)",
+  "sampled_items": 31,
+  "max_per_item_realised": 3,
+  "files": {
+   "f1": 26,
+   "f2": 26,
+   "f3": 25
+  },
+  "sampled_by_kind": {
+   "file_whole": 77
+  },
+  "sampled_by_tool": {
+   "read_file": 77
+  },
+  "lcc_marker_packets": 0,
+  "key_field_packets": 0,
+  "judge_folders": {
+   "A": [
+    "f1.jsonl",
+    "f2.jsonl"
+   ],
+   "B": [
+    "f2.jsonl",
+    "f3.jsonl"
+   ],
+   "C": [
+    "f1.jsonl",
+    "f3.jsonl"
+   ]
+  },
+  "packet_sha256": {
+   "f1.jsonl": "e0414fc44a545b35fe03e9e2d03f093a499fdc68ab9114b15ab39a8144c2ecc7",
+   "f2.jsonl": "a3bf93c5cecf9ae4a34ff8dbc3d341b1797204ab351ca1992f03ffff861ca836",
+   "f3.jsonl": "4e5703b9735439e867dec76282917438a43a06a8639f19863a33d8c48bedd3bc",
+   "key.jsonl": "9fe86bca2cd9615448377a13fe6af1688121b6daa1b55cbc6d064bb41601f00e"
+  },
+  "instructions_sha256": "9c0be3f5243cbafda4913a69639281fcd840854e8425577b37b3dc65b004e944",
+  "verdicts": 0
+ }
+}
