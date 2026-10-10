@@ -2,7 +2,7 @@
  "schema": "lossless-dedup-measure/1",
  "lcc": {
   "worktree": "/Users/Master/lcc-wt-rules",
-  "commit": "83f71207d965e0ea257007adf9d44578a252f5f7",
+  "commit": "7b92ad2b80d6fd812ac706f3270a9ed838806514",
   "branch": "feat/transcript-rules-policy",
   "pr": 45
  },
@@ -21,20 +21,20 @@
     "pooled": 0.0034,
     "median_item": 0.0012,
     "max_item": 0.0449,
-    "items_reduced": 41
+    "items_reduced": 40
    },
    "tool_calls_total": 5984,
-   "deduped": 359,
+   "deduped": 357,
    "dropped": 0,
    "trimmed": 0,
    "dedupe_kind": {
     "identical": 327,
-    "contained": 32
+    "line_range": 30
    },
    "latency_ms": {
-    "median": 6.15,
-    "p90": 35.2,
-    "max": 92.8
+    "median": 8.649999999999999,
+    "p90": 43.3,
+    "max": 154.9
    },
    "retention": {
     "item": {
@@ -105,22 +105,22 @@
    "degraded": 0,
    "reduction_tokens": {
     "pooled": 0.0016,
-    "median_item": 0.0003,
+    "median_item": 0.0002,
     "max_item": 0.0125,
     "items_reduced": 31
    },
    "tool_calls_total": 6156,
-   "deduped": 201,
+   "deduped": 199,
    "dropped": 0,
    "trimmed": 0,
    "dedupe_kind": {
     "identical": 156,
-    "contained": 45
+    "line_range": 43
    },
    "latency_ms": {
-    "median": 9.55,
-    "p90": 38.7,
-    "max": 74.3
+    "median": 8.55,
+    "p90": 39.3,
+    "max": 78.4
    },
    "retention": {
     "item": {
@@ -196,12 +196,12 @@
    "trimmed": 0,
    "dedupe_kind": {
     "identical": 1601,
-    "contained": 103
+    "line_range": 103
    },
    "latency_ms": {
-    "median": 6.0,
-    "p90": 17.6,
-    "max": 394.0
+    "median": 6.35,
+    "p90": 17.1,
+    "max": 218.4
    },
    "retention": {
     "item": {
@@ -264,23 +264,23 @@
    },
    "degraded": 0,
    "reduction_tokens": {
-    "pooled": 0.013,
-    "median_item": 0.0021,
+    "pooled": 0.0125,
+    "median_item": 0.0018,
     "max_item": 0.2428,
     "items_reduced": 45
    },
    "tool_calls_total": 4345,
-   "deduped": 453,
+   "deduped": 441,
    "dropped": 0,
    "trimmed": 0,
    "dedupe_kind": {
-    "identical": 396,
-    "contained": 57
+    "identical": 441,
+    "line_range": 0
    },
    "latency_ms": {
-    "median": 10.3,
-    "p90": 30.5,
-    "max": 56.4
+    "median": 10.55,
+    "p90": 36.5,
+    "max": 80.3
    },
    "retention": {
     "item": {
@@ -345,23 +345,23 @@
    },
    "degraded": 0,
    "reduction_tokens": {
-    "pooled": 0.0187,
+    "pooled": 0.0185,
     "median_item": 0.0026,
-    "max_item": 0.5404,
-    "items_reduced": 115
+    "max_item": 0.5302,
+    "items_reduced": 114
    },
    "tool_calls_total": 10576,
-   "deduped": 1249,
+   "deduped": 1210,
    "dropped": 0,
    "trimmed": 0,
    "dedupe_kind": {
-    "identical": 1068,
-    "contained": 181
+    "identical": 1210,
+    "line_range": 0
    },
    "latency_ms": {
-    "median": 8.8,
-    "p90": 19.8,
-    "max": 32.0
+    "median": 14.4,
+    "p90": 93.5,
+    "max": 403.9
    },
    "retention": {
     "item": {
@@ -426,23 +426,23 @@
    },
    "degraded": 0,
    "reduction_tokens": {
-    "pooled": 0.0155,
+    "pooled": 0.0153,
     "median_item": 0.0018,
     "max_item": 0.0842,
     "items_reduced": 41
    },
    "tool_calls_total": 4276,
-   "deduped": 607,
+   "deduped": 595,
    "dropped": 0,
    "trimmed": 0,
    "dedupe_kind": {
-    "identical": 543,
-    "contained": 64
+    "identical": 595,
+    "line_range": 0
    },
    "latency_ms": {
-    "median": 6.75,
-    "p90": 19.8,
-    "max": 33.2
+    "median": 11.100000000000001,
+    "p90": 84.4,
+    "max": 210.7
    },
    "retention": {
     "item": {

@@ -1,8 +1,9 @@
 """Lossless-dedup v1: measure LCC provider="rules", rules_mode="lossless" on every existing dossier set.
 
 Offline (network guard on), no judges: each item is compacted at the pinned LCC commit, re-checked with
-lcc's own verify_lossless AND with an independent check here (every replaced result's lines, minus the
-three Codex volatile header lines, sit contiguously in its kept_at result, which must be unchanged), then
+lcc's own verify_lossless AND with an independent check here (each replaced result's note must hold against
+its kept_at result, which must be unchanged: "identical" = same lines minus the three Codex volatile header
+lines; "lines a-b" = exactly those raw lines of the target), then
 scored with the frozen v0-v0.5 probes (identical probe config in every protocol). Per-item records stay
 under PRIVATE; the repo gets counts only.
 
@@ -20,7 +21,7 @@ from pathlib import Path
 from research import real_context_bench as rcb
 from research import real_context_bench_v02 as v02
 
-LCC_PIN = dict(worktree='/Users/Master/lcc-wt-rules', commit='83f71207d965e0ea257007adf9d44578a252f5f7')
+LCC_PIN = dict(worktree='/Users/Master/lcc-wt-rules', commit='7b92ad2b80d6fd812ac706f3270a9ed838806514')
 BENCH = Path('/Users/Master/.lcc/bench')
 PRIVATE = BENCH / 'lossless-dedup-v1'
 PUBLIC = rcb.REPO / 'research' / 'goal-engine-2026-10-04' / 'lossless-dedup-v1'
@@ -64,8 +65,8 @@ def _lines(text):
 
 
 def independent_check(blocks, decisions, out_text):
-    """Violations found without lcc's verifier: target must be kept unchanged in the output and contain
-    the replaced result's lines contiguously and in order."""
+    """Violations found without lcc's verifier: the target must be kept unchanged in the output and the
+    replaced result's note must state a claim that holds and rebuilds it."""
     res = {b['tool_use_id']: b for b in blocks if b['kind'] == 'tool_result'}
     dedup = {d['id']: d for d in decisions if d.get('decision') == 'dedupe'}
     flat = rcb.collapse(out_text)
@@ -79,9 +80,20 @@ def independent_check(blocks, decisions, out_text):
             bad.append(f'{rid}: is_error differs from {tgt}')
         if rcb.collapse(res[tgt]['content']) not in flat:
             bad.append(f'{rid}: target {tgt} not unchanged in output')
-        a, b = '\n' + '\n'.join(_lines(res[rid]['content'])) + '\n', '\n' + '\n'.join(_lines(res[tgt]['content'])) + '\n'
-        if a not in b:
-            bad.append(f'{rid}: lines not contained in {tgt}')
+        note, src, dst = d.get('note') or '', res[rid]['content'], res[tgt]['content']
+        same = re.fullmatch(rf'\[identical output kept at {re.escape(tgt)}\]', note)
+        span = re.fullmatch(rf'\[output = lines (\d+)-(\d+) of {re.escape(tgt)}\]', note)
+        if same:
+            ok = _lines(src) == _lines(dst)
+        elif span:  # the note alone must rebuild the original: raw lines a..b (1-based) of the target
+            lo, hi = int(span[1]), int(span[2])
+            ok = 1 <= lo and hi <= dst.count('\n') + 1 and '\n'.join(dst.split('\n')[lo - 1:hi]) == src
+        else:
+            ok = False
+        if not ok:
+            bad.append(f'{rid}: note {note!r} does not hold against {tgt}')
+        if note not in out_text:
+            bad.append(f'{rid}: note not in output')
     return bad
 
 
@@ -135,7 +147,7 @@ def summarize(rows):
         tool_calls_total=sum(r['tool_calls_total'] for r in rows), deduped=sum(r['deduped'] for r in rows),
         dropped=sum(r['dropped'] for r in rows), trimmed=sum(r['trimmed'] for r in rows),
         dedupe_kind={k: sum(1 for r in rows for d in r['dedupe'] if (d['note'] or '').startswith(p))
-                     for k, p in (('identical', '[identical'), ('contained', '[output contained'))},
+                     for k, p in (('identical', '[identical'), ('line_range', '[output = lines'))},
         latency_ms=dict(median=statistics.median(lat), p90=rcb.quantile(lat, 0.9), max=max(lat)),
         retention=ret('probes'), retention_full_control=ret('full_probes'))
 
