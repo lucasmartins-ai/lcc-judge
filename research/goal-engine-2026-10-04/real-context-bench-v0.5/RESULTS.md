@@ -1,5 +1,14 @@
 # Real-context bench v0.5: Codex TEST 60 + two-judge blind audit, results 2026-10-10
 
+> **Review notes (independent review, PASS_WITH_NOTES).** (1) The TEST judges did not receive
+> the frozen v0.4 judging text word for word: the workflow prompt paraphrased it. The audit is
+> therefore a deviation from the protocol, though in the direction of the same task. (2) Judge
+> isolation was by instruction only: judges could list the private audit folder that also held
+> key.jsonl and other judges' verdicts. (3) DEV vs TEST rates below are not comparable as
+> written: DEV had one judge per record, TEST flags a record if either of two judges flags it;
+> a one-judge rate on TEST is about 54/264 = .20. (4) Verdict files are not hash-pinned in the
+> repo, and run records do not store the policy commit (the worktree reflog confirms d0cb548).
+
 **Status: audit FAIL under the pre-registered rule, by a wider margin than v0.4.** 36 of 132
 audited drop/trim decisions were flagged (needed or unsure by at least one judge). The upper
 Wilson 95% bound is .3543 against a .10 limit (at n = 132, at most 6 flags would have passed).
