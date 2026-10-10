@@ -1,0 +1,555 @@
+{
+ "schema": "real-context-bench-score/0.5",
+ "protocol_sha256": "5720df9cc78c54dd2c81acd4449a804052706affc7e141bd887d853c24e7a230",
+ "n_items": 60,
+ "void": false,
+ "guard_trips": 0,
+ "arms": {
+  "full": {
+   "items": 60,
+   "retention_item": {
+    "k": 54,
+    "n": 54,
+    "rate": 1.0,
+    "wilson95": [
+     0.9336,
+     1.0
+    ]
+   },
+   "retention_probe": {
+    "k": 72,
+    "n": 72,
+    "rate": 1.0,
+    "wilson95": [
+     0.9493,
+     1.0
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.0,
+    "median_item": 0.0
+   },
+   "reduction_tokens": {
+    "pooled": 0.0,
+    "median_item": 0.0
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": null,
+    "p90": null
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "approve_or_pick": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "wilson95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "failure_report": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "git_ship": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "wilson95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "handoff_prompt": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "project_audit_or_direction": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 4,
+     "n": 4,
+     "rate": 1.0,
+     "wilson95": [
+      0.5101,
+      1.0
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    }
+   }
+  },
+  "mechanical": {
+   "items": 60,
+   "retention_item": {
+    "k": 52,
+    "n": 54,
+    "rate": 0.963,
+    "wilson95": [
+     0.8746,
+     0.9898
+    ]
+   },
+   "retention_probe": {
+    "k": 69,
+    "n": 72,
+    "rate": 0.9583,
+    "wilson95": [
+     0.8845,
+     0.9857
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.0008,
+    "median_item": 0.0001
+   },
+   "reduction_tokens": {
+    "pooled": 0.0009,
+    "median_item": 0.0001
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": 6212.5,
+    "p90": 70790
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "approve_or_pick": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 1,
+     "n": 2,
+     "rate": 0.5,
+     "wilson95": [
+      0.0945,
+      0.9055
+     ]
+    },
+    "failure_report": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "git_ship": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "wilson95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "handoff_prompt": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "project_audit_or_direction": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 4,
+     "n": 4,
+     "rate": 1.0,
+     "wilson95": [
+      0.5101,
+      1.0
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 4,
+     "n": 5,
+     "rate": 0.8,
+     "wilson95": [
+      0.3755,
+      0.9638
+     ]
+    }
+   }
+  },
+  "lcc_rules_transcript": {
+   "items": 60,
+   "retention_item": {
+    "k": 52,
+    "n": 54,
+    "rate": 0.963,
+    "wilson95": [
+     0.8746,
+     0.9898
+    ]
+   },
+   "retention_probe": {
+    "k": 70,
+    "n": 72,
+    "rate": 0.9722,
+    "wilson95": [
+     0.9043,
+     0.9923
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.1916,
+    "median_item": 0.1142
+   },
+   "reduction_tokens": {
+    "pooled": 0.1914,
+    "median_item": 0.1104
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": 17.5,
+    "p90": 124
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "approve_or_pick": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 6,
+     "n": 6,
+     "rate": 1.0,
+     "wilson95": [
+      0.6097,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "wilson95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "failure_report": {
+     "k": 5,
+     "n": 6,
+     "rate": 0.8333,
+     "wilson95": [
+      0.4365,
+      0.9699
+     ]
+    },
+    "git_ship": {
+     "k": 3,
+     "n": 3,
+     "rate": 1.0,
+     "wilson95": [
+      0.4385,
+      1.0
+     ]
+    },
+    "handoff_prompt": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "project_audit_or_direction": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 3,
+     "n": 4,
+     "rate": 0.75,
+     "wilson95": [
+      0.3006,
+      0.9544
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 5,
+     "n": 5,
+     "rate": 1.0,
+     "wilson95": [
+      0.5655,
+      1.0
+     ]
+    }
+   }
+  }
+ },
+ "probe_counts": {
+  "LAST_AGENT_TURN": {
+   "applicable": 46,
+   "not_applicable": 1
+  },
+  "TASK_STATE": {
+   "applicable": 6,
+   "not_applicable": 33
+  },
+  "NAMED_REFS": {
+   "applicable": 4,
+   "not_applicable": 5
+  },
+  "ERROR_RESULT": {
+   "applicable": 6,
+   "not_applicable": 0
+  },
+  "GIT_STATE": {
+   "applicable": 0,
+   "not_applicable": 5
+  },
+  "LATEST_SUMMARY": {
+   "applicable": 5,
+   "not_applicable": 0
+  },
+  "LAST_ARTIFACT_EDIT": {
+   "applicable": 0,
+   "not_applicable": 5
+  },
+  "LAST_TOOL_RESULT": {
+   "applicable": 5,
+   "not_applicable": 0
+  }
+ },
+ "verdict": {},
+ "remote_arms": {},
+ "verdict_v05": {
+  "retention_ge": true,
+  "token_reduction_gt": true,
+  "zero_guard_trips": true,
+  "wins": true
+ },
+ "decisions": {
+  "drop:stale_read_far_from_recent_work": 39,
+  "drop:superseded_by_later_call": 207,
+  "keep:call_before_latest_error": 42,
+  "keep:kept_default": 2953,
+  "keep:latest_error_result": 45,
+  "keep:latest_task_state": 7,
+  "keep:latest_tool_result": 5,
+  "keep:named_in_goal": 9,
+  "keep:pinned_recent": 89,
+  "keep:trim_guard_edited_later": 234,
+  "keep:trim_guard_error": 8,
+  "keep:trim_guard_interactive": 19,
+  "keep:trim_guard_named": 64,
+  "keep:trim_guard_recent": 126,
+  "trim:large_old_output_trimmed": 365
+ },
+ "dossiers": {
+  "built": 60,
+  "id_mismatch": 0,
+  "empty_context": 0,
+  "digest_sha256": "548ff09057d1845495ca43b57c9efad46f38d45c9aac80326f6eb55ba339de80",
+  "visible_bytes": {
+   "median": 230913,
+   "max": 713892,
+   "sum": 15360726
+  }
+ },
+ "failure_counts": {
+  "full": 0,
+  "mechanical": 0,
+  "lcc_rules_transcript": 0
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "schema": "real-context-bench/0.5-audit-packets",
+ "protocol_sha256": "5720df9cc78c54dd2c81acd4449a804052706affc7e141bd887d853c24e7a230",
+ "dossiers": {
+  "built": 60,
+  "id_mismatch": 0,
+  "empty_context": 0,
+  "digest_sha256": "548ff09057d1845495ca43b57c9efad46f38d45c9aac80326f6eb55ba339de80"
+ },
+ "audit": {
+  "seed": 20261012,
+  "n_target": 150,
+  "max_per_item": 3,
+  "population": 611,
+  "items_with_candidates": 46,
+  "population_by_rule": {
+   "drop:stale_read_far_from_recent_work": 39,
+   "drop:superseded_by_later_call": 207,
+   "trim:large_old_output_trimmed": 365
+  },
+  "sampled": 132,
+  "shortfall": 18,
+  "shortfall_reason": "46 items with candidates x cap 3 (some items have fewer than 3) < 150; per protocol acceptance uses realised n",
+  "sampled_by_decision": {
+   "drop": 49,
+   "trim": 83
+  },
+  "sampled_items": 46,
+  "files": {
+   "f1": 50,
+   "f2": 50,
+   "f3": 32
+  },
+  "lcc_marker_packets": 0,
+  "acceptance_at_realised_n": "PASS iff upper Wilson95 <= .10: at n=132, <= 6 flagged (6 -> .0956, 7 -> .1054)",
+  "sha256": {
+   "f1.jsonl": "6ffb0aecbe83ef2db347de42057999bab5c637e540802c0dd16a40254f260210",
+   "f2.jsonl": "a0978417e647a21452a3f69468819de6e4c3a49b7bdb961e85ef6cd58796a278",
+   "f3.jsonl": "e41c3265dc766cfd07e24d8c125973bc8fceb292c914cc19b390c151add12a3d",
+   "judge-A.jsonl": "6d7beb06c5baccea157bb0bc4cd69af8c9dd03b1bdfb83a355b2769aab7f7939",
+   "judge-B.jsonl": "0a613583eb1a7bbf193145c9a6c410f971ef9c3cabed03ef2261dd4aa81569b3",
+   "judge-C.jsonl": "3984101fa58c90a5068e62f6832507c77c558ea5c3bf062c7a5546765af16645",
+   "key.jsonl": "d7a77eb119b987e390671013f95a61b8a718a78971118baad070617ca92342bf"
+  }
+ },
+ "judged": false
+}
