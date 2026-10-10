@@ -1,0 +1,89 @@
+{
+ "schema": "real-context-bench-heldout/0.6",
+ "source": "hermes",
+ "seed": 20261013,
+ "n_max": 60,
+ "per_session_max": 2,
+ "eligibility": "same-session context with >= 1 assistant turn and >= 1 tool result",
+ "label_precedence": "owner v2 > taxonomy-v2 LLM pass > v0.4/v0.5 LLM labels > llm_v06_hermes_v2_rules (LLM, marked)",
+ "stats": {
+  "indexed": 1660,
+  "imported_hermes": 1626,
+  "unlocated": 5,
+  "mapped": 1655,
+  "with_assistant_and_tool_result": 1367,
+  "excluded_prior": 0,
+  "raw_sids_in_prior_paths": 0,
+  "eligible_sessions": 196,
+  "eligible_prompts": 1367,
+  "drawn": 350,
+  "drawn_label_sources": {
+   "llm_v06_hermes_v2_rules": 295,
+   "llm_v2_pass": 49,
+   "owner_confirmed_v2": 6
+  },
+  "drawn_low_confidence": 20,
+  "eligible_per_stratum": {
+   "UNKNOWN": 19,
+   "approve_or_pick": 57,
+   "correct_approach_or_rule": 53,
+   "environment_and_infra": 15,
+   "external_accounts_and_comms": 7,
+   "failure_report": 12,
+   "general_question": 6,
+   "git_ship": 13,
+   "handoff_prompt": 2,
+   "project_audit_or_direction": 6,
+   "revise_recent_output": 21,
+   "specified_task": 13,
+   "supply_fact_or_step_done": 46,
+   "task_status_or_control": 60
+  },
+  "sampled": 60,
+  "sampled_per_stratum": {
+   "UNKNOWN": 5,
+   "approve_or_pick": 5,
+   "correct_approach_or_rule": 5,
+   "environment_and_infra": 5,
+   "external_accounts_and_comms": 5,
+   "failure_report": 5,
+   "general_question": 4,
+   "git_ship": 4,
+   "handoff_prompt": 2,
+   "project_audit_or_direction": 4,
+   "revise_recent_output": 4,
+   "specified_task": 4,
+   "supply_fact_or_step_done": 4,
+   "task_status_or_control": 4
+  },
+  "sampled_label_sources": {
+   "llm_v06_hermes_v2_rules": 51,
+   "llm_v2_pass": 6,
+   "owner_confirmed_v2": 3
+  },
+  "sampled_sessions": 53,
+  "max_per_session": 2,
+  "prior_overlap": {
+   "session_hash": 0,
+   "path": 0,
+   "id": 0,
+   "raw_sid_in_prior_path": 0
+  },
+  "prior_keys": {
+   "session_hash": 454,
+   "path": 312,
+   "id": 181548
+  }
+ },
+ "test_dossiers_built": 0,
+ "policy_tuning_reads_before_receipt": 0,
+ "sha256": {
+  "test-sample.json": "08070f751cdc730689a7b82abca2c907a0c079d36374eeba4e74e109b4d23ba0",
+  "labels-llm-v2.jsonl": "fc4f339eec5a8fff3bdae2bb068885df1c477887ece0e8637e925107ee935bac"
+ },
+ "code_sha256": {
+  "research/hermes_context.py": "68793d14f76da188844e1158a08e066a731fd054f92636f15cd4d0b13d764006",
+  "research/real_context_bench_v06_heldout.py": "2c23cc9eaba4c2bc1bc15feb3f3cf4c576a30f1912d9b458eefb26bede65b9e8",
+  "tests/test_hermes_context.py": "8b2cf758bfea88b04028c8316b11e4e3d84d3af5847390c5d0110061f7307eae"
+ }
+}
