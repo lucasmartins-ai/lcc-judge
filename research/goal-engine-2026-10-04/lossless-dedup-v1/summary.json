@@ -1,0 +1,503 @@
+{
+ "schema": "lossless-dedup-measure/1",
+ "lcc": {
+  "worktree": "/Users/Master/lcc-wt-rules",
+  "commit": "83f71207d965e0ea257007adf9d44578a252f5f7",
+  "branch": "feat/transcript-rules-policy",
+  "pr": 45
+ },
+ "rules_mode": "lossless",
+ "probe_protocol_sha256": "5720df9cc78c54dd2c81acd4449a804052706affc7e141bd887d853c24e7a230",
+ "sets": {
+  "claude_frozen_60": {
+   "n": 60,
+   "violations": {
+    "verify_lossless": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": 0,
+   "reduction_tokens": {
+    "pooled": 0.0034,
+    "median_item": 0.0012,
+    "max_item": 0.0449,
+    "items_reduced": 41
+   },
+   "tool_calls_total": 5984,
+   "deduped": 359,
+   "dropped": 0,
+   "trimmed": 0,
+   "dedupe_kind": {
+    "identical": 327,
+    "contained": 32
+   },
+   "latency_ms": {
+    "median": 6.15,
+    "p90": 35.2,
+    "max": 92.8
+   },
+   "retention": {
+    "item": {
+     "k": 49,
+     "n": 49,
+     "rate": 1.0,
+     "wilson95": [
+      0.9273,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 69,
+     "n": 69,
+     "rate": 1.0,
+     "wilson95": [
+      0.9473,
+      1.0
+     ]
+    }
+   },
+   "retention_full_control": {
+    "item": {
+     "k": 49,
+     "n": 49,
+     "rate": 1.0,
+     "wilson95": [
+      0.9273,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 69,
+     "n": 69,
+     "rate": 1.0,
+     "wilson95": [
+      0.9473,
+      1.0
+     ]
+    }
+   },
+   "prior": {
+    "source": "research/goal-engine-2026-10-04/real-context-bench-v0.2/score.json",
+    "mechanical": {
+     "pooled": 0.0001,
+     "median_item": 0.0,
+     "retention_item": 0.9796
+    },
+    "jev_block": {
+     "pooled": 0.0345,
+     "median_item": 0.0,
+     "retention_item": 0.9592
+    },
+    "lossy_rules": {
+     "pooled": 0.3864,
+     "median_item": 0.3785,
+     "retention_item": 1.0
+    }
+   }
+  },
+  "claude_fresh_60": {
+   "n": 60,
+   "violations": {
+    "verify_lossless": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": 0,
+   "reduction_tokens": {
+    "pooled": 0.0016,
+    "median_item": 0.0003,
+    "max_item": 0.0125,
+    "items_reduced": 31
+   },
+   "tool_calls_total": 6156,
+   "deduped": 201,
+   "dropped": 0,
+   "trimmed": 0,
+   "dedupe_kind": {
+    "identical": 156,
+    "contained": 45
+   },
+   "latency_ms": {
+    "median": 9.55,
+    "p90": 38.7,
+    "max": 74.3
+   },
+   "retention": {
+    "item": {
+     "k": 55,
+     "n": 55,
+     "rate": 1.0,
+     "wilson95": [
+      0.9347,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 77,
+     "n": 77,
+     "rate": 1.0,
+     "wilson95": [
+      0.9525,
+      1.0
+     ]
+    }
+   },
+   "retention_full_control": {
+    "item": {
+     "k": 55,
+     "n": 55,
+     "rate": 1.0,
+     "wilson95": [
+      0.9347,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 77,
+     "n": 77,
+     "rate": 1.0,
+     "wilson95": [
+      0.9525,
+      1.0
+     ]
+    }
+   },
+   "prior": {
+    "source": "research/goal-engine-2026-10-04/real-context-bench-v0.3/score.json",
+    "mechanical": {
+     "pooled": 0.0001,
+     "median_item": 0.0,
+     "retention_item": 0.9818
+    },
+    "lossy_rules": {
+     "pooled": 0.3497,
+     "median_item": 0.3643,
+     "retention_item": 1.0
+    }
+   }
+  },
+  "claude_dev_326": {
+   "n": 326,
+   "violations": {
+    "verify_lossless": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": 0,
+   "reduction_tokens": {
+    "pooled": 0.0063,
+    "median_item": 0.002,
+    "max_item": 0.2931,
+    "items_reduced": 209
+   },
+   "tool_calls_total": 22783,
+   "deduped": 1704,
+   "dropped": 0,
+   "trimmed": 0,
+   "dedupe_kind": {
+    "identical": 1601,
+    "contained": 103
+   },
+   "latency_ms": {
+    "median": 6.0,
+    "p90": 17.6,
+    "max": 394.0
+   },
+   "retention": {
+    "item": {
+     "k": 323,
+     "n": 323,
+     "rate": 1.0,
+     "wilson95": [
+      0.9882,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 455,
+     "n": 455,
+     "rate": 1.0,
+     "wilson95": [
+      0.9916,
+      1.0
+     ]
+    }
+   },
+   "retention_full_control": {
+    "item": {
+     "k": 323,
+     "n": 323,
+     "rate": 1.0,
+     "wilson95": [
+      0.9882,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 455,
+     "n": 455,
+     "rate": 1.0,
+     "wilson95": [
+      0.9916,
+      1.0
+     ]
+    }
+   },
+   "prior": {
+    "source": "private dev-iterations.jsonl (last iteration)",
+    "mechanical": {
+     "pooled": 0.0002,
+     "median_item": 0.0
+    },
+    "lossy_rules": {
+     "pooled": 0.3892,
+     "median_item": 0.3865
+    }
+   }
+  },
+  "codex_v04_test_60": {
+   "n": 60,
+   "violations": {
+    "verify_lossless": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": 0,
+   "reduction_tokens": {
+    "pooled": 0.013,
+    "median_item": 0.0021,
+    "max_item": 0.2428,
+    "items_reduced": 45
+   },
+   "tool_calls_total": 4345,
+   "deduped": 453,
+   "dropped": 0,
+   "trimmed": 0,
+   "dedupe_kind": {
+    "identical": 396,
+    "contained": 57
+   },
+   "latency_ms": {
+    "median": 10.3,
+    "p90": 30.5,
+    "max": 56.4
+   },
+   "retention": {
+    "item": {
+     "k": 54,
+     "n": 54,
+     "rate": 1.0,
+     "wilson95": [
+      0.9336,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 69,
+     "n": 69,
+     "rate": 1.0,
+     "wilson95": [
+      0.9473,
+      1.0
+     ]
+    }
+   },
+   "retention_full_control": {
+    "item": {
+     "k": 54,
+     "n": 54,
+     "rate": 1.0,
+     "wilson95": [
+      0.9336,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 69,
+     "n": 69,
+     "rate": 1.0,
+     "wilson95": [
+      0.9473,
+      1.0
+     ]
+    }
+   },
+   "prior": {
+    "source": "research/goal-engine-2026-10-04/real-context-bench-v0.4/score.json",
+    "mechanical": {
+     "pooled": 0.0004,
+     "median_item": 0.0002,
+     "retention_item": 0.963
+    },
+    "lossy_rules": {
+     "pooled": 0.6414,
+     "median_item": 0.6388,
+     "retention_item": 0.9815
+    }
+   }
+  },
+  "codex_v05_dev_141": {
+   "n": 141,
+   "violations": {
+    "verify_lossless": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": 0,
+   "reduction_tokens": {
+    "pooled": 0.0187,
+    "median_item": 0.0026,
+    "max_item": 0.5404,
+    "items_reduced": 115
+   },
+   "tool_calls_total": 10576,
+   "deduped": 1249,
+   "dropped": 0,
+   "trimmed": 0,
+   "dedupe_kind": {
+    "identical": 1068,
+    "contained": 181
+   },
+   "latency_ms": {
+    "median": 8.8,
+    "p90": 19.8,
+    "max": 32.0
+   },
+   "retention": {
+    "item": {
+     "k": 137,
+     "n": 137,
+     "rate": 1.0,
+     "wilson95": [
+      0.9727,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 189,
+     "n": 189,
+     "rate": 1.0,
+     "wilson95": [
+      0.9801,
+      1.0
+     ]
+    }
+   },
+   "retention_full_control": {
+    "item": {
+     "k": 137,
+     "n": 137,
+     "rate": 1.0,
+     "wilson95": [
+      0.9727,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 189,
+     "n": 189,
+     "rate": 1.0,
+     "wilson95": [
+      0.9801,
+      1.0
+     ]
+    }
+   },
+   "prior": {
+    "source": "research/goal-engine-2026-10-04/real-context-bench-v0.5/dev-round2.json",
+    "mechanical": {
+     "pooled": 0.0021,
+     "median_item": 0.0002,
+     "retention_item": 0.9781
+    },
+    "lossy_rules": {
+     "pooled": 0.2614,
+     "median_item": 0.2056,
+     "retention_item": 1.0
+    }
+   }
+  },
+  "codex_v05_test_60": {
+   "n": 60,
+   "violations": {
+    "verify_lossless": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": 0,
+   "reduction_tokens": {
+    "pooled": 0.0155,
+    "median_item": 0.0018,
+    "max_item": 0.0842,
+    "items_reduced": 41
+   },
+   "tool_calls_total": 4276,
+   "deduped": 607,
+   "dropped": 0,
+   "trimmed": 0,
+   "dedupe_kind": {
+    "identical": 543,
+    "contained": 64
+   },
+   "latency_ms": {
+    "median": 6.75,
+    "p90": 19.8,
+    "max": 33.2
+   },
+   "retention": {
+    "item": {
+     "k": 54,
+     "n": 54,
+     "rate": 1.0,
+     "wilson95": [
+      0.9336,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 72,
+     "n": 72,
+     "rate": 1.0,
+     "wilson95": [
+      0.9493,
+      1.0
+     ]
+    }
+   },
+   "retention_full_control": {
+    "item": {
+     "k": 54,
+     "n": 54,
+     "rate": 1.0,
+     "wilson95": [
+      0.9336,
+      1.0
+     ]
+    },
+    "probe": {
+     "k": 72,
+     "n": 72,
+     "rate": 1.0,
+     "wilson95": [
+      0.9493,
+      1.0
+     ]
+    }
+   },
+   "prior": {
+    "source": "research/goal-engine-2026-10-04/real-context-bench-v0.5/score.json",
+    "mechanical": {
+     "pooled": 0.0009,
+     "median_item": 0.0001,
+     "retention_item": 0.963
+    },
+    "lossy_rules": {
+     "pooled": 0.1914,
+     "median_item": 0.1104,
+     "retention_item": 0.963
+    }
+   }
+  }
+ },
+ "guard_trips": 0
+}
