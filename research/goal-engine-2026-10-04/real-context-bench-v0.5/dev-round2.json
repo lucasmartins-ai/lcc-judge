@@ -1,0 +1,140 @@
+{
+ "schema": "real-context-bench/0.5-dev-round",
+ "round": 2,
+ "split": "DEV only (141 dossiers, 98 sessions); TEST not opened",
+ "lcc_rules": {
+  "branch": "feat/transcript-rules-policy",
+  "pr": 45,
+  "previous": "43cde02",
+  "round2": "d0cb5488a16ace11d387ba7ab240b9a931bfc490",
+  "dirty": false
+ },
+ "motivation_round1_audit_aggregate": {
+  "n": 100,
+  "flagged": 9,
+  "by_rule": {
+   "trim:large_old_output_trimmed": {
+    "n": 66,
+    "flagged": 5
+   },
+   "drop:superseded_by_later_call": {
+    "n": 31,
+    "flagged": 4
+   },
+   "drop:stale_read_far_from_recent_work": {
+    "n": 3,
+    "flagged": 0
+   }
+  }
+ },
+ "changes": [
+  "superseded_by_later_call for non-file calls requires the later output to repeat the earlier one (Codex Chunk ID/Wall time/token-count/exit lines ignored)",
+  "trim_guard_edited_later reads apply_patch bodies in any tool input (exec, shell)"
+ ],
+ "arms": {
+  "mechanical": {
+   "reduction_tokens": {
+    "pooled": 0.0021,
+    "median_item": 0.0002
+   },
+   "retention_item": {
+    "k": 134,
+    "n": 137,
+    "rate": 0.9781,
+    "wilson95": [
+     0.9376,
+     0.9925
+    ]
+   },
+   "retention_probe": {
+    "k": 185,
+    "n": 189,
+    "rate": 0.9788,
+    "wilson95": [
+     0.9469,
+     0.9917
+    ]
+   },
+   "failures": 0,
+   "guard_trips": 0
+  },
+  "rules@r2-d0cb548": {
+   "reduction_tokens": {
+    "pooled": 0.2614,
+    "median_item": 0.2056
+   },
+   "retention_item": {
+    "k": 137,
+    "n": 137,
+    "rate": 1.0,
+    "wilson95": [
+     0.9727,
+     1.0
+    ]
+   },
+   "retention_probe": {
+    "k": 189,
+    "n": 189,
+    "rate": 1.0,
+    "wilson95": [
+     0.9801,
+     1.0
+    ]
+   },
+   "failures": 0,
+   "guard_trips": 0
+  }
+ },
+ "comparison_pooled_reduction": {
+  "rules@8997be6": 0.6259,
+  "rules@43cde02": 0.274
+ },
+ "decisions": {
+  "drop:stale_read_far_from_recent_work": 119,
+  "drop:superseded_by_later_call": 429,
+  "keep:call_before_latest_error": 114,
+  "keep:kept_default": 7183,
+  "keep:latest_error_result": 106,
+  "keep:latest_task_state": 19,
+  "keep:latest_tool_result": 10,
+  "keep:named_in_goal": 4,
+  "keep:named_in_recent_turns": 3,
+  "keep:pinned_recent": 226,
+  "keep:trim_guard_edited_later": 557,
+  "keep:trim_guard_error": 36,
+  "keep:trim_guard_interactive": 65,
+  "keep:trim_guard_named": 162,
+  "keep:trim_guard_recent": 270,
+  "trim:large_old_output_trimmed": 1142
+ },
+ "audit": {
+  "seed": 1002,
+  "population": 1690,
+  "population_by_rule": {
+   "drop:stale_read_far_from_recent_work": 119,
+   "drop:superseded_by_later_call": 429,
+   "trim:large_old_output_trimmed": 1142
+  },
+  "sampled": 100,
+  "sampled_by_rule": {
+   "drop:stale_read_far_from_recent_work": 4,
+   "drop:superseded_by_later_call": 25,
+   "trim:large_old_output_trimmed": 71
+  },
+  "sampled_items": 100,
+  "packets": {
+   "g1": {
+    "n": 50,
+    "shortened": 35,
+    "sha256": "d25bc8eca0540a4862ecdd8eb2110a4c57dfa5aee3e3a6f74dcf7a84128dbacd"
+   },
+   "g2": {
+    "n": 50,
+    "shortened": 36,
+    "sha256": "dc83ab64ae7851a41a6d24f361371b99c2b2aed1578cd8bc51c69abe23bc0441"
+   }
+  },
+  "key_sha256": "4327ff9ef36aeff151c8cebcaec38716c735ca82c96923d493087b02602c8ff7",
+  "judged": false
+ }
+}
