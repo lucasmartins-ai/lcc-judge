@@ -1,0 +1,256 @@
+{
+ "schema": "recoverable-dev-measure/1",
+ "lcc": {
+  "worktree": "/Users/Master/lcc-wt-rules",
+  "commit": "1bc20056cfccd4915394862e431f409efee44144",
+  "branch": "feat/transcript-rules-policy",
+  "pr": 45
+ },
+ "workspace_root": null,
+ "sets": {
+  "claude_dev_326": {
+   "n": 326,
+   "violations": {
+    "verify_recoverable": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": {
+    "lossless": 0,
+    "recoverable": 0,
+    "lossy": 0
+   },
+   "recoverability_check": {
+    "transcript_proxy": 326
+   },
+   "reduction_tokens": {
+    "lossless": {
+     "pooled": 0.0063,
+     "median_item": 0.002,
+     "max_item": 0.2931,
+     "items_reduced": 209
+    },
+    "recoverable": {
+     "pooled": 0.046,
+     "median_item": 0.0083,
+     "max_item": 0.6495,
+     "items_reduced": 269
+    },
+    "lossy": {
+     "pooled": 0.2814,
+     "median_item": 0.2573,
+     "max_item": 0.6588,
+     "items_reduced": 284
+    }
+   },
+   "recoverable_extra_vs_lossless": {
+    "pooled_tokens_saved": 479413,
+    "share_of_lossless_out": 0.04,
+    "median_item": 0.0
+   },
+   "decisions": {
+    "lossless": {
+     "keep": 19991,
+     "dedupe": 1704
+    },
+    "recoverable": {
+     "keep": 19505,
+     "dedupe": 1701,
+     "replace": 489
+    },
+    "lossy": {
+     "keep": 17649,
+     "trim": 395,
+     "drop": 3651
+    }
+   },
+   "pointers": {
+    "total": 489,
+    "items_with_pointer": 157,
+    "by_kind": {
+     "file_whole": 392,
+     "file_range": 51,
+     "command": 46
+    },
+    "by_tool": {
+     "Read": 431,
+     "Bash": 58
+    },
+    "replaced_chars": 2424159
+   },
+   "recoverable_keep_reasons": {
+    "not_recoverable": 14221,
+    "file_written_later": 2467,
+    "failed_result": 1688,
+    "pinned_recent": 560,
+    "call_before_latest_error": 263,
+    "latest_error_result": 245,
+    "pinned_recent_result": 56,
+    "named_in_goal_or_recent_turns": 5
+   }
+  },
+  "codex_v05_dev_141": {
+   "n": 141,
+   "violations": {
+    "verify_recoverable": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": {
+    "lossless": 0,
+    "recoverable": 0,
+    "lossy": 0
+   },
+   "recoverability_check": {
+    "transcript_proxy": 141
+   },
+   "reduction_tokens": {
+    "lossless": {
+     "pooled": 0.0185,
+     "median_item": 0.0026,
+     "max_item": 0.5302,
+     "items_reduced": 114
+    },
+    "recoverable": {
+     "pooled": 0.1583,
+     "median_item": 0.0882,
+     "max_item": 0.551,
+     "items_reduced": 128
+    },
+    "lossy": {
+     "pooled": 0.2614,
+     "median_item": 0.2056,
+     "max_item": 0.6922,
+     "items_reduced": 123
+    }
+   },
+   "recoverable_extra_vs_lossless": {
+    "pooled_tokens_saved": 1149365,
+    "share_of_lossless_out": 0.1424,
+    "median_item": 0.0798
+   },
+   "decisions": {
+    "lossless": {
+     "keep": 9235,
+     "dedupe": 1210
+    },
+    "recoverable": {
+     "keep": 7986,
+     "replace": 1382,
+     "dedupe": 1077
+    },
+    "lossy": {
+     "keep": 8755,
+     "trim": 1142,
+     "drop": 548
+    }
+   },
+   "pointers": {
+    "total": 1382,
+    "items_with_pointer": 119,
+    "by_kind": {
+     "file_range": 807,
+     "command": 524,
+     "file_whole": 51
+    },
+    "by_tool": {
+     "exec_command": 1382
+    },
+    "replaced_chars": 6126911
+   },
+   "recoverable_keep_reasons": {
+    "not_recoverable": 5491,
+    "failed_result": 1219,
+    "file_written_later": 671,
+    "pinned_recent": 226,
+    "pinned_recent_result": 145,
+    "latest_error_result": 106,
+    "call_before_latest_error": 102,
+    "named_in_goal_or_recent_turns": 26
+   }
+  }
+ },
+ "pooled_dev": {
+  "n": 467,
+  "violations": {
+   "verify_recoverable": 0,
+   "independent": 0,
+   "runtime_fail_safe": 0
+  },
+  "degraded": {
+   "lossless": 0,
+   "recoverable": 0,
+   "lossy": 0
+  },
+  "recoverability_check": {
+   "transcript_proxy": 467
+  },
+  "reduction_tokens": {
+   "lossless": {
+    "pooled": 0.0112,
+    "median_item": 0.0022,
+    "max_item": 0.5302,
+    "items_reduced": 323
+   },
+   "recoverable": {
+    "pooled": 0.0916,
+    "median_item": 0.018,
+    "max_item": 0.6495,
+    "items_reduced": 397
+   },
+   "lossy": {
+    "pooled": 0.2733,
+    "median_item": 0.246,
+    "max_item": 0.6922,
+    "items_reduced": 407
+   }
+  },
+  "recoverable_extra_vs_lossless": {
+   "pooled_tokens_saved": 1628778,
+   "share_of_lossless_out": 0.0812,
+   "median_item": 0.0082
+  },
+  "decisions": {
+   "lossless": {
+    "keep": 29226,
+    "dedupe": 2914
+   },
+   "recoverable": {
+    "keep": 27491,
+    "dedupe": 2778,
+    "replace": 1871
+   },
+   "lossy": {
+    "keep": 26404,
+    "trim": 1537,
+    "drop": 4199
+   }
+  },
+  "pointers": {
+   "total": 1871,
+   "items_with_pointer": 276,
+   "by_kind": {
+    "file_whole": 443,
+    "file_range": 858,
+    "command": 570
+   },
+   "by_tool": {
+    "exec_command": 1382,
+    "Read": 431,
+    "Bash": 58
+   },
+   "replaced_chars": 8551070
+  },
+  "recoverable_keep_reasons": {
+   "not_recoverable": 19712,
+   "file_written_later": 3138,
+   "failed_result": 2907,
+   "pinned_recent": 786,
+   "call_before_latest_error": 365,
+   "latest_error_result": 351,
+   "pinned_recent_result": 201,
+   "named_in_goal_or_recent_turns": 31
+  }
+ },
+ "guard_trips": 0
+}
