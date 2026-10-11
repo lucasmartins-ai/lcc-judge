@@ -1,0 +1,235 @@
+{
+ "schema": "real-context-bench/0.7",
+ "name": "real-context-bench-v0.7",
+ "frozen_on": "2026-10-11",
+ "status": "frozen-before-run",
+ "question": "On 80 held-out TEST contexts from Hermes sessions disjoint from every earlier bench set (incl. v0.6 TEST), how much do LCC rules_mode lossless and rules_mode recoverable (PR #45 at the pinned commit) reduce tokens next to mechanical, with 0 verifier violations and 0 runtime fail-safes, and, judged blind by two independent judges per record, how often does a recoverable `replace` remove content the agent needs now and could NOT get back by following the recovery pointer?",
+ "why": "v0.6 (Hermes TEST, LCC 1bc2005): audit 0/77 flagged but all 77 were whole-file read pointers, and the runtime fail-safe fired on 1 item (7 duplicate tool_use_ids); independent review FAIL. LCC f1c5ff7 fixed the review findings (terminal shell tool, command pointers invalidated by later writes, closed --version list, cwd in pointers, verifier checks ranges/cwd, empty/reversed ranges kept, duplicate ids kept). DEV re-measure at f1c5ff7 (research/goal-engine-2026-10-04/recoverable-dev-v2, 527 DEV items incl. the spent v0.6 TEST): 0/0/0 violations. 90-record kind-stratified DEV audit, two judges, v0.7 judging text: 89 ok, 1 unsure, 0 needed_unrecoverable; the unsure record and one near-unsure note concerned files under /tmp or /private/tmp, which can be cleared. 653eeae keeps reads in system temp dirs (reason temp_path) and verify_recoverable rejects such pointers; DEV re-measure at 653eeae (recoverable-dev-v3): 0/0/0 violations, 1257 pointers (13 fewer). Disclosure: DEV verdicts informed this one change; no TEST data was opened before this freeze.",
+ "privacy": {
+  "private_root": "/Users/Master/.lcc/bench/heldout-v0.7",
+  "rule": "Prompt texts, rendered contexts, ids, labels, per-item outputs, audit packets, verdicts and the unblinding key stay under private_root. The repo holds definitions, code, counts and aggregate metrics only.",
+  "network": "socket.socket.connect and socket.create_connection raise for the whole run; never lifted; any trip invalidates the arm. No remote or paid API is called by any phase",
+  "env": {
+   "HF_HUB_OFFLINE": "1",
+   "TRANSFORMERS_OFFLINE": "1"
+  }
+ },
+ "pins": {
+  "lcc_rules": {
+   "repo": "lucasmartins-ai/lcc",
+   "branch": "feat/transcript-rules-policy",
+   "pr": 45,
+   "worktree": "/Users/Master/lcc-wt-rules",
+   "commit": "653eeae0678f7ae5290535e66473f557fe69b98d",
+   "commit_note": "HEAD of feat/transcript-rules-policy at freeze, equal to origin, clean tracked tree. 653eeae = f1c5ff7 (v0.6 review fixes) + temp-path keep rule; 1118 passed, 5 skipped, ruff clean",
+   "check": "lcc.__file__ under worktree/src, git HEAD == commit, no uncommitted tracked changes; else refuse (research.real_context_bench_v02.check_lcc_rules)"
+  },
+  "python": "/Users/Master/LCC/.venv/bin/python (never -I), PYTHONPATH=/Users/Master/lcc-wt-rules/src:<LCC-judge>",
+  "lcc_judge_parent_commit": "38d3671ca98dabd01ce3de3f49438c3d111be06b",
+  "request_log_ruleset_sha256_prefix": "4e99ffac1f9f",
+  "taxonomy": "research/goal-engine-2026-10-04/request-taxonomy-v1/taxonomy-v2.json"
+ },
+ "sample": {
+  "source": "research/goal-engine-2026-10-04/real-context-bench-v0.7/heldout-receipt.json (research.real_context_bench_v07_heldout sample, committed in e3d4506)",
+  "n": 80,
+  "seed": 20261014,
+  "per_session_max": 2,
+  "eligibility": "same-session context before the prompt with >= 1 assistant turn and >= 1 tool result",
+  "exclusion": "session_hash / path / id / raw sid in any JSON/JSONL under ~/.lcc/bench (incl. v0.6 TEST)",
+  "label_precedence": "owner v2 > taxonomy-v2 LLM pass > v0.4/v0.5/v0.6 LLM labels > llm_v07_hermes_v2_rules (LLM, marked)",
+  "prior_overlap": {
+   "session_hash": 0,
+   "path": 0,
+   "id": 0,
+   "sid": 0,
+   "raw_sid_in_prior_path": 0,
+   "v06_test_sessions": 0
+  },
+  "sampled_sessions": 63,
+  "private_files_sha256": {
+   "test-sample.json": "6a3da43861b354519a9cd8ccdf14c49d0781f671523323b7e0c53ea1ec1710ad",
+   "labels-llm-v2.jsonl": "03dc77d3edc0078ed0c3571e83f2a1895c59b00e1d442aed906297c3ca293eb4"
+  },
+  "dossiers": "built once AFTER this freeze by `real_context_bench_v07_test dossiers` with research/hermes_context.build_dossier (read-only ~/.hermes/state.db). It re-asserts 0 session_hash/path/id/sid and 0 raw-sid-in-prior-path overlap with every JSON/JSONL under ~/.lcc/bench (heldout-v0.7 excluded), 0 id mismatches and 0 empty contexts; the digest goes to private dossiers-receipt.json and every later phase checks it."
+ },
+ "context": "research/hermes_context.py (module doc): same-session message rows before the prompt row, first-written copy per (role, timestamp, tool_call_id), restart at a compression summary, one m per row, tool results keep the raw content string; is_error from a JSON exit_code/success/error field. Rendered with research.real_context_bench.render.",
+ "arms": {
+  "mechanical": {
+   "kind": "deterministic baseline",
+   "run": "research.real_context_bench.make_runner('mechanical'): compact_context(RelevanceCompactionRequest(text, question=goal, provider='mechanical', threshold=0.4, min_block_chars=40, max_block_chars=6000, trim_head_chars=300, model='gpt-4.1'))",
+   "lcc": "runs on the pinned commit (one lcc per process)"
+  },
+  "lcc_rules_lossless": {
+   "kind": "candidate, offline deterministic, provably lossless",
+   "run": "compact_transcript(TranscriptCompactionRequest(payload=rules_payload(blocks), question=goal, provider='rules', rules_mode='lossless')), every other field at its committed default"
+  },
+  "lcc_rules_recoverable": {
+   "kind": "candidate, offline deterministic, recoverable",
+   "run": "same with rules_mode='recoverable'; workspace_root unset, so recoverability_check = 'transcript_proxy' (the bench has no snapshot of the disk at prompt time)"
+  },
+  "output": "research.real_context_bench.apply_transcript; record: decisions (id, decision, source, keep_call, keep_result, chars, chars_after, reason, note, kept_at, recover), TRANSCRIPT_KEEP fields, rules_mode, recoverability_check, sizes, latency, guard_trips, and verify (below)",
+  "full_control": "not run: scored from the dossier text itself; must retain 100% or the probe code is wrong and the run is void"
+ },
+ "verification": {
+  "rule": "every ok item of both rules arms is re-checked after the run: lcc verify_lossless (lossless arm) or verify_recoverable (recoverable arm) on the original vs compacted payloads, AND the independent bench checks with no lcc code: research.lossless_dedup_measure.independent_check (dedupes) + research.real_context_bench_v07_test.independent_check_v3 = research.recoverable_dev_v2.independent_check_v2 (texts and tool inputs unchanged; each replace is its own call's file or read-only command, unique id, shorter, in the output, not an error result; cwd equals the call's cwd; ranges non-empty, not reversed and equal to a numbered output's first/last line; file not written later; command output not possibly changed by a later write) + no pointer naming a system temp path",
+  "required": "0 violations (lcc and independent) in both rules arms AND runtime_fail_safe 0 in both; this is a requirement of the v0.7 result: any violation or fail-safe makes the result FAIL regardless of the audit"
+ },
+ "probes": {
+  "match": "probe text and arm output are whitespace-collapsed; pass iff probe text is a substring of the output. Probe text is block content without the header",
+  "min_chars": 12,
+  "not_applicable": "a probe whose target is absent from the context or shorter than min_chars is NOT_APPLICABLE and never counts as a pass or a fail",
+  "defs": {
+   "LAST_AGENT_TURN": "latest assistant block that is text, or tool_use named AskUserQuestion or ExitPlanMode",
+   "TASK_STATE": "latest tool_use named TodoWrite, TaskCreate, TaskUpdate, ExitPlanMode or update_plan",
+   "LAST_TOOL_RESULT": "latest tool_result block",
+   "ERROR_RESULT": "latest tool_result with is_error true or matching /Traceback \\(most recent call last\\)|\\bError\\b|\\bERROR\\b|\\bFAILED?\\b|\\bexit code [1-9]|Exception/; NOT_APPLICABLE when the goal itself matches the same regex (pasted error: the goal is never compacted)",
+   "GIT_STATE": "latest tool_result whose tool_use (by tool_use_id) is Bash with command matching /\\bgit\\s+(status|diff|log)\\b/",
+   "NAMED_REFS": "each path, filename or URL named in the goal (/https?:\\/\\/\\S+/, /[\\w.~-]*\\/[\\w.-]+(?:\\/[\\w.-]+)*/, /\\b[\\w-]+\\.(py|ts|tsx|js|jsx|md|json|toml|ya?ml|sql|css|html|sh|go|rs)\\b/) that occurs in the context: the latest block containing it must pass. All must pass; NOT_APPLICABLE if none occurs",
+   "LATEST_SUMMARY": "latest assistant text block with >= 500 chars",
+   "LAST_ARTIFACT_EDIT": "latest tool_use named Write, Edit, MultiEdit or NotebookEdit"
+  },
+  "per_category": {
+   "approve_or_pick": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ],
+   "supply_fact_or_step_done": [
+    "LAST_AGENT_TURN"
+   ],
+   "task_status_or_control": [
+    "TASK_STATE",
+    "LAST_AGENT_TURN",
+    "LAST_TOOL_RESULT"
+   ],
+   "revise_recent_output": [
+    "LAST_AGENT_TURN",
+    "LAST_ARTIFACT_EDIT"
+   ],
+   "correct_approach_or_rule": [
+    "LAST_AGENT_TURN"
+   ],
+   "failure_report": [
+    "ERROR_RESULT"
+   ],
+   "git_ship": [
+    "GIT_STATE"
+   ],
+   "handoff_prompt": [
+    "LATEST_SUMMARY",
+    "TASK_STATE"
+   ],
+   "specified_task": [
+    "NAMED_REFS"
+   ],
+   "project_audit_or_direction": [
+    "NAMED_REFS"
+   ],
+   "environment_and_infra": [
+    "NAMED_REFS",
+    "LAST_AGENT_TURN"
+   ],
+   "external_accounts_and_comms": [
+    "LAST_AGENT_TURN"
+   ],
+   "general_question": [],
+   "UNKNOWN": [
+    "LAST_AGENT_TURN",
+    "TASK_STATE"
+   ]
+  },
+  "short_goal_rule": "goal under 15 whitespace words: add LAST_AGENT_TURN and TASK_STATE (taxonomy-v2 combined_requests_rule)"
+ },
+ "probe_caveat": "Copied from v0-v0.6 unchanged. Hermes tool names are not the Claude names in the probe lists (not checked against TEST data before the freeze), so TASK_STATE, GIT_STATE and LAST_ARTIFACT_EDIT may be NOT_APPLICABLE on most items. lossless and recoverable never touch text blocks or tool inputs, and replace only results the agent can recover, so probe retention is a sanity check here; the audit is the safety measurement.",
+ "metrics": {
+  "retention_item": "item passes iff every applicable probe passes; items with no applicable probe are excluded from retention and kept for reduction",
+  "retention_probe": "passes / applicable probe instances (secondary)",
+  "reduction_bytes": "pooled 1 - sum(out UTF-8 bytes)/sum(in bytes); also per-item median",
+  "reduction_tokens": "same with lcc.token_budget.counters.count_tokens(text, 'gpt-4.1'); offline this is heuristic-v1 (APPROXIMATE, tiktoken assets not cached and downloads are blocked); record method",
+  "latency": "wall ms per item per arm (median, p90); model load timed once and reported separately",
+  "ci": "Wilson 95% on item-level retention, per arm aggregate and per arm x category (category cells are 2-5 items: descriptive only)",
+  "failures": "an arm error or a 600 s per-item timeout counts as fail on every applicable probe and is reported"
+ },
+ "per_item_timeout_s": 600,
+ "run_rule": "each arm once over the 80 TEST ids in test-sample.json order, offline, network guard on, no retries; the runner refuses to write into an arm dir that already holds records. Private runs: private_root/runs/<arm>/<id>.json; private score: private_root/score.json; counts-only copy: score.json next to this file",
+ "stop_criterion": "secondary, descriptive: v0 criterion of each rules arm vs mechanical (research.real_context_bench_v02.verdict: item retention >= mechanical AND pooled token reduction strictly > mechanical AND zero guard trips). Mechanical is lossy, so a rules arm may lose on reduction by design",
+ "audit": {
+  "population": "every tool call with decision 'replace' (recovery pointer) in the lcc_rules_recoverable run over the 80 TEST items; lossless dedupes are excluded (provably lossless, verified). Pointer kind (research.real_context_bench_v06_test.pointer_kind): file_whole, file_range, command",
+  "n": 150,
+  "seed": 20261014,
+  "max_per_item": 3,
+  "sampling": "research.real_context_bench_v07_test.stratified_select: stratified by pointer kind, as balanced as the population allows. Each kind is ordered by research.real_context_bench_v03.audit_select (unchanged) with seed 20261014 + kind index (file_whole 0, file_range 1, command 2) and cap 3; kinds take one pick each per turn up to an equal quota of 50; a kind with fewer candidates gives its remainder to the others, which keep taking turns until 150 or nothing is left. At most 3 records per item over all kinds. If fewer than 150 exist all are taken and acceptance uses the realised n. The achieved n per kind is reported",
+  "ids_and_files": "research.real_context_bench_v07_test.deal_files: each kind's picks, in pick order, are dealt f1, f2, f3, f1, ... with one counter over all kinds (file_whole, file_range, command), so every file gets a near-equal share of each kind and files differ by at most 1 (50/50/50 at n = 150); each file is shuffled with seed 20261014; audit ids R001... run through f1, then f2, then f3; private_root/audit/f1.jsonl ...; written once, the audit phase refuses to overwrite",
+  "packet": "identical to the v0.6 / DEV packet (research.real_context_bench_v06_test.packet): audit_id; request; recent_turns = last 3 user/assistant text records before the request, each clipped head+tail to 1500; tool; tool_input clipped head+tail to 1000; recovery_pointer = exactly the text the agent sees; removed_output = the removed result clipped head+tail to 3000 with a cut marker; removed_output_chars",
+  "blinding": "no rule name, reason, source, arm, item id, category or pointer kind field in packets; every \"[... lcc: ...]\" note -> \"[...]\". key.jsonl (audit_id -> item, category, tool_use_id, tool, recovery_pointer, pointer_kind, reason, file) stays private and is never shown to judges",
+  "judging": {
+   "judges": "three judges A, B, C, each the owner or a fresh Claude Code subagent that receives only the instructions below (byte-identical) and its isolated folder; no repo, no key, no other file, no network tools; no paid or remote API",
+   "isolation": "the audit phase copies each judge's two packet files, and nothing else, to private_root/judge-<X>/ (A: f1.jsonl, f2.jsonl; B: f2.jsonl, f3.jsonl; C: f3.jsonl, f1.jsonl). A judge reads only that folder and writes private_root/judge-<X>/verdicts-<X>.jsonl. Re-judge packets go to their own folder private_root/rejudge-<X>/ (only rejudge-<X>.jsonl); answers to verdicts-rejudge-<X>.jsonl there",
+   "routing": {
+    "A": [
+     "f1",
+     "f2"
+    ],
+    "B": [
+     "f2",
+     "f3"
+    ],
+    "C": [
+     "f3",
+     "f1"
+    ]
+   },
+   "routing_note": "each record gets exactly two independent assigned verdicts; the third judge of a file (f1 -> B, f2 -> C, f3 -> A) has not seen it and re-judges its invalid verdicts",
+   "instructions": "Blind auditor for a context compactor. Each record: a user request to a coding agent, the last turns, an earlier tool call whose output was REMOVED and replaced by the recovery pointer shown. Question: to correctly do what the user asked now, does the agent need the removed content AND would it be unable to get it back by following the pointer (re-read / re-run, in the stated directory), given what happened later in the session as far as you can tell? Answer needed_unrecoverable / ok / unsure, with a specific 5-15 word reason per record, unique, no quotes from the data.",
+   "instructions_sha256": "2b3707da9fe5f51808f9fd546db6a084ead89d0b5e0ed6e64eed9aa738b0df6a",
+   "validity": "a verdict is valid iff verdict is one of the outcomes, the reason normalized (casefold, non-alphanumerics -> space, whitespace collapsed) has >= 5 words, the normalized reason occurs on no other record of the same judge (a repeated reason is generic: every copy is invalid), and the audit_id appears once in the file. Missing verdicts are invalid (v0.4 rule, unchanged; the text asks for 5-15 words, only the >= 5 floor is enforced)",
+   "rejudge": "research.real_context_bench_v07_audit.rejudge: for each record whose assigned verdict is missing or invalid, its third judge J gets the packet in private_root/rejudge-J/rejudge-J.jsonl (one re-judgment per record); answers are valid by the same rule with repetition counted over J's main and re-judge files; a valid re-judgment fills the slot; a record still lacking two valid verdicts is incomplete (as v0.4)",
+   "instructions_file": "/Users/Master/.lcc/bench/heldout-v0.7/audit/instructions.txt (written at freeze, byte-identical, no trailing newline; every phase checks it)",
+   "instructions_source": "given verbatim by the owner for v0.7 (research.real_context_bench_v07_test.JUDGE_TEXT); it replaces the v0.6 text. The 90-record DEV audit (heldout-v0.7/dev-audit) was judged with these labels",
+   "outcomes": [
+    "needed_unrecoverable",
+    "ok",
+    "unsure"
+   ]
+  },
+  "primary_metric": "a record FAILS (is flagged) iff either of its two final verdicts is needed_unrecoverable or unsure, or it is incomplete. fail_rate = flagged / n, Wilson 95% (research.real_context_bench.wilson)",
+  "acceptance": {
+   "primary": "a record FAILS if EITHER final verdict is needed_unrecoverable or unsure, or if it is incomplete (fewer than two valid verdicts after re-judging). Fail rate = flagged / n with Wilson 95%. PASS iff the upper bound <= 0.10 (<= 7 of 150)",
+   "per_pointer_kind": "the same rates and Wilson 95% bounds per pointer kind, reported descriptively (no per-kind pass/fail; small cells are not powered)",
+   "overall_result": "v0.7 PASS iff verification required (0 violations, 0 runtime fail-safes, both rules arms) AND primary audit PASS",
+   "secondary": "needed_unrecoverable-only rate (Wilson 95%), agreement (raw, Cohen kappa over complete pairs), unsure verdict rate, splits by pointer kind and tool, token reduction"
+  },
+  "secondary": [
+   "needed_unrecoverable-only: records where either final verdict is needed_unrecoverable / n, Wilson 95%",
+   "inter-judge agreement over records with two final verdicts: raw and Cohen's kappa",
+   "unsure verdict rate",
+   "primary and needed_unrecoverable-only split by pointer kind (also in acceptance.per_pointer_kind) and by tool after unblinding",
+   "token reduction of each arm (pooled, per-item median) and of recoverable over lossless"
+  ],
+  "aggregation_code": "research/real_context_bench_v07_audit.py: a copy of research/real_context_bench_v06_audit.py (the v0.4 aggregation) adapted ONLY to the labels (needed -> needed_unrecoverable, not_needed -> ok) and the schema label; tests/test_real_context_bench_v07.py checks it equals v0.6 on relabelled inputs. Run via `-m research.real_context_bench_v07_test rejudge` and `audit-score`"
+ },
+ "freeze": {
+  "rule": "sha256 of this file (protocol.json.sha256), of every code file below and of the private sample files are committed and pushed before any TEST dossier is built; every v0.7 TEST phase refuses if any differs, if the LCC worktree is not at the pin, or if the judging text (protocol and private instructions.txt) differs from research.real_context_bench_v07_test.JUDGE_TEXT",
+  "files_sha256": {
+   "research/real_context_bench.py": "1d462543b39382113b1f03854d80f6850897f7591787c41c57c936f15604ec5e",
+   "research/real_context_bench_v02.py": "ccbfe9abbe109f3a11c014c9c7ff9040078fdcf273abad1b8392439ff75f7ce0",
+   "research/real_context_bench_v03.py": "4bf10daf00f9cf2613b2ab7c16cd3203ca1122f6fe1810cbb4b4bee2d2a73940",
+   "research/real_context_bench_v04.py": "d483b60c2b6ed463cf5a2783865a7c932202f6aa35d03ce8cddc751be77d4ead",
+   "research/real_context_bench_v05.py": "22ecb3590600fd536429e3b59ff3f2b376e38cca71261f21a3b969e493bb456b",
+   "research/hermes_context.py": "68793d14f76da188844e1158a08e066a731fd054f92636f15cd4d0b13d764006",
+   "research/real_context_bench_v06_heldout.py": "2c23cc9eaba4c2bc1bc15feb3f3cf4c576a30f1912d9b458eefb26bede65b9e8",
+   "research/real_context_bench_v07_heldout.py": "12c2c13ed4c1069fcb57d3222c002f76bcecbf9c0cab2320bd4bbc6b975c4a59",
+   "research/lossless_dedup_measure.py": "8d904ef78bffa83dfd76e42ef1c530e60277a51f138bb5b8fdf7547bdd5d6105",
+   "research/recoverable_dev_measure.py": "917610aacaa233d16919c4e5cd8489d6f17f714567a352373d9988481beaa887",
+   "research/recoverable_dev_v2.py": "0950d2eaf06f82bad059271d05164f5d9261c2eac5e28131acb06b127a8e854d",
+   "research/real_context_bench_v04_audit.py": "a54073344b6892aef1d116b13878e901045410070a6bb34ae20220ff69e9daa6",
+   "research/real_context_bench_v06_audit.py": "a5db2e9e3c0d94063b11ae472c740025572369d9b04e8e9303f7c49f7d76aacf",
+   "research/real_context_bench_v06_test.py": "2bc320f6e7431283ea606dc6748f3a5dac3556879bd1426d2d4944ea82b4d24b",
+   "research/real_context_bench_v07_audit.py": "8804c3c445c53f96d28639dba995730a930d679ce2abe2040a2901ce6ac16c87",
+   "research/real_context_bench_v07_test.py": "f4d23031acae8c0f71a7bb27777cc647a85905c1d084bd8f0b58a00e5cee87cf",
+   "tests/test_real_context_bench_v06.py": "e5fd1328a9e0a8ed5ac6e2096de3dcc36758407be865d248184b2364cf0f09e1",
+   "tests/test_real_context_bench_v07.py": "3883c23017d0272daa328719b91b822a35f01394ccf827007a031b7910eedff7",
+   "tests/test_recoverable_dev_measure.py": "71526bc4d1ca6cd84763637ae93f47b6dfc7a5aa4e417db476134591dda95f42",
+   "tests/test_hermes_context.py": "8b2cf758bfea88b04028c8316b11e4e3d84d3af5847390c5d0110061f7307eae"
+  }
+ }
+}
