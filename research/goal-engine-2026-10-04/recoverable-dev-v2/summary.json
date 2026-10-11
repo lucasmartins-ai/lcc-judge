@@ -1,0 +1,263 @@
+{
+ "schema": "recoverable-dev-measure/2",
+ "lcc": {
+  "worktree": "/Users/Master/lcc-wt-rules",
+  "commit": "f1c5ff72b1256a8e17b10fba3a9ce00f0adf15fa",
+  "branch": "feat/transcript-rules-policy",
+  "pr": 45
+ },
+ "workspace_root": null,
+ "sets": {
+  "claude_dev_326": {
+   "n": 326,
+   "violations": {
+    "verify_recoverable": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": {
+    "lossless": 0,
+    "recoverable": 0
+   },
+   "recoverability_check": {
+    "transcript_proxy": 326
+   },
+   "reduction_tokens": {
+    "lossless": {
+     "pooled": 0.0063,
+     "median_item": 0.002,
+     "max_item": 0.2931,
+     "items_reduced": 209
+    },
+    "recoverable": {
+     "pooled": 0.0448,
+     "median_item": 0.0072,
+     "max_item": 0.6495,
+     "items_reduced": 258
+    }
+   },
+   "decisions": {
+    "lossless": {
+     "keep": 19991,
+     "dedupe": 1704
+    },
+    "recoverable": {
+     "keep": 19580,
+     "dedupe": 1704,
+     "replace": 411
+    }
+   },
+   "pointers": {
+    "total": 411,
+    "items_with_pointer": 136,
+    "by_kind": {
+     "file_whole": 359,
+     "file_range": 52,
+     "command": 0
+    },
+    "replaced_chars": 2336629
+   },
+   "recoverable_keep_reasons": {
+    "not_recoverable": 14185,
+    "file_written_later": 2519,
+    "failed_result": 1688,
+    "pinned_recent": 560,
+    "call_before_latest_error": 263,
+    "latest_error_result": 245,
+    "command_output_changed_later": 59,
+    "pinned_recent_result": 56,
+    "named_in_goal_or_recent_turns": 5
+   }
+  },
+  "codex_v05_dev_141": {
+   "n": 141,
+   "violations": {
+    "verify_recoverable": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": {
+    "lossless": 0,
+    "recoverable": 0
+   },
+   "recoverability_check": {
+    "transcript_proxy": 141
+   },
+   "reduction_tokens": {
+    "lossless": {
+     "pooled": 0.0185,
+     "median_item": 0.0026,
+     "max_item": 0.5302,
+     "items_reduced": 114
+    },
+    "recoverable": {
+     "pooled": 0.1184,
+     "median_item": 0.0679,
+     "max_item": 0.5432,
+     "items_reduced": 128
+    }
+   },
+   "decisions": {
+    "lossless": {
+     "keep": 9235,
+     "dedupe": 1210
+    },
+    "recoverable": {
+     "keep": 8474,
+     "replace": 772,
+     "dedupe": 1199
+    }
+   },
+   "pointers": {
+    "total": 772,
+    "items_with_pointer": 108,
+    "by_kind": {
+     "file_whole": 43,
+     "file_range": 727,
+     "command": 2
+    },
+    "replaced_chars": 4233462
+   },
+   "recoverable_keep_reasons": {
+    "not_recoverable": 5491,
+    "failed_result": 1219,
+    "file_written_later": 757,
+    "command_output_changed_later": 402,
+    "pinned_recent": 226,
+    "pinned_recent_result": 145,
+    "latest_error_result": 106,
+    "call_before_latest_error": 102,
+    "named_in_goal_or_recent_turns": 26
+   }
+  },
+  "hermes_v06_spent_60": {
+   "n": 60,
+   "violations": {
+    "verify_recoverable": 0,
+    "independent": 0,
+    "runtime_fail_safe": 0
+   },
+   "degraded": {
+    "lossless": 0,
+    "recoverable": 0
+   },
+   "recoverability_check": {
+    "transcript_proxy": 60
+   },
+   "reduction_tokens": {
+    "lossless": {
+     "pooled": 0.0108,
+     "median_item": 0.0,
+     "max_item": 0.0819,
+     "items_reduced": 25
+    },
+    "recoverable": {
+     "pooled": 0.0299,
+     "median_item": 0.0017,
+     "max_item": 0.3007,
+     "items_reduced": 39
+    }
+   },
+   "decisions": {
+    "lossless": {
+     "keep": 8276,
+     "dedupe": 126
+    },
+    "recoverable": {
+     "keep": 8196,
+     "dedupe": 119,
+     "replace": 87
+    }
+   },
+   "pointers": {
+    "total": 87,
+    "items_with_pointer": 21,
+    "by_kind": {
+     "file_whole": 86,
+     "file_range": 1,
+     "command": 0
+    },
+    "replaced_chars": 718036
+   },
+   "recoverable_keep_reasons": {
+    "not_recoverable": 6802,
+    "file_written_later": 755,
+    "failed_result": 293,
+    "pinned_recent": 132,
+    "call_before_latest_error": 50,
+    "latest_error_result": 48,
+    "read_range_unknown": 44,
+    "pinned_recent_result": 41,
+    "duplicate_tool_use_id": 19,
+    "command_output_changed_later": 7,
+    "named_in_goal_or_recent_turns": 4,
+    "pinned_first_message": 1
+   }
+  }
+ },
+ "pooled_dev": {
+  "n": 527,
+  "violations": {
+   "verify_recoverable": 0,
+   "independent": 0,
+   "runtime_fail_safe": 0
+  },
+  "degraded": {
+   "lossless": 0,
+   "recoverable": 0
+  },
+  "recoverability_check": {
+   "transcript_proxy": 527
+  },
+  "reduction_tokens": {
+   "lossless": {
+    "pooled": 0.0111,
+    "median_item": 0.0016,
+    "max_item": 0.5302,
+    "items_reduced": 348
+   },
+   "recoverable": {
+    "pooled": 0.064,
+    "median_item": 0.0111,
+    "max_item": 0.6495,
+    "items_reduced": 425
+   }
+  },
+  "decisions": {
+   "lossless": {
+    "keep": 37502,
+    "dedupe": 3040
+   },
+   "recoverable": {
+    "keep": 36250,
+    "dedupe": 3022,
+    "replace": 1270
+   }
+  },
+  "pointers": {
+   "total": 1270,
+   "items_with_pointer": 265,
+   "by_kind": {
+    "file_whole": 488,
+    "file_range": 780,
+    "command": 2
+   },
+   "replaced_chars": 7288127
+  },
+  "recoverable_keep_reasons": {
+   "not_recoverable": 26478,
+   "file_written_later": 4031,
+   "failed_result": 3200,
+   "pinned_recent": 918,
+   "command_output_changed_later": 468,
+   "call_before_latest_error": 415,
+   "latest_error_result": 399,
+   "pinned_recent_result": 242,
+   "read_range_unknown": 44,
+   "named_in_goal_or_recent_turns": 35,
+   "duplicate_tool_use_id": 19,
+   "pinned_first_message": 1
+  }
+ },
+ "guard_trips": 0
+}

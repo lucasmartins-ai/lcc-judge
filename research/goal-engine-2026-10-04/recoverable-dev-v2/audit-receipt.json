@@ -1,0 +1,31 @@
+{
+ "schema": "recoverable-dev-audit/2",
+ "seed": 20261011,
+ "sampled": 90,
+ "per_file": {
+  "g1": 45,
+  "g2": 45
+ },
+ "by_kind": {
+  "file_range": 44,
+  "file_whole": 44,
+  "command": 2
+ },
+ "by_set": {
+  "claude_dev_326": 44,
+  "codex_v05_dev_141": 39,
+  "hermes_v06_spent_60": 7
+ },
+ "population": {
+  "file_whole": 488,
+  "file_range": 780,
+  "command": 2
+ },
+ "sha256": {
+  "g1.jsonl": "47dcd00e0154342be7cfb8f3ca84d27359d1f985bd6655f2178e5efebf72eb98",
+  "g2.jsonl": "b1dd609811a095fabee5d03930b5dac0596d51dda31f2ef9376a7b6d0c58b00b",
+  "key.jsonl": "2f010b798b48c6da17b32566c7082cf8e0b997680b1e1d198792a7e32672e395"
+ },
+ "instructions_sha256": "9c0be3f5243cbafda4913a69639281fcd840854e8425577b37b3dc65b004e944",
+ "verdicts": "pending (unjudged)"
+}
