@@ -1,6 +1,6 @@
 # Real-context bench v0.1 — Jev arms — results 2026-10-09
 
-Exploratory (INFERIDO): one pass, 60 real Claude sessions, 47/60 labels LLM-made, probes
+Exploratory (INFERIDO): one pass, 60 real Claude contexts (items), 47/60 labels LLM-made, probes
 are mechanical proxies of taxonomy-v2 `context_needed`, token counts heuristic.
 Counts only; per-item data stays in `~/.lcc/bench/real-context-v0/`. Score: `score.json`.
 

@@ -4,7 +4,7 @@ This card describes the local clean research control `models/exp02e-unfreeze2`.
 It is not a released checkpoint or a validated replacement for Laya/Jev.
 
 **Status 2026-10-11: not adopted.** No candidate below passed outside its training
-data, and on 60 real Claude sessions the shadow provider removed 0 tokens
+data, and on 60 real Claude contexts (items) the shadow provider removed 0 tokens
 (`research/goal-engine-2026-10-04/real-context-bench-v0/RESULTS.md`). LCC shipped a
 deterministic rules policy instead (lucasmartins-ai/lcc#45). Further training waits
 for outcome labels on real requests. See [STATUS.md](STATUS.md).

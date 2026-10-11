@@ -72,7 +72,7 @@ disco não dá para medir offline; ele vai sair do coletor de pedidos.
 
 ## Onde estamos
 
-**Benchmark com sessões reais (Claude, 60 sessões congeladas, 49 itens com checagem).**
+**Benchmark com sessões reais (Claude, 60 contextos reais congelados (itens), 49 com checagem).**
 Fontes: `R/real-context-bench-v0/RESULTS.md`, `R/real-context-bench-v0.1/RESULTS.md`,
 `R/real-context-bench-v0.2/RESULTS.md`, `R/lossless-dedup-v1/RESULTS.md`.
 
@@ -116,8 +116,11 @@ disco o recuperável acrescenta uns 0,3 ponto (`R/recoverable-v0.8/RESULTS.md`).
 
 ## O que funcionou
 
-- Trocar o corpus técnico escrito por nós por pedidos reais do dono. A concordância subiu
-  de 0,417 para 0,963 em itens novos.
+- Trocar o corpus técnico escrito por nós por pedidos reais do dono. No corpus técnico, a
+  concordância do dono foi 0,417 (`R/human-review-v2-pt/RESULTS.md`). A taxonomia nova teve
+  26/27 = 0,963 na confirmação de itens novos de alta confiança e 41/56 = 0,732 nos itens
+  difíceis (`R/request-taxonomy-v1/README.md`). São populações e medidas diferentes, e
+  nenhuma é taxa da população; não se comparam como um antes e depois.
 - O método: pré-registro com hash, sessões disjuntas, dois juízes por registro e falhas
   publicadas. Foi isso que pegou o falso sucesso da v0.2 e o vazamento de sessões da v0.3.
 - Modo sem perda: corte pequeno, mas com prova mecânica e sem precisar de juiz.
@@ -130,7 +133,10 @@ disco o recuperável acrescenta uns 0,3 ponto (`R/recoverable-v0.8/RESULTS.md`).
 - Todos os modelos locais aprendidos: P1, semântico, relação compacta, suporte, fatorado,
   confirmação variada e intérprete de objetivo (`docs/08-roadmap.md`).
 - Regras com perda em Codex: reprovaram duas auditorias seguidas. O ajuste feito no DEV
-  (9/100) não se manteve no TEST (36/132).
+  (9/100) não se manteve no TEST (36/132). As duas taxas não se comparam direto: no DEV
+  havia um juiz por registro, no TEST um registro é marcado se qualquer um de dois juízes
+  marcar. Com um juiz, o TEST fica em ~54/264 = 0,20 (`R/real-context-bench-v0.5/RESULTS.md`,
+  nota de revisão 3).
 - Checagens (probes) como prova de retenção: copiam os predicados das regras e não
   enxergaram três bugs reais (`R/real-context-bench-v0.2/RESULTS.md`).
 - Recuperável sem disco: depois da correção sobra quase nada acima do modo sem perda.
@@ -157,6 +163,7 @@ disco o recuperável acrescenta uns 0,3 ponto (`R/recoverable-v0.8/RESULTS.md`).
 O caminho está mais sólido do que estava há uma semana, porque agora mede o que importa
 (pedidos e sessões reais) e aceita resultado negativo. O ponto fraco é que ainda não medimos
 o resultado da tarefa, só a sobrevivência de blocos e o julgamento de LLMs sobre cortes.
-Enquanto o corte seguro for de 1% a 4%, o valor do LCC está na garantia (sem perda e
+Enquanto o corte seguro for de cerca de 1% offline (sem perda 0,0093, recuperável 0,0123,
+`R/recoverable-v0.8/RESULTS.md`; os ~4% da v0.6/v0.7 vinham de políticas que a v0.8 mostrou inseguras), o valor do LCC está na garantia (sem perda e
 verificável) e no MSI (roteamento, verificação e recibo), não na compressão. Falta provar,
 com tarefas reais, que roteamento e verificação economizam custo sem piorar o resultado.

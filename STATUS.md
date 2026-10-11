@@ -103,8 +103,9 @@ approved by the owner). Every other real-session arm ran offline at $0
    None measures whether the agent finished the task. This is the main gap.
 2. **Measure recoverable live.** The disk-check mode can only be measured in real use,
    through the opt-in request log (#40).
-3. **Laya on the same bench.** Run Laya on the frozen real-session sets (needs
-   `client=LayaClient()` to avoid the Jev fall-through noted in the v0 protocol).
+3. **Laya on the same bench.** Run Laya on the frozen real-session sets. The Jev
+   fall-through noted in the v0 protocol applies only to the `dd5dd80` pin; it is fixed on
+   main by lucasmartins-ai/lcc#43 (`351a44f`, merged 2026-10-09).
 4. **Jev transcript after #44.** v0.1 transcript numbers are invalid; not re-measured.
 5. **Learned judge only after outcome labels.** No more training on authored corpora;
    train only once real requests carry outcome labels.

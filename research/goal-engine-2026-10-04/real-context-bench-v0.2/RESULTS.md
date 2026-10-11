@@ -1,6 +1,6 @@
 # Real-context bench v0.2 — offline rules arm — results 2026-10-09
 
-INFERIDO (exploratory): one offline pass, 60 real Claude sessions, 47/60 labels LLM-made, probes
+INFERIDO (exploratory): one offline pass, 60 real Claude contexts (items), 47/60 labels LLM-made, probes
 are mechanical proxies of taxonomy-v2 `context_needed`, token counts heuristic
 (`approximate:heuristic`). Counts only; per-item data stays in `~/.lcc/bench/real-context-v0/`.
 Score: `score.json`. Freeze commit `1239766` (pushed 2026-10-09 before the run, 19:00:48Z).
@@ -89,7 +89,7 @@ trips over every arm, including jev_transcript's 25 v0.1 trips; the pre-register
 
 ## Reading
 
-On the same 60 real sessions, the offline rules policy cuts ~39% of tokens (pooled and median) with
+On the same 60 real contexts (items), the offline rules policy cuts ~39% of tokens (pooled and median) with
 no probe loss, in milliseconds, with no API. That matches dev (326 items: 323/323, .389). It beats
 jev_block (3.5% cut, $43.52) on both conditions. Given the limits above (copied predicates, and three
 policy bugs found after the run that these probes cannot detect), the ~39% cut stands as measured
