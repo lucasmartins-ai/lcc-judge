@@ -1,0 +1,92 @@
+{
+ "schema": "real-context-bench-heldout/0.7",
+ "source": "hermes",
+ "seed": 20261014,
+ "n_max": 80,
+ "per_session_max": 2,
+ "eligibility": "same-session context before the prompt with >= 1 assistant turn and >= 1 tool result",
+ "exclusion": "session_hash / path / id / raw sid in any JSON/JSONL under ~/.lcc/bench (incl. v0.6 TEST)",
+ "label_precedence": "owner v2 > taxonomy-v2 LLM pass > v0.4/v0.5/v0.6 LLM labels > llm_v07_hermes_v2_rules (LLM, marked)",
+ "stats": {
+  "indexed": 1662,
+  "imported_hermes": 1626,
+  "unlocated": 5,
+  "mapped": 1657,
+  "with_assistant_and_tool_result": 1368,
+  "excluded_prior_prompts": 735,
+  "excluded_prior_sessions": 53,
+  "eligible_sessions": 93,
+  "eligible_prompts": 676,
+  "drawn": 169,
+  "drawn_label_sources": {
+   "llm_v07_hermes_v2_rules": 122,
+   "llm_v2_pass": 45,
+   "owner_confirmed_v2": 2
+  },
+  "drawn_low_confidence": 10,
+  "eligible_per_stratum": {
+   "UNKNOWN": 8,
+   "approve_or_pick": 39,
+   "correct_approach_or_rule": 28,
+   "environment_and_infra": 7,
+   "external_accounts_and_comms": 10,
+   "failure_report": 8,
+   "general_question": 1,
+   "git_ship": 3,
+   "project_audit_or_direction": 3,
+   "revise_recent_output": 13,
+   "specified_task": 8,
+   "supply_fact_or_step_done": 13,
+   "task_status_or_control": 18
+  },
+  "sampled": 80,
+  "sampled_per_stratum": {
+   "UNKNOWN": 8,
+   "approve_or_pick": 8,
+   "correct_approach_or_rule": 8,
+   "environment_and_infra": 7,
+   "external_accounts_and_comms": 7,
+   "failure_report": 7,
+   "general_question": 1,
+   "git_ship": 3,
+   "project_audit_or_direction": 3,
+   "revise_recent_output": 7,
+   "specified_task": 7,
+   "supply_fact_or_step_done": 7,
+   "task_status_or_control": 7
+  },
+  "sampled_label_sources": {
+   "llm_v07_hermes_v2_rules": 62,
+   "llm_v2_pass": 17,
+   "owner_confirmed_v2": 1
+  },
+  "sampled_sessions": 63,
+  "max_per_session": 2,
+  "prior_overlap": {
+   "session_hash": 0,
+   "path": 0,
+   "id": 0,
+   "sid": 0,
+   "raw_sid_in_prior_path": 0,
+   "v06_test_sessions": 0
+  },
+  "prior_keys": {
+   "session_hash": 507,
+   "path": 525,
+   "id": 219864,
+   "sid": 53
+  }
+ },
+ "test_dossiers_built": 0,
+ "dev_measurement_before_receipt": 0,
+ "sha256": {
+  "test-sample.json": "6a3da43861b354519a9cd8ccdf14c49d0781f671523323b7e0c53ea1ec1710ad",
+  "labels-llm-v2.jsonl": "03dc77d3edc0078ed0c3571e83f2a1895c59b00e1d442aed906297c3ca293eb4"
+ },
+ "code_sha256": {
+  "research/hermes_context.py": "68793d14f76da188844e1158a08e066a731fd054f92636f15cd4d0b13d764006",
+  "research/real_context_bench_v06_heldout.py": "2c23cc9eaba4c2bc1bc15feb3f3cf4c576a30f1912d9b458eefb26bede65b9e8",
+  "research/real_context_bench_v07_heldout.py": "12c2c13ed4c1069fcb57d3222c002f76bcecbf9c0cab2320bd4bbc6b975c4a59",
+  "tests/test_hermes_context.py": "8b2cf758bfea88b04028c8316b11e4e3d84d3af5847390c5d0110061f7307eae"
+ }
+}
