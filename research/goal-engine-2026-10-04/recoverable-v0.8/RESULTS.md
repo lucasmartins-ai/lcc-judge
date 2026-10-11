@@ -89,3 +89,16 @@ verification is 0/0/0, and the pooled reduction is .0126.
 - Recommended configuration: `rules_mode=recoverable` with `workspace_root` (so the disk check runs) and command
   pointers off (the default). Whether recoverable is worth enabling over lossless at this margin is a product
   decision.
+
+## Follow-up: disk-authoritative file pointers (LCC 7c75761, 2026-10-11)
+
+Owner decision: with the disk check on, a file whose current content is identical to the removed output may be
+replaced even if opaque commands ran later. At LCC `7c75761`, when `workspace_root` is set the disk decides each
+file pointer (exists, resolves inside the root or its own directory, regular file of at most 4 MiB, UTF-8, bytes
+equal to the removed whole file or line range; re-hashed right before emit). The transcript-proxy rules above,
+which removed 1862 pointers as `file_written_later`, then no longer apply to those reads.
+
+Without `workspace_root` the decisions are unchanged: a golden test in LCC pins the 4c39161 output for a fixed
+synthetic transcript. The numbers in this file are all transcript-proxy numbers. The dossiers have no disk
+snapshot and the historical files have changed since, so no offline bench can measure the disk mode. Real-use
+numbers have to come from the opt-in request log.
