@@ -1,0 +1,89 @@
+{
+ "schema": "real-context-bench/0.7-audit",
+ "key_run_join_mismatches": 0,
+ "rejudge_requested": {},
+ "rejudge_substituted": 0,
+ "n": 54,
+ "needed_unrecoverable": 0,
+ "unsure": 1,
+ "incomplete": 0,
+ "ok": 53,
+ "primary_flagged": {
+  "k": 1,
+  "rate": 0.0185,
+  "wilson95": [
+   0.0033,
+   0.0977
+  ]
+ },
+ "secondary_needed_unrecoverable_only": {
+  "k": 0,
+  "rate": 0.0,
+  "wilson95": [
+   0.0,
+   0.0664
+  ]
+ },
+ "acceptance": {
+  "upper_wilson95": 0.0977,
+  "threshold": 0.1,
+  "result": "PASS"
+ },
+ "agreement": {
+  "pairs": 54,
+  "agree": 54,
+  "raw": 1.0,
+  "cohen_kappa": 1.0
+ },
+ "unsure_verdict_rate": 0.0185,
+ "by_pointer_kind": {
+  "file_whole": {
+   "n": 54,
+   "needed_unrecoverable": 0,
+   "unsure": 1,
+   "incomplete": 0,
+   "ok": 53,
+   "primary_flagged": {
+    "k": 1,
+    "rate": 0.0185,
+    "wilson95": [
+     0.0033,
+     0.0977
+    ]
+   },
+   "secondary_needed_unrecoverable_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.0664
+    ]
+   }
+  }
+ },
+ "by_tool": {
+  "read_file": {
+   "n": 54,
+   "needed_unrecoverable": 0,
+   "unsure": 1,
+   "incomplete": 0,
+   "ok": 53,
+   "primary_flagged": {
+    "k": 1,
+    "rate": 0.0185,
+    "wilson95": [
+     0.0033,
+     0.0977
+    ]
+   },
+   "secondary_needed_unrecoverable_only": {
+    "k": 0,
+    "rate": 0.0,
+    "wilson95": [
+     0.0,
+     0.0664
+    ]
+   }
+  }
+ }
+}
