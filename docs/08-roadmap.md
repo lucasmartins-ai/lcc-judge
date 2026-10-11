@@ -1,6 +1,18 @@
 # 08 — Roadmap (v0)
 
-Status: Sprint 0. Each sprint has a **gate**: a measured condition that must hold before
+## Status 2026-10-11
+
+- Sprints 3+ (learned specialist) are blocked: no learned candidate passed outside training;
+  the checkpoint stays shadow-only and is not adopted.
+- Shipped in LCC instead: request log (#40), Jev request fitting (#44), offline rules
+  provider with lossless default and recoverable mode (#45).
+- Real-session bench: Jev block .035 pooled token reduction; lossy rules fail blind audits
+  (v0.4, v0.5); lossless and recoverable about .01. Laya not run on real sessions.
+- Next gate: outcome-based evaluation and live measurement of recoverable via the request
+  log; train a learned judge only after real requests carry outcome labels.
+- Details and receipts: [STATUS.md](../STATUS.md).
+
+Original status: Sprint 0. Each sprint has a **gate**: a measured condition that must hold before
 the next sprint's investment. Gates exist to make overengineering expensive (prompt §42).
 
 ## Sprint 0 — Discovery (this document set)

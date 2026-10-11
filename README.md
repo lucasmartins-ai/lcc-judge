@@ -6,6 +6,14 @@ context and lower total cost than the general Laya/Jev decision path inside LCC.
 The contribution is evaluated as **engine + LCC**, with task outcomes and preserved
 evidence as the deciding measurements.
 
+> **Current state (2026-10-11): start with [STATUS.md](STATUS.md).** No learned
+> candidate passed outside training; the checkpoint stays shadow-only and is not
+> adopted. What shipped is deterministic, in LCC: the opt-in request log (#40), Jev
+> request fitting (#44) and the offline `rules` provider with lossless (default) and
+> recoverable modes (#45). On real sessions Jev block mode cuts 3.5% of tokens, lossy
+> rules failed two blind audits, and lossless/recoverable cut about 1%. Laya has not
+> been run on the real-session bench. The history below is kept as written.
+
 The neural engine ranks `(objective, block)` pairs using an adapted ModernBERT
 encoder. Its operation, `rank_context`, runs offline after explicit artifact setup.
 A separate dependency-free `rank_observations` operation retrieves explicit
