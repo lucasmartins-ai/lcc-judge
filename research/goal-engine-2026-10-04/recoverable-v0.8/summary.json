@@ -1,0 +1,1066 @@
+{
+ "schema": "recoverable-v0.8/1",
+ "pins": {
+  "old": {
+   "commit": "653eeae0678f7ae5290535e66473f557fe69b98d",
+   "mode": "recoverable",
+   "allow_command_pointers": null
+  },
+  "new": {
+   "commit": "4c3916132ef1c6b3c2a11e4d636ff90af3a87342",
+   "mode": "recoverable",
+   "allow_command_pointers": null
+  },
+  "new_cmd": {
+   "commit": "4c3916132ef1c6b3c2a11e4d636ff90af3a87342",
+   "mode": "recoverable",
+   "allow_command_pointers": true
+  },
+  "new_lossless": {
+   "commit": "4c3916132ef1c6b3c2a11e4d636ff90af3a87342",
+   "mode": "lossless",
+   "allow_command_pointers": null
+  }
+ },
+ "worktrees": {
+  "old": "detached worktree of LCC at 653eeae (outside ~/LCC)",
+  "new": "feat/transcript-rules-policy (PR #45)"
+ },
+ "workspace_root": null,
+ "checker": "research.recoverable_check_v4.independent_check_v4 + dedupe check",
+ "comparisons": {
+  "new": {
+   "sets": {
+    "claude_frozen_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 38,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 16,
+      "degraded": 0,
+      "replaced": 38,
+      "replaced_by_kind": {
+       "file_whole": 26,
+       "file_range": 12,
+       "command": 0
+      },
+      "items_with_pointer": 16,
+      "in_tokens": 3051935,
+      "out_tokens": 3007314,
+      "pooled_reduction": 0.0146
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 0,
+      "replaced_by_kind": {
+       "file_whole": 0,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 0,
+      "in_tokens": 3051935,
+      "out_tokens": 3041560,
+      "pooled_reduction": 0.0034
+     },
+     "removed_by_fix": 38,
+     "removed_by_reason": {
+      "file_written_later": 38
+     },
+     "removed_by_kind": {
+      "file_whole": 26,
+      "file_range": 12,
+      "command": 0
+     }
+    },
+    "claude_fresh_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 30,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 17,
+      "degraded": 0,
+      "replaced": 32,
+      "replaced_by_kind": {
+       "file_whole": 22,
+       "file_range": 10,
+       "command": 0
+      },
+      "items_with_pointer": 18,
+      "in_tokens": 3185755,
+      "out_tokens": 3146512,
+      "pooled_reduction": 0.0123
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 2,
+      "replaced_by_kind": {
+       "file_whole": 2,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 1,
+      "in_tokens": 3185755,
+      "out_tokens": 3178093,
+      "pooled_reduction": 0.0024
+     },
+     "removed_by_fix": 30,
+     "removed_by_reason": {
+      "file_written_later": 29,
+      "command_output_changed_later": 1
+     },
+     "removed_by_kind": {
+      "file_whole": 20,
+      "file_range": 10,
+      "command": 0
+     }
+    },
+    "claude_dev_326": {
+     "items": 326,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 395,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 132,
+      "degraded": 0,
+      "replaced": 404,
+      "replaced_by_kind": {
+       "file_whole": 352,
+       "file_range": 52,
+       "command": 0
+      },
+      "items_with_pointer": 134,
+      "in_tokens": 12060546,
+      "out_tokens": 11539262,
+      "pooled_reduction": 0.0432
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 9,
+      "replaced_by_kind": {
+       "file_whole": 9,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 4,
+      "in_tokens": 12060546,
+      "out_tokens": 11979552,
+      "pooled_reduction": 0.0067
+     },
+     "removed_by_fix": 395,
+     "removed_by_reason": {
+      "file_written_later": 393,
+      "command_output_changed_later": 2
+     },
+     "removed_by_kind": {
+      "file_whole": 343,
+      "file_range": 52,
+      "command": 0
+     }
+    },
+    "codex_v04_test_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 274,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 39,
+      "degraded": 0,
+      "replaced": 309,
+      "replaced_by_kind": {
+       "file_whole": 18,
+       "file_range": 291,
+       "command": 0
+      },
+      "items_with_pointer": 43,
+      "in_tokens": 3576237,
+      "out_tokens": 3231767,
+      "pooled_reduction": 0.0963
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 7,
+      "replaced_by_kind": {
+       "file_whole": 1,
+       "file_range": 6,
+       "command": 0
+      },
+      "items_with_pointer": 6,
+      "in_tokens": 3576237,
+      "out_tokens": 3519063,
+      "pooled_reduction": 0.016
+     },
+     "removed_by_fix": 302,
+     "removed_by_reason": {
+      "file_written_later": 269,
+      "command_output_changed_later": 17,
+      "command_pointers_disabled": 11,
+      "dedupe_lossless": 5
+     },
+     "removed_by_kind": {
+      "file_whole": 17,
+      "file_range": 285,
+      "command": 0
+     }
+    },
+    "codex_v05_dev_141": {
+     "items": 141,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 698,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 94,
+      "degraded": 0,
+      "replaced": 771,
+      "replaced_by_kind": {
+       "file_whole": 42,
+       "file_range": 727,
+       "command": 2
+      },
+      "items_with_pointer": 108,
+      "in_tokens": 8221436,
+      "out_tokens": 7247904,
+      "pooled_reduction": 0.1184
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 37,
+      "replaced_by_kind": {
+       "file_whole": 9,
+       "file_range": 28,
+       "command": 0
+      },
+      "items_with_pointer": 19,
+      "in_tokens": 8221436,
+      "out_tokens": 8004448,
+      "pooled_reduction": 0.0264
+     },
+     "removed_by_fix": 734,
+     "removed_by_reason": {
+      "file_written_later": 690,
+      "command_output_changed_later": 29,
+      "dedupe_lossless": 8,
+      "command_pointers_disabled": 7
+     },
+     "removed_by_kind": {
+      "file_whole": 33,
+      "file_range": 699,
+      "command": 2
+     }
+    },
+    "codex_v05_test_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 256,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 37,
+      "degraded": 0,
+      "replaced": 282,
+      "replaced_by_kind": {
+       "file_whole": 7,
+       "file_range": 272,
+       "command": 3
+      },
+      "items_with_pointer": 38,
+      "in_tokens": 2994617,
+      "out_tokens": 2683055,
+      "pooled_reduction": 0.104
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 7,
+      "replaced_by_kind": {
+       "file_whole": 0,
+       "file_range": 7,
+       "command": 0
+      },
+      "items_with_pointer": 6,
+      "in_tokens": 2994617,
+      "out_tokens": 2933661,
+      "pooled_reduction": 0.0204
+     },
+     "removed_by_fix": 275,
+     "removed_by_reason": {
+      "file_written_later": 243,
+      "command_output_changed_later": 23,
+      "dedupe_lossless": 5,
+      "command_pointers_disabled": 4
+     },
+     "removed_by_kind": {
+      "file_whole": 7,
+      "file_range": 265,
+      "command": 3
+     }
+    },
+    "hermes_v06_test_60_spent": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 82,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 21,
+      "degraded": 0,
+      "replaced": 82,
+      "replaced_by_kind": {
+       "file_whole": 81,
+       "file_range": 1,
+       "command": 0
+      },
+      "items_with_pointer": 21,
+      "in_tokens": 6319004,
+      "out_tokens": 6140876,
+      "pooled_reduction": 0.0282
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 0,
+      "replaced_by_kind": {
+       "file_whole": 0,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 0,
+      "in_tokens": 6319004,
+      "out_tokens": 6250786,
+      "pooled_reduction": 0.0108
+     },
+     "removed_by_fix": 82,
+     "removed_by_reason": {
+      "file_written_later": 79,
+      "dedupe_lossless": 3
+     },
+     "removed_by_kind": {
+      "file_whole": 81,
+      "file_range": 1,
+      "command": 0
+     }
+    },
+    "hermes_v07_test_80_spent": {
+     "items": 80,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 122,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 22,
+      "degraded": 0,
+      "replaced": 134,
+      "replaced_by_kind": {
+       "file_whole": 134,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 22,
+      "in_tokens": 6142224,
+      "out_tokens": 5931310,
+      "pooled_reduction": 0.0343
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 12,
+      "replaced_by_kind": {
+       "file_whole": 12,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 2,
+      "in_tokens": 6142224,
+      "out_tokens": 6082499,
+      "pooled_reduction": 0.0097
+     },
+     "removed_by_fix": 122,
+     "removed_by_reason": {
+      "file_written_later": 121,
+      "dedupe_lossless": 1
+     },
+     "removed_by_kind": {
+      "file_whole": 122,
+      "file_range": 0,
+      "command": 0
+     }
+    }
+   },
+   "totals": {
+    "items": 847,
+    "subset_violations": 0,
+    "removed_by_fix": 1978,
+    "removed_by_reason": {
+     "file_written_later": 1862,
+     "command_output_changed_later": 72,
+     "command_pointers_disabled": 22,
+     "dedupe_lossless": 22
+    },
+    "old_replaced": 2052,
+    "old_errors": 0,
+    "old_items_with_violation": 378,
+    "new_replaced": 74,
+    "new_errors": 0,
+    "new_items_with_violation": 0,
+    "new_violations": {
+     "verify_recoverable": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    },
+    "old_violations": {
+     "verify_recoverable": 0,
+     "independent_v4": 1895,
+     "runtime_fail_safe": 0
+    },
+    "pooled_reduction": {
+     "old": 0.0576,
+     "new": 0.0123
+    }
+   }
+  },
+  "new_cmd": {
+   "sets": {
+    "claude_frozen_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 38,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 16,
+      "degraded": 0,
+      "replaced": 38,
+      "replaced_by_kind": {
+       "file_whole": 26,
+       "file_range": 12,
+       "command": 0
+      },
+      "items_with_pointer": 16,
+      "in_tokens": 3051935,
+      "out_tokens": 3007314,
+      "pooled_reduction": 0.0146
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 0,
+      "replaced_by_kind": {
+       "file_whole": 0,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 0,
+      "in_tokens": 3051935,
+      "out_tokens": 3041560,
+      "pooled_reduction": 0.0034
+     },
+     "removed_by_fix": 38,
+     "removed_by_reason": {
+      "file_written_later": 38
+     },
+     "removed_by_kind": {
+      "file_whole": 26,
+      "file_range": 12,
+      "command": 0
+     }
+    },
+    "claude_fresh_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 30,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 17,
+      "degraded": 0,
+      "replaced": 32,
+      "replaced_by_kind": {
+       "file_whole": 22,
+       "file_range": 10,
+       "command": 0
+      },
+      "items_with_pointer": 18,
+      "in_tokens": 3185755,
+      "out_tokens": 3146512,
+      "pooled_reduction": 0.0123
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 2,
+      "replaced_by_kind": {
+       "file_whole": 2,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 1,
+      "in_tokens": 3185755,
+      "out_tokens": 3178093,
+      "pooled_reduction": 0.0024
+     },
+     "removed_by_fix": 30,
+     "removed_by_reason": {
+      "file_written_later": 29,
+      "command_output_changed_later": 1
+     },
+     "removed_by_kind": {
+      "file_whole": 20,
+      "file_range": 10,
+      "command": 0
+     }
+    },
+    "claude_dev_326": {
+     "items": 326,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 395,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 132,
+      "degraded": 0,
+      "replaced": 404,
+      "replaced_by_kind": {
+       "file_whole": 352,
+       "file_range": 52,
+       "command": 0
+      },
+      "items_with_pointer": 134,
+      "in_tokens": 12060546,
+      "out_tokens": 11539262,
+      "pooled_reduction": 0.0432
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 9,
+      "replaced_by_kind": {
+       "file_whole": 9,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 4,
+      "in_tokens": 12060546,
+      "out_tokens": 11979552,
+      "pooled_reduction": 0.0067
+     },
+     "removed_by_fix": 395,
+     "removed_by_reason": {
+      "file_written_later": 393,
+      "command_output_changed_later": 2
+     },
+     "removed_by_kind": {
+      "file_whole": 343,
+      "file_range": 52,
+      "command": 0
+     }
+    },
+    "codex_v04_test_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 274,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 39,
+      "degraded": 0,
+      "replaced": 309,
+      "replaced_by_kind": {
+       "file_whole": 18,
+       "file_range": 291,
+       "command": 0
+      },
+      "items_with_pointer": 43,
+      "in_tokens": 3576237,
+      "out_tokens": 3231767,
+      "pooled_reduction": 0.0963
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 18,
+      "replaced_by_kind": {
+       "file_whole": 1,
+       "file_range": 6,
+       "command": 11
+      },
+      "items_with_pointer": 8,
+      "in_tokens": 3576237,
+      "out_tokens": 3510607,
+      "pooled_reduction": 0.0184
+     },
+     "removed_by_fix": 291,
+     "removed_by_reason": {
+      "file_written_later": 269,
+      "command_output_changed_later": 17,
+      "dedupe_lossless": 5
+     },
+     "removed_by_kind": {
+      "file_whole": 17,
+      "file_range": 274,
+      "command": 0
+     }
+    },
+    "codex_v05_dev_141": {
+     "items": 141,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 698,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 94,
+      "degraded": 0,
+      "replaced": 771,
+      "replaced_by_kind": {
+       "file_whole": 42,
+       "file_range": 727,
+       "command": 2
+      },
+      "items_with_pointer": 108,
+      "in_tokens": 8221436,
+      "out_tokens": 7247904,
+      "pooled_reduction": 0.1184
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 44,
+      "replaced_by_kind": {
+       "file_whole": 9,
+       "file_range": 28,
+       "command": 7
+      },
+      "items_with_pointer": 23,
+      "in_tokens": 8221436,
+      "out_tokens": 8001616,
+      "pooled_reduction": 0.0267
+     },
+     "removed_by_fix": 727,
+     "removed_by_reason": {
+      "file_written_later": 690,
+      "command_output_changed_later": 29,
+      "dedupe_lossless": 8
+     },
+     "removed_by_kind": {
+      "file_whole": 33,
+      "file_range": 694,
+      "command": 0
+     }
+    },
+    "codex_v05_test_60": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 256,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 37,
+      "degraded": 0,
+      "replaced": 282,
+      "replaced_by_kind": {
+       "file_whole": 7,
+       "file_range": 272,
+       "command": 3
+      },
+      "items_with_pointer": 38,
+      "in_tokens": 2994617,
+      "out_tokens": 2683055,
+      "pooled_reduction": 0.104
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 11,
+      "replaced_by_kind": {
+       "file_whole": 0,
+       "file_range": 7,
+       "command": 4
+      },
+      "items_with_pointer": 6,
+      "in_tokens": 2994617,
+      "out_tokens": 2932718,
+      "pooled_reduction": 0.0207
+     },
+     "removed_by_fix": 271,
+     "removed_by_reason": {
+      "file_written_later": 243,
+      "command_output_changed_later": 23,
+      "dedupe_lossless": 5
+     },
+     "removed_by_kind": {
+      "file_whole": 7,
+      "file_range": 264,
+      "command": 0
+     }
+    },
+    "hermes_v06_test_60_spent": {
+     "items": 60,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 82,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 21,
+      "degraded": 0,
+      "replaced": 82,
+      "replaced_by_kind": {
+       "file_whole": 81,
+       "file_range": 1,
+       "command": 0
+      },
+      "items_with_pointer": 21,
+      "in_tokens": 6319004,
+      "out_tokens": 6140876,
+      "pooled_reduction": 0.0282
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 0,
+      "replaced_by_kind": {
+       "file_whole": 0,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 0,
+      "in_tokens": 6319004,
+      "out_tokens": 6250786,
+      "pooled_reduction": 0.0108
+     },
+     "removed_by_fix": 82,
+     "removed_by_reason": {
+      "file_written_later": 79,
+      "dedupe_lossless": 3
+     },
+     "removed_by_kind": {
+      "file_whole": 81,
+      "file_range": 1,
+      "command": 0
+     }
+    },
+    "hermes_v07_test_80_spent": {
+     "items": 80,
+     "subset_violations": 0,
+     "in_token_mismatch": 0,
+     "old": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 122,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 22,
+      "degraded": 0,
+      "replaced": 134,
+      "replaced_by_kind": {
+       "file_whole": 134,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 22,
+      "in_tokens": 6142224,
+      "out_tokens": 5931310,
+      "pooled_reduction": 0.0343
+     },
+     "new": {
+      "errors": 0,
+      "violations": {
+       "verify_recoverable": 0,
+       "independent_v4": 0,
+       "runtime_fail_safe": 0
+      },
+      "items_with_violation": 0,
+      "degraded": 0,
+      "replaced": 12,
+      "replaced_by_kind": {
+       "file_whole": 12,
+       "file_range": 0,
+       "command": 0
+      },
+      "items_with_pointer": 2,
+      "in_tokens": 6142224,
+      "out_tokens": 6082499,
+      "pooled_reduction": 0.0097
+     },
+     "removed_by_fix": 122,
+     "removed_by_reason": {
+      "file_written_later": 121,
+      "dedupe_lossless": 1
+     },
+     "removed_by_kind": {
+      "file_whole": 122,
+      "file_range": 0,
+      "command": 0
+     }
+    }
+   },
+   "totals": {
+    "items": 847,
+    "subset_violations": 0,
+    "removed_by_fix": 1956,
+    "removed_by_reason": {
+     "file_written_later": 1862,
+     "command_output_changed_later": 72,
+     "dedupe_lossless": 22
+    },
+    "old_replaced": 2052,
+    "old_errors": 0,
+    "old_items_with_violation": 378,
+    "new_replaced": 96,
+    "new_errors": 0,
+    "new_items_with_violation": 0,
+    "new_violations": {
+     "verify_recoverable": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    },
+    "old_violations": {
+     "verify_recoverable": 0,
+     "independent_v4": 1895,
+     "runtime_fail_safe": 0
+    },
+    "pooled_reduction": {
+     "old": 0.0576,
+     "new": 0.0126
+    }
+   }
+  }
+ },
+ "lossless_new": {
+  "sets": {
+   "claude_frozen_60": {
+    "pooled_reduction": 0.0034,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "claude_fresh_60": {
+    "pooled_reduction": 0.0016,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "claude_dev_326": {
+    "pooled_reduction": 0.0063,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "codex_v04_test_60": {
+    "pooled_reduction": 0.0125,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "codex_v05_dev_141": {
+    "pooled_reduction": 0.0185,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "codex_v05_test_60": {
+    "pooled_reduction": 0.0153,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "hermes_v06_test_60_spent": {
+    "pooled_reduction": 0.0108,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   },
+   "hermes_v07_test_80_spent": {
+    "pooled_reduction": 0.0033,
+    "errors": 0,
+    "violations": {
+     "verify_lossless": 0,
+     "independent_v4": 0,
+     "runtime_fail_safe": 0
+    }
+   }
+  },
+  "pooled_reduction": 0.0093
+ }
+}
