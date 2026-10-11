@@ -273,3 +273,17 @@ do workspace passam. Fronteira HF e Pareto do pipeline continuam em execução.
 - O workspace agora tem Git local em `main`, sem commit inicial ou publicação.
 - Próxima decisão: receitas/células de controle, seguida de contratos externos de
   outcome e protocolo novo; só então treino/normalização e Pareto de contexto.
+
+## Desfecho 2026-10-11 — política de regras do LCC (merge do PR #45)
+
+- Pedidos reais (3.782, só em ~/.lcc) e catálogo de 13 categorias (confirmação do dono .96 em itens
+  novos) substituíram o corpus autoral. O Jev no LCC em blocos corta 3,5% das sessões reais.
+- Regras com perda (19–64% de corte) reprovaram duas auditorias cegas session-disjoint (v0.4, v0.5).
+- Modo sem perda (padrão, prova mecânica): ~0,9%. Modo recuperável (v0.6–v0.8): auditorias passam,
+  mas sem disco só ~1,2% é seguro. Decisão do dono: o disco decide; ponteiro só se o arquivo atual
+  for idêntico ao conteúdo removido. Não mensurável offline; ganho real virá do coletor de pedidos.
+- Mergeado em lucasmartins-ai/lcc#45 (74f10e1). Config recomendada: rules_mode recoverable +
+  workspace_root (checagem no disco) + ponteiros de comando desligados; lossless segue padrão.
+- Modelo local aprendido: não adotado; nenhum candidato passou fora do treino. Próximo passo, se houver,
+  é medir o modo recuperável no uso real antes de qualquer treino.
+
