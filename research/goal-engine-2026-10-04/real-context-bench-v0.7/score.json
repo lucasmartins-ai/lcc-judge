@@ -1,0 +1,695 @@
+{
+ "schema": "real-context-bench-score/0.7",
+ "protocol_sha256": "69ae86fdd7993ae30caa52920a2b3adc6fb573d9c4dadb25fea32497cc6e4b38",
+ "n_items": 80,
+ "void": false,
+ "guard_trips": 0,
+ "arms": {
+  "full": {
+   "items": 80,
+   "retention_item": {
+    "k": 67,
+    "n": 67,
+    "rate": 1.0,
+    "wilson95": [
+     0.9458,
+     1.0
+    ]
+   },
+   "retention_probe": {
+    "k": 79,
+    "n": 79,
+    "rate": 1.0,
+    "wilson95": [
+     0.9536,
+     1.0
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.0,
+    "median_item": 0.0
+   },
+   "reduction_tokens": {
+    "pooled": 0.0,
+    "median_item": 0.0
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": null,
+    "p90": null
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "approve_or_pick": {
+     "k": 8,
+     "n": 8,
+     "rate": 1.0,
+     "wilson95": [
+      0.6756,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "failure_report": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "git_ship": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "wilson95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    }
+   }
+  },
+  "mechanical": {
+   "items": 80,
+   "retention_item": {
+    "k": 65,
+    "n": 67,
+    "rate": 0.9701,
+    "wilson95": [
+     0.8975,
+     0.9918
+    ]
+   },
+   "retention_probe": {
+    "k": 77,
+    "n": 79,
+    "rate": 0.9747,
+    "wilson95": [
+     0.9123,
+     0.993
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.0,
+    "median_item": 0.0
+   },
+   "reduction_tokens": {
+    "pooled": 0.0,
+    "median_item": 0.0
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": 896.5,
+    "p90": 5126
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 6,
+     "n": 7,
+     "rate": 0.8571,
+     "wilson95": [
+      0.4869,
+      0.9743
+     ]
+    },
+    "approve_or_pick": {
+     "k": 8,
+     "n": 8,
+     "rate": 1.0,
+     "wilson95": [
+      0.6756,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 6,
+     "n": 7,
+     "rate": 0.8571,
+     "wilson95": [
+      0.4869,
+      0.9743
+     ]
+    },
+    "failure_report": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "git_ship": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "wilson95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    }
+   }
+  },
+  "lcc_rules_lossless": {
+   "items": 80,
+   "retention_item": {
+    "k": 67,
+    "n": 67,
+    "rate": 1.0,
+    "wilson95": [
+     0.9458,
+     1.0
+    ]
+   },
+   "retention_probe": {
+    "k": 79,
+    "n": 79,
+    "rate": 1.0,
+    "wilson95": [
+     0.9536,
+     1.0
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.0035,
+    "median_item": 0.0
+   },
+   "reduction_tokens": {
+    "pooled": 0.0033,
+    "median_item": 0.0
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": 13.5,
+    "p90": 65
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "approve_or_pick": {
+     "k": 8,
+     "n": 8,
+     "rate": 1.0,
+     "wilson95": [
+      0.6756,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "failure_report": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "git_ship": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "wilson95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    }
+   }
+  },
+  "lcc_rules_recoverable": {
+   "items": 80,
+   "retention_item": {
+    "k": 67,
+    "n": 67,
+    "rate": 1.0,
+    "wilson95": [
+     0.9458,
+     1.0
+    ]
+   },
+   "retention_probe": {
+    "k": 79,
+    "n": 79,
+    "rate": 1.0,
+    "wilson95": [
+     0.9536,
+     1.0
+    ]
+   },
+   "reduction_bytes": {
+    "pooled": 0.0343,
+    "median_item": 0.0002
+   },
+   "reduction_tokens": {
+    "pooled": 0.0343,
+    "median_item": 0.0002
+   },
+   "token_methods": [
+    "approximate:heuristic"
+   ],
+   "latency_ms": {
+    "median": 29.0,
+    "p90": 129
+   },
+   "failures": 0,
+   "guard_trips": 0,
+   "per_category": {
+    "UNKNOWN": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "approve_or_pick": {
+     "k": 8,
+     "n": 8,
+     "rate": 1.0,
+     "wilson95": [
+      0.6756,
+      1.0
+     ]
+    },
+    "correct_approach_or_rule": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "environment_and_infra": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "external_accounts_and_comms": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "failure_report": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "git_ship": {
+     "k": 2,
+     "n": 2,
+     "rate": 1.0,
+     "wilson95": [
+      0.3424,
+      1.0
+     ]
+    },
+    "revise_recent_output": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "specified_task": {
+     "k": 1,
+     "n": 1,
+     "rate": 1.0,
+     "wilson95": [
+      0.2065,
+      1.0
+     ]
+    },
+    "supply_fact_or_step_done": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    },
+    "task_status_or_control": {
+     "k": 7,
+     "n": 7,
+     "rate": 1.0,
+     "wilson95": [
+      0.6457,
+      1.0
+     ]
+    }
+   }
+  }
+ },
+ "probe_counts": {
+  "LAST_AGENT_TURN": {
+   "applicable": 63,
+   "not_applicable": 2
+  },
+  "TASK_STATE": {
+   "applicable": 0,
+   "not_applicable": 40
+  },
+  "NAMED_REFS": {
+   "applicable": 2,
+   "not_applicable": 15
+  },
+  "ERROR_RESULT": {
+   "applicable": 7,
+   "not_applicable": 0
+  },
+  "GIT_STATE": {
+   "applicable": 0,
+   "not_applicable": 3
+  },
+  "LAST_ARTIFACT_EDIT": {
+   "applicable": 0,
+   "not_applicable": 7
+  },
+  "LAST_TOOL_RESULT": {
+   "applicable": 7,
+   "not_applicable": 0
+  }
+ },
+ "verdict": {},
+ "remote_arms": {},
+ "decisions": {
+  "lcc_rules_lossless": {
+   "dedupe:identical_output_kept_later": 99,
+   "dedupe:output_lines_of_later": 12,
+   "keep:no_lossless_superseder": 8945,
+   "keep:pinned_first_message": 1,
+   "keep:pinned_recent": 165
+  },
+  "lcc_rules_recoverable": {
+   "dedupe:identical_output_kept_later": 97,
+   "dedupe:output_lines_of_later": 12,
+   "keep:call_before_latest_error": 65,
+   "keep:command_output_changed_later": 5,
+   "keep:failed_result": 303,
+   "keep:file_written_later": 561,
+   "keep:latest_error_result": 64,
+   "keep:named_in_goal_or_recent_turns": 35,
+   "keep:not_recoverable": 7616,
+   "keep:pinned_first_message": 1,
+   "keep:pinned_recent": 165,
+   "keep:pinned_recent_result": 62,
+   "keep:read_range_unknown": 48,
+   "keep:temp_path": 54,
+   "replace:recoverable_file_read": 134
+  }
+ },
+ "violations": {
+  "lcc_rules_lossless": {
+   "lcc": 0,
+   "independent": 0,
+   "runtime_fail_safe": 0,
+   "unverified": 0
+  },
+  "lcc_rules_recoverable": {
+   "lcc": 0,
+   "independent": 0,
+   "runtime_fail_safe": 0,
+   "unverified": 0
+  }
+ },
+ "recoverability_check": {
+  "lcc_rules_lossless": {
+   "null": 80
+  },
+  "lcc_rules_recoverable": {
+   "transcript_proxy": 80
+  }
+ },
+ "pointers": {
+  "total": 134,
+  "items_with_pointer": 22,
+  "by_kind": {
+   "file_whole": 134
+  },
+  "by_tool": {
+   "read_file": 133,
+   "terminal": 1
+  },
+  "replaced_chars": 1009971
+ },
+ "dossiers": {
+  "built": 80,
+  "id_mismatch": 0,
+  "empty_context": 0,
+  "prior_overlap": {
+   "session_hash": 0,
+   "path": 0,
+   "id": 0,
+   "sid": 0,
+   "raw_sid_in_prior_path": 0
+  },
+  "digest_sha256": "d4a396afb119ea3215891794607345946f16aa70dd060669e5a917b7e16843b7",
+  "visible_bytes": {
+   "median": 320643,
+   "max": 1757141,
+   "sum": 30818645
+  }
+ },
+ "failure_counts": {
+  "full": 0,
+  "mechanical": 0,
+  "lcc_rules_lossless": 0,
+  "lcc_rules_recoverable": 0
+ },
+ "verdict_v07": {
+  "lcc_rules_lossless": {
+   "retention_ge": true,
+   "token_reduction_gt": true,
+   "zero_guard_trips": true,
+   "wins": true
+  },
+  "lcc_rules_recoverable": {
+   "retention_ge": true,
+   "token_reduction_gt": true,
+   "zero_guard_trips": true,
+   "wins": true
+  }
+ }
+}

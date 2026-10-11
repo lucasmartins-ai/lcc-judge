@@ -1,0 +1,70 @@
+{
+ "schema": "real-context-bench/0.7-audit-packets",
+ "protocol_sha256": "69ae86fdd7993ae30caa52920a2b3adc6fb573d9c4dadb25fea32497cc6e4b38",
+ "dossiers": {
+  "built": 80,
+  "id_mismatch": 0,
+  "empty_context": 0,
+  "prior_overlap": {
+   "session_hash": 0,
+   "path": 0,
+   "id": 0,
+   "sid": 0,
+   "raw_sid_in_prior_path": 0
+  },
+  "digest_sha256": "d4a396afb119ea3215891794607345946f16aa70dd060669e5a917b7e16843b7"
+ },
+ "audit": {
+  "seed": 20261014,
+  "n_target": 150,
+  "max_per_item": 3,
+  "population": {
+   "file_whole": 134,
+   "file_range": 0,
+   "command": 0
+  },
+  "items_with_candidates": 22,
+  "sampled": 54,
+  "shortfall": 96,
+  "shortfall_reason": "22 items with replace decisions x cap 3 = 66 max; 54 taken (some items have fewer than 3). All 134 pointers are file_whole, so the kind stratification has nothing to balance: file_range 0 and command 0 exist. Per protocol acceptance uses realised n = 54 (PASS iff flagged <= 1: upper Wilson 1/54 = 0.0977, 2/54 = 0.1254)",
+  "sampled_by_kind": {
+   "file_whole": 54,
+   "file_range": 0,
+   "command": 0
+  },
+  "sampled_items": 22,
+  "max_per_item_realised": 3,
+  "files": {
+   "f1": 18,
+   "f2": 18,
+   "f3": 18
+  },
+  "sampled_by_tool": {
+   "read_file": 54
+  },
+  "lcc_marker_packets": 0,
+  "key_field_packets": 0,
+  "judge_folders": {
+   "A": [
+    "f1.jsonl",
+    "f2.jsonl"
+   ],
+   "B": [
+    "f2.jsonl",
+    "f3.jsonl"
+   ],
+   "C": [
+    "f1.jsonl",
+    "f3.jsonl"
+   ]
+  },
+  "packet_sha256": {
+   "f1.jsonl": "49df3df04455e2e69e40af55b009b209facc252ec26be494ed6cd29d609c532b",
+   "f2.jsonl": "be8544791f2ebbeff3fb826e87f30ffedd459336f5b1f20f76c45256fb7c457c",
+   "f3.jsonl": "2ef2cc3edbe41d92dced37009d45852ec5e327537c2e90d23c9770a45b4482b3",
+   "key.jsonl": "e23e901383194d85a473bf428f317063ca33a8e1c802937473fa27a05fcb9267"
+  },
+  "instructions_sha256": "2b3707da9fe5f51808f9fd546db6a084ead89d0b5e0ed6e64eed9aa738b0df6a",
+  "verdicts": 0
+ }
+}
