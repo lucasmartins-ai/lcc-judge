@@ -25,6 +25,7 @@ Phases (artifacts and private text under ART; the repo gets code and counts only
     train      --arm lr|lrg|d4|d4g (one process each; g = USED-or-goal-shared target)
                -> ART/model-<arm>.json, ART/log-<arm>.json
     pick       -> ART/model.json (LR, shipped), ART/model-gbdt.json, ART/train-log.json
+    refit      -> same outputs, FROZEN_RECIPE settings (no selection; used after a feature-code change)
     eval       -> ART/dev-results.json, OUT/dev-results.json, OUT/DEV_RESULTS.md (counts only)
     bench      latency / RSS of Judge on dev items in a fresh process (called by eval)
 
@@ -575,6 +576,29 @@ def pick_phase():
     return out
 
 
+FROZEN_RECIPE = dict(lr=dict(arm='lrg', alpha=0.5), gbdt=dict(arm='d4', trees=350, alpha=0.5))
+
+
+def refit_phase():
+    """Re-fit after a feature-code change with the recipe already chosen on dev by pick_phase (FROZEN_RECIPE):
+    no selection, the dev log rows at the frozen settings are only reported."""
+    logs = {k: json.loads((ART / f"log-{v['arm']}.json").read_text()) for k, v in FROZEN_RECIPE.items()}
+    at = {k: next(r for r in logs[k] if all(r.get(f) == v for f, v in FROZEN_RECIPE[k].items())) for k in logs}
+    lr = json.loads((ART / f"model-{FROZEN_RECIPE['lr']['arm']}.json").read_text())
+    lr['alpha'] = FROZEN_RECIPE['lr']['alpha']
+    (ART / 'model.json').write_text(json.dumps(lr))
+    g = FROZEN_RECIPE['gbdt']
+    m = json.loads((ART / f"model-{g['arm']}.json").read_text())
+    m.update(n_trees=g['trees'], alpha=g['alpha'], trees=m['trees'][:g['trees']])
+    (ART / 'model-gbdt.json').write_text(json.dumps(m))
+    tl = json.loads((ART / 'train-log.json').read_text())
+    out = dict(pick=at['lr'], pick_gbdt=at['gbdt'], best_per_arm={k: at[k] for k in at},
+               rule='refit with the frozen recipe (no selection); ' + tl['rule'],
+               previous_pick=tl.get('previous_pick', dict(pick=tl['pick'], pick_gbdt=tl['pick_gbdt'])))
+    (ART / 'train-log.json').write_text(json.dumps(out, indent=1))
+    return out
+
+
 # --- eval (dev, dev-model subset, jev-overlap, edge suite, cost) ---------------------------------------
 EDGE_KIND = {'tool_call': 'tool_use'}
 
@@ -727,7 +751,7 @@ def eval_phase():
                model=dict(kind=model['kind'], alpha=model['alpha'], features=len(FEATURES), pick=tl['pick']),
                alternative=dict(kind='gbdt', depth=gb['depth'], trees=gb['n_trees'], alpha=gb['alpha'], pick=tl['pick_gbdt']),
                train=json.loads((ART / 'features-meta.json').read_text()),
-               train_best_per_arm=tl['best_per_arm'],
+               train_best_per_arm=tl['best_per_arm'], train_rule=tl['rule'],
                dev=dict(items=len(items), excluded=dict(skip), curves=dev_curves, tie_random_auc=dev_ties,
                         by_source=by_src, by_category_recall_auc=by_cat, paired_recall=paired,
                         bootstrap_recall_auc_diff=boot),
@@ -792,7 +816,8 @@ def render_md(r):
          f"log chars). Target: USED or goal-shared (`lrg`). Dev pick: {json.dumps(r['model']['pick'])}.",
          f"- Alternative: GBDT depth {r['alternative']['depth']}, {r['alternative']['trees']} trees, alpha "
          f"{r['alternative']['alpha']}; dev pick {json.dumps(r['alternative']['pick'])}.",
-         '- Best dev config per trained arm (lr / lrg = LR on USED / USED-or-goal-shared; d4 / d4g = GBDT depth 4): '
+         f"- Selection rule: {r.get('train_rule', '-')}. Dev at the chosen config per family (lr / lrg = LR on USED / "
+         'USED-or-goal-shared; d4 / d4g / gbdt = GBDT depth 4): '
          + '; '.join(f"{k} recall {v['recall']:.4f} all-kept {v['all_kept']:.4f} (alpha {v['alpha']})"
                      for k, v in sorted(r['train_best_per_arm'].items())) + '. Depth 6 was tried in an earlier feature '
          'set and was no better than depth 4 and slower to train.',
@@ -840,7 +865,7 @@ def render_md(r):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument('phase', choices=('features', 'train', 'pick', 'eval'))
+    ap.add_argument('phase', choices=('features', 'train', 'pick', 'refit', 'eval'))
     ap.add_argument('--arm', default='d6', help="train: 'lr' or 'd<depth>'")
     a = ap.parse_args(argv)
     if a.phase == 'features':
@@ -849,6 +874,8 @@ def main(argv=None):
         out = train_phase(a.arm)
     elif a.phase == 'pick':
         out = pick_phase()
+    elif a.phase == 'refit':
+        out = refit_phase()
     else:
         out = eval_phase()
     print(json.dumps(out, indent=1)[:4000])
