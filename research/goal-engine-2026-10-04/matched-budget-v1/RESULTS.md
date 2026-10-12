@@ -13,8 +13,8 @@
 ## Bottom line
 
 - Recency alone (keep the newest blocks) has the best curve (AUC 0.973 vs Jev 0.498); these probes mostly check recent material, so this says more about the probes than about relevance. No arm in this table beats recency.
-- With ties broken fairly (random), the only local ranker level with Jev is stdlib BM25 (AUC 0.503 vs 0.490); Laya is 8.0 pt below, the LCC-judge specialist 27.8 pt below and under the random floor (0.293).
-- Laya beats Jev only at the lightest budget (10%) and falls behind from 20% on.
+- With ties broken fairly (random), the only local ranker level with Jev is stdlib BM25 (AUC 0.503 vs 0.490); Laya (LCC as run, mixed with mechanical fallback) is 8.0 pt below, the LCC-judge specialist 27.8 pt below and under the random floor (0.293).
+- Correction after review (FAIL on this point): the laya arm's 10% lead came from LCC's mechanical fallback scores (≈0 vs Laya ≈0.9-1.0) mixed on one scale, which drop mechanically scored blocks first. Laya-native scores alone give 28/18/10/5/5/3 of 49 at 10..60% (reviewer recompute): below Jev at every budget and near the random floor. The Laya run was also degraded (53/60 items fell back; 484 failed batches; 998 blocks over its window), so Laya is not cleanly evaluated.
 
 ## Setup
 
@@ -88,3 +88,9 @@ Paired items vs Jev per budget (+items only this arm keeps / -items only Jev kee
 | random | - | - | - | 0 | 0 | no scoring |
 
 Latency is the whole compaction call per item from each arm's own run (Jev: serial HTTP, concurrency 1). Peak RSS is the process maximum (includes Python + the loaded model). Model size counts weights, tokenizer and config on disk. Jev $ is the API-reported usage from the saved ledger.
+
+## Reading (added after review)
+
+Recency (keep newest) beats every arm (AUC .973): the frozen probes reward recent material,
+so this bench cannot rank goal relevance. Use it only to compare arms at equal budgets
+with random tie-breaks; the next bench needs labels from what the agent actually used.
