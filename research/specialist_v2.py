@@ -51,6 +51,8 @@ SEED = 20261012
 NEG_KEEP = 0.25  # train rows: every USED block + this share of the others (re-weighted 1/NEG_KEEP)
 
 HEADER_RE = re.compile(r'^\[m(\d{4,}) (user|assistant) ([a-z_]+)(?: ([^\]\n]*))?\]$', re.M)
+# Anchored, single-line: a header is trusted only at offset 0 of a block (see block_meta).
+LEAD_HEADER_RE = re.compile(r'\[m(\d{4,}) (user|assistant) ([a-z_]+)(?: ([^\]\n]*))?\](?:\n|$)')
 TOKEN_RE = re.compile(r'\w+', re.U)  # BM25 terms (same as research.matched_budget)
 KEY_RE = re.compile(r'[\w./~@-]{6,}')
 CAMEL_RE = re.compile(r'[a-z][A-Z]')
@@ -99,16 +101,16 @@ def tool_group(tool):
 
 
 def block_meta(texts):
-    """[(m, role, kind, tool, has_header)] per block: the block's first render header, else the last header
-    seen in an earlier block (a block continuing an oversized message)."""
+    """[(m, role, kind, tool, has_header)] per block. Only a render header at offset 0 of a block is trusted
+    (block text is untrusted: a tool output can contain a line shaped like a header), and its message index
+    must not go backwards; otherwise the block inherits the previous trusted header (a continuation)."""
     out, cur = [], (0, None, None, None)
     for t in texts:
-        hs = HEADER_RE.findall(t)
-        first = (int(hs[0][0]), hs[0][1], hs[0][2], hs[0][3] or None) if hs else cur
-        has = bool(hs) and t.startswith('[m')
-        out.append((*first, has))
-        if hs:
-            cur = (int(hs[-1][0]), hs[-1][1], hs[-1][2], hs[-1][3] or None)
+        h = LEAD_HEADER_RE.match(t)
+        trusted = bool(h) and int(h.group(1)) >= cur[0]
+        if trusted:
+            cur = (int(h.group(1)), h.group(2), h.group(3), h.group(4) or None)
+        out.append((*cur, trusted))
     return out
 
 
@@ -617,16 +619,20 @@ def bench(model_path, items, n=40):
     import os
     import subprocess
     import statistics
-    tmp = ART / 'bench-items.jsonl'  # private: dev block text
-    with tmp.open('w') as f:
-        for k, (it, texts) in enumerate(load_items([it['item_id'] for it in items[:n]])):
-            f.write(json.dumps(dict(goal=it['goal'], texts=texts), ensure_ascii=False) + '\n')
-    path = os.pathsep.join([str(Path(__file__).resolve().parent.parent)] + [p for p in sys.path if p.endswith('src')])
-    env = dict(os.environ, PYTHONPATH=path, OMP_NUM_THREADS='1',
-               OPENBLAS_NUM_THREADS='1', VECLIB_MAXIMUM_THREADS='1')
-    r = json.loads(subprocess.run([sys.executable, '-c', BENCH, str(model_path), str(tmp)], env=env, check=True,
-                                  capture_output=True, text=True).stdout)
-    tmp.unlink()
+    tmp = ART / 'bench-items.jsonl'  # private: dev block text, owner-only and always removed
+    fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    try:
+        with os.fdopen(fd, 'w') as f:
+            for k, (it, texts) in enumerate(load_items([it['item_id'] for it in items[:n]])):
+                f.write(json.dumps(dict(goal=it['goal'], texts=texts), ensure_ascii=False) + '\n')
+        path = os.pathsep.join([str(Path(__file__).resolve().parent.parent)]
+                               + [p for p in sys.path if p.endswith('src')])
+        env = dict(os.environ, PYTHONPATH=path, OMP_NUM_THREADS='1',
+                   OPENBLAS_NUM_THREADS='1', VECLIB_MAXIMUM_THREADS='1')
+        r = json.loads(subprocess.run([sys.executable, '-c', BENCH, str(model_path), str(tmp)], env=env,
+                                      check=True, capture_output=True, text=True).stdout)
+    finally:
+        tmp.unlink(missing_ok=True)
     ms = [x[1] for x in r['rows']]
     nb = [x[0] for x in r['rows']]
     near400 = [m for b, m in r['rows'] if 250 <= b <= 600]
