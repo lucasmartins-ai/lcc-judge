@@ -87,7 +87,9 @@ class SuiteTest(unittest.TestCase):
         self.assertGreater(len(out), 5)
         self.assertEqual(out[-1]['gold'], 'must')
         self.assertEqual(''.join(b['text'] for b in out[:-1]), blocks[0]['text'])
-        self.assertTrue(all(b['gold'] == 'may' and b['tool'] == 'Bash' for b in out[:-1]))
+        self.assertTrue(all(b['gold'] == 'may' and b['tool'] == 'Bash' and b['msg'] == 0 for b in out[:-1]))
+        self.assertEqual([b['part'] for b in out[:3]], [0, 1, 2])
+        self.assertEqual((out[-1]['msg'], out[-1]['part']), (1, 0))
 
     def test_fixtures_hold_no_secret_shaped_values(self):
         pat = re.compile(r'sk-[A-Za-z0-9]{16,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY')

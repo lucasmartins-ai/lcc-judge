@@ -694,7 +694,8 @@ def balance(blocks, seed, mode=0):
     rng = random.Random(seed)
     lo, hi = CHUNK_RANGES[mode % len(CHUNK_RANGES)]
     out = []
-    for b in blocks:
+    for m, b in enumerate(blocks):
+        b = dict(b, msg=m, part=0)  # msg: the session message this block belongs to; part > 0: continuation
         if b['gold'] != 'may' or tok(b['text']) <= 2 * ref:
             out.append(b)
             continue
@@ -709,7 +710,7 @@ def balance(blocks, seed, mode=0):
                 chunks[-1] += cur
             else:
                 chunks.append(cur)
-        out += [dict(b, text=t) for t in chunks]
+        out += [dict(b, text=t, part=k) for k, t in enumerate(chunks)]
     return out
 
 

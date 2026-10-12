@@ -17,7 +17,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "DEPLOY.md: deploys de sexta sao permitidos ate 15h."
+   "text": "DEPLOY.md: deploys de sexta sao permitidos ate 15h.",
+   "msg": 0,
+   "part": 0
   },
   {
    "id": "b001",
@@ -26,7 +28,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod0.py::test_case_0 PASSED [  1%]\ntests/test_mod1.py::test_case_1 "
+   "text": "tests/test_mod0.py::test_case_0 PASSED [  1%]\ntests/test_mod1.py::test_case_1 ",
+   "msg": 1,
+   "part": 0
   },
   {
    "id": "b002",
@@ -35,7 +39,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [  3%]\ntests/test_mod2.py::test_case_2 PASSED [  5%]\n"
+   "text": "PASSED [  3%]\ntests/test_mod2.py::test_case_2 PASSED [  5%]\n",
+   "msg": 1,
+   "part": 1
   },
   {
    "id": "b003",
@@ -44,7 +50,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod3.py::test_case_3 PASSED [  6%]\ntests/test_mod4.py::test_case_4 "
+   "text": "tests/test_mod3.py::test_case_3 PASSED [  6%]\ntests/test_mod4.py::test_case_4 ",
+   "msg": 1,
+   "part": 2
   },
   {
    "id": "b004",
@@ -53,7 +61,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [  8%]\ntests/test_mod5.py::test_case_5 PASSED [ 10%]\n"
+   "text": "PASSED [  8%]\ntests/test_mod5.py::test_case_5 PASSED [ 10%]\n",
+   "msg": 1,
+   "part": 3
   },
   {
    "id": "b005",
@@ -62,7 +72,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod6.py::test_case_6 "
+   "text": "tests/test_mod6.py::test_case_6 ",
+   "msg": 1,
+   "part": 4
   },
   {
    "id": "b006",
@@ -71,7 +83,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 11%]\ntests/test_mod7.py::test_case_7 PASSED [ 13%]\n"
+   "text": "PASSED [ 11%]\ntests/test_mod7.py::test_case_7 PASSED [ 13%]\n",
+   "msg": 1,
+   "part": 5
   },
   {
    "id": "b007",
@@ -80,7 +94,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod8.py::test_case_8 "
+   "text": "tests/test_mod8.py::test_case_8 ",
+   "msg": 1,
+   "part": 6
   },
   {
    "id": "b008",
@@ -89,7 +105,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 15%]\ntests/test_mod9.py::test_case_9 PASSED [ 16%]\n"
+   "text": "PASSED [ 15%]\ntests/test_mod9.py::test_case_9 PASSED [ 16%]\n",
+   "msg": 1,
+   "part": 7
   },
   {
    "id": "b009",
@@ -98,7 +116,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod10.py::test_case_10 "
+   "text": "tests/test_mod10.py::test_case_10 ",
+   "msg": 1,
+   "part": 8
   },
   {
    "id": "b010",
@@ -107,7 +127,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 18%]\ntests/test_mod0.py::test_case_11 PASSED [ 20%]\n"
+   "text": "PASSED [ 18%]\ntests/test_mod0.py::test_case_11 PASSED [ 20%]\n",
+   "msg": 1,
+   "part": 9
   },
   {
    "id": "b011",
@@ -116,7 +138,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod1.py::test_case_12 PASSED [ 21%]\ntests/test_mod2.py::test_case_13 PASSED "
+   "text": "tests/test_mod1.py::test_case_12 PASSED [ 21%]\ntests/test_mod2.py::test_case_13 PASSED ",
+   "msg": 1,
+   "part": 10
   },
   {
    "id": "b012",
@@ -125,7 +149,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[ 23%]\ntests/test_mod3.py::test_case_14 PASSED "
+   "text": "[ 23%]\ntests/test_mod3.py::test_case_14 PASSED ",
+   "msg": 1,
+   "part": 11
   },
   {
    "id": "b013",
@@ -134,7 +160,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[ 25%]\ntests/test_mod4.py::test_case_15 PASSED [ 26%]\n"
+   "text": "[ 25%]\ntests/test_mod4.py::test_case_15 PASSED [ 26%]\n",
+   "msg": 1,
+   "part": 12
   },
   {
    "id": "b014",
@@ -143,7 +171,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod5.py::test_case_16 "
+   "text": "tests/test_mod5.py::test_case_16 ",
+   "msg": 1,
+   "part": 13
   },
   {
    "id": "b015",
@@ -152,7 +182,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 28%]\n"
+   "text": "PASSED [ 28%]\n",
+   "msg": 1,
+   "part": 14
   },
   {
    "id": "b016",
@@ -161,7 +193,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod6.py::test_case_17 PASSED [ 30%]\n"
+   "text": "tests/test_mod6.py::test_case_17 PASSED [ 30%]\n",
+   "msg": 1,
+   "part": 15
   },
   {
    "id": "b017",
@@ -170,7 +204,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod7.py::test_case_18 PASSED [ 31%]\n"
+   "text": "tests/test_mod7.py::test_case_18 PASSED [ 31%]\n",
+   "msg": 1,
+   "part": 16
   },
   {
    "id": "b018",
@@ -179,7 +215,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod8.py::test_case_19 PASSED [ 33%]\n"
+   "text": "tests/test_mod8.py::test_case_19 PASSED [ 33%]\n",
+   "msg": 1,
+   "part": 17
   },
   {
    "id": "b019",
@@ -188,7 +226,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod9.py::test_case_20 PASSED [ 35%]\ntests/test_mod10.py::test_case_21 PASSED [ 36%]\n"
+   "text": "tests/test_mod9.py::test_case_20 PASSED [ 35%]\ntests/test_mod10.py::test_case_21 PASSED [ 36%]\n",
+   "msg": 1,
+   "part": 18
   },
   {
    "id": "b020",
@@ -197,7 +237,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod0.py::test_case_22 PASSED [ 38%]\n"
+   "text": "tests/test_mod0.py::test_case_22 PASSED [ 38%]\n",
+   "msg": 1,
+   "part": 19
   },
   {
    "id": "b021",
@@ -206,7 +248,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod1.py::test_case_23 "
+   "text": "tests/test_mod1.py::test_case_23 ",
+   "msg": 1,
+   "part": 20
   },
   {
    "id": "b022",
@@ -215,7 +259,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 40%]\ntests/test_mod2.py::test_case_24 PASSED [ 41%]\n"
+   "text": "PASSED [ 40%]\ntests/test_mod2.py::test_case_24 PASSED [ 41%]\n",
+   "msg": 1,
+   "part": 21
   },
   {
    "id": "b023",
@@ -224,7 +270,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod3.py::test_case_25 "
+   "text": "tests/test_mod3.py::test_case_25 ",
+   "msg": 1,
+   "part": 22
   },
   {
    "id": "b024",
@@ -233,7 +281,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 43%]\ntests/test_mod4.py::test_case_26 PASSED [ 45%]\ntests/test_mod5.py::test_case_27 "
+   "text": "PASSED [ 43%]\ntests/test_mod4.py::test_case_26 PASSED [ 45%]\ntests/test_mod5.py::test_case_27 ",
+   "msg": 1,
+   "part": 23
   },
   {
    "id": "b025",
@@ -242,7 +292,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 46%]\n"
+   "text": "PASSED [ 46%]\n",
+   "msg": 1,
+   "part": 24
   },
   {
    "id": "b026",
@@ -251,7 +303,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod6.py::test_case_28 PASSED [ 48%]\n"
+   "text": "tests/test_mod6.py::test_case_28 PASSED [ 48%]\n",
+   "msg": 1,
+   "part": 25
   },
   {
    "id": "b027",
@@ -260,7 +314,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod7.py::test_case_29 PASSED "
+   "text": "tests/test_mod7.py::test_case_29 PASSED ",
+   "msg": 1,
+   "part": 26
   },
   {
    "id": "b028",
@@ -269,7 +325,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[ 50%]\ntests/test_mod8.py::test_case_30 PASSED [ 51%]\ntests/test_mod9.py::test_case_31 "
+   "text": "[ 50%]\ntests/test_mod8.py::test_case_30 PASSED [ 51%]\ntests/test_mod9.py::test_case_31 ",
+   "msg": 1,
+   "part": 27
   },
   {
    "id": "b029",
@@ -278,7 +336,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 53%]\ntests/test_mod10.py::test_case_32 PASSED [ 55%]\n"
+   "text": "PASSED [ 53%]\ntests/test_mod10.py::test_case_32 PASSED [ 55%]\n",
+   "msg": 1,
+   "part": 28
   },
   {
    "id": "b030",
@@ -287,7 +347,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod0.py::test_case_33 PASSED [ 56%]\ntests/test_mod1.py::test_case_34 "
+   "text": "tests/test_mod0.py::test_case_33 PASSED [ 56%]\ntests/test_mod1.py::test_case_34 ",
+   "msg": 1,
+   "part": 29
   },
   {
    "id": "b031",
@@ -296,7 +358,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 58%]\n"
+   "text": "PASSED [ 58%]\n",
+   "msg": 1,
+   "part": 30
   },
   {
    "id": "b032",
@@ -305,7 +369,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod2.py::test_case_35 PASSED [ 60%]\ntests/test_mod3.py::test_case_36 PASSED [ "
+   "text": "tests/test_mod2.py::test_case_35 PASSED [ 60%]\ntests/test_mod3.py::test_case_36 PASSED [ ",
+   "msg": 1,
+   "part": 31
   },
   {
    "id": "b033",
@@ -314,7 +380,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "61%]\ntests/test_mod4.py::test_case_37 PASSED [ 63%]\n"
+   "text": "61%]\ntests/test_mod4.py::test_case_37 PASSED [ 63%]\n",
+   "msg": 1,
+   "part": 32
   },
   {
    "id": "b034",
@@ -323,7 +391,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod5.py::test_case_38 PASSED [ "
+   "text": "tests/test_mod5.py::test_case_38 PASSED [ ",
+   "msg": 1,
+   "part": 33
   },
   {
    "id": "b035",
@@ -332,7 +402,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "65%]\ntests/test_mod6.py::test_case_39 PASSED [ 66%]\n"
+   "text": "65%]\ntests/test_mod6.py::test_case_39 PASSED [ 66%]\n",
+   "msg": 1,
+   "part": 34
   },
   {
    "id": "b036",
@@ -341,7 +413,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod7.py::test_case_40 PASSED [ 68%]\ntests/test_mod8.py::test_case_41 "
+   "text": "tests/test_mod7.py::test_case_40 PASSED [ 68%]\ntests/test_mod8.py::test_case_41 ",
+   "msg": 1,
+   "part": 35
   },
   {
    "id": "b037",
@@ -350,7 +424,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 70%]\n"
+   "text": "PASSED [ 70%]\n",
+   "msg": 1,
+   "part": 36
   },
   {
    "id": "b038",
@@ -359,7 +435,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod9.py::test_case_42 PASSED [ 71%]\ntests/test_mod10.py::test_case_43 PASSED [ "
+   "text": "tests/test_mod9.py::test_case_42 PASSED [ 71%]\ntests/test_mod10.py::test_case_43 PASSED [ ",
+   "msg": 1,
+   "part": 37
   },
   {
    "id": "b039",
@@ -368,7 +446,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "73%]\n"
+   "text": "73%]\n",
+   "msg": 1,
+   "part": 38
   },
   {
    "id": "b040",
@@ -377,7 +457,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod0.py::test_case_44 PASSED [ 75%]\n"
+   "text": "tests/test_mod0.py::test_case_44 PASSED [ 75%]\n",
+   "msg": 1,
+   "part": 39
   },
   {
    "id": "b041",
@@ -386,7 +468,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod1.py::test_case_45 PASSED [ 76%]\n"
+   "text": "tests/test_mod1.py::test_case_45 PASSED [ 76%]\n",
+   "msg": 1,
+   "part": 40
   },
   {
    "id": "b042",
@@ -395,7 +479,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod2.py::test_case_46 PASSED [ 78%]\n"
+   "text": "tests/test_mod2.py::test_case_46 PASSED [ 78%]\n",
+   "msg": 1,
+   "part": 41
   },
   {
    "id": "b043",
@@ -404,7 +490,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod3.py::test_case_47 PASSED [ 80%]\n"
+   "text": "tests/test_mod3.py::test_case_47 PASSED [ 80%]\n",
+   "msg": 1,
+   "part": 42
   },
   {
    "id": "b044",
@@ -413,7 +501,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod4.py::test_case_48 "
+   "text": "tests/test_mod4.py::test_case_48 ",
+   "msg": 1,
+   "part": 43
   },
   {
    "id": "b045",
@@ -422,7 +512,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 81%]\ntests/test_mod5.py::test_case_49 PASSED [ "
+   "text": "PASSED [ 81%]\ntests/test_mod5.py::test_case_49 PASSED [ ",
+   "msg": 1,
+   "part": 44
   },
   {
    "id": "b046",
@@ -431,7 +523,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "83%]\ntests/test_mod6.py::test_case_50 "
+   "text": "83%]\ntests/test_mod6.py::test_case_50 ",
+   "msg": 1,
+   "part": 45
   },
   {
    "id": "b047",
@@ -440,7 +534,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 85%]\ntests/test_mod7.py::test_case_51 PASSED [ 86%]\n"
+   "text": "PASSED [ 85%]\ntests/test_mod7.py::test_case_51 PASSED [ 86%]\n",
+   "msg": 1,
+   "part": 46
   },
   {
    "id": "b048",
@@ -449,7 +545,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod8.py::test_case_52 PASSED [ 88%]\n"
+   "text": "tests/test_mod8.py::test_case_52 PASSED [ 88%]\n",
+   "msg": 1,
+   "part": 47
   },
   {
    "id": "b049",
@@ -458,7 +556,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod9.py::test_case_53 PASSED [ 90%]\n"
+   "text": "tests/test_mod9.py::test_case_53 PASSED [ 90%]\n",
+   "msg": 1,
+   "part": 48
   },
   {
    "id": "b050",
@@ -467,7 +567,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod10.py::test_case_54 "
+   "text": "tests/test_mod10.py::test_case_54 ",
+   "msg": 1,
+   "part": 49
   },
   {
    "id": "b051",
@@ -476,7 +578,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "PASSED [ 91%]\ntests/test_mod0.py::test_case_55 PASSED [ 93%]\n"
+   "text": "PASSED [ 91%]\ntests/test_mod0.py::test_case_55 PASSED [ 93%]\n",
+   "msg": 1,
+   "part": 50
   },
   {
    "id": "b052",
@@ -485,7 +589,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod1.py::test_case_56 PASSED [ 95%]\n"
+   "text": "tests/test_mod1.py::test_case_56 PASSED [ 95%]\n",
+   "msg": 1,
+   "part": 51
   },
   {
    "id": "b053",
@@ -494,7 +600,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod2.py::test_case_57 PASSED [ "
+   "text": "tests/test_mod2.py::test_case_57 PASSED [ ",
+   "msg": 1,
+   "part": 52
   },
   {
    "id": "b054",
@@ -503,7 +611,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "96%]\ntests/test_mod3.py::test_case_58 PASSED [ 98%]\ntests/test_mod4.py::test_case_59 PASSED [100%]\n===== 60 passed, 0 failed in 4.01s ====="
+   "text": "96%]\ntests/test_mod3.py::test_case_58 PASSED [ 98%]\ntests/test_mod4.py::test_case_59 PASSED [100%]\n===== 60 passed, 0 failed in 4.01s =====",
+   "msg": 1,
+   "part": 53
   },
   {
    "id": "b055",
@@ -512,7 +622,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "DEPLOY.md (secao Excecoes): exceto quando houver migracao de banco pendente; nesse caso so na segunda."
+   "text": "DEPLOY.md (secao Excecoes): exceto quando houver migracao de banco pendente; nesse caso so na segunda.",
+   "msg": 2,
+   "part": 0
   },
   {
    "id": "b056",
@@ -521,7 +633,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "$ npm run db:status\npending migrations: 0005_add_score.sql"
+   "text": "$ npm run db:status\npending migrations: 0005_add_score.sql",
+   "msg": 3,
+   "part": 0
   },
   {
    "id": "b057",
@@ -530,7 +644,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0000] info  compiled "
+   "text": "[0000] info  compiled ",
+   "msg": 4,
+   "part": 0
   },
   {
    "id": "b058",
@@ -539,7 +655,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Card0.tsx (1100 bytes) "
+   "text": "./src/components/Card0.tsx (1100 bytes) ",
+   "msg": 4,
+   "part": 1
   },
   {
    "id": "b059",
@@ -548,7 +666,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 "
+   "text": "in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 ",
+   "msg": 4,
+   "part": 2
   },
   {
    "id": "b060",
@@ -557,7 +677,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  "
+   "text": "bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  ",
+   "msg": 4,
+   "part": 3
   },
   {
    "id": "b061",
@@ -566,7 +688,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Pricing3.tsx (1211 bytes) in "
+   "text": "compiled ./src/components/Pricing3.tsx (1211 bytes) in ",
+   "msg": 4,
+   "part": 4
   },
   {
    "id": "b062",
@@ -575,7 +699,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 "
+   "text": "15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 ",
+   "msg": 4,
+   "part": 5
   },
   {
    "id": "b063",
@@ -584,7 +710,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 16ms\n[0005] info  compiled "
+   "text": "bytes) in 16ms\n[0005] info  compiled ",
+   "msg": 4,
+   "part": 6
   },
   {
    "id": "b064",
@@ -593,7 +721,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx "
+   "text": "./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx ",
+   "msg": 4,
+   "part": 7
   },
   {
    "id": "b065",
@@ -602,7 +732,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] "
+   "text": "(1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] ",
+   "msg": 4,
+   "part": 8
   },
   {
    "id": "b066",
@@ -611,7 +743,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled "
+   "text": "info  compiled ",
+   "msg": 4,
+   "part": 9
   },
   {
    "id": "b067",
@@ -620,7 +754,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  "
+   "text": "./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  ",
+   "msg": 4,
+   "part": 10
   },
   {
    "id": "b068",
@@ -629,7 +765,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Card9.tsx "
+   "text": "compiled ./src/components/Card9.tsx ",
+   "msg": 4,
+   "part": 11
   },
   {
    "id": "b069",
@@ -638,7 +776,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1433 bytes) in 21ms\n[0010] "
+   "text": "(1433 bytes) in 21ms\n[0010] ",
+   "msg": 4,
+   "part": 12
   },
   {
    "id": "b070",
@@ -647,7 +787,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled "
+   "text": "info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled ",
+   "msg": 4,
+   "part": 13
   },
   {
    "id": "b071",
@@ -656,7 +798,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled "
+   "text": "./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled ",
+   "msg": 4,
+   "part": 14
   },
   {
    "id": "b072",
@@ -665,7 +809,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Pricing12.tsx "
+   "text": "./src/components/Pricing12.tsx ",
+   "msg": 4,
+   "part": 15
   },
   {
    "id": "b073",
@@ -674,7 +820,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1544 bytes) in 24ms\n"
+   "text": "(1544 bytes) in 24ms\n",
+   "msg": 4,
+   "part": 16
   },
   {
    "id": "b074",
@@ -683,7 +831,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0013] info  compiled "
+   "text": "[0013] info  compiled ",
+   "msg": 4,
+   "part": 17
   },
   {
    "id": "b075",
@@ -692,7 +842,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled "
+   "text": "./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ",
+   "msg": 4,
+   "part": 18
   },
   {
    "id": "b076",
@@ -701,7 +853,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  "
+   "text": "./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  ",
+   "msg": 4,
+   "part": 19
   },
   {
    "id": "b077",
@@ -710,7 +864,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled "
+   "text": "compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled ",
+   "msg": 4,
+   "part": 20
   },
   {
    "id": "b078",
@@ -719,7 +875,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart3.tsx (1692 "
+   "text": "./src/components/Chart3.tsx (1692 ",
+   "msg": 4,
+   "part": 21
   },
   {
    "id": "b079",
@@ -728,7 +886,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] "
+   "text": "bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] ",
+   "msg": 4,
+   "part": 22
   },
   {
    "id": "b080",
@@ -737,7 +897,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled "
+   "text": "info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled ",
+   "msg": 4,
+   "part": 23
   },
   {
    "id": "b081",
@@ -746,7 +908,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled "
+   "text": "./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled ",
+   "msg": 4,
+   "part": 24
   },
   {
    "id": "b082",
@@ -755,7 +919,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  "
+   "text": "./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  ",
+   "msg": 4,
+   "part": 25
   },
   {
    "id": "b083",
@@ -764,7 +930,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled "
+   "text": "compiled ",
+   "msg": 4,
+   "part": 26
   },
   {
    "id": "b084",
@@ -773,7 +941,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled "
+   "text": "./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ",
+   "msg": 4,
+   "part": 27
   },
   {
    "id": "b085",
@@ -782,7 +952,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav9.tsx "
+   "text": "./src/components/Nav9.tsx ",
+   "msg": 4,
+   "part": 28
   },
   {
    "id": "b086",
@@ -791,7 +963,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1914 bytes) in 34ms\n[0023] "
+   "text": "(1914 bytes) in 34ms\n[0023] ",
+   "msg": 4,
+   "part": 29
   },
   {
    "id": "b087",
@@ -800,7 +974,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  "
+   "text": "info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  ",
+   "msg": 4,
+   "part": 30
   },
   {
    "id": "b088",
@@ -809,7 +985,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Table11.tsx (1988 "
+   "text": "compiled ./src/components/Table11.tsx (1988 ",
+   "msg": 4,
+   "part": 31
   },
   {
    "id": "b089",
@@ -818,7 +996,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 36ms\n[0025] info  compiled "
+   "text": "bytes) in 36ms\n[0025] info  compiled ",
+   "msg": 4,
+   "part": 32
   },
   {
    "id": "b090",
@@ -827,7 +1007,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx "
+   "text": "./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx ",
+   "msg": 4,
+   "part": 33
   },
   {
    "id": "b091",
@@ -836,7 +1018,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] "
+   "text": "(2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] ",
+   "msg": 4,
+   "part": 34
   },
   {
    "id": "b092",
@@ -845,7 +1029,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n"
+   "text": "info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n",
+   "msg": 4,
+   "part": 35
   },
   {
    "id": "b093",
@@ -854,7 +1040,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0029] info  compiled "
+   "text": "[0029] info  compiled ",
+   "msg": 4,
+   "part": 36
   },
   {
    "id": "b094",
@@ -863,7 +1051,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Footer3.tsx (2173 bytes) "
+   "text": "./src/components/Footer3.tsx (2173 bytes) ",
+   "msg": 4,
+   "part": 37
   },
   {
    "id": "b095",
@@ -872,7 +1062,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "in 41ms\n[0030] info  compiled "
+   "text": "in 41ms\n[0030] info  compiled ",
+   "msg": 4,
+   "part": 38
   },
   {
    "id": "b096",
@@ -881,7 +1073,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx "
+   "text": "./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx ",
+   "msg": 4,
+   "part": 39
   },
   {
    "id": "b097",
@@ -890,7 +1084,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2247 bytes) in 43ms\n[0032] info  compiled "
+   "text": "(2247 bytes) in 43ms\n[0032] info  compiled ",
+   "msg": 4,
+   "part": 40
   },
   {
    "id": "b098",
@@ -899,7 +1095,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  "
+   "text": "./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  ",
+   "msg": 4,
+   "part": 41
   },
   {
    "id": "b099",
@@ -908,7 +1106,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n"
+   "text": "compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n",
+   "msg": 4,
+   "part": 42
   },
   {
    "id": "b100",
@@ -917,7 +1117,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0034] info  compiled "
+   "text": "[0034] info  compiled ",
+   "msg": 4,
+   "part": 43
   },
   {
    "id": "b101",
@@ -926,7 +1128,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled "
+   "text": "./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled ",
+   "msg": 4,
+   "part": 44
   },
   {
    "id": "b102",
@@ -935,7 +1139,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled "
+   "text": "./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled ",
+   "msg": 4,
+   "part": 45
   },
   {
    "id": "b103",
@@ -944,7 +1150,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Card10.tsx (2432 "
+   "text": "./src/components/Card10.tsx (2432 ",
+   "msg": 4,
+   "part": 46
   },
   {
    "id": "b104",
@@ -953,7 +1161,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 48ms\n"
+   "text": "bytes) in 48ms\n",
+   "msg": 4,
+   "part": 47
   },
   {
    "id": "b105",
@@ -962,7 +1172,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0037] info  compiled "
+   "text": "[0037] info  compiled ",
+   "msg": 4,
+   "part": 48
   },
   {
    "id": "b106",
@@ -971,7 +1183,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Hero11.tsx (2469 "
+   "text": "./src/components/Hero11.tsx (2469 ",
+   "msg": 4,
+   "part": 49
   },
   {
    "id": "b107",
@@ -980,7 +1194,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] "
+   "text": "bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] ",
+   "msg": 4,
+   "part": 50
   },
   {
    "id": "b108",
@@ -989,7 +1205,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms\n[0040] info  "
+   "text": "info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms\n[0040] info  ",
+   "msg": 4,
+   "part": 51
   },
   {
    "id": "b109",
@@ -998,7 +1216,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled "
+   "text": "compiled ",
+   "msg": 4,
+   "part": 52
   },
   {
    "id": "b110",
@@ -1007,7 +1227,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav1.tsx (2580 "
+   "text": "./src/components/Nav1.tsx (2580 ",
+   "msg": 4,
+   "part": 53
   },
   {
    "id": "b111",
@@ -1016,7 +1238,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 12ms\n[0041] info  compiled "
+   "text": "bytes) in 12ms\n[0041] info  compiled ",
+   "msg": 4,
+   "part": 54
   },
   {
    "id": "b112",
@@ -1025,7 +1249,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Modal2.tsx "
+   "text": "./src/components/Modal2.tsx ",
+   "msg": 4,
+   "part": 55
   },
   {
    "id": "b113",
@@ -1034,7 +1260,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2617 bytes) in 13ms\n[0042] "
+   "text": "(2617 bytes) in 13ms\n[0042] ",
+   "msg": 4,
+   "part": 56
   },
   {
    "id": "b114",
@@ -1043,7 +1271,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled "
+   "text": "info  compiled ",
+   "msg": 4,
+   "part": 57
   },
   {
    "id": "b115",
@@ -1052,7 +1282,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Table3.tsx (2654 bytes) in 14ms\n"
+   "text": "./src/components/Table3.tsx (2654 bytes) in 14ms\n",
+   "msg": 4,
+   "part": 58
   },
   {
    "id": "b116",
@@ -1061,7 +1293,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0043] info  compiled "
+   "text": "[0043] info  compiled ",
+   "msg": 4,
+   "part": 59
   },
   {
    "id": "b117",
@@ -1070,7 +1304,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart4.tsx (2691 bytes) in 15ms\n[0044] "
+   "text": "./src/components/Chart4.tsx (2691 bytes) in 15ms\n[0044] ",
+   "msg": 4,
+   "part": 60
   },
   {
    "id": "b118",
@@ -1079,7 +1315,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Form5.tsx (2728 bytes) in 16ms\n[0045] info  compiled "
+   "text": "info  compiled ./src/components/Form5.tsx (2728 bytes) in 16ms\n[0045] info  compiled ",
+   "msg": 4,
+   "part": 61
   },
   {
    "id": "b119",
@@ -1088,7 +1326,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Card6.tsx (2765 bytes) in 17ms\n[0046] info  compiled ./src/components/Hero7.tsx "
+   "text": "./src/components/Card6.tsx (2765 bytes) in 17ms\n[0046] info  compiled ./src/components/Hero7.tsx ",
+   "msg": 4,
+   "part": 62
   },
   {
    "id": "b120",
@@ -1097,7 +1337,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2802 bytes) in 18ms\n[0047] info  compiled ./src/components/Footer8.tsx (2839 bytes) in "
+   "text": "(2802 bytes) in 18ms\n[0047] info  compiled ./src/components/Footer8.tsx (2839 bytes) in ",
+   "msg": 4,
+   "part": 63
   },
   {
    "id": "b121",
@@ -1106,7 +1348,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "19ms\n[0048] info  compiled ./src/components/Pricing9.tsx "
+   "text": "19ms\n[0048] info  compiled ./src/components/Pricing9.tsx ",
+   "msg": 4,
+   "part": 64
   },
   {
    "id": "b122",
@@ -1115,7 +1359,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2876 bytes) in 20ms\n[0049] info  "
+   "text": "(2876 bytes) in 20ms\n[0049] info  ",
+   "msg": 4,
+   "part": 65
   },
   {
    "id": "b123",
@@ -1124,7 +1370,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Nav10.tsx (2913 bytes) in 21ms"
+   "text": "compiled ./src/components/Nav10.tsx (2913 bytes) in 21ms",
+   "msg": 4,
+   "part": 66
   }
  ]
 }

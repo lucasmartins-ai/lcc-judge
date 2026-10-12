@@ -649,7 +649,9 @@ def render_md(r):
               'Jev: not run on the edge suite (no saved scores; no remote calls allowed). Oracle = gold upper bound. '
               'Random = mean of 5 seeds. Scored share < 1: blocks over the arm\'s window are unscored and, by the shared '
               'rule, dropped last, so the arm drops only the short scored blocks, which is where most must-keep evidence '
-              'sits. The 512-token specialist fails the suite mostly for this structural reason, not only for ranking.', '',
+              'sits. Since the 2026-10-12 size balancing the edge blocks are short enough that every model arm scores all of '
+              'them (scored share 1.00), so edge failures are ranking failures. drop_largest / drop_smallest are '
+              'content-blind size controls.', '',
               '## Cost per item', '',
               '| arm | score ms median | p90 | blocks/s | model load ms | peak RSS MB | threads | note |',
               '|---|---|---|---|---|---|---|---|']

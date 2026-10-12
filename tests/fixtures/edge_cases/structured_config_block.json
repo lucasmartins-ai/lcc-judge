@@ -17,7 +17,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "deploy/services.yaml\nservices:\n  web:\n    memory: 512Mi\n  queue:\n    memory: 256Mi\n    replicas: 2"
+   "text": "deploy/services.yaml\nservices:\n  web:\n    memory: 512Mi\n  queue:\n    memory: 256Mi\n    replicas: 2",
+   "msg": 0,
+   "part": 0
   },
   {
    "id": "b001",
@@ -26,7 +28,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "package-lock.json (excerpt)\n\"node_modules/pkg0\": {\"version\": \"1.0.0\"},\n"
+   "text": "package-lock.json (excerpt)\n\"node_modules/pkg0\": {\"version\": \"1.0.0\"},\n",
+   "msg": 1,
+   "part": 0
   },
   {
    "id": "b002",
@@ -35,7 +39,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg1\": {\"version\": "
+   "text": "\"node_modules/pkg1\": {\"version\": ",
+   "msg": 1,
+   "part": 1
   },
   {
    "id": "b003",
@@ -44,7 +50,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.1.0\"},\n"
+   "text": "\"1.1.0\"},\n",
+   "msg": 1,
+   "part": 2
   },
   {
    "id": "b004",
@@ -53,7 +61,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg2\": {\"version\": \"1.2.0\"},\n\"node_modules/pkg3\": {\"version\": \"1.3.0\"},\n"
+   "text": "\"node_modules/pkg2\": {\"version\": \"1.2.0\"},\n\"node_modules/pkg3\": {\"version\": \"1.3.0\"},\n",
+   "msg": 1,
+   "part": 3
   },
   {
    "id": "b005",
@@ -62,7 +72,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg4\": {\"version\": \"1.4.0\"},\n\"node_modules/pkg5\": {\"version\": "
+   "text": "\"node_modules/pkg4\": {\"version\": \"1.4.0\"},\n\"node_modules/pkg5\": {\"version\": ",
+   "msg": 1,
+   "part": 4
   },
   {
    "id": "b006",
@@ -71,7 +83,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.5.0\"},\n\"node_modules/pkg6\": {\"version\": "
+   "text": "\"1.5.0\"},\n\"node_modules/pkg6\": {\"version\": ",
+   "msg": 1,
+   "part": 5
   },
   {
    "id": "b007",
@@ -80,7 +94,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.6.0\"},\n\"node_modules/pkg7\": {\"version\": \"1.7.0\"},\n"
+   "text": "\"1.6.0\"},\n\"node_modules/pkg7\": {\"version\": \"1.7.0\"},\n",
+   "msg": 1,
+   "part": 6
   },
   {
    "id": "b008",
@@ -89,7 +105,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg8\": {\"version\": \"1.8.0\"},\n\"node_modules/pkg9\": {\"version\": "
+   "text": "\"node_modules/pkg8\": {\"version\": \"1.8.0\"},\n\"node_modules/pkg9\": {\"version\": ",
+   "msg": 1,
+   "part": 7
   },
   {
    "id": "b009",
@@ -98,7 +116,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.9.0\"},\n\"node_modules/pkg10\": {\"version\": "
+   "text": "\"1.9.0\"},\n\"node_modules/pkg10\": {\"version\": ",
+   "msg": 1,
+   "part": 8
   },
   {
    "id": "b010",
@@ -107,7 +127,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.10.0\"},\n"
+   "text": "\"1.10.0\"},\n",
+   "msg": 1,
+   "part": 9
   },
   {
    "id": "b011",
@@ -116,7 +138,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg11\": {\"version\": "
+   "text": "\"node_modules/pkg11\": {\"version\": ",
+   "msg": 1,
+   "part": 10
   },
   {
    "id": "b012",
@@ -125,7 +149,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.11.0\"},\n\"node_modules/pkg12\": {\"version\": \"1.12.0\"},\n\"node_modules/pkg13\": {\"version\": "
+   "text": "\"1.11.0\"},\n\"node_modules/pkg12\": {\"version\": \"1.12.0\"},\n\"node_modules/pkg13\": {\"version\": ",
+   "msg": 1,
+   "part": 11
   },
   {
    "id": "b013",
@@ -134,7 +160,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.13.0\"},\n\"node_modules/pkg14\": {\"version\": "
+   "text": "\"1.13.0\"},\n\"node_modules/pkg14\": {\"version\": ",
+   "msg": 1,
+   "part": 12
   },
   {
    "id": "b014",
@@ -143,7 +171,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.14.0\"},\n\"node_modules/pkg15\": {\"version\": \"1.15.0\"},\n"
+   "text": "\"1.14.0\"},\n\"node_modules/pkg15\": {\"version\": \"1.15.0\"},\n",
+   "msg": 1,
+   "part": 13
   },
   {
    "id": "b015",
@@ -152,7 +182,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg16\": {\"version\": \"1.16.0\"},\n\"node_modules/pkg17\": {\"version\": \"1.17.0\"},\n"
+   "text": "\"node_modules/pkg16\": {\"version\": \"1.16.0\"},\n\"node_modules/pkg17\": {\"version\": \"1.17.0\"},\n",
+   "msg": 1,
+   "part": 14
   },
   {
    "id": "b016",
@@ -161,7 +193,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg18\": {\"version\": \"1.18.0\"},\n\"node_modules/pkg19\": {\"version\": "
+   "text": "\"node_modules/pkg18\": {\"version\": \"1.18.0\"},\n\"node_modules/pkg19\": {\"version\": ",
+   "msg": 1,
+   "part": 15
   },
   {
    "id": "b017",
@@ -170,7 +204,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.19.0\"},\n\"node_modules/pkg20\": {\"version\": \"1.20.0\"},\n\"node_modules/pkg21\": "
+   "text": "\"1.19.0\"},\n\"node_modules/pkg20\": {\"version\": \"1.20.0\"},\n\"node_modules/pkg21\": ",
+   "msg": 1,
+   "part": 16
   },
   {
    "id": "b018",
@@ -179,7 +215,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.21.0\"},\n\"node_modules/pkg22\": {\"version\": \"1.22.0\"},\n"
+   "text": "{\"version\": \"1.21.0\"},\n\"node_modules/pkg22\": {\"version\": \"1.22.0\"},\n",
+   "msg": 1,
+   "part": 17
   },
   {
    "id": "b019",
@@ -188,7 +226,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg23\": {\"version\": \"1.23.0\"},\n\"node_modules/pkg24\": {\"version\": "
+   "text": "\"node_modules/pkg23\": {\"version\": \"1.23.0\"},\n\"node_modules/pkg24\": {\"version\": ",
+   "msg": 1,
+   "part": 18
   },
   {
    "id": "b020",
@@ -197,7 +237,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.24.0\"},\n\"node_modules/pkg25\": {\"version\": \"1.25.0\"},\n\"node_modules/pkg26\": {\"version\": "
+   "text": "\"1.24.0\"},\n\"node_modules/pkg25\": {\"version\": \"1.25.0\"},\n\"node_modules/pkg26\": {\"version\": ",
+   "msg": 1,
+   "part": 19
   },
   {
    "id": "b021",
@@ -206,7 +248,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.26.0\"},\n\"node_modules/pkg27\": "
+   "text": "\"1.26.0\"},\n\"node_modules/pkg27\": ",
+   "msg": 1,
+   "part": 20
   },
   {
    "id": "b022",
@@ -215,7 +259,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.27.0\"},\n"
+   "text": "{\"version\": \"1.27.0\"},\n",
+   "msg": 1,
+   "part": 21
   },
   {
    "id": "b023",
@@ -224,7 +270,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg28\": {\"version\": \"1.28.0\"},\n\"node_modules/pkg29\": {\"version\": "
+   "text": "\"node_modules/pkg28\": {\"version\": \"1.28.0\"},\n\"node_modules/pkg29\": {\"version\": ",
+   "msg": 1,
+   "part": 22
   },
   {
    "id": "b024",
@@ -233,7 +281,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.29.0\"},\n\"node_modules/pkg30\": {\"version\": \"1.30.0\"},\n"
+   "text": "\"1.29.0\"},\n\"node_modules/pkg30\": {\"version\": \"1.30.0\"},\n",
+   "msg": 1,
+   "part": 23
   },
   {
    "id": "b025",
@@ -242,7 +292,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg31\": {\"version\": \"1.31.0\"},\n\"node_modules/pkg32\": "
+   "text": "\"node_modules/pkg31\": {\"version\": \"1.31.0\"},\n\"node_modules/pkg32\": ",
+   "msg": 1,
+   "part": 24
   },
   {
    "id": "b026",
@@ -251,7 +303,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.32.0\"},\n"
+   "text": "{\"version\": \"1.32.0\"},\n",
+   "msg": 1,
+   "part": 25
   },
   {
    "id": "b027",
@@ -260,7 +314,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg33\": {\"version\": \"1.33.0\"},\n\"node_modules/pkg34\": {\"version\": \"1.34.0\"},\n"
+   "text": "\"node_modules/pkg33\": {\"version\": \"1.33.0\"},\n\"node_modules/pkg34\": {\"version\": \"1.34.0\"},\n",
+   "msg": 1,
+   "part": 26
   },
   {
    "id": "b028",
@@ -269,7 +325,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg35\": {\"version\": \"1.35.0\"},\n"
+   "text": "\"node_modules/pkg35\": {\"version\": \"1.35.0\"},\n",
+   "msg": 1,
+   "part": 27
   },
   {
    "id": "b029",
@@ -278,7 +336,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg36\": {\"version\": \"1.36.0\"},\n\"node_modules/pkg37\": {\"version\": \"1.37.0\"},\n"
+   "text": "\"node_modules/pkg36\": {\"version\": \"1.36.0\"},\n\"node_modules/pkg37\": {\"version\": \"1.37.0\"},\n",
+   "msg": 1,
+   "part": 28
   },
   {
    "id": "b030",
@@ -287,7 +347,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg38\": "
+   "text": "\"node_modules/pkg38\": ",
+   "msg": 1,
+   "part": 29
   },
   {
    "id": "b031",
@@ -296,7 +358,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.38.0\"},\n\"node_modules/pkg39\": {\"version\": \"1.39.0\"},\n"
+   "text": "{\"version\": \"1.38.0\"},\n\"node_modules/pkg39\": {\"version\": \"1.39.0\"},\n",
+   "msg": 1,
+   "part": 30
   },
   {
    "id": "b032",
@@ -305,7 +369,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg40\": {\"version\": \"1.40.0\"},\n"
+   "text": "\"node_modules/pkg40\": {\"version\": \"1.40.0\"},\n",
+   "msg": 1,
+   "part": 31
   },
   {
    "id": "b033",
@@ -314,7 +380,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg41\": {\"version\": \"1.41.0\"},\n"
+   "text": "\"node_modules/pkg41\": {\"version\": \"1.41.0\"},\n",
+   "msg": 1,
+   "part": 32
   },
   {
    "id": "b034",
@@ -323,7 +391,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg42\": {\"version\": \"1.42.0\"},\n"
+   "text": "\"node_modules/pkg42\": {\"version\": \"1.42.0\"},\n",
+   "msg": 1,
+   "part": 33
   },
   {
    "id": "b035",
@@ -332,7 +402,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg43\": "
+   "text": "\"node_modules/pkg43\": ",
+   "msg": 1,
+   "part": 34
   },
   {
    "id": "b036",
@@ -341,7 +413,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.43.0\"},\n"
+   "text": "{\"version\": \"1.43.0\"},\n",
+   "msg": 1,
+   "part": 35
   },
   {
    "id": "b037",
@@ -350,7 +424,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg44\": "
+   "text": "\"node_modules/pkg44\": ",
+   "msg": 1,
+   "part": 36
   },
   {
    "id": "b038",
@@ -359,7 +435,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.44.0\"},\n\"node_modules/pkg45\": {\"version\": \"1.45.0\"},\n\"node_modules/pkg46\": "
+   "text": "{\"version\": \"1.44.0\"},\n\"node_modules/pkg45\": {\"version\": \"1.45.0\"},\n\"node_modules/pkg46\": ",
+   "msg": 1,
+   "part": 37
   },
   {
    "id": "b039",
@@ -368,7 +446,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.46.0\"},\n"
+   "text": "{\"version\": \"1.46.0\"},\n",
+   "msg": 1,
+   "part": 38
   },
   {
    "id": "b040",
@@ -377,7 +457,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg47\": "
+   "text": "\"node_modules/pkg47\": ",
+   "msg": 1,
+   "part": 39
   },
   {
    "id": "b041",
@@ -386,7 +468,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.47.0\"},\n\"node_modules/pkg48\": "
+   "text": "{\"version\": \"1.47.0\"},\n\"node_modules/pkg48\": ",
+   "msg": 1,
+   "part": 40
   },
   {
    "id": "b042",
@@ -395,7 +479,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": "
+   "text": "{\"version\": ",
+   "msg": 1,
+   "part": 41
   },
   {
    "id": "b043",
@@ -404,7 +490,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.48.0\"},\n\"node_modules/pkg49\": {\"version\": \"1.49.0\"},\n\"node_modules/pkg50\": "
+   "text": "\"1.48.0\"},\n\"node_modules/pkg49\": {\"version\": \"1.49.0\"},\n\"node_modules/pkg50\": ",
+   "msg": 1,
+   "part": 42
   },
   {
    "id": "b044",
@@ -413,7 +501,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.50.0\"},\n"
+   "text": "{\"version\": \"1.50.0\"},\n",
+   "msg": 1,
+   "part": 43
   },
   {
    "id": "b045",
@@ -422,7 +512,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg51\": {\"version\": \"1.51.0\"},\n\"node_modules/pkg52\": {\"version\": "
+   "text": "\"node_modules/pkg51\": {\"version\": \"1.51.0\"},\n\"node_modules/pkg52\": {\"version\": ",
+   "msg": 1,
+   "part": 44
   },
   {
    "id": "b046",
@@ -431,7 +523,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.52.0\"},\n\"node_modules/pkg53\": {\"version\": "
+   "text": "\"1.52.0\"},\n\"node_modules/pkg53\": {\"version\": ",
+   "msg": 1,
+   "part": 45
   },
   {
    "id": "b047",
@@ -440,7 +534,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.53.0\"},\n\"node_modules/pkg54\": "
+   "text": "\"1.53.0\"},\n\"node_modules/pkg54\": ",
+   "msg": 1,
+   "part": 46
   },
   {
    "id": "b048",
@@ -449,7 +545,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.54.0\"},\n\"node_modules/pkg55\": {\"version\": \"1.55.0\"},\n\"node_modules/pkg56\": "
+   "text": "{\"version\": \"1.54.0\"},\n\"node_modules/pkg55\": {\"version\": \"1.55.0\"},\n\"node_modules/pkg56\": ",
+   "msg": 1,
+   "part": 47
   },
   {
    "id": "b049",
@@ -458,7 +556,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.56.0\"},\n"
+   "text": "{\"version\": \"1.56.0\"},\n",
+   "msg": 1,
+   "part": 48
   },
   {
    "id": "b050",
@@ -467,7 +567,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg57\": {\"version\": \"1.57.0\"},\n\"node_modules/pkg58\": {\"version\": "
+   "text": "\"node_modules/pkg57\": {\"version\": \"1.57.0\"},\n\"node_modules/pkg58\": {\"version\": ",
+   "msg": 1,
+   "part": 49
   },
   {
    "id": "b051",
@@ -476,7 +578,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.58.0\"},\n\"node_modules/pkg59\": {\"version\": \"1.59.0\"},\n"
+   "text": "\"1.58.0\"},\n\"node_modules/pkg59\": {\"version\": \"1.59.0\"},\n",
+   "msg": 1,
+   "part": 50
   },
   {
    "id": "b052",
@@ -485,7 +589,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg60\": {\"version\": \"1.60.0\"},\n"
+   "text": "\"node_modules/pkg60\": {\"version\": \"1.60.0\"},\n",
+   "msg": 1,
+   "part": 51
   },
   {
    "id": "b053",
@@ -494,7 +600,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg61\": {\"version\": \"1.61.0\"},\n"
+   "text": "\"node_modules/pkg61\": {\"version\": \"1.61.0\"},\n",
+   "msg": 1,
+   "part": 52
   },
   {
    "id": "b054",
@@ -503,7 +611,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg62\": "
+   "text": "\"node_modules/pkg62\": ",
+   "msg": 1,
+   "part": 53
   },
   {
    "id": "b055",
@@ -512,7 +622,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.62.0\"},\n\"node_modules/pkg63\": {\"version\": "
+   "text": "{\"version\": \"1.62.0\"},\n\"node_modules/pkg63\": {\"version\": ",
+   "msg": 1,
+   "part": 54
   },
   {
    "id": "b056",
@@ -521,7 +633,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.63.0\"},\n\"node_modules/pkg64\": {\"version\": \"1.64.0\"},\n\"node_modules/pkg65\": {\"version\": "
+   "text": "\"1.63.0\"},\n\"node_modules/pkg64\": {\"version\": \"1.64.0\"},\n\"node_modules/pkg65\": {\"version\": ",
+   "msg": 1,
+   "part": 55
   },
   {
    "id": "b057",
@@ -530,7 +644,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.65.0\"},\n"
+   "text": "\"1.65.0\"},\n",
+   "msg": 1,
+   "part": 56
   },
   {
    "id": "b058",
@@ -539,7 +655,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg66\": "
+   "text": "\"node_modules/pkg66\": ",
+   "msg": 1,
+   "part": 57
   },
   {
    "id": "b059",
@@ -548,7 +666,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.66.0\"},\n\"node_modules/pkg67\": {\"version\": "
+   "text": "{\"version\": \"1.66.0\"},\n\"node_modules/pkg67\": {\"version\": ",
+   "msg": 1,
+   "part": 58
   },
   {
    "id": "b060",
@@ -557,7 +677,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.67.0\"},\n\"node_modules/pkg68\": {\"version\": \"1.68.0\"},\n"
+   "text": "\"1.67.0\"},\n\"node_modules/pkg68\": {\"version\": \"1.68.0\"},\n",
+   "msg": 1,
+   "part": 59
   },
   {
    "id": "b061",
@@ -566,7 +688,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg69\": "
+   "text": "\"node_modules/pkg69\": ",
+   "msg": 1,
+   "part": 60
   },
   {
    "id": "b062",
@@ -575,7 +699,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.69.0\"},\n\"node_modules/pkg70\": {\"version\": \"1.70.0\"},\n\"node_modules/pkg71\": "
+   "text": "{\"version\": \"1.69.0\"},\n\"node_modules/pkg70\": {\"version\": \"1.70.0\"},\n\"node_modules/pkg71\": ",
+   "msg": 1,
+   "part": 61
   },
   {
    "id": "b063",
@@ -584,7 +710,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.71.0\"},\n\"node_modules/pkg72\": {\"version\": \"1.72.0\"},\n"
+   "text": "{\"version\": \"1.71.0\"},\n\"node_modules/pkg72\": {\"version\": \"1.72.0\"},\n",
+   "msg": 1,
+   "part": 62
   },
   {
    "id": "b064",
@@ -593,7 +721,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg73\": {\"version\": \"1.73.0\"},\n"
+   "text": "\"node_modules/pkg73\": {\"version\": \"1.73.0\"},\n",
+   "msg": 1,
+   "part": 63
   },
   {
    "id": "b065",
@@ -602,7 +732,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg74\": {\"version\": \"1.74.0\"},\n\"node_modules/pkg75\": "
+   "text": "\"node_modules/pkg74\": {\"version\": \"1.74.0\"},\n\"node_modules/pkg75\": ",
+   "msg": 1,
+   "part": 64
   },
   {
    "id": "b066",
@@ -611,7 +743,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": \"1.75.0\"},\n"
+   "text": "{\"version\": \"1.75.0\"},\n",
+   "msg": 1,
+   "part": 65
   },
   {
    "id": "b067",
@@ -620,7 +754,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"node_modules/pkg76\": {\"version\": \"1.76.0\"},\n\"node_modules/pkg77\": "
+   "text": "\"node_modules/pkg76\": {\"version\": \"1.76.0\"},\n\"node_modules/pkg77\": ",
+   "msg": 1,
+   "part": 66
   },
   {
    "id": "b068",
@@ -629,7 +765,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "{\"version\": "
+   "text": "{\"version\": ",
+   "msg": 1,
+   "part": 67
   },
   {
    "id": "b069",
@@ -638,7 +776,9 @@
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "\"1.77.0\"},\n\"node_modules/pkg78\": {\"version\": \"1.78.0\"},\n\"node_modules/pkg79\": {\"version\": \"1.79.0\"},"
+   "text": "\"1.77.0\"},\n\"node_modules/pkg78\": {\"version\": \"1.78.0\"},\n\"node_modules/pkg79\": {\"version\": \"1.79.0\"},",
+   "msg": 1,
+   "part": 68
   },
   {
    "id": "b070",
@@ -647,7 +787,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] "
+   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] ",
+   "msg": 2,
+   "part": 0
   },
   {
    "id": "b071",
@@ -656,7 +798,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  "
+   "text": "info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  ",
+   "msg": 2,
+   "part": 1
   },
   {
    "id": "b072",
@@ -665,7 +809,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n"
+   "text": "compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n",
+   "msg": 2,
+   "part": 2
   },
   {
    "id": "b073",
@@ -674,7 +820,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled "
+   "text": "[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled ",
+   "msg": 2,
+   "part": 3
   },
   {
    "id": "b074",
@@ -683,7 +831,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav4.tsx (1248 bytes) in 16ms\n"
+   "text": "./src/components/Nav4.tsx (1248 bytes) in 16ms\n",
+   "msg": 2,
+   "part": 4
   },
   {
    "id": "b075",
@@ -692,7 +842,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0005] info  compiled "
+   "text": "[0005] info  compiled ",
+   "msg": 2,
+   "part": 5
   },
   {
    "id": "b076",
@@ -701,7 +853,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled "
+   "text": "./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ",
+   "msg": 2,
+   "part": 6
   },
   {
    "id": "b077",
@@ -710,7 +864,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled "
+   "text": "./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled ",
+   "msg": 2,
+   "part": 7
   },
   {
    "id": "b078",
@@ -719,7 +875,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart7.tsx (1359 bytes) in "
+   "text": "./src/components/Chart7.tsx (1359 bytes) in ",
+   "msg": 2,
+   "part": 8
   },
   {
    "id": "b079",
@@ -728,7 +886,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "19ms\n[0008] info  compiled ./src/components/Form8.tsx "
+   "text": "19ms\n[0008] info  compiled ./src/components/Form8.tsx ",
+   "msg": 2,
+   "part": 9
   },
   {
    "id": "b080",
@@ -737,7 +897,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n"
+   "text": "(1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n",
+   "msg": 2,
+   "part": 10
   },
   {
    "id": "b081",
@@ -746,7 +908,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0010] info  "
+   "text": "[0010] info  ",
+   "msg": 2,
+   "part": 11
   },
   {
    "id": "b082",
@@ -755,7 +919,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Hero10.tsx (1470 "
+   "text": "compiled ./src/components/Hero10.tsx (1470 ",
+   "msg": 2,
+   "part": 12
   },
   {
    "id": "b083",
@@ -764,7 +930,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 22ms\n[0011] info  compiled "
+   "text": "bytes) in 22ms\n[0011] info  compiled ",
+   "msg": 2,
+   "part": 13
   },
   {
    "id": "b084",
@@ -773,7 +941,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Footer11.tsx "
+   "text": "./src/components/Footer11.tsx ",
+   "msg": 2,
+   "part": 14
   },
   {
    "id": "b085",
@@ -782,7 +952,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n"
+   "text": "(1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n",
+   "msg": 2,
+   "part": 15
   },
   {
    "id": "b086",
@@ -791,7 +963,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0013] info  compiled "
+   "text": "[0013] info  compiled ",
+   "msg": 2,
+   "part": 16
   },
   {
    "id": "b087",
@@ -800,7 +974,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled "
+   "text": "./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ",
+   "msg": 2,
+   "part": 17
   },
   {
    "id": "b088",
@@ -809,7 +985,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled "
+   "text": "./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled ",
+   "msg": 2,
+   "part": 18
   },
   {
    "id": "b089",
@@ -818,7 +996,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Table2.tsx (1655 "
+   "text": "./src/components/Table2.tsx (1655 ",
+   "msg": 2,
+   "part": 19
   },
   {
    "id": "b090",
@@ -827,7 +1007,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 27ms\n[0016] info  compiled "
+   "text": "bytes) in 27ms\n[0016] info  compiled ",
+   "msg": 2,
+   "part": 20
   },
   {
    "id": "b091",
@@ -836,7 +1018,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart3.tsx "
+   "text": "./src/components/Chart3.tsx ",
+   "msg": 2,
+   "part": 21
   },
   {
    "id": "b092",
@@ -845,7 +1029,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(1692 bytes) in "
+   "text": "(1692 bytes) in ",
+   "msg": 2,
+   "part": 22
   },
   {
    "id": "b093",
@@ -854,7 +1040,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  "
+   "text": "28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  ",
+   "msg": 2,
+   "part": 23
   },
   {
    "id": "b094",
@@ -863,7 +1051,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] "
+   "text": "compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] ",
+   "msg": 2,
+   "part": 24
   },
   {
    "id": "b095",
@@ -872,7 +1062,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] "
+   "text": "info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] ",
+   "msg": 2,
+   "part": 25
   },
   {
    "id": "b096",
@@ -881,7 +1073,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "info  compiled "
+   "text": "info  compiled ",
+   "msg": 2,
+   "part": 26
   },
   {
    "id": "b097",
@@ -890,7 +1084,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  "
+   "text": "./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  ",
+   "msg": 2,
+   "part": 27
   },
   {
    "id": "b098",
@@ -899,7 +1095,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled "
+   "text": "compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ",
+   "msg": 2,
+   "part": 28
   },
   {
    "id": "b099",
@@ -908,7 +1106,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav9.tsx (1914 bytes) in 34ms\n"
+   "text": "./src/components/Nav9.tsx (1914 bytes) in 34ms\n",
+   "msg": 2,
+   "part": 29
   },
   {
    "id": "b100",
@@ -917,7 +1117,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  "
+   "text": "[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  ",
+   "msg": 2,
+   "part": 30
   },
   {
    "id": "b101",
@@ -926,7 +1128,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled ./src/components/Table11.tsx (1988 bytes) "
+   "text": "compiled ./src/components/Table11.tsx (1988 bytes) ",
+   "msg": 2,
+   "part": 31
   },
   {
    "id": "b102",
@@ -935,7 +1139,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "in 36ms\n[0025] info  compiled "
+   "text": "in 36ms\n[0025] info  compiled ",
+   "msg": 2,
+   "part": 32
   },
   {
    "id": "b103",
@@ -944,7 +1150,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart12.tsx (2025 bytes) in 37ms\n"
+   "text": "./src/components/Chart12.tsx (2025 bytes) in 37ms\n",
+   "msg": 2,
+   "part": 33
   },
   {
    "id": "b104",
@@ -953,7 +1161,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0026] info  compiled ./src/components/Form0.tsx (2062 "
+   "text": "[0026] info  compiled ./src/components/Form0.tsx (2062 ",
+   "msg": 2,
+   "part": 34
   },
   {
    "id": "b105",
@@ -962,7 +1172,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx "
+   "text": "bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx ",
+   "msg": 2,
+   "part": 35
   },
   {
    "id": "b106",
@@ -971,7 +1183,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx "
+   "text": "(2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx ",
+   "msg": 2,
+   "part": 36
   },
   {
    "id": "b107",
@@ -980,7 +1194,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in "
+   "text": "(2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in ",
+   "msg": 2,
+   "part": 37
   },
   {
    "id": "b108",
@@ -989,7 +1205,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  "
+   "text": "41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  ",
+   "msg": 2,
+   "part": 38
   },
   {
    "id": "b109",
@@ -998,7 +1216,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "compiled "
+   "text": "compiled ",
+   "msg": 2,
+   "part": 39
   },
   {
    "id": "b110",
@@ -1007,7 +1227,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Nav5.tsx "
+   "text": "./src/components/Nav5.tsx ",
+   "msg": 2,
+   "part": 40
   },
   {
    "id": "b111",
@@ -1016,7 +1238,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n"
+   "text": "(2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n",
+   "msg": 2,
+   "part": 41
   },
   {
    "id": "b112",
@@ -1025,7 +1249,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0033] info  compiled "
+   "text": "[0033] info  compiled ",
+   "msg": 2,
+   "part": 42
   },
   {
    "id": "b113",
@@ -1034,7 +1260,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Table7.tsx (2321 bytes) in 45ms\n"
+   "text": "./src/components/Table7.tsx (2321 bytes) in 45ms\n",
+   "msg": 2,
+   "part": 43
   },
   {
    "id": "b114",
@@ -1043,7 +1271,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0034] info  compiled "
+   "text": "[0034] info  compiled ",
+   "msg": 2,
+   "part": 44
   },
   {
    "id": "b115",
@@ -1052,7 +1282,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Chart8.tsx "
+   "text": "./src/components/Chart8.tsx ",
+   "msg": 2,
+   "part": 45
   },
   {
    "id": "b116",
@@ -1061,7 +1293,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx "
+   "text": "(2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx ",
+   "msg": 2,
+   "part": 46
   },
   {
    "id": "b117",
@@ -1070,7 +1304,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "(2395 bytes) in 47ms\n[0036] info  compiled "
+   "text": "(2395 bytes) in 47ms\n[0036] info  compiled ",
+   "msg": 2,
+   "part": 47
   },
   {
    "id": "b118",
@@ -1079,7 +1315,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled "
+   "text": "./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled ",
+   "msg": 2,
+   "part": 48
   },
   {
    "id": "b119",
@@ -1088,7 +1326,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled "
+   "text": "./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled ",
+   "msg": 2,
+   "part": 49
   },
   {
    "id": "b120",
@@ -1097,7 +1337,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled "
+   "text": "./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled ",
+   "msg": 2,
+   "part": 50
   },
   {
    "id": "b121",
@@ -1106,7 +1348,9 @@
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "./src/components/Pricing0.tsx (2543 bytes) in 51ms"
+   "text": "./src/components/Pricing0.tsx (2543 bytes) in 51ms",
+   "msg": 2,
+   "part": 51
   }
  ]
 }
