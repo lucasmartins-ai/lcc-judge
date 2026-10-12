@@ -1,0 +1,77 @@
+{
+ "id": "multi_file_refactor",
+ "category": "specified_task",
+ "use_case": "multi-file refactors",
+ "situation": "Definition and three call sites were read early; then tests and unrelated files.",
+ "must_keep": "The definition and all three call-site reads.",
+ "may_drop": "Test logs, unrelated reads, narration.",
+ "why_judges_fail": "Each call site alone looks minor; judges keep the definition and drop call sites, so the rename misses files. Recency drops the early reads.",
+ "source": "synthetic",
+ "source_ref": "taxonomy-v2 specified_task",
+ "goal": "renomeia getUser para fetchUser em todo o projeto",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "src/lib/users.ts\nexport async function getUser(id: string) { return db.user.find(id); }"
+  },
+  {
+   "id": "b01",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "src/app/profile/page.tsx (line 12)\nconst u = await getUser(params.id);"
+  },
+  {
+   "id": "b02",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "src/app/api/me/route.ts (line 5)\nreturn Response.json(await getUser(session.uid));"
+  },
+  {
+   "id": "b03",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "src/jobs/digest.ts (line 30)\nfor (const id of ids) send(await getUser(id));"
+  },
+  {
+   "id": "b04",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_0 PASSED [  1%]\ntests/test_mod1.py::test_case_1 PASSED [  2%]\ntests/test_mod2.py::test_case_2 PASSED [  3%]\ntests/test_mod3.py::test_case_3 PASSED [  5%]\ntests/test_mod4.py::test_case_4 PASSED [  6%]\ntests/test_mod5.py::test_case_5 PASSED [  7%]\ntests/test_mod6.py::test_case_6 PASSED [  8%]\ntests/test_mod7.py::test_case_7 PASSED [ 10%]\ntests/test_mod8.py::test_case_8 PASSED [ 11%]\ntests/test_mod9.py::test_case_9 PASSED [ 12%]\ntests/test_mod10.py::test_case_10 PASSED [ 13%]\ntests/test_mod0.py::test_case_11 PASSED [ 15%]\ntests/test_mod1.py::test_case_12 PASSED [ 16%]\ntests/test_mod2.py::test_case_13 PASSED [ 17%]\ntests/test_mod3.py::test_case_14 PASSED [ 18%]\ntests/test_mod4.py::test_case_15 PASSED [ 20%]\ntests/test_mod5.py::test_case_16 PASSED [ 21%]\ntests/test_mod6.py::test_case_17 PASSED [ 22%]\ntests/test_mod7.py::test_case_18 PASSED [ 23%]\ntests/test_mod8.py::test_case_19 PASSED [ 25%]\ntests/test_mod9.py::test_case_20 PASSED [ 26%]\ntests/test_mod10.py::test_case_21 PASSED [ 27%]\ntests/test_mod0.py::test_case_22 PASSED [ 28%]\ntests/test_mod1.py::test_case_23 PASSED [ 30%]\ntests/test_mod2.py::test_case_24 PASSED [ 31%]\ntests/test_mod3.py::test_case_25 PASSED [ 32%]\ntests/test_mod4.py::test_case_26 PASSED [ 33%]\ntests/test_mod5.py::test_case_27 PASSED [ 35%]\ntests/test_mod6.py::test_case_28 PASSED [ 36%]\ntests/test_mod7.py::test_case_29 PASSED [ 37%]\ntests/test_mod8.py::test_case_30 PASSED [ 38%]\ntests/test_mod9.py::test_case_31 PASSED [ 40%]\ntests/test_mod10.py::test_case_32 PASSED [ 41%]\ntests/test_mod0.py::test_case_33 PASSED [ 42%]\ntests/test_mod1.py::test_case_34 PASSED [ 43%]\ntests/test_mod2.py::test_case_35 PASSED [ 45%]\ntests/test_mod3.py::test_case_36 PASSED [ 46%]\ntests/test_mod4.py::test_case_37 PASSED [ 47%]\ntests/test_mod5.py::test_case_38 PASSED [ 48%]\ntests/test_mod6.py::test_case_39 PASSED [ 50%]\ntests/test_mod7.py::test_case_40 PASSED [ 51%]\ntests/test_mod8.py::test_case_41 PASSED [ 52%]\ntests/test_mod9.py::test_case_42 PASSED [ 53%]\ntests/test_mod10.py::test_case_43 PASSED [ 55%]\ntests/test_mod0.py::test_case_44 PASSED [ 56%]\ntests/test_mod1.py::test_case_45 PASSED [ 57%]\ntests/test_mod2.py::test_case_46 PASSED [ 58%]\ntests/test_mod3.py::test_case_47 PASSED [ 60%]\ntests/test_mod4.py::test_case_48 PASSED [ 61%]\ntests/test_mod5.py::test_case_49 PASSED [ 62%]\ntests/test_mod6.py::test_case_50 PASSED [ 63%]\ntests/test_mod7.py::test_case_51 PASSED [ 65%]\ntests/test_mod8.py::test_case_52 PASSED [ 66%]\ntests/test_mod9.py::test_case_53 PASSED [ 67%]\ntests/test_mod10.py::test_case_54 PASSED [ 68%]\ntests/test_mod0.py::test_case_55 PASSED [ 70%]\ntests/test_mod1.py::test_case_56 PASSED [ 71%]\ntests/test_mod2.py::test_case_57 PASSED [ 72%]\ntests/test_mod3.py::test_case_58 PASSED [ 73%]\ntests/test_mod4.py::test_case_59 PASSED [ 75%]\ntests/test_mod5.py::test_case_60 PASSED [ 76%]\ntests/test_mod6.py::test_case_61 PASSED [ 77%]\ntests/test_mod7.py::test_case_62 PASSED [ 78%]\ntests/test_mod8.py::test_case_63 PASSED [ 80%]\ntests/test_mod9.py::test_case_64 PASSED [ 81%]\ntests/test_mod10.py::test_case_65 PASSED [ 82%]\ntests/test_mod0.py::test_case_66 PASSED [ 83%]\ntests/test_mod1.py::test_case_67 PASSED [ 85%]\ntests/test_mod2.py::test_case_68 PASSED [ 86%]\ntests/test_mod3.py::test_case_69 PASSED [ 87%]\ntests/test_mod4.py::test_case_70 PASSED [ 88%]\ntests/test_mod5.py::test_case_71 PASSED [ 90%]\ntests/test_mod6.py::test_case_72 PASSED [ 91%]\ntests/test_mod7.py::test_case_73 PASSED [ 92%]\ntests/test_mod8.py::test_case_74 PASSED [ 93%]\ntests/test_mod9.py::test_case_75 PASSED [ 95%]\ntests/test_mod10.py::test_case_76 PASSED [ 96%]\ntests/test_mod0.py::test_case_77 PASSED [ 97%]\ntests/test_mod1.py::test_case_78 PASSED [ 98%]\ntests/test_mod2.py::test_case_79 PASSED [100%]\n===== 80 passed, 0 failed in 4.01s ====="
+  },
+  {
+   "id": "b05",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "src/lib/format.ts\nexport function fmt0(props: Props0) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt1(props: Props1) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt2(props: Props2) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function fmt3(props: Props3) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function fmt4(props: Props4) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function fmt5(props: Props0) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function fmt6(props: Props1) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt7(props: Props2) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt8(props: Props3) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function fmt9(props: Props4) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function fmt10(props: Props0) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function fmt11(props: Props1) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function fmt12(props: Props2) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt13(props: Props3) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt14(props: Props4) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function fmt15(props: Props0) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function fmt16(props: Props1) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function fmt17(props: Props2) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function fmt18(props: Props3) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt19(props: Props4) {\n  return <div className=\"p-1\">{props.label}</div>;\n}"
+  },
+  {
+   "id": "b06",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 bytes) in 16ms\n[0005] info  compiled ./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] info  compiled ./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n[0010] info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled ./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] info  compiled ./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled ./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled ./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ./src/components/Nav9.tsx (1914 bytes) in 34ms\n[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  compiled ./src/components/Table11.tsx (1988 bytes) in 36ms\n[0025] info  compiled ./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx (2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in 41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx (2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n[0034] info  compiled ./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled ./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled ./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms\n[0040] info  compiled ./src/components/Nav1.tsx (2580 bytes) in 12ms\n[0041] info  compiled ./src/components/Modal2.tsx (2617 bytes) in 13ms\n[0042] info  compiled ./src/components/Table3.tsx (2654 bytes) in 14ms\n[0043] info  compiled ./src/components/Chart4.tsx (2691 bytes) in 15ms\n[0044] info  compiled ./src/components/Form5.tsx (2728 bytes) in 16ms\n[0045] info  compiled ./src/components/Card6.tsx (2765 bytes) in 17ms\n[0046] info  compiled ./src/components/Hero7.tsx (2802 bytes) in 18ms\n[0047] info  compiled ./src/components/Footer8.tsx (2839 bytes) in 19ms\n[0048] info  compiled ./src/components/Pricing9.tsx (2876 bytes) in 20ms\n[0049] info  compiled ./src/components/Nav10.tsx (2913 bytes) in 21ms\n[0050] info  compiled ./src/components/Modal11.tsx (2950 bytes) in 22ms\n[0051] info  compiled ./src/components/Table12.tsx (2987 bytes) in 23ms\n[0052] info  compiled ./src/components/Chart0.tsx (3024 bytes) in 24ms\n[0053] info  compiled ./src/components/Form1.tsx (3061 bytes) in 25ms\n[0054] info  compiled ./src/components/Card2.tsx (3098 bytes) in 26ms\n[0055] info  compiled ./src/components/Hero3.tsx (3135 bytes) in 27ms\n[0056] info  compiled ./src/components/Footer4.tsx (3172 bytes) in 28ms\n[0057] info  compiled ./src/components/Pricing5.tsx (3209 bytes) in 29ms\n[0058] info  compiled ./src/components/Nav6.tsx (3246 bytes) in 30ms\n[0059] info  compiled ./src/components/Modal7.tsx (3283 bytes) in 31ms\n[0060] info  compiled ./src/components/Table8.tsx (3320 bytes) in 32ms\n[0061] info  compiled ./src/components/Chart9.tsx (3357 bytes) in 33ms\n[0062] info  compiled ./src/components/Form10.tsx (3394 bytes) in 34ms\n[0063] info  compiled ./src/components/Card11.tsx (3431 bytes) in 35ms\n[0064] info  compiled ./src/components/Hero12.tsx (3468 bytes) in 36ms\n[0065] info  compiled ./src/components/Footer0.tsx (3505 bytes) in 37ms\n[0066] info  compiled ./src/components/Pricing1.tsx (3542 bytes) in 38ms\n[0067] info  compiled ./src/components/Nav2.tsx (3579 bytes) in 39ms\n[0068] info  compiled ./src/components/Modal3.tsx (3616 bytes) in 40ms\n[0069] info  compiled ./src/components/Table4.tsx (3653 bytes) in 41ms\n[0070] info  compiled ./src/components/Chart5.tsx (3690 bytes) in 42ms\n[0071] info  compiled ./src/components/Form6.tsx (3727 bytes) in 43ms\n[0072] info  compiled ./src/components/Card7.tsx (3764 bytes) in 44ms\n[0073] info  compiled ./src/components/Hero8.tsx (3801 bytes) in 45ms\n[0074] info  compiled ./src/components/Footer9.tsx (3838 bytes) in 46ms\n[0075] info  compiled ./src/components/Pricing10.tsx (3875 bytes) in 47ms\n[0076] info  compiled ./src/components/Nav11.tsx (3912 bytes) in 48ms\n[0077] info  compiled ./src/components/Modal12.tsx (3949 bytes) in 49ms\n[0078] info  compiled ./src/components/Table0.tsx (3986 bytes) in 50ms\n[0079] info  compiled ./src/components/Chart1.tsx (4023 bytes) in 51ms"
+  }
+ ]
+}

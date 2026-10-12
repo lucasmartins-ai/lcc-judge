@@ -1,0 +1,41 @@
+{
+ "id": "structured_config_block",
+ "category": "environment_and_infra",
+ "use_case": "structured config (LCC adversarial)",
+ "situation": "A YAML file with several services; one key matters. Another large JSON is unrelated.",
+ "must_keep": "The YAML block with the queue service.",
+ "may_drop": "The unrelated JSON and logs.",
+ "why_judges_fail": "Structured text tokenizes poorly; judges that strip punctuation lose keys and match the larger unrelated JSON.",
+ "source": "lcc-adversarial",
+ "source_ref": "adversarial_cases.py structured_yaml / structured_json",
+ "goal": "aumenta a memoria do servico de fila",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "deploy/services.yaml\nservices:\n  web:\n    memory: 512Mi\n  queue:\n    memory: 256Mi\n    replicas: 2"
+  },
+  {
+   "id": "b01",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "package-lock.json (excerpt)\n\"node_modules/pkg0\": {\"version\": \"1.0.0\"},\n\"node_modules/pkg1\": {\"version\": \"1.1.0\"},\n\"node_modules/pkg2\": {\"version\": \"1.2.0\"},\n\"node_modules/pkg3\": {\"version\": \"1.3.0\"},\n\"node_modules/pkg4\": {\"version\": \"1.4.0\"},\n\"node_modules/pkg5\": {\"version\": \"1.5.0\"},\n\"node_modules/pkg6\": {\"version\": \"1.6.0\"},\n\"node_modules/pkg7\": {\"version\": \"1.7.0\"},\n\"node_modules/pkg8\": {\"version\": \"1.8.0\"},\n\"node_modules/pkg9\": {\"version\": \"1.9.0\"},\n\"node_modules/pkg10\": {\"version\": \"1.10.0\"},\n\"node_modules/pkg11\": {\"version\": \"1.11.0\"},\n\"node_modules/pkg12\": {\"version\": \"1.12.0\"},\n\"node_modules/pkg13\": {\"version\": \"1.13.0\"},\n\"node_modules/pkg14\": {\"version\": \"1.14.0\"},\n\"node_modules/pkg15\": {\"version\": \"1.15.0\"},\n\"node_modules/pkg16\": {\"version\": \"1.16.0\"},\n\"node_modules/pkg17\": {\"version\": \"1.17.0\"},\n\"node_modules/pkg18\": {\"version\": \"1.18.0\"},\n\"node_modules/pkg19\": {\"version\": \"1.19.0\"},\n\"node_modules/pkg20\": {\"version\": \"1.20.0\"},\n\"node_modules/pkg21\": {\"version\": \"1.21.0\"},\n\"node_modules/pkg22\": {\"version\": \"1.22.0\"},\n\"node_modules/pkg23\": {\"version\": \"1.23.0\"},\n\"node_modules/pkg24\": {\"version\": \"1.24.0\"},\n\"node_modules/pkg25\": {\"version\": \"1.25.0\"},\n\"node_modules/pkg26\": {\"version\": \"1.26.0\"},\n\"node_modules/pkg27\": {\"version\": \"1.27.0\"},\n\"node_modules/pkg28\": {\"version\": \"1.28.0\"},\n\"node_modules/pkg29\": {\"version\": \"1.29.0\"},\n\"node_modules/pkg30\": {\"version\": \"1.30.0\"},\n\"node_modules/pkg31\": {\"version\": \"1.31.0\"},\n\"node_modules/pkg32\": {\"version\": \"1.32.0\"},\n\"node_modules/pkg33\": {\"version\": \"1.33.0\"},\n\"node_modules/pkg34\": {\"version\": \"1.34.0\"},\n\"node_modules/pkg35\": {\"version\": \"1.35.0\"},\n\"node_modules/pkg36\": {\"version\": \"1.36.0\"},\n\"node_modules/pkg37\": {\"version\": \"1.37.0\"},\n\"node_modules/pkg38\": {\"version\": \"1.38.0\"},\n\"node_modules/pkg39\": {\"version\": \"1.39.0\"},\n\"node_modules/pkg40\": {\"version\": \"1.40.0\"},\n\"node_modules/pkg41\": {\"version\": \"1.41.0\"},\n\"node_modules/pkg42\": {\"version\": \"1.42.0\"},\n\"node_modules/pkg43\": {\"version\": \"1.43.0\"},\n\"node_modules/pkg44\": {\"version\": \"1.44.0\"},\n\"node_modules/pkg45\": {\"version\": \"1.45.0\"},\n\"node_modules/pkg46\": {\"version\": \"1.46.0\"},\n\"node_modules/pkg47\": {\"version\": \"1.47.0\"},\n\"node_modules/pkg48\": {\"version\": \"1.48.0\"},\n\"node_modules/pkg49\": {\"version\": \"1.49.0\"},\n\"node_modules/pkg50\": {\"version\": \"1.50.0\"},\n\"node_modules/pkg51\": {\"version\": \"1.51.0\"},\n\"node_modules/pkg52\": {\"version\": \"1.52.0\"},\n\"node_modules/pkg53\": {\"version\": \"1.53.0\"},\n\"node_modules/pkg54\": {\"version\": \"1.54.0\"},\n\"node_modules/pkg55\": {\"version\": \"1.55.0\"},\n\"node_modules/pkg56\": {\"version\": \"1.56.0\"},\n\"node_modules/pkg57\": {\"version\": \"1.57.0\"},\n\"node_modules/pkg58\": {\"version\": \"1.58.0\"},\n\"node_modules/pkg59\": {\"version\": \"1.59.0\"},\n\"node_modules/pkg60\": {\"version\": \"1.60.0\"},\n\"node_modules/pkg61\": {\"version\": \"1.61.0\"},\n\"node_modules/pkg62\": {\"version\": \"1.62.0\"},\n\"node_modules/pkg63\": {\"version\": \"1.63.0\"},\n\"node_modules/pkg64\": {\"version\": \"1.64.0\"},\n\"node_modules/pkg65\": {\"version\": \"1.65.0\"},\n\"node_modules/pkg66\": {\"version\": \"1.66.0\"},\n\"node_modules/pkg67\": {\"version\": \"1.67.0\"},\n\"node_modules/pkg68\": {\"version\": \"1.68.0\"},\n\"node_modules/pkg69\": {\"version\": \"1.69.0\"},\n\"node_modules/pkg70\": {\"version\": \"1.70.0\"},\n\"node_modules/pkg71\": {\"version\": \"1.71.0\"},\n\"node_modules/pkg72\": {\"version\": \"1.72.0\"},\n\"node_modules/pkg73\": {\"version\": \"1.73.0\"},\n\"node_modules/pkg74\": {\"version\": \"1.74.0\"},\n\"node_modules/pkg75\": {\"version\": \"1.75.0\"},\n\"node_modules/pkg76\": {\"version\": \"1.76.0\"},\n\"node_modules/pkg77\": {\"version\": \"1.77.0\"},\n\"node_modules/pkg78\": {\"version\": \"1.78.0\"},\n\"node_modules/pkg79\": {\"version\": \"1.79.0\"},"
+  },
+  {
+   "id": "b02",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 bytes) in 16ms\n[0005] info  compiled ./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] info  compiled ./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n[0010] info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled ./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] info  compiled ./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled ./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled ./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ./src/components/Nav9.tsx (1914 bytes) in 34ms\n[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  compiled ./src/components/Table11.tsx (1988 bytes) in 36ms\n[0025] info  compiled ./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx (2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in 41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx (2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n[0034] info  compiled ./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled ./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled ./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms"
+  }
+ ]
+}

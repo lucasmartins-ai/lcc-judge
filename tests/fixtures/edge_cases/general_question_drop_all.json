@@ -1,0 +1,50 @@
+{
+ "id": "general_question_drop_all",
+ "category": "general_question",
+ "use_case": "general question (project context droppable)",
+ "situation": "A general question in the middle of a coding session; only the facts the user stated about their usage matter.",
+ "must_keep": "The user's stated usage facts.",
+ "may_drop": "All repo reads, logs, task state.",
+ "why_judges_fail": "Judges keep recent project context by default and drop the older user facts block.",
+ "source": "real-derived",
+ "source_ref": "taxonomy-v2 general_question",
+ "goal": "vale mais a pena o plano Pro ou o Max do Claude pra mim?",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "must",
+   "role": "user",
+   "kind": "text",
+   "tool": null,
+   "is_error": false,
+   "text": "eu uso uns 6 agentes em paralelo quase o dia todo, uns 5 dias por semana."
+  },
+  {
+   "id": "b01",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "src/app/page.tsx\nexport function Block0(props: Props0) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function Block1(props: Props1) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function Block2(props: Props2) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function Block3(props: Props3) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function Block4(props: Props4) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function Block5(props: Props0) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function Block6(props: Props1) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function Block7(props: Props2) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function Block8(props: Props3) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function Block9(props: Props4) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function Block10(props: Props0) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function Block11(props: Props1) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function Block12(props: Props2) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function Block13(props: Props3) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function Block14(props: Props4) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function Block15(props: Props0) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function Block16(props: Props1) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function Block17(props: Props2) {\n  return <div className=\"p-5\">{props.label}</div>;\n}"
+  },
+  {
+   "id": "b02",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_0 PASSED [  1%]\ntests/test_mod1.py::test_case_1 PASSED [  3%]\ntests/test_mod2.py::test_case_2 PASSED [  5%]\ntests/test_mod3.py::test_case_3 PASSED [  6%]\ntests/test_mod4.py::test_case_4 PASSED [  8%]\ntests/test_mod5.py::test_case_5 PASSED [ 10%]\ntests/test_mod6.py::test_case_6 PASSED [ 11%]\ntests/test_mod7.py::test_case_7 PASSED [ 13%]\ntests/test_mod8.py::test_case_8 PASSED [ 15%]\ntests/test_mod9.py::test_case_9 PASSED [ 16%]\ntests/test_mod10.py::test_case_10 PASSED [ 18%]\ntests/test_mod0.py::test_case_11 PASSED [ 20%]\ntests/test_mod1.py::test_case_12 PASSED [ 21%]\ntests/test_mod2.py::test_case_13 PASSED [ 23%]\ntests/test_mod3.py::test_case_14 PASSED [ 25%]\ntests/test_mod4.py::test_case_15 PASSED [ 26%]\ntests/test_mod5.py::test_case_16 PASSED [ 28%]\ntests/test_mod6.py::test_case_17 PASSED [ 30%]\ntests/test_mod7.py::test_case_18 PASSED [ 31%]\ntests/test_mod8.py::test_case_19 PASSED [ 33%]\ntests/test_mod9.py::test_case_20 PASSED [ 35%]\ntests/test_mod10.py::test_case_21 PASSED [ 36%]\ntests/test_mod0.py::test_case_22 PASSED [ 38%]\ntests/test_mod1.py::test_case_23 PASSED [ 40%]\ntests/test_mod2.py::test_case_24 PASSED [ 41%]\ntests/test_mod3.py::test_case_25 PASSED [ 43%]\ntests/test_mod4.py::test_case_26 PASSED [ 45%]\ntests/test_mod5.py::test_case_27 PASSED [ 46%]\ntests/test_mod6.py::test_case_28 PASSED [ 48%]\ntests/test_mod7.py::test_case_29 PASSED [ 50%]\ntests/test_mod8.py::test_case_30 PASSED [ 51%]\ntests/test_mod9.py::test_case_31 PASSED [ 53%]\ntests/test_mod10.py::test_case_32 PASSED [ 55%]\ntests/test_mod0.py::test_case_33 PASSED [ 56%]\ntests/test_mod1.py::test_case_34 PASSED [ 58%]\ntests/test_mod2.py::test_case_35 PASSED [ 60%]\ntests/test_mod3.py::test_case_36 PASSED [ 61%]\ntests/test_mod4.py::test_case_37 PASSED [ 63%]\ntests/test_mod5.py::test_case_38 PASSED [ 65%]\ntests/test_mod6.py::test_case_39 PASSED [ 66%]\ntests/test_mod7.py::test_case_40 PASSED [ 68%]\ntests/test_mod8.py::test_case_41 PASSED [ 70%]\ntests/test_mod9.py::test_case_42 PASSED [ 71%]\ntests/test_mod10.py::test_case_43 PASSED [ 73%]\ntests/test_mod0.py::test_case_44 PASSED [ 75%]\ntests/test_mod1.py::test_case_45 PASSED [ 76%]\ntests/test_mod2.py::test_case_46 PASSED [ 78%]\ntests/test_mod3.py::test_case_47 PASSED [ 80%]\ntests/test_mod4.py::test_case_48 PASSED [ 81%]\ntests/test_mod5.py::test_case_49 PASSED [ 83%]\ntests/test_mod6.py::test_case_50 PASSED [ 85%]\ntests/test_mod7.py::test_case_51 PASSED [ 86%]\ntests/test_mod8.py::test_case_52 PASSED [ 88%]\ntests/test_mod9.py::test_case_53 PASSED [ 90%]\ntests/test_mod10.py::test_case_54 PASSED [ 91%]\ntests/test_mod0.py::test_case_55 PASSED [ 93%]\ntests/test_mod1.py::test_case_56 PASSED [ 95%]\ntests/test_mod2.py::test_case_57 PASSED [ 96%]\ntests/test_mod3.py::test_case_58 PASSED [ 98%]\ntests/test_mod4.py::test_case_59 PASSED [100%]\n===== 60 passed, 0 failed in 4.01s ====="
+  },
+  {
+   "id": "b03",
+   "gold": "may",
+   "role": "assistant",
+   "kind": "text",
+   "tool": null,
+   "is_error": false,
+   "text": "I am checking the refactor now and will report what I find. Looking at the surrounding code for the refactor; nothing unusual so far. Continuing with the refactor. The previous step completed without output worth noting. Still on the refactor: scanning the next section of the project tree. I am checking the refactor now and will report what I find. Looking at the surrounding code for the refactor; nothing unusual so far. Continuing with the refactor. The previous step completed without output worth noting. Still on the refactor: scanning the next section of the project tree."
+  }
+ ]
+}

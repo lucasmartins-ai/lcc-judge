@@ -1,0 +1,50 @@
+{
+ "id": "partial_reads",
+ "category": "specified_task",
+ "use_case": "partial reads (line ranges)",
+ "situation": "A large file was read in two ranges: lines 1-120 (imports, constants) and 300-360 (the discount function).",
+ "must_keep": "The range that holds apply_discount (300-360) and the constants range only if it defines the rates (here it does: DISCOUNT_RATES).",
+ "may_drop": "Reads of other modules and test output.",
+ "why_judges_fail": "Ranges of one file look like duplicates of each other; a dedupe-minded judge keeps one. The constants range has no \"discount\" wording beyond a variable name.",
+ "source": "real-derived",
+ "source_ref": "recoverable-v0.8 range pointers (never blind-audited)",
+ "goal": "corrige o calculo de desconto em billing/pricing.py",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "billing/pricing.py lines 1-120\nimport decimal\nfrom billing.models import Plan\nDISCOUNT_RATES = {\"annual\": decimal.Decimal(\"0.15\"), \"partner\": decimal.Decimal(\"0.25\")}\nROUNDING = decimal.ROUND_HALF_EVEN"
+  },
+  {
+   "id": "b01",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "billing/invoices.py\ndef invoice_line_0(x):\n    \"\"\"Helper 0.\"\"\"\n    return x * 0 + 0\n\ndef invoice_line_1(x):\n    \"\"\"Helper 1.\"\"\"\n    return x * 1 + 1\n\ndef invoice_line_2(x):\n    \"\"\"Helper 2.\"\"\"\n    return x * 2 + 2\n\ndef invoice_line_3(x):\n    \"\"\"Helper 3.\"\"\"\n    return x * 3 + 3\n\ndef invoice_line_4(x):\n    \"\"\"Helper 4.\"\"\"\n    return x * 4 + 4\n\ndef invoice_line_5(x):\n    \"\"\"Helper 5.\"\"\"\n    return x * 5 + 5\n\ndef invoice_line_6(x):\n    \"\"\"Helper 6.\"\"\"\n    return x * 6 + 6\n\ndef invoice_line_7(x):\n    \"\"\"Helper 7.\"\"\"\n    return x * 7 + 0\n\ndef invoice_line_8(x):\n    \"\"\"Helper 8.\"\"\"\n    return x * 8 + 1\n\ndef invoice_line_9(x):\n    \"\"\"Helper 9.\"\"\"\n    return x * 9 + 2\n\ndef invoice_line_10(x):\n    \"\"\"Helper 10.\"\"\"\n    return x * 10 + 3\n\ndef invoice_line_11(x):\n    \"\"\"Helper 11.\"\"\"\n    return x * 11 + 4\n\ndef invoice_line_12(x):\n    \"\"\"Helper 12.\"\"\"\n    return x * 12 + 5\n\ndef invoice_line_13(x):\n    \"\"\"Helper 13.\"\"\"\n    return x * 13 + 6\n\ndef invoice_line_14(x):\n    \"\"\"Helper 14.\"\"\"\n    return x * 14 + 0\n\ndef invoice_line_15(x):\n    \"\"\"Helper 15.\"\"\"\n    return x * 15 + 1\n\ndef invoice_line_16(x):\n    \"\"\"Helper 16.\"\"\"\n    return x * 16 + 2\n\ndef invoice_line_17(x):\n    \"\"\"Helper 17.\"\"\"\n    return x * 17 + 3\n"
+  },
+  {
+   "id": "b02",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "billing/pricing.py lines 300-360\ndef apply_discount(plan: Plan, kind: str):\n    rate = DISCOUNT_RATES.get(kind, 0)\n    return plan.price - plan.price * rate  # BUG: no quantize, float drift"
+  },
+  {
+   "id": "b03",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_0 PASSED [  1%]\ntests/test_mod1.py::test_case_1 PASSED [  3%]\ntests/test_mod2.py::test_case_2 PASSED [  5%]\ntests/test_mod3.py::test_case_3 PASSED [  6%]\ntests/test_mod4.py::test_case_4 PASSED [  8%]\ntests/test_mod5.py::test_case_5 PASSED [ 10%]\ntests/test_mod6.py::test_case_6 PASSED [ 11%]\ntests/test_mod7.py::test_case_7 PASSED [ 13%]\ntests/test_mod8.py::test_case_8 PASSED [ 15%]\ntests/test_mod9.py::test_case_9 PASSED [ 16%]\ntests/test_mod10.py::test_case_10 PASSED [ 18%]\ntests/test_mod0.py::test_case_11 PASSED [ 20%]\ntests/test_mod1.py::test_case_12 PASSED [ 21%]\ntests/test_mod2.py::test_case_13 PASSED [ 23%]\ntests/test_mod3.py::test_case_14 PASSED [ 25%]\ntests/test_mod4.py::test_case_15 PASSED [ 26%]\ntests/test_mod5.py::test_case_16 PASSED [ 28%]\ntests/test_mod6.py::test_case_17 PASSED [ 30%]\ntests/test_mod7.py::test_case_18 PASSED [ 31%]\ntests/test_mod8.py::test_case_19 PASSED [ 33%]\ntests/test_mod9.py::test_case_20 PASSED [ 35%]\ntests/test_mod10.py::test_case_21 PASSED [ 36%]\ntests/test_mod0.py::test_case_22 PASSED [ 38%]\ntests/test_mod1.py::test_case_23 PASSED [ 40%]\ntests/test_mod2.py::test_case_24 PASSED [ 41%]\ntests/test_mod3.py::test_case_25 PASSED [ 43%]\ntests/test_mod4.py::test_case_26 PASSED [ 45%]\ntests/test_mod5.py::test_case_27 PASSED [ 46%]\ntests/test_mod6.py::test_case_28 PASSED [ 48%]\ntests/test_mod7.py::test_case_29 PASSED [ 50%]\ntests/test_mod8.py::test_case_30 PASSED [ 51%]\ntests/test_mod9.py::test_case_31 PASSED [ 53%]\ntests/test_mod10.py::test_case_32 PASSED [ 55%]\ntests/test_mod0.py::test_case_33 PASSED [ 56%]\ntests/test_mod1.py::test_case_34 PASSED [ 58%]\ntests/test_mod2.py::test_case_35 PASSED [ 60%]\ntests/test_mod3.py::test_case_36 PASSED [ 61%]\ntests/test_mod4.py::test_case_37 PASSED [ 63%]\ntests/test_mod5.py::test_case_38 PASSED [ 65%]\ntests/test_mod6.py::test_case_39 PASSED [ 66%]\ntests/test_mod7.py::test_case_40 PASSED [ 68%]\ntests/test_mod8.py::test_case_41 PASSED [ 70%]\ntests/test_mod9.py::test_case_42 PASSED [ 71%]\ntests/test_mod10.py::test_case_43 PASSED [ 73%]\ntests/test_mod0.py::test_case_44 PASSED [ 75%]\ntests/test_mod1.py::test_case_45 PASSED [ 76%]\ntests/test_mod2.py::test_case_46 PASSED [ 78%]\ntests/test_mod3.py::test_case_47 PASSED [ 80%]\ntests/test_mod4.py::test_case_48 PASSED [ 81%]\ntests/test_mod5.py::test_case_49 PASSED [ 83%]\ntests/test_mod6.py::test_case_50 PASSED [ 85%]\ntests/test_mod7.py::test_case_51 PASSED [ 86%]\ntests/test_mod8.py::test_case_52 PASSED [ 88%]\ntests/test_mod9.py::test_case_53 PASSED [ 90%]\ntests/test_mod10.py::test_case_54 PASSED [ 91%]\ntests/test_mod0.py::test_case_55 PASSED [ 93%]\ntests/test_mod1.py::test_case_56 PASSED [ 95%]\ntests/test_mod2.py::test_case_57 PASSED [ 96%]\ntests/test_mod3.py::test_case_58 PASSED [ 98%]\ntests/test_mod4.py::test_case_59 PASSED [100%]\n===== 60 passed, 0 failed in 4.01s ====="
+  }
+ ]
+}

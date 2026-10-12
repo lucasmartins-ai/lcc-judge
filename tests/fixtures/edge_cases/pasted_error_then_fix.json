@@ -1,0 +1,77 @@
+{
+ "id": "pasted_error_then_fix",
+ "category": "failure_report",
+ "use_case": "pasted error + later fix",
+ "situation": "User pasted a traceback early; the agent fixed it; long unrelated work followed; the user now says the same error is back without re-pasting it.",
+ "must_keep": "The originally pasted traceback and the agent's fix (the edit), so the agent can see what was already tried.",
+ "may_drop": "Install logs, unrelated build output and narration after the fix.",
+ "why_judges_fail": "The goal names no symbol, file or error text: lexical and goal-similarity judges have nothing to match, and recency keeps the recent noise instead of the old traceback.",
+ "source": "real-derived",
+ "source_ref": "taxonomy-v2 failure_report (\"aconteceu de novo\")",
+ "goal": "deu o mesmo erro de novo depois do deploy, olha isso",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "may",
+   "role": "assistant",
+   "kind": "text",
+   "tool": null,
+   "is_error": false,
+   "text": "I am checking the deploy setup now and will report what I find. Looking at the surrounding code for the deploy setup; nothing unusual so far. Continuing with the deploy setup. The previous step completed without output worth noting. Still on the deploy setup: scanning the next section of the project tree. I am checking the deploy setup now and will report what I find. Looking at the surrounding code for the deploy setup; nothing unusual so far."
+  },
+  {
+   "id": "b01",
+   "gold": "must",
+   "role": "user",
+   "kind": "text",
+   "tool": null,
+   "is_error": false,
+   "text": "Traceback (most recent call last):\n  File \"api/routes/orders.py\", line 88, in create_order\n    total = sum(i.price for i in payload.items)\nAttributeError: 'NoneType' object has no attribute 'items'"
+  },
+  {
+   "id": "b02",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "def orderHelper_0(x):\n    \"\"\"Helper 0.\"\"\"\n    return x * 0 + 0\n\ndef orderHelper_1(x):\n    \"\"\"Helper 1.\"\"\"\n    return x * 1 + 1\n\ndef orderHelper_2(x):\n    \"\"\"Helper 2.\"\"\"\n    return x * 2 + 2\n\ndef orderHelper_3(x):\n    \"\"\"Helper 3.\"\"\"\n    return x * 3 + 3\n\ndef orderHelper_4(x):\n    \"\"\"Helper 4.\"\"\"\n    return x * 4 + 4\n\ndef orderHelper_5(x):\n    \"\"\"Helper 5.\"\"\"\n    return x * 5 + 5\n\ndef orderHelper_6(x):\n    \"\"\"Helper 6.\"\"\"\n    return x * 6 + 6\n\ndef orderHelper_7(x):\n    \"\"\"Helper 7.\"\"\"\n    return x * 7 + 0\n\ndef orderHelper_8(x):\n    \"\"\"Helper 8.\"\"\"\n    return x * 8 + 1\n\ndef orderHelper_9(x):\n    \"\"\"Helper 9.\"\"\"\n    return x * 9 + 2\n\ndef orderHelper_10(x):\n    \"\"\"Helper 10.\"\"\"\n    return x * 10 + 3\n\ndef orderHelper_11(x):\n    \"\"\"Helper 11.\"\"\"\n    return x * 11 + 4\n\ndef orderHelper_12(x):\n    \"\"\"Helper 12.\"\"\"\n    return x * 12 + 5\n\ndef orderHelper_13(x):\n    \"\"\"Helper 13.\"\"\"\n    return x * 13 + 6\n"
+  },
+  {
+   "id": "b03",
+   "gold": "must",
+   "role": "assistant",
+   "kind": "tool_call",
+   "tool": "Edit",
+   "is_error": false,
+   "text": "Edit api/routes/orders.py: replace `payload.items` with `(payload.items or [])` in create_order and return 422 when payload is None."
+  },
+  {
+   "id": "b04",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "Collecting numpy==1.0.0\n  Using cached numpy-1.0.0-py3-none-any.whl (20 kB)\nCollecting pandas==2.1.1\n  Using cached pandas-2.1.1-py3-none-any.whl (23 kB)\nCollecting httpx==3.2.2\n  Using cached httpx-3.2.2-py3-none-any.whl (26 kB)\nCollecting pydantic==4.3.3\n  Using cached pydantic-4.3.3-py3-none-any.whl (29 kB)\nCollecting rich==1.4.4\n  Using cached rich-1.4.4-py3-none-any.whl (32 kB)\nCollecting click==2.5.0\n  Using cached click-2.5.0-py3-none-any.whl (35 kB)\nCollecting anyio==3.6.1\n  Using cached anyio-3.6.1-py3-none-any.whl (38 kB)\nCollecting idna==4.7.2\n  Using cached idna-4.7.2-py3-none-any.whl (41 kB)\nCollecting certifi==1.8.3\n  Using cached certifi-1.8.3-py3-none-any.whl (44 kB)\nCollecting sniffio==2.0.4\n  Using cached sniffio-2.0.4-py3-none-any.whl (47 kB)\nCollecting numpy==3.1.0\n  Using cached numpy-3.1.0-py3-none-any.whl (50 kB)\nCollecting pandas==4.2.1\n  Using cached pandas-4.2.1-py3-none-any.whl (53 kB)\nCollecting httpx==1.3.2\n  Using cached httpx-1.3.2-py3-none-any.whl (56 kB)\nCollecting pydantic==2.4.3\n  Using cached pydantic-2.4.3-py3-none-any.whl (59 kB)\nCollecting rich==3.5.4\n  Using cached rich-3.5.4-py3-none-any.whl (62 kB)\nCollecting click==4.6.0\n  Using cached click-4.6.0-py3-none-any.whl (65 kB)\nCollecting anyio==1.7.1\n  Using cached anyio-1.7.1-py3-none-any.whl (68 kB)\nCollecting idna==2.8.2\n  Using cached idna-2.8.2-py3-none-any.whl (71 kB)\nCollecting certifi==3.0.3\n  Using cached certifi-3.0.3-py3-none-any.whl (74 kB)\nCollecting sniffio==4.1.4\n  Using cached sniffio-4.1.4-py3-none-any.whl (77 kB)\nCollecting numpy==1.2.0\n  Using cached numpy-1.2.0-py3-none-any.whl (80 kB)\nCollecting pandas==2.3.1\n  Using cached pandas-2.3.1-py3-none-any.whl (83 kB)\nCollecting httpx==3.4.2\n  Using cached httpx-3.4.2-py3-none-any.whl (86 kB)\nCollecting pydantic==4.5.3\n  Using cached pydantic-4.5.3-py3-none-any.whl (89 kB)\nCollecting rich==1.6.4\n  Using cached rich-1.6.4-py3-none-any.whl (92 kB)\nCollecting click==2.7.0\n  Using cached click-2.7.0-py3-none-any.whl (95 kB)\nCollecting anyio==3.8.1\n  Using cached anyio-3.8.1-py3-none-any.whl (98 kB)\nCollecting idna==4.0.2\n  Using cached idna-4.0.2-py3-none-any.whl (101 kB)\nCollecting certifi==1.1.3\n  Using cached certifi-1.1.3-py3-none-any.whl (104 kB)\nCollecting sniffio==2.2.4\n  Using cached sniffio-2.2.4-py3-none-any.whl (107 kB)\nCollecting numpy==3.3.0\n  Using cached numpy-3.3.0-py3-none-any.whl (110 kB)\nCollecting pandas==4.4.1\n  Using cached pandas-4.4.1-py3-none-any.whl (113 kB)\nCollecting httpx==1.5.2\n  Using cached httpx-1.5.2-py3-none-any.whl (116 kB)\nCollecting pydantic==2.6.3\n  Using cached pydantic-2.6.3-py3-none-any.whl (119 kB)\nCollecting rich==3.7.4\n  Using cached rich-3.7.4-py3-none-any.whl (122 kB)\nCollecting click==4.8.0\n  Using cached click-4.8.0-py3-none-any.whl (125 kB)\nCollecting anyio==1.0.1\n  Using cached anyio-1.0.1-py3-none-any.whl (128 kB)\nCollecting idna==2.1.2\n  Using cached idna-2.1.2-py3-none-any.whl (131 kB)\nCollecting certifi==3.2.3\n  Using cached certifi-3.2.3-py3-none-any.whl (134 kB)\nCollecting sniffio==4.3.4\n  Using cached sniffio-4.3.4-py3-none-any.whl (137 kB)"
+  },
+  {
+   "id": "b05",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 bytes) in 16ms\n[0005] info  compiled ./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] info  compiled ./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n[0010] info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled ./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] info  compiled ./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled ./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled ./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ./src/components/Nav9.tsx (1914 bytes) in 34ms\n[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  compiled ./src/components/Table11.tsx (1988 bytes) in 36ms\n[0025] info  compiled ./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx (2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in 41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx (2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n[0034] info  compiled ./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled ./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled ./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms\n[0040] info  compiled ./src/components/Nav1.tsx (2580 bytes) in 12ms\n[0041] info  compiled ./src/components/Modal2.tsx (2617 bytes) in 13ms\n[0042] info  compiled ./src/components/Table3.tsx (2654 bytes) in 14ms\n[0043] info  compiled ./src/components/Chart4.tsx (2691 bytes) in 15ms\n[0044] info  compiled ./src/components/Form5.tsx (2728 bytes) in 16ms\n[0045] info  compiled ./src/components/Card6.tsx (2765 bytes) in 17ms\n[0046] info  compiled ./src/components/Hero7.tsx (2802 bytes) in 18ms\n[0047] info  compiled ./src/components/Footer8.tsx (2839 bytes) in 19ms\n[0048] info  compiled ./src/components/Pricing9.tsx (2876 bytes) in 20ms\n[0049] info  compiled ./src/components/Nav10.tsx (2913 bytes) in 21ms\n[0050] info  compiled ./src/components/Modal11.tsx (2950 bytes) in 22ms\n[0051] info  compiled ./src/components/Table12.tsx (2987 bytes) in 23ms\n[0052] info  compiled ./src/components/Chart0.tsx (3024 bytes) in 24ms\n[0053] info  compiled ./src/components/Form1.tsx (3061 bytes) in 25ms\n[0054] info  compiled ./src/components/Card2.tsx (3098 bytes) in 26ms\n[0055] info  compiled ./src/components/Hero3.tsx (3135 bytes) in 27ms\n[0056] info  compiled ./src/components/Footer4.tsx (3172 bytes) in 28ms\n[0057] info  compiled ./src/components/Pricing5.tsx (3209 bytes) in 29ms\n[0058] info  compiled ./src/components/Nav6.tsx (3246 bytes) in 30ms\n[0059] info  compiled ./src/components/Modal7.tsx (3283 bytes) in 31ms"
+  },
+  {
+   "id": "b06",
+   "gold": "may",
+   "role": "assistant",
+   "kind": "text",
+   "tool": null,
+   "is_error": false,
+   "text": "I am checking the landing page copy now and will report what I find. Looking at the surrounding code for the landing page copy; nothing unusual so far. Continuing with the landing page copy. The previous step completed without output worth noting. Still on the landing page copy: scanning the next section of the project tree. I am checking the landing page copy now and will report what I find. Looking at the surrounding code for the landing page copy; nothing unusual so far. Continuing with the landing page copy. The previous step completed without output worth noting. Still on the landing page copy: scanning the next section of the project tree."
+  }
+ ]
+}

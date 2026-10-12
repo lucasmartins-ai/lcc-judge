@@ -1,0 +1,41 @@
+{
+ "id": "subagent_report",
+ "category": "task_status_or_control",
+ "use_case": "subagent outputs",
+ "situation": "A subagent ran; its intermediate tool echoes were captured, then its final report.",
+ "must_keep": "The subagent's final report with findings and file paths.",
+ "may_drop": "The subagent's intermediate echoes and narration.",
+ "why_judges_fail": "Echo blocks are long and repeat \"audit\"; the report is short. Length-biased judges keep the echoes.",
+ "source": "synthetic",
+ "source_ref": "taxonomy-v2 task_status_or_control",
+ "goal": "o que o agente de auditoria achou?",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Agent",
+   "is_error": false,
+   "text": "audit subagent trace: audit step 0: read file src/m0.ts ok. audit step 1: read file src/m1.ts ok. audit step 2: read file src/m2.ts ok. audit step 3: read file src/m3.ts ok. audit step 4: read file src/m4.ts ok. audit step 5: read file src/m5.ts ok. audit step 6: read file src/m6.ts ok. audit step 7: read file src/m7.ts ok. audit step 8: read file src/m8.ts ok. audit step 9: read file src/m9.ts ok. audit step 10: read file src/m10.ts ok. audit step 11: read file src/m11.ts ok. audit step 12: read file src/m12.ts ok. audit step 13: read file src/m13.ts ok. audit step 14: read file src/m14.ts ok. audit step 15: read file src/m15.ts ok. audit step 16: read file src/m16.ts ok. audit step 17: read file src/m17.ts ok. audit step 18: read file src/m18.ts ok. audit step 19: read file src/m19.ts ok. audit step 20: read file src/m20.ts ok. audit step 21: read file src/m21.ts ok. audit step 22: read file src/m22.ts ok. audit step 23: read file src/m23.ts ok. audit step 24: read file src/m24.ts ok. audit step 25: read file src/m25.ts ok. audit step 26: read file src/m26.ts ok. audit step 27: read file src/m27.ts ok. audit step 28: read file src/m28.ts ok. audit step 29: read file src/m29.ts ok. audit step 30: read file src/m30.ts ok. audit step 31: read file src/m31.ts ok. audit step 32: read file src/m32.ts ok. audit step 33: read file src/m33.ts ok. audit step 34: read file src/m34.ts ok. audit step 35: read file src/m35.ts ok. audit step 36: read file src/m36.ts ok. audit step 37: read file src/m37.ts ok. audit step 38: read file src/m38.ts ok. audit step 39: read file src/m39.ts ok. audit step 40: read file src/m40.ts ok. audit step 41: read file src/m41.ts ok. audit step 42: read file src/m42.ts ok. audit step 43: read file src/m43.ts ok. audit step 44: read file src/m44.ts ok. audit step 45: read file src/m45.ts ok. audit step 46: read file src/m46.ts ok. audit step 47: read file src/m47.ts ok. audit step 48: read file src/m48.ts ok. audit step 49: read file src/m49.ts ok. audit step 50: read file src/m50.ts ok. audit step 51: read file src/m51.ts ok. audit step 52: read file src/m52.ts ok. audit step 53: read file src/m53.ts ok. audit step 54: read file src/m54.ts ok. audit step 55: read file src/m55.ts ok. audit step 56: read file src/m56.ts ok. audit step 57: read file src/m57.ts ok. audit step 58: read file src/m58.ts ok. audit step 59: read file src/m59.ts ok. audit step 60: read file src/m60.ts ok. audit step 61: read file src/m61.ts ok. audit step 62: read file src/m62.ts ok. audit step 63: read file src/m63.ts ok. audit step 64: read file src/m64.ts ok. audit step 65: read file src/m65.ts ok. audit step 66: read file src/m66.ts ok. audit step 67: read file src/m67.ts ok. audit step 68: read file src/m68.ts ok. audit step 69: read file src/m69.ts ok. audit step 70: read file src/m70.ts ok. audit step 71: read file src/m71.ts ok. audit step 72: read file src/m72.ts ok. audit step 73: read file src/m73.ts ok. audit step 74: read file src/m74.ts ok. audit step 75: read file src/m75.ts ok. audit step 76: read file src/m76.ts ok. audit step 77: read file src/m77.ts ok. audit step 78: read file src/m78.ts ok. audit step 79: read file src/m79.ts ok."
+  },
+  {
+   "id": "b01",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Agent",
+   "is_error": false,
+   "text": "audit subagent final report: 3 findings. (1) src/api/upload.ts accepts any MIME type. (2) src/lib/auth.ts compares tokens with ==. (3) no rate limit on /api/login."
+  },
+  {
+   "id": "b02",
+   "gold": "may",
+   "role": "assistant",
+   "kind": "text",
+   "tool": null,
+   "is_error": false,
+   "text": "I am checking the audit results now and will report what I find. Looking at the surrounding code for the audit results; nothing unusual so far. Continuing with the audit results. The previous step completed without output worth noting. Still on the audit results: scanning the next section of the project tree. I am checking the audit results now and will report what I find."
+  }
+ ]
+}

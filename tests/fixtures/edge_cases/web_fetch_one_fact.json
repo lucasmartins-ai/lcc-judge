@@ -1,0 +1,41 @@
+{
+ "id": "web_fetch_one_fact",
+ "category": "general_question",
+ "use_case": "MCP / web outputs",
+ "situation": "A web fetch returned a page split into chunks: navigation/cookie boilerplate and one paragraph with the release facts.",
+ "must_keep": "The chunk with the version and the cache change.",
+ "may_drop": "Navigation, cookie banners, footers, related-links chunks.",
+ "why_judges_fail": "Boilerplate chunks repeat \"Next.js\" and \"cache\" (cookie text) many times and win on term frequency.",
+ "source": "synthetic",
+ "source_ref": "taxonomy-v2 general_question",
+ "goal": "qual a versao atual do Next e o que mudou no cache?",
+ "blocks": [
+  {
+   "id": "b00",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "WebFetch",
+   "is_error": false,
+   "text": "Skip to content\nProducts  Solutions  Pricing  Docs  Blog  Sign in\nWe use cookies to improve your experience. Accept all | Reject | Settings\nFooter link 0: Company / Careers / Press / Legal / Status / Changelog\nFooter link 1: Company / Careers / Press / Legal / Status / Changelog\nFooter link 2: Company / Careers / Press / Legal / Status / Changelog\nFooter link 3: Company / Careers / Press / Legal / Status / Changelog\nFooter link 4: Company / Careers / Press / Legal / Status / Changelog\nFooter link 5: Company / Careers / Press / Legal / Status / Changelog\nFooter link 6: Company / Careers / Press / Legal / Status / Changelog\nFooter link 7: Company / Careers / Press / Legal / Status / Changelog\nFooter link 8: Company / Careers / Press / Legal / Status / Changelog\nFooter link 9: Company / Careers / Press / Legal / Status / Changelog\nFooter link 10: Company / Careers / Press / Legal / Status / Changelog\nFooter link 11: Company / Careers / Press / Legal / Status / Changelog\nFooter link 12: Company / Careers / Press / Legal / Status / Changelog\nFooter link 13: Company / Careers / Press / Legal / Status / Changelog\nFooter link 14: Company / Careers / Press / Legal / Status / Changelog\nFooter link 15: Company / Careers / Press / Legal / Status / Changelog\nFooter link 16: Company / Careers / Press / Legal / Status / Changelog\nFooter link 17: Company / Careers / Press / Legal / Status / Changelog\nFooter link 18: Company / Careers / Press / Legal / Status / Changelog\nFooter link 19: Company / Careers / Press / Legal / Status / Changelog\nFooter link 20: Company / Careers / Press / Legal / Status / Changelog\nFooter link 21: Company / Careers / Press / Legal / Status / Changelog\nFooter link 22: Company / Careers / Press / Legal / Status / Changelog\nFooter link 23: Company / Careers / Press / Legal / Status / Changelog\nFooter link 24: Company / Careers / Press / Legal / Status / Changelog\nFooter link 25: Company / Careers / Press / Legal / Status / Changelog\nFooter link 26: Company / Careers / Press / Legal / Status / Changelog\nFooter link 27: Company / Careers / Press / Legal / Status / Changelog\nFooter link 28: Company / Careers / Press / Legal / Status / Changelog\nFooter link 29: Company / Careers / Press / Legal / Status / Changelog\nNext.js Next.js Next.js cache cookie cache settings cache"
+  },
+  {
+   "id": "b01",
+   "gold": "must",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "WebFetch",
+   "is_error": false,
+   "text": "Release notes: Next.js 16.1 is the current stable version. Fetch requests are no longer cached by default; opt in with `cache: \"force-cache\"` or `use cache`."
+  },
+  {
+   "id": "b02",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "WebFetch",
+   "is_error": false,
+   "text": "Related posts: Next.js tip 0: caching patterns | Next.js tip 1: caching patterns | Next.js tip 2: caching patterns | Next.js tip 3: caching patterns | Next.js tip 4: caching patterns | Next.js tip 5: caching patterns | Next.js tip 6: caching patterns | Next.js tip 7: caching patterns | Next.js tip 8: caching patterns | Next.js tip 9: caching patterns | Next.js tip 10: caching patterns | Next.js tip 11: caching patterns | Next.js tip 12: caching patterns | Next.js tip 13: caching patterns | Next.js tip 14: caching patterns | Next.js tip 15: caching patterns | Next.js tip 16: caching patterns | Next.js tip 17: caching patterns | Next.js tip 18: caching patterns | Next.js tip 19: caching patterns | Next.js tip 20: caching patterns | Next.js tip 21: caching patterns | Next.js tip 22: caching patterns | Next.js tip 23: caching patterns | Next.js tip 24: caching patterns | Next.js tip 25: caching patterns | Next.js tip 26: caching patterns | Next.js tip 27: caching patterns | Next.js tip 28: caching patterns | Next.js tip 29: caching patterns | Next.js tip 30: caching patterns | Next.js tip 31: caching patterns | Next.js tip 32: caching patterns | Next.js tip 33: caching patterns | Next.js tip 34: caching patterns | Next.js tip 35: caching patterns | Next.js tip 36: caching patterns | Next.js tip 37: caching patterns | Next.js tip 38: caching patterns | Next.js tip 39: caching patterns"
+  }
+ ]
+}
