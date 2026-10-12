@@ -1,0 +1,19 @@
+{
+ "labels": "next-action-v2 (relabel of the frozen v1 split, train+dev only; test untouched, v1 extractor stays on test until the final run relabels it with this same code)",
+ "items": {
+  "train": 2512,
+  "dev": 361
+ },
+ "generic_features": 363,
+ "content_links": 6772,
+ "content_links_train_dev": 1811,
+ "train_quarantined_dev_overlap": 254,
+ "counts": {
+  "dev:blocks": 148553,
+  "dev:items_with_used": 325,
+  "dev:used": 13089,
+  "train:blocks": 2065973,
+  "train:items_with_used": 2265,
+  "train:used": 142095
+ }
+}

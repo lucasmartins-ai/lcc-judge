@@ -11,7 +11,7 @@
  "goal": "manda as mensagens de follow-up pros leads",
  "blocks": [
   {
-   "id": "b00",
+   "id": "b000",
    "gold": "must",
    "role": "user",
    "kind": "text",
@@ -20,16 +20,736 @@
    "text": "pode mandar follow-up pros leads que responderam ao primeiro contato."
   },
   {
-   "id": "b01",
+   "id": "b001",
    "gold": "may",
    "role": "tool",
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "crm export\nlead_0,clinic 0,stage=contacted\nlead_1,clinic 1,stage=contacted\nlead_2,clinic 2,stage=contacted\nlead_3,clinic 3,stage=contacted\nlead_4,clinic 4,stage=contacted\nlead_5,clinic 5,stage=contacted\nlead_6,clinic 6,stage=contacted\nlead_7,clinic 7,stage=contacted\nlead_8,clinic 8,stage=contacted\nlead_9,clinic 9,stage=contacted\nlead_10,clinic 10,stage=contacted\nlead_11,clinic 11,stage=contacted\nlead_12,clinic 12,stage=contacted\nlead_13,clinic 13,stage=contacted\nlead_14,clinic 14,stage=contacted\nlead_15,clinic 15,stage=contacted\nlead_16,clinic 16,stage=contacted\nlead_17,clinic 17,stage=contacted\nlead_18,clinic 18,stage=contacted\nlead_19,clinic 19,stage=contacted\nlead_20,clinic 20,stage=contacted\nlead_21,clinic 21,stage=contacted\nlead_22,clinic 22,stage=contacted\nlead_23,clinic 23,stage=contacted\nlead_24,clinic 24,stage=contacted\nlead_25,clinic 25,stage=contacted\nlead_26,clinic 26,stage=contacted\nlead_27,clinic 27,stage=contacted\nlead_28,clinic 28,stage=contacted\nlead_29,clinic 29,stage=contacted\nlead_30,clinic 30,stage=contacted\nlead_31,clinic 31,stage=contacted\nlead_32,clinic 32,stage=contacted\nlead_33,clinic 33,stage=contacted\nlead_34,clinic 34,stage=contacted\nlead_35,clinic 35,stage=contacted\nlead_36,clinic 36,stage=contacted\nlead_37,clinic 37,stage=contacted\nlead_38,clinic 38,stage=contacted\nlead_39,clinic 39,stage=contacted\nlead_40,clinic 40,stage=contacted\nlead_41,clinic 41,stage=contacted\nlead_42,clinic 42,stage=contacted\nlead_43,clinic 43,stage=contacted\nlead_44,clinic 44,stage=contacted\nlead_45,clinic 45,stage=contacted\nlead_46,clinic 46,stage=contacted\nlead_47,clinic 47,stage=contacted\nlead_48,clinic 48,stage=contacted\nlead_49,clinic 49,stage=contacted\nlead_50,clinic 50,stage=contacted\nlead_51,clinic 51,stage=contacted\nlead_52,clinic 52,stage=contacted\nlead_53,clinic 53,stage=contacted\nlead_54,clinic 54,stage=contacted\nlead_55,clinic 55,stage=contacted\nlead_56,clinic 56,stage=contacted\nlead_57,clinic 57,stage=contacted\nlead_58,clinic 58,stage=contacted\nlead_59,clinic 59,stage=contacted\nlead_60,clinic 60,stage=contacted\nlead_61,clinic 61,stage=contacted\nlead_62,clinic 62,stage=contacted\nlead_63,clinic 63,stage=contacted\nlead_64,clinic 64,stage=contacted\nlead_65,clinic 65,stage=contacted\nlead_66,clinic 66,stage=contacted\nlead_67,clinic 67,stage=contacted\nlead_68,clinic 68,stage=contacted\nlead_69,clinic 69,stage=contacted\nlead_70,clinic 70,stage=contacted\nlead_71,clinic 71,stage=contacted\nlead_72,clinic 72,stage=contacted\nlead_73,clinic 73,stage=contacted\nlead_74,clinic 74,stage=contacted\nlead_75,clinic 75,stage=contacted\nlead_76,clinic 76,stage=contacted\nlead_77,clinic 77,stage=contacted\nlead_78,clinic 78,stage=contacted\nlead_79,clinic 79,stage=contacted\nlead_80,clinic 80,stage=contacted\nlead_81,clinic 81,stage=contacted\nlead_82,clinic 82,stage=contacted\nlead_83,clinic 83,stage=contacted\nlead_84,clinic 84,stage=contacted\nlead_85,clinic 85,stage=contacted\nlead_86,clinic 86,stage=contacted\nlead_87,clinic 87,stage=contacted\nlead_88,clinic 88,stage=contacted\nlead_89,clinic 89,stage=contacted"
+   "text": "crm export\nlead_0,clinic 0,stage=contacted\n"
   },
   {
-   "id": "b02",
+   "id": "b002",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_1,clinic 1,stage=contacted\nlead_2,clinic 2,stage=contacted\n"
+  },
+  {
+   "id": "b003",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_3,clinic "
+  },
+  {
+   "id": "b004",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "3,stage=contacted\n"
+  },
+  {
+   "id": "b005",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_4,clinic 4,stage=contacted\nlead_5,clinic 5,stage=contacted\n"
+  },
+  {
+   "id": "b006",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_6,clinic 6,stage=contacted\nlead_7,clinic 7,stage=contacted\n"
+  },
+  {
+   "id": "b007",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_8,clinic "
+  },
+  {
+   "id": "b008",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "8,stage=contacted\nlead_9,clinic "
+  },
+  {
+   "id": "b009",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "9,stage=contacted\nlead_10,clinic 10,stage=contacted\n"
+  },
+  {
+   "id": "b010",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_11,clinic 11,stage=contacted\nlead_12,clinic "
+  },
+  {
+   "id": "b011",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "12,stage=contacted\nlead_13,clinic 13,stage=contacted\n"
+  },
+  {
+   "id": "b012",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_14,clinic "
+  },
+  {
+   "id": "b013",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "14,stage=contacted\nlead_15,clinic "
+  },
+  {
+   "id": "b014",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "15,stage=contacted\nlead_16,clinic 16,stage=contacted\nlead_17,clinic "
+  },
+  {
+   "id": "b015",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "17,stage=contacted\n"
+  },
+  {
+   "id": "b016",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_18,clinic 18,stage=contacted\nlead_19,clinic 19,stage=contacted\n"
+  },
+  {
+   "id": "b017",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_20,clinic 20,stage=contacted\n"
+  },
+  {
+   "id": "b018",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_21,clinic 21,stage=contacted\n"
+  },
+  {
+   "id": "b019",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_22,clinic 22,stage=contacted\n"
+  },
+  {
+   "id": "b020",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_23,clinic 23,stage=contacted\nlead_24,clinic "
+  },
+  {
+   "id": "b021",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "24,stage=contacted\nlead_25,clinic 25,stage=contacted\nlead_26,clinic "
+  },
+  {
+   "id": "b022",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "26,stage=contacted\nlead_27,clinic 27,stage=contacted\nlead_28,clinic "
+  },
+  {
+   "id": "b023",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "28,stage=contacted\nlead_29,clinic "
+  },
+  {
+   "id": "b024",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "29,stage=contacted\n"
+  },
+  {
+   "id": "b025",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_30,clinic "
+  },
+  {
+   "id": "b026",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "30,stage=contacted\nlead_31,clinic "
+  },
+  {
+   "id": "b027",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "31,stage=contacted\nlead_32,clinic "
+  },
+  {
+   "id": "b028",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "32,stage=contacted\nlead_33,clinic 33,stage=contacted\nlead_34,clinic "
+  },
+  {
+   "id": "b029",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "34,stage=contacted\n"
+  },
+  {
+   "id": "b030",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_35,clinic 35,stage=contacted\nlead_36,clinic "
+  },
+  {
+   "id": "b031",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "36,stage=contacted\nlead_37,clinic "
+  },
+  {
+   "id": "b032",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "37,stage=contacted\n"
+  },
+  {
+   "id": "b033",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_38,clinic 38,stage=contacted\n"
+  },
+  {
+   "id": "b034",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_39,clinic "
+  },
+  {
+   "id": "b035",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "39,stage=contacted\n"
+  },
+  {
+   "id": "b036",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_40,clinic "
+  },
+  {
+   "id": "b037",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "40,stage=contacted\n"
+  },
+  {
+   "id": "b038",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_41,clinic 41,stage=contacted\n"
+  },
+  {
+   "id": "b039",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_42,clinic 42,stage=contacted\n"
+  },
+  {
+   "id": "b040",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_43,clinic 43,stage=contacted\nlead_44,clinic "
+  },
+  {
+   "id": "b041",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "44,stage=contacted\nlead_45,clinic 45,stage=contacted\n"
+  },
+  {
+   "id": "b042",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_46,clinic "
+  },
+  {
+   "id": "b043",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "46,stage=contacted\n"
+  },
+  {
+   "id": "b044",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_47,clinic 47,stage=contacted\nlead_48,clinic "
+  },
+  {
+   "id": "b045",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "48,stage=contacted\n"
+  },
+  {
+   "id": "b046",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_49,clinic 49,stage=contacted\n"
+  },
+  {
+   "id": "b047",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_50,clinic "
+  },
+  {
+   "id": "b048",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "50,stage=contacted\nlead_51,clinic 51,stage=contacted\nlead_52,clinic "
+  },
+  {
+   "id": "b049",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "52,stage=contacted\nlead_53,clinic 53,stage=contacted\n"
+  },
+  {
+   "id": "b050",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_54,clinic 54,stage=contacted\nlead_55,clinic "
+  },
+  {
+   "id": "b051",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "55,stage=contacted\n"
+  },
+  {
+   "id": "b052",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_56,clinic 56,stage=contacted\nlead_57,clinic "
+  },
+  {
+   "id": "b053",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "57,stage=contacted\nlead_58,clinic 58,stage=contacted\n"
+  },
+  {
+   "id": "b054",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_59,clinic 59,stage=contacted\n"
+  },
+  {
+   "id": "b055",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_60,clinic 60,stage=contacted\n"
+  },
+  {
+   "id": "b056",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_61,clinic "
+  },
+  {
+   "id": "b057",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "61,stage=contacted\nlead_62,clinic "
+  },
+  {
+   "id": "b058",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "62,stage=contacted\nlead_63,clinic "
+  },
+  {
+   "id": "b059",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "63,stage=contacted\nlead_64,clinic "
+  },
+  {
+   "id": "b060",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "64,stage=contacted\n"
+  },
+  {
+   "id": "b061",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_65,clinic 65,stage=contacted\n"
+  },
+  {
+   "id": "b062",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_66,clinic 66,stage=contacted\n"
+  },
+  {
+   "id": "b063",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_67,clinic "
+  },
+  {
+   "id": "b064",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "67,stage=contacted\nlead_68,clinic 68,stage=contacted\nlead_69,clinic "
+  },
+  {
+   "id": "b065",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "69,stage=contacted\n"
+  },
+  {
+   "id": "b066",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_70,clinic 70,stage=contacted\n"
+  },
+  {
+   "id": "b067",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_71,clinic 71,stage=contacted\n"
+  },
+  {
+   "id": "b068",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_72,clinic 72,stage=contacted\nlead_73,clinic "
+  },
+  {
+   "id": "b069",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "73,stage=contacted\n"
+  },
+  {
+   "id": "b070",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_74,clinic 74,stage=contacted\nlead_75,clinic 75,stage=contacted\n"
+  },
+  {
+   "id": "b071",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_76,clinic 76,stage=contacted\nlead_77,clinic "
+  },
+  {
+   "id": "b072",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "77,stage=contacted\n"
+  },
+  {
+   "id": "b073",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_78,clinic 78,stage=contacted\n"
+  },
+  {
+   "id": "b074",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_79,clinic 79,stage=contacted\n"
+  },
+  {
+   "id": "b075",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_80,clinic 80,stage=contacted\n"
+  },
+  {
+   "id": "b076",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_81,clinic 81,stage=contacted\nlead_82,clinic "
+  },
+  {
+   "id": "b077",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "82,stage=contacted\nlead_83,clinic 83,stage=contacted\nlead_84,clinic "
+  },
+  {
+   "id": "b078",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "84,stage=contacted\nlead_85,clinic 85,stage=contacted\n"
+  },
+  {
+   "id": "b079",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_86,clinic 86,stage=contacted\nlead_87,clinic 87,stage=contacted\n"
+  },
+  {
+   "id": "b080",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "lead_88,clinic "
+  },
+  {
+   "id": "b081",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "88,stage=contacted\nlead_89,clinic 89,stage=contacted"
+  },
+  {
+   "id": "b082",
    "gold": "must",
    "role": "user",
    "kind": "text",
@@ -38,13 +758,688 @@
    "text": "NAO mande nada pra quem pediu pra sair da lista ou ja recebeu 2 mensagens."
   },
   {
-   "id": "b03",
+   "id": "b083",
    "gold": "may",
    "role": "tool",
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 bytes) in 16ms\n[0005] info  compiled ./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] info  compiled ./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n[0010] info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled ./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] info  compiled ./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled ./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled ./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ./src/components/Nav9.tsx (1914 bytes) in 34ms\n[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  compiled ./src/components/Table11.tsx (1988 bytes) in 36ms\n[0025] info  compiled ./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx (2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in 41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx (2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n[0034] info  compiled ./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled ./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled ./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms"
+   "text": "[0000] info  compiled ./src/components/Card0.tsx "
+  },
+  {
+   "id": "b084",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1100 bytes) in 12ms\n"
+  },
+  {
+   "id": "b085",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0001] info  compiled "
+  },
+  {
+   "id": "b086",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero1.tsx (1137 bytes) in "
+  },
+  {
+   "id": "b087",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "13ms\n[0002] info  compiled ./src/components/Footer2.tsx "
+  },
+  {
+   "id": "b088",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1174 bytes) in 14ms\n"
+  },
+  {
+   "id": "b089",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0003] info  compiled "
+  },
+  {
+   "id": "b090",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing3.tsx (1211 bytes) "
+  },
+  {
+   "id": "b091",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 15ms\n[0004] info  "
+  },
+  {
+   "id": "b092",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Nav4.tsx (1248 bytes) in "
+  },
+  {
+   "id": "b093",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "16ms\n[0005] info  compiled ./src/components/Modal5.tsx (1285 bytes) "
+  },
+  {
+   "id": "b094",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 17ms\n[0006] "
+  },
+  {
+   "id": "b095",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Table6.tsx "
+  },
+  {
+   "id": "b096",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1322 bytes) in 18ms\n[0007] info  "
+  },
+  {
+   "id": "b097",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b098",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart7.tsx "
+  },
+  {
+   "id": "b099",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1359 bytes) in 19ms\n[0008] "
+  },
+  {
+   "id": "b100",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Form8.tsx (1396 "
+  },
+  {
+   "id": "b101",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 20ms\n"
+  },
+  {
+   "id": "b102",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0009] info  compiled "
+  },
+  {
+   "id": "b103",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card9.tsx (1433 bytes) in 21ms\n"
+  },
+  {
+   "id": "b104",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0010] info  compiled "
+  },
+  {
+   "id": "b105",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] "
+  },
+  {
+   "id": "b106",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b107",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer11.tsx (1507 "
+  },
+  {
+   "id": "b108",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 23ms\n[0012] info  compiled "
+  },
+  {
+   "id": "b109",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] info  "
+  },
+  {
+   "id": "b110",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Nav0.tsx (1581 bytes) "
+  },
+  {
+   "id": "b111",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 25ms\n[0014] info  compiled ./src/components/Modal1.tsx (1618 bytes) "
+  },
+  {
+   "id": "b112",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 26ms\n[0015] "
+  },
+  {
+   "id": "b113",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b114",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Table2.tsx "
+  },
+  {
+   "id": "b115",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1655 bytes) in 27ms\n[0016] info  compiled "
+  },
+  {
+   "id": "b116",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled "
+  },
+  {
+   "id": "b117",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] "
+  },
+  {
+   "id": "b118",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Card5.tsx (1766 bytes) "
+  },
+  {
+   "id": "b119",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 30ms\n[0019] info  "
+  },
+  {
+   "id": "b120",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Hero6.tsx (1803 "
+  },
+  {
+   "id": "b121",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 31ms\n[0020] info  compiled "
+  },
+  {
+   "id": "b122",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer7.tsx "
+  },
+  {
+   "id": "b123",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1840 bytes) in 32ms\n[0021] info  compiled "
+  },
+  {
+   "id": "b124",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  "
+  },
+  {
+   "id": "b125",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b126",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav9.tsx (1914 bytes) "
+  },
+  {
+   "id": "b127",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 34ms\n[0023] info  compiled "
+  },
+  {
+   "id": "b128",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  "
+  },
+  {
+   "id": "b129",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b130",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Table11.tsx (1988 bytes) in 36ms\n[0025] "
+  },
+  {
+   "id": "b131",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Chart12.tsx (2025 bytes) in 37ms\n"
+  },
+  {
+   "id": "b132",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0026] info  "
+  },
+  {
+   "id": "b133",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Form0.tsx "
+  },
+  {
+   "id": "b134",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2062 bytes) in 38ms\n[0027] info  compiled "
+  },
+  {
+   "id": "b135",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] "
+  },
+  {
+   "id": "b136",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b137",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero2.tsx (2136 "
+  },
+  {
+   "id": "b138",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 40ms\n"
+  },
+  {
+   "id": "b139",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in "
+  },
+  {
+   "id": "b140",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "41ms\n[0030] info  compiled "
+  },
+  {
+   "id": "b141",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing4.tsx (2210 "
+  },
+  {
+   "id": "b142",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 42ms\n[0031] info  compiled "
+  },
+  {
+   "id": "b143",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav5.tsx (2247 bytes) in 43ms\n[0032] "
+  },
+  {
+   "id": "b144",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Modal6.tsx "
+  },
+  {
+   "id": "b145",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2284 bytes) in 44ms\n[0033] "
+  },
+  {
+   "id": "b146",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n"
+  },
+  {
+   "id": "b147",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0034] info  compiled ./src/components/Chart8.tsx (2358 bytes) in "
+  },
+  {
+   "id": "b148",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "46ms\n[0035] info  "
+  },
+  {
+   "id": "b149",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b150",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form9.tsx (2395 "
+  },
+  {
+   "id": "b151",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 47ms\n[0036] info  "
+  },
+  {
+   "id": "b152",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Card10.tsx (2432 bytes) in "
+  },
+  {
+   "id": "b153",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "48ms\n[0037] info  compiled "
+  },
+  {
+   "id": "b154",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero11.tsx "
+  },
+  {
+   "id": "b155",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2469 bytes) in 49ms\n[0038] info  "
+  },
+  {
+   "id": "b156",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b157",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  "
+  },
+  {
+   "id": "b158",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms"
   }
  ]
 }

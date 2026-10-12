@@ -12,9 +12,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 failure_report (\"aconteceu de novo\")",
    "goal": "deu o mesmo erro de novo depois do deploy, olha isso",
-   "n_blocks": 7,
+   "n_blocks": 76,
    "fixture": "tests/fixtures/edge_cases/pasted_error_then_fix.json",
-   "total_tokens": 2426,
+   "total_tokens": 2449,
    "must_tokens": 83
   },
   {
@@ -28,9 +28,9 @@
    "source": "real-derived",
    "source_ref": "LCC compactor conversational-reversal cues (dd5dd80); taxonomy-v2 correct_approach_or_rule",
    "goal": "continua a migracao do banco",
-   "n_blocks": 5,
+   "n_blocks": 15,
    "fixture": "tests/fixtures/edge_cases/decision_reversal.json",
-   "total_tokens": 1719,
+   "total_tokens": 1723,
    "must_tokens": 89
   },
   {
@@ -44,9 +44,9 @@
    "source": "lcc-adversarial",
    "source_ref": "benchmarks/research/adversarial_cases.py temporal_supersession",
    "goal": "aplica o timeout certo no client http",
-   "n_blocks": 5,
+   "n_blocks": 57,
    "fixture": "tests/fixtures/edge_cases/config_value_corrected.json",
-   "total_tokens": 1227,
+   "total_tokens": 1244,
    "must_tokens": 55
   },
   {
@@ -60,7 +60,7 @@
    "source": "real-derived",
    "source_ref": "v0.4/v0.5 drop rule superseded_by_later_call",
    "goal": "o botao do Hero ainda ta desalinhado, ajusta",
-   "n_blocks": 4,
+   "n_blocks": 7,
    "fixture": "tests/fixtures/edge_cases/reread_after_edit.json",
    "total_tokens": 1754,
    "must_tokens": 220
@@ -76,9 +76,9 @@
    "source": "real-derived",
    "source_ref": "recoverable-v0.8 range pointers (never blind-audited)",
    "goal": "corrige o calculo de desconto em billing/pricing.py",
-   "n_blocks": 4,
+   "n_blocks": 37,
    "fixture": "tests/fixtures/edge_cases/partial_reads.json",
-   "total_tokens": 1117,
+   "total_tokens": 1125,
    "must_tokens": 99
   },
   {
@@ -92,9 +92,9 @@
    "source": "real-derived",
    "source_ref": "v0.4 trim rule large_old_output_trimmed (19/127 trims flagged)",
    "goal": "o build quebrou na CI, ve o que foi",
-   "n_blocks": 5,
+   "n_blocks": 36,
    "fixture": "tests/fixtures/edge_cases/huge_log_middle_error.json",
-   "total_tokens": 3857,
+   "total_tokens": 3866,
    "must_tokens": 58
   },
   {
@@ -108,9 +108,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 git_ship context_needed",
    "goal": "commita e faz push so do que a gente mexeu",
-   "n_blocks": 6,
+   "n_blocks": 56,
    "fixture": "tests/fixtures/edge_cases/git_state_commit_own_work.json",
-   "total_tokens": 1264,
+   "total_tokens": 1282,
    "must_tokens": 93
   },
   {
@@ -124,9 +124,9 @@
    "source": "synthetic",
    "source_ref": "taxonomy-v2 task_status_or_control",
    "goal": "e ai, o que falta?",
-   "n_blocks": 6,
+   "n_blocks": 23,
    "fixture": "tests/fixtures/edge_cases/plan_todo_state.json",
-   "total_tokens": 1663,
+   "total_tokens": 1669,
    "must_tokens": 63
   },
   {
@@ -140,9 +140,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 handoff_prompt",
    "goal": "escreve um prompt pra outra sessao continuar daqui",
-   "n_blocks": 6,
+   "n_blocks": 79,
    "fixture": "tests/fixtures/edge_cases/handoff_prompt.json",
-   "total_tokens": 2030,
+   "total_tokens": 2055,
    "must_tokens": 89
   },
   {
@@ -156,9 +156,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 approve_or_pick (owner review: short replies steer)",
    "goal": "1 e 3",
-   "n_blocks": 4,
+   "n_blocks": 24,
    "fixture": "tests/fixtures/edge_cases/approve_numbered_options.json",
-   "total_tokens": 1695,
+   "total_tokens": 1702,
    "must_tokens": 42
   },
   {
@@ -172,9 +172,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 approve_or_pick",
    "goal": "tenta de novo",
-   "n_blocks": 5,
+   "n_blocks": 127,
    "fixture": "tests/fixtures/edge_cases/retry_failed_action.json",
-   "total_tokens": 1755,
+   "total_tokens": 1804,
    "must_tokens": 27
   },
   {
@@ -188,9 +188,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py multilingual; owner sessions are pt-BR",
    "goal": "arruma o calculo do frete que ta cobrando em dobro",
-   "n_blocks": 4,
+   "n_blocks": 20,
    "fixture": "tests/fixtures/edge_cases/pt_en_mixed.json",
-   "total_tokens": 1270,
+   "total_tokens": 1276,
    "must_tokens": 72
   },
   {
@@ -204,9 +204,9 @@
    "source": "synthetic",
    "source_ref": "taxonomy-v2 specified_task (every named file fetched)",
    "goal": "ajusta o espacamento do footer em src/components/Footer.tsx",
-   "n_blocks": 4,
+   "n_blocks": 92,
    "fixture": "tests/fixtures/edge_cases/file_named_only_in_goal.json",
-   "total_tokens": 1604,
+   "total_tokens": 1637,
    "must_tokens": 31
   },
   {
@@ -220,9 +220,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 supply_fact_or_step_done",
    "goal": "5433",
-   "n_blocks": 4,
+   "n_blocks": 24,
    "fixture": "tests/fixtures/edge_cases/number_only_reply.json",
-   "total_tokens": 1079,
+   "total_tokens": 1085,
    "must_tokens": 47
   },
   {
@@ -236,9 +236,9 @@
    "source": "synthetic",
    "source_ref": "taxonomy-v2 specified_task",
    "goal": "renomeia getUser para fetchUser em todo o projeto",
-   "n_blocks": 7,
+   "n_blocks": 272,
    "fixture": "tests/fixtures/edge_cases/multi_file_refactor.json",
-   "total_tokens": 2912,
+   "total_tokens": 3005,
    "must_tokens": 80
   },
   {
@@ -252,9 +252,9 @@
    "source": "real-derived",
    "source_ref": "docs/JEV.md section 3 (state over 32,768 tokens)",
    "goal": "agora roda o seed de novo e confere se cadastrou",
-   "n_blocks": 18,
+   "n_blocks": 590,
    "fixture": "tests/fixtures/edge_cases/long_session_over_32k.json",
-   "total_tokens": 34785,
+   "total_tokens": 34973,
    "must_tokens": 31
   },
   {
@@ -268,9 +268,9 @@
    "source": "synthetic",
    "source_ref": "taxonomy-v2 supply_fact_or_step_done / environment_and_infra secret rules",
    "goal": "configura as variaveis no Railway igual ao local",
-   "n_blocks": 4,
+   "n_blocks": 52,
    "fixture": "tests/fixtures/edge_cases/secret_redacted_env.json",
-   "total_tokens": 1348,
+   "total_tokens": 1364,
    "must_tokens": 69
   },
   {
@@ -284,9 +284,9 @@
    "source": "synthetic",
    "source_ref": "taxonomy-v2 general_question",
    "goal": "qual a versao atual do Next e o que mudou no cache?",
-   "n_blocks": 3,
+   "n_blocks": 16,
    "fixture": "tests/fixtures/edge_cases/web_fetch_one_fact.json",
-   "total_tokens": 971,
+   "total_tokens": 977,
    "must_tokens": 40
   },
   {
@@ -300,9 +300,9 @@
    "source": "synthetic",
    "source_ref": "taxonomy-v2 task_status_or_control",
    "goal": "o que o agente de auditoria achou?",
-   "n_blocks": 3,
+   "n_blocks": 40,
    "fixture": "tests/fixtures/edge_cases/subagent_report.json",
-   "total_tokens": 936,
+   "total_tokens": 947,
    "must_tokens": 41
   },
   {
@@ -316,9 +316,9 @@
    "source": "synthetic",
    "source_ref": "LCC transcript mode pins first message; Codex/Claude compaction summaries",
    "goal": "segue com o proximo passo do plano",
-   "n_blocks": 4,
+   "n_blocks": 24,
    "fixture": "tests/fixtures/edge_cases/prior_compaction_summary.json",
-   "total_tokens": 2093,
+   "total_tokens": 2101,
    "must_tokens": 46
   },
   {
@@ -332,9 +332,9 @@
    "source": "real-derived",
    "source_ref": "lossless-dedup-v1 identical-output notes",
    "goal": "os testes de pagamento continuam falhando",
-   "n_blocks": 4,
+   "n_blocks": 115,
    "fixture": "tests/fixtures/edge_cases/duplicated_tool_output.json",
-   "total_tokens": 1805,
+   "total_tokens": 1840,
    "must_tokens": 31
   },
   {
@@ -348,9 +348,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 failure_report; failure notes (resolved threads droppable)",
    "goal": "ainda da TypeError quando abre o checkout",
-   "n_blocks": 4,
+   "n_blocks": 34,
    "fixture": "tests/fixtures/edge_cases/stale_vs_fresh_error.json",
-   "total_tokens": 1219,
+   "total_tokens": 1228,
    "must_tokens": 19
   },
   {
@@ -364,9 +364,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py negation_consent",
    "goal": "manda as mensagens de follow-up pros leads",
-   "n_blocks": 4,
+   "n_blocks": 159,
    "fixture": "tests/fixtures/edge_cases/negation_rule.json",
-   "total_tokens": 1511,
+   "total_tokens": 1568,
    "must_tokens": 37
   },
   {
@@ -380,9 +380,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py contradiction_same_metric",
    "goal": "qual a taxa de conversao atual?",
-   "n_blocks": 4,
+   "n_blocks": 35,
    "fixture": "tests/fixtures/edge_cases/contradiction_unresolved.json",
-   "total_tokens": 1259,
+   "total_tokens": 1268,
    "must_tokens": 34
   },
   {
@@ -396,9 +396,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py source_authority_conflict",
    "goal": "qual o limite de requisicoes da API?",
-   "n_blocks": 3,
+   "n_blocks": 93,
    "fixture": "tests/fixtures/edge_cases/source_authority.json",
-   "total_tokens": 999,
+   "total_tokens": 1026,
    "must_tokens": 21
   },
   {
@@ -412,9 +412,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py prompt_injection / injection_html",
    "goal": "resume as avaliacoes dessa clinica pra eu responder",
-   "n_blocks": 4,
+   "n_blocks": 15,
    "fixture": "tests/fixtures/edge_cases/prompt_injection_in_tool_output.json",
-   "total_tokens": 651,
+   "total_tokens": 655,
    "must_tokens": 41
   },
   {
@@ -428,9 +428,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py qualifier_unless",
    "goal": "pode fazer o deploy de sexta?",
-   "n_blocks": 5,
+   "n_blocks": 124,
    "fixture": "tests/fixtures/edge_cases/qualifier_exception.json",
-   "total_tokens": 1655,
+   "total_tokens": 1700,
    "must_tokens": 54
   },
   {
@@ -444,9 +444,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py coreference_resolution / dependency_causal",
    "goal": "por que o worker esta caindo?",
-   "n_blocks": 4,
+   "n_blocks": 34,
    "fixture": "tests/fixtures/edge_cases/coreference_cause.json",
-   "total_tokens": 1539,
+   "total_tokens": 1549,
    "must_tokens": 44
   },
   {
@@ -460,9 +460,9 @@
    "source": "lcc-adversarial",
    "source_ref": "adversarial_cases.py structured_yaml / structured_json",
    "goal": "aumenta a memoria do servico de fila",
-   "n_blocks": 3,
+   "n_blocks": 122,
    "fixture": "tests/fixtures/edge_cases/structured_config_block.json",
-   "total_tokens": 1638,
+   "total_tokens": 1683,
    "must_tokens": 25
   },
   {
@@ -476,7 +476,7 @@
    "source": "real-derived",
    "source_ref": "v0.4 RESULTS: trims of large old outputs the agent goes on to edit",
    "goal": "continua o ajuste no formulario de contato",
-   "n_blocks": 5,
+   "n_blocks": 7,
    "fixture": "tests/fixtures/edge_cases/old_read_later_edited.json",
    "total_tokens": 2253,
    "must_tokens": 286
@@ -492,9 +492,9 @@
    "source": "real-derived",
    "source_ref": "lossless-dedup-v1 RESULTS (prod.hosts vs dev.hosts)",
    "goal": "por que o host de prod nao responde?",
-   "n_blocks": 3,
+   "n_blocks": 196,
    "fixture": "tests/fixtures/edge_cases/similar_not_superseding.json",
-   "total_tokens": 1228,
+   "total_tokens": 1294,
    "must_tokens": 12
   },
   {
@@ -508,9 +508,9 @@
    "source": "real-derived",
    "source_ref": "v0.7 RESULTS (file in a folder an external process moves)",
    "goal": "usa os dados daquele csv que voce leu pra montar a tabela",
-   "n_blocks": 3,
+   "n_blocks": 57,
    "fixture": "tests/fixtures/edge_cases/unrecoverable_read.json",
-   "total_tokens": 1617,
+   "total_tokens": 1639,
    "must_tokens": 16
   },
   {
@@ -524,9 +524,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 general_question",
    "goal": "vale mais a pena o plano Pro ou o Max do Claude pra mim?",
-   "n_blocks": 4,
+   "n_blocks": 142,
    "fixture": "tests/fixtures/edge_cases/general_question_drop_all.json",
-   "total_tokens": 1304,
+   "total_tokens": 1352,
    "must_tokens": 19
   },
   {
@@ -540,9 +540,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 external_accounts_and_comms",
    "goal": "manda a proxima leva de mensagens no linkedin",
-   "n_blocks": 4,
+   "n_blocks": 28,
    "fixture": "tests/fixtures/edge_cases/outreach_history.json",
-   "total_tokens": 1749,
+   "total_tokens": 1757,
    "must_tokens": 52
   },
   {
@@ -556,9 +556,9 @@
    "source": "real-derived",
    "source_ref": "taxonomy-v2 project_audit_or_direction",
    "goal": "o que voce acha do projeto? pontos fortes e fracos",
-   "n_blocks": 5,
+   "n_blocks": 81,
    "fixture": "tests/fixtures/edge_cases/project_audit_wide_view.json",
-   "total_tokens": 1546,
+   "total_tokens": 1571,
    "must_tokens": 54
   }
  ]

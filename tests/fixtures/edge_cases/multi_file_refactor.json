@@ -11,7 +11,7 @@
  "goal": "renomeia getUser para fetchUser em todo o projeto",
  "blocks": [
   {
-   "id": "b00",
+   "id": "b000",
    "gold": "must",
    "role": "tool",
    "kind": "tool_result",
@@ -20,7 +20,7 @@
    "text": "src/lib/users.ts\nexport async function getUser(id: string) { return db.user.find(id); }"
   },
   {
-   "id": "b01",
+   "id": "b001",
    "gold": "must",
    "role": "tool",
    "kind": "tool_result",
@@ -29,7 +29,7 @@
    "text": "src/app/profile/page.tsx (line 12)\nconst u = await getUser(params.id);"
   },
   {
-   "id": "b02",
+   "id": "b002",
    "gold": "must",
    "role": "tool",
    "kind": "tool_result",
@@ -38,7 +38,7 @@
    "text": "src/app/api/me/route.ts (line 5)\nreturn Response.json(await getUser(session.uid));"
   },
   {
-   "id": "b03",
+   "id": "b003",
    "gold": "must",
    "role": "tool",
    "kind": "tool_result",
@@ -47,31 +47,2416 @@
    "text": "src/jobs/digest.ts (line 30)\nfor (const id of ids) send(await getUser(id));"
   },
   {
-   "id": "b04",
+   "id": "b004",
    "gold": "may",
    "role": "tool",
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "tests/test_mod0.py::test_case_0 PASSED [  1%]\ntests/test_mod1.py::test_case_1 PASSED [  2%]\ntests/test_mod2.py::test_case_2 PASSED [  3%]\ntests/test_mod3.py::test_case_3 PASSED [  5%]\ntests/test_mod4.py::test_case_4 PASSED [  6%]\ntests/test_mod5.py::test_case_5 PASSED [  7%]\ntests/test_mod6.py::test_case_6 PASSED [  8%]\ntests/test_mod7.py::test_case_7 PASSED [ 10%]\ntests/test_mod8.py::test_case_8 PASSED [ 11%]\ntests/test_mod9.py::test_case_9 PASSED [ 12%]\ntests/test_mod10.py::test_case_10 PASSED [ 13%]\ntests/test_mod0.py::test_case_11 PASSED [ 15%]\ntests/test_mod1.py::test_case_12 PASSED [ 16%]\ntests/test_mod2.py::test_case_13 PASSED [ 17%]\ntests/test_mod3.py::test_case_14 PASSED [ 18%]\ntests/test_mod4.py::test_case_15 PASSED [ 20%]\ntests/test_mod5.py::test_case_16 PASSED [ 21%]\ntests/test_mod6.py::test_case_17 PASSED [ 22%]\ntests/test_mod7.py::test_case_18 PASSED [ 23%]\ntests/test_mod8.py::test_case_19 PASSED [ 25%]\ntests/test_mod9.py::test_case_20 PASSED [ 26%]\ntests/test_mod10.py::test_case_21 PASSED [ 27%]\ntests/test_mod0.py::test_case_22 PASSED [ 28%]\ntests/test_mod1.py::test_case_23 PASSED [ 30%]\ntests/test_mod2.py::test_case_24 PASSED [ 31%]\ntests/test_mod3.py::test_case_25 PASSED [ 32%]\ntests/test_mod4.py::test_case_26 PASSED [ 33%]\ntests/test_mod5.py::test_case_27 PASSED [ 35%]\ntests/test_mod6.py::test_case_28 PASSED [ 36%]\ntests/test_mod7.py::test_case_29 PASSED [ 37%]\ntests/test_mod8.py::test_case_30 PASSED [ 38%]\ntests/test_mod9.py::test_case_31 PASSED [ 40%]\ntests/test_mod10.py::test_case_32 PASSED [ 41%]\ntests/test_mod0.py::test_case_33 PASSED [ 42%]\ntests/test_mod1.py::test_case_34 PASSED [ 43%]\ntests/test_mod2.py::test_case_35 PASSED [ 45%]\ntests/test_mod3.py::test_case_36 PASSED [ 46%]\ntests/test_mod4.py::test_case_37 PASSED [ 47%]\ntests/test_mod5.py::test_case_38 PASSED [ 48%]\ntests/test_mod6.py::test_case_39 PASSED [ 50%]\ntests/test_mod7.py::test_case_40 PASSED [ 51%]\ntests/test_mod8.py::test_case_41 PASSED [ 52%]\ntests/test_mod9.py::test_case_42 PASSED [ 53%]\ntests/test_mod10.py::test_case_43 PASSED [ 55%]\ntests/test_mod0.py::test_case_44 PASSED [ 56%]\ntests/test_mod1.py::test_case_45 PASSED [ 57%]\ntests/test_mod2.py::test_case_46 PASSED [ 58%]\ntests/test_mod3.py::test_case_47 PASSED [ 60%]\ntests/test_mod4.py::test_case_48 PASSED [ 61%]\ntests/test_mod5.py::test_case_49 PASSED [ 62%]\ntests/test_mod6.py::test_case_50 PASSED [ 63%]\ntests/test_mod7.py::test_case_51 PASSED [ 65%]\ntests/test_mod8.py::test_case_52 PASSED [ 66%]\ntests/test_mod9.py::test_case_53 PASSED [ 67%]\ntests/test_mod10.py::test_case_54 PASSED [ 68%]\ntests/test_mod0.py::test_case_55 PASSED [ 70%]\ntests/test_mod1.py::test_case_56 PASSED [ 71%]\ntests/test_mod2.py::test_case_57 PASSED [ 72%]\ntests/test_mod3.py::test_case_58 PASSED [ 73%]\ntests/test_mod4.py::test_case_59 PASSED [ 75%]\ntests/test_mod5.py::test_case_60 PASSED [ 76%]\ntests/test_mod6.py::test_case_61 PASSED [ 77%]\ntests/test_mod7.py::test_case_62 PASSED [ 78%]\ntests/test_mod8.py::test_case_63 PASSED [ 80%]\ntests/test_mod9.py::test_case_64 PASSED [ 81%]\ntests/test_mod10.py::test_case_65 PASSED [ 82%]\ntests/test_mod0.py::test_case_66 PASSED [ 83%]\ntests/test_mod1.py::test_case_67 PASSED [ 85%]\ntests/test_mod2.py::test_case_68 PASSED [ 86%]\ntests/test_mod3.py::test_case_69 PASSED [ 87%]\ntests/test_mod4.py::test_case_70 PASSED [ 88%]\ntests/test_mod5.py::test_case_71 PASSED [ 90%]\ntests/test_mod6.py::test_case_72 PASSED [ 91%]\ntests/test_mod7.py::test_case_73 PASSED [ 92%]\ntests/test_mod8.py::test_case_74 PASSED [ 93%]\ntests/test_mod9.py::test_case_75 PASSED [ 95%]\ntests/test_mod10.py::test_case_76 PASSED [ 96%]\ntests/test_mod0.py::test_case_77 PASSED [ 97%]\ntests/test_mod1.py::test_case_78 PASSED [ 98%]\ntests/test_mod2.py::test_case_79 PASSED [100%]\n===== 80 passed, 0 failed in 4.01s ====="
+   "text": "tests/test_mod0.py::test_case_0 PASSED [  "
   },
   {
-   "id": "b05",
+   "id": "b005",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "1%]\ntests/test_mod1.py::test_case_1 PASSED [  2%]\n"
+  },
+  {
+   "id": "b006",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod2.py::test_case_2 PASSED [  3%]\ntests/test_mod3.py::test_case_3 "
+  },
+  {
+   "id": "b007",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [  5%]\ntests/test_mod4.py::test_case_4 PASSED [  6%]\n"
+  },
+  {
+   "id": "b008",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod5.py::test_case_5 "
+  },
+  {
+   "id": "b009",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [  7%]\n"
+  },
+  {
+   "id": "b010",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod6.py::test_case_6 PASSED "
+  },
+  {
+   "id": "b011",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[  8%]\n"
+  },
+  {
+   "id": "b012",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod7.py::test_case_7 PASSED [ 10%]\ntests/test_mod8.py::test_case_8 "
+  },
+  {
+   "id": "b013",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 11%]\n"
+  },
+  {
+   "id": "b014",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod9.py::test_case_9 "
+  },
+  {
+   "id": "b015",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 12%]\ntests/test_mod10.py::test_case_10 "
+  },
+  {
+   "id": "b016",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 13%]\n"
+  },
+  {
+   "id": "b017",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_11 PASSED [ "
+  },
+  {
+   "id": "b018",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "15%]\ntests/test_mod1.py::test_case_12 "
+  },
+  {
+   "id": "b019",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 16%]\n"
+  },
+  {
+   "id": "b020",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod2.py::test_case_13 PASSED [ 17%]\n"
+  },
+  {
+   "id": "b021",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod3.py::test_case_14 "
+  },
+  {
+   "id": "b022",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 18%]\ntests/test_mod4.py::test_case_15 PASSED [ "
+  },
+  {
+   "id": "b023",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "20%]\ntests/test_mod5.py::test_case_16 PASSED [ 21%]\n"
+  },
+  {
+   "id": "b024",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod6.py::test_case_17 PASSED [ 22%]\n"
+  },
+  {
+   "id": "b025",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod7.py::test_case_18 "
+  },
+  {
+   "id": "b026",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 23%]\ntests/test_mod8.py::test_case_19 PASSED [ 25%]\n"
+  },
+  {
+   "id": "b027",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod9.py::test_case_20 PASSED [ 26%]\n"
+  },
+  {
+   "id": "b028",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod10.py::test_case_21 PASSED [ "
+  },
+  {
+   "id": "b029",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "27%]\n"
+  },
+  {
+   "id": "b030",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_22 PASSED [ 28%]\n"
+  },
+  {
+   "id": "b031",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod1.py::test_case_23 "
+  },
+  {
+   "id": "b032",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 30%]\ntests/test_mod2.py::test_case_24 PASSED [ 31%]\n"
+  },
+  {
+   "id": "b033",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod3.py::test_case_25 PASSED [ 32%]\n"
+  },
+  {
+   "id": "b034",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod4.py::test_case_26 "
+  },
+  {
+   "id": "b035",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 33%]\n"
+  },
+  {
+   "id": "b036",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod5.py::test_case_27 PASSED [ 35%]\n"
+  },
+  {
+   "id": "b037",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod6.py::test_case_28 "
+  },
+  {
+   "id": "b038",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 36%]\ntests/test_mod7.py::test_case_29 PASSED [ 37%]\n"
+  },
+  {
+   "id": "b039",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod8.py::test_case_30 "
+  },
+  {
+   "id": "b040",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 38%]\n"
+  },
+  {
+   "id": "b041",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod9.py::test_case_31 PASSED [ 40%]\n"
+  },
+  {
+   "id": "b042",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod10.py::test_case_32 "
+  },
+  {
+   "id": "b043",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 41%]\n"
+  },
+  {
+   "id": "b044",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_33 PASSED [ 42%]\n"
+  },
+  {
+   "id": "b045",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod1.py::test_case_34 PASSED [ 43%]\n"
+  },
+  {
+   "id": "b046",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod2.py::test_case_35 PASSED [ "
+  },
+  {
+   "id": "b047",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "45%]\ntests/test_mod3.py::test_case_36 PASSED [ 46%]\n"
+  },
+  {
+   "id": "b048",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod4.py::test_case_37 PASSED [ 47%]\n"
+  },
+  {
+   "id": "b049",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod5.py::test_case_38 PASSED [ 48%]\n"
+  },
+  {
+   "id": "b050",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod6.py::test_case_39 PASSED [ 50%]\ntests/test_mod7.py::test_case_40 "
+  },
+  {
+   "id": "b051",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 51%]\n"
+  },
+  {
+   "id": "b052",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod8.py::test_case_41 "
+  },
+  {
+   "id": "b053",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 52%]\ntests/test_mod9.py::test_case_42 PASSED [ "
+  },
+  {
+   "id": "b054",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "53%]\ntests/test_mod10.py::test_case_43 PASSED [ 55%]\n"
+  },
+  {
+   "id": "b055",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_44 PASSED [ 56%]\ntests/test_mod1.py::test_case_45 "
+  },
+  {
+   "id": "b056",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 57%]\n"
+  },
+  {
+   "id": "b057",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod2.py::test_case_46 PASSED "
+  },
+  {
+   "id": "b058",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[ 58%]\ntests/test_mod3.py::test_case_47 PASSED "
+  },
+  {
+   "id": "b059",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[ 60%]\ntests/test_mod4.py::test_case_48 PASSED "
+  },
+  {
+   "id": "b060",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[ 61%]\ntests/test_mod5.py::test_case_49 PASSED [ 62%]\n"
+  },
+  {
+   "id": "b061",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod6.py::test_case_50 PASSED [ 63%]\n"
+  },
+  {
+   "id": "b062",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod7.py::test_case_51 PASSED [ 65%]\n"
+  },
+  {
+   "id": "b063",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod8.py::test_case_52 PASSED [ "
+  },
+  {
+   "id": "b064",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "66%]\ntests/test_mod9.py::test_case_53 PASSED [ 67%]\n"
+  },
+  {
+   "id": "b065",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod10.py::test_case_54 "
+  },
+  {
+   "id": "b066",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 68%]\ntests/test_mod0.py::test_case_55 PASSED [ "
+  },
+  {
+   "id": "b067",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "70%]\n"
+  },
+  {
+   "id": "b068",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod1.py::test_case_56 PASSED "
+  },
+  {
+   "id": "b069",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[ 71%]\ntests/test_mod2.py::test_case_57 "
+  },
+  {
+   "id": "b070",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 72%]\ntests/test_mod3.py::test_case_58 PASSED [ 73%]\n"
+  },
+  {
+   "id": "b071",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod4.py::test_case_59 "
+  },
+  {
+   "id": "b072",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 75%]\ntests/test_mod5.py::test_case_60 PASSED [ "
+  },
+  {
+   "id": "b073",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "76%]\ntests/test_mod6.py::test_case_61 "
+  },
+  {
+   "id": "b074",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 77%]\ntests/test_mod7.py::test_case_62 PASSED [ 78%]\n"
+  },
+  {
+   "id": "b075",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod8.py::test_case_63 PASSED [ 80%]\n"
+  },
+  {
+   "id": "b076",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod9.py::test_case_64 PASSED [ 81%]\n"
+  },
+  {
+   "id": "b077",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod10.py::test_case_65 PASSED [ 82%]\n"
+  },
+  {
+   "id": "b078",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod0.py::test_case_66 PASSED [ 83%]\n"
+  },
+  {
+   "id": "b079",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod1.py::test_case_67 PASSED [ 85%]\n"
+  },
+  {
+   "id": "b080",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod2.py::test_case_68 "
+  },
+  {
+   "id": "b081",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 86%]\ntests/test_mod3.py::test_case_69 "
+  },
+  {
+   "id": "b082",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 87%]\ntests/test_mod4.py::test_case_70 PASSED [ "
+  },
+  {
+   "id": "b083",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "88%]\ntests/test_mod5.py::test_case_71 PASSED [ 90%]\n"
+  },
+  {
+   "id": "b084",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod6.py::test_case_72 PASSED [ 91%]\n"
+  },
+  {
+   "id": "b085",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod7.py::test_case_73 PASSED [ "
+  },
+  {
+   "id": "b086",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "92%]\n"
+  },
+  {
+   "id": "b087",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod8.py::test_case_74 PASSED [ 93%]\n"
+  },
+  {
+   "id": "b088",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod9.py::test_case_75 "
+  },
+  {
+   "id": "b089",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 95%]\n"
+  },
+  {
+   "id": "b090",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod10.py::test_case_76 "
+  },
+  {
+   "id": "b091",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 96%]\ntests/test_mod0.py::test_case_77 PASSED [ 97%]\n"
+  },
+  {
+   "id": "b092",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod1.py::test_case_78 "
+  },
+  {
+   "id": "b093",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "PASSED [ 98%]\n"
+  },
+  {
+   "id": "b094",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "tests/test_mod2.py::test_case_79 PASSED [100%]\n===== 80 passed, 0 failed in 4.01s ====="
+  },
+  {
+   "id": "b095",
    "gold": "may",
    "role": "tool",
    "kind": "tool_result",
    "tool": "Read",
    "is_error": false,
-   "text": "src/lib/format.ts\nexport function fmt0(props: Props0) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt1(props: Props1) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt2(props: Props2) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function fmt3(props: Props3) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function fmt4(props: Props4) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function fmt5(props: Props0) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function fmt6(props: Props1) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt7(props: Props2) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt8(props: Props3) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function fmt9(props: Props4) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function fmt10(props: Props0) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function fmt11(props: Props1) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function fmt12(props: Props2) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt13(props: Props3) {\n  return <div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt14(props: Props4) {\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function fmt15(props: Props0) {\n  return <div className=\"p-3\">{props.label}</div>;\n}\nexport function fmt16(props: Props1) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\nexport function fmt17(props: Props2) {\n  return <div className=\"p-5\">{props.label}</div>;\n}\nexport function fmt18(props: Props3) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\nexport function fmt19(props: Props4) {\n  return <div className=\"p-1\">{props.label}</div>;\n}"
+   "text": "src/lib/format.ts\nexport function "
   },
   {
-   "id": "b06",
+   "id": "b096",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt0(props: Props0) {\n  return <div className=\"p-0\">{props.label}</div>;\n}\n"
+  },
+  {
+   "id": "b097",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "export function fmt1(props: Props1) {\n  return <div "
+  },
+  {
+   "id": "b098",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-1\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b099",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function "
+  },
+  {
+   "id": "b100",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt2(props: Props2) {\n  return <div "
+  },
+  {
+   "id": "b101",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-2\">{props.label}</div>;\n}\nexport function fmt3(props: Props3) {\n  "
+  },
+  {
+   "id": "b102",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "return <div "
+  },
+  {
+   "id": "b103",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-3\">{props.label}</div>;\n}\nexport function "
+  },
+  {
+   "id": "b104",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt4(props: Props4) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\n"
+  },
+  {
+   "id": "b105",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "export function fmt5(props: Props0) {\n  return <div "
+  },
+  {
+   "id": "b106",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-5\">{props.label}</div>;\n}\n"
+  },
+  {
+   "id": "b107",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "export function fmt6(props: Props1) {\n  return <div "
+  },
+  {
+   "id": "b108",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-0\">{props.label}</div>;\n}\nexport "
+  },
+  {
+   "id": "b109",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "function fmt7(props: Props2) {\n  return "
+  },
+  {
+   "id": "b110",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "<div className=\"p-1\">{props.label}</div>;\n}\nexport function fmt8(props: Props3) "
+  },
+  {
+   "id": "b111",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "{\n  return <div className=\"p-2\">{props.label}</div>;\n}\nexport function "
+  },
+  {
+   "id": "b112",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt9(props: Props4) "
+  },
+  {
+   "id": "b113",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "{\n  return <div "
+  },
+  {
+   "id": "b114",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-3\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b115",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function "
+  },
+  {
+   "id": "b116",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt10(props: Props0) {\n  return <div className=\"p-4\">{props.label}</div>;\n}\n"
+  },
+  {
+   "id": "b117",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "export function "
+  },
+  {
+   "id": "b118",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt11(props: Props1) {\n  return <div "
+  },
+  {
+   "id": "b119",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-5\">{props.label}</div>;\n}\n"
+  },
+  {
+   "id": "b120",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "export function fmt12(props: Props2) {\n  return <div "
+  },
+  {
+   "id": "b121",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-0\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b122",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function fmt13(props: Props3) {\n  return <div "
+  },
+  {
+   "id": "b123",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-1\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b124",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function fmt14(props: Props4) {\n  return <div "
+  },
+  {
+   "id": "b125",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-2\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b126",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function fmt15(props: Props0) {\n  "
+  },
+  {
+   "id": "b127",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "return <div "
+  },
+  {
+   "id": "b128",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-3\">{props.label}</div>;\n}\nexport function "
+  },
+  {
+   "id": "b129",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "fmt16(props: Props1) {\n  return <div "
+  },
+  {
+   "id": "b130",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-4\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b131",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function fmt17(props: Props2) {\n  return <div "
+  },
+  {
+   "id": "b132",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-5\">{props.label}</div>;\n}\nexport function fmt18(props: "
+  },
+  {
+   "id": "b133",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "Props3) {\n  return <div "
+  },
+  {
+   "id": "b134",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-0\">{props.label}</div>;\n"
+  },
+  {
+   "id": "b135",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "}\nexport function fmt19(props: "
+  },
+  {
+   "id": "b136",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "Props4) {\n  return <div "
+  },
+  {
+   "id": "b137",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Read",
+   "is_error": false,
+   "text": "className=\"p-1\">{props.label}</div>;\n}"
+  },
+  {
+   "id": "b138",
    "gold": "may",
    "role": "tool",
    "kind": "tool_result",
    "tool": "Bash",
    "is_error": false,
-   "text": "[0000] info  compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] info  compiled ./src/components/Hero1.tsx (1137 bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx (1174 bytes) in 14ms\n[0003] info  compiled ./src/components/Pricing3.tsx (1211 bytes) in 15ms\n[0004] info  compiled ./src/components/Nav4.tsx (1248 bytes) in 16ms\n[0005] info  compiled ./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] info  compiled ./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] info  compiled ./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  compiled ./src/components/Card9.tsx (1433 bytes) in 21ms\n[0010] info  compiled ./src/components/Hero10.tsx (1470 bytes) in 22ms\n[0011] info  compiled ./src/components/Footer11.tsx (1507 bytes) in 23ms\n[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] info  compiled ./src/components/Nav0.tsx (1581 bytes) in 25ms\n[0014] info  compiled ./src/components/Modal1.tsx (1618 bytes) in 26ms\n[0015] info  compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled ./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled ./src/components/Form4.tsx (1729 bytes) in 29ms\n[0018] info  compiled ./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled ./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled ./src/components/Footer7.tsx (1840 bytes) in 32ms\n[0021] info  compiled ./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  compiled ./src/components/Nav9.tsx (1914 bytes) in 34ms\n[0023] info  compiled ./src/components/Modal10.tsx (1951 bytes) in 35ms\n[0024] info  compiled ./src/components/Table11.tsx (1988 bytes) in 36ms\n[0025] info  compiled ./src/components/Chart12.tsx (2025 bytes) in 37ms\n[0026] info  compiled ./src/components/Form0.tsx (2062 bytes) in 38ms\n[0027] info  compiled ./src/components/Card1.tsx (2099 bytes) in 39ms\n[0028] info  compiled ./src/components/Hero2.tsx (2136 bytes) in 40ms\n[0029] info  compiled ./src/components/Footer3.tsx (2173 bytes) in 41ms\n[0030] info  compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled ./src/components/Nav5.tsx (2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 bytes) in 44ms\n[0033] info  compiled ./src/components/Table7.tsx (2321 bytes) in 45ms\n[0034] info  compiled ./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  compiled ./src/components/Form9.tsx (2395 bytes) in 47ms\n[0036] info  compiled ./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  compiled ./src/components/Hero11.tsx (2469 bytes) in 49ms\n[0038] info  compiled ./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  compiled ./src/components/Pricing0.tsx (2543 bytes) in 51ms\n[0040] info  compiled ./src/components/Nav1.tsx (2580 bytes) in 12ms\n[0041] info  compiled ./src/components/Modal2.tsx (2617 bytes) in 13ms\n[0042] info  compiled ./src/components/Table3.tsx (2654 bytes) in 14ms\n[0043] info  compiled ./src/components/Chart4.tsx (2691 bytes) in 15ms\n[0044] info  compiled ./src/components/Form5.tsx (2728 bytes) in 16ms\n[0045] info  compiled ./src/components/Card6.tsx (2765 bytes) in 17ms\n[0046] info  compiled ./src/components/Hero7.tsx (2802 bytes) in 18ms\n[0047] info  compiled ./src/components/Footer8.tsx (2839 bytes) in 19ms\n[0048] info  compiled ./src/components/Pricing9.tsx (2876 bytes) in 20ms\n[0049] info  compiled ./src/components/Nav10.tsx (2913 bytes) in 21ms\n[0050] info  compiled ./src/components/Modal11.tsx (2950 bytes) in 22ms\n[0051] info  compiled ./src/components/Table12.tsx (2987 bytes) in 23ms\n[0052] info  compiled ./src/components/Chart0.tsx (3024 bytes) in 24ms\n[0053] info  compiled ./src/components/Form1.tsx (3061 bytes) in 25ms\n[0054] info  compiled ./src/components/Card2.tsx (3098 bytes) in 26ms\n[0055] info  compiled ./src/components/Hero3.tsx (3135 bytes) in 27ms\n[0056] info  compiled ./src/components/Footer4.tsx (3172 bytes) in 28ms\n[0057] info  compiled ./src/components/Pricing5.tsx (3209 bytes) in 29ms\n[0058] info  compiled ./src/components/Nav6.tsx (3246 bytes) in 30ms\n[0059] info  compiled ./src/components/Modal7.tsx (3283 bytes) in 31ms\n[0060] info  compiled ./src/components/Table8.tsx (3320 bytes) in 32ms\n[0061] info  compiled ./src/components/Chart9.tsx (3357 bytes) in 33ms\n[0062] info  compiled ./src/components/Form10.tsx (3394 bytes) in 34ms\n[0063] info  compiled ./src/components/Card11.tsx (3431 bytes) in 35ms\n[0064] info  compiled ./src/components/Hero12.tsx (3468 bytes) in 36ms\n[0065] info  compiled ./src/components/Footer0.tsx (3505 bytes) in 37ms\n[0066] info  compiled ./src/components/Pricing1.tsx (3542 bytes) in 38ms\n[0067] info  compiled ./src/components/Nav2.tsx (3579 bytes) in 39ms\n[0068] info  compiled ./src/components/Modal3.tsx (3616 bytes) in 40ms\n[0069] info  compiled ./src/components/Table4.tsx (3653 bytes) in 41ms\n[0070] info  compiled ./src/components/Chart5.tsx (3690 bytes) in 42ms\n[0071] info  compiled ./src/components/Form6.tsx (3727 bytes) in 43ms\n[0072] info  compiled ./src/components/Card7.tsx (3764 bytes) in 44ms\n[0073] info  compiled ./src/components/Hero8.tsx (3801 bytes) in 45ms\n[0074] info  compiled ./src/components/Footer9.tsx (3838 bytes) in 46ms\n[0075] info  compiled ./src/components/Pricing10.tsx (3875 bytes) in 47ms\n[0076] info  compiled ./src/components/Nav11.tsx (3912 bytes) in 48ms\n[0077] info  compiled ./src/components/Modal12.tsx (3949 bytes) in 49ms\n[0078] info  compiled ./src/components/Table0.tsx (3986 bytes) in 50ms\n[0079] info  compiled ./src/components/Chart1.tsx (4023 bytes) in 51ms"
+   "text": "[0000] info  "
+  },
+  {
+   "id": "b139",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Card0.tsx (1100 bytes) in 12ms\n[0001] info  compiled "
+  },
+  {
+   "id": "b140",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero1.tsx "
+  },
+  {
+   "id": "b141",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1137 bytes) in 13ms\n[0002] info  compiled ./src/components/Footer2.tsx "
+  },
+  {
+   "id": "b142",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1174 bytes) in 14ms\n"
+  },
+  {
+   "id": "b143",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0003] info  compiled "
+  },
+  {
+   "id": "b144",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing3.tsx (1211 bytes) "
+  },
+  {
+   "id": "b145",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 15ms\n[0004] "
+  },
+  {
+   "id": "b146",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b147",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav4.tsx (1248 bytes) in 16ms\n[0005] info  compiled "
+  },
+  {
+   "id": "b148",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal5.tsx (1285 bytes) in 17ms\n[0006] "
+  },
+  {
+   "id": "b149",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b150",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Table6.tsx (1322 bytes) in 18ms\n[0007] info  "
+  },
+  {
+   "id": "b151",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Chart7.tsx (1359 bytes) in 19ms\n[0008] info  compiled "
+  },
+  {
+   "id": "b152",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form8.tsx (1396 bytes) in 20ms\n[0009] info  compiled "
+  },
+  {
+   "id": "b153",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card9.tsx "
+  },
+  {
+   "id": "b154",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1433 bytes) in 21ms\n[0010] info  compiled ./src/components/Hero10.tsx "
+  },
+  {
+   "id": "b155",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1470 bytes) in 22ms\n[0011] info  compiled ./src/components/Footer11.tsx (1507 "
+  },
+  {
+   "id": "b156",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 23ms\n"
+  },
+  {
+   "id": "b157",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0012] info  compiled ./src/components/Pricing12.tsx (1544 bytes) in 24ms\n[0013] "
+  },
+  {
+   "id": "b158",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b159",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav0.tsx (1581 bytes) in 25ms\n"
+  },
+  {
+   "id": "b160",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0014] info  compiled ./src/components/Modal1.tsx (1618 "
+  },
+  {
+   "id": "b161",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 26ms\n[0015] info  "
+  },
+  {
+   "id": "b162",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Table2.tsx (1655 bytes) in 27ms\n[0016] info  compiled "
+  },
+  {
+   "id": "b163",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart3.tsx (1692 bytes) in 28ms\n[0017] info  compiled "
+  },
+  {
+   "id": "b164",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form4.tsx "
+  },
+  {
+   "id": "b165",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1729 bytes) in 29ms\n[0018] info  compiled "
+  },
+  {
+   "id": "b166",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card5.tsx (1766 bytes) in 30ms\n[0019] info  compiled "
+  },
+  {
+   "id": "b167",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero6.tsx (1803 bytes) in 31ms\n[0020] info  compiled "
+  },
+  {
+   "id": "b168",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer7.tsx (1840 bytes) in "
+  },
+  {
+   "id": "b169",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "32ms\n[0021] info  compiled "
+  },
+  {
+   "id": "b170",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing8.tsx (1877 bytes) in 33ms\n[0022] info  "
+  },
+  {
+   "id": "b171",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Nav9.tsx (1914 "
+  },
+  {
+   "id": "b172",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 34ms\n[0023] info  compiled "
+  },
+  {
+   "id": "b173",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal10.tsx "
+  },
+  {
+   "id": "b174",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1951 bytes) in 35ms\n[0024] info  "
+  },
+  {
+   "id": "b175",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Table11.tsx "
+  },
+  {
+   "id": "b176",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(1988 bytes) in 36ms\n[0025] info  compiled "
+  },
+  {
+   "id": "b177",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart12.tsx "
+  },
+  {
+   "id": "b178",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2025 bytes) in 37ms\n"
+  },
+  {
+   "id": "b179",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0026] info  compiled ./src/components/Form0.tsx (2062 "
+  },
+  {
+   "id": "b180",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 38ms\n[0027] "
+  },
+  {
+   "id": "b181",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b182",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card1.tsx (2099 bytes) in 39ms\n"
+  },
+  {
+   "id": "b183",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0028] info  compiled ./src/components/Hero2.tsx (2136 bytes) in "
+  },
+  {
+   "id": "b184",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "40ms\n[0029] info  "
+  },
+  {
+   "id": "b185",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Footer3.tsx (2173 "
+  },
+  {
+   "id": "b186",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 41ms\n"
+  },
+  {
+   "id": "b187",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0030] info  "
+  },
+  {
+   "id": "b188",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Pricing4.tsx (2210 bytes) in 42ms\n[0031] info  compiled "
+  },
+  {
+   "id": "b189",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav5.tsx "
+  },
+  {
+   "id": "b190",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2247 bytes) in 43ms\n[0032] info  compiled ./src/components/Modal6.tsx (2284 "
+  },
+  {
+   "id": "b191",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 44ms\n[0033] info  compiled "
+  },
+  {
+   "id": "b192",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Table7.tsx (2321 bytes) in 45ms\n[0034] info  "
+  },
+  {
+   "id": "b193",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled ./src/components/Chart8.tsx (2358 bytes) in 46ms\n[0035] info  "
+  },
+  {
+   "id": "b194",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b195",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form9.tsx "
+  },
+  {
+   "id": "b196",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2395 bytes) in 47ms\n[0036] "
+  },
+  {
+   "id": "b197",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Card10.tsx (2432 bytes) in 48ms\n[0037] info  "
+  },
+  {
+   "id": "b198",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b199",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero11.tsx "
+  },
+  {
+   "id": "b200",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2469 bytes) in 49ms\n[0038] info  compiled "
+  },
+  {
+   "id": "b201",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer12.tsx (2506 bytes) in 50ms\n[0039] info  "
+  },
+  {
+   "id": "b202",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b203",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing0.tsx (2543 bytes) "
+  },
+  {
+   "id": "b204",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 51ms\n[0040] info  compiled ./src/components/Nav1.tsx "
+  },
+  {
+   "id": "b205",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2580 bytes) in 12ms\n[0041] info  compiled "
+  },
+  {
+   "id": "b206",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal2.tsx "
+  },
+  {
+   "id": "b207",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2617 bytes) in "
+  },
+  {
+   "id": "b208",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "13ms\n[0042] info  compiled ./src/components/Table3.tsx (2654 "
+  },
+  {
+   "id": "b209",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 14ms\n[0043] info  compiled ./src/components/Chart4.tsx (2691 bytes) in "
+  },
+  {
+   "id": "b210",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "15ms\n[0044] info  compiled "
+  },
+  {
+   "id": "b211",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form5.tsx (2728 bytes) in 16ms\n[0045] "
+  },
+  {
+   "id": "b212",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b213",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card6.tsx "
+  },
+  {
+   "id": "b214",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2765 bytes) in 17ms\n[0046] info  compiled ./src/components/Hero7.tsx (2802 "
+  },
+  {
+   "id": "b215",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 18ms\n"
+  },
+  {
+   "id": "b216",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0047] info  compiled ./src/components/Footer8.tsx (2839 bytes) in 19ms\n[0048] "
+  },
+  {
+   "id": "b217",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Pricing9.tsx (2876 bytes) in 20ms\n[0049] "
+  },
+  {
+   "id": "b218",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Nav10.tsx (2913 bytes) in 21ms\n"
+  },
+  {
+   "id": "b219",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0050] info  compiled ./src/components/Modal11.tsx (2950 bytes) in 22ms\n"
+  },
+  {
+   "id": "b220",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0051] info  compiled ./src/components/Table12.tsx "
+  },
+  {
+   "id": "b221",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(2987 bytes) in 23ms\n[0052] info  compiled "
+  },
+  {
+   "id": "b222",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart0.tsx "
+  },
+  {
+   "id": "b223",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3024 bytes) in "
+  },
+  {
+   "id": "b224",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "24ms\n[0053] "
+  },
+  {
+   "id": "b225",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b226",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form1.tsx (3061 bytes) in 25ms\n[0054] info  compiled "
+  },
+  {
+   "id": "b227",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card2.tsx "
+  },
+  {
+   "id": "b228",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3098 bytes) in 26ms\n[0055] info  compiled "
+  },
+  {
+   "id": "b229",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero3.tsx (3135 bytes) in "
+  },
+  {
+   "id": "b230",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "27ms\n[0056] info  compiled "
+  },
+  {
+   "id": "b231",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer4.tsx (3172 "
+  },
+  {
+   "id": "b232",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 28ms\n[0057] info  compiled "
+  },
+  {
+   "id": "b233",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing5.tsx "
+  },
+  {
+   "id": "b234",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3209 bytes) in 29ms\n[0058] info  compiled ./src/components/Nav6.tsx "
+  },
+  {
+   "id": "b235",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3246 bytes) in 30ms\n[0059] info  compiled "
+  },
+  {
+   "id": "b236",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal7.tsx (3283 bytes) in 31ms\n"
+  },
+  {
+   "id": "b237",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0060] info  compiled ./src/components/Table8.tsx (3320 "
+  },
+  {
+   "id": "b238",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 32ms\n[0061] info  compiled "
+  },
+  {
+   "id": "b239",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart9.tsx (3357 bytes) in 33ms\n[0062] info  compiled "
+  },
+  {
+   "id": "b240",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Form10.tsx (3394 bytes) in 34ms\n"
+  },
+  {
+   "id": "b241",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0063] info  compiled "
+  },
+  {
+   "id": "b242",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Card11.tsx "
+  },
+  {
+   "id": "b243",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3431 bytes) in "
+  },
+  {
+   "id": "b244",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "35ms\n[0064] info  compiled "
+  },
+  {
+   "id": "b245",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Hero12.tsx (3468 bytes) in 36ms\n[0065] "
+  },
+  {
+   "id": "b246",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b247",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer0.tsx (3505 bytes) in 37ms\n[0066] info  compiled "
+  },
+  {
+   "id": "b248",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing1.tsx (3542 bytes) in 38ms\n[0067] info  "
+  },
+  {
+   "id": "b249",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b250",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav2.tsx "
+  },
+  {
+   "id": "b251",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3579 bytes) in "
+  },
+  {
+   "id": "b252",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "39ms\n[0068] info  compiled "
+  },
+  {
+   "id": "b253",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal3.tsx "
+  },
+  {
+   "id": "b254",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3616 bytes) in 40ms\n[0069] "
+  },
+  {
+   "id": "b255",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b256",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Table4.tsx (3653 bytes) in 41ms\n[0070] info  "
+  },
+  {
+   "id": "b257",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "compiled "
+  },
+  {
+   "id": "b258",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart5.tsx (3690 bytes) in "
+  },
+  {
+   "id": "b259",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "42ms\n[0071] info  compiled ./src/components/Form6.tsx (3727 bytes) in 43ms\n[0072] "
+  },
+  {
+   "id": "b260",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled ./src/components/Card7.tsx (3764 bytes) in 44ms\n"
+  },
+  {
+   "id": "b261",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "[0073] info  compiled ./src/components/Hero8.tsx (3801 bytes) "
+  },
+  {
+   "id": "b262",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "in 45ms\n[0074] info  compiled "
+  },
+  {
+   "id": "b263",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Footer9.tsx "
+  },
+  {
+   "id": "b264",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "(3838 bytes) in 46ms\n[0075] info  compiled "
+  },
+  {
+   "id": "b265",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Pricing10.tsx (3875 bytes) in 47ms\n[0076] "
+  },
+  {
+   "id": "b266",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "info  compiled "
+  },
+  {
+   "id": "b267",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Nav11.tsx (3912 bytes) in 48ms\n[0077] info  compiled "
+  },
+  {
+   "id": "b268",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Modal12.tsx (3949 bytes) in 49ms\n[0078] info  compiled "
+  },
+  {
+   "id": "b269",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Table0.tsx (3986 "
+  },
+  {
+   "id": "b270",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "bytes) in 50ms\n[0079] info  compiled "
+  },
+  {
+   "id": "b271",
+   "gold": "may",
+   "role": "tool",
+   "kind": "tool_result",
+   "tool": "Bash",
+   "is_error": false,
+   "text": "./src/components/Chart1.tsx (4023 bytes) in 51ms"
   }
  ]
 }

@@ -20,6 +20,9 @@ Rules for every case:
 - Scoring is drop-only at a fixed budget: drop the lowest-scored blocks (ties: older first, unscored last)
   until >= budget% of the case's tokens are removed (default 50%). Every case is feasible up to 70%: the
   must-keep evidence is at most 30% of the case's tokens.
+- Block size carries no signal: long may-drop noise is cut into chunks sized around the kept blocks
+  (`balance()`; cases alternate between noise smaller and larger than the kept evidence), so the
+  content-blind `drop_largest` / `drop_smallest` controls land near random instead of matching oracle.
 - Gold is the author's judgement (single author, not owner-confirmed). Treat pass counts as a regression and
   diagnosis suite, not as a population estimate.
 
@@ -41,14 +44,16 @@ Rules for every case:
 
 Sources: lcc-adversarial 9, real-derived 19, synthetic 7; total 35 cases.
 
-Reference arms (pass k/n; random = mean of 5 seeds: 30% 15.8, 50% 13.4, 70% 9.4):
+Reference arms (pass k/n; random = mean of 5 seeds: 30% 18.4, 50% 11.8, 70% 5.2):
 
 | arm | 30% | 50% | 70% |
 |---|---|---|---|
 | oracle | 35/35 | 35/35 | 35/35 |
 | recency | 7/35 | 7/35 | 4/35 |
 | bm25 | 21/35 | 20/35 | 18/35 |
-| random(seed 0) | 15/35 | 12/35 | 10/35 |
+| drop_largest | 17/35 | 17/35 | 17/35 |
+| drop_smallest | 14/35 | 11/35 | 11/35 |
+| random(seed 0) | 20/35 | 13/35 | 3/35 |
 
 Recency is low here by construction: the catalog targets evidence that recency loses, it is not weighted like real sessions (where the frozen probes gave recency AUC .97). A specialist should match oracle here and still match recency on real sessions.
 

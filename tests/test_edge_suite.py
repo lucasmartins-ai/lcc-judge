@@ -73,6 +73,22 @@ class SuiteTest(unittest.TestCase):
         for arm in (es.recency, es.bm25, es.random_arm(0)):
             self.assertLess(es.summary(CASES, es.run(CASES, es.arm_scores(CASES, arm)))[50]['passed'], n)
 
+    def test_size_alone_does_not_solve_the_suite(self):  # label review 2026-10-12, high finding
+        for arm in (es.drop_largest, es.drop_smallest):
+            res = es.summary(CASES, es.run(CASES, es.arm_scores(CASES, arm)))
+            for bud in es.BUDGETS:
+                self.assertLessEqual(res[bud]['passed'], 0.5 * len(CASES), (arm.__name__, bud))
+
+    def test_balance_keeps_text_and_order(self):
+        blocks = [dict(gold='may', role='tool', kind='tool_result', tool='Bash', is_error=False,
+                       text='\n'.join(f'line {i} ' + 'x' * 30 for i in range(200))),
+                  dict(gold='must', role='user', kind='text', tool=None, is_error=False, text='y' * 200)]
+        out = build.balance(blocks, 'seed')
+        self.assertGreater(len(out), 5)
+        self.assertEqual(out[-1]['gold'], 'must')
+        self.assertEqual(''.join(b['text'] for b in out[:-1]), blocks[0]['text'])
+        self.assertTrue(all(b['gold'] == 'may' and b['tool'] == 'Bash' for b in out[:-1]))
+
     def test_fixtures_hold_no_secret_shaped_values(self):
         pat = re.compile(r'sk-[A-Za-z0-9]{16,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY')
         for c in CASES:

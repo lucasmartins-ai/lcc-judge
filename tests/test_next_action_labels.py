@@ -177,7 +177,7 @@ class Filters(unittest.TestCase):
         ev = [('call', 'Read', dict(file_path='/Users/me/projects/webapp/src/Hero.tsx')),
               ('call', 'Bash', dict(command='cd /Users/me/projects/webapp && npm test'))]
         rows, st = nal.label_item('fix it', blocks, ev, blank_split, count, {})
-        self.assertEqual(st.get('ancestor_dir_dropped'), 2)  # full path + suffix key
+        self.assertEqual(st.get('ancestor_dir_dropped'), 1)  # project root (no suffix key for directories)
         self.assertEqual([r['used'] for r in rows][:2], [False, True])
 
     def test_root_dirs(self):
@@ -187,6 +187,32 @@ class Filters(unittest.TestCase):
         self.assertTrue(nal.root_dir('/private/tmp/claude-501/x/tasks/b1.output'))
         self.assertFalse(nal.root_dir('/Users/Master/proj/src/app.py'))
         self.assertFalse(nal.root_dir('data/video/inbox'))
+        self.assertTrue(nal.root_dir('/Users/Master/Downloads/someproject'))  # project root, 4 components
+        self.assertFalse(nal.root_dir('/Users/Master/Downloads/someproject/src/lib'))
+
+    def test_review_trivial_classes(self):  # label review 2026-10-12, medium finding
+        f = nal.features('see index.tsx and main.js, data.ts')
+        self.assertFalse({x for x in f if x[1] in ('index.tsx', 'main.js', 'data.ts')})
+        self.assertIn(('path', 'connection_pool.ts'), nal.features('see connection_pool.ts'))  # >= 12 chars kept
+        self.assertIn(('ident', 'config.load_all'), nal.features('call config.load_all now'))
+        self.assertNotIn(('ident', 'u00e3o'), nal.features('{"t": "configura\\u00e3o"}'))
+        self.assertNotIn(('path', 'Master/PIQUETPARTNERS'), nal.features('cd /Users/Master/PIQUETPARTNERS'))
+        self.assertFalse({x for x in nal.features('cd /Users/Master/Downloads/someproject && ls') if x[0] == 'line'})
+        self.assertIn(('line', 'npm run build -- --filter web'),
+                      nal.features('cd /Users/me/proj && npm run build -- --filter web'))
+        n = nal.features('score 100.0 and 25000 and 0.973 and 12345 and 3.1416')
+        self.assertEqual({x[1] for x in n if x[0] == 'num'}, {'0.973', '12345', '3.1416'})
+        q = nal.text_evidence('use `description` and `the retry wrapper` here')
+        self.assertEqual({x[1] for _, x in q if x[0] == 'quoted'}, {'the retry wrapper'})
+
+    def test_content_links_join_forked_items(self):
+        def it(iid, group, ids):
+            return dict(item_id=iid, group=group, blocks=[dict(id=b, chars=300, protected=False) for b in ids])
+        a = it('a', 'g1', [f'x{i}' for i in range(10)])
+        b = it('b', 'g2', [f'x{i}' for i in range(3)] + [f'y{i}' for i in range(20)])  # 3/10 of a: linked
+        c = it('c', 'g3', ['x0'] + [f'z{i}' for i in range(20)])  # 1/10 of a, 1/21 of c: not linked
+        d = it('d', 'g1', [f'x{i}' for i in range(10)])  # same group: not a cross-group link
+        self.assertEqual(nal.content_links([a, b, c, d]), {('a', 'b'), ('b', 'd')})
 
     def test_generic(self):
         sets = {f'g{i}': {('ident', 'console.log'), ('ident', f'only_in_{i}')} for i in range(6)}

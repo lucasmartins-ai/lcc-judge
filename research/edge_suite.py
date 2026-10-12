@@ -8,7 +8,7 @@ suite drops the lowest-scored blocks (ties older first, unscored last; same rule
 until >= budget% of the case's tokens are removed. PASS iff every "must" block survives and every one:<group>
 keeps at least one block. Tokens = ceil(chars / 4) (stdlib, no tokenizer).
 
-    python3 -m research.edge_suite baselines [--budget 50]            # recency, bm25, random, oracle
+    python3 -m research.edge_suite baselines [--budget 50]            # recency, bm25, size, random, oracle
     python3 -m research.edge_suite score --scores arm.json [--name x]  # {case_id: {block_id: score|null}}
     python3 -m research.edge_suite export --out cases.jsonl            # goal + blocks (no gold) for an arm
 
@@ -69,6 +69,15 @@ def oracle(case):
     return out
 
 
+def drop_largest(case):
+    """Content-blind size arm: keeps short blocks (label review 2026-10-12 control)."""
+    return {b['id']: -float(tok(b['text'])) for b in case['blocks']}
+
+
+def drop_smallest(case):
+    return {b['id']: float(tok(b['text'])) for b in case['blocks']}
+
+
 def random_arm(seed):
     def arm(case):
         rng = random.Random(f'{seed}:{case["id"]}')
@@ -107,7 +116,9 @@ def table(cases, arms):
 def baselines(cases):
     arms = {'oracle': run(cases, arm_scores(cases, oracle)),
             'recency': run(cases, arm_scores(cases, recency)),
-            'bm25': run(cases, arm_scores(cases, bm25))}
+            'bm25': run(cases, arm_scores(cases, bm25)),
+            'drop_largest': run(cases, arm_scores(cases, drop_largest)),
+            'drop_smallest': run(cases, arm_scores(cases, drop_smallest))}
     seeds = [run(cases, arm_scores(cases, random_arm(s))) for s in range(5)]
     arms['random(seed 0)'] = seeds[0]
     mean = {b: sum(summary(cases, s)[b]['passed'] for s in seeds) / 5 for b in BUDGETS}

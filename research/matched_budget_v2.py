@@ -1,6 +1,6 @@
 """Matched-budget v2: arms rank the same candidate blocks; labels = next-action evidence (not v0 probes).
 
-Labels: research.next_action_labels v1 (PRIVATE_LABELS). A candidate block is USED when the agent reused
+Labels: research.next_action_labels v2 relabel of the frozen v1 split (PRIVATE_LABELS; train+dev only). A candidate block is USED when the agent reused
 something from it after the prompt without re-fetching it (strict label). Only the DEV split is read here;
 TEST stays closed. Items with evidence='none' or no USED candidate are excluded (counted).
 
@@ -54,7 +54,8 @@ from pathlib import Path
 from research import real_context_bench as rcb
 from research.matched_budget import auc, bm25_scores, drop_order, drops_at, peak_rss_mb
 
-PRIVATE_LABELS = Path('/Users/Master/.lcc/bench/next-action-v1')
+PRIVATE_LABELS = Path('/Users/Master/.lcc/bench/next-action-v2')  # relabelled train+dev (next_action_labels relabel)
+PRIVATE_TEXTS = Path('/Users/Master/.lcc/bench/next-action-v1')  # block texts / windows stay in the v1 store
 PRIVATE = Path('/Users/Master/.lcc/bench/matched-budget-v2')
 OUT = rcb.REPO / 'research' / 'goal-engine-2026-10-04' / 'specialist-v1'
 BUDGETS = (10, 20, 30, 40, 50, 60)
@@ -164,7 +165,7 @@ def texts_for(item):
     st = item['text_store']
     if st not in _TEXTS:
         _TEXTS.clear()  # ponytail: one store cached; items are iterated grouped by store
-        _TEXTS[st] = json.loads((PRIVATE_LABELS / 'texts' / f'{st}.json').read_text())
+        _TEXTS[st] = json.loads((PRIVATE_TEXTS / 'texts' / f'{st}.json').read_text())
     return {b['id']: _TEXTS[st][b['id']] for b in cand_blocks(item)}
 
 
@@ -347,6 +348,18 @@ def by_source(item_list, by_item, groups):
     return out
 
 
+def position_tenths(items):
+    """Strict USED rate of candidate blocks per position tenth (0 = oldest), dev eligible items."""
+    k, n = Counter(), Counter()
+    for it in items:
+        cand = cand_blocks(it)
+        for j, b in enumerate(cand):
+            d = min(9, j * 10 // len(cand))
+            n[d] += 1
+            k[d] += b['used']
+    return {str(d): round(k[d] / n[d], 4) for d in sorted(n)}
+
+
 def jev_overlap():
     """Frozen-60 items outside test, mapped by goal + identical candidate ids -> (items, saved arm scores)."""
     from research.matched_budget import candidates, saved_scores
@@ -385,7 +398,8 @@ def jev_overlap():
 def edge_results():
     from research import edge_suite as es
     cases = es.load_cases()
-    arms = {'oracle': es.oracle, 'recency': es.recency, 'bm25': es.bm25}
+    arms = {'oracle': es.oracle, 'recency': es.recency, 'bm25': es.bm25, 'drop_largest': es.drop_largest,
+            'drop_smallest': es.drop_smallest}
     out = {a: es.summary(cases, es.run(cases, es.arm_scores(cases, f))) for a, f in arms.items()}
     out['mechanical'] = es.summary(cases, es.run(cases, {c['id']: mechanical_scores(c['goal'], p) for c, p in edge_pairs()}))
     for arm in ('specialist', 'laya'):
@@ -500,7 +514,8 @@ def report_phase():
                              inverted_better_by_1pt=c['specialist_inv']['auc']['recall'] - c['specialist']['auc']['recall'] >= 0.01)
                      for k, c in (('dev_model', m_curves), ('jev_overlap', j_curves))}
     result = dict(
-        schema='matched-budget/2', labels='next-action-v1 strict USED (research.next_action_labels)',
+        schema='matched-budget/2', labels='next-action-v2 strict USED (research.next_action_labels relabel)',
+        used_rate_by_position_tenth=position_tenths(items),
         split='dev (test not opened)', budgets_pct=list(BUDGETS),
         dev=dict(size=sizes(items), excluded=dict(skip), curves=dev_curves, tie_random_auc=dev_ties,
                  tied_share={a: tied_share(items, cheap[a]) for a in ('bm25', 'mechanical')},
@@ -545,10 +560,13 @@ def render_md(r):
     lines = [
         '# Matched-budget v2 baselines: next-action evidence labels (dev split)', '',
         '## Limits (read first)', '',
-        '- Labels are rule-based next-action evidence (research.next_action_labels v1), not human judgement: a block '
+        '- Labels are rule-based next-action evidence (research.next_action_labels v2: the v1 split relabelled after '
+        'the 2026-10-12 label review removed short file names, project roots, cd lines, round numbers, plain quoted '
+        'words and unicode-escape fragments as evidence), not human judgement: a block '
         'is USED when the agent later reused a path, identifier, number, hash, line or quoted span from it without '
         're-fetching. USED means relied on, not proven necessary.',
-        '- Labels still lean recent (USED rate 4.8% in the oldest tenth vs 16.3% in the newest, train+dev): '
+        f"- Labels still lean recent (dev USED rate {r['used_rate_by_position_tenth']['0']:.1%} in the oldest tenth vs "
+        f"{r['used_rate_by_position_tenth']['9']:.1%} in the newest): "
         'recency is a strong baseline here by construction, not because it understands the goal.',
         f"- Dev only ({dv['size']['items']} eligible items); the test split was not opened. Excluded dev items: "
         f"{dv['excluded']}.",

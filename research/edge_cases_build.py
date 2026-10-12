@@ -17,6 +17,8 @@ group <g> must survive, e.g. two identical copies). Blocks are in session order,
 import argparse
 import json
 import math
+import random
+import re
 import sys
 from pathlib import Path
 
@@ -678,8 +680,41 @@ CATALOG_KEYS = ('id', 'category', 'use_case', 'situation', 'must_keep', 'may_dro
                 'source_ref')
 
 
-def fixture(case):
-    blocks = [dict(id=f'b{i:02d}', **b) for i, b in enumerate(case['blocks'])]
+CHUNK_RANGES = ((0.2, 1.0), (1.0, 3.0))  # x the largest kept block; cases alternate (catalog order)
+ATOM_RE = re.compile(r'[^\n ]*(?:\n|  *|$)')  # words with their trailing separator
+
+
+def balance(blocks, seed, mode=0):
+    """Split every may block larger than 2x the case's largest kept (must / one:) block into chunks whose
+    sizes are drawn (seeded) from CHUNK_RANGES[mode] x that block (cases alternate, so the kept blocks are
+    the largest blocks in half the cases and among the smallest in the other half), cut at word or line
+    boundaries; the chunks keep the text exactly. Without this, block size alone solved the suite (label review 2026-10-12: a
+    drop-largest arm passed 35/35 because every may block was a large noise blob)."""
+    ref = max(tok(b['text']) for b in blocks if b['gold'] != 'may')
+    rng = random.Random(seed)
+    lo, hi = CHUNK_RANGES[mode % len(CHUNK_RANGES)]
+    out = []
+    for b in blocks:
+        if b['gold'] != 'may' or tok(b['text']) <= 2 * ref:
+            out.append(b)
+            continue
+        chunks, cur, want = [], '', rng.uniform(lo, hi) * ref
+        for atom in ATOM_RE.findall(b['text']):
+            if cur and tok(cur + atom) > want:
+                chunks.append(cur)
+                cur, want = '', rng.uniform(lo, hi) * ref
+            cur += atom
+        if cur:
+            if chunks and tok(cur) < 0.5 * ref:
+                chunks[-1] += cur
+            else:
+                chunks.append(cur)
+        out += [dict(b, text=t) for t in chunks]
+    return out
+
+
+def fixture(case, mode=0):
+    blocks = [dict(id=f'b{i:03d}', **b) for i, b in enumerate(balance(case['blocks'], case['id'], mode))]
     meta = {k: case[k] for k in CATALOG_KEYS}
     return dict(meta, goal=case['goal'], blocks=blocks)
 
@@ -723,6 +758,9 @@ Rules for every case:
 - Scoring is drop-only at a fixed budget: drop the lowest-scored blocks (ties: older first, unscored last)
   until >= budget% of the case's tokens are removed (default 50%). Every case is feasible up to 70%: the
   must-keep evidence is at most 30% of the case's tokens.
+- Block size carries no signal: long may-drop noise is cut into chunks sized around the kept blocks
+  (`balance()`; cases alternate between noise smaller and larger than the kept evidence), so the
+  content-blind `drop_largest` / `drop_smallest` controls land near random instead of matching oracle.
 - Gold is the author's judgement (single author, not owner-confirmed). Treat pass counts as a regression and
   diagnosis suite, not as a population estimate.
 
@@ -768,7 +806,7 @@ def render_md(fxs):
 
 
 def outputs():
-    fxs = [fixture(c) for c in CASES]
+    fxs = [fixture(c, k) for k, c in enumerate(CASES)]
     ids = [f['id'] for f in fxs]
     assert len(ids) == len(set(ids)), 'duplicate case id'
     files = {}

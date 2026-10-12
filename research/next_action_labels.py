@@ -20,19 +20,23 @@ holds >= 1 assistant block. Per item:
 
 Evidence features (same extractor on blocks and on the window; all thresholds are minimums):
   path    file paths / URLs (>= 8 chars, with '/'; needs a leading '/', '~/', './', >= 3
-          components or a file extension). Also matched by last-two-components suffix and by
-          basename, each only when >= 12 chars (basename needs an extension). Bare file names
-          (known extensions) count as basename keys under the same 12-char minimum.
+          components or a file extension). File paths (with an extension) are also matched by
+          last-two-components suffix and by basename, each only when >= 12 chars; directories get
+          no suffix key. Bare file names (known extensions) count as basename keys under the same
+          12-char minimum, and never as identifiers (index.tsx is neither).
   ident   code identifiers >= 6 chars that look like code: contain '_' or '.', a lower->upper
-          camel step, or letters + digits. Plain words never match. A small stop list drops tool
-          argument keys (tool_use_id, file_path, old_string, ...).
-  num     decimals with >= 4 digits (0.973) and integers with >= 5 digits.
+          camel step, or letters + digits; not a file name, not right after a backslash (JSON
+          u-escapes such as \\u00e3). Plain words never match. A small stop list drops tool argument keys
+          (tool_use_id, file_path, old_string, ...).
+  num     decimals with >= 4 digits (0.973) and a non-zero fraction (not 100.0), integers with
+          >= 5 digits that are not multiples of 1000.
   hex     hex strings of 7..64 chars with both a letter and a digit (commit SHAs, ids), not
           fragments of a dashed id; whole UUIDs are one hex feature.
   line    whole lines >= 24 chars after whitespace collapse with >= 3 words of >= 2 chars;
-          read-out line-number prefixes ('  12→', '12|', '12\\t') are stripped. JSON-escaped
+          read-out line-number prefixes ('  12→', '12|', '12\\t') and a leading 'cd <path> &&'
+          are stripped. JSON-escaped
           tool_use text is also read unescaped, so old Edit inputs match too.
-  quoted  `backticked` spans of >= 8 chars in assistant text, matched as a substring of the
+  quoted  `backticked` spans of >= 8 chars in assistant text, not a single plain word, matched as a substring of the
           whitespace-collapsed block (or its unescaped view).
 
 Window evidence rules (a block feature hit through any of these is a match reason):
@@ -50,8 +54,8 @@ Anti-trivial filters (applied per item before labelling):
   common   a feature that hits more than max(3, ceil(5% of labelled blocks)) blocks is
            dropped as non-discriminative (counted as common_dropped).
   ancestor a directory path (no extension) that is a parent of another path in the window, a
-           home/user root of <= 3 components (/Users/x/proj, ~/Downloads/x, also the head of a
-           path cut at a space), a system path (/dev/null) or any path under a temp dir
+           home/project root (/Users/x/Downloads/proj: <= 4 components under /Users or /home;
+           ~/Downloads/x: <= 3; also the head of a path cut at a space), a system path (/dev/null) or any path under a temp dir
            (/tmp, /private/tmp, /var/folders: harness task outputs and scratch files carrying
            the session id) is dropped (ancestor_dir_dropped).
   generic  (split phase, before the freeze) a feature kept in the evidence of
@@ -75,9 +79,14 @@ Phases (PRIVATE text stays under PRIVATE; the repo gets counts and hashes only):
                 specialist-v1/labels-receipt.json (counts + sha256 only)
     report   counts per source/category, used rates (train+dev only), sanity checks
                 -> PRIVATE/report.json and specialist-v1/labels-report.json (counts only)
+    relabel  v2: the current extractor re-run on the stored train+dev items, texts and windows (the
+                frozen v1 split and receipt are untouched; test is not opened) -> PRIVATE_V2/items,
+                generic features from train groups, content_links() fork detection (train items
+                sharing >= 20% of long candidate blocks with a dev item are quarantined from
+                training) -> specialist-v1/labels-v2-receipt.json (counts only)
 
     PYTHONPATH=/Users/Master/.lcc/bench/real-context-v0/lcc-main/src:/Users/Master/Downloads/LCC-judge \\
-    /Users/Master/LCC/.venv/bin/python -m research.next_action_labels {build|split|report}
+    /Users/Master/LCC/.venv/bin/python -m research.next_action_labels {build|split|report|relabel}
 """
 import argparse
 import bisect
@@ -99,6 +108,7 @@ from research import hermes_context as hc
 from research import real_context_bench as rcb
 
 PRIVATE = Path('/Users/Master/.lcc/bench/next-action-v1')
+PRIVATE_V2 = Path('/Users/Master/.lcc/bench/next-action-v2')  # relabel phase output (train + dev only)
 OUT = rcb.REPO / 'research' / 'goal-engine-2026-10-04' / 'specialist-v1'
 RECEIPT = OUT / 'labels-receipt.json'
 SEED = 20261012
@@ -116,7 +126,7 @@ EXTS = ('py|pyi|ts|tsx|js|jsx|mjs|cjs|md|mdx|json|jsonl|toml|ya?ml|sql|css|scss|
 PATH_RE = re.compile(r'https?://[^\s\'"`<>()\[\]{}|\\]+|(?:~|\.{1,2})?/?(?:[\w@+.-]+/)+[\w@+.-]+')
 FILE_RE = re.compile(rf'(?<![\w/.-])[\w-][\w.-]*\.(?:{EXTS})(?![\w-])')
 EXT_RE = re.compile(rf'\.(?:{EXTS})$')
-IDENT_RE = re.compile(r'(?<![\w.])[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*')
+IDENT_RE = re.compile(r'(?<![\w.\\])[A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*')
 CAMEL_RE = re.compile(r'[a-z][A-Z]')
 NUM_RE = re.compile(r'(?<![\w.])(?:\d+\.\d+|\d{5,})(?![\w.])')
 HEX_RE = re.compile(r'(?<![\w-])(?=[0-9a-f]*[a-f])(?=[0-9a-f]*\d)[0-9a-f]{7,64}(?![\w-])')
@@ -124,6 +134,7 @@ UUID_RE = re.compile(r'(?<![\w-])[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}
 QUOTED_RE = re.compile(r'`([^`\n]{%d,300})`' % MIN_QUOTED)
 WORD_RE = re.compile(r'\w{2,}')
 LINENO_RE = re.compile(r'^\s*\d{1,6}(?:→|\||\t|:\s)')
+CD_RE = re.compile(r'^cd\s+\S+\s*(?:&&|;|$)\s*')
 HEADER_RE = re.compile(r'^\[m\d{4} (?:user|assistant) [a-z_]+(?: [^\]\n]*)?\]$', re.M)
 STOP = frozenset({
     'tool_use', 'tool_result', 'tool_use_id', 'tool_call_id', 'tool_calls', 'tool_name', 'file_path', 'old_string',
@@ -154,7 +165,7 @@ def _path_keys(raw):
     if not (p.startswith(('/', '~/')) or len(parts) >= 3 or EXT_RE.search(p)):
         return ()  # "and/or", "pt/en", "10/12": not paths
     keys = [p]
-    if len(parts) >= 2 and len(s2 := '/'.join(parts[-2:])) >= MIN_KEY:
+    if len(parts) >= 2 and EXT_RE.search(p) and len(s2 := '/'.join(parts[-2:])) >= MIN_KEY:  # files only
         keys.append(s2)
     if len(parts[-1]) >= MIN_KEY and EXT_RE.search(parts[-1]):
         keys.append(parts[-1])
@@ -171,17 +182,19 @@ def features(text):
             out.add(('path', m.group(0)))
     for m in IDENT_RE.finditer(text):
         t = m.group(0).rstrip('.')
-        if len(t) >= MIN_IDENT and t not in STOP and (
+        if len(t) >= MIN_IDENT and t not in STOP and not EXT_RE.search(t) and (  # file names: FILE_RE, >= 12
                 '_' in t or '.' in t or CAMEL_RE.search(t) or (any(c.isdigit() for c in t) and any(c.isalpha() for c in t))):
             out.add(('ident', t))
     for m in NUM_RE.finditer(text):
         t = m.group(0)
-        if '.' not in t or sum(c.isdigit() for c in t) >= 4:
+        if '.' in t and (sum(c.isdigit() for c in t) < 4 or not t.split('.')[1].strip('0')):
+            continue  # short or round decimals (100.0)
+        if '.' in t or int(t) % 1000:  # round integers (25000) carry no identity
             out.add(('num', t))
     out.update(('hex', m.group(0)) for m in HEX_RE.finditer(text))
     out.update(('hex', m.group(0)) for m in UUID_RE.finditer(text))
     for line in text.splitlines():
-        line = collapse(LINENO_RE.sub('', line, count=1))
+        line = CD_RE.sub('', collapse(LINENO_RE.sub('', line, count=1)))  # 'cd <root> &&' prefix
         if len(line) >= MIN_LINE and len(WORD_RE.findall(line)) >= 3:
             out.add(('line', line))
     return out
@@ -276,7 +289,7 @@ def call_evidence(inp):
 def text_evidence(text):
     out = [('text_ref', f) for f in features(text)]
     out += [('text_ref', ('quoted', collapse(m.group(1)))) for m in QUOTED_RE.finditer(text)
-            if len(collapse(m.group(1))) >= MIN_QUOTED]
+            if len(collapse(m.group(1))) >= MIN_QUOTED and not m.group(1).strip().isalpha()]  # plain words
     return out
 
 
@@ -323,7 +336,11 @@ def root_dir(p):
     if p in SYS_PATHS or p.startswith(TEMP_DIRS):
         return True
     parts = [x for x in p.split('/') if x and x != '~']
-    return not EXT_RE.search(p) and len(parts) <= 3 and p.startswith(('/Users/', '/home/', '~', '/tmp', '/private/'))
+    if EXT_RE.search(p):
+        return False
+    if p.startswith(('/Users/', '/home/')):  # home + 2 levels: /Users/x/Downloads/proj (project roots)
+        return len(parts) <= 4
+    return len(parts) <= 3 and p.startswith(('~', '/tmp', '/private/'))
 
 
 def match(ev, goal, views):
@@ -1087,9 +1104,106 @@ def report_phase(root=PRIVATE, out=OUT, sample=20):
     return rep
 
 
+# --- relabel (v2 extractor on the frozen v1 split; train + dev only) ---------------------------------
+def relabel_item(item, texts, events):
+    """Re-run match() with the current extractor on one stored item (block texts + window events).
+    Returns the item with labels, stats and evidence_sets replaced; generic flags are applied later."""
+    views = [block_view(texts.get(b['id']) or '') for b in item['blocks']]
+    ev = window_evidence(events)
+    reasons, shared, st, sets = match(ev, item['goal'], views)
+    for b, rs, g in zip(item['blocks'], reasons, shared):
+        b.update(used=any(not x['refetched'] for x in rs), used_loose=bool(rs), goal_shared=g, reasons=rs)
+    st['evidence_features'] = len(ev)
+    st['evidence_by_rule'] = dict(Counter(rule for d in ev.values() for rule in d['rules']))
+    item['stats'], item['evidence_sets'] = dict(st), sets
+    return item
+
+
+def content_links(items, min_chars=200, share=0.2, min_shared=3):
+    """{(a, b)} item-id pairs (a < b) from different lineage groups whose candidate blocks of >= min_chars
+    share >= `share` of either item's such blocks (and >= min_shared of them: one common preamble block does
+    not link two short items) by LCC block id (content + index: a copied/forked prefix).
+    Catches forks the (sid, goal) / (ts, goal) lineage joins miss (label review 2026-10-12)."""
+    holders, n = defaultdict(list), {}
+    for it in items:
+        ids = {b['id'] for b in it['blocks'] if not b['protected'] and b['chars'] >= min_chars}
+        n[it['item_id']] = len(ids)
+        for b in ids:
+            holders[b].append(it)
+    pair = Counter()
+    for hs in holders.values():
+        for x in range(len(hs)):
+            for y in range(x + 1, len(hs)):
+                a, b = hs[x], hs[y]
+                if a['group'] != b['group']:
+                    pair[tuple(sorted((a['item_id'], b['item_id'])))] += 1
+    return {p for p, k in pair.items() if k >= max(min_shared, share * min(n[p[0]], n[p[1]]))}
+
+
+def relabel_phase(src=PRIVATE, dst=PRIVATE_V2, out=OUT, splits=('train', 'dev')):
+    """v1 items + stored texts/windows -> dst/items with the current extractor. TEST is never read:
+    only ids whose split is in `splits` are opened, and text/window stores are per transcript and never
+    shared with test (labels-receipt leak_check). Generic features are recomputed from TRAIN groups."""
+    if 'test' in splits:
+        raise SystemExit('relabel never opens the frozen test split')
+    src, dst = Path(src), Path(dst)
+    sp = json.loads((src / 'splits.json').read_text())['items']
+    want = sorted(i for i, s in sp.items() if s in splits)
+    (dst / 'items').mkdir(parents=True, exist_ok=True)
+    by_store = defaultdict(list)
+    for iid in want:  # pass 1: store of each item (slim; items are large)
+        it = json.loads((src / 'items' / f'{iid}.json').read_text())
+        by_store[it['text_store']].append(iid)
+    train, slim, split_of = defaultdict(set), [], {}
+    for k, (store, iids) in enumerate(sorted(by_store.items())):
+        texts = json.loads((src / 'texts' / f'{store}.json').read_text())
+        windows = json.loads((src / 'windows' / f'{store}.json').read_text())
+        for iid in iids:
+            it = relabel_item(json.loads((src / 'items' / f'{iid}.json').read_text()), texts, windows[iid])
+            (dst / 'items' / f'{iid}.json').write_text(json.dumps(it, ensure_ascii=False))
+            split_of[iid] = it['split']
+            if it['split'] == 'train':
+                train[it['group']].update((e['kind'], e['value']) for e in it['evidence_sets'])
+            slim.append(dict(item_id=iid, group=it['group'], blocks=[
+                dict(id=b['id'], chars=b['chars'], protected=b['protected']) for b in it['blocks']
+                if not b['protected'] and b['chars'] >= 200]))
+        if k % 50 == 0:
+            print('relabel', k, len(by_store), flush=True)
+    generic = generic_features(train, len(train))
+    links = content_links(slim)
+    del slim
+    linked = defaultdict(set)
+    for a, b in links:
+        linked[a].add(b)
+        linked[b].add(a)
+    quarantine = sorted(i for i in split_of if split_of[i] == 'train' and any(split_of[j] == 'dev' for j in linked[i]))
+    used = Counter()
+    for iid in split_of:  # pass 2: generic flags
+        p = dst / 'items' / f'{iid}.json'
+        it = apply_generic(json.loads(p.read_text()), generic)
+        it['content_linked'] = sorted(linked[iid])
+        p.write_text(json.dumps(it, ensure_ascii=False))
+        cand = [b for b in it['blocks'] if not b['protected']]
+        used[it['split'] + ':blocks'] += len(cand)
+        used[it['split'] + ':used'] += sum(b['used'] for b in cand)
+        used[it['split'] + ':items_with_used'] += any(b['used'] for b in cand)
+    (dst / 'generic-features.json').write_text(json.dumps(sorted(generic), ensure_ascii=False))
+    (dst / 'splits.json').write_text(json.dumps(dict(items=dict(sorted(split_of.items())),
+                                                     train_quarantined_dev_overlap=quarantine)))
+    rec = dict(labels='next-action-v2 (relabel of the frozen v1 split, train+dev only; test untouched, v1 extractor '
+                      'stays on test until the final run relabels it with this same code)',
+               items={s: sum(v == s for v in split_of.values()) for s in splits},
+               generic_features=len(generic), content_links=len(links),
+               content_links_train_dev=sum(split_of[a] != split_of[b] for a, b in links),
+               train_quarantined_dev_overlap=len(quarantine), counts=dict(sorted(used.items())))
+    out.mkdir(parents=True, exist_ok=True)
+    (out / 'labels-v2-receipt.json').write_text(json.dumps(rec, indent=1) + '\n')
+    return rec
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument('phase', choices=('build', 'split', 'report'))
+    ap.add_argument('phase', choices=('build', 'split', 'report', 'relabel'))
     ap.add_argument('--sources', default='claude,codex,hermes')
     ap.add_argument('--limit', type=int)
     ap.add_argument('--root', default=str(PRIVATE))
@@ -1099,8 +1213,10 @@ def main(argv=None):
         out = build_phase(Path(a.root), tuple(a.sources.split(',')), a.limit)
     elif a.phase == 'split':
         out = split_phase(Path(a.root), Path(a.out))
-    else:
+    elif a.phase == 'report':
         out = report_phase(Path(a.root), Path(a.out))
+    else:
+        out = relabel_phase(Path(a.root), PRIVATE_V2, Path(a.out))
     print(json.dumps(out, indent=1)[:6000])
 
 
