@@ -215,8 +215,10 @@ def all_texts(it):
 def bench(model_path, items):
     """Fresh process, 1 thread, every primary item (one in memory at a time): sv2.BENCH."""
     PRIVATE.mkdir(parents=True, exist_ok=True)
-    tmp = PRIVATE / 'bench-items.jsonl'  # private: test block text, owner-only and always removed
-    fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    # Fresh name, created 0600 atomically (no truncating a stale file, no following a symlink).
+    import tempfile
+    fd, tmp = tempfile.mkstemp(prefix='bench-items-', suffix='.jsonl', dir=PRIVATE)  # private: test block text, owner-only and always removed
+    tmp = Path(tmp)
     try:
         with os.fdopen(fd, 'w') as f:
             for it in items:

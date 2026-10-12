@@ -139,3 +139,16 @@ v2 fails @50%: coreference_cause, general_question_drop_all, git_state_commit_ow
 ## Cost (fresh process, numpy + LCC mechanical pass, 1 thread)
 
 - 461 items (median 431 blocks, max 2177): median 196.0 ms, p90 484.3 ms, max 2632.9 ms, 4 items over 1 s; 184.7 ms median on the 212 items with 250-600 blocks; peak RSS 307.7 MB; load 109 ms; model 4 KB.
+
+## Post-run notes (2026-10-13)
+
+- The secondary `all_eligible` view (603 items) includes the 142 items content-linked to
+  train/dev forks, so it is optimistic; quote the primary population (461 items) only.
+- Production requirement before integrating into LCC: block metadata (message index, role,
+  kind, tool) must come structured from LCC's splitter, not be parsed from block text.
+  The offset-0 header rule (065f60f) is a research-time mitigation; a block that starts
+  inside a large tool output can still begin with a header-shaped line.
+- After the run, the latency-bench temp file in specialist_v2.py and specialist_v2_test.py
+  moved to `tempfile.mkstemp` (fresh 0600 name, no truncation of a stale file, no symlink
+  follow). Scoring code is unchanged; the frozen hashes in test_protocol.json refer to the
+  pre-change files used for this run.

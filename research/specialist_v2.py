@@ -643,8 +643,10 @@ def bench(model_path, items, n=40):
     import os
     import subprocess
     import statistics
-    tmp = ART / 'bench-items.jsonl'  # private: dev block text, owner-only and always removed
-    fd = os.open(tmp, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    # Fresh name, created 0600 atomically (no truncating a stale file, no following a symlink).
+    import tempfile
+    fd, tmp = tempfile.mkstemp(prefix='bench-items-', suffix='.jsonl', dir=ART)  # private: dev block text, owner-only and always removed
+    tmp = Path(tmp)
     try:
         with os.fdopen(fd, 'w') as f:
             for k, (it, texts) in enumerate(load_items([it['item_id'] for it in items[:n]])):
