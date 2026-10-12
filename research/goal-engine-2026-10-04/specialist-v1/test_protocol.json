@@ -1,0 +1,88 @@
+{
+ "schema": "specialist-v2/test-protocol",
+ "created": "2026-10-12",
+ "seed": 20261012,
+ "bootstrap_resamples": 2000,
+ "arms": [
+  "specialist_v2",
+  "recency",
+  "bm25",
+  "mechanical",
+  "random",
+  "specialist_v1 (seeded subset)"
+ ],
+ "baselines": [
+  "recency",
+  "bm25",
+  "mechanical"
+ ],
+ "edge_rivals": [
+  "recency",
+  "bm25",
+  "mechanical",
+  "random",
+  "drop_largest",
+  "drop_smallest",
+  "specialist",
+  "laya"
+ ],
+ "limits": {
+  "ms_median": 250.0,
+  "ms_p90": 1000.0,
+  "peak_rss_mb": 300.0
+ },
+ "budgets_pct": [
+  10,
+  20,
+  30,
+  40,
+  50,
+  60
+ ],
+ "edge_budgets_pct": [
+  30,
+  50,
+  70
+ ],
+ "acceptance": {
+  "population": "primary = eligible test items (agent-action evidence, >= 1 USED candidate) not content-linked to any train/dev item; all_eligible reported too",
+  "i": "specialist_v2 mean AUC (recall over 0-60% removed, and all-kept over 0-60%) above EACH of recency, BM25, mechanical on primary, AND paired bootstrap 95% CI of mean(v2 - baseline) per-item AUC with lower bound > 0 (2000 resamples of session groups, seed 20261012)",
+  "ii": "edge suite: specialist_v2 passes >= every other arm at 30, 50 and 70% (rivals: recency, bm25, mechanical, random, drop_largest, drop_smallest, specialist, laya; random = mean of 5 seeds)",
+  "iii": "cost on the primary test items, fresh process, 1 thread: median ms per item <= 250.0, p90 <= 1000.0, peak RSS MB <= 300.0",
+  "verdict": "PASS only if i, ii and iii all hold; no retraining or tuning after the run"
+ },
+ "jev": "not run on test (paid remote calls); the Jev comparison stays on jev-overlap dev and needs an owner-approved paid run on test. Saved v0.1 Jev scores of frozen-60 dossiers that fall in test are reported descriptively only.",
+ "fingerprint": {
+  "model": {
+   "path": "/Users/Master/.lcc/bench/specialist-v2/model.json",
+   "sha256": "0788f115fae5216358feddcfd119826cc0af196ca7b157cd8d00c4ecfe80696c"
+  },
+  "code": {
+   "research/specialist_v2.py": "101f9f84acd99ee90f4cbd6dbfd1e9113d59313113e35f86f32d5d9df078b26f",
+   "research/specialist_v2_test.py": "b42440187d9c5259dfd4b429480ba69b9b7ce6cdf0fcc660d83a59c9f654025e",
+   "research/matched_budget_v2.py": "58859458a30cf72e76d46ffc4c945893c041a9071b4c1d4c6e03da822ae3843c",
+   "research/matched_budget.py": "0f05b774dbc4f566ba20a1d130295b9f5cb08c8ac96d629f5f0b07cfd80de4e6",
+   "research/next_action_labels.py": "26d39fcc54fc116e3256861feabf9839ee85d0028ac727d4941219041bbb185a",
+   "research/edge_suite.py": "4c280c845810b3eb3c6eb0fd7ef41c06f6951268068635648c3314b1cbf12d74",
+   "research/edge_cases_build.py": "05ae3ab4b5b028914bf615a5da954ea37560ea398d1e697e577fd028b66a277f",
+   "research/real_context_bench.py": "1d462543b39382113b1f03854d80f6850897f7591787c41c57c936f15604ec5e"
+  },
+  "lcc_mechanical": {
+   "compactor.py": "d271dbbad0765fca4129571088420b554f00f4730ee489ed3db321c6c2887ef7",
+   "blocks.py": "880dbc0b9d4dab1c83dd558c770fb73f05cec70f3b7aa4fdd9a5ad1858d2ef66"
+  },
+  "labels": {
+   "generic_features_v2": "c78ad4bcd0b3bb3b3642f7fd70b606506ab80e616bea3fd395e135c0b1c0e9d1",
+   "splits_v2": "5bf7d74b427cb40bf9055a09d783817be1df7724bc5204b0db40868f963f78d2",
+   "splits_v1": "2e808d79e73891e7f25bf911680637c8528fa03ad104b5e6def8308403778aeb",
+   "labels_receipt": "f88923e95969196af5c6c6932fc76ad9c5806a7180cda729114fef923d8fe57f",
+   "test_items_manifest": "a9450f0409670b7a8327dd5721cff954cde04027a4273fd2f7fc16b9a50e5ebc",
+   "test_texts_manifest": "6d8ef9b9b0972a281f769a73574dd9c4568cdb93423a9733ed3cbf5f6ef50782"
+  },
+  "edge": {
+   "fixtures": "90f31d0d8455c7e9a69b1ae7625f0ac43e56aa30600e846e998653392379d84e",
+   "specialist_v1_scores": "df665ac0ecf3c403cb54fc0e71e0d7746aa3bf81f8a4a6961b46c6a358e67982",
+   "laya_scores": "0783784dd7325504b2b4bf3a4120ea003e3f02464bba7c0dd2cece2c2019b804"
+  }
+ }
+}
