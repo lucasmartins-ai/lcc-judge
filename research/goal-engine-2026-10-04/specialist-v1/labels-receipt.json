@@ -1,0 +1,131 @@
+{
+ "seed": 20261012,
+ "splits": {
+  "train": 0.7,
+  "dev": 0.15,
+  "test": 0.15
+ },
+ "unit": "session lineage group, per source",
+ "created": "2026-10-12",
+ "generic_features": {
+  "n": 449,
+  "from_train_groups": 514,
+  "rule": ">= max(5, 0.02 x train groups)"
+ },
+ "skips": {
+  "claude:duplicate_uuid": 4,
+  "claude:no_prior_assistant": 268,
+  "codex:empty_or_slash_goal": 11,
+  "codex:no_prior_assistant": 801,
+  "codex:replay_or_copy": 77,
+  "hermes:injected_json_wrapped": 48,
+  "hermes:no_prior_assistant": 315,
+  "hermes:prompt_row_missing": 7,
+  "split_checked_equal": 138
+ },
+ "counts": {
+  "train": {
+   "items": 2512,
+   "groups": 514,
+   "per_source": {
+    "claude": 687,
+    "codex": 656,
+    "hermes": 1169
+   },
+   "per_category": {
+    "UNKNOWN": 89,
+    "approve_or_pick": 328,
+    "correct_approach_or_rule": 139,
+    "environment_and_infra": 49,
+    "external_accounts_and_comms": 37,
+    "failure_report": 49,
+    "general_question": 12,
+    "git_ship": 113,
+    "handoff_prompt": 112,
+    "project_audit_or_direction": 21,
+    "revise_recent_output": 99,
+    "specified_task": 62,
+    "supply_fact_or_step_done": 143,
+    "task_status_or_control": 145,
+    "unlabelled": 1114
+   },
+   "no_action_items": 71,
+   "candidate_blocks": 2065973
+  },
+  "dev": {
+   "items": 361,
+   "groups": 110,
+   "per_source": {
+    "claude": 102,
+    "codex": 93,
+    "hermes": 166
+   },
+   "per_category": {
+    "UNKNOWN": 25,
+    "approve_or_pick": 58,
+    "correct_approach_or_rule": 19,
+    "environment_and_infra": 5,
+    "external_accounts_and_comms": 4,
+    "failure_report": 5,
+    "general_question": 1,
+    "git_ship": 36,
+    "handoff_prompt": 21,
+    "project_audit_or_direction": 7,
+    "revise_recent_output": 18,
+    "specified_task": 7,
+    "supply_fact_or_step_done": 22,
+    "task_status_or_control": 31,
+    "unlabelled": 102
+   },
+   "no_action_items": 8,
+   "candidate_blocks": 148553
+  },
+  "test": {
+   "items": 675,
+   "groups": 110,
+   "per_source": {
+    "claude": 192,
+    "codex": 194,
+    "hermes": 289
+   },
+   "per_category": {
+    "UNKNOWN": 36,
+    "approve_or_pick": 73,
+    "correct_approach_or_rule": 25,
+    "environment_and_infra": 14,
+    "external_accounts_and_comms": 17,
+    "failure_report": 20,
+    "general_question": 4,
+    "git_ship": 33,
+    "handoff_prompt": 22,
+    "project_audit_or_direction": 4,
+    "revise_recent_output": 31,
+    "specified_task": 18,
+    "supply_fact_or_step_done": 56,
+    "task_status_or_control": 39,
+    "unlabelled": 283
+   },
+   "no_action_items": 21,
+   "candidate_blocks": 331661
+  }
+ },
+ "sha256": {
+  "train": {
+   "items_manifest": "fae83c9e9183cb5ab3b38ca4fbfaabaaa6c4ca28ae490faa56d6166360cfce12",
+   "texts_manifest": "c26f2abceedde79b6640cac1de6937e956ae2d646cfb13cdbcdca1267b2fd9b0"
+  },
+  "dev": {
+   "items_manifest": "a18c43023ac6c7d394aac17e1469a61fd741afc9c86fb0604e53ce1ab8324cf7",
+   "texts_manifest": "7f0aa25594a60530e4f26d173016020d78497d594637d2e77c199747d8a173fa"
+  },
+  "test": {
+   "items_manifest": "a9450f0409670b7a8327dd5721cff954cde04027a4273fd2f7fc16b9a50e5ebc",
+   "texts_manifest": "6d8ef9b9b0972a281f769a73574dd9c4568cdb93423a9733ed3cbf5f6ef50782"
+  },
+  "group_assignment": "a5c648a1a9de029bd25eb63630f4152a27c31471f992e5712b02a00fda019642"
+ },
+ "leak_check": {
+  "groups_in_more_than_one_split": 0,
+  "text_stores_shared_with_test": 0
+ }
+}

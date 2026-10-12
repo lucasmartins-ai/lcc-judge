@@ -1,0 +1,322 @@
+{
+ "note": "used rates over train+dev only; test is frozen (counts in labels-receipt.json)",
+ "items": {
+  "counts": {
+   "train": {
+    "items": 2512
+   },
+   "dev": {
+    "items": 361
+   },
+   "test": {
+    "items": 675
+   }
+  }
+ },
+ "per_source": {
+  "claude": {
+   "items": 789,
+   "blocks": 299563,
+   "used": 32502,
+   "used_loose": 37669,
+   "items_with_used": 726,
+   "used_rate": 0.1085,
+   "item_used_rate": 0.9202
+  },
+  "codex": {
+   "items": 749,
+   "blocks": 393740,
+   "used": 28185,
+   "used_loose": 39044,
+   "items_with_used": 665,
+   "used_rate": 0.0716,
+   "item_used_rate": 0.8879
+  },
+  "hermes": {
+   "items": 1335,
+   "blocks": 1521223,
+   "used": 103249,
+   "used_loose": 125525,
+   "items_with_used": 1215,
+   "used_rate": 0.0679,
+   "item_used_rate": 0.9101
+  }
+ },
+ "per_category": {
+  "UNKNOWN": {
+   "items": 114,
+   "blocks": 63588,
+   "used": 4701,
+   "used_loose": 5555,
+   "items_with_used": 100,
+   "used_rate": 0.0739,
+   "item_used_rate": 0.8772
+  },
+  "approve_or_pick": {
+   "items": 386,
+   "blocks": 206281,
+   "used": 21407,
+   "used_loose": 26381,
+   "items_with_used": 367,
+   "used_rate": 0.1038,
+   "item_used_rate": 0.9508
+  },
+  "correct_approach_or_rule": {
+   "items": 158,
+   "blocks": 90430,
+   "used": 8816,
+   "used_loose": 10970,
+   "items_with_used": 150,
+   "used_rate": 0.0975,
+   "item_used_rate": 0.9494
+  },
+  "environment_and_infra": {
+   "items": 54,
+   "blocks": 29012,
+   "used": 1771,
+   "used_loose": 2072,
+   "items_with_used": 48,
+   "used_rate": 0.061,
+   "item_used_rate": 0.8889
+  },
+  "external_accounts_and_comms": {
+   "items": 41,
+   "blocks": 33230,
+   "used": 2359,
+   "used_loose": 3015,
+   "items_with_used": 38,
+   "used_rate": 0.071,
+   "item_used_rate": 0.9268
+  },
+  "failure_report": {
+   "items": 54,
+   "blocks": 23740,
+   "used": 2067,
+   "used_loose": 2407,
+   "items_with_used": 47,
+   "used_rate": 0.0871,
+   "item_used_rate": 0.8704
+  },
+  "general_question": {
+   "items": 13,
+   "blocks": 4821,
+   "used": 283,
+   "used_loose": 290,
+   "items_with_used": 10,
+   "used_rate": 0.0587,
+   "item_used_rate": 0.7692
+  },
+  "git_ship": {
+   "items": 149,
+   "blocks": 82947,
+   "used": 4110,
+   "used_loose": 6442,
+   "items_with_used": 123,
+   "used_rate": 0.0495,
+   "item_used_rate": 0.8255
+  },
+  "handoff_prompt": {
+   "items": 133,
+   "blocks": 77740,
+   "used": 8668,
+   "used_loose": 9065,
+   "items_with_used": 131,
+   "used_rate": 0.1115,
+   "item_used_rate": 0.985
+  },
+  "project_audit_or_direction": {
+   "items": 28,
+   "blocks": 13033,
+   "used": 1000,
+   "used_loose": 1519,
+   "items_with_used": 28,
+   "used_rate": 0.0767,
+   "item_used_rate": 1.0
+  },
+  "revise_recent_output": {
+   "items": 117,
+   "blocks": 54327,
+   "used": 6307,
+   "used_loose": 7737,
+   "items_with_used": 104,
+   "used_rate": 0.1161,
+   "item_used_rate": 0.8889
+  },
+  "specified_task": {
+   "items": 69,
+   "blocks": 37940,
+   "used": 4434,
+   "used_loose": 5632,
+   "items_with_used": 59,
+   "used_rate": 0.1169,
+   "item_used_rate": 0.8551
+  },
+  "supply_fact_or_step_done": {
+   "items": 165,
+   "blocks": 85949,
+   "used": 6401,
+   "used_loose": 8020,
+   "items_with_used": 150,
+   "used_rate": 0.0745,
+   "item_used_rate": 0.9091
+  },
+  "task_status_or_control": {
+   "items": 176,
+   "blocks": 92144,
+   "used": 8285,
+   "used_loose": 10266,
+   "items_with_used": 158,
+   "used_rate": 0.0899,
+   "item_used_rate": 0.8977
+  },
+  "unlabelled": {
+   "items": 1216,
+   "blocks": 1319344,
+   "used": 83327,
+   "used_loose": 102867,
+   "items_with_used": 1093,
+   "used_rate": 0.0632,
+   "item_used_rate": 0.8988
+  }
+ },
+ "used_block_rate": {
+  "k": 163936,
+  "n": 2214526,
+  "rate": 0.074
+ },
+ "used_loose_block_rate": {
+  "k": 202238,
+  "n": 2214526,
+  "rate": 0.0913
+ },
+ "used_token_share": 0.1331,
+ "used_per_item": {
+  "median": 30,
+  "zero_used_items": 267,
+  "all_used_items": 0,
+  "no_action_items": 79
+ },
+ "window_ended_by": {
+  "eof": 615,
+  "next_prompt": 2168,
+  "interrupt": 20,
+  "compaction": 70
+ },
+ "reason_rules_strict": {
+  "call_value": 489828,
+  "path_op": 158560,
+  "text_ref": 161970,
+  "edit_anchor": 16987
+ },
+ "by_block_kind": {
+  "assistant:text": {
+   "blocks": 452234,
+   "used": 16824,
+   "used_rate": 0.0372
+  },
+  "assistant:tool_use": {
+   "blocks": 576914,
+   "used": 73442,
+   "used_rate": 0.1273
+  },
+  "user:text": {
+   "blocks": 180683,
+   "used": 6839,
+   "used_rate": 0.0379
+  },
+  "user:tool_result": {
+   "blocks": 1004695,
+   "used": 66831,
+   "used_rate": 0.0665
+  }
+ },
+ "by_position_decile": {
+  "0": {
+   "blocks": 222762,
+   "used": 10681,
+   "used_rate": 0.0479
+  },
+  "1": {
+   "blocks": 221312,
+   "used": 10026,
+   "used_rate": 0.0453
+  },
+  "2": {
+   "blocks": 221597,
+   "used": 10155,
+   "used_rate": 0.0458
+  },
+  "3": {
+   "blocks": 221286,
+   "used": 11862,
+   "used_rate": 0.0536
+  },
+  "4": {
+   "blocks": 221015,
+   "used": 13485,
+   "used_rate": 0.061
+  },
+  "5": {
+   "blocks": 221907,
+   "used": 13909,
+   "used_rate": 0.0627
+  },
+  "6": {
+   "blocks": 221577,
+   "used": 16486,
+   "used_rate": 0.0744
+  },
+  "7": {
+   "blocks": 221306,
+   "used": 18957,
+   "used_rate": 0.0857
+  },
+  "8": {
+   "blocks": 221603,
+   "used": 22568,
+   "used_rate": 0.1018
+  },
+  "9": {
+   "blocks": 220161,
+   "used": 35807,
+   "used_rate": 0.1626
+  }
+ },
+ "sanity": {
+  "sample_items": 20,
+  "sample_used_blocks": 589,
+  "reasons_found_in_block_text": {
+   "k": 589,
+   "n": 589,
+   "rate": 1.0
+  },
+  "used_referenced_by_later_tool_inputs": {
+   "k": 571,
+   "n": 589,
+   "rate": 0.9694
+  },
+  "used_referenced_by_later_inputs_or_text": {
+   "k": 589,
+   "n": 589,
+   "rate": 1.0
+  },
+  "used_with_a_tool_input_rule": {
+   "k": 559,
+   "n": 589,
+   "rate": 0.9491
+  },
+  "placebo_cross_session": {
+   "pairs": 199,
+   "placebo": {
+    "k": 1316,
+    "n": 150677,
+    "rate": 0.0087
+   },
+   "real": {
+    "k": 12346,
+    "n": 150677,
+    "rate": 0.0819
+   }
+  }
+ }
+}
