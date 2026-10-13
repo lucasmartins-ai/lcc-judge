@@ -1,0 +1,5144 @@
+{
+ "schema": "specialist-v4/dev",
+ "labels": "next-action-v2 strict USED, dev split only (test not opened)",
+ "model": {
+  "base": "v3n",
+  "beta": 1.0,
+  "alpha": 0.5,
+  "k_goal": 1,
+  "k_err": 2,
+  "bonus": 3.0,
+  "features": 64
+ },
+ "select": {
+  "rule": "V4_SELECTION_RULE.md",
+  "v3": {
+   "base": "v3",
+   "beta": 0.0,
+   "recall": 0.8872,
+   "all_kept": 0.4446,
+   "ev_cov": 0.9482,
+   "edge": {
+    "30": 28,
+    "50": 23,
+    "70": 20
+   },
+   "eligible": true,
+   "edge_total": 71
+  },
+  "pick": {
+   "base": "v3",
+   "beta": 0.0,
+   "recall": 0.8872,
+   "all_kept": 0.4446,
+   "ev_cov": 0.9482,
+   "edge": {
+    "30": 28,
+    "50": 23,
+    "70": 20
+   },
+   "eligible": true,
+   "edge_total": 71
+  },
+  "adopt": false,
+  "n_eligible": 1,
+  "log": [
+   {
+    "base": "v3",
+    "beta": 0.0,
+    "recall": 0.8872,
+    "all_kept": 0.4446,
+    "ev_cov": 0.9482,
+    "edge": {
+     "30": 28,
+     "50": 23,
+     "70": 20
+    },
+    "eligible": true,
+    "edge_total": 71
+   },
+   {
+    "base": "v3",
+    "beta": 0.25,
+    "recall": 0.8882,
+    "all_kept": 0.4351,
+    "ev_cov": 0.9451,
+    "edge": {
+     "30": 30,
+     "50": 26,
+     "70": 20
+    },
+    "eligible": false,
+    "edge_total": 76
+   },
+   {
+    "base": "v3",
+    "beta": 0.5,
+    "recall": 0.8885,
+    "all_kept": 0.4259,
+    "ev_cov": 0.9424,
+    "edge": {
+     "30": 28,
+     "50": 26,
+     "70": 22
+    },
+    "eligible": false,
+    "edge_total": 76
+   },
+   {
+    "base": "v3",
+    "beta": 1.0,
+    "recall": 0.887,
+    "all_kept": 0.4018,
+    "ev_cov": 0.9345,
+    "edge": {
+     "30": 28,
+     "50": 27,
+     "70": 23
+    },
+    "eligible": false,
+    "edge_total": 78
+   },
+   {
+    "base": "v3",
+    "beta": 2.0,
+    "recall": 0.8811,
+    "all_kept": 0.3539,
+    "ev_cov": 0.9198,
+    "edge": {
+     "30": 29,
+     "50": 27,
+     "70": 26
+    },
+    "eligible": false,
+    "edge_total": 82
+   },
+   {
+    "base": "v3n",
+    "beta": 0.0,
+    "recall": 0.8894,
+    "all_kept": 0.4533,
+    "ev_cov": 0.9499,
+    "edge": {
+     "30": 27,
+     "50": 24,
+     "70": 20
+    },
+    "eligible": false,
+    "edge_total": 71
+   },
+   {
+    "base": "v3n",
+    "beta": 0.25,
+    "recall": 0.8877,
+    "all_kept": 0.4364,
+    "ev_cov": 0.9454,
+    "edge": {
+     "30": 30,
+     "50": 26,
+     "70": 20
+    },
+    "eligible": false,
+    "edge_total": 76
+   },
+   {
+    "base": "v3n",
+    "beta": 0.5,
+    "recall": 0.8893,
+    "all_kept": 0.4315,
+    "ev_cov": 0.9426,
+    "edge": {
+     "30": 29,
+     "50": 26,
+     "70": 21
+    },
+    "eligible": false,
+    "edge_total": 76
+   },
+   {
+    "base": "v3n",
+    "beta": 1.0,
+    "recall": 0.8875,
+    "all_kept": 0.4041,
+    "ev_cov": 0.9347,
+    "edge": {
+     "30": 29,
+     "50": 27,
+     "70": 23
+    },
+    "eligible": false,
+    "edge_total": 79
+   },
+   {
+    "base": "v3n",
+    "beta": 2.0,
+    "recall": 0.8817,
+    "all_kept": 0.3579,
+    "ev_cov": 0.9195,
+    "edge": {
+     "30": 29,
+     "50": 27,
+     "70": 25
+    },
+    "eligible": false,
+    "edge_total": 81
+   }
+  ]
+ },
+ "train": {
+  "lrg4_rows": 513352,
+  "lrg4_extra_coef": {
+   "rule_marker": -0.031,
+   "user_rule": 0.025,
+   "reversal_marker": -0.013,
+   "reversal_near": -0.002,
+   "summary_marker": -0.043,
+   "value_facts": -0.021,
+   "value_conflict": 0.071,
+   "value_changed_later": -0.01,
+   "latest_value_holder": -0.021,
+   "ref_start": -0.01,
+   "ref_antecedent": 0.022,
+   "early_user_turn": -0.002,
+   "reread_path": 0.048,
+   "path_edited_later": -0.01
+  },
+  "teacher_rows": 9789,
+  "teacher_items": 306,
+  "opus_mean": 0.474,
+  "opus_ge_05": 0.482,
+  "teacher_fit_corr": 0.531,
+  "teacher_top_coef": [
+   [
+    "goal_chars_log",
+    -0.321
+   ],
+   [
+    "bm25_goal",
+    0.174
+   ],
+   [
+    "msg_from_end_log",
+    -0.156
+   ],
+   [
+    "log_chars",
+    0.143
+   ],
+   [
+    "from_end_log",
+    -0.128
+   ],
+   [
+    "bm25_recent",
+    0.12
+   ],
+   [
+    "kind_assistant:text",
+    0.108
+   ],
+   [
+    "pos",
+    -0.102
+   ],
+   [
+    "tool_edit",
+    -0.094
+   ],
+   [
+    "lcc_overlap",
+    0.093
+   ],
+   [
+    "later_asst_ref",
+    0.08
+   ],
+   [
+    "msg_pos",
+    -0.076
+   ]
+  ]
+ },
+ "extras": {
+  "train": {
+   "rows": 513352,
+   "items": 1790,
+   "nonzero": {
+    "rule_marker": 104836,
+    "user_rule": 7917,
+    "reversal_marker": 5643,
+    "reversal_near": 27991,
+    "summary_marker": 121056,
+    "value_facts": 144796,
+    "value_conflict": 96975,
+    "value_changed_later": 80035,
+    "latest_value_holder": 19945,
+    "ref_start": 1680,
+    "ref_antecedent": 28181,
+    "early_user_turn": 5421,
+    "reread_path": 86730,
+    "path_edited_later": 194563
+   }
+  },
+  "dev": {
+   "rows": 144094,
+   "items": 353,
+   "nonzero": {
+    "rule_marker": 26173,
+    "user_rule": 3596,
+    "reversal_marker": 1240,
+    "reversal_near": 5227,
+    "summary_marker": 21659,
+    "value_facts": 30475,
+    "value_conflict": 21084,
+    "value_changed_later": 18047,
+    "latest_value_holder": 3986,
+    "ref_start": 509,
+    "ref_antecedent": 4011,
+    "early_user_turn": 8776,
+    "reread_path": 14326,
+    "path_edited_later": 28933
+   }
+  }
+ },
+ "dev": {
+  "items": 325,
+  "excluded": {
+   "no_used_candidate": 28,
+   "no_agent_action": 8
+  },
+  "curves": {
+   "recency": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 325,
+     "n": 325,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.9883,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9323,
+     "all_kept_k": 149,
+     "n": 325,
+     "all_kept": 0.4585,
+     "all_kept_wilson95": [
+      0.4051,
+      0.5128
+     ],
+     "ev_cov": 0.972,
+     "removed_median": 0.1042
+    },
+    "20": {
+     "recall": 0.8628,
+     "all_kept_k": 99,
+     "n": 325,
+     "all_kept": 0.3046,
+     "all_kept_wilson95": [
+      0.2571,
+      0.3567
+     ],
+     "ev_cov": 0.9401,
+     "removed_median": 0.2039
+    },
+    "30": {
+     "recall": 0.7982,
+     "all_kept_k": 73,
+     "n": 325,
+     "all_kept": 0.2246,
+     "all_kept_wilson95": [
+      0.1826,
+      0.2731
+     ],
+     "ev_cov": 0.9093,
+     "removed_median": 0.3035
+    },
+    "40": {
+     "recall": 0.723,
+     "all_kept_k": 54,
+     "n": 325,
+     "all_kept": 0.1662,
+     "all_kept_wilson95": [
+      0.1296,
+      0.2105
+     ],
+     "ev_cov": 0.8706,
+     "removed_median": 0.4041
+    },
+    "50": {
+     "recall": 0.6415,
+     "all_kept_k": 44,
+     "n": 325,
+     "all_kept": 0.1354,
+     "all_kept_wilson95": [
+      0.1024,
+      0.1769
+     ],
+     "ev_cov": 0.8338,
+     "removed_median": 0.5037
+    },
+    "60": {
+     "recall": 0.557,
+     "all_kept_k": 38,
+     "n": 325,
+     "all_kept": 0.1169,
+     "all_kept_wilson95": [
+      0.0864,
+      0.1564
+     ],
+     "ev_cov": 0.7879,
+     "removed_median": 0.6034
+    },
+    "auc": {
+     "recall": 0.7894,
+     "all_kept": 0.308,
+     "ev_cov": 0.9033
+    }
+   },
+   "bm25": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 325,
+     "n": 325,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.9883,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9398,
+     "all_kept_k": 127,
+     "n": 325,
+     "all_kept": 0.3908,
+     "all_kept_wilson95": [
+      0.3393,
+      0.4448
+     ],
+     "ev_cov": 0.963,
+     "removed_median": 0.1017
+    },
+    "20": {
+     "recall": 0.8752,
+     "all_kept_k": 84,
+     "n": 325,
+     "all_kept": 0.2585,
+     "all_kept_wilson95": [
+      0.2139,
+      0.3087
+     ],
+     "ev_cov": 0.9289,
+     "removed_median": 0.2024
+    },
+    "30": {
+     "recall": 0.7997,
+     "all_kept_k": 54,
+     "n": 325,
+     "all_kept": 0.1662,
+     "all_kept_wilson95": [
+      0.1296,
+      0.2105
+     ],
+     "ev_cov": 0.8864,
+     "removed_median": 0.3029
+    },
+    "40": {
+     "recall": 0.714,
+     "all_kept_k": 42,
+     "n": 325,
+     "all_kept": 0.1292,
+     "all_kept_wilson95": [
+      0.097,
+      0.1701
+     ],
+     "ev_cov": 0.8364,
+     "removed_median": 0.404
+    },
+    "50": {
+     "recall": 0.6272,
+     "all_kept_k": 34,
+     "n": 325,
+     "all_kept": 0.1046,
+     "all_kept_wilson95": [
+      0.0758,
+      0.1426
+     ],
+     "ev_cov": 0.7857,
+     "removed_median": 0.5038
+    },
+    "60": {
+     "recall": 0.5283,
+     "all_kept_k": 23,
+     "n": 325,
+     "all_kept": 0.0708,
+     "all_kept_wilson95": [
+      0.0476,
+      0.104
+     ],
+     "ev_cov": 0.7159,
+     "removed_median": 0.6045
+    },
+    "auc": {
+     "recall": 0.7867,
+     "all_kept": 0.2641,
+     "ev_cov": 0.8764
+    }
+   },
+   "mechanical": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 325,
+     "n": 325,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.9883,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9214,
+     "all_kept_k": 101,
+     "n": 325,
+     "all_kept": 0.3108,
+     "all_kept_wilson95": [
+      0.2629,
+      0.3631
+     ],
+     "ev_cov": 0.9686,
+     "removed_median": 0.1038
+    },
+    "20": {
+     "recall": 0.8524,
+     "all_kept_k": 71,
+     "n": 325,
+     "all_kept": 0.2185,
+     "all_kept_wilson95": [
+      0.177,
+      0.2665
+     ],
+     "ev_cov": 0.9295,
+     "removed_median": 0.2027
+    },
+    "30": {
+     "recall": 0.7901,
+     "all_kept_k": 52,
+     "n": 325,
+     "all_kept": 0.16,
+     "all_kept_wilson95": [
+      0.1241,
+      0.2038
+     ],
+     "ev_cov": 0.8942,
+     "removed_median": 0.3037
+    },
+    "40": {
+     "recall": 0.717,
+     "all_kept_k": 37,
+     "n": 325,
+     "all_kept": 0.1138,
+     "all_kept_wilson95": [
+      0.0837,
+      0.153
+     ],
+     "ev_cov": 0.8496,
+     "removed_median": 0.4026
+    },
+    "50": {
+     "recall": 0.6441,
+     "all_kept_k": 35,
+     "n": 325,
+     "all_kept": 0.1077,
+     "all_kept_wilson95": [
+      0.0785,
+      0.1461
+     ],
+     "ev_cov": 0.8073,
+     "removed_median": 0.5039
+    },
+    "60": {
+     "recall": 0.5633,
+     "all_kept_k": 30,
+     "n": 325,
+     "all_kept": 0.0923,
+     "all_kept_wilson95": [
+      0.0654,
+      0.1287
+     ],
+     "ev_cov": 0.7516,
+     "removed_median": 0.6033
+    },
+    "auc": {
+     "recall": 0.7844,
+     "all_kept": 0.2428,
+     "ev_cov": 0.8875
+    }
+   },
+   "specialist_v4": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 325,
+     "n": 325,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.9883,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9831,
+     "all_kept_k": 227,
+     "n": 325,
+     "all_kept": 0.6985,
+     "all_kept_wilson95": [
+      0.6465,
+      0.7458
+     ],
+     "ev_cov": 0.9845,
+     "removed_median": 0.1014
+    },
+    "20": {
+     "recall": 0.9537,
+     "all_kept_k": 156,
+     "n": 325,
+     "all_kept": 0.48,
+     "all_kept_wilson95": [
+      0.4262,
+      0.5342
+     ],
+     "ev_cov": 0.9694,
+     "removed_median": 0.2023
+    },
+    "30": {
+     "recall": 0.9085,
+     "all_kept_k": 100,
+     "n": 325,
+     "all_kept": 0.3077,
+     "all_kept_wilson95": [
+      0.26,
+      0.3599
+     ],
+     "ev_cov": 0.9442,
+     "removed_median": 0.3025
+    },
+    "40": {
+     "recall": 0.8507,
+     "all_kept_k": 69,
+     "n": 325,
+     "all_kept": 0.2123,
+     "all_kept_wilson95": [
+      0.1713,
+      0.26
+     ],
+     "ev_cov": 0.9111,
+     "removed_median": 0.4038
+    },
+    "50": {
+     "recall": 0.7782,
+     "all_kept_k": 52,
+     "n": 325,
+     "all_kept": 0.16,
+     "all_kept_wilson95": [
+      0.1241,
+      0.2038
+     ],
+     "ev_cov": 0.8805,
+     "removed_median": 0.504
+    },
+    "60": {
+     "recall": 0.7013,
+     "all_kept_k": 43,
+     "n": 325,
+     "all_kept": 0.1323,
+     "all_kept_wilson95": [
+      0.0997,
+      0.1735
+     ],
+     "ev_cov": 0.837,
+     "removed_median": 0.6037
+    },
+    "auc": {
+     "recall": 0.8875,
+     "all_kept": 0.4041,
+     "ev_cov": 0.9347
+    }
+   },
+   "specialist_v3": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 325,
+     "n": 325,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.9883,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9845,
+     "all_kept_k": 241,
+     "n": 325,
+     "all_kept": 0.7415,
+     "all_kept_wilson95": [
+      0.6913,
+      0.7861
+     ],
+     "ev_cov": 0.9904,
+     "removed_median": 0.1024
+    },
+    "20": {
+     "recall": 0.9515,
+     "all_kept_k": 177,
+     "n": 325,
+     "all_kept": 0.5446,
+     "all_kept_wilson95": [
+      0.4903,
+      0.5979
+     ],
+     "ev_cov": 0.9782,
+     "removed_median": 0.2028
+    },
+    "30": {
+     "recall": 0.9079,
+     "all_kept_k": 122,
+     "n": 325,
+     "all_kept": 0.3754,
+     "all_kept_wilson95": [
+      0.3245,
+      0.4292
+     ],
+     "ev_cov": 0.9583,
+     "removed_median": 0.3029
+    },
+    "40": {
+     "recall": 0.849,
+     "all_kept_k": 83,
+     "n": 325,
+     "all_kept": 0.2554,
+     "all_kept_wilson95": [
+      0.211,
+      0.3055
+     ],
+     "ev_cov": 0.9347,
+     "removed_median": 0.4047
+    },
+    "50": {
+     "recall": 0.7795,
+     "all_kept_k": 59,
+     "n": 325,
+     "all_kept": 0.1815,
+     "all_kept_wilson95": [
+      0.1434,
+      0.2271
+     ],
+     "ev_cov": 0.8971,
+     "removed_median": 0.5039
+    },
+    "60": {
+     "recall": 0.7018,
+     "all_kept_k": 45,
+     "n": 325,
+     "all_kept": 0.1385,
+     "all_kept_wilson95": [
+      0.1051,
+      0.1803
+     ],
+     "ev_cov": 0.8614,
+     "removed_median": 0.6038
+    },
+    "auc": {
+     "recall": 0.8872,
+     "all_kept": 0.4446,
+     "ev_cov": 0.9482
+    }
+   },
+   "v4_no_opus": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 325,
+     "n": 325,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.9883,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.982,
+     "all_kept_k": 241,
+     "n": 325,
+     "all_kept": 0.7415,
+     "all_kept_wilson95": [
+      0.6913,
+      0.7861
+     ],
+     "ev_cov": 0.988,
+     "removed_median": 0.1023
+    },
+    "20": {
+     "recall": 0.954,
+     "all_kept_k": 181,
+     "n": 325,
+     "all_kept": 0.5569,
+     "all_kept_wilson95": [
+      0.5026,
+      0.61
+     ],
+     "ev_cov": 0.9794,
+     "removed_median": 0.203
+    },
+    "30": {
+     "recall": 0.912,
+     "all_kept_k": 126,
+     "n": 325,
+     "all_kept": 0.3877,
+     "all_kept_wilson95": [
+      0.3363,
+      0.4417
+     ],
+     "ev_cov": 0.9633,
+     "removed_median": 0.3031
+    },
+    "40": {
+     "recall": 0.855,
+     "all_kept_k": 88,
+     "n": 325,
+     "all_kept": 0.2708,
+     "all_kept_wilson95": [
+      0.2253,
+      0.3215
+     ],
+     "ev_cov": 0.9388,
+     "removed_median": 0.4039
+    },
+    "50": {
+     "recall": 0.7821,
+     "all_kept_k": 63,
+     "n": 325,
+     "all_kept": 0.1938,
+     "all_kept_wilson95": [
+      0.1545,
+      0.2403
+     ],
+     "ev_cov": 0.8987,
+     "removed_median": 0.5039
+    },
+    "60": {
+     "recall": 0.7027,
+     "all_kept_k": 45,
+     "n": 325,
+     "all_kept": 0.1385,
+     "all_kept_wilson95": [
+      0.1051,
+      0.1803
+     ],
+     "ev_cov": 0.8619,
+     "removed_median": 0.6035
+    },
+    "auc": {
+     "recall": 0.8894,
+     "all_kept": 0.4533,
+     "ev_cov": 0.9499
+    }
+   },
+   "random": {
+    "0": {
+     "recall": 1.0,
+     "all_kept": 1.0,
+     "ev_cov": 1.0,
+     "n": 325,
+     "all_kept_k": 325
+    },
+    "10": {
+     "recall": 0.8872,
+     "all_kept": 0.1852,
+     "ev_cov": 0.9575,
+     "n": 325,
+     "all_kept_k": 60.2
+    },
+    "20": {
+     "recall": 0.7841,
+     "all_kept": 0.0923,
+     "ev_cov": 0.9183,
+     "n": 325,
+     "all_kept_k": 30
+    },
+    "30": {
+     "recall": 0.6831,
+     "all_kept": 0.0548,
+     "ev_cov": 0.8778,
+     "n": 325,
+     "all_kept_k": 17.8
+    },
+    "40": {
+     "recall": 0.5831,
+     "all_kept": 0.0332,
+     "ev_cov": 0.8254,
+     "n": 325,
+     "all_kept_k": 10.8
+    },
+    "50": {
+     "recall": 0.4825,
+     "all_kept": 0.0209,
+     "ev_cov": 0.7698,
+     "n": 325,
+     "all_kept_k": 6.8
+    },
+    "60": {
+     "recall": 0.3822,
+     "all_kept": 0.016,
+     "ev_cov": 0.6994,
+     "n": 325,
+     "all_kept_k": 5.2
+    },
+    "auc": {
+     "recall": 0.6852,
+     "all_kept": 0.1491,
+     "ev_cov": 0.8664
+    }
+   }
+  },
+  "bootstrap_groups": {
+   "v4-specialist_v3": {
+    "recall": {
+     "mean": 0.0003,
+     "ci95": [
+      -0.0044,
+      0.0046
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": -0.0405,
+     "ci95": [
+      -0.0547,
+      -0.0253
+     ],
+     "groups": 107
+    }
+   },
+   "v4-v4_no_opus": {
+    "recall": {
+     "mean": -0.0019,
+     "ci95": [
+      -0.0072,
+      0.0035
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": -0.0492,
+     "ci95": [
+      -0.0637,
+      -0.0328
+     ],
+     "groups": 107
+    }
+   },
+   "v4-recency": {
+    "recall": {
+     "mean": 0.0981,
+     "ci95": [
+      0.0814,
+      0.1159
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": 0.0962,
+     "ci95": [
+      0.0624,
+      0.1355
+     ],
+     "groups": 107
+    }
+   },
+   "v4-bm25": {
+    "recall": {
+     "mean": 0.1008,
+     "ci95": [
+      0.0852,
+      0.1163
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": 0.14,
+     "ci95": [
+      0.1144,
+      0.169
+     ],
+     "groups": 107
+    }
+   },
+   "v4-mechanical": {
+    "recall": {
+     "mean": 0.103,
+     "ci95": [
+      0.0869,
+      0.1194
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": 0.1613,
+     "ci95": [
+      0.1224,
+      0.2035
+     ],
+     "groups": 107
+    }
+   }
+  },
+  "by_source": {
+   "specialist_v4": {
+    "claude": {
+     "n": 97,
+     "auc": {
+      "recall": 0.8934,
+      "all_kept": 0.3737,
+      "ev_cov": 0.9452
+     }
+    },
+    "codex": {
+     "n": 80,
+     "auc": {
+      "recall": 0.937,
+      "all_kept": 0.5531,
+      "ev_cov": 0.9643
+     }
+    },
+    "hermes": {
+     "n": 148,
+     "auc": {
+      "recall": 0.8568,
+      "all_kept": 0.3435,
+      "ev_cov": 0.9118
+     }
+    }
+   },
+   "specialist_v3": {
+    "claude": {
+     "n": 97,
+     "auc": {
+      "recall": 0.904,
+      "all_kept": 0.4476,
+      "ev_cov": 0.9567
+     }
+    },
+    "codex": {
+     "n": 80,
+     "auc": {
+      "recall": 0.9249,
+      "all_kept": 0.551,
+      "ev_cov": 0.9669
+     }
+    },
+    "hermes": {
+     "n": 148,
+     "auc": {
+      "recall": 0.8558,
+      "all_kept": 0.3851,
+      "ev_cov": 0.9325
+     }
+    }
+   }
+  }
+ },
+ "jev_overlap": {
+  "items": 43,
+  "excluded": {
+   "test_split_or_unmatched": 11,
+   "no_used_candidate": 6
+  },
+  "curves": {
+   "jev": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9361,
+     "all_kept_k": 19,
+     "n": 43,
+     "all_kept": 0.4419,
+     "all_kept_wilson95": [
+      0.3043,
+      0.5889
+     ],
+     "ev_cov": 0.9709,
+     "removed_median": 0.1029
+    },
+    "20": {
+     "recall": 0.8993,
+     "all_kept_k": 16,
+     "n": 43,
+     "all_kept": 0.3721,
+     "all_kept_wilson95": [
+      0.2438,
+      0.5214
+     ],
+     "ev_cov": 0.9606,
+     "removed_median": 0.2029
+    },
+    "30": {
+     "recall": 0.8446,
+     "all_kept_k": 12,
+     "n": 43,
+     "all_kept": 0.2791,
+     "all_kept_wilson95": [
+      0.1675,
+      0.4269
+     ],
+     "ev_cov": 0.9297,
+     "removed_median": 0.3022
+    },
+    "40": {
+     "recall": 0.7759,
+     "all_kept_k": 9,
+     "n": 43,
+     "all_kept": 0.2093,
+     "all_kept_wilson95": [
+      0.1142,
+      0.3521
+     ],
+     "ev_cov": 0.9042,
+     "removed_median": 0.4022
+    },
+    "50": {
+     "recall": 0.6718,
+     "all_kept_k": 7,
+     "n": 43,
+     "all_kept": 0.1628,
+     "all_kept_wilson95": [
+      0.0812,
+      0.2997
+     ],
+     "ev_cov": 0.8598,
+     "removed_median": 0.5044
+    },
+    "60": {
+     "recall": 0.5622,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.8094,
+     "removed_median": 0.6043
+    },
+    "auc": {
+     "recall": 0.8181,
+     "all_kept": 0.3372,
+     "ev_cov": 0.9216
+    }
+   },
+   "specialist": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9296,
+     "all_kept_k": 10,
+     "n": 43,
+     "all_kept": 0.2326,
+     "all_kept_wilson95": [
+      0.1315,
+      0.3774
+     ],
+     "ev_cov": 0.9534,
+     "removed_median": 0.1008
+    },
+    "20": {
+     "recall": 0.8815,
+     "all_kept_k": 8,
+     "n": 43,
+     "all_kept": 0.186,
+     "all_kept_wilson95": [
+      0.0974,
+      0.3262
+     ],
+     "ev_cov": 0.9277,
+     "removed_median": 0.2009
+    },
+    "30": {
+     "recall": 0.8067,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.8782,
+     "removed_median": 0.3016
+    },
+    "40": {
+     "recall": 0.6991,
+     "all_kept_k": 4,
+     "n": 43,
+     "all_kept": 0.093,
+     "all_kept_wilson95": [
+      0.0368,
+      0.216
+     ],
+     "ev_cov": 0.757,
+     "removed_median": 0.4027
+    },
+    "50": {
+     "recall": 0.6178,
+     "all_kept_k": 4,
+     "n": 43,
+     "all_kept": 0.093,
+     "all_kept_wilson95": [
+      0.0368,
+      0.216
+     ],
+     "ev_cov": 0.6889,
+     "removed_median": 0.5045
+    },
+    "60": {
+     "recall": 0.5413,
+     "all_kept_k": 4,
+     "n": 43,
+     "all_kept": 0.093,
+     "all_kept_wilson95": [
+      0.0368,
+      0.216
+     ],
+     "ev_cov": 0.6317,
+     "removed_median": 0.6061
+    },
+    "auc": {
+     "recall": 0.7842,
+     "all_kept": 0.2112,
+     "ev_cov": 0.8368
+    }
+   },
+   "specialist_inv": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.918,
+     "all_kept_k": 10,
+     "n": 43,
+     "all_kept": 0.2326,
+     "all_kept_wilson95": [
+      0.1315,
+      0.3774
+     ],
+     "ev_cov": 0.9393,
+     "removed_median": 0.1009
+    },
+    "20": {
+     "recall": 0.8474,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.8523,
+     "removed_median": 0.2006
+    },
+    "30": {
+     "recall": 0.8109,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.8313,
+     "removed_median": 0.3014
+    },
+    "40": {
+     "recall": 0.7303,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.7558,
+     "removed_median": 0.4019
+    },
+    "50": {
+     "recall": 0.6436,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.6828,
+     "removed_median": 0.5043
+    },
+    "60": {
+     "recall": 0.5494,
+     "all_kept_k": 4,
+     "n": 43,
+     "all_kept": 0.093,
+     "all_kept_wilson95": [
+      0.0368,
+      0.216
+     ],
+     "ev_cov": 0.6344,
+     "removed_median": 0.6067
+    },
+    "auc": {
+     "recall": 0.7875,
+     "all_kept": 0.2151,
+     "ev_cov": 0.8131
+    }
+   },
+   "laya": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9239,
+     "all_kept_k": 9,
+     "n": 43,
+     "all_kept": 0.2093,
+     "all_kept_wilson95": [
+      0.1142,
+      0.3521
+     ],
+     "ev_cov": 0.9241,
+     "removed_median": 0.1013
+    },
+    "20": {
+     "recall": 0.8459,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.868,
+     "removed_median": 0.2015
+    },
+    "30": {
+     "recall": 0.7432,
+     "all_kept_k": 2,
+     "n": 43,
+     "all_kept": 0.0465,
+     "all_kept_wilson95": [
+      0.0128,
+      0.1546
+     ],
+     "ev_cov": 0.7671,
+     "removed_median": 0.3016
+    },
+    "40": {
+     "recall": 0.6815,
+     "all_kept_k": 2,
+     "n": 43,
+     "all_kept": 0.0465,
+     "all_kept_wilson95": [
+      0.0128,
+      0.1546
+     ],
+     "ev_cov": 0.74,
+     "removed_median": 0.4022
+    },
+    "50": {
+     "recall": 0.599,
+     "all_kept_k": 2,
+     "n": 43,
+     "all_kept": 0.0465,
+     "all_kept_wilson95": [
+      0.0128,
+      0.1546
+     ],
+     "ev_cov": 0.675,
+     "removed_median": 0.5042
+    },
+    "60": {
+     "recall": 0.506,
+     "all_kept_k": 2,
+     "n": 43,
+     "all_kept": 0.0465,
+     "all_kept_wilson95": [
+      0.0128,
+      0.1546
+     ],
+     "ev_cov": 0.6227,
+     "removed_median": 0.6042
+    },
+    "auc": {
+     "recall": 0.7578,
+     "all_kept": 0.1686,
+     "ev_cov": 0.7976
+    }
+   },
+   "recency": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.8901,
+     "all_kept_k": 15,
+     "n": 43,
+     "all_kept": 0.3488,
+     "all_kept_wilson95": [
+      0.2242,
+      0.4983
+     ],
+     "ev_cov": 0.9504,
+     "removed_median": 0.1069
+    },
+    "20": {
+     "recall": 0.8441,
+     "all_kept_k": 14,
+     "n": 43,
+     "all_kept": 0.3256,
+     "all_kept_wilson95": [
+      0.2049,
+      0.4748
+     ],
+     "ev_cov": 0.9354,
+     "removed_median": 0.2032
+    },
+    "30": {
+     "recall": 0.731,
+     "all_kept_k": 10,
+     "n": 43,
+     "all_kept": 0.2326,
+     "all_kept_wilson95": [
+      0.1315,
+      0.3774
+     ],
+     "ev_cov": 0.8723,
+     "removed_median": 0.3035
+    },
+    "40": {
+     "recall": 0.6603,
+     "all_kept_k": 9,
+     "n": 43,
+     "all_kept": 0.2093,
+     "all_kept_wilson95": [
+      0.1142,
+      0.3521
+     ],
+     "ev_cov": 0.8577,
+     "removed_median": 0.4052
+    },
+    "50": {
+     "recall": 0.6127,
+     "all_kept_k": 7,
+     "n": 43,
+     "all_kept": 0.1628,
+     "all_kept_wilson95": [
+      0.0812,
+      0.2997
+     ],
+     "ev_cov": 0.8079,
+     "removed_median": 0.5026
+    },
+    "60": {
+     "recall": 0.5438,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.7731,
+     "removed_median": 0.6032
+    },
+    "auc": {
+     "recall": 0.7517,
+     "all_kept": 0.3081,
+     "ev_cov": 0.885
+    }
+   },
+   "bm25": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9347,
+     "all_kept_k": 17,
+     "n": 43,
+     "all_kept": 0.3953,
+     "all_kept_wilson95": [
+      0.2637,
+      0.5442
+     ],
+     "ev_cov": 0.9775,
+     "removed_median": 0.1023
+    },
+    "20": {
+     "recall": 0.8901,
+     "all_kept_k": 12,
+     "n": 43,
+     "all_kept": 0.2791,
+     "all_kept_wilson95": [
+      0.1675,
+      0.4269
+     ],
+     "ev_cov": 0.9307,
+     "removed_median": 0.2011
+    },
+    "30": {
+     "recall": 0.81,
+     "all_kept_k": 10,
+     "n": 43,
+     "all_kept": 0.2326,
+     "all_kept_wilson95": [
+      0.1315,
+      0.3774
+     ],
+     "ev_cov": 0.8701,
+     "removed_median": 0.3025
+    },
+    "40": {
+     "recall": 0.756,
+     "all_kept_k": 7,
+     "n": 43,
+     "all_kept": 0.1628,
+     "all_kept_wilson95": [
+      0.0812,
+      0.2997
+     ],
+     "ev_cov": 0.846,
+     "removed_median": 0.4055
+    },
+    "50": {
+     "recall": 0.682,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.8163,
+     "removed_median": 0.5034
+    },
+    "60": {
+     "recall": 0.5611,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.7296,
+     "removed_median": 0.6025
+    },
+    "auc": {
+     "recall": 0.8089,
+     "all_kept": 0.2907,
+     "ev_cov": 0.8842
+    }
+   },
+   "mechanical": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.8917,
+     "all_kept_k": 9,
+     "n": 43,
+     "all_kept": 0.2093,
+     "all_kept_wilson95": [
+      0.1142,
+      0.3521
+     ],
+     "ev_cov": 0.9481,
+     "removed_median": 0.1021
+    },
+    "20": {
+     "recall": 0.7762,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.8779,
+     "removed_median": 0.2018
+    },
+    "30": {
+     "recall": 0.7351,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.8558,
+     "removed_median": 0.3028
+    },
+    "40": {
+     "recall": 0.6849,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.7959,
+     "removed_median": 0.4042
+    },
+    "50": {
+     "recall": 0.6251,
+     "all_kept_k": 4,
+     "n": 43,
+     "all_kept": 0.093,
+     "all_kept_wilson95": [
+      0.0368,
+      0.216
+     ],
+     "ev_cov": 0.7602,
+     "removed_median": 0.5017
+    },
+    "60": {
+     "recall": 0.5602,
+     "all_kept_k": 4,
+     "n": 43,
+     "all_kept": 0.093,
+     "all_kept_wilson95": [
+      0.0368,
+      0.216
+     ],
+     "ev_cov": 0.6878,
+     "removed_median": 0.6062
+    },
+    "auc": {
+     "recall": 0.7488,
+     "all_kept": 0.2074,
+     "ev_cov": 0.847
+    }
+   },
+   "specialist_v4": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9877,
+     "all_kept_k": 28,
+     "n": 43,
+     "all_kept": 0.6512,
+     "all_kept_wilson95": [
+      0.5017,
+      0.7758
+     ],
+     "ev_cov": 0.9957,
+     "removed_median": 0.1015
+    },
+    "20": {
+     "recall": 0.9578,
+     "all_kept_k": 19,
+     "n": 43,
+     "all_kept": 0.4419,
+     "all_kept_wilson95": [
+      0.3043,
+      0.5889
+     ],
+     "ev_cov": 0.9856,
+     "removed_median": 0.2028
+    },
+    "30": {
+     "recall": 0.9009,
+     "all_kept_k": 12,
+     "n": 43,
+     "all_kept": 0.2791,
+     "all_kept_wilson95": [
+      0.1675,
+      0.4269
+     ],
+     "ev_cov": 0.9331,
+     "removed_median": 0.3018
+    },
+    "40": {
+     "recall": 0.8507,
+     "all_kept_k": 11,
+     "n": 43,
+     "all_kept": 0.2558,
+     "all_kept_wilson95": [
+      0.1493,
+      0.4024
+     ],
+     "ev_cov": 0.9053,
+     "removed_median": 0.4044
+    },
+    "50": {
+     "recall": 0.7692,
+     "all_kept_k": 8,
+     "n": 43,
+     "all_kept": 0.186,
+     "all_kept_wilson95": [
+      0.0974,
+      0.3262
+     ],
+     "ev_cov": 0.8516,
+     "removed_median": 0.5031
+    },
+    "60": {
+     "recall": 0.6932,
+     "all_kept_k": 6,
+     "n": 43,
+     "all_kept": 0.1395,
+     "all_kept_wilson95": [
+      0.0656,
+      0.2726
+     ],
+     "ev_cov": 0.7944,
+     "removed_median": 0.605
+    },
+    "auc": {
+     "recall": 0.8855,
+     "all_kept": 0.3973,
+     "ev_cov": 0.9281
+    }
+   },
+   "specialist_v3": {
+    "0": {
+     "recall": 1.0,
+     "all_kept_k": 43,
+     "n": 43,
+     "all_kept": 1.0,
+     "all_kept_wilson95": [
+      0.918,
+      1.0
+     ],
+     "ev_cov": 1.0,
+     "removed_median": 0.0
+    },
+    "10": {
+     "recall": 0.9888,
+     "all_kept_k": 29,
+     "n": 43,
+     "all_kept": 0.6744,
+     "all_kept_wilson95": [
+      0.5252,
+      0.7951
+     ],
+     "ev_cov": 0.9961,
+     "removed_median": 0.1021
+    },
+    "20": {
+     "recall": 0.9558,
+     "all_kept_k": 22,
+     "n": 43,
+     "all_kept": 0.5116,
+     "all_kept_wilson95": [
+      0.3675,
+      0.6538
+     ],
+     "ev_cov": 0.9911,
+     "removed_median": 0.2022
+    },
+    "30": {
+     "recall": 0.9097,
+     "all_kept_k": 14,
+     "n": 43,
+     "all_kept": 0.3256,
+     "all_kept_wilson95": [
+      0.2049,
+      0.4748
+     ],
+     "ev_cov": 0.9665,
+     "removed_median": 0.3015
+    },
+    "40": {
+     "recall": 0.8516,
+     "all_kept_k": 11,
+     "n": 43,
+     "all_kept": 0.2558,
+     "all_kept_wilson95": [
+      0.1493,
+      0.4024
+     ],
+     "ev_cov": 0.9364,
+     "removed_median": 0.4037
+    },
+    "50": {
+     "recall": 0.7782,
+     "all_kept_k": 8,
+     "n": 43,
+     "all_kept": 0.186,
+     "all_kept_wilson95": [
+      0.0974,
+      0.3262
+     ],
+     "ev_cov": 0.8911,
+     "removed_median": 0.5016
+    },
+    "60": {
+     "recall": 0.6656,
+     "all_kept_k": 5,
+     "n": 43,
+     "all_kept": 0.1163,
+     "all_kept_wilson95": [
+      0.0507,
+      0.2448
+     ],
+     "ev_cov": 0.841,
+     "removed_median": 0.6016
+    },
+    "auc": {
+     "recall": 0.8861,
+     "all_kept": 0.4186,
+     "ev_cov": 0.9503
+    }
+   },
+   "random": {
+    "0": {
+     "recall": 1.0,
+     "all_kept": 1.0,
+     "ev_cov": 1.0,
+     "n": 43,
+     "all_kept_k": 43
+    },
+    "10": {
+     "recall": 0.8918,
+     "all_kept": 0.2326,
+     "ev_cov": 0.9502,
+     "n": 43,
+     "all_kept_k": 10
+    },
+    "20": {
+     "recall": 0.7957,
+     "all_kept": 0.1488,
+     "ev_cov": 0.914,
+     "n": 43,
+     "all_kept_k": 6.4
+    },
+    "30": {
+     "recall": 0.7023,
+     "all_kept": 0.1116,
+     "ev_cov": 0.8568,
+     "n": 43,
+     "all_kept_k": 4.8
+    },
+    "40": {
+     "recall": 0.6129,
+     "all_kept": 0.0977,
+     "ev_cov": 0.823,
+     "n": 43,
+     "all_kept_k": 4.2
+    },
+    "50": {
+     "recall": 0.5069,
+     "all_kept": 0.0605,
+     "ev_cov": 0.7618,
+     "n": 43,
+     "all_kept_k": 2.6
+    },
+    "60": {
+     "recall": 0.4199,
+     "all_kept": 0.0512,
+     "ev_cov": 0.7037,
+     "n": 43,
+     "all_kept_k": 2.2
+    },
+    "auc": {
+     "recall": 0.7033,
+     "all_kept": 0.1961,
+     "ev_cov": 0.8596
+    }
+   }
+  }
+ },
+ "edge_suite": {
+  "specialist_v4": {
+   "30": {
+    "passed": 29,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "project_audit_wide_view",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "50": {
+    "passed": 27,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "git_state_commit_own_work",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "70": {
+    "passed": 23,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "decision_reversal",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   }
+  },
+  "specialist_v3": {
+   "30": {
+    "passed": 28,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   },
+   "50": {
+    "passed": 23,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "negation_rule",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "70": {
+    "passed": 20,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "decision_reversal",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "negation_rule",
+     "old_read_later_edited",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   }
+  },
+  "v4_no_opus": {
+   "30": {
+    "passed": 27,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "handoff_prompt",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   },
+   "50": {
+    "passed": 24,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "negation_rule",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "70": {
+    "passed": 20,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "decision_reversal",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "negation_rule",
+     "old_read_later_edited",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "source_authority",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   }
+  },
+  "opus": {
+   "30": {
+    "passed": 35,
+    "n": 35,
+    "failed": [],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      6,
+      6
+     ],
+     "project_audit_or_direction": [
+      2,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      2,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      4,
+      4
+     ]
+    }
+   },
+   "50": {
+    "passed": 35,
+    "n": 35,
+    "failed": [],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      6,
+      6
+     ],
+     "project_audit_or_direction": [
+      2,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      2,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      4,
+      4
+     ]
+    }
+   },
+   "70": {
+    "passed": 35,
+    "n": 35,
+    "failed": [],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      6,
+      6
+     ],
+     "project_audit_or_direction": [
+      2,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      2,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      4,
+      4
+     ]
+    }
+   }
+  },
+  "mechanical": {
+   "30": {
+    "passed": 22,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "general_question_drop_all",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "number_only_reply",
+     "outreach_history",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      1,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      0,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   },
+   "50": {
+    "passed": 21,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "general_question_drop_all",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "number_only_reply",
+     "outreach_history",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      1,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      0,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   },
+   "70": {
+    "passed": 18,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "duplicated_tool_output",
+     "general_question_drop_all",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "number_only_reply",
+     "old_read_later_edited",
+     "outreach_history",
+     "partial_reads",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      4,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      3,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      1,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      0,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   }
+  },
+  "bm25": {
+   "30": {
+    "passed": 21,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "number_only_reply",
+     "old_read_later_edited",
+     "outreach_history",
+     "pasted_error_then_fix",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      3,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      0,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   },
+   "50": {
+    "passed": 20,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "number_only_reply",
+     "old_read_later_edited",
+     "outreach_history",
+     "pasted_error_then_fix",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      3,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      0,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   },
+   "70": {
+    "passed": 18,
+    "n": 35,
+    "failed": [
+     "contradiction_unresolved",
+     "coreference_cause",
+     "decision_reversal",
+     "duplicated_tool_output",
+     "git_state_commit_own_work",
+     "handoff_prompt",
+     "number_only_reply",
+     "old_read_later_edited",
+     "outreach_history",
+     "pasted_error_then_fix",
+     "plan_todo_state",
+     "prior_compaction_summary",
+     "project_audit_wide_view",
+     "prompt_injection_in_tool_output",
+     "pt_en_mixed",
+     "qualifier_exception",
+     "structured_config_block"
+    ],
+    "by_category": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      2,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      0,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    }
+   }
+  }
+ },
+ "cost": {
+  "dev_v4": {
+   "items": 325,
+   "blocks_median": 363,
+   "ms_median": 184.4,
+   "ms_p90": 451.0,
+   "ms_max": 1986.6,
+   "ms_median_250_600_blocks": 193.1,
+   "n_250_600_blocks": 141,
+   "blocks_per_s": 1922,
+   "load_ms": 106,
+   "rss_after_load_mb": 39.0,
+   "peak_rss_mb": 165.3,
+   "load_avg_1m": 26.2,
+   "model_file_kb": 189
+  },
+  "dev_v3": {
+   "items": 325,
+   "blocks_median": 363,
+   "ms_median": 171.8,
+   "ms_p90": 501.7,
+   "ms_max": 1993.8,
+   "ms_median_250_600_blocks": 189.2,
+   "n_250_600_blocks": 141,
+   "blocks_per_s": 1869,
+   "load_ms": 116,
+   "rss_after_load_mb": 38.9,
+   "peak_rss_mb": 173.3,
+   "load_avg_1m": 28.2,
+   "model_file_kb": 183
+  },
+  "stress_v4": {
+   "blocks": [
+    2813
+   ],
+   "ms": [
+    6116
+   ],
+   "peak_rss_mb": 156.9,
+   "load_avg_1m": 28.5
+  },
+  "stress4_v4": {
+   "blocks": [
+    5367
+   ],
+   "ms": [
+    12698
+   ],
+   "peak_rss_mb": 264.0,
+   "load_avg_1m": 28.0
+  }
+ },
+ "grid": {
+  "v3_b0.0": {
+   "edge": {
+    "30": 28,
+    "50": 23,
+    "70": 20
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "groups": 107
+   }
+  },
+  "v3_b0.25": {
+   "edge": {
+    "30": 30,
+    "50": 26,
+    "70": 20
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.001,
+    "ci95": [
+     -0.001,
+     0.003
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0095,
+    "ci95": [
+     -0.0161,
+     -0.0021
+    ],
+    "groups": 107
+   }
+  },
+  "v3_b0.5": {
+   "edge": {
+    "30": 28,
+    "50": 26,
+    "70": 22
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.0014,
+    "ci95": [
+     -0.0015,
+     0.0041
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0187,
+    "ci95": [
+     -0.0285,
+     -0.0098
+    ],
+    "groups": 107
+   }
+  },
+  "v3_b1.0": {
+   "edge": {
+    "30": 28,
+    "50": 27,
+    "70": 23
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": -0.0002,
+    "ci95": [
+     -0.0052,
+     0.0046
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0428,
+    "ci95": [
+     -0.0578,
+     -0.0274
+    ],
+    "groups": 107
+   }
+  },
+  "v3_b2.0": {
+   "edge": {
+    "30": 29,
+    "50": 27,
+    "70": 26
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": -0.0061,
+    "ci95": [
+     -0.0139,
+     0.0021
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0908,
+    "ci95": [
+     -0.1122,
+     -0.069
+    ],
+    "groups": 107
+   }
+  },
+  "v3n_b0.0": {
+   "edge": {
+    "30": 27,
+    "50": 24,
+    "70": 20
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.0022,
+    "ci95": [
+     -0.0005,
+     0.0058
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": 0.0087,
+    "ci95": [
+     0.0028,
+     0.0148
+    ],
+    "groups": 107
+   }
+  },
+  "v3n_b0.25": {
+   "edge": {
+    "30": 30,
+    "50": 26,
+    "70": 20
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      2,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.0005,
+    "ci95": [
+     -0.0014,
+     0.0026
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0082,
+    "ci95": [
+     -0.0151,
+     -0.0012
+    ],
+    "groups": 107
+   }
+  },
+  "v3n_b0.5": {
+   "edge": {
+    "30": 29,
+    "50": 26,
+    "70": 21
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      1,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      1,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.0021,
+    "ci95": [
+     -0.0007,
+     0.005
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0131,
+    "ci95": [
+     -0.023,
+     -0.0031
+    ],
+    "groups": 107
+   }
+  },
+  "v3n_b1.0": {
+   "edge": {
+    "30": 29,
+    "50": 27,
+    "70": 23
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      3,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      4,
+      5
+     ],
+     "correct_approach_or_rule": [
+      0,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      0,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": 0.0003,
+    "ci95": [
+     -0.0044,
+     0.0046
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0405,
+    "ci95": [
+     -0.0547,
+     -0.0253
+    ],
+    "groups": 107
+   }
+  },
+  "v3n_b2.0": {
+   "edge": {
+    "30": 29,
+    "50": 27,
+    "70": 25
+   },
+   "edge_by_category": {
+    "30": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      1,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      3,
+      4
+     ]
+    },
+    "50": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      4,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      2,
+      4
+     ]
+    },
+    "70": {
+     "approve_or_pick": [
+      2,
+      2
+     ],
+     "specified_task": [
+      5,
+      6
+     ],
+     "project_audit_or_direction": [
+      0,
+      2
+     ],
+     "failure_report": [
+      5,
+      5
+     ],
+     "correct_approach_or_rule": [
+      1,
+      1
+     ],
+     "general_question": [
+      2,
+      2
+     ],
+     "git_ship": [
+      0,
+      2
+     ],
+     "handoff_prompt": [
+      1,
+      1
+     ],
+     "task_status_or_control": [
+      3,
+      4
+     ],
+     "external_accounts_and_comms": [
+      2,
+      3
+     ],
+     "supply_fact_or_step_done": [
+      1,
+      1
+     ],
+     "revise_recent_output": [
+      2,
+      2
+     ],
+     "environment_and_infra": [
+      1,
+      4
+     ]
+    }
+   },
+   "recall_vs_v3": {
+    "mean": -0.0055,
+    "ci95": [
+     -0.0133,
+     0.0021
+    ],
+    "groups": 107
+   },
+   "all_kept_vs_v3": {
+    "mean": -0.0867,
+    "ci95": [
+     -0.1069,
+     -0.065
+    ],
+    "groups": 107
+   }
+  }
+ }
+}

@@ -454,15 +454,53 @@ def bench(model_path, items):
         s2.BENCH = orig
 
 
+def grid_ci():
+    """Every grid config vs v3 on dev (select's row-based scores): per-item AUC paired group bootstrap; edge per
+    category. Diagnostic only: the pick is already fixed by select_phase."""
+    from research import edge_suite as es
+    from research import matched_budget_v2 as mb
+    D = np.load(s2.ART / 'features-dev.npz')
+    X = np.hstack([D['X'], np.load(ART / 'extras-dev.npy')])
+    items, _ = mb.eligible_dev()
+    groups = {it['item_id']: mb.evidence_groups(it) for it in items}
+    spans = defaultdict(list)
+    for r, iid in enumerate(D['item']):
+        spans[iid].append(r)
+    cases = es.load_cases()
+    per, out = {}, {}
+    for base in BASES:
+        for beta in BETAS:
+            j = Judge(build(base, beta))
+            sc = np.zeros(len(X))
+            for rs in spans.values():
+                sc[rs] = j.score_x(X[rs])
+            isc = s2.item_scores(items, D, sc)
+            pm = {it['item_id']: mb.item_metrics(it, isc[it['item_id']], groups=groups[it['item_id']]) for it in items}
+            name = f'{base}_b{beta}'
+            per[name] = {m: {k: mb.auc([(0, 1.0)] + [(b, float(pm[k][b][m])) for b in mb.BUDGETS]) for k in pm}
+                         for m in ('recall', 'all_kept')}
+            e = edge_counts(cases, j)
+            out[name] = dict(edge={str(b): e[b]['passed'] for b in es.BUDGETS},
+                             edge_by_category={str(b): e[b]['by_category'] for b in es.BUDGETS})
+    for name in out:
+        out[name].update({f'{m}_vs_v3': s3.group_bootstrap(items, per[name][m], per['v3_b0.0'][m])
+                          for m in ('recall', 'all_kept')})
+    return out
+
+
+EVAL_MODEL = ART / 'model-cand.json'
+
+
 def eval_phase():
-    """Pick vs v3 (and v3n / beta 0, the no-Opus control) on dev, jev-overlap, edge (per cut and category), cost."""
+    """Diagnostic candidate (EVAL_MODEL) vs v3 and v3n / beta 0 (the no-Opus control) on dev, jev-overlap, edge
+    (per cut and category), cost; plus grid_ci(). The adopted model is whatever select_phase wrote."""
     import os
 
     from research import edge_suite as es
     from research import matched_budget_v2 as mb
     os.environ.update(HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1')
     sel = json.loads((ART / 'select-log.json').read_text())
-    judges = dict(specialist_v4=Judge.load(ART / 'model.json'), specialist_v3=s3.Judge.load(s3.ART / 'model.json'),
+    judges = dict(specialist_v4=Judge.load(EVAL_MODEL), specialist_v3=s3.Judge.load(s3.ART / 'model.json'),
                   v4_no_opus=Judge(build('v3n', 0.0)))
     items, skip = mb.eligible_dev()
     groups = {it['item_id']: mb.evidence_groups(it) for it in items}
@@ -499,9 +537,9 @@ def eval_phase():
     edge_sc['bm25'] = es.arm_scores(cases, es.bm25)
     edge = {a: {str(b): dict(passed=v['passed'], n=v['n'], failed=v['failed'], by_category=v['by_category'])
                 for b, v in es.summary(cases, es.run(cases, sc)).items()} for a, sc in edge_sc.items()}
-    cost = dict(dev_v4=bench(ART / 'model.json', items), dev_v3=s3.bench(s3.ART / 'model.json', items))
+    cost = dict(dev_v4=bench(EVAL_MODEL, items), dev_v3=s3.bench(s3.ART / 'model.json', items))
     for p in sorted(s3.ART.glob('stress*.jsonl')):
-        cost[f'{p.stem}_v4'] = s3.bench_file(ART / 'model.json', p, V4_BENCH)
+        cost[f'{p.stem}_v4'] = s3.bench_file(EVAL_MODEL, p, V4_BENCH)
     m = judges['specialist_v4'].model
     res = dict(schema='specialist-v4/dev', labels='next-action-v2 strict USED, dev split only (test not opened)',
                model=dict(base=m['base'], beta=m['beta'], alpha=m['alpha'], k_goal=m['k_goal'], k_err=m['k_err'],
@@ -509,7 +547,8 @@ def eval_phase():
                select={k: v for k, v in sel.items()}, train=json.loads((ART / 'train-meta.json').read_text()),
                extras=json.loads((ART / 'extras-meta.json').read_text()),
                dev=dict(items=len(items), excluded=dict(skip), curves=curves, bootstrap_groups=boot, by_source=by_src),
-               jev_overlap=dict(items=len(j_items), excluded=dict(j_skip), curves=j_curves), edge_suite=edge, cost=cost)
+               jev_overlap=dict(items=len(j_items), excluded=dict(j_skip), curves=j_curves), edge_suite=edge, cost=cost,
+               grid=grid_ci())
     (ART / 'dev-results.json').write_text(json.dumps(res, indent=1))
     (OUT / 'v4-dev-results.json').write_text(json.dumps(res, indent=1) + '\n')
     return dict(model=res['model'], boot=boot, edge={a: [v[b]['passed'] for b in ('30', '50', '70')] for a, v in edge.items()},
