@@ -120,6 +120,13 @@ class Run(unittest.TestCase):
             self.assertEqual((r['calls'], r['stopped']), (1, 'max_calls'))
             self.assertEqual(lj.scores('opus', 'synthetic', root=root), {})
 
+    def test_shards_are_disjoint(self):
+        with tempfile.TemporaryDirectory() as root:
+            lj.run('opus', 'synthetic', root=root, caller=self.fake([]), items=self.items(), shard=(1, 2))
+            self.assertEqual(sorted(lj.scores('opus', 'synthetic', root=root)), ['it2'])
+            lj.run('opus', 'synthetic', root=root, caller=self.fake([]), items=self.items(), shard=(0, 2))
+            self.assertEqual(sorted(lj.scores('opus', 'synthetic', root=root)), ['it1', 'it2'])
+
 
 if __name__ == '__main__':
     unittest.main()

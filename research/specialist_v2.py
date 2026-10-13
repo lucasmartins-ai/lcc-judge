@@ -164,8 +164,9 @@ def lcc_mechanical(goal, texts):
     return [(res[str(i)][0], res[str(i)][2] is not None) for i in range(len(texts))]
 
 
-def featurize(goal, texts):
-    """goal + ordered block texts -> float32 matrix (n_blocks, len(FEATURES))."""
+def featurize(goal, texts, ctx=None):
+    """goal + ordered block texts -> float32 matrix (n_blocks, len(FEATURES)). ctx (a dict) receives the
+    per-block intermediates (meta, bodies, ks) for callers that add features (specialist_v4)."""
     n = len(texts)
     # LCC's pass first, so its intermediates are freed before ours are built (peak RSS = max, not sum).
     lcc = np.array(lcc_mechanical(goal, texts), dtype=np.float32).reshape(n, 2)
@@ -269,6 +270,8 @@ def featurize(goal, texts):
         if h is not None:
             X[i, col['dup_later']] = last_h[h] > i
             X[i, col['dup_earlier']] = first_h[h] < i
+    if ctx is not None:
+        ctx.update(meta=meta, bodies=bodies, ks=ks)
     return X
 
 

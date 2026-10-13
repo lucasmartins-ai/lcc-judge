@@ -158,7 +158,11 @@ def call_cli(arm, text, cwd):
 
 def load_set(name):
     """-> [(item_id, goal, [(block_id, text)])]. edge = synthetic fixtures (raw block text, as the saved Jev / Laya edge runs);
-    jev-overlap = the 43 dev items with saved Jev scores; dev = every eligible dev item. Never test."""
+    jev-overlap = the 43 dev items with saved Jev scores; dev = every eligible dev item; train = the frozen
+    targeted train subset of specialist_v4 (train_guard: train items only). Never test."""
+    if name == 'train':
+        from research.specialist_v4 import train_set
+        return train_set()
     if name == 'edge':
         from research.edge_suite import load_cases
         return [(c['id'], c['goal'], [(b['id'], b['text']) for b in c['blocks']]) for c in load_cases()]
@@ -169,13 +173,14 @@ def load_set(name):
     return [(it['item_id'], it['goal'], list(mb.texts_for(it).items())) for it in items]
 
 
-def run(arm, set_name, limit=None, max_calls=None, root=ROOT, caller=call_cli, items=None):
+def run(arm, set_name, limit=None, max_calls=None, root=ROOT, caller=call_cli, items=None, shard=(0, 1)):
     out = Path(root) / arm / set_name
     cwd = Path(root) / '_empty_cwd'
     out.mkdir(parents=True, exist_ok=True, mode=0o700)
     cwd.mkdir(parents=True, exist_ok=True, mode=0o700)
     calls = fails = done = 0
-    for iid, goal, pairs in (items if items is not None else load_set(set_name))[:limit]:
+    # shard k/n: items k, k+n, ... so n processes can run side by side on disjoint item dirs
+    for iid, goal, pairs in (items if items is not None else load_set(set_name))[:limit][shard[0]::shard[1]]:
         d = out / iid
         d.mkdir(exist_ok=True, mode=0o700)
         bs = batches(pairs)
@@ -220,6 +225,9 @@ def scores(arm, set_name, root=ROOT):
 def report(arm, set_name):
     """Offline: curves of the cached LLM arm vs the other arms on the same items (counts only)."""
     sc = scores(arm, set_name)
+    if set_name == 'train':  # teacher labels only: no curves on train
+        return dict(items=len(sc), blocks=sum(len(v) for v in sc.values()),
+                    unscored=sum(x is None for v in sc.values() for x in v.values()))
     if set_name == 'edge':
         from research import edge_suite as es
         cases = [c for c in es.load_cases() if c['id'] in sc]
@@ -244,11 +252,14 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument('phase', choices=('run', 'report'))
     ap.add_argument('--arm', choices=tuple(ARMS), required=True)
-    ap.add_argument('--set', default='jev-overlap', choices=('edge', 'jev-overlap', 'dev'))
+    ap.add_argument('--set', default='jev-overlap', choices=('edge', 'jev-overlap', 'dev', 'train'))
     ap.add_argument('--limit', type=int, help='max items')
     ap.add_argument('--max-calls', type=int, help='max CLI calls (batches) this run')
+    ap.add_argument('--shard', default='0/1', help='k/n: this process takes items k, k+n, ...')
     a = ap.parse_args(argv)
-    out = run(a.arm, a.set, a.limit, a.max_calls) if a.phase == 'run' else report(a.arm, a.set)
+    k, n = map(int, a.shard.split('/'))
+    assert 0 <= k < n
+    out = run(a.arm, a.set, a.limit, a.max_calls, shard=(k, n)) if a.phase == 'run' else report(a.arm, a.set)
     print(json.dumps(out, indent=1))
 
 
