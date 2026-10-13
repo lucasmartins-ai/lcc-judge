@@ -167,6 +167,8 @@ def lcc_mechanical(goal, texts):
 def featurize(goal, texts):
     """goal + ordered block texts -> float32 matrix (n_blocks, len(FEATURES))."""
     n = len(texts)
+    # LCC's pass first, so its intermediates are freed before ours are built (peak RSS = max, not sum).
+    lcc = np.array(lcc_mechanical(goal, texts), dtype=np.float32).reshape(n, 2)
     meta = block_meta(texts)
     bodies = [HEADER_RE.sub('', t).strip() for t in texts]
     chars = np.array([max(1, len(t)) for t in texts], dtype=np.float64)
@@ -194,15 +196,19 @@ def featurize(goal, texts):
         if h is not None:
             first_h.setdefault(h, i)
             last_h[h] = i
+    # Postings only for query terms (goal + recent turns): same BM25 values, without a full-vocabulary index.
+    q_goal, q_recent = TOKEN_RE.findall(goal.lower()), TOKEN_RE.findall(recent.lower())
+    qset = set(q_goal) | set(q_recent)
     postings, lens = defaultdict(list), []
     for i, b in enumerate(bodies):
         ts = TOKEN_RE.findall(b.lower())
         lens.append(len(ts))
-        for t, f in Counter(ts).items():
+        for t, f in Counter(t for t in ts if t in qset).items():
             postings[t].append((i, f))
+        del ts
     avg = (sum(lens) / n or 1) if n else 1
-    bg = bm25(TOKEN_RE.findall(goal.lower()), postings, lens, avg)
-    br = bm25(TOKEN_RE.findall(recent.lower()), postings, lens, avg)
+    bg = bm25(q_goal, postings, lens, avg)
+    br = bm25(q_recent, postings, lens, avg)
     m_arr = np.array([m[0] for m in meta], dtype=np.float64)
     m_last = m_arr.max() if n else 0
     tok_after = np.concatenate([np.cumsum(chars[::-1])[::-1][1:], [0.0]]) / chars.sum() if n else chars
@@ -233,7 +239,7 @@ def featurize(goal, texts):
     X[:, col['goal_question']] = float('?' in goal)
     X[:, col['n_blocks_log']] = math.log1p(n)
     X[:, col['goal_bm25_max_log']] = math.log1p(bg.max()) if n else 0.0
-    X[:, [col['lcc_overlap'], col['lcc_protected']]] = np.array(lcc_mechanical(goal, texts), dtype=np.float32)
+    X[:, [col['lcc_overlap'], col['lcc_protected']]] = lcc
     for i in range(n):
         m, role, kind, tool, has = meta[i]
         k, body = ks[i], bodies[i]
