@@ -40,8 +40,11 @@ TIMEOUT_S = 300
 ARMS = {
     'opus': ['claude', '-p', '--model', 'opus', '--tools', '', '--output-format', 'json',
              '--json-schema', json.dumps(SCHEMA), '--no-session-persistence', '--disable-slash-commands',
-             '--strict-mcp-config', '--permission-prompts', 'none', '--system-prompt', SYSTEM],
-    'gemini-flash': ['agy', '-p', '--model', 'Gemini 3.8 Flash (High)', '--mode', 'plan', '--sandbox',
+             '--strict-mcp-config', '--permission-prompts', 'none',
+             # no user/project settings or CLAUDE.md: ~840 vs ~13.7K overhead tokens per call (2026-10-13)
+             '--setting-sources', '', '--exclude-dynamic-system-prompt-sections', '--system-prompt', SYSTEM],
+    # agy has no stdin prompt: the prompt goes in as --print=<text> (see call()).
+    'gemini-flash': ['agy', '--model', 'Gemini 3.8 Flash (High)', '--mode', 'plan', '--sandbox',
                      '--print-timeout', f'{TIMEOUT_S}s', '--output-format', 'json', '--json-schema',
                      json.dumps(SCHEMA), '--disable-slash-commands'],
 }
@@ -144,8 +147,12 @@ def parse_output(stdout, stderr, returncode, block_ids):
 def call_cli(arm, text, cwd):
     if any(Path(cwd).iterdir()):
         raise SystemExit(f'{cwd} must stay empty')
-    r = subprocess.run(argv_for(arm), input=text, capture_output=True, text=True, cwd=cwd, timeout=TIMEOUT_S + 30,
-                       env={k: v for k, v in os.environ.items() if not k.startswith('PYTHON')})
+    argv, stdin = argv_for(arm), text
+    if arm == 'gemini-flash':
+        argv, stdin = argv + [f'--print={text}'], None
+    r = subprocess.run(argv, input=stdin, capture_output=True, text=True, cwd=cwd, timeout=TIMEOUT_S + 30,
+                       env={k: v for k, v in os.environ.items() if not k.startswith(('PYTHON', 'ANTHROPIC_'))})
+    # ^ subscription login only: an API key in the env would bill per token.
     return r.stdout, r.stderr, r.returncode
 
 
