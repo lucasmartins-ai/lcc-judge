@@ -168,6 +168,8 @@ verification violation voids that item for that arm and is reported.
     `llm_judge_arm.py`): $0 cash, hard cap **3,000 calls** over all roles;
   - **paid API**: hard cap **$400**. Spend is checked after every call from the returned `usage`, and the run stops
     before a call that could cross the cap.
+  - **Approved 2026-10-16 by the owner: subscription CLI, $0 cash, hard cap 3,000 calls over all roles (the pilot
+    included).** The paid-API route is not used.
 - **Usage-limit stop.** Wait for the reset and resume from cache. Transport errors get 1 retry, nothing else.
 - **Failures.** If an answerer or summarizer call still fails, that item is dropped from **every** arm's paired
   comparison and counted. Refusals are counted the same way.
