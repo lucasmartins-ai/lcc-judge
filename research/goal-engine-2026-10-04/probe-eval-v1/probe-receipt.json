@@ -1,0 +1,58 @@
+{
+ "created": "2026-10-16",
+ "note": "counts and sha256 only; probes stay private under ~/.lcc/bench/probe-eval-v1/<set>/probes",
+ "sets": {
+  "D": {
+   "items": 172,
+   "ids_sha256": "5c1421ee885f7c39423ef06612b00026aa16c8ead5f13c85f7a62f4356bb860e",
+   "build_failed": 0,
+   "probes_per_type": {
+    "artifact": 172,
+    "recall": 162,
+    "continuation": 172,
+    "decision": 156
+   },
+   "probe_files": 172,
+   "probes_sha256": "9cbf1ee7d960a490b89b6d58726bd6b2a2b38b0aa9b547a5fc4a58503226bc7f",
+   "fidelity": {
+    "same_blocks": 135,
+    "same_pairing": 124,
+    "pairing_differs": 15,
+    "transcript_gone": 33,
+    "blocks_differ": 4
+   },
+   "generator": {
+    "recall_dropped": 2,
+    "generator_failed": 0
+   }
+  },
+  "J": {
+   "items": 43,
+   "ids_sha256": "80b80882e8898cea40b311af60b393b16bf1027736c36cecf2b5ae92fa8d4f91",
+   "build_failed": 0,
+   "probes_per_type": {
+    "recall": 42,
+    "continuation": 39,
+    "decision": 40,
+    "artifact": 27
+   },
+   "probe_files": 43,
+   "probes_sha256": "ac79a5b3d1ab27543c27083f2ec018ee5b59be8c8bae10150679bf5a2e50cd87",
+   "fidelity": {
+    "same_blocks": 39,
+    "same_pairing": 43,
+    "blocks_differ": 4
+   },
+   "generator": {
+    "recall_dropped": 0,
+    "generator_failed": 0
+   }
+  }
+ },
+ "calls_so_far": {
+  "total": 298,
+  "failed": 11,
+  "cap": 3000
+ },
+ "order_disclosure": "The no-model arms (full, lcc_lossless, lcc_recoverable, jev_block) were computed while the probes were being generated, before this receipt was committed. The frozen generator reads only items/ (gold, window, context), never arms/, so those outputs could not inform any probe. No model-based arm or answer existed."
+}
