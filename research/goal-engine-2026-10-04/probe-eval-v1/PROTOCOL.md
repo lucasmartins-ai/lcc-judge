@@ -328,3 +328,61 @@ PYTHONPATH=<lcc worktree @af412b6>/src:/Users/Master/Downloads/LCC-judge \
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /Users/Master/LCC/.venv/bin/python \
     -m research.probe_eval_v1 {pilot|build|probes|run --arm <arm>|verify|judge|agree|score}
 ```
+
+## Amendments
+
+### Amendment 1 (2026-10-16): artifact gold counts only file paths
+
+**Change.** An artifact gold feature must also be a file path: no `://` URL, no host-like first component
+(`github.com/...`), and a known file extension on the last component (`next_action_labels.EXT_RE`). The
+hallucinated-path count (S4) uses the same file-path test. Code: `probe_eval_v1.is_file_path`.
+
+**Why.** Question A asks for "every file you expect to read or change". On the pilot, the frozen rule also put
+URLs, web routes (`/api/...`) and extension-less fragments into the gold, which no file list can contain.
+
+**How it was found, disclosed in full.**
+- It was found on the train-only pilot (10 items), before the harness freeze and before any DEV or J probe or
+  arm output existed.
+- Under the old rule, the `full` arm's mean artifact recall on the pilot was 0.45, below V1 (0.50). That result
+  prompted the look at the gold. The fix is a definition change that the question text implies; no threshold
+  was changed.
+- The pilot was **not** re-scored under the new rule.
+
+**Approval.** The owner approved it on 2026-10-16 ("Sim pode passar"); the approval was relayed by the session
+that started this one.
+
+**Effect on the population (counts only).**
+- D: 201 → **172 items, 75 groups** (claude 52, hermes 86, codex 34), 9.40 M heuristic tokens of `C`.
+- J: 43 items, unchanged; 27 of them carry artifact gold (was 30).
+- Power line: with n = 172 and 75 groups, the minimum detectable difference rises from about 0.11 to about 0.12.
+
+### Amendment 2 (2026-10-16): implementation choices made on the pilot (code only, disclosed)
+
+1. **Context source.** Raw Codex rollouts were rotated after the 2026-10-12 label build (13 remain), so `C` is
+   rebuilt for every item from the private block-text store (`next-action-v1/texts/<store>.json`) that the label
+   build wrote.
+   - Dossier blocks are parsed back from their render headers.
+   - The pieces of an oversized span are rejoined without a separator.
+   - Each item must re-split to exactly its labelled block ids, or it is dropped and counted (`build_failed`).
+   - tool_use ids are synthetic: a result pairs with the oldest open call of the same tool in the latest earlier
+     message.
+   - Blank-line runs inside a block become one blank line.
+   - Pilot fidelity against a fresh transcript rebuild: 8/8 items with identical blocks (whitespace-collapsed),
+     7/8 with identical call/result pairing. One Hermes result whose call lies outside `C` was paired with an
+     open call.
+   - The `fidelity` phase reports the same counts on D and J.
+2. **The decision question** gets the same leak check as the recall question: no gold feature of the item.
+3. **Judge.** One Opus call per item covers every arm's records, shuffled, with ids `r01…` (fewer calls than
+   estimated).
+4. **Wrapper texts** around the frozen ones:
+   - the summarizer system line;
+   - the answerer system line;
+   - "Return JSON …" format lines;
+   - for Gemini, "Do not use any tools. Reply with the JSON object only." (on the pilot, `agy` otherwise tried a
+     tool and returned nothing).
+5. **Native re-attach** reads `Read` / `read_file` / `view` / `open_file` results. Codex items have no file-read
+   tool (shell only), so they get no re-attached files.
+6. **Usage-limit detection** looks only at error envelopes. A false stop on the pilot came from a summary's own
+   text.
+7. **Pilot spend:** 82 subscription calls, of which 11 failed: 8 from the string-payload parser bug, 1 summarizer
+   transport failure and 2 Gemini tool refusals.
