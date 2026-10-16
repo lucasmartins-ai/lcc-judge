@@ -386,3 +386,17 @@ that started this one.
    text.
 7. **Pilot spend:** 82 subscription calls, of which 11 failed: 8 from the string-payload parser bug, 1 summarizer
    transport failure and 2 Gemini tool refusals.
+
+### Amendment 3 (2026-10-16): harness freeze
+
+The harness is frozen below; from this commit on, no code, prompt or criterion changes. Every non-pilot phase
+checks every `path` / sha256 pair in this file's tables (`probe_eval_v1.frozen_files`) and the frozen texts.
+No DEV or J probe, arm output or answer existed when this was committed.
+
+| frozen file | sha256 |
+|---|---|
+| `research/probe_eval_v1.py` | `fa520220168f3a79c59753396b7596d0b20cf7d7958755cc724e9a43ff49363d` |
+| `tests/test_probe_eval_v1.py` | `afb977ea461db6d0044280166c1b571396308ca8433031ff90f5bf4b299d0057` |
+| `research/goal-engine-2026-10-04/probe-eval-v1/harness-tests.log` (12 passed) | `0becb50d8f51974359e92415eab80f734b323f7a5c7a502e83098703486c56a5` |
+
+LCC worktree for the rules arms: `~/.lcc/bench/lcc-af412b6`, detached at `af412b6`, clean tree.

@@ -72,6 +72,22 @@ def frozen_texts():
     return out
 
 
+def frozen_files():
+    """Every `path` | `sha256` pair in PROTOCOL.md's tables (repo files and private next-action-v1 files) must match."""
+    bad = []
+    for row in PROTOCOL.read_text().splitlines():
+        if not row.startswith('|'):
+            continue
+        paths = re.findall(r'`((?:research|tests)/[^`]+|next-action-v1/[^`]+)`', row)
+        hashes = re.findall(r'`([0-9a-f]{64})`', row)
+        for p, h in zip(paths, hashes):
+            f = (V1 / p.removeprefix('next-action-v1/')) if p.startswith('next-action-v1/') else REPO / p
+            if not f.exists() or hashlib.sha256(f.read_bytes()).hexdigest() != h:
+                bad.append(p)
+    if bad:
+        raise SystemExit(f'frozen files changed: {bad}: refusing to run')
+
+
 # --- gold (pure; tested) ----------------------------------------------------------------------------------
 def usable(e):
     return not e['refetched'] and not e['generic'] and bool(e['blocks'])
@@ -971,6 +987,8 @@ def main(argv=None):
     ap.add_argument('--set', required=True, choices=('pilot', 'D', 'J'))
     ap.add_argument('--arm')
     a = ap.parse_args(argv)
+    if a.set != 'pilot':
+        frozen_files()
     fn = {'select': select, 'build': build, 'fidelity': fidelity, 'probes': probes, 'judge': judge, 'agree': agree, 'score': score}
     try:
         res = (arm(a.set, a.arm) if a.phase == 'arm' else answer(a.set, a.arm) if a.phase == 'answer'
