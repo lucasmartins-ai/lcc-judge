@@ -1,0 +1,25 @@
+{
+ "cutoff_utc": "2026-10-13T00:00:00.000Z",
+ "created_utc": "2026-10-17T12:59:16+00:00",
+ "labels": "next-action v2 extractor + v2 generic features (train groups)",
+ "items": 208,
+ "per_source": {
+  "claude": 195,
+  "codex": 3,
+  "hermes": 10
+ },
+ "with_agent_action": 206,
+ "groups": 36,
+ "content_linked_to_train_dev": 0,
+ "dropped": {},
+ "builder_skips": {
+  "claude:no_prior_assistant": 30,
+  "split_checked_equal": 9,
+  "codex:no_prior_assistant": 2,
+  "codex:replay_or_copy": 3,
+  "hermes:no_prior_assistant": 3
+ },
+ "sha256": {
+  "items_manifest": "bb32679d69de215525391cb70f27c8c937490bc3766317ede0cc9d60e1df8fea"
+ }
+}
