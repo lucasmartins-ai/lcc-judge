@@ -1,0 +1,1262 @@
+{
+ "created": "2026-10-17",
+ "note": "aggregates only; per-item data private under ~/.lcc/bench/probe-eval-v1",
+ "D": {
+  "score": {
+   "set": "D",
+   "items": 172,
+   "build_failed": 0,
+   "items_all_arms": 172,
+   "dropped": 0,
+   "judge_agreement": {
+    "dim": "artifact_trail",
+    "records": 248,
+    "qwk": 0.9169
+   },
+   "arms": {
+    "full": {
+     "artifact_recall_mean": 0.6401,
+     "artifact_n": 172,
+     "artifact_all": [
+      0.4244,
+      0.353,
+      0.4991
+     ],
+     "recall_exact": [
+      0.9815,
+      0.947,
+      0.9937
+     ],
+     "items_with_hallucinated_path": [
+      0.6395,
+      0.5655,
+      0.7075
+     ],
+     "tokens_pooled": 9413889,
+     "judge_mean": {
+      "accuracy": 3.707,
+      "context_awareness": 3.965,
+      "artifact_trail": 3.736,
+      "completeness": 3.956,
+      "continuity": 3.811,
+      "instruction_following": 4.264
+     }
+    },
+    "native": {
+     "artifact_recall_mean": 0.5874,
+     "artifact_n": 172,
+     "artifact_all": [
+      0.3721,
+      0.3034,
+      0.4464
+     ],
+     "recall_exact": [
+      0.7284,
+      0.6552,
+      0.791
+     ],
+     "items_with_hallucinated_path": [
+      0.6395,
+      0.5655,
+      0.7075
+     ],
+     "tokens_pooled": 980990,
+     "judge_mean": {
+      "accuracy": 3.112,
+      "context_awareness": 3.376,
+      "artifact_trail": 3.144,
+      "completeness": 3.332,
+      "continuity": 3.192,
+      "instruction_following": 3.855
+     }
+    },
+    "lcc_lossless": {
+     "artifact_recall_mean": 0.6445,
+     "artifact_n": 172,
+     "artifact_all": [
+      0.4128,
+      0.3419,
+      0.4875
+     ],
+     "recall_exact": [
+      0.9877,
+      0.9561,
+      0.9966
+     ],
+     "items_with_hallucinated_path": [
+      0.6105,
+      0.5359,
+      0.6802
+     ],
+     "tokens_pooled": 9379002,
+     "judge_mean": {
+      "accuracy": 3.709,
+      "context_awareness": 3.967,
+      "artifact_trail": 3.748,
+      "completeness": 3.953,
+      "continuity": 3.821,
+      "instruction_following": 4.211
+     }
+    },
+    "lcc_recoverable": {
+     "artifact_recall_mean": 0.6551,
+     "artifact_n": 172,
+     "artifact_all": [
+      0.4477,
+      0.3753,
+      0.5223
+     ],
+     "recall_exact": [
+      0.9815,
+      0.947,
+      0.9937
+     ],
+     "items_with_hallucinated_path": [
+      0.6047,
+      0.5301,
+      0.6747
+     ],
+     "tokens_pooled": 9370453,
+     "judge_mean": {
+      "accuracy": 3.724,
+      "context_awareness": 3.967,
+      "artifact_trail": 3.746,
+      "completeness": 3.953,
+      "continuity": 3.829,
+      "instruction_following": 4.266
+     }
+    }
+   },
+   "contrasts": {
+    "lcc_lossless-native": {
+     "level": 0.975,
+     "n": 172,
+     "groups": 75,
+     "ci": [
+      0.0571,
+      0.018,
+      0.0932
+     ]
+    },
+    "lcc_recoverable-native": {
+     "level": 0.975,
+     "n": 172,
+     "groups": 75,
+     "ci": [
+      0.0676,
+      0.0214,
+      0.1145
+     ]
+    },
+    "lcc_lossless-full": {
+     "level": 0.95,
+     "n": 172,
+     "groups": 75,
+     "ci": [
+      0.0044,
+      -0.0256,
+      0.0357
+     ]
+    },
+    "lcc_recoverable-full": {
+     "level": 0.95,
+     "n": 172,
+     "groups": 75,
+     "ci": [
+      0.0149,
+      -0.0099,
+      0.041
+     ]
+    }
+   },
+   "calls": 1899
+  },
+  "table": {
+   "set": "D",
+   "items": 172,
+   "complete": 172,
+   "groups": 75,
+   "arms": {
+    "full": {
+     "artifact_recall": [
+      0.6401,
+      0.5817,
+      0.6929
+     ],
+     "recall_exact": [
+      0.9815,
+      0.9577,
+      1.0
+     ],
+     "continuation_target": [
+      0.3841,
+      0.2941,
+      0.4737
+     ],
+     "halluc_items": [
+      0.6395,
+      0.5455,
+      0.7241
+     ],
+     "judge_accuracy": [
+      3.6957,
+      3.6181,
+      3.785
+     ],
+     "judge_context_awareness": [
+      3.9574,
+      3.8809,
+      4.0435
+     ],
+     "judge_artifact_trail": [
+      3.7229,
+      3.6416,
+      3.8095
+     ],
+     "judge_completeness": [
+      3.9443,
+      3.8568,
+      4.0375
+     ],
+     "judge_continuity": [
+      3.7994,
+      3.7164,
+      3.8902
+     ],
+     "judge_instruction_following": [
+      4.2442,
+      4.1949,
+      4.2956
+     ],
+     "judge_overall_artifact": [
+      2.9816,
+      2.8357,
+      3.1309
+     ],
+     "judge_overall_recall": [
+      4.9403,
+      4.8828,
+      4.9792
+     ],
+     "judge_overall_continuation": [
+      3.0649,
+      2.898,
+      3.2422
+     ],
+     "judge_overall_decision": [
+      4.781,
+      4.7192,
+      4.8406
+     ],
+     "tokens": 9413889
+    },
+    "native": {
+     "artifact_recall": [
+      0.5874,
+      0.525,
+      0.6483
+     ],
+     "recall_exact": [
+      0.7284,
+      0.6519,
+      0.8047
+     ],
+     "continuation_target": [
+      0.245,
+      0.1727,
+      0.3172
+     ],
+     "halluc_items": [
+      0.6395,
+      0.5455,
+      0.7171
+     ],
+     "judge_accuracy": [
+      3.0891,
+      2.9418,
+      3.2446
+     ],
+     "judge_context_awareness": [
+      3.359,
+      3.219,
+      3.5108
+     ],
+     "judge_artifact_trail": [
+      3.1221,
+      2.9744,
+      3.2863
+     ],
+     "judge_completeness": [
+      3.3149,
+      3.1524,
+      3.482
+     ],
+     "judge_continuity": [
+      3.1739,
+      3.0245,
+      3.3271
+     ],
+     "judge_instruction_following": [
+      3.8343,
+      3.7469,
+      3.9178
+     ],
+     "judge_overall_artifact": [
+      2.7762,
+      2.6336,
+      2.9422
+     ],
+     "judge_overall_recall": [
+      3.6461,
+      3.3872,
+      3.9176
+     ],
+     "judge_overall_continuation": [
+      2.7965,
+      2.6412,
+      2.9673
+     ],
+     "judge_overall_decision": [
+      4.2222,
+      4.045,
+      4.3907
+     ],
+     "tokens": 980990
+    },
+    "lcc_lossless": {
+     "artifact_recall": [
+      0.6445,
+      0.5911,
+      0.6945
+     ],
+     "recall_exact": [
+      0.9877,
+      0.9669,
+      1.0
+     ],
+     "continuation_target": [
+      0.4106,
+      0.3228,
+      0.4966
+     ],
+     "halluc_items": [
+      0.6105,
+      0.5077,
+      0.7027
+     ],
+     "judge_accuracy": [
+      3.6933,
+      3.6127,
+      3.7865
+     ],
+     "judge_context_awareness": [
+      3.954,
+      3.8752,
+      4.0417
+     ],
+     "judge_artifact_trail": [
+      3.7326,
+      3.6428,
+      3.8267
+     ],
+     "judge_completeness": [
+      3.9331,
+      3.8466,
+      4.0278
+     ],
+     "judge_continuity": [
+      3.8043,
+      3.7179,
+      3.8992
+     ],
+     "judge_instruction_following": [
+      4.1894,
+      4.1442,
+      4.2405
+     ],
+     "judge_overall_artifact": [
+      2.9961,
+      2.8503,
+      3.1551
+     ],
+     "judge_overall_recall": [
+      4.9475,
+      4.9162,
+      4.9737
+     ],
+     "judge_overall_continuation": [
+      3.0446,
+      2.8642,
+      3.2235
+     ],
+     "judge_overall_decision": [
+      4.7695,
+      4.7045,
+      4.8321
+     ],
+     "tokens": 9379002
+    },
+    "lcc_recoverable": {
+     "artifact_recall": [
+      0.6551,
+      0.6004,
+      0.7075
+     ],
+     "recall_exact": [
+      0.9815,
+      0.9577,
+      1.0
+     ],
+     "continuation_target": [
+      0.3576,
+      0.2611,
+      0.451
+     ],
+     "halluc_items": [
+      0.6047,
+      0.5033,
+      0.6951
+     ],
+     "judge_accuracy": [
+      3.7103,
+      3.6293,
+      3.7939
+     ],
+     "judge_context_awareness": [
+      3.9535,
+      3.8742,
+      4.0365
+     ],
+     "judge_artifact_trail": [
+      3.7321,
+      3.6432,
+      3.8174
+     ],
+     "judge_completeness": [
+      3.9394,
+      3.849,
+      4.0364
+     ],
+     "judge_continuity": [
+      3.8149,
+      3.7295,
+      3.8982
+     ],
+     "judge_instruction_following": [
+      4.251,
+      4.2014,
+      4.3003
+     ],
+     "judge_overall_artifact": [
+      2.9952,
+      2.8456,
+      3.1548
+     ],
+     "judge_overall_recall": [
+      4.927,
+      4.8651,
+      4.9736
+     ],
+     "judge_overall_continuation": [
+      3.1066,
+      2.9069,
+      3.2976
+     ],
+     "judge_overall_decision": [
+      4.766,
+      4.7077,
+      4.8201
+     ],
+     "tokens": 9370453
+    }
+   },
+   "contrasts": {
+    "lcc_lossless-native": {
+     "artifact_recall": [
+      0.0571,
+      0.0228,
+      0.0887
+     ],
+     "judge_artifact_trail": [
+      0.6105,
+      0.5054,
+      0.7157
+     ],
+     "judge_overall": [
+      0.5689,
+      0.4728,
+      0.6686
+     ]
+    },
+    "lcc_recoverable-native": {
+     "artifact_recall": [
+      0.0676,
+      0.0277,
+      0.1063
+     ],
+     "judge_artifact_trail": [
+      0.61,
+      0.4928,
+      0.725
+     ],
+     "judge_overall": [
+      0.5846,
+      0.4766,
+      0.6958
+     ]
+    },
+    "lcc_lossless-full": {
+     "artifact_recall": [
+      0.0044,
+      -0.0256,
+      0.0357
+     ],
+     "judge_artifact_trail": [
+      0.0097,
+      -0.0377,
+      0.0559
+     ],
+     "judge_overall": [
+      -0.0095,
+      -0.0401,
+      0.0214
+     ]
+    },
+    "lcc_recoverable-full": {
+     "artifact_recall": [
+      0.0149,
+      -0.0099,
+      0.041
+     ],
+     "judge_artifact_trail": [
+      0.0092,
+      -0.0272,
+      0.0437
+     ],
+     "judge_overall": [
+      0.0062,
+      -0.0291,
+      0.0371
+     ]
+    }
+   },
+   "agreement": {
+    "dim": "artifact_trail",
+    "records": 0,
+    "qwk": null
+   }
+  }
+ },
+ "J": {
+  "score": {
+   "set": "J",
+   "items": 43,
+   "build_failed": 0,
+   "items_all_arms": 43,
+   "dropped": 0,
+   "judge_agreement": {
+    "dim": "artifact_trail",
+    "records": 45,
+    "qwk": 0.947
+   },
+   "arms": {
+    "full": {
+     "artifact_recall_mean": 0.687,
+     "artifact_n": 27,
+     "artifact_all": [
+      0.5185,
+      0.3399,
+      0.6926
+     ],
+     "recall_exact": [
+      1.0,
+      0.9162,
+      1.0
+     ],
+     "items_with_hallucinated_path": [
+      0.5349,
+      0.3892,
+      0.6749
+     ],
+     "tokens_pooled": 1964659,
+     "judge_mean": {
+      "accuracy": 3.98,
+      "context_awareness": 4.189,
+      "artifact_trail": 4.014,
+      "completeness": 4.203,
+      "continuity": 4.088,
+      "instruction_following": 4.304
+     }
+    },
+    "native": {
+     "artifact_recall_mean": 0.5054,
+     "artifact_n": 27,
+     "artifact_all": [
+      0.2963,
+      0.1585,
+      0.4848
+     ],
+     "recall_exact": [
+      0.8095,
+      0.667,
+      0.9002
+     ],
+     "items_with_hallucinated_path": [
+      0.4651,
+      0.3251,
+      0.6108
+     ],
+     "tokens_pooled": 216196,
+     "judge_mean": {
+      "accuracy": 3.243,
+      "context_awareness": 3.486,
+      "artifact_trail": 3.345,
+      "completeness": 3.412,
+      "continuity": 3.311,
+      "instruction_following": 3.939
+     }
+    },
+    "lcc_lossless": {
+     "artifact_recall_mean": 0.6088,
+     "artifact_n": 27,
+     "artifact_all": [
+      0.4074,
+      0.2451,
+      0.5927
+     ],
+     "recall_exact": [
+      1.0,
+      0.9162,
+      1.0
+     ],
+     "items_with_hallucinated_path": [
+      0.5581,
+      0.4111,
+      0.6957
+     ],
+     "tokens_pooled": 1955831,
+     "judge_mean": {
+      "accuracy": 3.905,
+      "context_awareness": 4.128,
+      "artifact_trail": 3.946,
+      "completeness": 4.108,
+      "continuity": 4.02,
+      "instruction_following": 4.351
+     }
+    },
+    "lcc_recoverable": {
+     "artifact_recall_mean": 0.6451,
+     "artifact_n": 27,
+     "artifact_all": [
+      0.4815,
+      0.3074,
+      0.6601
+     ],
+     "recall_exact": [
+      1.0,
+      0.9162,
+      1.0
+     ],
+     "items_with_hallucinated_path": [
+      0.5581,
+      0.4111,
+      0.6957
+     ],
+     "tokens_pooled": 1955831,
+     "judge_mean": {
+      "accuracy": 3.932,
+      "context_awareness": 4.081,
+      "artifact_trail": 3.993,
+      "completeness": 4.101,
+      "continuity": 4.02,
+      "instruction_following": 4.277
+     }
+    },
+    "jev_block": {
+     "artifact_recall_mean": 0.6272,
+     "artifact_n": 27,
+     "artifact_all": [
+      0.4074,
+      0.2451,
+      0.5927
+     ],
+     "recall_exact": [
+      1.0,
+      0.9162,
+      1.0
+     ],
+     "items_with_hallucinated_path": [
+      0.5116,
+      0.3675,
+      0.6538
+     ],
+     "tokens_pooled": 1897755,
+     "judge_mean": {
+      "accuracy": 3.905,
+      "context_awareness": 4.115,
+      "artifact_trail": 3.953,
+      "completeness": 4.101,
+      "continuity": 4.007,
+      "instruction_following": 4.216
+     }
+    }
+   },
+   "contrasts": {
+    "lcc_lossless-native": {
+     "level": 0.975,
+     "n": 27,
+     "groups": 24,
+     "ci": [
+      0.1034,
+      -0.0471,
+      0.257
+     ]
+    },
+    "lcc_recoverable-native": {
+     "level": 0.975,
+     "n": 27,
+     "groups": 24,
+     "ci": [
+      0.1397,
+      0.0282,
+      0.2718
+     ]
+    },
+    "lcc_lossless-full": {
+     "level": 0.95,
+     "n": 27,
+     "groups": 24,
+     "ci": [
+      -0.0782,
+      -0.192,
+      0.014
+     ]
+    },
+    "lcc_recoverable-full": {
+     "level": 0.95,
+     "n": 27,
+     "groups": 24,
+     "ci": [
+      -0.042,
+      -0.1282,
+      0.0154
+     ]
+    },
+    "jev_block-native": {
+     "level": 0.95,
+     "n": 27,
+     "groups": 24,
+     "ci": [
+      0.1218,
+      -0.0229,
+      0.2752
+     ]
+    },
+    "jev_block-full": {
+     "level": 0.95,
+     "n": 27,
+     "groups": 24,
+     "ci": [
+      -0.0599,
+      -0.15,
+      0.0033
+     ]
+    }
+   },
+   "calls": 1899
+  },
+  "table": {
+   "set": "J",
+   "items": 43,
+   "complete": 43,
+   "groups": 35,
+   "arms": {
+    "full": {
+     "artifact_recall": [
+      0.687,
+      0.546,
+      0.8167
+     ],
+     "recall_exact": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "continuation_target": [
+      0.3226,
+      0.1481,
+      0.5
+     ],
+     "halluc_items": [
+      0.5349,
+      0.3721,
+      0.6829
+     ],
+     "judge_accuracy": [
+      4.0581,
+      3.8925,
+      4.219
+     ],
+     "judge_context_awareness": [
+      4.2539,
+      4.0833,
+      4.4167
+     ],
+     "judge_artifact_trail": [
+      4.0872,
+      3.8934,
+      4.2704
+     ],
+     "judge_completeness": [
+      4.2674,
+      4.1042,
+      4.4185
+     ],
+     "judge_continuity": [
+      4.1531,
+      3.9825,
+      4.3163
+     ],
+     "judge_instruction_following": [
+      4.343,
+      4.2329,
+      4.4438
+     ],
+     "judge_overall_artifact": [
+      3.0309,
+      2.6839,
+      3.36
+     ],
+     "judge_overall_recall": [
+      4.9603,
+      4.912,
+      4.9921
+     ],
+     "judge_overall_continuation": [
+      3.2863,
+      2.9189,
+      3.6463
+     ],
+     "judge_overall_decision": [
+      4.8208,
+      4.6984,
+      4.9218
+     ],
+     "tokens": 1964659
+    },
+    "native": {
+     "artifact_recall": [
+      0.5054,
+      0.3556,
+      0.6499
+     ],
+     "recall_exact": [
+      0.8095,
+      0.6842,
+      0.9167
+     ],
+     "continuation_target": [
+      0.2258,
+      0.1,
+      0.3667
+     ],
+     "halluc_items": [
+      0.4651,
+      0.3,
+      0.619
+     ],
+     "judge_accuracy": [
+      3.2984,
+      3.0107,
+      3.5704
+     ],
+     "judge_context_awareness": [
+      3.5329,
+      3.2537,
+      3.8032
+     ],
+     "judge_artifact_trail": [
+      3.3895,
+      3.1159,
+      3.6473
+     ],
+     "judge_completeness": [
+      3.4302,
+      3.1143,
+      3.732
+     ],
+     "judge_continuity": [
+      3.3314,
+      3.0292,
+      3.6267
+     ],
+     "judge_instruction_following": [
+      3.9632,
+      3.8004,
+      4.1259
+     ],
+     "judge_overall_artifact": [
+      2.6358,
+      2.2778,
+      3.0
+     ],
+     "judge_overall_recall": [
+      3.8889,
+      3.4593,
+      4.2963
+     ],
+     "judge_overall_continuation": [
+      2.9188,
+      2.5833,
+      3.3023
+     ],
+     "judge_overall_decision": [
+      4.0792,
+      3.7632,
+      4.3643
+     ],
+     "tokens": 216196
+    },
+    "lcc_lossless": {
+     "artifact_recall": [
+      0.6088,
+      0.4527,
+      0.7573
+     ],
+     "recall_exact": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "continuation_target": [
+      0.3548,
+      0.1935,
+      0.5294
+     ],
+     "halluc_items": [
+      0.5581,
+      0.3902,
+      0.7143
+     ],
+     "judge_accuracy": [
+      3.9787,
+      3.7807,
+      4.178
+     ],
+     "judge_context_awareness": [
+      4.1802,
+      3.9937,
+      4.3622
+     ],
+     "judge_artifact_trail": [
+      4.0136,
+      3.8159,
+      4.2183
+     ],
+     "judge_completeness": [
+      4.155,
+      3.9685,
+      4.3387
+     ],
+     "judge_continuity": [
+      4.0814,
+      3.8969,
+      4.2667
+     ],
+     "judge_instruction_following": [
+      4.3934,
+      4.2868,
+      4.4981
+     ],
+     "judge_overall_artifact": [
+      2.9444,
+      2.5733,
+      3.321
+     ],
+     "judge_overall_recall": [
+      4.9802,
+      4.9583,
+      4.9961
+     ],
+     "judge_overall_continuation": [
+      3.141,
+      2.7952,
+      3.4697
+     ],
+     "judge_overall_decision": [
+      4.8042,
+      4.6748,
+      4.912
+     ],
+     "tokens": 1955831
+    },
+    "lcc_recoverable": {
+     "artifact_recall": [
+      0.6451,
+      0.4907,
+      0.7853
+     ],
+     "recall_exact": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "continuation_target": [
+      0.2903,
+      0.1562,
+      0.4324
+     ],
+     "halluc_items": [
+      0.5581,
+      0.3864,
+      0.7143
+     ],
+     "judge_accuracy": [
+      4.0136,
+      3.8236,
+      4.2083
+     ],
+     "judge_context_awareness": [
+      4.1453,
+      3.9671,
+      4.3211
+     ],
+     "judge_artifact_trail": [
+      4.062,
+      3.877,
+      4.2463
+     ],
+     "judge_completeness": [
+      4.1628,
+      3.9909,
+      4.3333
+     ],
+     "judge_continuity": [
+      4.0872,
+      3.8992,
+      4.2736
+     ],
+     "judge_instruction_following": [
+      4.3256,
+      4.2093,
+      4.4352
+     ],
+     "judge_overall_artifact": [
+      2.9568,
+      2.5926,
+      3.3333
+     ],
+     "judge_overall_recall": [
+      4.9643,
+      4.9187,
+      4.9958
+     ],
+     "judge_overall_continuation": [
+      3.0897,
+      2.7333,
+      3.435
+     ],
+     "judge_overall_decision": [
+      4.8292,
+      4.7065,
+      4.9246
+     ],
+     "tokens": 1955831
+    },
+    "jev_block": {
+     "artifact_recall": [
+      0.6272,
+      0.4776,
+      0.772
+     ],
+     "recall_exact": [
+      1.0,
+      1.0,
+      1.0
+     ],
+     "continuation_target": [
+      0.3226,
+      0.1714,
+      0.4848
+     ],
+     "halluc_items": [
+      0.5116,
+      0.3478,
+      0.6667
+     ],
+     "judge_accuracy": [
+      3.9767,
+      3.7763,
+      4.1718
+     ],
+     "judge_context_awareness": [
+      4.1725,
+      3.9709,
+      4.3663
+     ],
+     "judge_artifact_trail": [
+      4.0116,
+      3.8042,
+      4.2083
+     ],
+     "judge_completeness": [
+      4.1473,
+      3.9605,
+      4.3259
+     ],
+     "judge_continuity": [
+      4.0659,
+      3.8728,
+      4.2464
+     ],
+     "judge_instruction_following": [
+      4.2578,
+      4.1199,
+      4.387
+     ],
+     "judge_overall_artifact": [
+      2.9136,
+      2.5133,
+      3.3194
+     ],
+     "judge_overall_recall": [
+      4.8929,
+      4.7838,
+      4.9735
+     ],
+     "judge_overall_continuation": [
+      3.1239,
+      2.7639,
+      3.4778
+     ],
+     "judge_overall_decision": [
+      4.8333,
+      4.7143,
+      4.9302
+     ],
+     "tokens": 1897755
+    }
+   },
+   "contrasts": {
+    "lcc_lossless-native": {
+     "artifact_recall": [
+      0.1034,
+      -0.0263,
+      0.239
+     ],
+     "judge_artifact_trail": [
+      0.624,
+      0.401,
+      0.8617
+     ],
+     "judge_overall": [
+      0.6428,
+      0.4054,
+      0.8822
+     ]
+    },
+    "lcc_recoverable-native": {
+     "artifact_recall": [
+      0.1397,
+      0.042,
+      0.2542
+     ],
+     "judge_artifact_trail": [
+      0.6725,
+      0.4463,
+      0.9204
+     ],
+     "judge_overall": [
+      0.6418,
+      0.4112,
+      0.8776
+     ]
+    },
+    "lcc_lossless-full": {
+     "artifact_recall": [
+      -0.0782,
+      -0.192,
+      0.014
+     ],
+     "judge_artifact_trail": [
+      -0.0736,
+      -0.1667,
+      0.0116
+     ],
+     "judge_overall": [
+      -0.0601,
+      -0.1344,
+      0.0073
+     ]
+    },
+    "lcc_recoverable-full": {
+     "artifact_recall": [
+      -0.042,
+      -0.1282,
+      0.0154
+     ],
+     "judge_artifact_trail": [
+      -0.0252,
+      -0.1008,
+      0.0437
+     ],
+     "judge_overall": [
+      -0.061,
+      -0.1263,
+      -0.0056
+     ]
+    },
+    "jev_block-native": {
+     "artifact_recall": [
+      0.1218,
+      -0.0229,
+      0.2752
+     ],
+     "judge_artifact_trail": [
+      0.6221,
+      0.375,
+      0.8833
+     ],
+     "judge_overall": [
+      0.6143,
+      0.371,
+      0.875
+     ]
+    },
+    "jev_block-full": {
+     "artifact_recall": [
+      -0.0599,
+      -0.15,
+      0.0033
+     ],
+     "judge_artifact_trail": [
+      -0.0756,
+      -0.1581,
+      0.0019
+     ],
+     "judge_overall": [
+      -0.0885,
+      -0.1599,
+      -0.0266
+     ]
+    }
+   },
+   "agreement": {
+    "dim": "artifact_trail",
+    "records": 45,
+    "qwk": 0.947
+   }
+  }
+ },
+ "calls": {
+  "total": 1899,
+  "failed": 212,
+  "cap": 3000
+ },
+ "gate_claim": {
+  "decision": "BLOCK",
+  "claimSupported": 0.73,
+  "evidenceStrength": 2.34,
+  "requiredLabel": "INFERIDO"
+ }
+}
