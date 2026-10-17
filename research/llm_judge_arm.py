@@ -159,7 +159,11 @@ def call_cli(arm, text, cwd):
 def load_set(name):
     """-> [(item_id, goal, [(block_id, text)])]. edge = synthetic fixtures (raw block text, as the saved Jev / Laya edge runs);
     jev-overlap = the 43 dev items with saved Jev scores; dev = every eligible dev item; train = the frozen
-    targeted train subset of specialist_v4 (train_guard: train items only). Never test."""
+    targeted train subset of specialist_v4 (train_guard: train items only); heldout = the pre-registered LLM
+    subset of the v3 final test (research.v3_final_test.llm_set). Never test."""
+    if name == 'heldout':
+        from research.v3_final_test import llm_set
+        return llm_set()
     if name == 'train':
         from research.specialist_v4 import train_set
         return train_set()
@@ -252,7 +256,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument('phase', choices=('run', 'report'))
     ap.add_argument('--arm', choices=tuple(ARMS), required=True)
-    ap.add_argument('--set', default='jev-overlap', choices=('edge', 'jev-overlap', 'dev', 'train'))
+    ap.add_argument('--set', default='jev-overlap', choices=('edge', 'jev-overlap', 'dev', 'train', 'heldout'))
     ap.add_argument('--limit', type=int, help='max items')
     ap.add_argument('--max-calls', type=int, help='max CLI calls (batches) this run')
     ap.add_argument('--shard', default='0/1', help='k/n: this process takes items k, k+n, ...')
