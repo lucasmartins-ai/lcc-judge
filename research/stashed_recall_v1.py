@@ -32,7 +32,7 @@ ROOT = Path('/Users/Master/.lcc/bench/stashed-recall-v1')
 SHIM = Path(__file__).with_name('recall_mcp_shim.py')
 PIN = dict(worktree='/Users/Master/.lcc/bench/lcc-4719fde', commit='4719fde')
 SEED = 20261017
-CALL_CAP = 900
+CALL_CAP = 1150  # Amendment 4 (owner-approved; Amendment 2 had approved 1 100)
 TIMEOUT_S = 1200
 ARMS = ('full_t', 'stashed_t', 'stashed_0')
 TOOL_ARMS = ('full_t', 'stashed_t')
@@ -595,6 +595,15 @@ def score(s):
     res['behaviour']['R1_stash_probe_recall'] = pev.wilson(sum(sp_hits), len(sp_hits))
     res['behaviour']['R1_needed_recall_descriptive'] = res['behaviour'].pop('R1_needed_recall')
     res['V']['V3_stash_probes'] = len(sp_hits)
+    single_p = ROOT / s / 'single-run-ids.json'  # Amendment 4: items answered by one driver only
+    if single_p.exists():
+        single = set(pev.rj(single_p)['ids'])
+        sb = [o['stashed_t']['behaviour'] for iid, (_, o) in zip(ids_of(s), rows)
+              if iid in single and all(o.get(a) is not None for a in ARMS)]
+        sh = [b['stash_probe_hit'] for b in sb if 'stash_probe_hit' in b]
+        res['behaviour_single_run'] = dict(
+            items=len(sb), R1_stash_probe_recall=pev.wilson(sum(sh), len(sh)),
+            R2_precision=pev.wilson(sum(b['useful_calls'] for b in sb), sum(b['ok_calls'] for b in sb)))
     for a in ARMS:
         ex = [o[a]['stash_exact'] for _, o in full if 'stash_exact' in o[a]]
         res['arms'][a]['stash_exact'] = pev.wilson(int(sum(ex)), len(ex))

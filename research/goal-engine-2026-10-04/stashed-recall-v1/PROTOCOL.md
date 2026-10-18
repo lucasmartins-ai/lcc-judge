@@ -232,9 +232,43 @@ existed when this was committed (only the count-only D preview of Amendment 1).
 
 | frozen file | sha256 |
 |---|---|
-| `research/stashed_recall_v1.py` | `2e4cfca7f897358efb301a8ed7b397db5299fc02fd4299be52694d52e52817db` |
+| `research/stashed_recall_v1.py` (superseded by Amendment 4) | 2e4cfca7f897358efb301a8ed7b397db5299fc02fd4299be52694d52e52817db (old, not checked), see below |
 | `research/recall_mcp_shim.py` | `bcc5e01dca3316fd0d619c5f5f599adc4d17c904fa0530c2515f3d6b67cf8ffb` |
 | `tests/test_stashed_recall_v1.py` | `9af94a3d510b469cad19d28b8c587070bd6f706577d32403f7d3424687f1ec83` |
-| `research/goal-engine-2026-10-04/stashed-recall-v1/harness-tests.log` (19 passed) | `558fc69d463ccc3db39c0b59fdc43b63f769fb03855ce338fcf20fcef4a47467` |
+| `research/goal-engine-2026-10-04/stashed-recall-v1/harness-tests.log` (19 passed; superseded by Amendment 4) | 558fc69d463ccc3db39c0b59fdc43b63f769fb03855ce338fcf20fcef4a47467 (old, not checked), see below |
 
 Pilot spend at freeze: 51 subscription calls (the stash-probe pilot and one re-answer included).
+
+### Amendment 4 (2026-10-18): call-cap bug, concurrent-driver incident, partial re-run
+
+**Approved 2026-10-18 by the owner** ("Aprovo a Emenda 4: corrigir CALL_CAP, rerodar os 21 itens inconsistentes do
+stashed_t em sequência, limite de 1.150 chamadas, e reportar R1/R2 também nos 55 itens de execução única. Pode
+terminar o D."). This is a change after the freeze; it is disclosed in full and the run is reported with it.
+
+**What happened.**
+1. The frozen harness kept `CALL_CAP = 900` although Amendment 2 approved 1 100. The run stopped at the judge
+   phase with "call cap 900 reached" (901 calls logged).
+2. After a 429 session limit the first D driver was believed dead and a second driver was started at
+   2026-10-18 12:10:35 BST. The first was only sleeping; both then ran `stashed_t`, `stashed_0` and the judge
+   phase at the same time. About 180 answer calls were duplicated, which is why the cap was hit.
+3. Answer files are whole answers from one execution (last writer wins); no answer is a mix. For `full_t` and
+   `stashed_0` (no tool state) a duplicate is an independent draw of the same call, so their answers stand.
+   For `stashed_t` both executions appended to the same recall log, so a log may not belong to the saved answer.
+
+**Consistency rule (from the data).** On the 55 `stashed_t` items answered before 12:10:35 (one driver only),
+`_turns − 2` equals the number of recall-log lines on every item. On the other 117, 96 satisfy it and 21 do not
+(16 of them have visibly interleaved logs).
+
+**Changes.**
+- `CALL_CAP = 1150` (this amendment's cap). No other code path changed except the score addition below.
+- The 21 inconsistent `stashed_t` items (`<private>/D/rerun-ids.json`) are archived with their logs and
+  re-answered once, sequentially, by a single driver.
+- `score` adds `behaviour_single_run`: R1 (stash probes) and R2 on the 55 single-run items
+  (`<private>/D/single-run-ids.json`). The 96 consistent re-used items could still, rarely, pair an answer with the
+  other execution's log of equal length; the single-run subset bounds that risk.
+- The two D judge records written during the overlap were made from complete answer sets and are kept.
+
+| frozen file | sha256 |
+|---|---|
+| `research/stashed_recall_v1.py` | `5165946086a353ceef386d973c22982d42b43e1d732b575e2b606e933778dee5` |
+| `research/goal-engine-2026-10-04/stashed-recall-v1/harness-tests.log` (19 passed) | `c5371b2a7d581179ac5352557e1b0334d26e30a67b5a18d90c517ab774daf9b6` |
