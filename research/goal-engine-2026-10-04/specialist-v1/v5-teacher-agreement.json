@@ -1,0 +1,123 @@
+{
+ "schema": "v5/teacher-agreement",
+ "note": "detector vs Opus yes/no answers on candidate blocks / pairs; recall is relative to the loose candidate pools; counts only",
+ "calls_by_tag": {
+  "gen": 130,
+  "review": 1,
+  "teacher-edge": 50,
+  "teacher-train": 105
+ },
+ "calls_total": 286,
+ "sets": {
+  "train": {
+   "questions": 1252,
+   "answered": 1252,
+   "detectors": {
+    "user_directive (user turns)": {
+     "n": 500,
+     "opus_yes": 249,
+     "det_yes": 282,
+     "precision": 0.699,
+     "recall": 0.791
+    },
+    "qualifier marker (user turns)": {
+     "n": 500,
+     "opus_yes": 52,
+     "det_yes": 46,
+     "precision": 0.609,
+     "recall": 0.538
+    },
+    "value_conflict vs newer": {
+     "n": 148,
+     "opus_yes": 6,
+     "det_yes": 8,
+     "precision": 0.25,
+     "recall": 0.333
+    },
+    "ordinal/said ref": {
+     "n": 150,
+     "opus_yes": 2,
+     "det_yes": 1,
+     "precision": 0.0,
+     "recall": 0.0
+    },
+    "injection (non-user blocks)": {
+     "n": 302,
+     "opus_yes": 15,
+     "det_yes": 1,
+     "precision": 0.0,
+     "recall": 0.0
+    },
+    "hedge (assistant turns)": {
+     "n": 200,
+     "opus_yes": 97,
+     "det_yes": 119,
+     "precision": 0.79,
+     "recall": 0.969
+    },
+    "value_conflict": {
+     "n": 152,
+     "opus_yes": 2,
+     "det_yes": 9,
+     "precision": 0.0,
+     "recall": 0.0
+    }
+   }
+  },
+  "edge": {
+   "questions": 593,
+   "answered": 593,
+   "detectors": {
+    "user_directive (user turns)": {
+     "n": 141,
+     "opus_yes": 74,
+     "det_yes": 57,
+     "precision": 0.947,
+     "recall": 0.73
+    },
+    "qualifier marker (user turns)": {
+     "n": 141,
+     "opus_yes": 15,
+     "det_yes": 18,
+     "precision": 0.611,
+     "recall": 0.733
+    },
+    "ordinal/said ref": {
+     "n": 91,
+     "opus_yes": 13,
+     "det_yes": 16,
+     "precision": 0.312,
+     "recall": 0.385
+    },
+    "value_conflict": {
+     "n": 102,
+     "opus_yes": 30,
+     "det_yes": 13,
+     "precision": 0.846,
+     "recall": 0.367
+    },
+    "injection (non-user blocks)": {
+     "n": 157,
+     "opus_yes": 8,
+     "det_yes": 8,
+     "precision": 1.0,
+     "recall": 1.0
+    },
+    "value_conflict vs newer": {
+     "n": 102,
+     "opus_yes": 26,
+     "det_yes": 13,
+     "precision": 0.769,
+     "recall": 0.385
+    },
+    "hedge (assistant turns)": {
+     "n": 89,
+     "opus_yes": 29,
+     "det_yes": 29,
+     "precision": 0.931,
+     "recall": 0.931
+    }
+   }
+  }
+ }
+}

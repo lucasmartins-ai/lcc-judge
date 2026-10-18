@@ -1,0 +1,904 @@
+{
+ "schema": "specialist-v5/dev",
+ "rule": "V5_SELECTION_RULE.md",
+ "items": 325,
+ "excluded": {
+  "no_used_candidate": 28,
+  "no_agent_action": 8
+ },
+ "v3": {
+  "dev": {
+   "recall": 0.8872,
+   "all_kept": 0.4446
+  },
+  "old": [
+   28,
+   23,
+   20
+  ],
+  "dev2": [
+   41,
+   23,
+   11
+  ],
+  "dev2_by_type": {
+   "contradiction": [
+    3,
+    3,
+    1,
+    7
+   ],
+   "coreference": [
+    3,
+    3,
+    0,
+    7
+   ],
+   "general": [
+    14,
+    9,
+    5,
+    18
+   ],
+   "git_wide_view": [
+    2,
+    1,
+    1,
+    7
+   ],
+   "prompt_injection": [
+    2,
+    1,
+    0,
+    7
+   ],
+   "pt_en_mixed": [
+    5,
+    1,
+    1,
+    7
+   ],
+   "qualifier_exception": [
+    2,
+    1,
+    1,
+    7
+   ],
+   "source_authority": [
+    3,
+    0,
+    0,
+    7
+   ],
+   "structured_config": [
+    3,
+    2,
+    1,
+    7
+   ],
+   "supersession": [
+    4,
+    2,
+    1,
+    7
+   ]
+  },
+  "old_by_category": {
+   "approve_or_pick": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "correct_approach_or_rule": [
+    1,
+    1,
+    0,
+    1
+   ],
+   "environment_and_infra": [
+    3,
+    2,
+    2,
+    4
+   ],
+   "external_accounts_and_comms": [
+    3,
+    1,
+    1,
+    3
+   ],
+   "failure_report": [
+    4,
+    4,
+    4,
+    5
+   ],
+   "general_question": [
+    2,
+    2,
+    2,
+    2
+   ],
+   "git_ship": [
+    1,
+    0,
+    0,
+    2
+   ],
+   "handoff_prompt": [
+    1,
+    0,
+    0,
+    1
+   ],
+   "project_audit_or_direction": [
+    0,
+    0,
+    0,
+    2
+   ],
+   "revise_recent_output": [
+    2,
+    2,
+    1,
+    2
+   ],
+   "specified_task": [
+    5,
+    5,
+    5,
+    6
+   ],
+   "supply_fact_or_step_done": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "task_status_or_control": [
+    3,
+    3,
+    2,
+    4
+   ]
+  }
+ },
+ "log": [
+  {
+   "config": "b2_s12",
+   "bonus": 2.0,
+   "cascade": true,
+   "dev": {
+    "recall": 0.884,
+    "all_kept": 0.4395
+   },
+   "dev_vs_v3": {
+    "recall": {
+     "mean": -0.0032,
+     "ci95": [
+      -0.0069,
+      -0.0009
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": -0.0051,
+     "ci95": [
+      -0.01,
+      -0.0016
+     ],
+     "groups": 107
+    }
+   },
+   "old": [
+    31,
+    28,
+    25
+   ],
+   "dev2": [
+    63,
+    46,
+    22
+   ],
+   "dev2_by_type": {
+    "contradiction": [
+     3,
+     3,
+     1,
+     7
+    ],
+    "coreference": [
+     7,
+     4,
+     1,
+     7
+    ],
+    "general": [
+     16,
+     14,
+     8,
+     18
+    ],
+    "git_wide_view": [
+     7,
+     5,
+     5,
+     7
+    ],
+    "prompt_injection": [
+     5,
+     2,
+     0,
+     7
+    ],
+    "pt_en_mixed": [
+     4,
+     3,
+     2,
+     7
+    ],
+    "qualifier_exception": [
+     6,
+     5,
+     3,
+     7
+    ],
+    "source_authority": [
+     5,
+     1,
+     0,
+     7
+    ],
+    "structured_config": [
+     4,
+     4,
+     1,
+     7
+    ],
+    "supersession": [
+     6,
+     5,
+     1,
+     7
+    ]
+   },
+   "old_by_category": {
+    "approve_or_pick": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "correct_approach_or_rule": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "environment_and_infra": [
+     3,
+     3,
+     3,
+     4
+    ],
+    "external_accounts_and_comms": [
+     3,
+     2,
+     2,
+     3
+    ],
+    "failure_report": [
+     4,
+     4,
+     4,
+     5
+    ],
+    "general_question": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "git_ship": [
+     1,
+     1,
+     0,
+     2
+    ],
+    "handoff_prompt": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "project_audit_or_direction": [
+     2,
+     1,
+     1,
+     2
+    ],
+    "revise_recent_output": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "specified_task": [
+     5,
+     5,
+     5,
+     6
+    ],
+    "supply_fact_or_step_done": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "task_status_or_control": [
+     4,
+     4,
+     3,
+     4
+    ]
+   },
+   "eligible_dev": false,
+   "eligible_old_edge": true,
+   "eligible_dev_edge": true,
+   "eligible": false
+  },
+  {
+   "config": "b2_s1",
+   "bonus": 2.0,
+   "cascade": null,
+   "dev": {
+    "recall": 0.884,
+    "all_kept": 0.4395
+   },
+   "dev_vs_v3": {
+    "recall": {
+     "mean": -0.0032,
+     "ci95": [
+      -0.0069,
+      -0.0009
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": -0.0051,
+     "ci95": [
+      -0.01,
+      -0.0016
+     ],
+     "groups": 107
+    }
+   },
+   "old": [
+    31,
+    28,
+    25
+   ],
+   "dev2": [
+    63,
+    44,
+    21
+   ],
+   "dev2_by_type": {
+    "contradiction": [
+     3,
+     3,
+     1,
+     7
+    ],
+    "coreference": [
+     7,
+     4,
+     1,
+     7
+    ],
+    "general": [
+     16,
+     14,
+     9,
+     18
+    ],
+    "git_wide_view": [
+     7,
+     5,
+     5,
+     7
+    ],
+    "prompt_injection": [
+     5,
+     2,
+     0,
+     7
+    ],
+    "pt_en_mixed": [
+     4,
+     2,
+     2,
+     7
+    ],
+    "qualifier_exception": [
+     6,
+     4,
+     2,
+     7
+    ],
+    "source_authority": [
+     5,
+     1,
+     0,
+     7
+    ],
+    "structured_config": [
+     4,
+     4,
+     1,
+     7
+    ],
+    "supersession": [
+     6,
+     5,
+     0,
+     7
+    ]
+   },
+   "old_by_category": {
+    "approve_or_pick": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "correct_approach_or_rule": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "environment_and_infra": [
+     3,
+     3,
+     3,
+     4
+    ],
+    "external_accounts_and_comms": [
+     3,
+     2,
+     2,
+     3
+    ],
+    "failure_report": [
+     4,
+     4,
+     4,
+     5
+    ],
+    "general_question": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "git_ship": [
+     1,
+     1,
+     0,
+     2
+    ],
+    "handoff_prompt": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "project_audit_or_direction": [
+     2,
+     1,
+     1,
+     2
+    ],
+    "revise_recent_output": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "specified_task": [
+     5,
+     5,
+     5,
+     6
+    ],
+    "supply_fact_or_step_done": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "task_status_or_control": [
+     4,
+     4,
+     3,
+     4
+    ]
+   },
+   "eligible_dev": false,
+   "eligible_old_edge": true,
+   "eligible_dev_edge": true,
+   "eligible": false
+  },
+  {
+   "config": "b3_s12",
+   "bonus": 3.0,
+   "cascade": true,
+   "dev": {
+    "recall": 0.8839,
+    "all_kept": 0.4395
+   },
+   "dev_vs_v3": {
+    "recall": {
+     "mean": -0.0033,
+     "ci95": [
+      -0.007,
+      -0.0009
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": -0.0051,
+     "ci95": [
+      -0.01,
+      -0.0016
+     ],
+     "groups": 107
+    }
+   },
+   "old": [
+    32,
+    30,
+    27
+   ],
+   "dev2": [
+    64,
+    48,
+    25
+   ],
+   "dev2_by_type": {
+    "contradiction": [
+     4,
+     3,
+     1,
+     7
+    ],
+    "coreference": [
+     7,
+     4,
+     1,
+     7
+    ],
+    "general": [
+     16,
+     14,
+     9,
+     18
+    ],
+    "git_wide_view": [
+     7,
+     6,
+     6,
+     7
+    ],
+    "prompt_injection": [
+     5,
+     3,
+     0,
+     7
+    ],
+    "pt_en_mixed": [
+     4,
+     3,
+     2,
+     7
+    ],
+    "qualifier_exception": [
+     6,
+     5,
+     3,
+     7
+    ],
+    "source_authority": [
+     5,
+     1,
+     0,
+     7
+    ],
+    "structured_config": [
+     4,
+     4,
+     1,
+     7
+    ],
+    "supersession": [
+     6,
+     5,
+     2,
+     7
+    ]
+   },
+   "old_by_category": {
+    "approve_or_pick": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "correct_approach_or_rule": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "environment_and_infra": [
+     4,
+     4,
+     3,
+     4
+    ],
+    "external_accounts_and_comms": [
+     3,
+     2,
+     2,
+     3
+    ],
+    "failure_report": [
+     4,
+     4,
+     4,
+     5
+    ],
+    "general_question": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "git_ship": [
+     1,
+     1,
+     1,
+     2
+    ],
+    "handoff_prompt": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "project_audit_or_direction": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "revise_recent_output": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "specified_task": [
+     5,
+     5,
+     5,
+     6
+    ],
+    "supply_fact_or_step_done": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "task_status_or_control": [
+     4,
+     4,
+     3,
+     4
+    ]
+   },
+   "eligible_dev": false,
+   "eligible_old_edge": true,
+   "eligible_dev_edge": true,
+   "eligible": false
+  },
+  {
+   "config": "b3_s1",
+   "bonus": 3.0,
+   "cascade": null,
+   "dev": {
+    "recall": 0.884,
+    "all_kept": 0.4395
+   },
+   "dev_vs_v3": {
+    "recall": {
+     "mean": -0.0033,
+     "ci95": [
+      -0.007,
+      -0.0009
+     ],
+     "groups": 107
+    },
+    "all_kept": {
+     "mean": -0.0051,
+     "ci95": [
+      -0.01,
+      -0.0016
+     ],
+     "groups": 107
+    }
+   },
+   "old": [
+    32,
+    30,
+    27
+   ],
+   "dev2": [
+    64,
+    46,
+    23
+   ],
+   "dev2_by_type": {
+    "contradiction": [
+     4,
+     3,
+     1,
+     7
+    ],
+    "coreference": [
+     7,
+     4,
+     1,
+     7
+    ],
+    "general": [
+     16,
+     14,
+     9,
+     18
+    ],
+    "git_wide_view": [
+     7,
+     6,
+     6,
+     7
+    ],
+    "prompt_injection": [
+     5,
+     3,
+     0,
+     7
+    ],
+    "pt_en_mixed": [
+     4,
+     2,
+     2,
+     7
+    ],
+    "qualifier_exception": [
+     6,
+     4,
+     2,
+     7
+    ],
+    "source_authority": [
+     5,
+     1,
+     0,
+     7
+    ],
+    "structured_config": [
+     4,
+     4,
+     1,
+     7
+    ],
+    "supersession": [
+     6,
+     5,
+     1,
+     7
+    ]
+   },
+   "old_by_category": {
+    "approve_or_pick": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "correct_approach_or_rule": [
+     1,
+     1,
+     0,
+     1
+    ],
+    "environment_and_infra": [
+     4,
+     4,
+     3,
+     4
+    ],
+    "external_accounts_and_comms": [
+     3,
+     2,
+     2,
+     3
+    ],
+    "failure_report": [
+     4,
+     4,
+     4,
+     5
+    ],
+    "general_question": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "git_ship": [
+     1,
+     1,
+     1,
+     2
+    ],
+    "handoff_prompt": [
+     1,
+     0,
+     0,
+     1
+    ],
+    "project_audit_or_direction": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "revise_recent_output": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "specified_task": [
+     5,
+     5,
+     5,
+     6
+    ],
+    "supply_fact_or_step_done": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "task_status_or_control": [
+     4,
+     4,
+     3,
+     4
+    ]
+   },
+   "eligible_dev": false,
+   "eligible_old_edge": true,
+   "eligible_dev_edge": true,
+   "eligible": false
+  }
+ ],
+ "pick": null,
+ "adopt": false,
+ "cost": null
+}

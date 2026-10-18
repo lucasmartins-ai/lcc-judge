@@ -50,3 +50,14 @@ described: if v5's sealed pass count at 50% is not above v3's, the dev-edge gain
 - The sealed cases were written by the same generator and prompt as dev-edge (same author, Opus), so the sealed
   number measures generalisation to new cases of the same kind, not to real sessions.
 - One raw case (plan 0) was read during the generator smoke test and was forced into dev before the split.
+
+## Amendment 1 (2026-10-18, after `select`, before the sealed set was opened)
+
+`select` found **no eligible config**: every config fails step 1 (dev recall CI lower bound about -0.007, all-kept
+about -0.010, both below -0.005), while passing steps 2 and 3. So **v5 is not adopted** and v3 stays the shipped
+specialist (`v5-dev-results.json`).
+
+Step 6 still runs once, as planned, so the owner gets the honest generalisation number for the detectors. With
+no pick, the config measured on the sealed set is **b3_s12** (bonus 3, stage 1 + cascade): the config step 4
+would pick if step 1 were ignored (most dev-edge v2 passes). It is reported as a diagnostic of the detectors on
+new edge cases, not as an adoption decision. Budgets (step 5) are measured on the same config for the record.
