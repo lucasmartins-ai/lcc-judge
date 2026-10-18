@@ -17,7 +17,7 @@ from pathlib import Path
 
 from research import llm_judge_arm as lj
 
-ROOT = Path('/Users/Master/.lcc/bench/v5')
+ROOT = Path.home() / '.lcc/bench/v5'
 LEDGER = ROOT / 'opus-calls.jsonl'
 CACHE = ROOT / 'opus-cache'
 CAP = 1500

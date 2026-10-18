@@ -30,8 +30,8 @@ from pathlib import Path
 from research import edge_cases_build as eb
 from research import opus_cli
 
-ROOT = Path('/Users/Master/.lcc/bench/edge-v2')
-SEALED = Path('/Users/Master/.lcc/bench/edge-v2-sealed')
+ROOT = Path.home() / '.lcc/bench/edge-v2'
+SEALED = Path.home() / '.lcc/bench/edge-v2-sealed'
 FIX2 = eb.ROOT / 'tests' / 'fixtures' / 'edge_cases_v2'
 OUT = eb.OUT
 SEED = 20261018
