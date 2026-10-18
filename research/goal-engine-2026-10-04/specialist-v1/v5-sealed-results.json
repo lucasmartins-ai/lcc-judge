@@ -1,0 +1,426 @@
+{
+ "schema": "specialist-v5/sealed-edge-v2",
+ "n": 49,
+ "arms": {
+  "v3": {
+   "cuts": [
+    26,
+    19,
+    10
+   ],
+   "by_type": {
+    "contradiction": [
+     1,
+     1,
+     0,
+     4
+    ],
+    "coreference": [
+     1,
+     0,
+     0,
+     4
+    ],
+    "general": [
+     10,
+     8,
+     5,
+     12
+    ],
+    "git_wide_view": [
+     1,
+     0,
+     0,
+     4
+    ],
+    "prompt_injection": [
+     3,
+     2,
+     1,
+     4
+    ],
+    "pt_en_mixed": [
+     3,
+     3,
+     2,
+     4
+    ],
+    "qualifier_exception": [
+     2,
+     1,
+     0,
+     5
+    ],
+    "source_authority": [
+     1,
+     1,
+     0,
+     4
+    ],
+    "structured_config": [
+     3,
+     2,
+     2,
+     4
+    ],
+    "supersession": [
+     1,
+     1,
+     0,
+     4
+    ]
+   }
+  },
+  "v5": {
+   "cuts": [
+    35,
+    30,
+    20
+   ],
+   "by_type": {
+    "contradiction": [
+     1,
+     1,
+     0,
+     4
+    ],
+    "coreference": [
+     2,
+     1,
+     1,
+     4
+    ],
+    "general": [
+     10,
+     9,
+     6,
+     12
+    ],
+    "git_wide_view": [
+     1,
+     1,
+     1,
+     4
+    ],
+    "prompt_injection": [
+     3,
+     3,
+     1,
+     4
+    ],
+    "pt_en_mixed": [
+     3,
+     3,
+     2,
+     4
+    ],
+    "qualifier_exception": [
+     4,
+     4,
+     2,
+     5
+    ],
+    "source_authority": [
+     3,
+     2,
+     1,
+     4
+    ],
+    "structured_config": [
+     4,
+     3,
+     3,
+     4
+    ],
+    "supersession": [
+     4,
+     3,
+     3,
+     4
+    ]
+   }
+  },
+  "bm25": {
+   "cuts": [
+    32,
+    22,
+    14
+   ],
+   "by_type": {
+    "contradiction": [
+     2,
+     2,
+     2,
+     4
+    ],
+    "coreference": [
+     3,
+     1,
+     0,
+     4
+    ],
+    "general": [
+     8,
+     6,
+     3,
+     12
+    ],
+    "git_wide_view": [
+     0,
+     0,
+     0,
+     4
+    ],
+    "prompt_injection": [
+     3,
+     2,
+     2,
+     4
+    ],
+    "pt_en_mixed": [
+     3,
+     1,
+     1,
+     4
+    ],
+    "qualifier_exception": [
+     5,
+     3,
+     1,
+     5
+    ],
+    "source_authority": [
+     3,
+     3,
+     2,
+     4
+    ],
+    "structured_config": [
+     2,
+     2,
+     1,
+     4
+    ],
+    "supersession": [
+     3,
+     2,
+     2,
+     4
+    ]
+   }
+  },
+  "recency": {
+   "cuts": [
+    19,
+    4,
+    0
+   ],
+   "by_type": {
+    "contradiction": [
+     0,
+     0,
+     0,
+     4
+    ],
+    "coreference": [
+     2,
+     1,
+     0,
+     4
+    ],
+    "general": [
+     7,
+     2,
+     0,
+     12
+    ],
+    "git_wide_view": [
+     0,
+     0,
+     0,
+     4
+    ],
+    "prompt_injection": [
+     0,
+     0,
+     0,
+     4
+    ],
+    "pt_en_mixed": [
+     3,
+     1,
+     0,
+     4
+    ],
+    "qualifier_exception": [
+     0,
+     0,
+     0,
+     5
+    ],
+    "source_authority": [
+     0,
+     0,
+     0,
+     4
+    ],
+    "structured_config": [
+     4,
+     0,
+     0,
+     4
+    ],
+    "supersession": [
+     3,
+     0,
+     0,
+     4
+    ]
+   }
+  },
+  "oracle": {
+   "cuts": [
+    49,
+    49,
+    49
+   ],
+   "by_type": {
+    "contradiction": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "coreference": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "general": [
+     12,
+     12,
+     12,
+     12
+    ],
+    "git_wide_view": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "prompt_injection": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "pt_en_mixed": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "qualifier_exception": [
+     5,
+     5,
+     5,
+     5
+    ],
+    "source_authority": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "structured_config": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "supersession": [
+     4,
+     4,
+     4,
+     4
+    ]
+   }
+  },
+  "opus": {
+   "cuts": [
+    49,
+    49,
+    47
+   ],
+   "by_type": {
+    "contradiction": [
+     4,
+     4,
+     3,
+     4
+    ],
+    "coreference": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "general": [
+     12,
+     12,
+     12,
+     12
+    ],
+    "git_wide_view": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "prompt_injection": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "pt_en_mixed": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "qualifier_exception": [
+     5,
+     5,
+     5,
+     5
+    ],
+    "source_authority": [
+     4,
+     4,
+     4,
+     4
+    ],
+    "structured_config": [
+     4,
+     4,
+     3,
+     4
+    ],
+    "supersession": [
+     4,
+     4,
+     4,
+     4
+    ]
+   }
+  }
+ },
+ "opus_run": {
+  "calls": 123,
+  "items_done": 49,
+  "stopped": null
+ },
+ "opus_calls_total": 528
+}

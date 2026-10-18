@@ -45,7 +45,14 @@ AT_RISK = 0.70  # cascade band: blocks that some budget <= 70% would drop after 
 
 # --- text helpers --------------------------------------------------------------------------------------------
 def fold(s):
-    return ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c)).lower()
+    """Lowercase, accents stripped. ASCII fast path; otherwise NFKD and drop combining marks (C-speed)."""
+    if s.isascii():
+        return s.lower()
+    d = unicodedata.normalize('NFKD', s)
+    return d.translate(_COMBINING).lower()
+
+
+_COMBINING = {c: None for c in range(0x300, 0x370)}  # combining diacritical marks
 
 
 IDENT_RE = re.compile(r'([a-z])([A-Z])')
@@ -183,9 +190,15 @@ SAID_RE = re.compile(r"\b(?:(?:tu|voce|vc) (?:falou|disse|sugeriu|propos|comento
 META_RE = re.compile(r"[|\\]|\binject|regex|pattern|detect|guard|sanitiz", re.I)
 
 
+INJ_HINTS = ('ignor', 'disregard', 'system', 'note to', 'agent', 'assistant', 'tool', 'do not', 'para ', 'se voce')
+
+
 def injected(text):
     """INJECTION_RE outside quotes / code / text about injection itself (seen in the owner's own tooling)."""
-    for m in INJECTION_RE.finditer(text[:20000]):
+    t = text[:20000]
+    if not any(k in t for k in INJ_HINTS):  # cheap pre-filter: every INJECTION_RE branch contains one of these
+        return False
+    for m in INJECTION_RE.finditer(t):
         lo, hi = text.rfind('\n', 0, m.start()) + 1, text.find('\n', m.end())
         line = text[lo:hi if hi >= 0 else None]
         if not META_RE.search(line.replace(m.group(0), '')):
@@ -215,6 +228,7 @@ def unit_class(u):
     return None
 
 
+DIGIT_RE = re.compile(r'\d')
 NOFACT_RE = re.compile(r'\{"|\\n|</?[a-z]|classname|class=|style=|https?://|wall time|\bcommit [0-9a-f]{7}|^\s*[0-9a-f]{7} |'
                        r'\b(?:in|took|elapsed) \d[\d.]*\s*(?:ms|s|sec)|\bpassed\b|\bfailed\b|\[\s*\d+%\]|uploaded|'
                        r'\btests?:|\d+/\d+\)', re.I)
@@ -229,7 +243,7 @@ def facts(body, cap=40):
     """[(qty, value, line stems, line)]: numbers with a unit class, and config 'key: value' leaves (qty = 'k:<key>')."""
     out = []
     for line in body[:12000].splitlines():
-        if len(line) > 300 or not any(c.isdigit() for c in line) or NOFACT_RE.search(line):
+        if len(line) > 300 or not DIGIT_RE.search(line) or NOFACT_RE.search(line):
             continue
         st = stems(line)
         for m in UNIT_RE.finditer(line):
@@ -775,7 +789,11 @@ def final_phase(opus=True):
     if not marker.exists():
         marker.write_text(json.dumps(dict(opened=__import__('time').time(), n=len(sealed))))
     arms = {}
-    for name, j in (('v3', s3.Judge.load()), ('v5', Judge.load())):
+    diag = ART / 'model-diag.json'  # Amendment 1: no eligible pick; the sealed diagnostic config is b3_s12
+    if not (ART / 'model.json').exists() and not diag.exists():
+        diag.write_text(json.dumps(build(3.0, cascade=True)))
+    v5 = Judge.load(ART / 'model.json' if (ART / 'model.json').exists() else diag)
+    for name, j in (('v3', s3.Judge.load()), ('v5', v5)):
         arms[name] = edge_counts(sealed, j)[1]
     arms['bm25'] = es.arm_scores(sealed, es.bm25)
     arms['recency'] = es.arm_scores(sealed, es.recency)

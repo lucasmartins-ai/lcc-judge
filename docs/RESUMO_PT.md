@@ -5,6 +5,48 @@ de cada tabela ou frase. `R/` = `research/goal-engine-2026-10-04/`. Nenhum texto
 privada aparece aqui, só contagens. Quase tudo é **INFERIDO** (exploratório, uma passada,
 juízes LLM ou um único revisor), não MEDIDO.
 
+## Atualização 2026-10-18 (noite): ciclo v5, detectores determinísticos com casos de borda
+
+Detalhes em `R/specialist-v1/V5_DEV_RESULTS.md`. A regra de seleção foi commitada antes de medir
+(`R/specialist-v1/V5_SELECTION_RULE.md`).
+
+- **Suíte de borda v2:** o Opus escreveu 130 casos sintéticos, e os 130 passaram na validação. 81 ficaram
+  visíveis (dev-edge) e 49 foram lacrados. O recibo com os hashes foi commitado antes de qualquer detector.
+  **Sua revisão está pendente:** `R/specialist-v1/edge-v2-review.csv` tem 20 casos em português simples. Marque
+  ok ou errado.
+- **Detectores:**
+  - regra, exceção ou correção dita pelo usuário;
+  - vocabulário pt/en (glossário de 234 termos e quebra de nomes como `shippingFee`);
+  - git status e convenção de commit, pulando doc antiga;
+  - "o segundo" e "do jeito que você falou";
+  - valores conflitantes;
+  - ligação entre a exceção e o dado que a dispara.
+
+  Injeção dentro de saída de ferramenta só é marcada: o bloco fica e nunca vira regra.
+- **Opus como professor rápido:** 1.845 perguntas de sim/não em 155 chamadas. Serviram para medir e ajustar os
+  padrões, nunca como alvo. Exemplo: "regra do usuário" acerta 95% no dev-edge e 70% nas sessões reais de
+  treino.
+- **Resultado na régua de dev (sessões reais):** **v5 não foi adotado.** Recall caiu 0,003 e all-kept caiu
+  0,005, e os ICs passam do limite de −0,005. O diagnóstico, feito depois da decisão, aponta quase tudo para a
+  proteção das regras do usuário. A régua conta como "usado" o que o agente reaproveitou em seguida, e uma regra
+  obedecida quase nunca é reaproveitada. Por isso a régua pune guardar regras por construção (INFERIDO).
+- **Resultado nos casos lacrados (aberto uma vez, número honesto):**
+
+  | Braço | Passa a 30% | Passa a 50% | Passa a 70% |
+  |---|---:|---:|---:|
+  | v3 | 26 | 19 | 10 |
+  | v5 | 35 | 30 | 20 |
+  | BM25 | 32 | 22 | 14 |
+  | Opus | 49 | 49 | 47 |
+
+  A parte determinística melhorou bastante em casos novos, como você esperava, mas ainda fica longe do Opus.
+  Contradição e pt/en não melhoraram no lacrado.
+- **Custo:** cerca de 1,7x o tempo do v3, o que provavelmente estoura os 250 ms. A memória (127 a 147 MB) e o
+  tamanho do modelo (183 KB) ficam dentro do limite.
+- **Opus:** 528 chamadas de 1.500, sem bater limite.
+- **Próximo passo sugerido:** proteger as regras curtas do usuário no próprio LCC, que já protege alguns blocos,
+  e medir por resultado da tarefa. A régua de próxima ação não enxerga esse ganho.
+
 ## Atualização 2026-10-18: teste final do especialista v3
 
 Protocolo pré-registrado: `R/specialist-v1/V3_FINAL_TEST_PROTOCOL.md`. Resultado em

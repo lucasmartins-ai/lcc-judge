@@ -1,0 +1,165 @@
+{
+ "note": "DIAGNOSTIC after the v5 decision (dev used for diagnosis only, not selection): mean per-item AUC v5 - v3, (worse, better) items; variant = detectors switched off on top of stale+hedge",
+ "items": 325,
+ "fired": {
+  "hedge": 191,
+  "stale": 574,
+  "goal_xling": 405,
+  "value_conflict": 44,
+  "user_directive": 709,
+  "git_state": 71,
+  "convention": 44,
+  "translated_only": 45,
+  "qualifier_link": 44,
+  "other_env": 95,
+  "injection": 5,
+  "ordinal_ref": 1,
+  "said_ref": 2
+ },
+ "ablation": {
+  "stale-hedge": {
+   "recall": [
+    -0.0033,
+    63,
+    16
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-user_directive": {
+   "recall": [
+    -0.0004,
+    16,
+    8
+   ],
+   "all_kept": [
+    -0.0015,
+    3,
+    0
+   ]
+  },
+  "stale-hedge-goal_xling": {
+   "recall": [
+    -0.0029,
+    60,
+    15
+   ],
+   "all_kept": [
+    -0.0046,
+    7,
+    0
+   ]
+  },
+  "stale-hedge-translated_only": {
+   "recall": [
+    -0.0033,
+    62,
+    16
+   ],
+   "all_kept": [
+    -0.0046,
+    7,
+    0
+   ]
+  },
+  "stale-hedge-git_state": {
+   "recall": [
+    -0.0032,
+    62,
+    15
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-convention": {
+   "recall": [
+    -0.0033,
+    62,
+    16
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-wide_doc": {
+   "recall": [
+    -0.0033,
+    63,
+    16
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-ordinal_ref": {
+   "recall": [
+    -0.0033,
+    63,
+    16
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-said_ref": {
+   "recall": [
+    -0.0033,
+    63,
+    16
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-other_env": {
+   "recall": [
+    -0.0034,
+    63,
+    14
+   ],
+   "all_kept": [
+    -0.0046,
+    7,
+    0
+   ]
+  },
+  "stale-hedge-value_conflict": {
+   "recall": [
+    -0.0033,
+    61,
+    14
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  },
+  "stale-hedge-qualifier_link": {
+   "recall": [
+    -0.0033,
+    63,
+    16
+   ],
+   "all_kept": [
+    -0.0051,
+    8,
+    0
+   ]
+  }
+ }
+}
