@@ -4,6 +4,20 @@ Read this first. Every number below comes from a committed receipt; the path is 
 next to each table. Paths are relative to `research/goal-engine-2026-10-04/` unless they
 start with `research/` or `docs/`. Counts only: no session text is stored in this repo.
 
+## Update 2026-10-18: specialist v3 final test (post-cutoff held-out set)
+
+Pre-registered in `specialist-v1/V3_FINAL_TEST_PROTOCOL.md`; results in `specialist-v1/V3_FINAL_TEST_RESULTS.md`
+(INFERIDO: rule-based next-action labels). 208 held-out items, 193 primary in 36 session groups.
+
+- vs recency / BM25 / mechanical: **PASS** on both metrics (CI lower bounds > 0; recall AUC 0.899 vs 0.818 /
+  0.803 / 0.829).
+- vs generalists (36-item subset): Opus recall −0.009 [−0.055, +0.031], all-kept +0.069 [−0.028, +0.167]
+  (labelled *inferior* by the rule, but this is inconclusive: no significant gap either way). Gemini 3.8 Flash
+  recall +0.038 [−0.007, +0.083] *not inferior*, all-kept +0.118 [+0.026, +0.220] *superior*. The headline
+  "superior to a generalist" is **not** met.
+- Cost **PASS**: median 178 ms, p90 567 ms, peak RSS 97.5 MB.
+- The edge suite (synthetic) still favours the generalists (35/35/35 vs v3 28/23/20).
+
 ## Goal
 
 Find out whether a small local model can decide what LCC keeps in an agent's context

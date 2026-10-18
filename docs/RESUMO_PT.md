@@ -5,6 +5,23 @@ de cada tabela ou frase. `R/` = `research/goal-engine-2026-10-04/`. Nenhum texto
 privada aparece aqui, só contagens. Quase tudo é **INFERIDO** (exploratório, uma passada,
 juízes LLM ou um único revisor), não MEDIDO.
 
+## Atualização 2026-10-18: teste final do especialista v3
+
+Protocolo pré-registrado: `R/specialist-v1/V3_FINAL_TEST_PROTOCOL.md`. Resultado em
+`R/specialist-v1/V3_FINAL_TEST_RESULTS.md` (INFERIDO: os rótulos são regras de "o que o agente usou em seguida").
+Conjunto novo, de sessões iniciadas depois de 12/10: 208 itens, 193 primários em 36 sessões.
+
+- **Contra recency, BM25 e mecânico:** passou nas duas métricas (limite inferior do IC acima de 0; recall AUC
+  0,899 contra 0,818 / 0,803 / 0,829).
+- **Contra os generalistas** (36 itens, um por sessão):
+  - Opus: empate técnico. Recall −0,009 [−0,055; +0,031] e all-kept +0,069 [−0,028; +0,167]. A regra rotula
+    como "inferior", mas o IC é largo e não há diferença significativa em nenhum sentido.
+  - Gemini Flash: "não inferior" em recall e superior em all-kept.
+  - A frase "superior a um generalista" **não** se sustenta.
+- **Custo:** passou (mediana 178 ms, p90 567 ms, pico de 97,5 MB).
+- **Casos sintéticos difíceis** (suíte de borda): os LLMs continuam muito à frente.
+- Gasto zero em API. Opus usou 1.480 chamadas e Gemini 1.465, as duas pela assinatura e abaixo do teto de 2.500.
+
 ## Resumo executivo (1 página)
 
 **Qual a relação entre os dois repositórios.** O LCC é o produto: compila o contexto que vai
