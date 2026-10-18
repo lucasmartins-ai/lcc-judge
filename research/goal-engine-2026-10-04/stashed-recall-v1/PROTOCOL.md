@@ -165,3 +165,76 @@ PYTHONPATH=/Users/Master/.lcc/bench/lcc-4719fde/src:/Users/Master/Downloads/LCC-
 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /Users/Master/LCC/.venv/bin/python \
     -m research.stashed_recall_v1 {pilot|compact|locate|run --arm <arm>|judge|agree|score}
 ```
+
+## Amendments
+
+### Amendment 1 (2026-10-18): pilot findings, code fixes, and a count-only preview of D
+
+**Pilot (10 TRAIN items, 42 subscription calls, 0 dropped).** Code check only; no number below is a result.
+- V4 (tool path) passes: through `claude -p` + the shim, Sonnet called `recall` once and returned the exact bytes.
+- `stashed` cut pilot context from 529 881 to 400 960 tokens (−24%), 0 verification violations.
+- `stashed_t` made **0 recall calls** on all 10 items; the pilot also had **0 stash-dependent probes**.
+- One usage-limit stop (429) mid-run; resumed from cache after the reset, as the protocol says.
+- Pilot gold predates probe-eval-v1 Amendment 1 (URLs in artifact gold), so its artifact scores are not comparable.
+
+**Code fixes (no text, gold rule or criterion changed).**
+1. zsh did not word-split a command variable in the run script; no call was spent.
+2. Answers now record envelope facts: turns, permission denials, input/output tokens (`_turns`, `_denials`,
+   `_in_tokens`, `_out_tokens`). They prove the tool was reachable when no recall happens, and give R5 its real
+   token cost. They are never used as an outcome.
+
+**Deviation, disclosed: D compacted and located before the freeze (Run order step 5 ahead of step 4).** Because
+the pilot showed zero stash-dependent probes, the `stashed` compaction and the gold-location counts were run on D
+(offline, no model call, no answer) into a separate private dir (`D-preview/`), to know whether V3 can pass.
+Counts seen, nothing else:
+- `stashed` on D: 9 398 654 → 5 961 815 tokens (**−36.6%**), 2 144 results stashed, 0 violations, 172/172 ok.
+- Stash-dependent probes: **19 in 15 items** (artifact 2, recall 14, continuation 1, decision 2). Gold features:
+  1 086 in view, 72 stash-only, 57 neither.
+- So **V3 (≥ 40 stash-dependent probes) will fail as written**: H2 and R1 would be descriptive only. H1 (outcome
+  non-inferiority) is unaffected.
+
+The D-preview outputs are not reused by the D run; step 5 recompacts into the D dir after the freeze.
+
+### Amendment 2 (2026-10-18): stash probes
+
+**Approved 2026-10-18 by the owner: stash probes, cap raised to 1 100 calls** ("Aprovo a Emenda 2: stash probes e
+limite de 1.100 chamadas. Pode congelar o harness e rodar o D."). Implementation details fixed before the freeze:
+- feature extraction is `nal.features` unchanged (its own minimum lengths apply); kind `line` is not used;
+- the generator gets `recall_target`, `recall_excerpts` (probe-eval-v1 `recall_excerpts` over `C`) and
+  `next_request`; `earlier_context_excerpt` and `what_the_agent_did_next` are empty strings, and any decision it
+  returns is ignored;
+- a target that fails the leak check gets one regeneration with the next-ranked candidate, then is dropped;
+- the stash probe is asked as the **last** numbered question in the same answer call, in all three arms alike;
+- stash probes are scored mechanically only and are not sent to the judge;
+- H2 and R1 are computed on the stash-probe stratum; the 19 stash-dependent original probes stay descriptive.
+
+Original proposal text:
+
+To measure recall behaviour with power, add one probe per D item whose gold lives only in that item's stash:
+- **Target:** one feature of kind hex > num > ident > quoted (probe-eval-v1 `KIND_RANK`, `nal.features`) that
+  occurs in a stashed blob of the item and nowhere in `C'` outside markers nor in `P`; ties broken by
+  `random.Random(20261018)` over sorted values. Items with no such feature get no stash probe (counted).
+- **Question:** written by Claude Opus 5.5 with the frozen G text's RECALL part, from the ±600 chars around the
+  target in `C` only (the generator never sees `C'`, arms or answers). Same leak check as recall probes.
+- **Scored** by exact match, like recall probes; these probes are analysed as their own stratum (H2 and R1 move to
+  it), never pooled into H1.
+- **Cost:** about 172 more Opus calls → raise the cap from 900 to **1 100** (42 used so far).
+- Limit, stated now: stash probes ask about content the agent did not necessarily use next, so they measure
+  "can it get removed content back when asked", not "did it need it".
+
+### Amendment 3 (2026-10-18): harness freeze
+
+From this commit on, no code, prompt or criterion changes; a change found necessary voids the run, and that run's
+results are still published. Every non-pilot phase checks probe-eval-v1's frozen files and every `path` / sha256
+pair below (`stashed_recall_v1.own_frozen`). Q-T is frozen at sha256
+`9331ffd9330871359bf60cdb75252f1def6bac9547f3dcbc64a38b368465de38`. No D answer, D stash probe or D judge output
+existed when this was committed (only the count-only D preview of Amendment 1).
+
+| frozen file | sha256 |
+|---|---|
+| `research/stashed_recall_v1.py` | `2e4cfca7f897358efb301a8ed7b397db5299fc02fd4299be52694d52e52817db` |
+| `research/recall_mcp_shim.py` | `bcc5e01dca3316fd0d619c5f5f599adc4d17c904fa0530c2515f3d6b67cf8ffb` |
+| `tests/test_stashed_recall_v1.py` | `9af94a3d510b469cad19d28b8c587070bd6f706577d32403f7d3424687f1ec83` |
+| `research/goal-engine-2026-10-04/stashed-recall-v1/harness-tests.log` (19 passed) | `558fc69d463ccc3db39c0b59fdc43b63f769fb03855ce338fcf20fcef4a47467` |
+
+Pilot spend at freeze: 51 subscription calls (the stash-probe pilot and one re-answer included).
