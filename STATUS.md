@@ -4,6 +4,8 @@ Read this first. Every number below comes from a committed receipt; the path is 
 next to each table. Paths are relative to `research/goal-engine-2026-10-04/` unless they
 start with `research/` or `docs/`. Counts only: no session text is stored in this repo.
 
+Benchmark: `python -m research.bench all` recomputes the v3 edge / dev / held-out / cost numbers offline (no LLM call); latest run in [research/bench-results/latest.md](research/bench-results/latest.md).
+
 ## Update 2026-10-18: specialist v3 final test (post-cutoff held-out set)
 
 Pre-registered in `specialist-v1/V3_FINAL_TEST_PROTOCOL.md`; results in `specialist-v1/V3_FINAL_TEST_RESULTS.md`
