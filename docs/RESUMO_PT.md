@@ -5,6 +5,33 @@ de cada tabela ou frase. `R/` = `research/goal-engine-2026-10-04/`. Nenhum texto
 privada aparece aqui, só contagens. Quase tudo é **INFERIDO** (exploratório, uma passada,
 juízes LLM ou um único revisor), não MEDIDO.
 
+## Atualização 2026-10-19 (tarde): quando compactar, em relação ao cache
+
+Detalhes em `research/when-to-compact-2026-10-19/WHEN_RESULTS.md`. O protocolo foi commitado antes de medir
+(`WHEN_PROTOCOL.md`, commit 43c81a7). As contagens vêm só de metadados de uso das sessões do Claude Code (MEDIDO);
+a simulação é INFERIDA. Não houve chamada de modelo.
+
+- **Onde está o dinheiro.** 95% das escritas de cache da sessão principal usam TTL de 1 hora. Quando o dono volta
+  depois de mais de 1 hora parado, 97% das vezes o cache já expirou, e a sessão reescreve uma mediana de 278 mil
+  tokens. Essas reescritas são **15,9% do custo** das sessões principais. As compactações naturais (39, quase todas
+  manuais) custam cerca de 0,7%, e 85% delas acontecem com o cache ainda quente.
+- **P1: guardar no stash na volta de uma pausa maior que o TTL.** Nesse momento o prefixo vai ser reescrito de
+  qualquer jeito. A simulação dá custo menor em 97,7% das sessões onde a regra dispara: economia média de 185 mil
+  tokens-base por sessão [114 mil; 262 mil], 9,3% do custo total. Passa no critério de custo em todas as
+  sensibilidades. No pior caso (rho 0,15 e q 0,5) a economia cai para 2,5%.
+- **Mas falha no critério de dano, como o protocolo previa.** Cada passada guardaria cerca de 4 resultados que o
+  agente usa em seguida. Veredito: **opt-in condicional**, desligado por padrão, com medição de chamadas a `recall`
+  no uso real. A variante prática é a com mínimo de 10 mil tokens removíveis: mantém 94% da economia com um terço
+  menos de passadas.
+- **O TTL decide tudo.** Uma regra que supõe 5 minutos encontra o cache quente em 71% das vezes e **perde 10,7%**.
+  Guardar no stash com o cache quente (P2, ou "sempre que passar de 50 mil") ou não remove nada, ou é aposta que
+  perde nas sensibilidades.
+- **Viabilidade.** O plugin 1.1.0 só reage a `session.compact` e não consegue fazer isso hoje. A superfície de
+  function hooks do Claude Code 2.1.296 declara `$.session.compact()`, `turn.start`, `prompt.submit`, `clock` e
+  `store`, então um gancho de volta da pausa parece possível. Isso foi lido no binário e não foi executado
+  (NÃO VERIFICADO). A nota de design para o PR está no fim do WHEN_RESULTS. A regra mais importante dela: numa
+  compactação disparada pela pausa, toda falha devolve `skip`, nunca o resumo nativo.
+
 ## Atualização 2026-10-19: ciclo 2 do v5, ranking contra o `stashed` só em saídas de ferramentas
 
 Detalhes em `R/specialist-v1/V5C2_RESULTS.md`; o protocolo foi commitado antes de medir

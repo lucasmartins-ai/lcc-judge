@@ -1,0 +1,549 @@
+{
+ "schema": "when-to-compact/results",
+ "protocol": "WHEN_PROTOCOL.md",
+ "seed": 20261019,
+ "n_boot": 2000,
+ "price": {
+  "uncached": 1.0,
+  "read": 0.1,
+  "w5": 1.25,
+  "w1h": 2.0
+ },
+ "model": {
+  "rho": 0.35,
+  "q_recall": 0.2405263157894737,
+  "tokens_per_used": 6950.905941250579,
+  "mu": 0.03
+ },
+ "descriptive": {
+  "sessions_main": 767,
+  "traces_subagent": 1134,
+  "ttl_mix": {
+   "main": {
+    "requests": 40524,
+    "w5_tokens": 12417707,
+    "w1h_tokens": 256389367,
+    "share_1h_of_writes": 0.9538043890913377,
+    "read_tokens": 9958869820,
+    "uncached_tokens": 10120143,
+    "cost_base_eq": 1534307992.75,
+    "write_share_of_cost": 0.3443251747669682
+   },
+   "subagent": {
+    "requests": 36585,
+    "w5_tokens": 442532824,
+    "w1h_tokens": 0,
+    "share_1h_of_writes": 0.0,
+    "read_tokens": 5999936751,
+    "uncached_tokens": 4000013,
+    "cost_base_eq": 1157159718.1,
+    "write_share_of_cost": 0.4780377517014434
+   }
+  },
+  "idle_gaps": {
+   "n": 39732,
+   "quantiles_s": {
+    "p10": 3.3289999961853027,
+    "p25": 4.9710001945495605,
+    "p50": 8.891000032424927,
+    "p75": 20.44099998474121,
+    "p90": 69.20099997520447
+   },
+   "share_gt_5m": 0.03961542333635357,
+   "share_gt_1h": 0.009966777408637873,
+   "sessions_with": {
+    "gt5m": 246,
+    "gt1h": 130,
+    "gt_ttl": 130
+   },
+   "after_gap": {
+    "gt5m": {
+     "n": 1574,
+     "cold_share": 0.2884371029224905,
+     "rewrite_tokens": {
+      "p10": 107,
+      "p25": 436,
+      "p50": 1368,
+      "p75": 114800,
+      "p90": 336113
+     },
+     "rewrite_tokens_sum": 137139037,
+     "rewrite_cost_share_of_total": 0.17876337430035852,
+     "ctx": {
+      "p10": 115634,
+      "p25": 177485,
+      "p50": 293221,
+      "p75": 432345,
+      "p90": 602053
+     }
+    },
+    "gt1h": {
+     "n": 396,
+     "cold_share": 0.9696969696969697,
+     "rewrite_tokens": {
+      "p10": 89721,
+      "p25": 157267,
+      "p50": 278293,
+      "p75": 427031,
+      "p90": 594881
+     },
+     "rewrite_tokens_sum": 121714703,
+     "rewrite_cost_share_of_total": 0.15865745805292455,
+     "ctx": {
+      "p10": 128852,
+      "p25": 191200,
+      "p50": 314225,
+      "p75": 469723,
+      "p90": 636215
+     }
+    },
+    "gt_ttl": {
+     "n": 396,
+     "cold_share": 0.9696969696969697,
+     "rewrite_tokens": {
+      "p10": 89721,
+      "p25": 157267,
+      "p50": 278293,
+      "p75": 427031,
+      "p90": 594881
+     },
+     "rewrite_tokens_sum": 121714703,
+     "rewrite_cost_share_of_total": 0.15865745805292455,
+     "ctx": {
+      "p10": 128852,
+      "p25": 191200,
+      "p50": 314225,
+      "p75": 469723,
+      "p90": 636215
+     }
+    }
+   }
+  },
+  "compactions": {
+   "n": 39,
+   "triggers": {
+    "auto": 2,
+    "manual": 37
+   },
+   "cold_share": 0.15384615384615385,
+   "cold_share_5m_rule": 0.28205128205128205,
+   "ttl_1h_share": 1.0,
+   "gap_s": {
+    "p10": 7.732999801635742,
+    "p25": 27.07200002670288,
+    "p50": 84.38800001144409,
+    "p75": 498.1180000305176,
+    "p90": 9676.3109998703
+   },
+   "pre_tokens": {
+    "p10": 58222,
+    "p25": 59234,
+    "p50": 560788,
+    "p75": 757641,
+    "p90": 798277
+   },
+   "post_tokens": {
+    "p10": 2567,
+    "p25": 13917,
+    "p50": 15696,
+    "p75": 18236,
+    "p90": 21092
+   },
+   "first_after_write": {
+    "p10": 28973,
+    "p25": 32736,
+    "p50": 35475,
+    "p75": 43481,
+    "p90": 53830
+   },
+   "first_after_read": {
+    "p10": 41332,
+    "p25": 45463,
+    "p50": 51883,
+    "p75": 53760,
+    "p90": 55259
+   },
+   "summarizer_input_cost_est": {
+    "p10": 5822.200000000001,
+    "p25": 5923.400000000001,
+    "p50": 63148.3,
+    "p75": 81804.20000000001,
+    "p90": 966992.0
+   },
+   "compaction_cost_est_sum": 11019973.700000001,
+   "compaction_cost_share_of_total": 0.007182373911934378
+  },
+  "total_cost_base_eq": 1534307992.75
+ },
+ "simulation": {
+  "P0": {
+   "sessions": 767,
+   "sessions_touched": 0,
+   "share_touched_lower": null,
+   "share_all_lower": 0.0,
+   "mean_saving": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "total_saving_share": 0.0,
+   "passes": 0,
+   "removed_tokens": 0.0,
+   "expected_needed_results": 0.0,
+   "ctx_mean_reduction": 0.0,
+   "needed_vs_P0": 0.0,
+   "cost_gate": false,
+   "harm_gate": true
+  },
+  "P1": {
+   "sessions": 767,
+   "sessions_touched": 130,
+   "share_touched_lower": 0.9769230769230769,
+   "share_all_lower": 0.16558018252933507,
+   "mean_saving": 185524.82325167462,
+   "ci95": [
+    114173.96937294978,
+    261650.88220110163
+   ],
+   "total_saving_share": 0.09274379075545909,
+   "passes": 396,
+   "removed_tokens": 11465628.299999999,
+   "expected_needed_results": 1649.5156742024838,
+   "ctx_mean_reduction": 0.08708658635728339,
+   "needed_vs_P0": 1649.5156742024838,
+   "cost_gate": true,
+   "harm_gate": false
+  },
+  "P1_min10k": {
+   "sessions": 767,
+   "sessions_touched": 111,
+   "share_touched_lower": 0.990990990990991,
+   "share_all_lower": 0.14341590612777053,
+   "mean_saving": 174047.65942458366,
+   "ci95": [
+    107158.37366828746,
+    245899.6948460931
+   ],
+   "total_saving_share": 0.0870063607890018,
+   "passes": 266,
+   "removed_tokens": 11303110.35,
+   "expected_needed_results": 1626.1348442252677,
+   "ctx_mean_reduction": 0.08598863277245938,
+   "needed_vs_P0": 1626.1348442252677,
+   "cost_gate": true,
+   "harm_gate": false
+  },
+  "P1_min50k": {
+   "sessions": 767,
+   "sessions_touched": 63,
+   "share_touched_lower": 1.0,
+   "share_all_lower": 0.08213820078226858,
+   "mean_saving": 137135.21186736462,
+   "ci95": [
+    83134.85418772745,
+    195702.1659637722
+   ],
+   "total_saving_share": 0.06855384186179307,
+   "passes": 111,
+   "removed_tokens": 9086019.95,
+   "expected_needed_results": 1307.170608665333,
+   "ctx_mean_reduction": 0.07174940083268899,
+   "needed_vs_P0": 1307.170608665333,
+   "cost_gate": true,
+   "harm_gate": false
+  },
+  "P1_5m": {
+   "sessions": 767,
+   "sessions_touched": 246,
+   "share_touched_lower": 0.43902439024390244,
+   "share_all_lower": 0.1408083441981747,
+   "mean_saving": -213170.5146938071,
+   "ci95": [
+    -324826.33089827775,
+    -110038.25096159684
+   ],
+   "total_saving_share": -0.10656386171664234,
+   "passes": 1572,
+   "removed_tokens": 17637629.45,
+   "expected_needed_results": 2537.457649272507,
+   "ctx_mean_reduction": 0.13153769326197073,
+   "needed_vs_P0": 2537.457649272507,
+   "cost_gate": false,
+   "harm_gate": false
+  },
+  "P2": {
+   "sessions": 767,
+   "sessions_touched": 0,
+   "share_touched_lower": null,
+   "share_all_lower": 0.0,
+   "mean_saving": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "total_saving_share": 0.0,
+   "passes": 0,
+   "removed_tokens": 0.0,
+   "expected_needed_results": 0.0,
+   "ctx_mean_reduction": 0.0,
+   "needed_vs_P0": 0.0,
+   "cost_gate": false,
+   "harm_gate": true
+  },
+  "warm_50k": {
+   "sessions": 767,
+   "sessions_touched": 154,
+   "share_touched_lower": 0.5714285714285714,
+   "share_all_lower": 0.11473272490221642,
+   "mean_saving": 76340.03859873027,
+   "ci95": [
+    43166.46805896524,
+    112492.19932148441
+   ],
+   "total_saving_share": 0.03816235715508438,
+   "passes": 290,
+   "removed_tokens": 14708009.399999999,
+   "expected_needed_results": 2115.984524076842,
+   "ctx_mean_reduction": 0.1206800722192356,
+   "needed_vs_P0": 2115.984524076842,
+   "cost_gate": false,
+   "harm_gate": false
+  }
+ },
+ "sensitivity": {
+  "rho0.15": {
+   "P1": {
+    "mean_saving": 77895.73259977654,
+    "ci95": [
+     47426.11081367914,
+     110844.41229843456
+    ],
+    "share_touched_lower": 0.9769230769230769,
+    "cost_gate": true,
+    "total_saving_share": 0.03894004801274839
+   },
+   "P1_min10k": {
+    "mean_saving": 64449.14383033,
+    "ci95": [
+     40237.08317188329,
+     91389.17020326579
+    ],
+    "share_touched_lower": 0.96875,
+    "cost_gate": true,
+    "total_saving_share": 0.032218103243575845
+   },
+   "P1_min50k": {
+    "mean_saving": 29907.510281819097,
+    "ci95": [
+     16466.47046386445,
+     44771.41762132327
+    ],
+    "share_touched_lower": 1.0,
+    "cost_gate": true,
+    "total_saving_share": 0.014950753365392222
+   },
+   "P1_5m": {
+    "mean_saving": -460283.28077607515,
+    "ci95": [
+     -666988.2079072609,
+     -276280.7619045358
+    ],
+    "share_touched_lower": 0.2926829268292683,
+    "cost_gate": false,
+    "total_saving_share": -0.2300954423906032
+   },
+   "warm_50k": {
+    "mean_saving": -12583.431001173112,
+    "ci95": [
+     -20485.47967412322,
+     -5660.17140560629
+    ],
+    "share_touched_lower": 0.3,
+    "cost_gate": false,
+    "total_saving_share": -0.0062904525189893794
+   }
+  },
+  "q0.5": {
+   "P1": {
+    "mean_saving": 121068.46264211179,
+    "ci95": [
+     74328.3575743148,
+     171328.372004563
+    ],
+    "share_touched_lower": 0.9769230769230769,
+    "cost_gate": true,
+    "total_saving_share": 0.060522079846604994
+   },
+   "P1_min10k": {
+    "mean_saving": 111620.62107170769,
+    "ci95": [
+     68973.66498370239,
+     156797.2691662312
+    ],
+    "share_touched_lower": 0.972972972972973,
+    "cost_gate": true,
+    "total_saving_share": 0.055799107328217884
+   },
+   "P1_min50k": {
+    "mean_saving": 85929.32892764026,
+    "ci95": [
+     52579.29330508451,
+     122601.3012516301
+    ],
+    "share_touched_lower": 1.0,
+    "cost_gate": true,
+    "total_saving_share": 0.04295603985570783
+   },
+   "P1_5m": {
+    "mean_saving": -361110.6727744456,
+    "ci95": [
+     -525723.5862750976,
+     -209106.5601173399
+    ],
+    "share_touched_lower": 0.34552845528455284,
+    "cost_gate": false,
+    "total_saving_share": -0.18051909220753798
+   },
+   "warm_50k": {
+    "mean_saving": -12174.625144067697,
+    "ci95": [
+     -22388.698142112375,
+     -740.8251773139842
+    ],
+    "share_touched_lower": 0.2532467532467532,
+    "cost_gate": false,
+    "total_saving_share": -0.006086090621716162
+   }
+  },
+  "mu0.10": {
+   "P1": {
+    "mean_saving": 185651.85247070985,
+    "ci95": [
+     114211.95084361472,
+     261650.88220110163
+    ],
+    "share_touched_lower": 0.9769230769230769,
+    "cost_gate": true,
+    "total_saving_share": 0.09280729261522935
+   },
+   "P1_min10k": {
+    "mean_saving": 174100.665386774,
+    "ci95": [
+     107210.21505681418,
+     245986.76583872
+    ],
+    "share_touched_lower": 0.990990990990991,
+    "cost_gate": true,
+    "total_saving_share": 0.08703285844996174
+   },
+   "P1_min50k": {
+    "mean_saving": 137135.21186736462,
+    "ci95": [
+     83134.85418772745,
+     195702.1659637722
+    ],
+    "share_touched_lower": 1.0,
+    "cost_gate": true,
+    "total_saving_share": 0.06855384186179307
+   },
+   "P1_5m": {
+    "mean_saving": -166335.8927863756,
+    "ci95": [
+     -259233.26464629796,
+     -81210.24127159482
+    ],
+    "share_touched_lower": 0.46747967479674796,
+    "cost_gate": false,
+    "total_saving_share": -0.08315125148926855
+   },
+   "warm_50k": {
+    "mean_saving": 88225.69995205491,
+    "ci95": [
+     52228.71448049804,
+     126890.65211140802
+    ],
+    "share_touched_lower": 0.6103896103896104,
+    "cost_gate": false,
+    "total_saving_share": 0.04410399488432575
+   }
+  },
+  "rho0.15_q0.5": {
+   "P1": {
+    "mean_saving": 50642.19278552826,
+    "ci95": [
+     30632.673264667596,
+     72481.79287874934
+    ],
+    "share_touched_lower": 0.9769230769230769,
+    "cost_gate": true,
+    "total_saving_share": 0.02531601350578976
+   },
+   "P1_min10k": {
+    "mean_saving": 41073.5840899613,
+    "ci95": [
+     25667.002082138413,
+     58313.4461453731
+    ],
+    "share_touched_lower": 0.96875,
+    "cost_gate": true,
+    "total_saving_share": 0.02053266954605084
+   },
+   "P1_min50k": {
+    "mean_saving": 19133.78980443274,
+    "ci95": [
+     10465.144292698615,
+     28655.978901564016
+    ],
+    "share_touched_lower": 1.0,
+    "cost_gate": true,
+    "total_saving_share": 0.009564974470149396
+   },
+   "P1_5m": {
+    "mean_saving": -523272.5382698828,
+    "ci95": [
+     -752810.931923729,
+     -316993.2509289438
+    ],
+    "share_touched_lower": 0.26422764227642276,
+    "cost_gate": false,
+    "total_saving_share": -0.261583748992694
+   },
+   "warm_50k": {
+    "mean_saving": -27631.040627119226,
+    "ci95": [
+     -38946.97754563262,
+     -17477.260481747155
+    ],
+    "share_touched_lower": 0.05,
+    "cost_gate": false,
+    "total_saving_share": -0.013812747024158684
+   }
+  }
+ },
+ "verdict": {
+  "P1": {
+   "cost_gate": true,
+   "harm_gate": false,
+   "recommended": false,
+   "conditional_opt_in": true
+  },
+  "P1_min10k": {
+   "cost_gate": true,
+   "harm_gate": false,
+   "recommended": false,
+   "conditional_opt_in": true
+  },
+  "P1_min50k": {
+   "cost_gate": true,
+   "harm_gate": false,
+   "recommended": false,
+   "conditional_opt_in": true
+  },
+  "P1_5m": {
+   "cost_gate": false,
+   "harm_gate": false,
+   "recommended": false,
+   "conditional_opt_in": false
+  }
+ }
+}
