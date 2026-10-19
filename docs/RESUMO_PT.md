@@ -5,6 +5,28 @@ de cada tabela ou frase. `R/` = `research/goal-engine-2026-10-04/`. Nenhum texto
 privada aparece aqui, só contagens. Quase tudo é **INFERIDO** (exploratório, uma passada,
 juízes LLM ou um único revisor), não MEDIDO.
 
+## Atualização 2026-10-19: ciclo 2 do v5, ranking contra o `stashed` só em saídas de ferramentas
+
+Detalhes em `R/specialist-v1/V5C2_RESULTS.md`; o protocolo foi commitado antes de medir
+(`R/specialist-v1/V5C2_PROTOCOL.md`, commit 3bb2db8). Os números são MEDIDOS; as leituras são INFERIDAS.
+
+- **Pergunta.** O v3 ou o v5 escolhem melhor que as regras do `stashed` o que guardar? A comparação usa o mesmo
+  orçamento de tokens por item e só saídas de ferramentas, que é a única coisa que o LCC remove.
+- **Resposta: não.** Foram 264 itens de dev, em 95 grupos. A recall dos rankers sobe um pouco, mas o intervalo
+  passa do zero: v3 +0,032 [−0,016; +0,079]. O "todos os usados mantidos" cai: v3 −0,011 [−0,071; +0,052]. Nenhum
+  candidato passa na não inferioridade, então o `stashed` fica como está.
+- **Os rankers guardam 2,8x mais resultados** para tirar os mesmos tokens. Com isso, mais coisas usadas vão para o
+  stash, e o agente precisaria chamar `recall` mais vezes.
+- **Em sessões do Claude Code (o plugin real), o `stashed` ganha nas duas métricas.** A vantagem dos rankers vem de
+  Codex e Hermes. Esse recorte não estava pré-declarado.
+- **O custo de cache é igual para todos.** Qualquer passada que tira um terço do contexto mexe perto do início
+  do prefixo: cerca de 55 mil tokens invalidados na mediana e retorno só depois de cerca de 32 reusos. O que
+  importa é *quando* rodar o stash (depois que o cache expira, ou com o prefixo protegido), não *o que* guardar.
+- **pt/en e tempo.** Com o top-2 de tradução, o caso pt/en antigo passou. O v5c2 roda em 168 ms de mediana
+  (o v3 roda em 129 ms na mesma rodada), dentro do limite de 250 ms.
+- **Revisão independente:** passou com notas. As notas foram corrigidas no texto: o orçamento casado tem cerca
+  de 3% de sobra contra os rankers, e algumas leituras estavam sem a marca INFERIDO.
+
 ## Atualização 2026-10-18 (noite): ciclo v5, detectores determinísticos com casos de borda
 
 Detalhes em `R/specialist-v1/V5_DEV_RESULTS.md`. A regra de seleção foi commitada antes de medir

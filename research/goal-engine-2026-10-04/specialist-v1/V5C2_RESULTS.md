@@ -11,15 +11,19 @@ Produced on 2026-10-19 by `python -m research.v5c2 stash | bench | score | edge`
   bounds -0.071 / -0.085 / -0.094, margin -0.005) and none is superior on any metric. stashed stays as is.
 - **Recall leans toward the rankers but stays inside the noise**: v3 +0.032 [-0.016, +0.079], v5c2 +0.029
   [-0.022, +0.077]. All-kept leans the other way: v3 -0.011, v5c2 -0.023.
-- **To match stashed's tokens, rankers stash about 2.8x more results** (53.5 vs 19.0 per item). They choose many
-  small outputs where stashed takes a few large old ones, so they stash more USED results (6.5 vs 4.6 per item):
-  more `recall` calls for the agent, at the same token saving.
+- **To match stashed's tokens, rankers stash about 2.8x more results** (53.5 vs 19.0 per item) and more USED
+  results (6.5 vs 4.6 per item): more `recall` calls for the agent. Our reading (INFERIDO): they pick many small
+  outputs where stashed takes a few large old ones. Token parity is approximate. Rankers drop whole results until
+  they reach the budget, so they remove about 3% more tokens: 8.65 M vs 8.39 M, median per-item ratio 1.035. Net
+  of the 11-token stash notes they still save slightly more: 8.50 M vs 8.33 M. The overshoot works against the
+  rankers' recall, not for it.
 - **Cache cost is the same for every arm.** Each arm's first removal sits at about 2-3% of the context, so
   almost the whole prefix is invalidated either way (median 54-56 k tokens; break-even about 32 reuses). The
   cache-aware tie-break moved the median first mutation from 1,200 to 1,346 tokens and changed nothing material.
 - **Budgets met**: v5c2 median 167.7 ms (v3 129.0 ms in the same run, load average 6), peak RSS 162.5 MB.
-  The cycle-1 v5 overran mainly because the machine was loaded (load average 65-178); the score-only fast path cut
-  detector time by 42% as well.
+  Cycle 1 measured v5 under load average 65-178; that load probably explains most of the overrun (INFERIDO, not
+  re-measured). The score-only fast path cut detector time by 42% on design items. The ratio v5c2 / v3 = 1.30 is
+  MEDIDO, from one run.
 
 ## Population (dev, 325 items)
 
@@ -111,3 +115,22 @@ mechanical is below stashed.
 - The dev split was read in cycle 1 (selection and an ablation); no detector was tuned on it in this cycle.
 - Three candidates without a multiplicity correction (disclosed in the protocol); it does not matter, none passed.
 - One machine, one run; latency from a quiet-ish shared machine (load average 6).
+
+## Independent review (read-only, Sonnet subagent, 2026-10-19)
+
+**Verdict: PASS WITH NOTES.** The reviewer found no bug that could change the verdict. The 14 unit tests pass, the
+doc's tables match the json, the protocol hashes match the committed files, and the new public files hold
+aggregates only. Its reading confirms that `score_only` gives identical scores.
+
+Notes, and what was done with each:
+1. The matched budget is looser than "within one result". A block that spans two results counts in both result
+   budgets, and rankers overshoot by about 3%. Now disclosed above. The overshoot penalises the rankers.
+2. "Same token saving" ignored the cost of the stash notes, and "many small outputs" was stated as fact. Fixed
+   above: net-of-notes figures added, and the reading is tagged INFERIDO.
+3. The cause of the cycle-1 latency overrun was asserted, not measured. Now tagged INFERIDO.
+4. `test_score_only_keeps_scores` only exercises a prod goal. The non-prod skip, the main speed-up, has no direct
+   unit test; only the 416-item identity check covers it. Left for the next cycle: test files are hashed in the
+   frozen protocol.
+5. The pool does not exclude results made only of LCC-protected blocks (< 40 chars). This affects every arm the
+   same way and is negligible.
+6. The per-source split has no CI. It was not pre-declared, and the doc already says so.
