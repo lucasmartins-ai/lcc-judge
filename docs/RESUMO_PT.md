@@ -5,6 +5,28 @@ de cada tabela ou frase. `R/` = `research/goal-engine-2026-10-04/`. Nenhum texto
 privada aparece aqui, só contagens. Quase tudo é **INFERIDO** (exploratório, uma passada,
 juízes LLM ou um único revisor), não MEDIDO.
 
+## Atualização 2026-10-19 (noite): manter o cache quente ou recomeçar com handoff
+
+Detalhes em `research/when-to-compact-2026-10-19/WHEN2_RESULTS.md`. O protocolo foi commitado antes de medir
+(`WHEN2_PROTOCOL.md`, commit 58c6c42). As contagens são MEDIDAS; a simulação é INFERIDA; não houve chamada de modelo.
+
+- **A maioria das pausas longas não volta ao mesmo prefixo.** Das 814 pausas de mais de 55 min com cache de 1 h,
+  49% terminam a sessão e 21% voltam depois de 4h40. Só 11% voltam dentro da hora que um ping compraria.
+- **Ping para manter o cache quente (P4): quase empata e falha no critério.** O ponto de equilíbrio é 5,3% de
+  chance de volta (4,8% empírico). O 1º ping resgata 11%; o 2º ao 4º, 6-7%. O K=1 economiza +37 mil por sessão
+  [+12 mil; +68 mil], 1,9%. Mas só 6% das sessões tocadas ficam mais baratas, porque quase todas só pagam os pings
+  do fim de sessão. Também não melhora o P1 (+13 mil [-3 mil; +33 mil]). Ainda gasta cota, e os termos de uso não
+  foram verificados. **Não construir.**
+- **Recomeçar com handoff (P5) é a maior alavanca de custo.** Na volta fria com contexto grande, a sessão recomeça
+  com um resumo de cerca de 15,7 mil tokens. Isso economiza +550 mil por sessão [+334 mil; +810 mil], 27,6% do
+  custo. **P1+P5** (handoff quando derruba 50 mil ou mais, senão stash) dá +570 mil [+349 mil; +837 mil], 28,6%, e
+  passa em todas as sensibilidades. É um teto: a simulação não deixa o agente reler o que perdeu. Num teste post hoc
+  com handoff de 100 mil, a economia ainda é +304 mil.
+- **Veredito: candidato só pelo lado do custo.** A qualidade do handoff não foi medida. A recomendação é *oferecer*
+  sessão nova com handoff na volta de pausa maior que o TTL com contexto grande, com o usuário aceitando, e usar o
+  stash P1 nos contextos menores. Antes de virar padrão, medir a qualidade em voltas reais. Antes de construir,
+  verificar o prompt de retomada que o Claude Code já traz.
+
 ## Atualização 2026-10-19 (tarde): quando compactar, em relação ao cache
 
 Detalhes em `research/when-to-compact-2026-10-19/WHEN_RESULTS.md`. O protocolo foi commitado antes de medir
