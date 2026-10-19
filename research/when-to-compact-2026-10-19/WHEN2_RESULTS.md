@@ -158,3 +158,23 @@ already does this before building anything.
   such as end-of-session pings. It was fixed in advance and applied as written. P4's mean saving has a CI above 0;
   the gate fails on the distribution.
 - 13 policies and 7 sensitivity runs, with no multiplicity correction (disclosed in the protocol).
+
+## Independent review (read-only, Sonnet subagent, 2026-10-19)
+
+**Verdict: PASS WITH NOTES.** The reviewer found nothing that changes the conclusions. Its checks:
+- the 18 unit tests pass (part 1 and part 2);
+- the protocol hashes match the frozen files, and part 1's frozen code and protocol have not changed since 43c81a7;
+- a re-run outside the repo gives the same verdicts and the same mean savings (769 sessions);
+- the doc and pt-BR figures match the json;
+- the verdicts follow the pre-registered rules;
+- post hoc items are labelled;
+- the public files hold aggregates only;
+- the keep-warm caveats assert no unverified policy fact.
+
+Notes (all low):
+1. Under `gen_prebuilt`, the handoff cost is also charged when the return turned out to be warm. This overstates
+   P5's cost, so it works against P5, and `gen_prebuilt` still passes. Not fixed (frozen code); disclosed here.
+2. The P5 headline is an upper bound (fixed trace, no regrowth or recall cost). The only stress test is the post hoc
+   100k run, and the quality cost is unmeasured. That is why the recommendation says "offer, user accepts".
+3. "Do not build keep-warm" rests on the cost gate and the margins, not on a negative mean. P4_K1's CI is above 0.
+4. The empirical break-even is a ratio of means (INFERIDO). 4.8% and 5.3% are close.
