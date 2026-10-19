@@ -1,0 +1,49 @@
+{
+ "schema": "when-to-compact/protocol",
+ "date": "2026-10-19",
+ "seed": 20261019,
+ "n_boot": 2000,
+ "price": {
+  "uncached": 1.0,
+  "read": 0.1,
+  "w5": 1.25,
+  "w1h": 2.0
+ },
+ "model": {
+  "rho": 0.35,
+  "q_recall": 0.2405,
+  "mu": 0.03,
+  "tokens_per_used": 6951
+ },
+ "policies": [
+  "P0",
+  "P1",
+  "P1_min10k",
+  "P1_min50k",
+  "P1_5m",
+  "P2",
+  "warm_50k"
+ ],
+ "candidates": [
+  "P1",
+  "P1_min10k",
+  "P1_min50k",
+  "P1_5m"
+ ],
+ "acceptance": {
+  "share_touched_sessions_lower_min": 0.7,
+  "ci95_lower_mean_saving_gt": 0.0,
+  "harm": "expected removed-then-needed per session <= P0"
+ },
+ "sensitivity": [
+  "rho0.15",
+  "q0.5",
+  "mu0.10",
+  "rho0.15_q0.5"
+ ],
+ "files_sha256": {
+  "research/when_to_compact.py": "6fd7d97e4fad62bdf28ce6c358a907a4cb95f8944d4aed59865fdeda920a212e",
+  "tests/test_when_to_compact.py": "21da34a36f7448151366aa7a7f0c0a4c5c3f761a1a4bff50e5001b194e0416dd",
+  "research/when-to-compact-2026-10-19/WHEN_PROTOCOL.md": "9bde9bc1e188b249f4e899c97129d8ae723e1cef3af42423f5cc7976c53f2646"
+ }
+}
