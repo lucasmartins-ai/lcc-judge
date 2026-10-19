@@ -10,7 +10,8 @@ No model calls, no network. Costs are in base-input-token equivalents (uncached 
 
 - **The cheap moment exists and it is the idle return.** After a gap longer than an hour, 97% of returns find the
   cache cold and re-write a median of 278k tokens. Those re-writes are **15.9% of all main-session cost** (MEDIDO).
-  A stash pass there pays no invalidation, because the prefix is re-written anyway.
+  In the model, a stash pass there pays no invalidation, because the prefix is re-written anyway (INFERIDO; the 3% of
+  such returns that were still warm are charged the invalidation).
 - **P1 (stash on the first request after an idle gap longer than the TTL) is cheaper than today on 97.7% of the
   sessions where it fires**: mean saving 185k base tokens per session [114k, 262k], 9.3% of total cost, 8.7% less
   context on average (INFERIDO). It passes the cost gate in all four sensitivity runs. The worst one is rho 0.15
@@ -23,7 +24,8 @@ No model calls, no network. Costs are in base-input-token equivalents (uncached 
   or be configured with, the TTL in force.
 - **Natural compaction is not where the money goes.** There are 39 compactions (37 manual). They cost about 0.7% of
   main-session cost (INFERIDO estimate), and 85% happen on a warm cache (median gap 84 s). Moving the stash to the
-  natural compaction point saves little. Idle returns are 20x more expensive in total.
+  natural compaction point saves little. Idle-return re-writes cost about 22x more in total (MEDIDO 15.9% over the
+  INFERIDO 0.72%).
 - **P2 (tail-only while warm) is empty by construction.** The newest outputs sit after the last breakpoint, and
   `stashed` never removes them (`preserve_recent`). Stashing while warm is a gamble: warm_50k earns +3.8% at rho 0.35
   but loses at rho 0.15 or q 0.5, and is cheaper on only 57% of touched sessions.
@@ -163,3 +165,27 @@ P1, P1_min10k and P1_min50k pass the cost gate in every run, so the pre-register
 - The compaction cost is an estimate. The summarizer request is not in the transcript.
 - The function-hook feasibility comes from strings in one Claude Code build. Nothing was executed.
 - Four related candidates, no multiplicity correction (disclosed in the protocol). The CIs are far from zero.
+
+## Independent review (read-only, Sonnet subagent, 2026-10-19)
+
+**Verdict: PASS WITH NOTES.** The reviewer found nothing that changes the verdict. Its checks:
+- the 8 unit tests pass;
+- the protocol hashes match the frozen files, and nothing frozen changed after 43c81a7;
+- the public files hold aggregates only;
+- a re-run outside the repo gives identical verdicts (768 sessions by then: P1 mean saving 185,525 -> 185,283);
+- the doc's figures match the json;
+- the verdict follows the pre-registered rule.
+
+Notes, and what was done with each:
+1. At the trigger, `max(0, C' - read - uncached)` can overcharge slightly when `m` is close to the reduced context.
+   It is negligible at mu 0.03 / 0.10, and it works against P1. Left as is (frozen code).
+2. The compaction gap is measured from the boundary timestamp, which comes after the summarizer call. The cost
+   estimate adds the whole first post-compaction request, not an increment. Both overstate the compaction cost and
+   only strengthen "natural compaction is cheap". Disclosed here, and the figure stays INFERIDO.
+3. Two Bottom-line sentences were untagged: "pays no invalidation" (a model assumption) and "20x" (MEDIDO / INFERIDO,
+   actually about 22x). Both fixed above.
+4. The data is live. The protocol froze 765 files / 40,514 requests, and the run saw 767 / 40,524. The hashes do not
+   cover the data snapshot, so exact reproduction is impossible. The saving is dominated by rho / q / mu from another
+   population. Both points are already under Limits.
+5. Every firing policy fails the harm gate by construction (pre-declared), so `conditional_opt_in` rests on the cost
+   gate alone.
