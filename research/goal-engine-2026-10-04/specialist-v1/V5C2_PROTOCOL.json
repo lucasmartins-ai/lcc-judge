@@ -1,0 +1,57 @@
+{
+ "schema": "v5c2/protocol",
+ "date": "2026-10-19",
+ "seed": 20261019,
+ "n_boot": 2000,
+ "ct_eps": 0.5,
+ "cache_factors": {
+  "read": 0.1,
+  "write": 1.25
+ },
+ "arms": [
+  "stashed",
+  "v3",
+  "v5c2",
+  "v5c2_ct",
+  "recency",
+  "bm25",
+  "mechanical"
+ ],
+ "candidates": [
+  "v5c2",
+  "v5c2_ct",
+  "v3"
+ ],
+ "acceptance": {
+  "ni_lower_bound": -0.005,
+  "superior_lower_bound": 0.0,
+  "invalidated_median_max_ratio": 1.1,
+  "ms_median_max": 250,
+  "peak_rss_mb_max": 300
+ },
+ "files_sha256": {
+  "research/v5c2.py": "b8f7807599a5d162c0cad2e5c327a6b8318ff68c3cd63db2952214a70182ee46",
+  "research/specialist_v5.py": "cffaaccbb9c42dc3a4b48ec38df2f9bd51d029443e3f6164f442bf5d3155552f",
+  "research/specialist_v3.py": "fff2c201225627dd30348c8259190790c3a17b43e8d3abea63c460c67881a21e",
+  "research/specialist_v2.py": "6638809ed9b58c832ea6c36e22b88665b7857f8b2eb816dbc4935ee0c3ac01f9",
+  "research/matched_budget_v2.py": "58859458a30cf72e76d46ffc4c945893c041a9071b4c1d4c6e03da822ae3843c",
+  "research/matched_budget.py": "0f05b774dbc4f566ba20a1d130295b9f5cb08c8ac96d629f5f0b07cfd80de4e6",
+  "research/edge_suite.py": "4c280c845810b3eb3c6eb0fd7ef41c06f6951268068635648c3314b1cbf12d74",
+  "research/edge_v2.py": "32388c42cf695d9dc4cf832f569a8617722ad1abc8cd7dcdb61a681c34717c2f",
+  "research/real_context_bench.py": "1d462543b39382113b1f03854d80f6850897f7591787c41c57c936f15604ec5e",
+  "research/real_context_bench_v02.py": "ccbfe9abbe109f3a11c014c9c7ff9040078fdcf273abad1b8392439ff75f7ce0",
+  "tests/test_v5c2.py": "1e6155158caf606dfa2659685524a0884dec3df22ce31340691b984410303564",
+  "tests/test_specialist_v5.py": "7bdc8dfef47f68b13b3d61550500a110e3423b2ded307640191e70ea7050c0e7",
+  "research/goal-engine-2026-10-04/specialist-v1/V5C2_PROTOCOL.md": "5a90d375326fd62d85f63aa80c468752083a2f096160d2b5f7892febff29e290"
+ },
+ "private_sha256": {
+  "~/.lcc/bench/v5c2/model-v5c2.json": "429a108a94e480455b02df5ddee7cc6e06e57f4f1a19d30582636967ab671665",
+  "~/.lcc/bench/specialist-v3/model.json": "219cd798d47f39d18249597892c92f0772d7946ed59610d5b86b8500fa1b51f7",
+  "~/.lcc/bench/next-action-v2/splits.json": "5bf7d74b427cb40bf9055a09d783817be1df7724bc5204b0db40868f963f78d2"
+ },
+ "lcc": {
+  "stashed_pin": "4719fdebb5acd67689bff8dc46ff3a7fd60b2360",
+  "stashed_pin_clean": true,
+  "scoring_lcc_main": "71bd8a3e6503a4ebabbda61ddb6953ba015e2860"
+ }
+}

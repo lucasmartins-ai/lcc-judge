@@ -245,16 +245,18 @@ def facts(body, cap=40):
     for line in body[:12000].splitlines():
         if len(line) > 300 or not DIGIT_RE.search(line) or NOFACT_RE.search(line):
             continue
-        st = stems(line)
+        st = None  # stems only for lines that hold a fact (v5c2 speed-up; same output)
         for m in UNIT_RE.finditer(line):
             c = unit_class(m.group(2))
             if c:
+                st = stems(line) if st is None else st
                 out.append((c, m.group(1).replace(',', '.'), st, line))
         for m in KV_RE.finditer(line):
             k, v = m.group(1).lower(), m.group(2).lower()
             if any(ch.isdigit() for ch in v) and len(k) >= 3:
                 suf = re.search(r'(?:_|\b)(ms|seconds?|secs?|s|minutes?|min|hours?|h|days?|d|pct|percent|mb|gb|mi|gi)$', k)
                 c = unit_class(suf.group(1)) if suf else None
+                st = stems(line) if st is None else st
                 out.append((c or 'k:' + re.sub(r'.*[.]', '', k), re.sub(r'[^\w.]', '', v), st, line))
         if len(out) >= cap:
             break
@@ -262,8 +264,11 @@ def facts(body, cap=40):
 
 
 # --- detectors ------------------------------------------------------------------------------------------------
-def detect(goal, texts, base=None, cascade=True, meta=None):
-    """-> (strong set, weak set, demote set, flags {i: [names]}). base: stage-1 scores (cascade needs them)."""
+def detect(goal, texts, base=None, cascade=True, meta=None, translated_top=1, score_only=False):
+    """-> (strong set, weak set, demote set, flags {i: [names]}). base: stage-1 scores (cascade needs them).
+    translated_top: how many translated-only matches to protect (v5c2: 2). score_only: skip the detectors that
+    cannot change a score under OFF = (stale, hedge) (injection, hedge; stale unless a prod goal makes it
+    shadow other_env); the returned flags then omit them, the scores are identical."""
     n = len(texts)
     meta = meta or s2.block_meta(texts)
     bodies = [s2.HEADER_RE.sub('', t).strip() for t in texts]
@@ -284,17 +289,17 @@ def detect(goal, texts, base=None, cascade=True, meta=None):
         strong.add(i)
         flags[i].append('user_directive')
     # injection: flag only (the block stays evidence; never a rule)
-    for i in range(n):
+    for i in range(n if not score_only else 0):
         if not is_user[i] and injected(fb[i]):
             flags[i].append('injection')
     # hedge: an assistant guess
-    for i in range(n):
+    for i in range(n if not score_only else 0):
         if is_asst[i] and HEDGE_RE.search(fb[i][:2000]):
             demote.add(i)
             flags[i].append('hedge')
     # stale docs / other-environment blocks: demoted (frees budget for the current, matching evidence)
     prod_goal = bool(PROD_GOAL_RE.search(gfold))
-    for i in range(n):
+    for i in range(n if prod_goal or not score_only else 0):
         if is_tool[i] and STALE_RE.search(fb[i][:3000]):
             demote.add(i)
             flags[i].append('stale')
@@ -316,7 +321,7 @@ def detect(goal, texts, base=None, cascade=True, meta=None):
     if tx:
         ts = np.array([sum(math.log(1 + n / df[x]) for x in bst[i] & tx) if len(bst[i] & tx) >= 2 and not bst[i] & gst
                        else 0.0 for i in range(n)])
-        for i in [int(k) for k in np.argsort(-ts, kind='stable')[:1] if ts[k] > 0]:
+        for i in [int(k) for k in np.argsort(-ts, kind='stable')[:translated_top] if ts[k] > 0]:
             weak.add(i)
             flags[i].append('translated_only')
     # git_state / conventions
@@ -425,6 +430,7 @@ class Judge:
     def __init__(self, model):
         self.model = model
         self.v3 = s3.Judge(model['v3'])
+        self.score_only = False
 
     @classmethod
     def load(cls, path=None):
@@ -436,12 +442,17 @@ class Judge:
         X = s2.featurize(goal, texts)
         base = np.asarray(self.v3.score_x(X))
         m = self.model
-        flags = detect(goal, texts, base, m['cascade'])[3]
+        flags = detect(goal, texts, base, m['cascade'], translated_top=m.get('translated_top', 1),
+                       score_only=self.score_only)[3]
         return combine(base, flags, m['bonus'], m['weak'], m.get('off', ()), [len(t) for t in texts],
                        m.get('max_chars')).tolist(), dict(flags)
 
     def score(self, goal, texts):
-        return self.score_full(goal, texts)[0]
+        self.score_only = set(self.model.get('off', ())) >= {'stale', 'hedge'}  # flag-only detectors skipped
+        try:
+            return self.score_full(goal, texts)[0]
+        finally:
+            self.score_only = False
 
     def flags(self, goal, texts):
         return self.score_full(goal, texts)[1]
@@ -450,9 +461,10 @@ class Judge:
 OFF = ('stale', 'hedge')  # detected and flagged, but no score change (train-sample cost, no dev-edge gain)
 
 
-def build(bonus=3.0, weak=0.25, cascade=True, max_chars=1000, off=OFF):
+def build(bonus=3.0, weak=0.25, cascade=True, max_chars=1000, off=OFF, translated_top=1):
     v3 = json.loads((s3.ART / 'model.json').read_text())
-    return dict(kind='v5', v3=v3, bonus=bonus, weak=weak, cascade=cascade, max_chars=max_chars, off=list(off))
+    return dict(kind='v5', v3=v3, bonus=bonus, weak=weak, cascade=cascade, max_chars=max_chars, off=list(off),
+                translated_top=translated_top)
 
 
 # --- development helpers (edge suites; train sample) --------------------------------------------------------
