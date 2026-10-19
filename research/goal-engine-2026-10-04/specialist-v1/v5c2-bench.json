@@ -1,0 +1,45 @@
+{
+ "note": "fresh process, 1 thread, the 325 eligible dev items, v5c2 then v3 in the same run",
+ "load_avg": {
+  "before": [
+   6.1,
+   10.2,
+   9.7
+  ],
+  "after": [
+   5.6,
+   8.7,
+   9.1
+  ]
+ },
+ "v5c2": {
+  "items": 325,
+  "blocks_median": 363,
+  "ms_median": 167.7,
+  "ms_p90": 432.0,
+  "ms_max": 1742.9,
+  "ms_median_250_600_blocks": 185.9,
+  "n_250_600_blocks": 141,
+  "blocks_per_s": 2125,
+  "load_ms": 105,
+  "rss_after_load_mb": 39.4,
+  "peak_rss_mb": 162.5,
+  "load_avg_1m": 6.2,
+  "model_file_kb": 183
+ },
+ "v3": {
+  "items": 325,
+  "blocks_median": 363,
+  "ms_median": 129.0,
+  "ms_p90": 325.1,
+  "ms_max": 1381.3,
+  "ms_median_250_600_blocks": 136.1,
+  "n_250_600_blocks": 141,
+  "blocks_per_s": 2755,
+  "load_ms": 84,
+  "rss_after_load_mb": 38.8,
+  "peak_rss_mb": 165.8,
+  "load_avg_1m": 5.6,
+  "model_file_kb": 183
+ }
+}
