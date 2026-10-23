@@ -89,7 +89,7 @@ def _claude_text(content):
     return None
 
 
-def claude(root, drops):
+def claude(root, drops, with_prev=False):
     for f in sorted(Path(root).rglob('*.jsonl')):
         if 'subagents' in f.relative_to(root).parts:
             drops['subagent_file'] += 1
@@ -119,7 +119,8 @@ def claude(root, drops):
             if s.startswith('<') or s.startswith(_CLAUDE_AUTO):
                 drops['injected_text'] += 1
                 continue
-            yield s, d.get('sessionId') or f.stem, d.get('timestamp'), prev
+            sid, ts = d.get('sessionId') or f.stem, d.get('timestamp')
+            yield (s, sid, ts, prev) if with_prev else (s, sid, ts)
             prev = None
 
 
@@ -196,7 +197,7 @@ def _hermes_clean(t):
     return re.sub(r'^(?:@(?:file|url|folder):(?:`[^`]*`|\S+)\s*)+', '', t.strip()).strip()
 
 
-def hermes(root, drops):
+def hermes(root, drops, with_prev=False):
     db = Path(root) / 'state.db'
     if not db.exists():
         return
@@ -230,7 +231,8 @@ def hermes(root, drops):
                 drops['replay_duplicate'] += 1
                 continue
             seen.add(key)
-            yield t, sid, _epoch(ts), last.pop(sid, None)
+            prev = last.pop(sid, None)
+            yield (t, sid, _epoch(ts), prev) if with_prev else (t, sid, _epoch(ts))
     finally:
         con.close()
 
@@ -393,7 +395,9 @@ def run(roots=None, base=BASE, with_prev=False):
         path = base / 'imported' / f'{source}.jsonl'
         drops, prior, seen, new, sessions = Counter(), _existing_ids(path), set(), [], set()
         root = Path(root).expanduser()
-        for text, key, ts, *rest in EXTRACTORS[source](root, drops) if root.exists() else ():
+        extract = EXTRACTORS[source]
+        kw = {'with_prev': True} if with_prev and source in ('claude', 'hermes') else {}
+        for text, key, ts, *rest in extract(root, drops, **kw) if root.exists() else ():
             text = (text or '').strip()
             if not text:
                 drops['empty'] += 1
