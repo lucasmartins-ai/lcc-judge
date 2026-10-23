@@ -70,7 +70,7 @@ class Judge:
     def __init__(self, data, embedder=None):
         self.labels, self.family, self.bias = data['labels'], data['family'], data['bias']
         k = len(self.labels)
-        rows = data['rows']
+        rows = [r for start, end in data['ranges'] for r in range(start, end)]
         flat = struct.unpack(f'<{len(rows) * k}e', base64.b64decode(data['weights_f16']))
         self.w = {r: flat[n * k:(n + 1) * k] for n, r in enumerate(rows)}  # only rows the family uses
         self.embedder = embedder
@@ -98,15 +98,19 @@ class Judge:
         return self.labels[i], p[i]
 
 
-def family_rows(family):
-    rows = []
+def family_ranges(family):
+    ranges = []
     if family in ('A', 'B', 'H'):
-        rows += range(P)
+        ranges.append([0, P])
     if family in ('B', 'H'):
-        rows += range(P, P + Q)
+        ranges.append([P, P + Q])
     if family in ('E', 'H'):
-        rows += range(P + Q, WIDTH)
-    return rows
+        ranges.append([P + Q, WIDTH])
+    return ranges
+
+
+def family_rows(family):
+    return [r for start, end in family_ranges(family) for r in range(start, end)]
 
 
 def export(path, labels, family, W, b, meta=None):
@@ -114,7 +118,8 @@ def export(path, labels, family, W, b, meta=None):
     import numpy as np
     rows = family_rows(family)
     w = np.asarray(W, dtype='<f2')[rows]
-    d = {'format': 'lcc-intake-judge/2', 'labels': list(labels), 'family': family, 'rows': rows,
+    d = {'format': 'lcc-intake-judge/2', 'labels': list(labels), 'family': family,
+         'ranges': family_ranges(family),
          'bias': [round(float(x), 6) for x in b], 'weights_f16': base64.b64encode(w.tobytes()).decode(),
          'meta': meta or {}}
     with open(path, 'w', encoding='utf-8') as fh:

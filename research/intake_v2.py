@@ -27,7 +27,7 @@ from pathlib import Path
 
 from research import intake_v1 as v1
 from research.intake_judge import Judge as JudgeV1
-from research.intake_judge_v2 import WIDTH, Embedder, Judge, export, family_rows, vector
+from research.intake_judge_v2 import WIDTH, Embedder, Judge, export, family_ranges, family_rows, vector
 from research.intake_keywords import classify as keyword_classify
 from research.llm_judge_arm import LIMIT_RE
 
@@ -311,7 +311,28 @@ def _threshold(pairs):
     return None, 0.0, None
 
 
-def train():
+def _measure(family, C, path, emb, recs, lab, owner, dv):
+    """Dev row for one exported config: scores, owner-dev, cost, size, budget, eligibility, threshold."""
+    j = Judge.load(path, emb if family in ('E', 'H') else None)
+    pred = {i: j.predict(recs[i]['goal'], recs[i].get('prev_agent')) for i in set(dv) | set(owner)}
+    gold = [lab[i] for i in dv]
+    cost = _bench(path, [[recs[i]['goal'], recs[i].get('prev_agent')] for i in dv], family)
+    med, p90, max_bytes, max_rss = BUDGET[family]
+    size = _files_bytes(path, family)
+    row = {'family': family, 'C': C,
+           'dev_macro_f1': round(v1.macro_f1(gold, [pred[i][0] for i in dv]), 4),
+           'dev_accuracy': round(sum(pred[i][0] == lab[i] for i in dv) / len(dv), 4),
+           'owner_dev_accuracy': round(sum(pred[i][0] == owner[i] for i in owner) / len(owner), 4),
+           'files_bytes': size, **cost}
+    row['within_budget'] = (cost['median_ms'] <= med and cost['p90_ms'] <= p90 and size <= max_bytes
+                           and cost["peak_rss_mb"] <= max_rss)
+    row['eligible'] = row['within_budget'] and row['owner_dev_accuracy'] >= V1_OWNER_DEV_ACC
+    row['threshold'], row['threshold_coverage'], row['threshold_accuracy'] = _threshold(
+        [(pred[i][1], pred[i][0] == lab[i]) for i in dv])
+    return row
+
+
+def train(refit=True):
     if (OUT / 'FREEZE.json').exists():
         raise SystemExit('FREEZE.json exists: v2 is frozen')
     cats, _ = v1.categories()
@@ -324,26 +345,18 @@ def train():
     table = []
     for family, C in GRID:
         t0 = time.time()
+        path = BASE / 'models' / f'intake-v2-{family}-C{C}.json'
+        if not refit:
+            row = _measure(family, C, path, emb, recs, lab, owner, dv)
+            table.append(row)
+            print(json.dumps(row), flush=True)
+            continue
         vec = lambda i, f=family: vector(recs[i]['goal'], recs[i].get('prev_agent'), f, emb)  # noqa: E731
         W, b = fit_vectors([vec(i) for i in tr], [lab[i] for i in tr], cats, C)
         path = BASE / 'models' / f'intake-v2-{family}-C{C}.json'
         export(path, cats, family, W, b, {'C': C, 'train_items': len(tr), 'seed': SEED})
-        j = Judge.load(path, emb if family in ('E', 'H') else None)
-        pred = {i: j.predict(recs[i]['goal'], recs[i].get('prev_agent')) for i in set(dv) | set(owner)}
-        gold = [lab[i] for i in dv]
-        cost = _bench(path, [[recs[i]['goal'], recs[i].get('prev_agent')] for i in dv], family)
-        med, p90, max_bytes, max_rss = BUDGET[family]
-        size = _files_bytes(path, family)
-        row = {'family': family, 'C': C,
-               'dev_macro_f1': round(v1.macro_f1(gold, [pred[i][0] for i in dv]), 4),
-               'dev_accuracy': round(sum(pred[i][0] == lab[i] for i in dv) / len(dv), 4),
-               'owner_dev_accuracy': round(sum(pred[i][0] == owner[i] for i in owner) / len(owner), 4),
-               'files_bytes': size, **cost, 'fit_s': round(time.time() - t0, 1)}
-        row['within_budget'] = (cost['median_ms'] <= med and cost['p90_ms'] <= p90 and size <= max_bytes
-                                and cost['peak_rss_mb'] <= max_rss)
-        row['eligible'] = row['within_budget'] and row['owner_dev_accuracy'] >= V1_OWNER_DEV_ACC
-        row['threshold'], row['threshold_coverage'], row['threshold_accuracy'] = _threshold(
-            [(pred[i][1], pred[i][0] == lab[i]) for i in dv])
+        row = _measure(family, C, path, emb, recs, lab, owner, dv)
+        row['fit_s'] = round(time.time() - t0, 1)
         table.append(row)
         print(json.dumps(row), flush=True)
 
@@ -509,6 +522,27 @@ def evaluate(pass_paths):
                                        for n, v in res['views'].items()}}, indent=1))
 
 
+def reselect():
+    """Amendment 1: convert the 9 exports to the range format (same weights), re-measure, re-select."""
+    import base64
+    old = OUT / 'FREEZE.json'
+    if not old.exists():
+        raise SystemExit('nothing to reselect')
+    (OUT / 'FREEZE-prefix.json').write_text(old.read_text())
+    old.unlink()
+    for family, C in GRID:
+        path = BASE / 'models' / f'intake-v2-{family}-C{C}.json'
+        d = json.loads(path.read_text())
+        if 'rows' in d:
+            assert d['rows'] == family_rows(family), 'rows are not the family ranges'
+            w0 = base64.b64decode(d['weights_f16'])
+            d.pop('rows')
+            d['ranges'] = family_ranges(family)
+            path.write_text(json.dumps(d))
+            assert base64.b64decode(json.loads(path.read_text())['weights_f16']) == w0
+    train(refit=False)
+
+
 def _bootstrap(groups, diff_fn, n=2000):
     rng = random.Random(SEED)
     keys = sorted(groups)
@@ -564,7 +598,7 @@ def _score(gold, arms, recs, cost_ok):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument('command', choices=('split', 'teacher', 'check', 'shrink', 'train', 'count', 'gold-page', 'eval'))
+    ap.add_argument('command', choices=('split', 'teacher', 'check', 'shrink', 'train', 'reselect', 'count', 'gold-page', 'eval'))
     ap.add_argument('--pass', dest='pass_name', default='pass1', help='gold-page: pass1 or pass2')
     ap.add_argument('csv', nargs='*')
     a = ap.parse_args(argv)
