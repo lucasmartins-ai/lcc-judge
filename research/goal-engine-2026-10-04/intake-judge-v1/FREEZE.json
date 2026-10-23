@@ -1,0 +1,92 @@
+{
+ "frozen_at_utc": "2026-10-23T19:05:19Z",
+ "pick": {
+  "kinds": "char+word",
+  "C": 3.0,
+  "dev_macro_f1": 0.521,
+  "dev_accuracy": 0.5143,
+  "model_bytes": 1223968,
+  "fit_s": 86.0
+ },
+ "grid": [
+  {
+   "kinds": "char",
+   "C": 0.3,
+   "dev_macro_f1": 0.4303,
+   "dev_accuracy": 0.4286,
+   "model_bytes": 1223962,
+   "fit_s": 162.1
+  },
+  {
+   "kinds": "char",
+   "C": 1.0,
+   "dev_macro_f1": 0.4946,
+   "dev_accuracy": 0.4857,
+   "model_bytes": 1223965,
+   "fit_s": 168.4
+  },
+  {
+   "kinds": "char",
+   "C": 3.0,
+   "dev_macro_f1": 0.5208,
+   "dev_accuracy": 0.5105,
+   "model_bytes": 1223965,
+   "fit_s": 162.9
+  },
+  {
+   "kinds": "char+word",
+   "C": 0.3,
+   "dev_macro_f1": 0.4391,
+   "dev_accuracy": 0.4381,
+   "model_bytes": 1223970,
+   "fit_s": 123.1
+  },
+  {
+   "kinds": "char+word",
+   "C": 1.0,
+   "dev_macro_f1": 0.4949,
+   "dev_accuracy": 0.4857,
+   "model_bytes": 1223967,
+   "fit_s": 104.2
+  },
+  {
+   "kinds": "char+word",
+   "C": 3.0,
+   "dev_macro_f1": 0.521,
+   "dev_accuracy": 0.5143,
+   "model_bytes": 1223968,
+   "fit_s": 86.0
+  }
+ ],
+ "train_items": 2482,
+ "dev_items": 525,
+ "dev_label_counts": {
+  "correct_approach_or_rule": 81,
+  "task_status_or_control": 74,
+  "specified_task": 64,
+  "approve_or_pick": 63,
+  "failure_report": 39,
+  "git_ship": 39,
+  "environment_and_infra": 31,
+  "supply_fact_or_step_done": 27,
+  "revise_recent_output": 25,
+  "UNKNOWN": 19,
+  "project_audit_or_direction": 19,
+  "general_question": 17,
+  "external_accounts_and_comms": 16,
+  "handoff_prompt": 11
+ },
+ "majority_class": "task_status_or_control",
+ "dev_keyword_baseline": {
+  "macro_f1": 0.2582,
+  "accuracy": 0.2362
+ },
+ "sha256": {
+  "model.json (~/.lcc/intake-v1)": "8fc1c9b3b6d90e836c8ff6bcdf0b1e7c9d94cd6d7f5bbef0cec874fc8fee7cbf",
+  "research/intake_judge.py": "8e512abbbdcf43985f66534c7c3127bdce453c460d4e73fe3c0022d7e9e42fbc",
+  "research/intake_keywords.py": "15462176f34853e9520912c5b6378c53c0b3a81c91727b76eb54f84a6b021e5b",
+  "research/intake_v1.py": "d07ce3d3546c2bd18aa992097b218239cf540bd047e1cc28533a38fa547ad7b0",
+  "teacher system prompt (~/.lcc/intake-v1/teacher)": "40c55b711ee2dd64f50d5abf42c55af6c7890020a8b6fc0e32508ab73f1409d3"
+ },
+ "note": "research/intake_v1.py includes the gold sampler and the eval (evaluate); its hash covers both"
+}
