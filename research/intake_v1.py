@@ -455,41 +455,65 @@ def _bootstrap(groups, diff_fn, n=2000):
     return round(vals[int(0.025 * n)], 4), round(vals[int(0.975 * n) - 1], 4)
 
 
-def evaluate(csv_paths):
-    """One-shot test on the owner gold. Writes RESULTS json; refuses to run twice."""
+def _read_gold(path):
+    with open(path, newline='', encoding='utf-8') as fh:
+        return {row['id']: row['label'] for row in csv.DictReader(fh)}
+
+
+def evaluate(pass_paths):
+    """One-shot test on the owner gold (amendment 2): primary = items both passes label alike;
+    each full pass is reported as a sensitivity view. Writes test-results.json; refuses to run twice."""
     out = OUT / 'test-results.json'
     if out.exists():
         raise SystemExit('the held-out gold is spent: test-results.json exists')
-    gold = {}
-    for p in csv_paths:
-        with open(p, newline='', encoding='utf-8') as fh:
-            for row in csv.DictReader(fh):
-                gold[row['id']] = row['label']
-    unsure = sum(v in ('', 'unsure') for v in gold.values())
-    gold = {i: v for i, v in gold.items() if v not in ('', 'unsure')}
+    passes = [_read_gold(p) for p in pass_paths]
+    clean = [{i: v for i, v in g.items() if v not in ('', 'unsure')} for g in passes]
+    views = {f'pass{n + 1}': g for n, g in enumerate(clean)}
+    if len(clean) == 2:
+        views = {'primary_agree': {i: v for i, v in clean[0].items() if clean[1].get(i) == v}, **views}
+    all_ids = sorted(set().union(*clean))
     recs, lab = records(), teacher_labels()
-    ids = sorted(gold)
     freeze = json.loads((OUT / 'FREEZE.json').read_text())
     cats, tax = categories()
-    # arms
+    # arms, computed once on every labelled id
     j = Judge.load(BASE / 'model.json')
-    v1 = {i: j.predict(recs[i]['goal'])[0] for i in ids}
+    v1 = {i: j.predict(recs[i]['goal'])[0] for i in all_ids}
     texts = BASE / 'gold' / 'cost-input.json'
-    _write_private(texts, [recs[i]['goal'] for i in ids])
+    _write_private(texts, [recs[i]['goal'] for i in all_ids])
     p = subprocess.run([sys.executable, '-m', 'research.intake_judge', str(BASE / 'model.json'), str(texts)],
                        capture_output=True, text=True, check=True, cwd=REPO.parent)
     cost = json.loads(p.stdout)
     lat = sorted(cost['latency_ms'])
-    kw = {i: keyword_classify(recs[i]['goal']) for i in ids}
-    maj = {i: freeze['majority_class'] for i in ids}
+    kw = {i: keyword_classify(recs[i]['goal']) for i in all_ids}
+    maj = {i: freeze['majority_class'] for i in all_ids}
     cache = BASE / 'gold' / 'opus.json'  # cached so a failed call does not re-spend finished batches
     opus = json.loads(cache.read_text()) if cache.exists() else {}
     argv = teacher_argv(cats, tax)
-    todo = [i for i in ids if i not in opus]
+    todo = [i for i in all_ids if i not in opus]
     for k in range(0, len(todo), BATCH):
         opus.update(_call(argv, [recs[i] for i in todo[k:k + BATCH]]))
         _write_private(cache, opus)
     arms = {'intake_v1': v1, 'keyword': kw, 'majority': maj, 'opus': opus}
+    res = {'pass_sha256': [_sha(p) for p in pass_paths], 'pass_items': [len(g) for g in passes],
+           'pass_unsure': [sum(v in ('', 'unsure') for v in g.values()) for g in passes],
+           'owner_self_agreement': (sum(clean[0].get(i) == v for i, v in clean[1].items()) if len(clean) == 2 else None),
+           'cost': {'median_ms': round(lat[len(lat) // 2], 3), 'p90_ms': round(lat[int(0.9 * len(lat))], 3),
+                    'load_ms': round(cost['load_ms'], 1), 'model_bytes': (BASE / 'model.json').stat().st_size,
+                    'peak_rss_mb': round(cost['peak_rss_mb'], 1), 'method': 'fresh process, 1 thread'},
+           'views': {}}
+    c = res['cost']
+    cost_ok = c['median_ms'] <= 5 and c['p90_ms'] <= 20 and c['model_bytes'] <= 2_000_000 and c['peak_rss_mb'] <= 100
+    for name, gold in views.items():
+        res['views'][name] = _score(gold, arms, recs, lab, cost_ok)
+    out.write_text(json.dumps(res, indent=1) + '\n')
+    print(json.dumps({'cost': res['cost'], 'self_agreement': res['owner_self_agreement'],
+                      **{n: {k: v[k] for k in ('items', 'arms', 'diffs', 'acceptance')} for n, v in res['views'].items()}},
+                     indent=1))
+
+
+def _score(gold, arms, recs, lab, cost_ok):
+    ids = sorted(gold)
+    v1 = arms['intake_v1']
     groups = defaultdict(list)
     for i in ids:
         groups[recs[i]['session_hash']].append(i)
@@ -500,7 +524,7 @@ def evaluate(csv_paths):
     def mf1(arm, s):
         return macro_f1([gold[i] for i in s], [arms[arm].get(i) for i in s])
 
-    res = {'gold_items': len(ids), 'unsure_excluded': unsure, 'sessions': len(groups),
+    res = {'items': len(ids), 'sessions': len(groups),
            'gold_label_counts': dict(Counter(gold.values()).most_common()), 'arms': {}, 'diffs': {}}
     for a in arms:
         res['arms'][a] = {'accuracy': round(acc(a, ids), 4), 'macro_f1': round(mf1(a, ids), 4)}
@@ -510,20 +534,17 @@ def evaluate(csv_paths):
             'accuracy_ci': _bootstrap(groups, lambda s, o=other: acc('intake_v1', s) - acc(o, s)),
             'macro_f1': round(mf1('intake_v1', ids) - mf1(other, ids), 4),
             'macro_f1_ci': _bootstrap(groups, lambda s, o=other: mf1('intake_v1', s) - mf1(o, s))}
-    res['cost'] = {'median_ms': round(lat[len(lat) // 2], 3), 'p90_ms': round(lat[int(0.9 * len(lat))], 3),
-                   'load_ms': round(cost['load_ms'], 1), 'model_bytes': (BASE / 'model.json').stat().st_size,
-                   'peak_rss_mb': round(cost['peak_rss_mb'], 1), 'method': 'fresh process, 1 thread'}
     d = res['diffs']
     res['acceptance'] = {
         '1_beats_rules': all(d[f'v1-{o}'][m][0] > 0 for o in ('keyword', 'majority') for m in ('accuracy_ci', 'macro_f1_ci')),
         '2_close_to_opus': d['v1-opus']['accuracy_ci'][0] > -0.10,
-        '3_cost': res['cost']['median_ms'] <= 5 and res['cost']['p90_ms'] <= 20
-                  and res['cost']['model_bytes'] <= 2_000_000 and res['cost']['peak_rss_mb'] <= 100}
-    per_cat = {}
-    for c in sorted(set(gold.values())):
-        g = [i for i in ids if gold[i] == c]
-        per_cat[c] = {'n': len(g), **{a: round(sum(arms[a].get(i) == c for i in g) / len(g), 3) for a in arms}}
-    res['recall_by_category'] = per_cat
+        '3_cost': cost_ok}
+    res['recall_by_category'] = {
+        cat: {'n': len(g), **{a: round(sum(arms[a].get(i) == cat for i in g) / len(g), 3) for a in arms}}
+        for cat in sorted(set(gold.values())) for g in [[i for i in ids if gold[i] == cat]]}
+    res['v1_precision_by_category'] = {
+        cat: round(sum(gold[i] == cat for i in ids if v1[i] == cat) / max(1, sum(v1[i] == cat for i in ids)), 3)
+        for cat in sorted({v1[i] for i in ids})}
     res['by_language'] = {l: {a: round(acc(a, s), 4) for a in arms} | {'n': len(s)}
                           for l in sorted({str(recs[i]['language']) for i in ids})
                           for s in [[i for i in ids if str(recs[i]['language']) == l]]}
@@ -531,12 +552,8 @@ def evaluate(csv_paths):
                         for src in sorted({recs[i]['source'] for i in ids})
                         for s in [[i for i in ids if recs[i]['source'] == src]]}
     res['v1_confusion'] = {f'{g}->{p}': n for (g, p), n in sorted(Counter((gold[i], v1[i]) for i in ids).items())}
-    res['v1_precision_by_category'] = {
-        c: round(sum(gold[i] == c for i in ids if v1[i] == c) / max(1, sum(v1[i] == c for i in ids)), 3)
-        for c in sorted(set(v1.values()))}
     res['teacher_labels_on_gold'] = sum(i in lab for i in ids)
-    out.write_text(json.dumps(res, indent=1) + '\n')
-    print(json.dumps({k: res[k] for k in ('arms', 'diffs', 'cost', 'acceptance')}, indent=1))
+    return res
 
 
 def main(argv=None):
@@ -544,7 +561,7 @@ def main(argv=None):
     ap.add_argument('command', choices=('split', 'owner', 'teacher', 'check', 'train', 'gold-page', 'eval'))
     ap.add_argument('--limit', type=int, help='teacher: max batches this run')
     ap.add_argument('--offset', type=int, default=0, help='gold-page: top-up draw starts here')
-    ap.add_argument('csv', nargs='*', help='eval: gold CSV file(s) from the review page')
+    ap.add_argument('csv', nargs='*', help='eval: one CSV per owner labelling pass')
     a = ap.parse_args(argv)
     if a.command == 'teacher':
         teacher(a.limit)
