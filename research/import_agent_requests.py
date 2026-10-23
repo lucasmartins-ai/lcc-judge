@@ -94,9 +94,18 @@ def claude(root, drops):
         if 'subagents' in f.relative_to(root).parts:
             drops['subagent_file'] += 1
             continue
+        prev = None  # last assistant text before the next human prompt (intake v2 context)
         for d in _lines(f, drops):
+            if d.get('type') == 'assistant' and not d.get('isSidechain'):
+                content = (d.get('message') or {}).get('content')
+                if isinstance(content, list):
+                    text = '\n'.join(b.get('text', '') for b in content
+                                     if isinstance(b, dict) and b.get('type') == 'text').strip()
+                    if text:
+                        prev = text
+                continue
             if d.get('type') != 'user':
-                continue  # assistant/attachment/snapshot records are not user turns at all
+                continue  # attachment/snapshot records are not user turns at all
             if (d.get('isMeta') or d.get('isSidechain') or d.get('isCompactSummary') or d.get('agentId')
                     or d.get('toolUseResult') is not None or d.get('sourceToolUseID')
                     or d.get('sourceToolAssistantUUID') or d.get('entrypoint') in ('sdk-py', 'sdk-ts', 'sdk-cli')):
@@ -110,7 +119,8 @@ def claude(root, drops):
             if s.startswith('<') or s.startswith(_CLAUDE_AUTO):
                 drops['injected_text'] += 1
                 continue
-            yield s, d.get('sessionId') or f.stem, d.get('timestamp')
+            yield s, d.get('sessionId') or f.stem, d.get('timestamp'), prev
+            prev = None
 
 
 # --- codex: ~/.codex/sessions/**/rollout-*.jsonl + history.jsonl -----------------------------
@@ -202,10 +212,15 @@ def hermes(root, drops):
             f"and s.source in ({marks}) and m.display_kind is not null and m.display_kind!='steer'",
             _HERMES_SOURCES).fetchone()[0]
         rows = con.execute(
-            "select m.session_id, m.content, m.timestamp from messages m join sessions s on s.id=m.session_id "
-            "where m.role='user' and (m.display_kind is null or m.display_kind='steer') "
-            f"and s.source in ({marks}) order by m.timestamp", _HERMES_SOURCES)
-        for sid, content, ts in rows:
+            "select m.session_id, m.role, m.content, m.timestamp from messages m join sessions s on s.id=m.session_id "
+            "where ((m.role='user' and (m.display_kind is null or m.display_kind='steer')) or m.role='assistant') "
+            f"and s.source in ({marks}) order by m.timestamp, m.rowid", _HERMES_SOURCES)
+        last = {}  # session -> last assistant text (intake v2 context)
+        for sid, role, content, ts in rows:
+            if role == 'assistant':
+                if (content or '').strip():
+                    last[sid] = content.strip()
+                continue
             t = _hermes_clean(content or '')
             if t.startswith(_HERMES_DROP) or (t.startswith('Read the file ') and 'answer' in t[:200]):
                 drops['injected_text'] += 1
@@ -215,7 +230,7 @@ def hermes(root, drops):
                 drops['replay_duplicate'] += 1
                 continue
             seen.add(key)
-            yield t, sid, _epoch(ts)
+            yield t, sid, _epoch(ts), last.pop(sid, None)
     finally:
         con.close()
 
@@ -365,7 +380,10 @@ def _existing_ids(path):
     return {r['id'] for r in recs}
 
 
-def run(roots=None, base=BASE):
+PREV_CHARS = 600  # tail of the agent's last turn: where its question or proposal sits
+
+
+def run(roots=None, base=BASE, with_prev=False):
     roots = roots or DEFAULT_ROOTS
     base, out = Path(base), {}
     (base / 'imported').mkdir(parents=True, exist_ok=True)
@@ -375,7 +393,7 @@ def run(roots=None, base=BASE):
         path = base / 'imported' / f'{source}.jsonl'
         drops, prior, seen, new, sessions = Counter(), _existing_ids(path), set(), [], set()
         root = Path(root).expanduser()
-        for text, key, ts in EXTRACTORS[source](root, drops) if root.exists() else ():
+        for text, key, ts, *rest in EXTRACTORS[source](root, drops) if root.exists() else ():
             text = (text or '').strip()
             if not text:
                 drops['empty'] += 1
@@ -387,7 +405,9 @@ def run(roots=None, base=BASE):
                 drops['too_long'] += 1
                 continue
             goal = rl.redact(text)[:rl.MAX_GOAL_CHARS]
-            rid = hashlib.sha256(f'{source}\0{goal}'.encode()).hexdigest()[:16]
+            prev = rl.redact(rest[0])[-PREV_CHARS:] if with_prev and rest and rest[0] else None
+            # with_prev: the same short reply after a different agent turn is a different request
+            rid = hashlib.sha256((f'{source}\0{goal}' + (f'\0{prev}' if prev else '')).encode()).hexdigest()[:16]
             if rid in prior or rid in seen:
                 drops['already_imported' if rid in prior else 'duplicate'] += 1
                 continue
@@ -397,7 +417,8 @@ def run(roots=None, base=BASE):
             new.append({'id': rid, 'source': source, 'provenance': PROVENANCE, 'goal': goal,
                         'language': rl.detect_language(goal), 'session_hash': shash,
                         'timestamp_utc': _utc(ts), 'imported_at_utc': now,
-                        'redaction_rules_sha256': rl.RULESET_SHA256})
+                        'redaction_rules_sha256': rl.RULESET_SHA256,
+                        **({'prev_agent': prev} if with_prev else {})})
         if new:
             with path.open('a', encoding='utf-8') as fh:
                 fh.writelines(json.dumps(r, ensure_ascii=False) + '\n' for r in new)
@@ -427,9 +448,11 @@ def main():
     parser.add_argument('command', choices=('run', 'summary'))
     parser.add_argument('--base', type=Path, default=BASE)
     parser.add_argument('--sources', nargs='+', choices=sorted(EXTRACTORS), default=sorted(EXTRACTORS))
+    parser.add_argument('--with-prev', action='store_true',
+                        help="store the tail of the agent's previous turn (redacted); it joins the dedupe key")
     args = parser.parse_args()
     if args.command == 'run':
-        result = run({s: DEFAULT_ROOTS[s] for s in args.sources}, args.base)
+        result = run({s: DEFAULT_ROOTS[s] for s in args.sources}, args.base, args.with_prev)
     else:
         result = summary(args.base)
     print(json.dumps(result, indent=1, sort_keys=True))

@@ -19,7 +19,7 @@ def jl(path, rows):
 
 
 def texts(gen):
-    return [t for t, _, _ in gen]
+    return [t for t, *_ in gen]
 
 
 class DenylistTests(unittest.TestCase):
@@ -74,8 +74,22 @@ class ExtractorTests(unittest.TestCase):
         jl(self.root / 'proj' / 's1' / 'subagents' / 'a.jsonl', [{**base, 'message': {'content': 'subagent prompt'}}])
         got = list(iar.claude(self.root, self.drops))
         self.assertEqual(texts(got), ['fix the login bug', 'and add a test'])
-        self.assertEqual(got[0][1:], ('s1', '2026-06-02T10:01:53.400Z'))
+        self.assertEqual(got[0][1:3], ('s1', '2026-06-02T10:01:53.400Z'))
         self.assertGreater(sum(self.drops.values()), 0)
+
+    def test_claude_pairs_each_prompt_with_the_agent_turn_before_it(self):
+        base = {'type': 'user', 'sessionId': 's2', 'timestamp': '2026-10-24T10:00:00Z'}
+        say = lambda t: {'type': 'assistant', 'message': {'content': [{'type': 'text', 'text': t}]}}  # noqa: E731
+        jl(self.root / 'proj' / 's2.jsonl', [
+            {**base, 'message': {'content': 'start'}},
+            say('Option 1 or 2?'),
+            {**base, 'message': {'content': [{'type': 'tool_result', 'content': 'x'}]}},
+            say('Pick one: 1 or 2?'),
+            {**base, 'message': {'content': 'sim'}},
+            {**base, 'message': {'content': 'sim'}},
+        ])
+        got = list(iar.claude(self.root, self.drops))
+        self.assertEqual([(t, p) for t, _, _, p in got], [('start', None), ('sim', 'Pick one: 1 or 2?'), ('sim', None)])
 
     def test_codex_unwraps_request_and_skips_subagents_and_replays(self):
         sess = self.root / 'sessions' / '2026' / '10' / '01'
