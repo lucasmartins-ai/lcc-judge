@@ -1,0 +1,947 @@
+{
+ "pass_sha256": [
+  "22519c29f130cf9556ab597ee77347faa0419a84e721b9524ef801a735ea7780",
+  "8f9f4092f812a5a12395e638061be08cc2d6acee8d20c89fea60aeb3a9678e93"
+ ],
+ "pass_items": [
+  150,
+  150
+ ],
+ "pass_unsure": [
+  0,
+  2
+ ],
+ "owner_self_agreement": 116,
+ "cost": {
+  "median_ms": 0.262,
+  "p90_ms": 0.851,
+  "load_ms": 9.2,
+  "model_bytes": 1223968,
+  "peak_rss_mb": 39.7,
+  "method": "fresh process, 1 thread"
+ },
+ "views": {
+  "primary_agree": {
+   "items": 116,
+   "sessions": 79,
+   "gold_label_counts": {
+    "approve_or_pick": 22,
+    "specified_task": 17,
+    "git_ship": 16,
+    "correct_approach_or_rule": 15,
+    "task_status_or_control": 9,
+    "environment_and_infra": 9,
+    "supply_fact_or_step_done": 8,
+    "revise_recent_output": 7,
+    "failure_report": 3,
+    "external_accounts_and_comms": 3,
+    "project_audit_or_direction": 3,
+    "handoff_prompt": 2,
+    "UNKNOWN": 1,
+    "general_question": 1
+   },
+   "arms": {
+    "intake_v1": {
+     "accuracy": 0.5086,
+     "macro_f1": 0.4567
+    },
+    "keyword": {
+     "accuracy": 0.2241,
+     "macro_f1": 0.2276
+    },
+    "majority": {
+     "accuracy": 0.0776,
+     "macro_f1": 0.0103
+    },
+    "opus": {
+     "accuracy": 0.8621,
+     "macro_f1": 0.8212
+    }
+   },
+   "diffs": {
+    "v1-keyword": {
+     "accuracy": 0.2845,
+     "accuracy_ci": [
+      0.1897,
+      0.3894
+     ],
+     "macro_f1": 0.229,
+     "macro_f1_ci": [
+      0.1072,
+      0.3612
+     ]
+    },
+    "v1-majority": {
+     "accuracy": 0.431,
+     "accuracy_ci": [
+      0.3136,
+      0.55
+     ],
+     "macro_f1": 0.4464,
+     "macro_f1_ci": [
+      0.332,
+      0.563
+     ]
+    },
+    "v1-opus": {
+     "accuracy": -0.3534,
+     "accuracy_ci": [
+      -0.459,
+      -0.25
+     ],
+     "macro_f1": -0.3645,
+     "macro_f1_ci": [
+      -0.5038,
+      -0.2395
+     ]
+    }
+   },
+   "acceptance": {
+    "1_beats_rules": true,
+    "2_close_to_opus": false,
+    "3_cost": true
+   },
+   "recall_by_category": {
+    "UNKNOWN": {
+     "n": 1,
+     "intake_v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "approve_or_pick": {
+     "n": 22,
+     "intake_v1": 0.545,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.773
+    },
+    "correct_approach_or_rule": {
+     "n": 15,
+     "intake_v1": 0.267,
+     "keyword": 0.067,
+     "majority": 0.0,
+     "opus": 0.933
+    },
+    "environment_and_infra": {
+     "n": 9,
+     "intake_v1": 0.333,
+     "keyword": 0.111,
+     "majority": 0.0,
+     "opus": 0.778
+    },
+    "external_accounts_and_comms": {
+     "n": 3,
+     "intake_v1": 0.667,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "failure_report": {
+     "n": 3,
+     "intake_v1": 1.0,
+     "keyword": 0.333,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "general_question": {
+     "n": 1,
+     "intake_v1": 0.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.0
+    },
+    "git_ship": {
+     "n": 16,
+     "intake_v1": 0.562,
+     "keyword": 0.062,
+     "majority": 0.0,
+     "opus": 0.938
+    },
+    "handoff_prompt": {
+     "n": 2,
+     "intake_v1": 0.5,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 3,
+     "intake_v1": 0.667,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.667
+    },
+    "revise_recent_output": {
+     "n": 7,
+     "intake_v1": 0.714,
+     "keyword": 0.143,
+     "majority": 0.0,
+     "opus": 0.857
+    },
+    "specified_task": {
+     "n": 17,
+     "intake_v1": 0.706,
+     "keyword": 0.765,
+     "majority": 0.0,
+     "opus": 0.941
+    },
+    "supply_fact_or_step_done": {
+     "n": 8,
+     "intake_v1": 0.25,
+     "keyword": 0.125,
+     "majority": 0.0,
+     "opus": 0.75
+    },
+    "task_status_or_control": {
+     "n": 9,
+     "intake_v1": 0.333,
+     "keyword": 0.222,
+     "majority": 1.0,
+     "opus": 0.889
+    }
+   },
+   "v1_precision_by_category": {
+    "UNKNOWN": 0.125,
+    "approve_or_pick": 0.75,
+    "correct_approach_or_rule": 0.4,
+    "environment_and_infra": 0.429,
+    "external_accounts_and_comms": 0.5,
+    "failure_report": 0.333,
+    "general_question": 0.0,
+    "git_ship": 0.9,
+    "handoff_prompt": 1.0,
+    "project_audit_or_direction": 0.5,
+    "revise_recent_output": 0.455,
+    "specified_task": 0.6,
+    "supply_fact_or_step_done": 0.333,
+    "task_status_or_control": 0.375
+   },
+   "by_language": {
+    "None": {
+     "intake_v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0,
+     "n": 1
+    },
+    "en": {
+     "intake_v1": 0.64,
+     "keyword": 0.32,
+     "majority": 0.12,
+     "opus": 0.88,
+     "n": 25
+    },
+    "pt": {
+     "intake_v1": 0.4667,
+     "keyword": 0.2,
+     "majority": 0.0667,
+     "opus": 0.8556,
+     "n": 90
+    }
+   },
+   "by_source": {
+    "claude": {
+     "intake_v1": 0.4792,
+     "keyword": 0.2083,
+     "majority": 0.0729,
+     "opus": 0.8438,
+     "n": 96
+    },
+    "codex": {
+     "intake_v1": 0.8,
+     "keyword": 0.4,
+     "majority": 0.0,
+     "opus": 0.8,
+     "n": 5
+    },
+    "hermes": {
+     "intake_v1": 0.6,
+     "keyword": 0.2667,
+     "majority": 0.1333,
+     "opus": 1.0,
+     "n": 15
+    }
+   },
+   "v1_confusion": {
+    "UNKNOWN->UNKNOWN": 1,
+    "approve_or_pick->UNKNOWN": 1,
+    "approve_or_pick->approve_or_pick": 12,
+    "approve_or_pick->environment_and_infra": 2,
+    "approve_or_pick->failure_report": 1,
+    "approve_or_pick->git_ship": 1,
+    "approve_or_pick->revise_recent_output": 1,
+    "approve_or_pick->specified_task": 2,
+    "approve_or_pick->task_status_or_control": 2,
+    "correct_approach_or_rule->UNKNOWN": 1,
+    "correct_approach_or_rule->correct_approach_or_rule": 4,
+    "correct_approach_or_rule->environment_and_infra": 1,
+    "correct_approach_or_rule->external_accounts_and_comms": 1,
+    "correct_approach_or_rule->failure_report": 2,
+    "correct_approach_or_rule->project_audit_or_direction": 1,
+    "correct_approach_or_rule->revise_recent_output": 3,
+    "correct_approach_or_rule->specified_task": 1,
+    "correct_approach_or_rule->supply_fact_or_step_done": 1,
+    "environment_and_infra->UNKNOWN": 1,
+    "environment_and_infra->correct_approach_or_rule": 3,
+    "environment_and_infra->environment_and_infra": 3,
+    "environment_and_infra->supply_fact_or_step_done": 1,
+    "environment_and_infra->task_status_or_control": 1,
+    "external_accounts_and_comms->external_accounts_and_comms": 2,
+    "external_accounts_and_comms->general_question": 1,
+    "failure_report->failure_report": 3,
+    "general_question->specified_task": 1,
+    "git_ship->UNKNOWN": 1,
+    "git_ship->approve_or_pick": 4,
+    "git_ship->git_ship": 9,
+    "git_ship->specified_task": 1,
+    "git_ship->task_status_or_control": 1,
+    "handoff_prompt->handoff_prompt": 1,
+    "handoff_prompt->project_audit_or_direction": 1,
+    "project_audit_or_direction->project_audit_or_direction": 2,
+    "project_audit_or_direction->specified_task": 1,
+    "revise_recent_output->UNKNOWN": 1,
+    "revise_recent_output->revise_recent_output": 5,
+    "revise_recent_output->task_status_or_control": 1,
+    "specified_task->UNKNOWN": 1,
+    "specified_task->environment_and_infra": 1,
+    "specified_task->external_accounts_and_comms": 1,
+    "specified_task->general_question": 1,
+    "specified_task->revise_recent_output": 1,
+    "specified_task->specified_task": 12,
+    "supply_fact_or_step_done->UNKNOWN": 1,
+    "supply_fact_or_step_done->correct_approach_or_rule": 1,
+    "supply_fact_or_step_done->failure_report": 3,
+    "supply_fact_or_step_done->revise_recent_output": 1,
+    "supply_fact_or_step_done->supply_fact_or_step_done": 2,
+    "task_status_or_control->correct_approach_or_rule": 2,
+    "task_status_or_control->specified_task": 2,
+    "task_status_or_control->supply_fact_or_step_done": 2,
+    "task_status_or_control->task_status_or_control": 3
+   },
+   "teacher_labels_on_gold": 0
+  },
+  "pass1": {
+   "items": 150,
+   "sessions": 86,
+   "gold_label_counts": {
+    "approve_or_pick": 32,
+    "specified_task": 22,
+    "git_ship": 21,
+    "correct_approach_or_rule": 16,
+    "task_status_or_control": 11,
+    "environment_and_infra": 10,
+    "supply_fact_or_step_done": 10,
+    "external_accounts_and_comms": 8,
+    "revise_recent_output": 7,
+    "general_question": 4,
+    "failure_report": 3,
+    "project_audit_or_direction": 3,
+    "handoff_prompt": 2,
+    "UNKNOWN": 1
+   },
+   "arms": {
+    "intake_v1": {
+     "accuracy": 0.44,
+     "macro_f1": 0.3871
+    },
+    "keyword": {
+     "accuracy": 0.1867,
+     "macro_f1": 0.2043
+    },
+    "majority": {
+     "accuracy": 0.0733,
+     "macro_f1": 0.0098
+    },
+    "opus": {
+     "accuracy": 0.7533,
+     "macro_f1": 0.7395
+    }
+   },
+   "diffs": {
+    "v1-keyword": {
+     "accuracy": 0.2533,
+     "accuracy_ci": [
+      0.1745,
+      0.3356
+     ],
+     "macro_f1": 0.1827,
+     "macro_f1_ci": [
+      0.0776,
+      0.2803
+     ]
+    },
+    "v1-majority": {
+     "accuracy": 0.3667,
+     "accuracy_ci": [
+      0.2697,
+      0.4641
+     ],
+     "macro_f1": 0.3773,
+     "macro_f1_ci": [
+      0.2714,
+      0.462
+     ]
+    },
+    "v1-opus": {
+     "accuracy": -0.3133,
+     "accuracy_ci": [
+      -0.4067,
+      -0.2123
+     ],
+     "macro_f1": -0.3524,
+     "macro_f1_ci": [
+      -0.477,
+      -0.2325
+     ]
+    }
+   },
+   "acceptance": {
+    "1_beats_rules": true,
+    "2_close_to_opus": false,
+    "3_cost": true
+   },
+   "recall_by_category": {
+    "UNKNOWN": {
+     "n": 1,
+     "intake_v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "approve_or_pick": {
+     "n": 32,
+     "intake_v1": 0.469,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.656
+    },
+    "correct_approach_or_rule": {
+     "n": 16,
+     "intake_v1": 0.25,
+     "keyword": 0.062,
+     "majority": 0.0,
+     "opus": 0.875
+    },
+    "environment_and_infra": {
+     "n": 10,
+     "intake_v1": 0.3,
+     "keyword": 0.1,
+     "majority": 0.0,
+     "opus": 0.7
+    },
+    "external_accounts_and_comms": {
+     "n": 8,
+     "intake_v1": 0.25,
+     "keyword": 0.5,
+     "majority": 0.0,
+     "opus": 0.625
+    },
+    "failure_report": {
+     "n": 3,
+     "intake_v1": 1.0,
+     "keyword": 0.333,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "general_question": {
+     "n": 4,
+     "intake_v1": 0.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.25
+    },
+    "git_ship": {
+     "n": 21,
+     "intake_v1": 0.429,
+     "keyword": 0.048,
+     "majority": 0.0,
+     "opus": 0.81
+    },
+    "handoff_prompt": {
+     "n": 2,
+     "intake_v1": 0.5,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 3,
+     "intake_v1": 0.667,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.667
+    },
+    "revise_recent_output": {
+     "n": 7,
+     "intake_v1": 0.714,
+     "keyword": 0.143,
+     "majority": 0.0,
+     "opus": 0.857
+    },
+    "specified_task": {
+     "n": 22,
+     "intake_v1": 0.636,
+     "keyword": 0.636,
+     "majority": 0.0,
+     "opus": 0.864
+    },
+    "supply_fact_or_step_done": {
+     "n": 10,
+     "intake_v1": 0.3,
+     "keyword": 0.1,
+     "majority": 0.0,
+     "opus": 0.7
+    },
+    "task_status_or_control": {
+     "n": 11,
+     "intake_v1": 0.364,
+     "keyword": 0.182,
+     "majority": 1.0,
+     "opus": 0.727
+    }
+   },
+   "v1_precision_by_category": {
+    "UNKNOWN": 0.1,
+    "approve_or_pick": 0.75,
+    "correct_approach_or_rule": 0.333,
+    "environment_and_infra": 0.375,
+    "external_accounts_and_comms": 0.4,
+    "failure_report": 0.3,
+    "general_question": 0.0,
+    "git_ship": 0.75,
+    "handoff_prompt": 1.0,
+    "project_audit_or_direction": 0.25,
+    "revise_recent_output": 0.333,
+    "specified_task": 0.583,
+    "supply_fact_or_step_done": 0.3,
+    "task_status_or_control": 0.308
+   },
+   "by_language": {
+    "None": {
+     "intake_v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0,
+     "n": 1
+    },
+    "en": {
+     "intake_v1": 0.5862,
+     "keyword": 0.2759,
+     "majority": 0.1379,
+     "opus": 0.8276,
+     "n": 29
+    },
+    "pt": {
+     "intake_v1": 0.4,
+     "keyword": 0.1667,
+     "majority": 0.0583,
+     "opus": 0.7333,
+     "n": 120
+    }
+   },
+   "by_source": {
+    "claude": {
+     "intake_v1": 0.408,
+     "keyword": 0.168,
+     "majority": 0.072,
+     "opus": 0.736,
+     "n": 125
+    },
+    "codex": {
+     "intake_v1": 0.8,
+     "keyword": 0.4,
+     "majority": 0.0,
+     "opus": 0.8,
+     "n": 5
+    },
+    "hermes": {
+     "intake_v1": 0.55,
+     "keyword": 0.25,
+     "majority": 0.1,
+     "opus": 0.85,
+     "n": 20
+    }
+   },
+   "v1_confusion": {
+    "UNKNOWN->UNKNOWN": 1,
+    "approve_or_pick->UNKNOWN": 1,
+    "approve_or_pick->approve_or_pick": 15,
+    "approve_or_pick->environment_and_infra": 3,
+    "approve_or_pick->failure_report": 1,
+    "approve_or_pick->git_ship": 3,
+    "approve_or_pick->revise_recent_output": 2,
+    "approve_or_pick->specified_task": 3,
+    "approve_or_pick->task_status_or_control": 4,
+    "correct_approach_or_rule->UNKNOWN": 1,
+    "correct_approach_or_rule->correct_approach_or_rule": 4,
+    "correct_approach_or_rule->environment_and_infra": 1,
+    "correct_approach_or_rule->external_accounts_and_comms": 1,
+    "correct_approach_or_rule->failure_report": 2,
+    "correct_approach_or_rule->project_audit_or_direction": 1,
+    "correct_approach_or_rule->revise_recent_output": 3,
+    "correct_approach_or_rule->specified_task": 2,
+    "correct_approach_or_rule->supply_fact_or_step_done": 1,
+    "environment_and_infra->UNKNOWN": 1,
+    "environment_and_infra->correct_approach_or_rule": 4,
+    "environment_and_infra->environment_and_infra": 3,
+    "environment_and_infra->supply_fact_or_step_done": 1,
+    "environment_and_infra->task_status_or_control": 1,
+    "external_accounts_and_comms->UNKNOWN": 1,
+    "external_accounts_and_comms->external_accounts_and_comms": 2,
+    "external_accounts_and_comms->failure_report": 1,
+    "external_accounts_and_comms->general_question": 1,
+    "external_accounts_and_comms->revise_recent_output": 1,
+    "external_accounts_and_comms->task_status_or_control": 2,
+    "failure_report->failure_report": 3,
+    "general_question->UNKNOWN": 1,
+    "general_question->revise_recent_output": 1,
+    "general_question->specified_task": 1,
+    "general_question->supply_fact_or_step_done": 1,
+    "git_ship->UNKNOWN": 1,
+    "git_ship->approve_or_pick": 4,
+    "git_ship->correct_approach_or_rule": 1,
+    "git_ship->external_accounts_and_comms": 1,
+    "git_ship->git_ship": 9,
+    "git_ship->project_audit_or_direction": 1,
+    "git_ship->revise_recent_output": 1,
+    "git_ship->specified_task": 1,
+    "git_ship->supply_fact_or_step_done": 1,
+    "git_ship->task_status_or_control": 1,
+    "handoff_prompt->handoff_prompt": 1,
+    "handoff_prompt->project_audit_or_direction": 1,
+    "project_audit_or_direction->project_audit_or_direction": 2,
+    "project_audit_or_direction->specified_task": 1,
+    "revise_recent_output->UNKNOWN": 1,
+    "revise_recent_output->revise_recent_output": 5,
+    "revise_recent_output->task_status_or_control": 1,
+    "specified_task->UNKNOWN": 1,
+    "specified_task->environment_and_infra": 1,
+    "specified_task->external_accounts_and_comms": 1,
+    "specified_task->general_question": 1,
+    "specified_task->project_audit_or_direction": 3,
+    "specified_task->revise_recent_output": 1,
+    "specified_task->specified_task": 14,
+    "supply_fact_or_step_done->UNKNOWN": 1,
+    "supply_fact_or_step_done->approve_or_pick": 1,
+    "supply_fact_or_step_done->correct_approach_or_rule": 1,
+    "supply_fact_or_step_done->failure_report": 3,
+    "supply_fact_or_step_done->revise_recent_output": 1,
+    "supply_fact_or_step_done->supply_fact_or_step_done": 3,
+    "task_status_or_control->correct_approach_or_rule": 2,
+    "task_status_or_control->specified_task": 2,
+    "task_status_or_control->supply_fact_or_step_done": 3,
+    "task_status_or_control->task_status_or_control": 4
+   },
+   "teacher_labels_on_gold": 0
+  },
+  "pass2": {
+   "items": 148,
+   "sessions": 86,
+   "gold_label_counts": {
+    "specified_task": 25,
+    "approve_or_pick": 24,
+    "git_ship": 20,
+    "correct_approach_or_rule": 19,
+    "task_status_or_control": 13,
+    "environment_and_infra": 11,
+    "supply_fact_or_step_done": 10,
+    "revise_recent_output": 8,
+    "project_audit_or_direction": 6,
+    "failure_report": 5,
+    "external_accounts_and_comms": 3,
+    "handoff_prompt": 2,
+    "UNKNOWN": 1,
+    "general_question": 1
+   },
+   "arms": {
+    "intake_v1": {
+     "accuracy": 0.4662,
+     "macro_f1": 0.4273
+    },
+    "keyword": {
+     "accuracy": 0.2297,
+     "macro_f1": 0.2178
+    },
+    "majority": {
+     "accuracy": 0.0878,
+     "macro_f1": 0.0115
+    },
+    "opus": {
+     "accuracy": 0.7703,
+     "macro_f1": 0.7285
+    }
+   },
+   "diffs": {
+    "v1-keyword": {
+     "accuracy": 0.2365,
+     "accuracy_ci": [
+      0.1409,
+      0.3377
+     ],
+     "macro_f1": 0.2095,
+     "macro_f1_ci": [
+      0.1063,
+      0.326
+     ]
+    },
+    "v1-majority": {
+     "accuracy": 0.3784,
+     "accuracy_ci": [
+      0.2781,
+      0.4797
+     ],
+     "macro_f1": 0.4157,
+     "macro_f1_ci": [
+      0.321,
+      0.5201
+     ]
+    },
+    "v1-opus": {
+     "accuracy": -0.3041,
+     "accuracy_ci": [
+      -0.4026,
+      -0.2067
+     ],
+     "macro_f1": -0.3013,
+     "macro_f1_ci": [
+      -0.4254,
+      -0.207
+     ]
+    }
+   },
+   "acceptance": {
+    "1_beats_rules": true,
+    "2_close_to_opus": false,
+    "3_cost": true
+   },
+   "recall_by_category": {
+    "UNKNOWN": {
+     "n": 1,
+     "intake_v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "approve_or_pick": {
+     "n": 24,
+     "intake_v1": 0.542,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.75
+    },
+    "correct_approach_or_rule": {
+     "n": 19,
+     "intake_v1": 0.263,
+     "keyword": 0.053,
+     "majority": 0.0,
+     "opus": 0.947
+    },
+    "environment_and_infra": {
+     "n": 11,
+     "intake_v1": 0.273,
+     "keyword": 0.182,
+     "majority": 0.0,
+     "opus": 0.636
+    },
+    "external_accounts_and_comms": {
+     "n": 3,
+     "intake_v1": 0.667,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "failure_report": {
+     "n": 5,
+     "intake_v1": 0.6,
+     "keyword": 0.2,
+     "majority": 0.0,
+     "opus": 0.8
+    },
+    "general_question": {
+     "n": 1,
+     "intake_v1": 0.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.0
+    },
+    "git_ship": {
+     "n": 20,
+     "intake_v1": 0.55,
+     "keyword": 0.05,
+     "majority": 0.0,
+     "opus": 0.85
+    },
+    "handoff_prompt": {
+     "n": 2,
+     "intake_v1": 0.5,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 6,
+     "intake_v1": 0.833,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.5
+    },
+    "revise_recent_output": {
+     "n": 8,
+     "intake_v1": 0.625,
+     "keyword": 0.125,
+     "majority": 0.0,
+     "opus": 0.75
+    },
+    "specified_task": {
+     "n": 25,
+     "intake_v1": 0.52,
+     "keyword": 0.76,
+     "majority": 0.0,
+     "opus": 0.68
+    },
+    "supply_fact_or_step_done": {
+     "n": 10,
+     "intake_v1": 0.3,
+     "keyword": 0.1,
+     "majority": 0.0,
+     "opus": 0.7
+    },
+    "task_status_or_control": {
+     "n": 13,
+     "intake_v1": 0.308,
+     "keyword": 0.231,
+     "majority": 1.0,
+     "opus": 0.846
+    }
+   },
+   "v1_precision_by_category": {
+    "UNKNOWN": 0.111,
+    "approve_or_pick": 0.65,
+    "correct_approach_or_rule": 0.455,
+    "environment_and_infra": 0.375,
+    "external_accounts_and_comms": 0.4,
+    "failure_report": 0.3,
+    "general_question": 0.0,
+    "git_ship": 0.917,
+    "handoff_prompt": 1.0,
+    "project_audit_or_direction": 0.625,
+    "revise_recent_output": 0.333,
+    "specified_task": 0.542,
+    "supply_fact_or_step_done": 0.3,
+    "task_status_or_control": 0.308
+   },
+   "by_language": {
+    "None": {
+     "intake_v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0,
+     "n": 1
+    },
+    "en": {
+     "intake_v1": 0.5714,
+     "keyword": 0.3214,
+     "majority": 0.1071,
+     "opus": 0.8214,
+     "n": 28
+    },
+    "pt": {
+     "intake_v1": 0.437,
+     "keyword": 0.2101,
+     "majority": 0.084,
+     "opus": 0.7563,
+     "n": 119
+    }
+   },
+   "by_source": {
+    "claude": {
+     "intake_v1": 0.4309,
+     "keyword": 0.2195,
+     "majority": 0.0813,
+     "opus": 0.748,
+     "n": 123
+    },
+    "codex": {
+     "intake_v1": 0.8,
+     "keyword": 0.4,
+     "majority": 0.0,
+     "opus": 0.8,
+     "n": 5
+    },
+    "hermes": {
+     "intake_v1": 0.6,
+     "keyword": 0.25,
+     "majority": 0.15,
+     "opus": 0.9,
+     "n": 20
+    }
+   },
+   "v1_confusion": {
+    "UNKNOWN->UNKNOWN": 1,
+    "approve_or_pick->UNKNOWN": 1,
+    "approve_or_pick->approve_or_pick": 13,
+    "approve_or_pick->environment_and_infra": 2,
+    "approve_or_pick->failure_report": 1,
+    "approve_or_pick->git_ship": 1,
+    "approve_or_pick->revise_recent_output": 1,
+    "approve_or_pick->specified_task": 2,
+    "approve_or_pick->task_status_or_control": 3,
+    "correct_approach_or_rule->UNKNOWN": 1,
+    "correct_approach_or_rule->correct_approach_or_rule": 5,
+    "correct_approach_or_rule->environment_and_infra": 2,
+    "correct_approach_or_rule->external_accounts_and_comms": 1,
+    "correct_approach_or_rule->failure_report": 2,
+    "correct_approach_or_rule->project_audit_or_direction": 1,
+    "correct_approach_or_rule->revise_recent_output": 3,
+    "correct_approach_or_rule->specified_task": 2,
+    "correct_approach_or_rule->supply_fact_or_step_done": 2,
+    "environment_and_infra->UNKNOWN": 1,
+    "environment_and_infra->correct_approach_or_rule": 3,
+    "environment_and_infra->environment_and_infra": 3,
+    "environment_and_infra->specified_task": 1,
+    "environment_and_infra->supply_fact_or_step_done": 2,
+    "environment_and_infra->task_status_or_control": 1,
+    "external_accounts_and_comms->external_accounts_and_comms": 2,
+    "external_accounts_and_comms->general_question": 1,
+    "failure_report->failure_report": 3,
+    "failure_report->revise_recent_output": 1,
+    "failure_report->task_status_or_control": 1,
+    "general_question->specified_task": 1,
+    "git_ship->UNKNOWN": 1,
+    "git_ship->approve_or_pick": 5,
+    "git_ship->git_ship": 11,
+    "git_ship->specified_task": 2,
+    "git_ship->task_status_or_control": 1,
+    "handoff_prompt->handoff_prompt": 1,
+    "handoff_prompt->project_audit_or_direction": 1,
+    "project_audit_or_direction->project_audit_or_direction": 5,
+    "project_audit_or_direction->specified_task": 1,
+    "revise_recent_output->UNKNOWN": 1,
+    "revise_recent_output->approve_or_pick": 1,
+    "revise_recent_output->revise_recent_output": 5,
+    "revise_recent_output->task_status_or_control": 1,
+    "specified_task->UNKNOWN": 2,
+    "specified_task->approve_or_pick": 1,
+    "specified_task->environment_and_infra": 1,
+    "specified_task->external_accounts_and_comms": 2,
+    "specified_task->general_question": 1,
+    "specified_task->revise_recent_output": 3,
+    "specified_task->specified_task": 13,
+    "specified_task->task_status_or_control": 2,
+    "supply_fact_or_step_done->UNKNOWN": 1,
+    "supply_fact_or_step_done->correct_approach_or_rule": 1,
+    "supply_fact_or_step_done->failure_report": 4,
+    "supply_fact_or_step_done->revise_recent_output": 1,
+    "supply_fact_or_step_done->supply_fact_or_step_done": 3,
+    "task_status_or_control->correct_approach_or_rule": 2,
+    "task_status_or_control->project_audit_or_direction": 1,
+    "task_status_or_control->revise_recent_output": 1,
+    "task_status_or_control->specified_task": 2,
+    "task_status_or_control->supply_fact_or_step_done": 3,
+    "task_status_or_control->task_status_or_control": 4
+   },
+   "teacher_labels_on_gold": 0
+  }
+ }
+}
