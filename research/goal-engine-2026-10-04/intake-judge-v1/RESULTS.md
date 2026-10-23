@@ -10,8 +10,8 @@ spent. Counts and arithmetic are MEDIDO; readings are INFERIDO (one owner, one m
   **0.509** vs the keyword baseline **0.224**: +0.284 [+0.190, +0.389]. Macro-F1 0.457 vs 0.228, +0.229
   [+0.107, +0.361]. Majority class: 0.078. Same verdict on each full pass.
 - **Close to Opus: FAIL.** Opus (the teacher, zero-shot) is right on **0.862**. v1 − Opus = −0.353
-  [−0.459, −0.250], far past the −0.10 margin. Distilling 2,482 teacher labels into a hashed n-gram LR keeps
-  about a third of the gap between rules and Opus.
+  [−0.459, −0.250], far past the −0.10 margin. Distilling 2,482 teacher labels into a hashed n-gram LR closes
+  45% of the gap between rules and Opus ((0.509 − 0.224) / (0.862 − 0.224)).
 - **Cost: PASS by a wide margin.** Median 0.26 ms, p90 0.85 ms per prompt, load 9 ms, peak RSS 39.7 MB,
   model 1.22 MB, stdlib only.
 - **Ship rule** (checks 1 and 3 pass): v1 qualifies for LCC as an additive `category` field, labelled
