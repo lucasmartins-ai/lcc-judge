@@ -343,16 +343,26 @@ def _gemini_vote(batch):
            + json.dumps({f'r{n}': {'previous_agent_turn': r.get('prev_agent'), 'request': r['goal']}
                          for n, r in enumerate(batch)}, ensure_ascii=False)
            + '\n\nReply with JSON only, one line: {"answers": {"r0": "<category id>", ...}}')
-    _bridge('--type', msg, '--target', box, timeout=300)
-    _bridge('--press', 'Enter', '--target', box)
-    for _ in range(40):
+    # Trusted typing fires real input events; plain --type leaves Gemini's send button hidden.
+    _bridge('--trusted-type', msg, '--target', box, timeout=600)
+    time.sleep(2)
+    sent = _bridge('--cdp-eval', '(() => { const b = [...document.querySelectorAll("button")]'
+                   '.find(x => x.getAttribute("aria-label") === "Enviar mensagem"); '
+                   'if (!b) return "no-button"; b.click(); return "ok"; })()').get('result')
+    if sent != 'ok':
+        raise RuntimeError(f'Gemini send failed: {sent}')
+    last = ('(() => { const r = [...document.querySelectorAll("model-response")]; '
+            'return r.length ? r[r.length - 1].innerText : ""; })()')
+    for _ in range(60):
         time.sleep(6)
-        text = _bridge('--read', 'main').get('text', '')
-        tail = text.rsplit('O Gemini disse', 1)[-1] if 'O Gemini disse' in text else ''
-        m = re.search(r'\{"answers"\s*:\s*\{[^{}]*\}\s*\}', tail.replace('\\"', '"'))
+        m = re.search(r'\{"answers"\s*:\s*\{[^{}]*\}\s*\}', _bridge('--cdp-eval', last).get('result') or '')
         if m:
-            ans = json.loads(m.group(0))['answers']
-            return {r['id']: (ans.get(f'r{n}') if ans.get(f'r{n}') in cats else None) for n, r in enumerate(batch)}
+            try:
+                ans = json.loads(m.group(0))['answers']
+            except ValueError:
+                continue  # still streaming
+            if len(ans) >= len(batch):
+                return {r['id']: (ans.get(f'r{n}') if ans.get(f'r{n}') in cats else None) for n, r in enumerate(batch)}
     raise RuntimeError('no Gemini answer')
 
 
