@@ -1,0 +1,32 @@
+{
+ "files_sha256": {
+  "claude-fable-5/0.parquet": "89dfcfa416686263dd65e414e541b7fcbbb2279140dae034be79e4a9bc7a2537",
+  "wildchat-4.8m/0.parquet": "6df660dca78dd92b865bef09b928992ceb6c913b4f06082315876a5997ad2eaa",
+  "wildchat-4.8m/1.parquet": "9eb37ee110a470e6b7bc4ac23bde112a2756e06f96e5517bad93b87cedca03bd",
+  "wildchat-4.8m/2.parquet": "8cafa7a6d3387f8f15edc77b98108cbd8dedca5a927dbdb626ec720a718bfb2b",
+  "wildchat-4.8m/3.parquet": "4304a25529bce00187a754bb8629a7d9cbafbc8933f374ae05c9527d03f7bb8d"
+ },
+ "groups": {
+  "cc_public|dev": 9,
+  "cc_public|heldout": 11,
+  "cc_public|train": 35,
+  "wildchat|dev": 222,
+  "wildchat|heldout": 657,
+  "wildchat|train": 935
+ },
+ "items": {
+  "cc_public|dev": 20,
+  "cc_public|heldout": 109,
+  "cc_public|train": 189,
+  "wildchat|dev": 564,
+  "wildchat|heldout": 5236,
+  "wildchat|train": 2436
+ },
+ "ruleset_sha256": "71b9da5092c3fee5761675991f10659b9fe0249490237c277f759cf00a4ccec1",
+ "wildchat_pool_train_dev": 22362,
+ "wildchat_train_dev_pt": 300,
+ "with_prev": {
+  "cc_public": 177,
+  "wildchat": 6273
+ }
+}
