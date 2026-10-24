@@ -475,9 +475,10 @@ def _view(gold, arms, group_of):
 
 def evaluate(external_csv, owner_csvs, shipped):
     import csv as _csv
-    out = OUT / 'test-results.json'
+    # One-shot per held-out (amendment 4): external now, owner gold when its trigger is reached.
+    out = OUT / ('owner-test-results.json' if owner_csvs else 'external-test-results.json')
     if out.exists():
-        raise SystemExit('spent: test-results.json exists')
+        raise SystemExit(f'spent: {out.name} exists')
     from research.intake_judge import Judge as JudgeV1
     from research.intake_judge_v2 import Judge
     freeze = json.loads((OUT / 'FREEZE.json').read_text())
@@ -495,6 +496,22 @@ def evaluate(external_csv, owner_csvs, shipped):
         a['shipped'] = a['v2_pick' if shipped == 'v2' else 'v1']
         return a
 
+    if owner_csvs:
+        passes = [v1._read_gold(p) for p in owner_csvs]
+        excl = {i for g in passes for i, v in g.items() if v in ('', 'unsure')}
+        gold = {i: v for i, v in passes[0].items() if i not in excl and all(g.get(i) == v for g in passes[1:])}
+        orecs = v2.records()
+        oitems = {i: orecs[i] for i in gold}
+        res['views']['owner_primary_agree'] = _view(gold, arms_for(oitems), lambda i: orecs[i]['session_hash'])
+        for n, g in enumerate(passes):
+            pg = {i: v for i, v in g.items() if v not in ('', 'unsure')}
+            res['views'][f'owner_pass{n + 1}'] = _view(pg, arms_for({i: orecs[i] for i in pg}),
+                                                       lambda i: orecs[i]['session_hash'])
+        ci = res['views']['owner_primary_agree']['diffs']['v3-shipped']['accuracy_ci']
+        res['acceptance'] = {'1_owner_non_inferior': ci[0] > -0.03}
+        out.write_text(json.dumps(res, indent=1) + '\n')
+        print(json.dumps({'acceptance': res['acceptance'], 'owner': res['views']['owner_primary_agree']['arms']}, indent=1))
+        return
     # external
     recs, votes = public(), json.loads((BASE / 'gold' / 'votes.json').read_text())
     with open(external_csv, newline='', encoding='utf-8') as fh:
@@ -524,22 +541,11 @@ def evaluate(external_csv, owner_csvs, shipped):
         v: sum(final[i] == votes[v].get(i) for i in changed) for v in votes}}
     res['voter_pairwise_agreement'] = {f'{a}-{b}': round(sum(votes[a].get(i) == votes[b].get(i) for i in items) / len(items), 3)
                                        for a, b in (('claude', 'codex'), ('claude', 'gemini'), ('codex', 'gemini'))}
-    # owner future (shared v2 gold)
-    if owner_csvs:
-        passes = [v1._read_gold(p) for p in owner_csvs]
-        excl = {i for g in passes for i, v in g.items() if v in ('', 'unsure')}
-        gold = {i: v for i, v in passes[0].items() if i not in excl and all(g.get(i) == v for g in passes[1:])}
-        orecs = v2.records()
-        oitems = {i: orecs[i] for i in gold}
-        oarms = arms_for(oitems)
-        res['views']['owner_primary_agree'] = _view(gold, oarms, lambda i: orecs[i]['session_hash'])
     cost = v2._bench(BASE / 'pick.json', [[r['goal'], r.get('prev_agent')] for r in items.values()], 'B')
     med, p90, max_bytes, max_rss = v2.BUDGET['B']
     res['cost'] = cost
     ext_ci = res['views']['external_final']['diffs']['v3-shipped']['accuracy_ci']
-    own_ci = res['views'].get('owner_primary_agree', {}).get('diffs', {}).get('v3-shipped', {}).get('accuracy_ci')
     res['acceptance'] = {
-        '1_owner_non_inferior': own_ci[0] > -0.03 if own_ci else None,
         '2_external_superior': ext_ci[0] > 0,
         '2b_external_superior_on_blind': res['views']['external_blind']['diffs']['v3-shipped']['accuracy_ci'][0] > 0,
         '3_cost': (cost['median_ms'] <= med and cost['p90_ms'] <= p90 and cost['peak_rss_mb'] <= max_rss
