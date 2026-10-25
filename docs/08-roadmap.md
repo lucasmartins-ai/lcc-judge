@@ -1,6 +1,65 @@
-# 08 — Roadmap (v0)
+# 08 — Roadmap
 
-## Status 2026-10-11
+## Roadmap 2026-10-25 (current)
+
+Details and receipts: [STATUS.md](../STATUS.md). LCC-judge is the source of LCC's own local models: one
+small CPU-only model per decision point. Each one is pre-registered, tested once on a held-out, and shipped
+to LCC only through its ship rule. External LLMs are teachers, references and voters, never runtime.
+
+### Shipped
+
+- **Block judge specialist v3:** LCC auto default for transcripts (lcc#50, lcc#51).
+- **Intake judge v1:** advisory request `category` in `lcc intake` and MCP `intake` (lcc#124, 2026-10-23).
+- **In LCC, from these studies:**
+  - `stashed` + `recall` mode;
+  - opt-in recall records in the ledger (lcc#121): the first outcome-like label.
+
+### In progress
+
+1. **Intake owner held-out (v2 and v3).**
+   - Waits for 100 qualifying owner sessions started from 2026-10-24 (fallback: 60 by 2026-11-30); the daily
+     task `intake-heldout-count` reports the count.
+   - Then:
+     - draw the owner gold, two blind passes at least 24 h apart;
+     - run `research.intake_v2 eval` and `research.intake_v3 eval --owner ...`, once each.
+   - **Gate to replace v1 in LCC:** v3 non-inferior on the owner gold (CI lower bound above −0.03), with the
+     external superiority it already passed. If v3 fails, v2 may replace v1 under its own rule.
+   - If one does replace v1, LCC's intake gains an optional `previous_turn` input; the Claude Code plugin
+     has the transcript to fill it.
+2. **More public agent data.**
+   - v3's external gain is mostly WildChat (chat, not agents). The public Claude Code set is about one
+     developer.
+   - "Works for other agent users" needs more people. Options:
+     - find further licensed agent-session sets;
+     - add an opt-in, redacted prompt donation in LCC. That is a product decision: it changes the "no
+       telemetry" rule.
+
+### Next, in order of expected value
+
+3. **Measure handoff quality (when-to-compact P5).** It is the largest cost lever found (up to 27.6%, an
+   upper bound), and its quality has never been measured. Reuse the probe-eval harness. Pre-register first.
+4. **Taxonomy check on other people's prompts.**
+   - v3 still misses short steering replies (`task_status_or_control` recall 0.12 on the external gold).
+   - WildChat adds many `general_question` items.
+   - Review whether the 13 categories hold for other users before training v4.
+5. **Local NER for redaction.** Regex redaction misses unquoted names. A small local model would make it
+   safer to collect more data (owner or donated).
+6. **Readiness ("needs clarification").** Still heuristic in LCC. It needs an outcome label: did the agent
+   have to ask, or did the user correct course next turn? Build that label from transcripts before any
+   model.
+7. **Block judge.** Keep v3. No further ranker work until a recall-based label (lcc#121) exists at volume;
+   the measured gain came from `recall`, not from selection.
+
+### Stopped or deprioritised by evidence
+
+- Holistic-relevance teachers (v4).
+- Edge detectors as a default (v5).
+- Rankers replacing `stashed`'s choice (v5c2).
+- Keep-warm pings (when-to-compact P4).
+- Static embeddings for intake (v2, family E).
+- Training on one person's prompts only (v1 external 0.303).
+
+## Status 2026-10-11 (history)
 
 - Sprints 3+ (learned specialist) are blocked: no learned candidate passed outside training;
   the checkpoint stays shadow-only and is not adopted.
@@ -10,7 +69,6 @@
   (v0.4, v0.5); lossless and recoverable about .01. Laya not run on real sessions.
 - Next gate: outcome-based evaluation and live measurement of recoverable via the request
   log; train a learned judge only after real requests carry outcome labels.
-- Details and receipts: [STATUS.md](../STATUS.md).
 
 Original status: Sprint 0. Each sprint has a **gate**: a measured condition that must hold before
 the next sprint's investment. Gates exist to make overengineering expensive (prompt §42).
