@@ -1,0 +1,497 @@
+{
+ "shipped": "v1",
+ "views": {
+  "external_final": {
+   "items": 99,
+   "groups": 88,
+   "arms": {
+    "v3": {
+     "accuracy": 0.697,
+     "macro_f1": 0.4892
+    },
+    "v2_pick": {
+     "accuracy": 0.3535,
+     "macro_f1": 0.2043
+    },
+    "v1": {
+     "accuracy": 0.303,
+     "macro_f1": 0.1459
+    },
+    "keyword": {
+     "accuracy": 0.4242,
+     "macro_f1": 0.1367
+    },
+    "majority": {
+     "accuracy": 0.4343,
+     "macro_f1": 0.0757
+    },
+    "shipped": {
+     "accuracy": 0.303,
+     "macro_f1": 0.1459
+    },
+    "opus": {
+     "accuracy": 0.8586,
+     "macro_f1": 0.7875
+    }
+   },
+   "diffs": {
+    "v3-v2_pick": {
+     "accuracy": 0.3434,
+     "accuracy_ci": [
+      0.2258,
+      0.4536
+     ]
+    },
+    "v3-v1": {
+     "accuracy": 0.3939,
+     "accuracy_ci": [
+      0.2828,
+      0.5
+     ]
+    },
+    "v3-keyword": {
+     "accuracy": 0.2727,
+     "accuracy_ci": [
+      0.1489,
+      0.3939
+     ]
+    },
+    "v3-majority": {
+     "accuracy": 0.2626,
+     "accuracy_ci": [
+      0.1386,
+      0.3824
+     ]
+    },
+    "v3-shipped": {
+     "accuracy": 0.3939,
+     "accuracy_ci": [
+      0.2828,
+      0.5
+     ]
+    },
+    "v3-opus": {
+     "accuracy": -0.1616,
+     "accuracy_ci": [
+      -0.2475,
+      -0.0722
+     ]
+    }
+   }
+  },
+  "external_blind": {
+   "items": 99,
+   "groups": 88,
+   "arms": {
+    "v3": {
+     "accuracy": 0.7071,
+     "macro_f1": 0.4945
+    },
+    "v2_pick": {
+     "accuracy": 0.3636,
+     "macro_f1": 0.2077
+    },
+    "v1": {
+     "accuracy": 0.3131,
+     "macro_f1": 0.1486
+    },
+    "keyword": {
+     "accuracy": 0.4343,
+     "macro_f1": 0.1381
+    },
+    "majority": {
+     "accuracy": 0.4444,
+     "macro_f1": 0.0769
+    },
+    "shipped": {
+     "accuracy": 0.3131,
+     "macro_f1": 0.1486
+    },
+    "opus": {
+     "accuracy": 0.8687,
+     "macro_f1": 0.7947
+    }
+   },
+   "diffs": {
+    "v3-v2_pick": {
+     "accuracy": 0.3434,
+     "accuracy_ci": [
+      0.2258,
+      0.4536
+     ]
+    },
+    "v3-v1": {
+     "accuracy": 0.3939,
+     "accuracy_ci": [
+      0.2828,
+      0.5
+     ]
+    },
+    "v3-keyword": {
+     "accuracy": 0.2727,
+     "accuracy_ci": [
+      0.1489,
+      0.3939
+     ]
+    },
+    "v3-majority": {
+     "accuracy": 0.2626,
+     "accuracy_ci": [
+      0.1386,
+      0.3824
+     ]
+    },
+    "v3-shipped": {
+     "accuracy": 0.3939,
+     "accuracy_ci": [
+      0.2828,
+      0.5
+     ]
+    },
+    "v3-opus": {
+     "accuracy": -0.1616,
+     "accuracy_ci": [
+      -0.2475,
+      -0.0722
+     ]
+    }
+   }
+  },
+  "external_codex_gemini_owner_blind_majority": {
+   "items": 98,
+   "groups": 87,
+   "arms": {
+    "v3": {
+     "accuracy": 0.7449,
+     "macro_f1": 0.5694
+    },
+    "v2_pick": {
+     "accuracy": 0.3571,
+     "macro_f1": 0.1863
+    },
+    "v1": {
+     "accuracy": 0.2959,
+     "macro_f1": 0.1459
+    },
+    "keyword": {
+     "accuracy": 0.4694,
+     "macro_f1": 0.2052
+    },
+    "majority": {
+     "accuracy": 0.449,
+     "macro_f1": 0.0689
+    },
+    "shipped": {
+     "accuracy": 0.2959,
+     "macro_f1": 0.1459
+    },
+    "opus": {
+     "accuracy": 0.9694,
+     "macro_f1": 0.9653
+    }
+   },
+   "diffs": {
+    "v3-v2_pick": {
+     "accuracy": 0.3878,
+     "accuracy_ci": [
+      0.2708,
+      0.5
+     ]
+    },
+    "v3-v1": {
+     "accuracy": 0.449,
+     "accuracy_ci": [
+      0.3469,
+      0.5532
+     ]
+    },
+    "v3-keyword": {
+     "accuracy": 0.2755,
+     "accuracy_ci": [
+      0.1515,
+      0.4021
+     ]
+    },
+    "v3-majority": {
+     "accuracy": 0.2959,
+     "accuracy_ci": [
+      0.1684,
+      0.42
+     ]
+    },
+    "v3-shipped": {
+     "accuracy": 0.449,
+     "accuracy_ci": [
+      0.3469,
+      0.5532
+     ]
+    },
+    "v3-opus": {
+     "accuracy": -0.2245,
+     "accuracy_ci": [
+      -0.3152,
+      -0.1414
+     ]
+    }
+   }
+  },
+  "external_all_three_models_agree": {
+   "items": 88,
+   "groups": 79,
+   "arms": {
+    "v3": {
+     "accuracy": 0.7614,
+     "macro_f1": 0.5794
+    },
+    "v2_pick": {
+     "accuracy": 0.3636,
+     "macro_f1": 0.2031
+    },
+    "v1": {
+     "accuracy": 0.2955,
+     "macro_f1": 0.1514
+    },
+    "keyword": {
+     "accuracy": 0.4773,
+     "macro_f1": 0.206
+    },
+    "majority": {
+     "accuracy": 0.4318,
+     "macro_f1": 0.067
+    },
+    "shipped": {
+     "accuracy": 0.2955,
+     "macro_f1": 0.1514
+    },
+    "opus": {
+     "accuracy": 1.0,
+     "macro_f1": 1.0
+    }
+   },
+   "diffs": {
+    "v3-v2_pick": {
+     "accuracy": 0.3977,
+     "accuracy_ci": [
+      0.2738,
+      0.5176
+     ]
+    },
+    "v3-v1": {
+     "accuracy": 0.4659,
+     "accuracy_ci": [
+      0.3596,
+      0.5714
+     ]
+    },
+    "v3-keyword": {
+     "accuracy": 0.2841,
+     "accuracy_ci": [
+      0.1529,
+      0.4222
+     ]
+    },
+    "v3-majority": {
+     "accuracy": 0.3295,
+     "accuracy_ci": [
+      0.1935,
+      0.4651
+     ]
+    },
+    "v3-shipped": {
+     "accuracy": 0.4659,
+     "accuracy_ci": [
+      0.3596,
+      0.5714
+     ]
+    },
+    "v3-opus": {
+     "accuracy": -0.2386,
+     "accuracy_ci": [
+      -0.3295,
+      -0.1505
+     ]
+    }
+   }
+  },
+  "external_final_cc_public": {
+   "items": 22,
+   "groups": 11,
+   "arms": {
+    "v3": {
+     "accuracy": 0.5455,
+     "macro_f1": 0.4134
+    },
+    "v2_pick": {
+     "accuracy": 0.1818,
+     "macro_f1": 0.0952
+    },
+    "v1": {
+     "accuracy": 0.3636,
+     "macro_f1": 0.1905
+    },
+    "keyword": {
+     "accuracy": 0.1818,
+     "macro_f1": 0.0476
+    },
+    "majority": {
+     "accuracy": 0.2273,
+     "macro_f1": 0.0529
+    },
+    "shipped": {
+     "accuracy": 0.3636,
+     "macro_f1": 0.1905
+    },
+    "opus": {
+     "accuracy": 0.7273,
+     "macro_f1": 0.7762
+    }
+   },
+   "diffs": {
+    "v3-v2_pick": {
+     "accuracy": 0.3636,
+     "accuracy_ci": [
+      0.1818,
+      0.5455
+     ]
+    },
+    "v3-v1": {
+     "accuracy": 0.1818,
+     "accuracy_ci": [
+      0.0,
+      0.3636
+     ]
+    },
+    "v3-keyword": {
+     "accuracy": 0.3636,
+     "accuracy_ci": [
+      0.1818,
+      0.5455
+     ]
+    },
+    "v3-majority": {
+     "accuracy": 0.3182,
+     "accuracy_ci": [
+      0.1364,
+      0.5
+     ]
+    },
+    "v3-shipped": {
+     "accuracy": 0.1818,
+     "accuracy_ci": [
+      0.0,
+      0.3636
+     ]
+    },
+    "v3-opus": {
+     "accuracy": -0.1818,
+     "accuracy_ci": [
+      -0.3636,
+      0.0
+     ]
+    }
+   }
+  },
+  "external_final_wildchat": {
+   "items": 77,
+   "groups": 77,
+   "arms": {
+    "v3": {
+     "accuracy": 0.7403,
+     "macro_f1": 0.6759
+    },
+    "v2_pick": {
+     "accuracy": 0.4026,
+     "macro_f1": 0.3165
+    },
+    "v1": {
+     "accuracy": 0.2857,
+     "macro_f1": 0.1751
+    },
+    "keyword": {
+     "accuracy": 0.4935,
+     "macro_f1": 0.1979
+    },
+    "majority": {
+     "accuracy": 0.4935,
+     "macro_f1": 0.1101
+    },
+    "shipped": {
+     "accuracy": 0.2857,
+     "macro_f1": 0.1751
+    },
+    "opus": {
+     "accuracy": 0.8961,
+     "macro_f1": 0.7495
+    }
+   },
+   "diffs": {
+    "v3-v2_pick": {
+     "accuracy": 0.3377,
+     "accuracy_ci": [
+      0.1948,
+      0.4675
+     ]
+    },
+    "v3-v1": {
+     "accuracy": 0.4545,
+     "accuracy_ci": [
+      0.3247,
+      0.5844
+     ]
+    },
+    "v3-keyword": {
+     "accuracy": 0.2468,
+     "accuracy_ci": [
+      0.0909,
+      0.3896
+     ]
+    },
+    "v3-majority": {
+     "accuracy": 0.2468,
+     "accuracy_ci": [
+      0.0909,
+      0.3896
+     ]
+    },
+    "v3-shipped": {
+     "accuracy": 0.4545,
+     "accuracy_ci": [
+      0.3247,
+      0.5844
+     ]
+    },
+    "v3-opus": {
+     "accuracy": -0.1558,
+     "accuracy_ci": [
+      -0.2597,
+      -0.0519
+     ]
+    }
+   }
+  }
+ },
+ "external_blind_to_final_changes": {
+  "n": 1,
+  "toward": {
+   "claude": 0,
+   "codex": 0,
+   "gemini": 0
+  }
+ },
+ "voter_pairwise_agreement": {
+  "claude-codex": 0.939,
+  "claude-gemini": 0.919,
+  "codex-gemini": 0.909
+ },
+ "cost": {
+  "median_ms": 0.692,
+  "p90_ms": 1.99,
+  "load_ms": 27.9,
+  "peak_rss_mb": 64.9
+ },
+ "acceptance": {
+  "2_external_superior": true,
+  "2b_external_superior_on_blind": true,
+  "3_cost": true
+ }
+}
