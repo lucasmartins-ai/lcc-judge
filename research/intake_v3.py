@@ -406,11 +406,20 @@ def _gemini_vote(batch):
     else:
         raise RuntimeError('Gemini did not take the message')
     last = ('(() => { const r = [...document.querySelectorAll("model-response")]; '
-            'return r.length ? r[r.length - 1].innerText : ""; })()')
+            'return JSON.stringify({sent: document.querySelectorAll("user-query").length, '
+            'text: r.length ? r[r.length - 1].innerText : ""}); })()')
+    prev_text, gone = None, 0
     for _ in range(150):
         time.sleep(6)
         _gemini_frame()
-        m = re.search(r'\{"answers"\s*:\s*\{[^{}]*\}\s*\}', _bridge('--cdp-eval', last).get('result') or '')
+        try:
+            state = json.loads(_bridge('--cdp-eval', last).get('result') or '{}')
+        except (ValueError, TypeError):
+            continue
+        if not isinstance(state, dict):
+            continue
+        text = state.get('text') or ''
+        m = re.search(r'\{"answers"\s*:\s*\{[^{}]*\}\s*\}', text)
         if m:
             try:
                 ans = json.loads(m.group(0))['answers']
@@ -418,7 +427,40 @@ def _gemini_vote(batch):
                 continue  # still streaming
             if len(ans) >= len(batch):
                 return {r['id']: (ans.get(f'r{n}') if ans.get(f'r{n}') in cats else None) for n, r in enumerate(batch)}
+        # Gemini's filter either withdraws the whole exchange or answers with a refusal. Both must hold on two
+        # polls in a row, so a reload or a caveat streamed before the JSON is not taken for a refusal.
+        gone = gone + 1 if state.get('sent') == 0 else 0
+        if gone >= 2:
+            raise GeminiRefused('conversation removed')
+        if '"answers"' not in text and REFUSAL.search(text) and text == prev_text:
+            raise GeminiRefused(text[-200:])
+        prev_text = text
     raise RuntimeError('no Gemini answer')
+
+
+REFUSAL = re.compile(r'não consigo ajudar|não posso|desculpe|Sou um modelo de linguagem|can.t help with|'
+                     r'I.m a language model', re.I)
+
+
+class GeminiRefused(RuntimeError):
+    pass
+
+
+def _gemini_vote_halves(batch):
+    """Gemini's safety filter sometimes refuses a whole batch. Retry once in halves; a half it still refuses gets
+    no Gemini vote (None, counted in the receipt's votes_missing)."""
+    # ponytail: one level only, so one filtered item can cost up to 10 votes, and refusals track content. If
+    # refusals become common, bisect down to single items (about 9 extra Argon calls per filtered item).
+    try:
+        return _gemini_vote(batch)
+    except GeminiRefused:
+        out = {}
+        for half in (batch[:len(batch) // 2], batch[len(batch) // 2:]):
+            try:
+                out.update(_gemini_vote(half) if half else {})
+            except GeminiRefused:
+                out.update(dict.fromkeys((r['id'] for r in half), None))
+        return out
 
 
 def _vote(ids, recs, votes_path, capped=False):
@@ -433,7 +475,7 @@ def _vote(ids, recs, votes_path, capped=False):
             v2._calls(1)
         return v2._call(argv, batch)
 
-    for voter, fn in (('claude', claude), ('codex', _codex_vote), ('gemini', _gemini_vote)):
+    for voter, fn in (('claude', claude), ('codex', _codex_vote), ('gemini', _gemini_vote_halves)):
         todo = [i for i in ids if i not in votes[voter]]
         for k in range(0, len(todo), v1.BATCH):
             votes[voter].update(fn([recs[i] for i in todo[k:k + v1.BATCH]]))

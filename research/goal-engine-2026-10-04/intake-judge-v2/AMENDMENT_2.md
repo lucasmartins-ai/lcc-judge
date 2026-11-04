@@ -47,6 +47,22 @@ drawn owner prompts and previous turns, at most 132 items. The owner approved th
 - Codex runs `--ephemeral` and read-only.
 - The repo still gets ids, counts and hashes only.
 
+## What happened at the draw (2026-11-04, before any owner label)
+
+- **Gold size.** The draw ran a few hours after this was written, after the count re-imported new sessions.
+  It used 72 held-out sessions (68 qualifying) and 136 items. The receipt is `intake-judge-v3/owner-draw.json`.
+- **Claude and Codex** voted on all 136 items.
+- **Gemini Argon "Alto"** voted on 100 of them. The rest are missing for three reasons:
+  - The Argon quota ran out twice.
+  - Gemini's filter refused one batch.
+  - It withdrew the conversation on two attempts.
+
+  On 2026-11-04 the owner chose to proceed without Gemini on the other 36 items, which the votes file holds as
+  `null`.
+- **Effect on the gates.** None: they use the owner's `final` and `blind` labels. Two views have fewer items,
+  because neither can use an item with no Gemini vote: the non-teacher majority and all-three-agree.
+- **Page.** The page shows "—" for a missing vote.
+
 ## Disclosed risks
 
 - Seeing the votes can pull `final` toward the teacher. The `blind` gate and the non-teacher majority view
