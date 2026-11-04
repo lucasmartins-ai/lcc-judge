@@ -6,8 +6,7 @@
     python -m research.intake_v2 shrink     # prune + PCA the static embeddings to train/dev tokens, 64 dims
     python -m research.intake_v2 train      # 9-config grid, budgets, selection, FREEZE.json
     python -m research.intake_v2 count      # held-out trigger count (sessions only)
-    python -m research.intake_v2 gold-page  # after the trigger and the pushed freeze; two passes
-    python -m research.intake_v2 eval pass1.csv pass2.csv
+    python -m research.intake_v2 eval owner.csv  # amendment 2: gold drawn by `intake_v3 owner-draw`
 
 Private text stays in ~/.lcc/intake-v2/. The repo gets counts, ids and hashes only.
 """
@@ -432,59 +431,16 @@ def gold_sample():
     return [i for pair in picks for i in pair], linked, len(by_session)
 
 
-GOLD_PAGE = v1.GOLD_PAGE.replace(
-    "<div class=\"goal\">${esc(it.goal)}</div>",
-    "${it.prev?`<div class=\"def\">Último turno do agente (final):</div><div class=\"goal prev\">${esc(it.prev)}</div>"
-    "<div class=\"def\">Seu pedido:</div>`:''}<div class=\"goal\">${esc(it.goal)}</div>").replace(
-    "KEY='intake-v1-gold'", "KEY='intake-v2-gold-'+PASS").replace(
-    "a.download='intake-v1-gold.csv'", "a.download='intake-v2-gold-'+PASS+'.csv'").replace(
-    ".goal{", ".prev{opacity:.75;font-size:14px}.goal{").replace(
-    "escolha a categoria olhando <b>só o texto</b>", "escolha a categoria do <b>seu pedido</b>, usando o turno do agente só como contexto")
-
-
-def gold_page(pass_name):
-    import html
-    if not v1._committed(OUT / 'FREEZE.json'):
-        raise SystemExit('FREEZE.json must be committed and pushed before held-out prompts are drawn')
-    c = count()
-    if c['qualifying_sessions'] < TRIGGER_SESSIONS:
-        raise SystemExit(f"trigger not reached: {c['qualifying_sessions']} < {TRIGGER_SESSIONS} sessions")
-    _, tax = v1.categories()
-    pool, linked, sessions = gold_sample()
-    recs = records()
-    items = [{'id': i, 'goal': recs[i]['goal'], 'prev': recs[i].get('prev_agent') or ''} for i in pool[:150]]
-    rng = random.Random(f'{SEED}-{pass_name}')
-    rng.shuffle(items)  # each pass sees its own order
-    cats = [{'id': x['id'], 'name': x['name_pt'], 'definition': x['definition_pt']} for x in tax['categories']]
-    cats.append({'id': 'UNKNOWN', 'name': 'Não dá para saber',
-                 'definition': 'Fragmento, colagem sem instrução ou texto quase todo redigido.'})
-    glossary = ''.join(f"<li><b>{html.escape(x['name'])}</b>: {html.escape(x['definition'])}</li>" for x in cats)
-    body = (GOLD_PAGE.replace('__GLOSSARY__', glossary).replace('__N__', str(len(items)))
-            .replace('__ITEMS__', json.dumps(items, ensure_ascii=False).replace('</', '<\\/'))
-            .replace('__CATS__', json.dumps(cats, ensure_ascii=False).replace('</', '<\\/'))
-            .replace('<script>', f'<script>const PASS={json.dumps(pass_name)};', 1))
-    out = BASE / 'gold' / f'gabarito-{pass_name}.html'
-    out.parent.mkdir(exist_ok=True)
-    out.write_text(body, encoding='utf-8')
-    os.chmod(out, 0o600)
-    summary = {'pass': pass_name, 'items': len(items), 'primary_pool': len(pool), 'sessions_in_pool': sessions,
-               'seen_text_excluded': linked, 'with_prev': sum(bool(x['prev']) for x in items), **c}
-    (OUT / f'gold-draw-{pass_name}.json').write_text(json.dumps(summary, indent=1) + '\n')
-    print(json.dumps(summary))
-    print(out)
-
-
-def evaluate(pass_paths):
+def evaluate(csv_path):
+    """One-shot test on the owner gold (amendment 2): one blind pass plus three model votes, primary `final`;
+    the pick ships only if acceptance 1-3 pass on `final` and on `blind`."""
+    from research.intake_v3 import BASE as V3_BASE, voted_views
     out = OUT / 'test-results.json'
     if out.exists():
         raise SystemExit('the held-out gold is spent: test-results.json exists')
-    passes = [v1._read_gold(p) for p in pass_paths]
-    excluded = {i for g in passes for i, v in g.items() if v in ('', 'unsure')}
-    clean = [{i: v for i, v in g.items() if v not in ('', 'unsure')} for g in passes]
-    views = {f'pass{n + 1}': g for n, g in enumerate(clean)}
-    views = {'primary_agree': {i: v for i, v in clean[0].items()
-                               if i not in excluded and all(g.get(i) == v for g in clean[1:])}, **views}
-    ids = sorted(set().union(*clean))
+    votes = json.loads((V3_BASE / 'gold' / 'owner-votes.json').read_text())
+    views = voted_views(csv_path, votes)
+    ids = sorted(set(views['final']) | set(views['blind']))
     recs, freeze = records(), json.loads((OUT / 'FREEZE.json').read_text())
     emb = embedder()
     arms = {}
@@ -497,29 +453,22 @@ def evaluate(pass_paths):
     arms['v1'] = {i: j1.predict(recs[i]['goal'])[0] for i in ids}
     arms['keyword'] = {i: keyword_classify(recs[i]['goal']) for i in ids}
     arms['majority'] = dict.fromkeys(ids, freeze['majority_class'])
-    cache = BASE / 'gold' / 'opus.json'
-    opus = json.loads(cache.read_text()) if cache.exists() else {}
-    argv = teacher_argv()
-    todo = [i for i in ids if i not in opus]
-    for k in range(0, len(todo), v1.BATCH):
-        if _calls() >= CALL_CAP:
-            raise SystemExit('call cap reached before the Opus arm finished')
-        _calls(1)
-        opus.update(_call(argv, [recs[i] for i in todo[k:k + v1.BATCH]]))
-        v1._write_private(cache, opus)
-    arms['opus'] = opus
+    arms['opus'] = votes['claude']  # the teacher command, run once as the Claude voter
     cost = _bench(BASE / 'pick.json', [[recs[i]['goal'], recs[i].get('prev_agent')] for i in ids],
                   freeze['pick']['family'])
     med, p90, max_bytes, max_rss = BUDGET[freeze['pick']['family']]
     cost_ok = (cost['median_ms'] <= med and cost['p90_ms'] <= p90 and cost['peak_rss_mb'] <= max_rss
                and freeze['pick']['files_bytes'] <= max_bytes)
-    res = {'pass_sha256': [v1._sha(p) for p in pass_paths], 'excluded_unsure': len(excluded), 'cost': cost,
-           'views': {}}
+    res = {'gold_sha256': v1._sha(csv_path), 'cost': cost, 'views': {}}
     for name, gold in views.items():
-        res['views'][name] = _score(gold, arms, recs, cost_ok)
+        if gold:
+            res['views'][name] = _score(gold, arms, recs, cost_ok)
+    gates = ('1_replaces_v1', '2_beats_rules', '3_cost')
+    res['ships'] = all(res['views'][v]['acceptance'][g] for v in ('final', 'blind') for g in gates)
     out.write_text(json.dumps(res, indent=1) + '\n')
-    print(json.dumps({'cost': cost, **{n: {k: v[k] for k in ('items', 'arms', 'diffs', 'acceptance')}
-                                       for n, v in res['views'].items()}}, indent=1))
+    print(json.dumps({'cost': cost, 'ships': res['ships'],
+                      **{n: {k: v[k] for k in ('items', 'arms', 'diffs', 'acceptance')} for n, v in res['views'].items()}},
+                     indent=1))
 
 
 def reselect():
@@ -598,13 +547,10 @@ def _score(gold, arms, recs, cost_ok):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument('command', choices=('split', 'teacher', 'check', 'shrink', 'train', 'reselect', 'count', 'gold-page', 'eval'))
-    ap.add_argument('--pass', dest='pass_name', default='pass1', help='gold-page: pass1 or pass2')
-    ap.add_argument('csv', nargs='*')
+    ap.add_argument('command', choices=('split', 'teacher', 'check', 'shrink', 'train', 'reselect', 'count', 'eval'))
+    ap.add_argument('csv', nargs='?')
     a = ap.parse_args(argv)
-    if a.command == 'gold-page':
-        gold_page(a.pass_name)
-    elif a.command == 'eval':
+    if a.command == 'eval':
         evaluate(a.csv)
     else:
         globals()[a.command]()

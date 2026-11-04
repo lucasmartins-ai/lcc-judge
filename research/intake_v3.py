@@ -4,7 +4,8 @@
     python -m research.intake_v3 teacher        # Opus labels public train/dev (v2 teacher, cap 600 calls)
     python -m research.intake_v3 train          # 6 configs (family B x data ii/iii x C), FREEZE.json
     python -m research.intake_v3 external-draw  # after the pushed freeze: 100 items + Claude/Codex/Gemini votes
-    python -m research.intake_v3 eval --external gold.csv [--owner pass1.csv pass2.csv]
+    python -m research.intake_v3 owner-draw     # v2 amendment 2: owner gold (<=150 items) + the same three votes
+    python -m research.intake_v3 eval --external gold.csv | --owner owner.csv
 
 Private and public text stays in ~/.lcc/intake-v3/ (public files in ~/.lcc/public/). The repo gets counts,
 ids and hashes only.
@@ -309,7 +310,8 @@ def _codex_vote(batch):
         sp, op = Path(d) / 'schema.json', Path(d) / 'out.json'
         sp.write_text(json.dumps(schema))
         (Path(d) / 'cwd').mkdir()
-        subprocess.run(['codex', 'exec', '-m', 'gpt-6.1-sol', '-s', 'read-only', '--skip-git-repo-check', '--ephemeral',
+        subprocess.run(['codex', 'exec', '-m', 'gpt-6.1-sol', '-c', 'model_reasoning_effort="xhigh"',
+                        '-s', 'read-only', '--skip-git-repo-check', '--ephemeral',
                         '--output-schema', str(sp), '-C', str(Path(d) / 'cwd'), '-o', str(op), '-'],
                        input=body, capture_output=True, text=True, timeout=900, check=True)
         ans = json.loads(op.read_text())['answers']
@@ -325,19 +327,32 @@ def _bridge(*args, timeout=120):
     return json.loads(p.stdout) if p.stdout.strip().startswith('{') else {}
 
 
+def _gemini_argon_high():
+    """Pick Argon at reasoning level "Alto" in the mode menu; a new chat resets the level."""
+    for label in ('Abrir seletor de modo', '4 Argon', 'Abrir seletor de modo', 'Nível de raciocínio', 'Alto Muito'):
+        tree = _bridge('--observe', '--light', '--max', '160')['a11yTree']
+        m = re.search(r'\[(e\d+)\] \([^)]*\) "' + re.escape(label), tree)
+        if not m:
+            raise RuntimeError(f'Gemini menu item not found: {label}')
+        _bridge('--click', m.group(1))
+        time.sleep(2)
+    tree = _bridge('--observe', '--light', '--max', '80')['a11yTree']
+    if 'No momento: Argon Alto' not in tree:
+        raise RuntimeError('Gemini mode is not Argon Alto')
+    return tree
+
+
 def _gemini_vote(batch):
-    """Gemini Argon on gemini.google.com via the owner's browser bridge, in a temporary chat."""
+    """Gemini Argon (reasoning "Alto") on gemini.google.com via the owner's browser bridge, in a temporary chat."""
     cats, _ = v1.categories()
     _bridge('--navigate', 'https://gemini.google.com/app')
     time.sleep(4)
     tree = _bridge('--observe', '--light', '--max', '80')['a11yTree']
-    if 'No momento: Argon' not in tree:
-        raise RuntimeError('Gemini mode is not Argon')
     temp = re.search(r'\[(e\d+)\] \(button\) "Chat momentâneo"', tree)
     if temp:
         _bridge('--click', temp.group(1))
         time.sleep(2)
-        tree = _bridge('--observe', '--light', '--max', '80')['a11yTree']
+    tree = _gemini_argon_high()
     box = re.search(r'\[(e\d+)\] \(div\) "Insira um comando para o Gemini"', tree).group(1)
     msg = (v2.teacher_system() + '\n\nREQUESTS:\n'
            + json.dumps({f'r{n}': {'previous_agent_turn': r.get('prev_agent'), 'request': r['goal']}
@@ -366,20 +381,33 @@ def _gemini_vote(batch):
     raise RuntimeError('no Gemini answer')
 
 
-def external_draw():
-    if not v1._committed(OUT / 'FREEZE.json'):
-        raise SystemExit('FREEZE.json must be committed and pushed before the external gold is drawn')
-    recs, ids = public(), external_sample()
-    votes_path = BASE / 'gold' / 'votes.json'
-    votes_path.parent.mkdir(exist_ok=True)
+def _vote(ids, recs, votes_path, capped=False):
+    """Claude, Codex and Gemini votes for ids, cached batch by batch so a failed voter resumes."""
     votes = json.loads(votes_path.read_text()) if votes_path.exists() else {'claude': {}, 'codex': {}, 'gemini': {}}
     argv = v2.teacher_argv()
-    for voter, fn in (('claude', lambda b: v2._call(argv, b)), ('codex', _codex_vote), ('gemini', _gemini_vote)):
+
+    def claude(batch):
+        if capped:  # owner gold: the Claude vote is v2's Opus arm, inside v2's 3,500-call cap
+            if v2._calls() >= v2.CALL_CAP:
+                raise SystemExit('v2 call cap reached before the Opus arm finished')
+            v2._calls(1)
+        return v2._call(argv, batch)
+
+    for voter, fn in (('claude', claude), ('codex', _codex_vote), ('gemini', _gemini_vote)):
         todo = [i for i in ids if i not in votes[voter]]
         for k in range(0, len(todo), v1.BATCH):
             votes[voter].update(fn([recs[i] for i in todo[k:k + v1.BATCH]]))
             v1._write_private(votes_path, votes)
             print(f'{voter}: {len(votes[voter])}/{len(ids)}', flush=True)
+    return votes
+
+
+def external_draw():
+    if not v1._committed(OUT / 'FREEZE.json'):
+        raise SystemExit('FREEZE.json must be committed and pushed before the external gold is drawn')
+    recs, ids = public(), external_sample()
+    (BASE / 'gold').mkdir(exist_ok=True)
+    votes = _vote(ids, recs, BASE / 'gold' / 'votes.json')
     _external_page(ids, recs, votes)
     summary = {'items': len(ids), 'cc_public': sum(recs[i]['source'] == 'cc_public' for i in ids),
                'wildchat_pt': sum(recs[i].get('wc_language') == 'Portuguese' for i in ids),
@@ -388,6 +416,41 @@ def external_draw():
                'all_three_agree': sum(len({votes[v].get(i) for v in votes}) == 1 for i in ids)}
     (OUT / 'external-draw.json').write_text(json.dumps(summary, indent=1) + '\n')
     print(json.dumps(summary))
+
+
+OWNER_FLOOR = 60  # v2 amendment 2: built at the protocol's 60-session floor instead of waiting for 100
+
+
+def owner_draw():
+    """v2 amendment 2 / v3 amendment 5: draw the owner gold once, then the three votes and the page."""
+    for f in (v2.OUT / 'FREEZE.json', OUT / 'FREEZE.json', v2.OUT / 'AMENDMENT_2.md', OUT / 'AMENDMENT_5.md'):
+        if not v1._committed(f):
+            raise SystemExit(f'{f.name} must be committed and pushed before the owner gold is drawn')
+    gold, receipt_path = BASE / 'gold', OUT / 'owner-draw.json'
+    ids_path = gold / 'owner-ids.json'
+    if ids_path.exists():  # resume after a voter failure: the drawn ids never change
+        ids = json.loads(ids_path.read_text())
+    else:
+        c = v2.count()
+        if c['qualifying_sessions'] < OWNER_FLOOR:
+            raise SystemExit(f"floor not reached: {c['qualifying_sessions']} < {OWNER_FLOOR} sessions")
+        pool, linked, sessions = v2.gold_sample()
+        ids = pool[:150]
+        v1._write_private(ids_path, ids)
+        receipt = {'items': len(ids), 'primary_pool': len(pool), 'sessions_in_pool': sessions,
+                   'seen_text_excluded': linked, 'ids_sha256': hashlib.sha256('\n'.join(ids).encode()).hexdigest(), **c}
+        receipt_path.write_text(json.dumps(receipt, indent=1) + '\n')
+    recs = v2.records()
+    votes = _vote(ids, recs, gold / 'owner-votes.json', capped=True)
+    page_ids = ids[:]
+    random.Random(f'{SEED}-owner').shuffle(page_ids)  # pairs from one session do not sit together
+    _external_page(page_ids, recs, votes, owner=True)
+    receipt = json.loads(receipt_path.read_text())
+    receipt.update(with_prev=sum(bool(recs[i].get('prev_agent')) for i in ids),
+                   votes_missing={v: sum(votes[v].get(i) is None for i in ids) for v in votes},
+                   all_three_agree=sum(len({votes[v].get(i) for v in votes}) == 1 for i in ids))
+    receipt_path.write_text(json.dumps(receipt, indent=1) + '\n')
+    print(json.dumps(receipt))
 
 
 EXTERNAL_PAGE = """<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
@@ -432,7 +495,14 @@ render();
 """
 
 
-def _external_page(ids, recs, votes):
+OWNER_PAGE = {'Gabarito externo: pedidos de outras pessoas': 'Gabarito do dono: seus pedidos desde 24/10',
+              '<title>Gabarito externo': '<title>Gabarito do dono',
+              'pedidos de outras pessoas (dados públicos)': 'pedidos seus, de sessões a partir de 24/10',
+              "KEY='intake-v3-external'": "KEY='intake-v3-owner'",
+              "a.download='intake-v3-external.csv'": "a.download='intake-v3-owner.csv'"}
+
+
+def _external_page(ids, recs, votes, owner=False):
     import html
     _, tax = v1.categories()
     cats = [{'id': x['id'], 'name': x['name_pt'], 'definition': x['definition_pt']} for x in tax['categories']]
@@ -440,10 +510,14 @@ def _external_page(ids, recs, votes):
     items = [{'id': i, 'goal': recs[i]['goal'], 'prev': recs[i].get('prev_agent') or '',
               'votes': {v: votes[v].get(i) for v in votes}} for i in ids]
     glossary = ''.join(f"<li><b>{html.escape(x['name'])}</b>: {html.escape(x['definition'])}</li>" for x in cats)
-    body = (EXTERNAL_PAGE.replace('__GLOSSARY__', glossary).replace('__N__', str(len(items)))
+    page = EXTERNAL_PAGE
+    for old, new in (OWNER_PAGE.items() if owner else ()):
+        assert old in page, old
+        page = page.replace(old, new)
+    body = (page.replace('__GLOSSARY__', glossary).replace('__N__', str(len(items)))
             .replace('__ITEMS__', json.dumps(items, ensure_ascii=False).replace('</', '<\\/'))
             .replace('__CATS__', json.dumps(cats, ensure_ascii=False).replace('</', '<\\/')))
-    out = BASE / 'gold' / 'gabarito-externo.html'
+    out = BASE / 'gold' / ('gabarito-dono.html' if owner else 'gabarito-externo.html')
     out.write_text(body, encoding='utf-8')
     os.chmod(out, 0o600)
     print(out)
@@ -473,10 +547,28 @@ def _view(gold, arms, group_of):
     return res
 
 
-def evaluate(external_csv, owner_csvs, shipped):
+def voted_views(path, votes):
+    """Gold views from a voted page (amendment 2): `final`, `blind`, the Codex + Gemini + owner-blind majority
+    (no teacher-family vote), and the items where all three models agree. "unsure" and blanks are dropped."""
     import csv as _csv
+    with open(path, newline='', encoding='utf-8') as fh:
+        rows = list(_csv.DictReader(fh))
+    final = {r['id']: r['final'] for r in rows if r['final'] not in ('', 'unsure')}
+    blind = {r['id']: r['blind'] for r in rows if r['blind'] not in ('', 'unsure')}
+    majority = {}
+    for i in blind:
+        label, n = Counter([votes['codex'].get(i), votes['gemini'].get(i), blind[i]]).most_common(1)[0]
+        if n >= 2 and label:
+            majority[i] = label
+    agree3 = {i: votes['claude'][i] for i in set(final) | set(blind)
+              if votes['claude'].get(i) and len({votes[v].get(i) for v in votes}) == 1}
+    return {'final': final, 'blind': blind, 'codex_gemini_owner_blind_majority': majority,
+            'all_three_models_agree': agree3}
+
+
+def evaluate(external_csv, owner_csv, shipped):
     # One-shot per held-out (amendment 4): external now, owner gold when its trigger is reached.
-    out = OUT / ('owner-test-results.json' if owner_csvs else 'external-test-results.json')
+    out = OUT / ('owner-test-results.json' if owner_csv else 'external-test-results.json')
     if out.exists():
         raise SystemExit(f'spent: {out.name} exists')
     from research.intake_judge import Judge as JudgeV1
@@ -496,39 +588,30 @@ def evaluate(external_csv, owner_csvs, shipped):
         a['shipped'] = a['v2_pick' if shipped == 'v2' else 'v1']
         return a
 
-    if owner_csvs:
-        passes = [v1._read_gold(p) for p in owner_csvs]
-        excl = {i for g in passes for i, v in g.items() if v in ('', 'unsure')}
-        gold = {i: v for i, v in passes[0].items() if i not in excl and all(g.get(i) == v for g in passes[1:])}
-        orecs = v2.records()
-        oitems = {i: orecs[i] for i in gold}
-        res['views']['owner_primary_agree'] = _view(gold, arms_for(oitems), lambda i: orecs[i]['session_hash'])
-        for n, g in enumerate(passes):
-            pg = {i: v for i, v in g.items() if v not in ('', 'unsure')}
-            res['views'][f'owner_pass{n + 1}'] = _view(pg, arms_for({i: orecs[i] for i in pg}),
-                                                       lambda i: orecs[i]['session_hash'])
-        ci = res['views']['owner_primary_agree']['diffs']['v3-shipped']['accuracy_ci']
-        res['acceptance'] = {'1_owner_non_inferior': ci[0] > -0.03}
+    if owner_csv:  # v2 amendment 2 / amendment 5: one blind pass plus votes; gates on `final` and `blind`
+        orecs, votes = v2.records(), json.loads((BASE / 'gold' / 'owner-votes.json').read_text())
+        views = voted_views(owner_csv, votes)
+        oitems = {i: orecs[i] for i in set(views['final']) | set(views['blind'])}
+        arms = arms_for(oitems)
+        arms['opus'] = votes['claude']
+        for name, gold in views.items():
+            if gold:
+                res['views'][f'owner_{name}'] = _view(gold, arms, lambda i: orecs[i]['session_hash'])
+        ci = lambda v: res['views'][f'owner_{v}']['diffs']['v3-shipped']['accuracy_ci']  # noqa: E731
+        res['gold_sha256'] = v1._sha(owner_csv)
+        res['acceptance'] = {'1_owner_non_inferior': ci('final')[0] > -0.03,
+                             '1b_owner_non_inferior_on_blind': ci('blind')[0] > -0.03}
         out.write_text(json.dumps(res, indent=1) + '\n')
-        print(json.dumps({'acceptance': res['acceptance'], 'owner': res['views']['owner_primary_agree']['arms']}, indent=1))
+        print(json.dumps({'acceptance': res['acceptance'], 'owner_final': res['views']['owner_final']['arms']}, indent=1))
         return
     # external
     recs, votes = public(), json.loads((BASE / 'gold' / 'votes.json').read_text())
-    with open(external_csv, newline='', encoding='utf-8') as fh:
-        rows = list(_csv.DictReader(fh))
-    final = {r['id']: r['final'] for r in rows if r['final'] not in ('', 'unsure')}
-    blind = {r['id']: r['blind'] for r in rows if r['blind'] not in ('', 'unsure')}
+    ext = voted_views(external_csv, votes)
+    final, blind = ext['final'], ext['blind']
     items = {i: recs[i] for i in set(final) | set(blind)}
     arms = arms_for(items)
     arms['opus'] = votes['claude']
-    non_teacher = {}
-    for i in blind:
-        c = Counter([votes['codex'].get(i), votes['gemini'].get(i), blind[i]]).most_common(1)[0]
-        if c[1] >= 2:
-            non_teacher[i] = c[0]
-    agree3 = {i: votes['claude'][i] for i in items if len({votes[v].get(i) for v in votes}) == 1}
     group = lambda i: recs[i]['group']  # noqa: E731
-    ext = {'final': final, 'blind': blind, 'codex_gemini_owner_blind_majority': non_teacher, 'all_three_models_agree': agree3}
     for name, gold in ext.items():
         if gold:
             res['views'][f'external_{name}'] = _view(gold, arms, group)
@@ -556,9 +639,9 @@ def evaluate(external_csv, owner_csvs, shipped):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument('command', choices=('build', 'teacher', 'train', 'external-draw', 'eval'))
+    ap.add_argument('command', choices=('build', 'teacher', 'train', 'external-draw', 'owner-draw', 'eval'))
     ap.add_argument('--external')
-    ap.add_argument('--owner', nargs='*', default=[])
+    ap.add_argument('--owner')
     ap.add_argument('--shipped', choices=('v1', 'v2'), default='v1')
     a = ap.parse_args(argv)
     if a.command == 'eval':
