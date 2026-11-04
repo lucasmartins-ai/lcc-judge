@@ -16,16 +16,13 @@ to LCC only through its ship rule. External LLMs are teachers, references and vo
 
 ### In progress
 
-1. **Intake owner held-out (v2 and v3).**
-   - Waits for 100 qualifying owner sessions started from 2026-10-24 (fallback: 60 by 2026-11-30); the daily
-     task `intake-heldout-count` reports the count.
-   - Then:
-     - draw the owner gold, two blind passes at least 24 h apart;
-     - run `research.intake_v2 eval` and `research.intake_v3 eval --owner ...`, once each.
-   - **Gate to replace v1 in LCC:** v3 non-inferior on the owner gold (CI lower bound above −0.03), with the
-     external superiority it already passed. If v3 fails, v2 may replace v1 under its own rule.
-   - If one does replace v1, LCC's intake gains an optional `previous_turn` input; the Claude Code plugin
-     has the transcript to fill it.
+1. **Intake owner held-out (v2 and v3): done 2026-11-04, neither replaces v1.**
+   - v1 0.522, v2 0.463, v3 0.463; v3 − v1 −0.059 [−0.140, +0.016] (`intake-judge-v3/RESULTS_OWNER.md`).
+   - **Product decision (owner, after the result):** v3 becomes LCC's default `category` model, with v1
+     selectable. The reason: on other people's prompts v3 beats v1 by +0.394. This is recorded as a decision,
+     not as a pass. LCC PR pending.
+   - A v4 would start from the measured errors: English prompts, and short replies read as approvals. It needs
+     a new pre-registration and sessions after 2026-11-04.
 2. **More public agent data.**
    - v3's external gain is mostly WildChat (chat, not agents). The public Claude Code set is about one
      developer.

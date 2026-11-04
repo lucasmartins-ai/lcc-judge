@@ -173,3 +173,35 @@ and templates. All training admission remains0 and the old replay is unchanged.
 Motivated decision: retain arithmetic in code, use the separated experimental
 candidate for the next frozen replay only after validating task references.
 Evidence: `research/pdb-routing-2026-10-04/{REPORT.md,verification.json,summary.json,protocol.json,receipts/,gate-raw-evidence.json}`.
+
+## FAIL-2026-11-04-01 — Intake judge v2 and v3 fail the owner held-out
+
+- **Date:** 2026-11-04
+- **Gates:**
+  - v2 acceptance 1: v2 − v1 accuracy, CI lower bound above 0.
+  - v3 acceptance 1: v3 − shipped (v1), CI lower bound above −0.03.
+  - Both run on the owner gold of [v2 amendment 2](goal-engine-2026-10-04/intake-judge-v2/AMENDMENT_2.md):
+    136 prompts, 72 sessions, one blind pass plus three model votes.
+- **Measured:**
+  - v1 0.522, v2 0.463, v3 0.463, Opus 0.794.
+  - v2 − v1 = −0.059 [−0.133, +0.015]: FAIL.
+  - v3 − v1 = −0.059 [−0.140, +0.016]: FAIL.
+  - v2 beats rules and its cost passes.
+  - v3 had passed the external gold (+0.394 over v1).
+- **Verdict:** v1 stays in LCC. Neither model is shown to be worse than v1 on the owner's prompts (the CIs
+  include 0), but neither clears its gate.
+- **Diagnosis (descriptive, INFERIDO):**
+  - The gap is on the owner's English prompts: v3 0.634 vs v1 0.805, 41 items. On Portuguese the two are
+    level: 0.389 vs 0.400, 95 items.
+  - Short replies after an agent's question get read as `approve_or_pick` where the owner labels the
+    approved action (`git_ship`, 6 items). Opus does not make this error as often (0.71 on `git_ship`).
+  - The previous-turn dev gain did not transfer.
+- **Change motivated:**
+  - No model swap.
+  - Any v4 starts from these errors and gets a fresh pre-registration and held-out (sessions after
+    2026-11-04).
+  - On 2026-11-04, after the result, the owner chose to ship v3 as LCC's default with v1 selectable. That is
+    recorded as a product decision in `RESULTS_OWNER.md`, not as a pass.
+- **Evidence:**
+  - `goal-engine-2026-10-04/intake-judge-v3/RESULTS_OWNER.md`, `owner-test-results.json`;
+  - `goal-engine-2026-10-04/intake-judge-v2/RESULTS.md`, `test-results.json`.

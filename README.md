@@ -112,8 +112,8 @@ the owner's. Paths below are under `research/goal-engine-2026-10-04/`.
 | version | trained on | result | state | results |
 |---|---|---|---|---|
 | v1 | owner prompts | owner held-out, 116 items: 0.509 vs keyword rules 0.224, Opus 0.862 | **shipped** in LCC as an advisory `category` field, shown at probability ≥ 0.45 ([lcc#124](https://github.com/lucasmartins-ai/lcc/pull/124)) | [intake-judge-v1/RESULTS.md](research/goal-engine-2026-10-04/intake-judge-v1/RESULTS.md) |
-| v2 | + tail of the agent's previous turn | dev macro-F1 0.490 vs 0.466 prompt-only | frozen; owner held-out pending | [intake-judge-v2/FREEZE.json](research/goal-engine-2026-10-04/intake-judge-v2/FREEZE.json) |
-| v3 | + a public Claude Code set (MIT) + WildChat coding chats (ODC-BY, split by person) | external held-out, 99 items: 0.697 vs v1 0.303, **+0.394 [+0.283, +0.500]**; Opus 0.859 | external test passed; owner held-out pending | [intake-judge-v3/RESULTS_EXTERNAL.md](research/goal-engine-2026-10-04/intake-judge-v3/RESULTS_EXTERNAL.md) |
+| v2 | + tail of the agent's previous turn | dev macro-F1 0.490 vs 0.466 prompt-only | not adopted: owner held-out 0.463 vs v1 0.522 | [intake-judge-v2/RESULTS.md](research/goal-engine-2026-10-04/intake-judge-v2/RESULTS.md) |
+| v3 | + a public Claude Code set (MIT) + WildChat coding chats (ODC-BY, split by person) | external held-out, 99 items: 0.697 vs v1 0.303, **+0.394 [+0.283, +0.500]**; Opus 0.859 | not adopted: external passed; owner held-out 0.463 vs v1 0.522, non-inferiority failed | [RESULTS_EXTERNAL.md](research/goal-engine-2026-10-04/intake-judge-v3/RESULTS_EXTERNAL.md), [RESULTS_OWNER.md](research/goal-engine-2026-10-04/intake-judge-v3/RESULTS_OWNER.md) |
 
 - **External gold.** The owner picked each label blind, then saw votes from Claude Opus, Codex and Gemini
   and confirmed or changed it. The reveal changed 1 label in 99, and the verdict is the same on the blind
@@ -122,8 +122,9 @@ the owner's. Paths below are under `research/goal-engine-2026-10-04/`.
   `specified_task` (0.303 vs 0.434).
 - **Other agent users: suggested, not shown.** Most of v3's gain is on WildChat. On the one other Claude Code
   user in the set (22 items), v3 − v1 is +0.18 [0.00, +0.36].
-- **v3 replaces v1 only if it also passes the owner held-out** (non-inferior, CI lower bound above −0.03).
-  That gold uses sessions from 2026-10-24 and is drawn once 100 qualifying sessions exist.
+- **The owner held-out kept v1.** 136 of the owner's prompts, from sessions after 2026-10-24: v1 0.522, v3 0.463,
+  Opus 0.794. v3 − v1 = −0.059 [−0.140, +0.016], short of the non-inferiority margin (lower bound above −0.03).
+  The gap is on the owner's English prompts.
 - **Cost (v3).** Median 0.69 ms per prompt, peak RSS 64.9 MB, 1.84 MB model.
 
 ## Repo map
@@ -177,5 +178,5 @@ Code and project-authored fixtures: MIT ([LICENSE](LICENSE)). Third-party materi
 - O especialista v3 de blocos está em produção no LCC (PRs #50/#51) e substituiu o Laya e o Jev pago como padrão.
 - No teste final pré-registrado, o v3 venceu recency, BM25 e o mecânico, empatou com o Opus e superou o Gemini em all-kept.
 - O ponto fraco são os casos de borda (28/23/20 contra 35/35/35 do Opus). O v4 e o v5 não foram adotados.
-- O juiz de intake v1 está em produção no LCC como campo `category` consultivo (lcc#124). O v3, treinado também com dados públicos, acertou 0,697 contra 0,303 do v1 em pedidos de outras pessoas; só substitui o v1 se também passar no held-out do dono.
+- O juiz de intake v1 está em produção no LCC como campo `category` consultivo (lcc#124). O v3, treinado também com dados públicos, acertou 0,697 contra 0,303 do v1 em pedidos de outras pessoas, mas não passou no held-out do dono (0,463 contra 0,522), então o v1 continua.
 - `python -m research.bench all` refaz os números do juiz de blocos, sem chamar LLM.

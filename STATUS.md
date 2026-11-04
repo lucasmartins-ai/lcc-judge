@@ -23,8 +23,8 @@ and voters.
 | Probe eval v1 | verbatim modes beat Claude Code's native summary on artifact trail; not a matched-budget result | `probe-eval-v1/RESULTS.md` |
 | When to compact | idle-return cache re-writes are 15.9% of main-session cost; stash-on-idle-return is a conditional opt-in; keep-warm pings fail the cost gate; fresh-session handoff +27.6% cost, quality **unmeasured** | `research/when-to-compact-2026-10-19/WHEN_RESULTS.md`, `WHEN2_RESULTS.md` |
 | **Intake judge v1** | **shipped** in LCC as an advisory `category` field (lcc#124, merged 2026-10-23, `9b0fac3`) | `intake-judge-v1/RESULTS.md` |
-| **Intake judge v2** (adds the agent's previous turn) | frozen, owner held-out pending | `intake-judge-v2/FREEZE.json` |
-| **Intake judge v3** (adds public data) | **external test passed**; owner held-out pending | `intake-judge-v3/RESULTS_EXTERNAL.md` |
+| **Intake judge v2** (adds the agent's previous turn) | not adopted: owner held-out −0.059 [−0.133, +0.015] vs v1 | `intake-judge-v2/RESULTS.md` |
+| **Intake judge v3** (adds public data) | gate failed: external +0.394 vs v1 passed, owner non-inferiority failed (−0.059 [−0.140, +0.016]). The owner then chose, as a product decision, to make it LCC's default with v1 selectable (LCC PR pending) | `intake-judge-v3/RESULTS_EXTERNAL.md`, `RESULTS_OWNER.md` |
 
 ### Intake judge (request category)
 
@@ -44,7 +44,7 @@ multinomial logistic regression, distilled from Opus labels. Every version below
 - Dev macro-F1 0.490, vs 0.466 for prompt-only. Static embeddings (shrunk potion-multilingual-128M) lost:
   dev macro-F1 0.34, RSS about 780 MB.
 - Amendment 1 changed the export format after the dev run (same weights).
-- Waits for the owner held-out.
+- Owner held-out (below): 0.463 vs v1 0.522, −0.059 [−0.133, +0.015]. Does not replace v1.
 
 **v3**
 - Trained on owner prompts, a public Claude Code set (MIT, about one developer) and WildChat coding chats
@@ -60,12 +60,20 @@ multinomial logistic regression, distilled from Opus labels. Every version below
   so "works for other agent users" is suggested, not shown.
 - Amendment 3 removed one dev guard after the dev run. v3 ships only if the owner held-out also passes:
   non-inferior to the shipped model, CI lower bound above −0.03.
+- Owner held-out: 0.463 vs v1 0.522, **−0.059 [−0.140, +0.016]. FAIL**, so v3 does not replace v1.
 
-**Owner held-out (v2 and v3)**
-- Sessions started from 2026-10-24.
-- The gold is drawn once at least 100 qualifying sessions exist. Fallback: 60 sessions by 2026-11-30.
-- A daily local scheduled task (`intake-heldout-count`) runs `python -m research.intake_v2 count` and
-  reports when the trigger is met.
+**Owner held-out (v2 and v3), run 2026-11-04**
+- Built early, at the protocol's 60-session floor (v2 amendment 2, v3 amendment 5).
+- Gold: 136 prompts from 72 sessions started from 2026-10-24.
+  - The owner labelled them in one blind pass, then saw votes from Claude, Codex `xhigh` and Gemini Argon
+    "Alto" (Gemini voted on 100 of 136).
+  - No label changed after the reveal.
+- Results: Opus 0.794, v1 0.522, v2 0.463, v3 0.463, keyword 0.184.
+- The gap is on English prompts: v3 0.634 vs v1 0.805, 41 items. On Portuguese the two are level: 0.389 vs
+  0.400, 95 items.
+- The ship rule keeps v1. Failure entry: `research/failures.md` FAIL-2026-11-04-01.
+- **Product decision after the result:** the owner chose to make v3 LCC's default with v1 selectable, because
+  LCC's users are mostly other people (`RESULTS_OWNER.md`). This is recorded as a decision, not as a pass.
 
 ## Update 2026-10-18: specialist v3 final test (post-cutoff held-out set)
 
@@ -180,7 +188,9 @@ approved by the owner). Every other real-session arm ran offline at $0
 - Intake judge: [v1](research/goal-engine-2026-10-04/intake-judge-v1/RESULTS.md),
   [v2 protocol](research/goal-engine-2026-10-04/intake-judge-v2/PROTOCOL.md),
   [v3 protocol](research/goal-engine-2026-10-04/intake-judge-v3/PROTOCOL.md),
-  [v3 external results](research/goal-engine-2026-10-04/intake-judge-v3/RESULTS_EXTERNAL.md); code in
+  [v3 external results](research/goal-engine-2026-10-04/intake-judge-v3/RESULTS_EXTERNAL.md),
+  [v3 owner results](research/goal-engine-2026-10-04/intake-judge-v3/RESULTS_OWNER.md),
+  [v2 results](research/goal-engine-2026-10-04/intake-judge-v2/RESULTS.md); code in
   `research/intake_v1.py`, `intake_v2.py`, `intake_v3.py`, `intake_judge*.py`. Teacher and voter runs used
   subscription CLIs and the owner's browser session only: no API spend.
 - Model: [MODEL_CARD.md](MODEL_CARD.md); design docs: `docs/00-vision.md` … `docs/10_OBSERVATION_OPERATION.md`

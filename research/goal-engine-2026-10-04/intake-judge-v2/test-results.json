@@ -1,0 +1,999 @@
+{
+ "gold_sha256": "c104e20ade8c7dddbd3371f0995aa892f9273c10926d63ff688e5a0ea04a38d0",
+ "cost": {
+  "median_ms": 1.601,
+  "p90_ms": 2.011,
+  "load_ms": 25.5,
+  "peak_rss_mb": 64.9
+ },
+ "views": {
+  "final": {
+   "items": 136,
+   "sessions": 72,
+   "gold_label_counts": {
+    "approve_or_pick": 29,
+    "task_status_or_control": 15,
+    "correct_approach_or_rule": 15,
+    "specified_task": 14,
+    "git_ship": 14,
+    "general_question": 11,
+    "supply_fact_or_step_done": 10,
+    "revise_recent_output": 8,
+    "external_accounts_and_comms": 6,
+    "project_audit_or_direction": 6,
+    "failure_report": 4,
+    "environment_and_infra": 2,
+    "UNKNOWN": 1,
+    "handoff_prompt": 1
+   },
+   "arms": {
+    "v2_pick": {
+     "accuracy": 0.4632,
+     "macro_f1": 0.4044
+    },
+    "v1": {
+     "accuracy": 0.5221,
+     "macro_f1": 0.4476
+    },
+    "keyword": {
+     "accuracy": 0.1838,
+     "macro_f1": 0.218
+    },
+    "majority": {
+     "accuracy": 0.2132,
+     "macro_f1": 0.0251
+    },
+    "opus": {
+     "accuracy": 0.7941,
+     "macro_f1": 0.7303
+    }
+   },
+   "diffs": {
+    "v2_pick-v1": {
+     "accuracy": -0.0588,
+     "accuracy_ci": [
+      -0.1333,
+      0.0148
+     ],
+     "macro_f1": -0.0431,
+     "macro_f1_ci": [
+      -0.1394,
+      0.0188
+     ]
+    },
+    "v2_pick-keyword": {
+     "accuracy": 0.2794,
+     "accuracy_ci": [
+      0.1805,
+      0.3723
+     ],
+     "macro_f1": 0.1864,
+     "macro_f1_ci": [
+      0.1058,
+      0.2776
+     ]
+    },
+    "v2_pick-majority": {
+     "accuracy": 0.25,
+     "accuracy_ci": [
+      0.1679,
+      0.3359
+     ],
+     "macro_f1": 0.3793,
+     "macro_f1_ci": [
+      0.2615,
+      0.4564
+     ]
+    },
+    "v2_pick-opus": {
+     "accuracy": -0.3309,
+     "accuracy_ci": [
+      -0.4104,
+      -0.2481
+     ],
+     "macro_f1": -0.3259,
+     "macro_f1_ci": [
+      -0.4511,
+      -0.2541
+     ]
+    }
+   },
+   "acceptance": {
+    "1_replaces_v1": false,
+    "1b_fallback_replaces_v1": false,
+    "2_beats_rules": true,
+    "3_cost": true,
+    "4_close_to_opus_label": false
+   },
+   "recall_by_category": {
+    "UNKNOWN": {
+     "n": 1,
+     "v2_pick": 0.0,
+     "v1": 0.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.0
+    },
+    "approve_or_pick": {
+     "n": 29,
+     "v2_pick": 0.793,
+     "v1": 0.759,
+     "keyword": 0.0,
+     "majority": 1.0,
+     "opus": 0.966
+    },
+    "correct_approach_or_rule": {
+     "n": 15,
+     "v2_pick": 0.533,
+     "v1": 0.533,
+     "keyword": 0.067,
+     "majority": 0.0,
+     "opus": 0.8
+    },
+    "environment_and_infra": {
+     "n": 2,
+     "v2_pick": 0.0,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "external_accounts_and_comms": {
+     "n": 6,
+     "v2_pick": 0.333,
+     "v1": 0.5,
+     "keyword": 0.5,
+     "majority": 0.0,
+     "opus": 0.833
+    },
+    "failure_report": {
+     "n": 4,
+     "v2_pick": 0.5,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "general_question": {
+     "n": 11,
+     "v2_pick": 0.091,
+     "v1": 0.091,
+     "keyword": 0.091,
+     "majority": 0.0,
+     "opus": 0.182
+    },
+    "git_ship": {
+     "n": 14,
+     "v2_pick": 0.429,
+     "v1": 0.786,
+     "keyword": 0.429,
+     "majority": 0.0,
+     "opus": 0.714
+    },
+    "handoff_prompt": {
+     "n": 1,
+     "v2_pick": 1.0,
+     "v1": 1.0,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 6,
+     "v2_pick": 0.5,
+     "v1": 0.833,
+     "keyword": 0.167,
+     "majority": 0.0,
+     "opus": 0.833
+    },
+    "revise_recent_output": {
+     "n": 8,
+     "v2_pick": 0.25,
+     "v1": 0.25,
+     "keyword": 0.25,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "specified_task": {
+     "n": 14,
+     "v2_pick": 0.429,
+     "v1": 0.357,
+     "keyword": 0.5,
+     "majority": 0.0,
+     "opus": 0.786
+    },
+    "supply_fact_or_step_done": {
+     "n": 10,
+     "v2_pick": 0.5,
+     "v1": 0.6,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.8
+    },
+    "task_status_or_control": {
+     "n": 15,
+     "v2_pick": 0.267,
+     "v1": 0.267,
+     "keyword": 0.2,
+     "majority": 0.0,
+     "opus": 0.8
+    }
+   },
+   "by_prev": {
+    "with_prev": {
+     "v2_pick": 0.4831,
+     "v1": 0.5254,
+     "keyword": 0.1695,
+     "majority": 0.2458,
+     "opus": 0.8051,
+     "n": 118
+    },
+    "without_prev": {
+     "v2_pick": 0.3333,
+     "v1": 0.5,
+     "keyword": 0.2778,
+     "majority": 0.0,
+     "opus": 0.7222,
+     "n": 18
+    }
+   },
+   "by_language": {
+    "en": {
+     "v2_pick": 0.6341,
+     "v1": 0.8049,
+     "keyword": 0.122,
+     "majority": 0.4634,
+     "opus": 0.8293,
+     "n": 41
+    },
+    "pt": {
+     "v2_pick": 0.3895,
+     "v1": 0.4,
+     "keyword": 0.2105,
+     "majority": 0.1053,
+     "opus": 0.7789,
+     "n": 95
+    }
+   }
+  },
+  "blind": {
+   "items": 136,
+   "sessions": 72,
+   "gold_label_counts": {
+    "approve_or_pick": 29,
+    "task_status_or_control": 15,
+    "correct_approach_or_rule": 15,
+    "specified_task": 14,
+    "git_ship": 14,
+    "general_question": 11,
+    "supply_fact_or_step_done": 10,
+    "revise_recent_output": 8,
+    "external_accounts_and_comms": 6,
+    "project_audit_or_direction": 6,
+    "failure_report": 4,
+    "environment_and_infra": 2,
+    "UNKNOWN": 1,
+    "handoff_prompt": 1
+   },
+   "arms": {
+    "v2_pick": {
+     "accuracy": 0.4632,
+     "macro_f1": 0.4044
+    },
+    "v1": {
+     "accuracy": 0.5221,
+     "macro_f1": 0.4476
+    },
+    "keyword": {
+     "accuracy": 0.1838,
+     "macro_f1": 0.218
+    },
+    "majority": {
+     "accuracy": 0.2132,
+     "macro_f1": 0.0251
+    },
+    "opus": {
+     "accuracy": 0.7941,
+     "macro_f1": 0.7303
+    }
+   },
+   "diffs": {
+    "v2_pick-v1": {
+     "accuracy": -0.0588,
+     "accuracy_ci": [
+      -0.1333,
+      0.0148
+     ],
+     "macro_f1": -0.0431,
+     "macro_f1_ci": [
+      -0.1394,
+      0.0188
+     ]
+    },
+    "v2_pick-keyword": {
+     "accuracy": 0.2794,
+     "accuracy_ci": [
+      0.1805,
+      0.3723
+     ],
+     "macro_f1": 0.1864,
+     "macro_f1_ci": [
+      0.1058,
+      0.2776
+     ]
+    },
+    "v2_pick-majority": {
+     "accuracy": 0.25,
+     "accuracy_ci": [
+      0.1679,
+      0.3359
+     ],
+     "macro_f1": 0.3793,
+     "macro_f1_ci": [
+      0.2615,
+      0.4564
+     ]
+    },
+    "v2_pick-opus": {
+     "accuracy": -0.3309,
+     "accuracy_ci": [
+      -0.4104,
+      -0.2481
+     ],
+     "macro_f1": -0.3259,
+     "macro_f1_ci": [
+      -0.4511,
+      -0.2541
+     ]
+    }
+   },
+   "acceptance": {
+    "1_replaces_v1": false,
+    "1b_fallback_replaces_v1": false,
+    "2_beats_rules": true,
+    "3_cost": true,
+    "4_close_to_opus_label": false
+   },
+   "recall_by_category": {
+    "UNKNOWN": {
+     "n": 1,
+     "v2_pick": 0.0,
+     "v1": 0.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.0
+    },
+    "approve_or_pick": {
+     "n": 29,
+     "v2_pick": 0.793,
+     "v1": 0.759,
+     "keyword": 0.0,
+     "majority": 1.0,
+     "opus": 0.966
+    },
+    "correct_approach_or_rule": {
+     "n": 15,
+     "v2_pick": 0.533,
+     "v1": 0.533,
+     "keyword": 0.067,
+     "majority": 0.0,
+     "opus": 0.8
+    },
+    "environment_and_infra": {
+     "n": 2,
+     "v2_pick": 0.0,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "external_accounts_and_comms": {
+     "n": 6,
+     "v2_pick": 0.333,
+     "v1": 0.5,
+     "keyword": 0.5,
+     "majority": 0.0,
+     "opus": 0.833
+    },
+    "failure_report": {
+     "n": 4,
+     "v2_pick": 0.5,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "general_question": {
+     "n": 11,
+     "v2_pick": 0.091,
+     "v1": 0.091,
+     "keyword": 0.091,
+     "majority": 0.0,
+     "opus": 0.182
+    },
+    "git_ship": {
+     "n": 14,
+     "v2_pick": 0.429,
+     "v1": 0.786,
+     "keyword": 0.429,
+     "majority": 0.0,
+     "opus": 0.714
+    },
+    "handoff_prompt": {
+     "n": 1,
+     "v2_pick": 1.0,
+     "v1": 1.0,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 6,
+     "v2_pick": 0.5,
+     "v1": 0.833,
+     "keyword": 0.167,
+     "majority": 0.0,
+     "opus": 0.833
+    },
+    "revise_recent_output": {
+     "n": 8,
+     "v2_pick": 0.25,
+     "v1": 0.25,
+     "keyword": 0.25,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "specified_task": {
+     "n": 14,
+     "v2_pick": 0.429,
+     "v1": 0.357,
+     "keyword": 0.5,
+     "majority": 0.0,
+     "opus": 0.786
+    },
+    "supply_fact_or_step_done": {
+     "n": 10,
+     "v2_pick": 0.5,
+     "v1": 0.6,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.8
+    },
+    "task_status_or_control": {
+     "n": 15,
+     "v2_pick": 0.267,
+     "v1": 0.267,
+     "keyword": 0.2,
+     "majority": 0.0,
+     "opus": 0.8
+    }
+   },
+   "by_prev": {
+    "with_prev": {
+     "v2_pick": 0.4831,
+     "v1": 0.5254,
+     "keyword": 0.1695,
+     "majority": 0.2458,
+     "opus": 0.8051,
+     "n": 118
+    },
+    "without_prev": {
+     "v2_pick": 0.3333,
+     "v1": 0.5,
+     "keyword": 0.2778,
+     "majority": 0.0,
+     "opus": 0.7222,
+     "n": 18
+    }
+   },
+   "by_language": {
+    "en": {
+     "v2_pick": 0.6341,
+     "v1": 0.8049,
+     "keyword": 0.122,
+     "majority": 0.4634,
+     "opus": 0.8293,
+     "n": 41
+    },
+    "pt": {
+     "v2_pick": 0.3895,
+     "v1": 0.4,
+     "keyword": 0.2105,
+     "majority": 0.1053,
+     "opus": 0.7789,
+     "n": 95
+    }
+   }
+  },
+  "codex_gemini_owner_blind_majority": {
+   "items": 123,
+   "sessions": 69,
+   "gold_label_counts": {
+    "approve_or_pick": 27,
+    "task_status_or_control": 15,
+    "specified_task": 13,
+    "git_ship": 13,
+    "correct_approach_or_rule": 12,
+    "revise_recent_output": 9,
+    "external_accounts_and_comms": 8,
+    "supply_fact_or_step_done": 7,
+    "project_audit_or_direction": 6,
+    "failure_report": 5,
+    "environment_and_infra": 4,
+    "general_question": 2,
+    "UNKNOWN": 1,
+    "handoff_prompt": 1
+   },
+   "arms": {
+    "v2_pick": {
+     "accuracy": 0.5122,
+     "macro_f1": 0.4633
+    },
+    "v1": {
+     "accuracy": 0.5691,
+     "macro_f1": 0.5184
+    },
+    "keyword": {
+     "accuracy": 0.1951,
+     "macro_f1": 0.2238
+    },
+    "majority": {
+     "accuracy": 0.2195,
+     "macro_f1": 0.0257
+    },
+    "opus": {
+     "accuracy": 0.8943,
+     "macro_f1": 0.8387
+    }
+   },
+   "diffs": {
+    "v2_pick-v1": {
+     "accuracy": -0.0569,
+     "accuracy_ci": [
+      -0.1393,
+      0.0323
+     ],
+     "macro_f1": -0.0551,
+     "macro_f1_ci": [
+      -0.1665,
+      0.0179
+     ]
+    },
+    "v2_pick-keyword": {
+     "accuracy": 0.3171,
+     "accuracy_ci": [
+      0.2155,
+      0.416
+     ],
+     "macro_f1": 0.2395,
+     "macro_f1_ci": [
+      0.1302,
+      0.3443
+     ]
+    },
+    "v2_pick-majority": {
+     "accuracy": 0.2927,
+     "accuracy_ci": [
+      0.2016,
+      0.3821
+     ],
+     "macro_f1": 0.4376,
+     "macro_f1_ci": [
+      0.3023,
+      0.5295
+     ]
+    },
+    "v2_pick-opus": {
+     "accuracy": -0.3821,
+     "accuracy_ci": [
+      -0.4746,
+      -0.2927
+     ],
+     "macro_f1": -0.3754,
+     "macro_f1_ci": [
+      -0.5372,
+      -0.2936
+     ]
+    }
+   },
+   "acceptance": {
+    "1_replaces_v1": false,
+    "1b_fallback_replaces_v1": false,
+    "2_beats_rules": true,
+    "3_cost": true,
+    "4_close_to_opus_label": false
+   },
+   "recall_by_category": {
+    "UNKNOWN": {
+     "n": 1,
+     "v2_pick": 0.0,
+     "v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.0
+    },
+    "approve_or_pick": {
+     "n": 27,
+     "v2_pick": 0.815,
+     "v1": 0.778,
+     "keyword": 0.0,
+     "majority": 1.0,
+     "opus": 1.0
+    },
+    "correct_approach_or_rule": {
+     "n": 12,
+     "v2_pick": 0.667,
+     "v1": 0.667,
+     "keyword": 0.083,
+     "majority": 0.0,
+     "opus": 0.917
+    },
+    "environment_and_infra": {
+     "n": 4,
+     "v2_pick": 0.0,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.5
+    },
+    "external_accounts_and_comms": {
+     "n": 8,
+     "v2_pick": 0.375,
+     "v1": 0.5,
+     "keyword": 0.5,
+     "majority": 0.0,
+     "opus": 0.875
+    },
+    "failure_report": {
+     "n": 5,
+     "v2_pick": 0.4,
+     "v1": 0.4,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "general_question": {
+     "n": 2,
+     "v2_pick": 0.5,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "git_ship": {
+     "n": 13,
+     "v2_pick": 0.462,
+     "v1": 0.769,
+     "keyword": 0.462,
+     "majority": 0.0,
+     "opus": 0.769
+    },
+    "handoff_prompt": {
+     "n": 1,
+     "v2_pick": 1.0,
+     "v1": 1.0,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 6,
+     "v2_pick": 0.333,
+     "v1": 0.667,
+     "keyword": 0.167,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "revise_recent_output": {
+     "n": 9,
+     "v2_pick": 0.222,
+     "v1": 0.222,
+     "keyword": 0.333,
+     "majority": 0.0,
+     "opus": 0.889
+    },
+    "specified_task": {
+     "n": 13,
+     "v2_pick": 0.538,
+     "v1": 0.462,
+     "keyword": 0.385,
+     "majority": 0.0,
+     "opus": 0.923
+    },
+    "supply_fact_or_step_done": {
+     "n": 7,
+     "v2_pick": 0.571,
+     "v1": 0.714,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 0.857
+    },
+    "task_status_or_control": {
+     "n": 15,
+     "v2_pick": 0.333,
+     "v1": 0.2,
+     "keyword": 0.2,
+     "majority": 0.0,
+     "opus": 0.867
+    }
+   },
+   "by_prev": {
+    "with_prev": {
+     "v2_pick": 0.5283,
+     "v1": 0.5849,
+     "keyword": 0.1792,
+     "majority": 0.2547,
+     "opus": 0.9057,
+     "n": 106
+    },
+    "without_prev": {
+     "v2_pick": 0.4118,
+     "v1": 0.4706,
+     "keyword": 0.2941,
+     "majority": 0.0,
+     "opus": 0.8235,
+     "n": 17
+    }
+   },
+   "by_language": {
+    "en": {
+     "v2_pick": 0.6667,
+     "v1": 0.8205,
+     "keyword": 0.1282,
+     "majority": 0.4872,
+     "opus": 0.8718,
+     "n": 39
+    },
+    "pt": {
+     "v2_pick": 0.4405,
+     "v1": 0.4524,
+     "keyword": 0.2262,
+     "majority": 0.0952,
+     "opus": 0.9048,
+     "n": 84
+    }
+   }
+  },
+  "all_three_models_agree": {
+   "items": 80,
+   "sessions": 51,
+   "gold_label_counts": {
+    "approve_or_pick": 19,
+    "correct_approach_or_rule": 9,
+    "git_ship": 8,
+    "task_status_or_control": 8,
+    "external_accounts_and_comms": 7,
+    "revise_recent_output": 7,
+    "failure_report": 5,
+    "supply_fact_or_step_done": 5,
+    "specified_task": 4,
+    "project_audit_or_direction": 4,
+    "general_question": 2,
+    "environment_and_infra": 1,
+    "handoff_prompt": 1
+   },
+   "arms": {
+    "v2_pick": {
+     "accuracy": 0.5875,
+     "macro_f1": 0.5493
+    },
+    "v1": {
+     "accuracy": 0.6375,
+     "macro_f1": 0.638
+    },
+    "keyword": {
+     "accuracy": 0.2125,
+     "macro_f1": 0.271
+    },
+    "majority": {
+     "accuracy": 0.2375,
+     "macro_f1": 0.0295
+    },
+    "opus": {
+     "accuracy": 1.0,
+     "macro_f1": 1.0
+    }
+   },
+   "diffs": {
+    "v2_pick-v1": {
+     "accuracy": -0.05,
+     "accuracy_ci": [
+      -0.1392,
+      0.04
+     ],
+     "macro_f1": -0.0887,
+     "macro_f1_ci": [
+      -0.1936,
+      0.0188
+     ]
+    },
+    "v2_pick-keyword": {
+     "accuracy": 0.375,
+     "accuracy_ci": [
+      0.2469,
+      0.5059
+     ],
+     "macro_f1": 0.2783,
+     "macro_f1_ci": [
+      0.1318,
+      0.4136
+     ]
+    },
+    "v2_pick-majority": {
+     "accuracy": 0.35,
+     "accuracy_ci": [
+      0.2273,
+      0.4706
+     ],
+     "macro_f1": 0.5197,
+     "macro_f1_ci": [
+      0.3322,
+      0.6374
+     ]
+    },
+    "v2_pick-opus": {
+     "accuracy": -0.4125,
+     "accuracy_ci": [
+      -0.5244,
+      -0.3012
+     ],
+     "macro_f1": -0.4507,
+     "macro_f1_ci": [
+      -0.6318,
+      -0.332
+     ]
+    }
+   },
+   "acceptance": {
+    "1_replaces_v1": false,
+    "1b_fallback_replaces_v1": false,
+    "2_beats_rules": true,
+    "3_cost": true,
+    "4_close_to_opus_label": false
+   },
+   "recall_by_category": {
+    "approve_or_pick": {
+     "n": 19,
+     "v2_pick": 0.895,
+     "v1": 0.842,
+     "keyword": 0.0,
+     "majority": 1.0,
+     "opus": 1.0
+    },
+    "correct_approach_or_rule": {
+     "n": 9,
+     "v2_pick": 0.778,
+     "v1": 0.778,
+     "keyword": 0.111,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "environment_and_infra": {
+     "n": 1,
+     "v2_pick": 0.0,
+     "v1": 1.0,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "external_accounts_and_comms": {
+     "n": 7,
+     "v2_pick": 0.429,
+     "v1": 0.571,
+     "keyword": 0.571,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "failure_report": {
+     "n": 5,
+     "v2_pick": 0.4,
+     "v1": 0.4,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "general_question": {
+     "n": 2,
+     "v2_pick": 0.5,
+     "v1": 0.5,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "git_ship": {
+     "n": 8,
+     "v2_pick": 0.5,
+     "v1": 0.75,
+     "keyword": 0.625,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "handoff_prompt": {
+     "n": 1,
+     "v2_pick": 1.0,
+     "v1": 1.0,
+     "keyword": 1.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "project_audit_or_direction": {
+     "n": 4,
+     "v2_pick": 0.5,
+     "v1": 0.75,
+     "keyword": 0.25,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "revise_recent_output": {
+     "n": 7,
+     "v2_pick": 0.286,
+     "v1": 0.286,
+     "keyword": 0.286,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "specified_task": {
+     "n": 4,
+     "v2_pick": 0.5,
+     "v1": 0.5,
+     "keyword": 0.25,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "supply_fact_or_step_done": {
+     "n": 5,
+     "v2_pick": 0.6,
+     "v1": 0.8,
+     "keyword": 0.0,
+     "majority": 0.0,
+     "opus": 1.0
+    },
+    "task_status_or_control": {
+     "n": 8,
+     "v2_pick": 0.375,
+     "v1": 0.25,
+     "keyword": 0.25,
+     "majority": 0.0,
+     "opus": 1.0
+    }
+   },
+   "by_prev": {
+    "with_prev": {
+     "v2_pick": 0.5775,
+     "v1": 0.6338,
+     "keyword": 0.1831,
+     "majority": 0.2676,
+     "opus": 1.0,
+     "n": 71
+    },
+    "without_prev": {
+     "v2_pick": 0.6667,
+     "v1": 0.6667,
+     "keyword": 0.4444,
+     "majority": 0.0,
+     "opus": 1.0,
+     "n": 9
+    }
+   },
+   "by_language": {
+    "en": {
+     "v2_pick": 0.7917,
+     "v1": 0.875,
+     "keyword": 0.1667,
+     "majority": 0.5417,
+     "opus": 1.0,
+     "n": 24
+    },
+    "pt": {
+     "v2_pick": 0.5,
+     "v1": 0.5357,
+     "keyword": 0.2321,
+     "majority": 0.1071,
+     "opus": 1.0,
+     "n": 56
+    }
+   }
+  }
+ },
+ "ships": false
+}
