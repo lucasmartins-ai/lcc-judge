@@ -329,17 +329,38 @@ def _bridge(*args, timeout=120):
 
 def _gemini_argon_high():
     """Pick Argon at reasoning level "Alto" in the mode menu; a new chat resets the level."""
-    for label in ('Abrir seletor de modo', '4 Argon', 'Abrir seletor de modo', 'Nível de raciocínio', 'Alto Muito'):
-        tree = _bridge('--observe', '--light', '--max', '160')['a11yTree']
+    def observe():
+        _gemini_frame()  # menus only open on a painted frame
+        return _bridge('--observe', '--light', '--max', '160')['a11yTree']
+
+    def click(tree, label):
         m = re.search(r'\[(e\d+)\] \([^)]*\) "' + re.escape(label), tree)
         if not m:
             raise RuntimeError(f'Gemini menu item not found: {label}')
         _bridge('--click', m.group(1))
         time.sleep(2)
-    tree = _bridge('--observe', '--light', '--max', '80')['a11yTree']
+        return observe()
+
+    tree = observe()
+    if 'No momento: Argon Alto' in tree:
+        return tree
+    if 'No momento: Argon' not in tree:
+        tree = click(click(tree, 'Abrir seletor de modo'), '4 Argon')
+    if 'Nível de raciocínio' not in tree:  # picking Argon may leave the menu open
+        tree = click(tree, 'Abrir seletor de modo')
+    tree = click(click(tree, 'Nível de raciocínio'), 'Alto Muito')
     if 'No momento: Argon Alto' not in tree:
         raise RuntimeError('Gemini mode is not Argon Alto')
     return tree
+
+
+def _gemini_frame():
+    """A hidden Chrome window paints no frames, and Gemini waits for one to send and to render its answer. A tab
+    screenshot forces a frame. The capture shows owner text: the CLI saves it under TMPDIR, so it gets its own
+    directory, removed even if the CLI fails or the run is interrupted."""
+    with tempfile.TemporaryDirectory() as d:
+        subprocess.run(BRIDGE + ['--screenshot'], capture_output=True, text=True, timeout=120,
+                       env={**os.environ, 'TMPDIR': d})
 
 
 def _gemini_vote(batch):
@@ -360,16 +381,35 @@ def _gemini_vote(batch):
            + '\n\nReply with JSON only, one line: {"answers": {"r0": "<category id>", ...}}')
     # Trusted typing fires real input events; plain --type leaves Gemini's send button hidden.
     _bridge('--trusted-type', msg, '--target', box, timeout=600)
-    time.sleep(2)
+    # Long batches (owner gold, ~24k chars) are still landing when the CLI returns: wait until the box stops
+    # growing, then click send and confirm the message left the box.
+    size = '(() => { const b = document.querySelector("rich-textarea"); return b ? b.innerText.length : -1; })()'
+    last_size = None
+    for _ in range(100):
+        time.sleep(3)
+        cur = _bridge('--cdp-eval', size).get('result')
+        if cur == last_size and cur and cur >= len(msg) * 0.9:
+            break
+        last_size = cur
+    else:
+        raise RuntimeError(f'Gemini input did not settle: {last_size} of {len(msg)} chars')
     sent = _bridge('--cdp-eval', '(() => { const b = [...document.querySelectorAll("button")]'
                    '.find(x => x.getAttribute("aria-label") === "Enviar mensagem"); '
                    'if (!b) return "no-button"; b.click(); return "ok"; })()').get('result')
     if sent != 'ok':
         raise RuntimeError(f'Gemini send failed: {sent}')
+    for _ in range(30):
+        _gemini_frame()
+        time.sleep(2)
+        if _bridge('--cdp-eval', 'document.querySelectorAll("user-query").length').get('result'):
+            break
+    else:
+        raise RuntimeError('Gemini did not take the message')
     last = ('(() => { const r = [...document.querySelectorAll("model-response")]; '
             'return r.length ? r[r.length - 1].innerText : ""; })()')
-    for _ in range(60):
+    for _ in range(150):
         time.sleep(6)
+        _gemini_frame()
         m = re.search(r'\{"answers"\s*:\s*\{[^{}]*\}\s*\}', _bridge('--cdp-eval', last).get('result') or '')
         if m:
             try:
