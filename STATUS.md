@@ -24,6 +24,7 @@ and voters.
 | When to compact | idle-return cache re-writes are 15.9% of main-session cost; stash-on-idle-return is a conditional opt-in; keep-warm pings fail the cost gate; fresh-session handoff +27.6% cost, quality **unmeasured** | `research/when-to-compact-2026-10-19/WHEN_RESULTS.md`, `WHEN2_RESULTS.md` |
 | **Intake judge v1** | **shipped** in LCC as an advisory `category` field (lcc#124, merged 2026-10-23, `9b0fac3`) | `intake-judge-v1/RESULTS.md` |
 | **Intake judge v2** (adds the agent's previous turn) | not adopted: owner held-out −0.059 [−0.133, +0.015] vs v1 | `intake-judge-v2/RESULTS.md` |
+| Encoder cost spike (Granite 97M R2, block encoder + session layer) | **NO-GO** on peak RSS, 2026-11-05: 4.0-4.2 GB vs the agreed 500 MB (1.0-1.5 GB after load alone). Time criteria also missed (warm p90 16.9-76.8 s vs 2 s, cold median 44-68 s vs 30 s) but at load 25-110 on 10 cores, so not established for an idle machine. A p90 turn adds 65K tokens; the session layer is <= 124 ms at p90 | `research/encoder-spike-2026-11-05/RESULTS.md` |
 | **Intake judge v3** (adds public data) | gate failed: external +0.394 vs v1 passed, owner non-inferiority failed (−0.059 [−0.140, +0.016]). The owner then chose, as a product decision, to make it LCC's default with v1 selectable (lcc#142, merged 2026-11-04, `a041ebb`) | `intake-judge-v3/RESULTS_EXTERNAL.md`, `RESULTS_OWNER.md` |
 
 ### Intake judge (request category)

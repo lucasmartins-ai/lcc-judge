@@ -1,0 +1,80 @@
+{
+ "items": 2873,
+ "stores": 649,
+ "unique_blocks": 431923,
+ "blocks_without_text": 0,
+ "granite_tokens_per_block": {
+  "50": 53,
+  "90": 466,
+  "99": 2511,
+  "100": 4427
+ },
+ "blocks_over_2048": 5849,
+ "granite_over_item_tokens_ratio_p50": 1.3,
+ "blocks_per_item": {
+  "50": 435,
+  "90": 1573,
+  "99": 9882
+ },
+ "granite_tokens_per_item": {
+  "50": 88568,
+  "90": 336708,
+  "99": 3698021
+ },
+ "warm_blocks_per_item": {
+  "50": 31,
+  "90": 296,
+  "99": 1149
+ },
+ "warm_tokens_per_item": {
+  "50": 5631,
+  "90": 65429,
+  "99": 144084
+ },
+ "vocab_used_all": 86094,
+ "vocab_fit_80pct_stores": 82415,
+ "held_20pct_stores": 123,
+ "held_oov_token_rate": 0.00109,
+ "picked": {
+  "cold_p50": {
+   "item_id": "9672961c6eb9257c",
+   "blocks": 862,
+   "granite_tokens": 88568,
+   "warm_blocks": 79,
+   "warm_tokens": 9024
+  },
+  "cold_p90": {
+   "item_id": "a24bacdd2ff2dc64",
+   "blocks": 2475,
+   "granite_tokens": 336708,
+   "warm_blocks": 59,
+   "warm_tokens": 8671
+  },
+  "cold_p50_by_blocks": {
+   "item_id": "30b04ab8eacb2a18",
+   "blocks": 435,
+   "granite_tokens": 209060,
+   "warm_blocks": 113,
+   "warm_tokens": 65199
+  },
+  "warm_p50": {
+   "item_id": "d62792c35945cc38",
+   "blocks": 733,
+   "granite_tokens": 191651,
+   "warm_blocks": 40,
+   "warm_tokens": 5631
+  },
+  "warm_p90": {
+   "item_id": "a191897c1c7d8576",
+   "blocks": 365,
+   "granite_tokens": 66384,
+   "warm_blocks": 361,
+   "warm_tokens": 65429
+  }
+ },
+ "loadavg": [
+  8.0,
+  12.0,
+  23.7
+ ]
+}

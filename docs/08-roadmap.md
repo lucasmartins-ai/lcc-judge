@@ -14,9 +14,17 @@ to LCC only through its ship rule. External LLMs are teachers, references and vo
   decision after the owner gate failed.
 - **In LCC, from these studies:**
   - `stashed` + `recall` mode;
-  - opt-in recall records in the ledger (lcc#121): the first outcome-like label.
+  - opt-in recall records in the ledger (lcc#121): the first outcome-like label. Turned on for the owner's
+    Claude Code on 2026-11-05 (`LCC_LEDGER=1`, plugin 1.3.0, which sends the session id). Before that,
+    0 of 466 stashed blobs (2026-10-29 to 2026-11-04) had been recalled (sidecar `last_recalled_at`), so
+    recall labels may stay too sparse to train on.
 
 ### In progress
+
+0. **Encoder cost spike (2026-11-05): NO-GO on memory.** Granite 97M R2 in PyTorch peaks at 4.0-4.2 GB
+   against the agreed 500 MB; the time criteria missed too, but under heavy load, so they need an idle-machine
+   run before any claim (`research/encoder-spike-2026-11-05/RESULTS.md`). The two-layer design needs a new
+   cost plan before any pre-registration.
 
 1. **Intake owner held-out (v2 and v3): done 2026-11-04, neither replaces v1.**
    - v1 0.522, v2 0.463, v3 0.463; v3 − v1 −0.059 [−0.140, +0.016] (`intake-judge-v3/RESULTS_OWNER.md`).
