@@ -10,6 +10,8 @@ to LCC only through its ship rule. External LLMs are teachers, references and vo
 
 - **Block judge specialist v3:** LCC auto default for transcripts (lcc#50, lcc#51).
 - **Intake judge v1:** advisory request `category` in `lcc intake` and MCP `intake` (lcc#124, 2026-10-23).
+- **Intake judge v3 as default** (v1 pinnable, optional `previous_turn`): lcc#142, 2026-11-04, a product
+  decision after the owner gate failed.
 - **In LCC, from these studies:**
   - `stashed` + `recall` mode;
   - opt-in recall records in the ledger (lcc#121): the first outcome-like label.
@@ -20,7 +22,7 @@ to LCC only through its ship rule. External LLMs are teachers, references and vo
    - v1 0.522, v2 0.463, v3 0.463; v3 − v1 −0.059 [−0.140, +0.016] (`intake-judge-v3/RESULTS_OWNER.md`).
    - **Product decision (owner, after the result):** v3 becomes LCC's default `category` model, with v1
      selectable. The reason: on other people's prompts v3 beats v1 by +0.394. This is recorded as a decision,
-     not as a pass. LCC PR pending.
+     not as a pass. Shipped in lcc#142 (merged 2026-11-04).
    - A v4 would start from the measured errors: English prompts, and short replies read as approvals. It needs
      a new pre-registration and sessions after 2026-11-04.
 2. **More public agent data.**

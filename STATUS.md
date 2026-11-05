@@ -24,7 +24,7 @@ and voters.
 | When to compact | idle-return cache re-writes are 15.9% of main-session cost; stash-on-idle-return is a conditional opt-in; keep-warm pings fail the cost gate; fresh-session handoff +27.6% cost, quality **unmeasured** | `research/when-to-compact-2026-10-19/WHEN_RESULTS.md`, `WHEN2_RESULTS.md` |
 | **Intake judge v1** | **shipped** in LCC as an advisory `category` field (lcc#124, merged 2026-10-23, `9b0fac3`) | `intake-judge-v1/RESULTS.md` |
 | **Intake judge v2** (adds the agent's previous turn) | not adopted: owner held-out −0.059 [−0.133, +0.015] vs v1 | `intake-judge-v2/RESULTS.md` |
-| **Intake judge v3** (adds public data) | gate failed: external +0.394 vs v1 passed, owner non-inferiority failed (−0.059 [−0.140, +0.016]). The owner then chose, as a product decision, to make it LCC's default with v1 selectable (LCC PR pending) | `intake-judge-v3/RESULTS_EXTERNAL.md`, `RESULTS_OWNER.md` |
+| **Intake judge v3** (adds public data) | gate failed: external +0.394 vs v1 passed, owner non-inferiority failed (−0.059 [−0.140, +0.016]). The owner then chose, as a product decision, to make it LCC's default with v1 selectable (lcc#142, merged 2026-11-04, `a041ebb`) | `intake-judge-v3/RESULTS_EXTERNAL.md`, `RESULTS_OWNER.md` |
 
 ### Intake judge (request category)
 
