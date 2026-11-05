@@ -1,0 +1,82 @@
+{
+ "mode": "ort-int8-pruned",
+ "threads": 4,
+ "onnxruntime": "1.31.1",
+ "model_file_mb": 58.9,
+ "vocab_rows": 86097,
+ "loadavg_start": [
+  53.8,
+  66.0,
+  71.9
+ ],
+ "block_latency_ms": {
+  "54": 41.6,
+  "443": 423.9,
+  "1243": 1504.4,
+  "2048": 2892.1
+ },
+ "loadavg_after_latency": [
+  67.2,
+  67.9,
+  72.4
+ ],
+ "cold_p50": {
+  "blocks": 862,
+  "tokens": 90292,
+  "encode_s": 40.47
+ },
+ "loadavg_after_cold_p50": [
+  53.6,
+  64.3,
+  70.8
+ ],
+ "cold_p90": {
+  "blocks": 2475,
+  "tokens": 341534,
+  "encode_s": 147.14
+ },
+ "loadavg_after_cold_p90": [
+  72.3,
+  66.2,
+  70.4
+ ],
+ "warm_p50": {
+  "blocks": 41,
+  "tokens": 5732,
+  "encode_s": 3.04
+ },
+ "loadavg_after_warm_p50": [
+  84.2,
+  69.5,
+  71.5
+ ],
+ "warm_p90": {
+  "blocks": 362,
+  "tokens": 66185,
+  "encode_s": 41.99
+ },
+ "loadavg_after_warm_p90": [
+  80.6,
+  72.9,
+  72.5
+ ],
+ "session_layer_ms": {
+  "435": 18.0,
+  "1573": 281.5,
+  "9882": 15607.1
+ },
+ "rss_peak_by_phase_mb": {
+  "load": 439.5,
+  "latency": 1059.2,
+  "cold_p50": 3872.7,
+  "cold_p90": 3300.9,
+  "warm_p50": 3297.9,
+  "warm_p90": 3290.1,
+  "session_435": 0.0,
+  "session_1573": 3571.2,
+  "session_9882": 5266.3
+ },
+ "warm_p90_total_s": 42.27,
+ "warm_p50_total_s": 3.06,
+ "peak_rss_mb": 5266.3
+}

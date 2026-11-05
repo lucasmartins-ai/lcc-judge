@@ -140,3 +140,67 @@ cause is unknown.
 - Per prompt, an intake-sized input (443 tokens) took 68-870 ms across the modes under load,
   in a process of 1.0-1.5 GB or more, against intake v1's 1.2 MB model and 0.26 ms.
 - The specialist v3 reference (0.8 s for 1,000 blocks, 90 MB) was itself measured at load 239.
+
+## Spike 2: ONNX Runtime on an idle machine (criteria written before the run, 2026-11-05)
+
+The owner chose this follow-up after spike 1. It asks whether the 4 GB comes from PyTorch or
+from the model, and settles the time criteria on an idle machine.
+
+- **Criteria:** the three above, unchanged (warm p90 <= 2 s with the session layer at 1,573
+  vectors; cold median <= 30 s; whole-process peak RSS <= 500 MB), same items
+  (`out/stats.json`), 4 threads, CPU only (`CPUExecutionProvider`).
+- **Configurations:**
+  - `ort-fp32`: IBM's own `onnx/model.onnx` (revision `835ad14`) as published.
+  - `ort-int8`: ONNX Runtime dynamic int8 of the MatMul weights and the embedding table.
+  - `ort-int8-pruned`: the embedding table cut to the 86,097 ids from spike 1, then the same
+    int8. Unseen ids map to `[MASK]`.
+- **Process:** a separate venv with only onnxruntime 1.31.1, onnx 1.23.2, tokenizers 0.23.3
+  and numpy 2.5.4. The measured process imports neither torch nor transformers.
+- **Session layer:** a numpy stub of the same shape (2 post-norm layers, d 384, 6 heads, FF
+  1536, random fp32 weights). Attention runs in chunks of 1,024 query rows, so it never holds
+  the full N x N matrix.
+- **Idle rule:** each mode starts only when a 10 s `top` sample shows the CPU at least 70%
+  idle, checked every 15 minutes, giving up after 12 hours. CPU idle and load average are
+  recorded before and after each mode. A mode whose after-sample is below 50% idle is flagged
+  as not idle.
+- **Decision:** a configuration is GO if it passes all three. Spike 2 is GO if at least one
+  ONNX configuration is GO.
+- **PyTorch rerun:** PyTorch fp32 and int8 are re-run under the same idle rule only to settle
+  spike 1's time criteria. Spike 1's verdict (NO-GO on RSS) does not change.
+- **Not measured:** quality, including the effect of int8 and of the `[MASK]` mapping.
+
+### Spike 2 amendment 1 (after one smoke run under load, before the idle run)
+
+A smoke run of `ort-int8-pruned` and PyTorch `fp32` at load 54-72 checked the code end to end
+(`out/*-smoke.json`, not used for any criterion). It showed the ONNX process at 440 MB after
+load, then growing to 3.9 GB during the cold p50 encode: ONNX Runtime's memory arena keeps
+what the longest batches allocate.
+
+Added, as **exploratory**: `ort-int8-pruned-lowmem`, the same file with the arena off, batches
+of at most 2,048 padded tokens, and the numpy session stub chunked by 256 rows and computed in
+place (same math). It is designed after seeing data, so it cannot make spike 2 GO by itself. If
+only this variant passes, the result reads "NO-GO as registered, exploratory variant passes",
+and a confirmation run needs its own criteria.
+
+Sanity checks, not quality measures: ONNX fp32 and PyTorch fp32 give the same CLS vector
+(cosine 1.0000 on three test strings); int8 against fp32 gives 0.965-0.983; pruned int8 against
+int8 gives 0.984-0.988 (the embedding scale changes with the table).
+
+### Spike 2 amendment 2 (after a code review, before the idle run)
+
+No mode had started when these changes were made; the driver was stopped and restarted.
+
+- **Bug fixed in the numpy session stub.** `sc / np.sqrt(dh)` promoted the scores to float64
+  under NumPy 2, so the regular branch used twice the memory of a float32 layer. The smoke run
+  had it (5.3 GB at 9,882 vectors). Both branches now stay float32 and agree up to float rounding (max difference 0.0 on a 1,574-vector test).
+  Amendment 1's "same math" holds only from this fix on.
+- **Idle flag replaced.** The 10 s sample after a mode ends could not see contention during the
+  run. The driver now samples CPU idle back to back while each mode runs and logs the mean and
+  minimum. The job itself takes about 40% of 10 cores, so a mode whose mean CPU idle during the
+  run is below 40% is flagged as not idle. This supersedes the "after-sample below 50%" rule.
+- **Deadline.** No mode starts 12 hours or more after launch. Each mode skipped by the deadline
+  gets its own `gave_up` row, and the driver's exit code counts failed or skipped modes.
+- **PyTorch path, refactored into a shared `measure()`:** latency token ids now come from
+  Python's `random` (same range, different draws), the stub's input from a fresh generator,
+  and the stub is built before the latency phase. Expected effect: noise only.
+- The numpy stub has no biases (PyTorch's has); both use ReLU and post-norm.

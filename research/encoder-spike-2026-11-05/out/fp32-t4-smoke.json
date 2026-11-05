@@ -1,0 +1,82 @@
+{
+ "mode": "fp32",
+ "threads": 4,
+ "torch": "2.14.0",
+ "model_file_mb": 371.7,
+ "vocab_rows": 179934,
+ "loadavg_start": [
+  70.5,
+  71.5,
+  72.0
+ ],
+ "block_latency_ms": {
+  "54": 27.8,
+  "443": 260.9,
+  "1243": 600.7,
+  "2048": 1398.5
+ },
+ "loadavg_after_latency": [
+  69.5,
+  71.3,
+  71.9
+ ],
+ "cold_p50": {
+  "blocks": 862,
+  "tokens": 90292,
+  "encode_s": 33.52
+ },
+ "loadavg_after_cold_p50": [
+  85.7,
+  74.7,
+  73.1
+ ],
+ "cold_p90": {
+  "blocks": 2475,
+  "tokens": 341534,
+  "encode_s": 75.67
+ },
+ "loadavg_after_cold_p90": [
+  103.1,
+  81.7,
+  75.8
+ ],
+ "warm_p50": {
+  "blocks": 41,
+  "tokens": 5732,
+  "encode_s": 2.91
+ },
+ "loadavg_after_warm_p50": [
+  100.9,
+  81.9,
+  76.0
+ ],
+ "warm_p90": {
+  "blocks": 362,
+  "tokens": 66185,
+  "encode_s": 21.49
+ },
+ "loadavg_after_warm_p90": [
+  104.5,
+  87.8,
+  78.8
+ ],
+ "session_layer_ms": {
+  "435": 47.4,
+  "1573": 62.4,
+  "9882": 1688.6
+ },
+ "rss_peak_by_phase_mb": {
+  "load": 1014.9,
+  "latency": 1160.7,
+  "cold_p50": 3888.5,
+  "cold_p90": 2315.4,
+  "warm_p50": 2024.0,
+  "warm_p90": 2128.6,
+  "session_435": 1886.2,
+  "session_1573": 1890.8,
+  "session_9882": 4169.9
+ },
+ "warm_p90_total_s": 21.55,
+ "warm_p50_total_s": 2.96,
+ "peak_rss_mb": 4169.9
+}
