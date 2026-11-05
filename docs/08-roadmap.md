@@ -21,10 +21,11 @@ to LCC only through its ship rule. External LLMs are teachers, references and vo
 
 ### In progress
 
-0. **Encoder cost spike (2026-11-05): NO-GO on memory.** Granite 97M R2 in PyTorch peaks at 4.0-4.2 GB
-   against the agreed 500 MB; the time criteria missed too, but under heavy load, so they need an idle-machine
-   run before any claim (`research/encoder-spike-2026-11-05/RESULTS.md`). The two-layer design needs a new
-   cost plan before any pre-registration.
+0. **Encoder cost spike (2026-11-05): NO-GO on memory and on p90 turn time.** Granite 97M R2 needs
+   1.1-1.7 GB to encode blocks of up to 2K tokens, in PyTorch and in ONNX Runtime (fp32, int8, pruned int8,
+   arena on or off), against the agreed 500 MB; a p90 turn takes 10.6 s at best against 2 s
+   (`research/encoder-spike-2026-11-05/RESULTS.md`). The two-layer design needs a new cost plan, chosen by the
+   owner, before any pre-registration.
 
 1. **Intake owner held-out (v2 and v3): done 2026-11-04, neither replaces v1.**
    - v1 0.522, v2 0.463, v3 0.463; v3 − v1 −0.059 [−0.140, +0.016] (`intake-judge-v3/RESULTS_OWNER.md`).

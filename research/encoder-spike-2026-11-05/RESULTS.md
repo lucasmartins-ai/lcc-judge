@@ -119,7 +119,10 @@ cause is unknown.
 - **The 4 GB peaks are not explained.** The cold p50 encode peaked near 4 GB, while the cold p90
   encode, with more long blocks, peaked at 2.3 GB; the sparse sampler cannot say which batch
   caused it. At 9,882 vectors the stub session layer also reached 4 GB, likely because
-  PyTorch's attention there holds the full N x N matrix (not measured).
+  PyTorch's attention there holds the full N x N matrix (not measured). *Found after
+  spike 2:* the harness loads every item file at the start of the cold p50 phase, 2.9 GB on its
+  own, which can account for most of that peak (see "Deviation found after the run" under spike 2
+  results).
 - **Tokens per turn set the time budget.** A p90 turn adds 65K tokens; 2 s would need about
   33K tokens/s. The best rate measured here is about 3.9K tokens/s (fp32, warm p90, load 65-76),
   8.4x short. How much of that gap is load is not measured.
@@ -204,3 +207,84 @@ No mode had started when these changes were made; the driver was stopped and res
   Python's `random` (same range, different draws), the stub's input from a fresh generator,
   and the stub is built before the latency phase. Expected effect: noise only.
 - The numpy stub has no biases (PyTorch's has); both use ReLU and post-norm.
+
+## Spike 2 results (2026-11-05)
+
+**Verdict: NO-GO as registered, and the exploratory low-memory variant fails too.** Every
+configuration misses peak RSS and warm p90. Cold median passes for `ort-int8`, `ort-int8-pruned`
+and the low-memory variant.
+
+The six modes started between 17:21 and 22:34 UTC, each at 70-82% CPU idle and a 1-minute load
+average of 5.0-9.5 (spike 1: 25-110). Four of them averaged under 40% CPU idle while running and
+carry amendment 2's not-idle flag, including all three registered ONNX configurations. Contention
+can only slow a run, so this write-up reads a pass on a flagged run as a pass and a miss as a
+miss under contention (a reading added after the run, not part of the registered rule). Raw
+output: `out/ort-*-t4.json`, `out/*-t4-idle.json`, `out/idle-log.tsv`.
+
+| | ort-fp32 | ort-int8 | ort-int8-pruned | lowmem (exploratory) | PyTorch fp32 | PyTorch int8 |
+|---|---:|---:|---:|---:|---:|---:|
+| CPU idle during the run, mean / min | 25 / 13% (flagged) | 36 / 22% (flagged) | 24 / 11% (flagged) | 41 / 30% | 45 / 34% | 37 / 26% (flagged) |
+| peak RSS <= 500 MB (whole process, `ru_maxrss`) | **4,235 MB** | **4,252 MB** | **4,059 MB** | **4,607 MB** | **4,041 MB** | **4,251 MB** |
+| RSS peak before any item is loaded (sampled) | **1,672 MB** | **1,154 MB** | **1,061 MB** | **1,216 MB** | **1,157 MB** | **1,524 MB** |
+| warm p90 <= 2 s | **31.75 s** | **19.37 s** | **21.50 s** | **13.75 s** | **10.55 s** | **22.92 s** |
+| cold median <= 30 s | **43.76 s** | 25.37 s | 29.15 s | 18.29 s | 13.80 s | **30.19 s** |
+| verdict | NO-GO | NO-GO | NO-GO | NO-GO (exploratory) | spike 1 rerun | spike 1 rerun |
+
+Bold marks a miss. More detail, same runs:
+
+| | ort-fp32 | ort-int8 | ort-int8-pruned | lowmem | PyTorch fp32 | PyTorch int8 |
+|---|---:|---:|---:|---:|---:|---:|
+| model file | 372 MB | 93 MB | 59 MB | 59 MB | 372 MB | 291 MB |
+| RSS peak, imports + model load (sampled) | 1,349 MB | 571 MB | 441 MB | 350 MB | 1,013 MB | 1,428 MB |
+| one block, 54 / 443 tokens | 15 / 124 ms | 7 / 61 ms | 8 / 62 ms | 7 / 58 ms | 14 / 56 ms | 22 / 138 ms |
+| one block, 1,243 / 2,048 tokens | 460 / 1,058 ms | 306 / 737 ms | 298 / 758 ms | 289 / 744 ms | 195 / 406 ms | 395 / 722 ms |
+| cold p90 item (2,475 blocks, 341,534 tokens) | 122.9 s | 66.9 s | 76.0 s | 52.8 s | 38.9 s | 95.0 s |
+| warm p50 (41 blocks, 5,732 tokens) + session layer at 435 | 4.32 s | 2.70 s | 2.63 s | 1.17 s | 1.54 s | 3.56 s |
+| session layer, 1,573 / 9,882 vectors | 118 / 4,786 ms | 118 / 4,830 ms | 115 / 5,074 ms | 102 / 3,714 ms | 38 / 1,506 ms | 39 / 1,538 ms |
+
+### Deviation found after the run: the harness inflates `ru_maxrss`
+
+`measure()` finds the four picked items by loading all 2,873 item files (774 MB on disk) at the
+start of the cold p50 phase. Measured after the run, in a process with no model, that load alone
+peaks at 2,874 MB, which can account for most of the cold p50 peaks here (3,750-4,607 MB) and in
+spike 1 (3,871-4,187 MB). The whole-process peak falls in the cold p50 phase in two modes (lowmem,
+PyTorch int8) and in the 9,882-vector session stub in the other four, on top of memory left from
+earlier phases; how much of each peak is harness, runtime or stub is not isolated. The verdict
+does not depend on it: the latency phase runs before any item is loaded, and its sampled peak (a
+lower bound) is 1,061-1,672 MB, over 500 MB in every configuration. `spike.py` is left as run; a rerun would load only the picked items.
+
+### What the numbers point to
+
+- **The pruned int8 model fits at rest; encoding 2K-token blocks does not.** After imports and
+  session load the pruned int8 file sits at 441 MB (350 MB with the arena off). Single blocks of
+  up to 2,048 tokens lift the process to 1,061 MB (arena on) and 1,216 MB (arena off). Which tensors hold that
+  memory is not measured.
+- **Warm p90 misses with little contention.** The two unflagged runs took 10.55 s (PyTorch fp32)
+  and 13.75 s (lowmem), 5.3x and 6.9x the budget. The best rate measured is about 6.3-6.5K
+  tokens/s (PyTorch fp32, warm p90 and cold p50); a p90 turn of 66K tokens in 2 s needs about 34K.
+- **A median turn fits.** Warm p50 (5.7K tokens) plus the session layer took 1.17 s (lowmem) and
+  1.54 s (PyTorch fp32) on the unflagged runs. This is not a criterion.
+- **Spike 1's time criteria are settled for fp32 only.** On the unflagged PyTorch fp32 run, warm
+  p90 fails (10.55 s) and cold median passes (13.80 s). Spike 1 was judged on int8, whose rerun is
+  flagged: warm p90 missed 11.5x and cold median by 0.19 s, so the cold criterion stays open for
+  PyTorch int8. Spike 1's verdict (NO-GO on RSS) stands.
+- **int8 was faster in ONNX Runtime and slower in PyTorch.** ONNX int8 beat ONNX fp32 on every
+  encode (cold p50 25.4 against 43.8 s); PyTorch int8 lost to PyTorch fp32 on every encode (30.2
+  against 13.8 s). PyTorch fp32, which also ran with the least contention, was the fastest on
+  both cold encodes and warm p90, and 2.6x ONNX fp32 on a 2,048-token block. Contention differed between these runs and
+  the causes are not measured.
+- **Smaller batches may be faster.** With the same file, lowmem (2,048-token batches, arena off)
+  beat `ort-int8-pruned` (8,192) on every encode (warm p90 13.65 against 21.39 s encode only), but
+  `ort-int8-pruned` ran with more contention (24% against 41% mean idle), so batch size is not
+  isolated.
+
+### What this does and does not say
+
+- It rules out Granite 97M R2 at a 2K window under the agreed 500 MB, in PyTorch and ONNX Runtime,
+  fp32 and int8, with the vocabulary pruned and with the arena on or off. It says nothing about
+  quality.
+- Not measured: a smaller or shallower encoder; a 512-token window (90% of blocks fit whole);
+  encoding each block as it arrives, so a compaction pays only the session layer and the new
+  prompt; where the memory of a 2K-token pass goes.
+- The two-layer design needs a new cost plan, chosen by the owner, before intake v4 is
+  pre-registered.

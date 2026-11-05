@@ -1,0 +1,82 @@
+{
+ "mode": "int8",
+ "threads": 4,
+ "torch": "2.14.0",
+ "model_file_mb": 291.0,
+ "vocab_rows": 179934,
+ "loadavg_start": [
+  7.5,
+  7.8,
+  12.7
+ ],
+ "block_latency_ms": {
+  "54": 21.7,
+  "443": 138.4,
+  "1243": 395.0,
+  "2048": 722.3
+ },
+ "loadavg_after_latency": [
+  7.8,
+  7.9,
+  12.7
+ ],
+ "cold_p50": {
+  "blocks": 862,
+  "tokens": 90292,
+  "encode_s": 30.19
+ },
+ "loadavg_after_cold_p50": [
+  6.8,
+  7.6,
+  12.3
+ ],
+ "cold_p90": {
+  "blocks": 2475,
+  "tokens": 341534,
+  "encode_s": 95.0
+ },
+ "loadavg_after_cold_p90": [
+  7.9,
+  7.8,
+  11.9
+ ],
+ "warm_p50": {
+  "blocks": 41,
+  "tokens": 5732,
+  "encode_s": 3.55
+ },
+ "loadavg_after_warm_p50": [
+  9.1,
+  8.1,
+  12.0
+ ],
+ "warm_p90": {
+  "blocks": 362,
+  "tokens": 66185,
+  "encode_s": 22.88
+ },
+ "loadavg_after_warm_p90": [
+  14.4,
+  9.7,
+  12.2
+ ],
+ "session_layer_ms": {
+  "435": 7.9,
+  "1573": 39.3,
+  "9882": 1537.8
+ },
+ "rss_peak_by_phase_mb": {
+  "load": 1427.9,
+  "latency": 1523.9,
+  "cold_p50": 4216.0,
+  "cold_p90": 2016.0,
+  "warm_p50": 1365.8,
+  "warm_p90": 1663.4,
+  "session_435": 0.0,
+  "session_1573": 1472.8,
+  "session_9882": 3565.6
+ },
+ "warm_p90_total_s": 22.92,
+ "warm_p50_total_s": 3.56,
+ "peak_rss_mb": 4250.5
+}
